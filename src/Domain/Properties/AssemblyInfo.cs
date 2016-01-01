@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Domain")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Hymans Robertson")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Domain")]
-[assembly: AssemblyCopyright("Copyright © Hymans Robertson 2014")]
+[assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("ccc254d2-4a20-4c6f-8759-d29cc26aa4e8")]
+[assembly: Guid("4ee93468-a4fe-4e79-a366-69865311941d")]
 
 // Version information for an assembly consists of the following four values:
 //

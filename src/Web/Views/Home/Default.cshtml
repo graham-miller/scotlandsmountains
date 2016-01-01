@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Scotland's Mountains</title>
+    @Html.Partial("_Favicons")
+    <script src="~/js/jquery.min.js" type="text/javascript"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/finch.min.js" type="text/javascript"></script>
+    <script src="~/js/leaflet.min.js" type="text/javascript"></script>
+    <script src="~/js/leaflet-markercluster.min.js" type="text/javascript"></script>
+    <link href="~/css/leaflet.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/app.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    @Html.Partial("_NavBar")
+
+    <div id="map" class="container-fluid"></div>
+
+    <script src="~/js/app.js" type="text/javascript"></script>
+
+</body>
+</html>

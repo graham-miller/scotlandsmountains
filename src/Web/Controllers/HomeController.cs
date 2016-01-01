@@ -1,17 +1,26 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNet.Mvc;
+using ScotlandsMountains.Data;
 
 namespace ScotlandsMountains.Web.Controllers
 {
-    [RoutePrefix("Home")]
-    [Route("{action}")]
+    [Route("/[controller]"),Route("/")]
     public class HomeController : Controller
     {
-        [Route("~/")]
-        [Route]
-        [Route("Index")]
-        public ActionResult Index()
+        private IScotlandsMountainsContext _context;
+
+        public HomeController(IScotlandsMountainsContext context)
+        {
+            _context = context;
+        }
+
+        [Route("[action]"), Route("")]
+        public IActionResult Default()
         {
             return View();
         }
-	}
+    }
 }

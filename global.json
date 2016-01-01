@@ -1,0 +1,14 @@
+{
+  "sdk": {
+    "version": "1.0.0-beta5",
+    "runtime": "clr",
+    "architecture": "x86"
+  },
+  "sources": [
+    "src",
+    "test"
+  ],
+  "projects": [
+    "wrap"
+  ]
+}

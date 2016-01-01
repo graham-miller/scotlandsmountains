@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net451": {
+      "wrappedProject": "../../src/Data/Data.csproj",
+      "bin": {
+        "assembly": "../../src/Data/obj/{configuration}/ScotlandsMountains.Data.dll",
+        "pdb": "../../src/Data/obj/{configuration}/ScotlandsMountains.Data.pdb"
+      },
+      "dependencies": {
+        "EntityFramework": "6.1.3",
+        "ScotlandsMountains.Domain": "1.0.0-*"
+      }
+    }
+  }
+}
