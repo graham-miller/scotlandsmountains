@@ -3,14 +3,21 @@
 html, body, #sm-map-container, #sm-map, #sm-content { @include reset-margin-and-padding(); height:100%; background-color: #f0f0f0; }
 
 #sm-content {
+    padding-top: $nav-height;
     display: none;
     overflow-y: scroll;
     overflow-x: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    
+    .container {
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
 }
 
-body { padding-top: $nav-height; overflow: hidden; }
-
-#map { background-color:grey; }
+body { overflow: hidden; }
 
 .clear { clear: both; }
 
@@ -42,8 +49,11 @@ div.leaflet-marker-icon.marker-cluster {
 #sm-map-control {
     position: absolute;
     top: $nav-height + $spacing;
+    height: 0;
     right: $spacing;
-    width: 30em;
+    padding-left: $spacing * 2;
+    width: 100%;
+    max-width: 40em;
 }
 
 .sm-map-control-toolbar {
@@ -54,7 +64,6 @@ div.leaflet-marker-icon.marker-cluster {
 .sm-map-control-popup {
     @include rounded-shadow();
     width: 100%;
-    margin-bottom: $spacing;
 }
 
 .sm-search-results {
@@ -62,8 +71,8 @@ div.leaflet-marker-icon.marker-cluster {
     margin-top: $spacing;
     list-style-type: none;
     overflow-y: scroll;
-    height: 20em;
     padding: $spacing;
+    height: 14.5em;
     
     ul {
         @include reset-margin-and-padding();
@@ -84,7 +93,7 @@ div.leaflet-marker-icon.marker-cluster {
 }
 
 a.btn-map {
-    font-size: 3em;
+    font-size: 2em;
 }
 
 .sm-technology-container {

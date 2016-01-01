@@ -19,8 +19,15 @@
                 template: '',
                 controller: showMap
             })
-            .when('/account/:page', {
-                templateUrl: function(params){ return '/account/' + params.page + '.html'; },
+            .when('/tables', {
+                templateUrl: function(params){ return '/tables/index.html'; },
+                controller: [function(TablesController) {
+                    showContent();
+                    return TablesController;
+                }]
+            })
+            .when('/about', {
+                templateUrl: function(params){ return '/about/index.html'; },
                 controller: showContent
             })
             .when('/about/acknowledgements', {
@@ -32,6 +39,10 @@
             })
             .when('/about/:page', {
                 templateUrl: function(params){ return '/about/' + params.page + '.html'; },
+                controller: showContent
+            })
+            .when('/account/:page', {
+                templateUrl: function(params){ return '/account/' + params.page + '.html'; },
                 controller: showContent
             })
             .otherwise({ redirectTo: '/' });

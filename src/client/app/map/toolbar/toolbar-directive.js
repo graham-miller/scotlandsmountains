@@ -5,7 +5,7 @@
         return {
             restrict: 'A',
             templateUrl: '../map/toolbar/toolbar.html',
-            controller: function () {
+            controller: function ($timeout) {
                 
                 var self = this;
                 
@@ -13,6 +13,9 @@
                 this.toggleSearch = function() {
                     self.searchVisible = !self.searchVisible;
                     self.settingsVisible = false;
+                    $timeout(function() {
+                        if(self.searchVisible) { $('#sm-map-search').focus(); }
+                    });
                 };
 
                 this.settingsVisible = false;

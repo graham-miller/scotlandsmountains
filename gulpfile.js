@@ -5,8 +5,9 @@ var gulp = require('gulp'),
     del = require('del'),
     config = require('./gulpconfig.js'),
     browserSync = require('browser-sync').create(),
-    data = require('./src/data/data.js');
-
+    data = require('./src/data/data.js'),
+    fs = require('fs');
+    
 gulp.task('clean', function(){
     del.sync(config.destAll);
 });
@@ -107,6 +108,20 @@ gulp.task('dataclean', function(){
 
 gulp.task('data', ['dataclean'], function(callback){
     data.copyTo(config.srcData, config.destData, callback);
+});
+
+gulp.task('deployclean', function(){
+    del.sync(config.deployAll, { force: true });
+});
+
+gulp.task('deploycname', function(){
+    fs.writeFileSync(config.destDeploy + 'CNAME', config.domain);
+});
+
+gulp.task('deploy', ['deployclean', 'data', 'build', 'deploycname'], function(){
+    return gulp
+        .src(config.srcDeploy)
+        .pipe(gulp.dest(config.destDeploy));
 });
 
 gulp.task('build', ['clean', 'html', 'js', 'sass', 'img', 'css', 'fav', 'libjs', 'libcss', 'libcssimg', 'libfonts']);

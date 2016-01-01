@@ -2,8 +2,8 @@ var dest = './dist/';
 var destData = dest + 'data/';
 var src = './src/client/';
 var nodeModules = './node_modules/';
-var assets = src + 'app/assets/';
-
+var deploy = '../ScotlandsMountains.github.io/';
+ 
 module.exports = {
 	srcHtml: src + 'app/**/*.html',
 	srcSass: src + 'sass/**/*.scss',
@@ -11,9 +11,14 @@ module.exports = {
 		src + 'app/index.js',
 		src + 'app/**/*.js'
 	],
-	srcCss: assets + 'css/**/*',
-	srcImg: assets + 'img/**/*',
-	srcFav: assets + 'favicons/**/*',
+	srcCss: src + 'css/**/*',
+	srcImg: [
+		src + 'img/**/*',
+		src + '!img/favicons/**/*',
+		src + '!img/favicons/**',
+		src + '!img/favicons/'
+	],
+	srcFav: src + 'img/favicons/**/*',
 	srcData: './src/data/DoBIH_v14.3.csv',
 	
 	destAll: [
@@ -57,5 +62,15 @@ module.exports = {
 	jsFileName: 'scotlands-mountains.min.js',
 	cssFileName: 'scotlands-mountains.min.css',
 	sassOptions: { outputStyle: 'compressed' },
-	autoprefixerOptions: { browsers: ['last 2 versions', '> 5%', 'Firefox ESR'] }
+	autoprefixerOptions: { browsers: ['last 2 versions', '> 5%', 'Firefox ESR'] },
+	
+	deployAll: [
+		deploy + '**/*',
+		'!' + deploy + '.git**/*',
+		'!' + deploy + '.git**',
+		'!' + deploy + '.git',
+	],
+	srcDeploy: dest + '**/*',
+	destDeploy: deploy,
+	domain: 'scotlandsmountains.net'
 };

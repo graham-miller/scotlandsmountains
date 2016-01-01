@@ -35,7 +35,11 @@
             
             this.summary = nonBreakingSpace;
             this.results = [];
-            this.clear = function() { reset(); self.term = ''; };
+            this.clear = function() {
+                reset();
+                self.term = '';
+                $('#sm-map-search').focus();
+            };
 
             this.select = function(id) {
                 data.getById(id, function(mountain) {

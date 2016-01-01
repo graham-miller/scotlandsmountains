@@ -18,7 +18,7 @@
             {
                 title: 'Bootstrap',
                 website: 'http://getbootstrap.com/',
-                color: '#5D4384',
+                color: '#ffffff',
                 logo: 'bootstrap.png'
             },
             {
