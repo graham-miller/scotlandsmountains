@@ -1,5 +1,0 @@
-{
-  "ConnectionStrings": {
-    "ScotlandsMountains": "Data Source=.\\SQLExpress;Initial Catalog=ScotlandsMountains;Integrated Security=True;MultipleActiveResultSets=True"
-  }
-}
