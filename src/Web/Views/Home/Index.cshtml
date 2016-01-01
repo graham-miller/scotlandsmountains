@@ -1,0 +1,27 @@
+﻿@{ Layout = null; }
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Scotland's Mountains</title>
+    @Styles.Render("~/StyleBundle/css")
+    @Styles.Render("~/StyleBundle/fontawesome")
+</head>
+<body>
+    <div id="menu-panel">
+            @Html.Partial("_Menu")
+    </div><!--
+    --><div id="map-panel">
+        @Html.Partial("_Map")
+    </div><!--
+    --><div id="main-panel">
+        @Html.Partial("_Main")
+    </div>
+    
+    <script type="text/javascript" src="//ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0&mkt=en-gb"></script>
+    @Scripts.Render("~/ScriptBundle/jquery")
+    @Scripts.Render("~/ScriptBundle/scotlandsmountains")
+</body>
+</html>
