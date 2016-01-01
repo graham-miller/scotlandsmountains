@@ -1,0 +1,559 @@
+101,Isles of Scilly,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Isles of Scilly' WHERE scale = 0.00004 AND code = 101
+102,Land's End,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Land''s End' WHERE scale = 0.00004 AND code = 102
+103,"The Lizard, Falmouth & Helston","UPDATE ScotlandsMountains.dbo.Maps SET description = 'The Lizard, Falmouth & Helston' WHERE scale = 0.00004 AND code = 103"
+104,Redruth & St Agnes,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Redruth & St Agnes' WHERE scale = 0.00004 AND code = 104
+105,Falmouth & Mevagissey,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Falmouth & Mevagissey' WHERE scale = 0.00004 AND code = 105
+106,Newquay & Padstow,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Newquay & Padstow' WHERE scale = 0.00004 AND code = 106
+107,St Austell & Liskeard,UPDATE ScotlandsMountains.dbo.Maps SET description = 'St Austell & Liskeard' WHERE scale = 0.00004 AND code = 107
+108,Lower Tamar Valley & Plymouth,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Lower Tamar Valley & Plymouth' WHERE scale = 0.00004 AND code = 108
+109,Bodmin Moor,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Bodmin Moor' WHERE scale = 0.00004 AND code = 109
+110,Torquay & Dawlish,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Torquay & Dawlish' WHERE scale = 0.00004 AND code = 110
+111,Bude Boscastle & Tintagel,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Bude Boscastle & Tintagel' WHERE scale = 0.00004 AND code = 111
+112,Lanceston & Holsworthy,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Lanceston & Holsworthy' WHERE scale = 0.00004 AND code = 112
+113,Okehampton,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Okehampton' WHERE scale = 0.00004 AND code = 113
+114,Exeter & The Exe Valley North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Exeter & The Exe Valley North' WHERE scale = 0.00004 AND code = 114
+114,Exeter & The Exe Valley South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Exeter & The Exe Valley South' WHERE scale = 0.00004 AND code = 114
+115,Exmouth & Sidmouth,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Exmouth & Sidmouth' WHERE scale = 0.00004 AND code = 115
+116,Lyme Regis & Bridport,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Lyme Regis & Bridport' WHERE scale = 0.00004 AND code = 116
+117,Cerne Abbas & Bere Regis East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Cerne Abbas & Bere Regis East' WHERE scale = 0.00004 AND code = 117
+117,Cerne Abbas & Bere Regis West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Cerne Abbas & Bere Regis West' WHERE scale = 0.00004 AND code = 117
+118,Shaftesbury & Cranborne Chase North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Shaftesbury & Cranborne Chase North' WHERE scale = 0.00004 AND code = 118
+118,Shaftesbury & Cranborne Chase South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Shaftesbury & Cranborne Chase South' WHERE scale = 0.00004 AND code = 118
+119,Meon Valley Portsmouth Gosport,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Meon Valley Portsmouth Gosport' WHERE scale = 0.00004 AND code = 119
+120,Chichester South Harting & Selsey,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Chichester South Harting & Selsey' WHERE scale = 0.00004 AND code = 120
+121,Arundel & Pulborough,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Arundel & Pulborough' WHERE scale = 0.00004 AND code = 121
+122,Brighton & Hove,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Brighton & Hove' WHERE scale = 0.00004 AND code = 122
+123,Eastbourne & Beachy Head,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Eastbourne & Beachy Head' WHERE scale = 0.00004 AND code = 123
+124,Hastings & Bexhill,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Hastings & Bexhill' WHERE scale = 0.00004 AND code = 124
+125,Romney Marsh Rye & Winchelsea,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Romney Marsh Rye & Winchelsea' WHERE scale = 0.00004 AND code = 125
+126,Clovelly & Hartland,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Clovelly & Hartland' WHERE scale = 0.00004 AND code = 126
+127,South Mton & chulmleigh,UPDATE ScotlandsMountains.dbo.Maps SET description = 'South Mton & chulmleigh' WHERE scale = 0.00004 AND code = 127
+128,Taunton & Blackdown hills East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Taunton & Blackdown hills East' WHERE scale = 0.00004 AND code = 128
+128,Taunton & Blackdown hills West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Taunton & Blackdown hills West' WHERE scale = 0.00004 AND code = 128
+129,Yeovil & Sherbourne East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Yeovil & Sherbourne East' WHERE scale = 0.00004 AND code = 129
+129,Yeovil & Sherbourne West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Yeovil & Sherbourne West' WHERE scale = 0.00004 AND code = 129
+130,Salisbury & Stonehenge North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Salisbury & Stonehenge North' WHERE scale = 0.00004 AND code = 130
+130,Salisbury & Stonehenge South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Salisbury & Stonehenge South' WHERE scale = 0.00004 AND code = 130
+131,Romsey Andover & Test Valley North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Romsey Andover & Test Valley North' WHERE scale = 0.00004 AND code = 131
+131,Romsey Andover & Test Valley South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Romsey Andover & Test Valley South' WHERE scale = 0.00004 AND code = 131
+132,Winchester New Alresford & East Meon,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Winchester New Alresford & East Meon' WHERE scale = 0.00004 AND code = 132
+133,Haslemere & Petersfield,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Haslemere & Petersfield' WHERE scale = 0.00004 AND code = 133
+134,Crawley & Horsham,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Crawley & Horsham' WHERE scale = 0.00004 AND code = 134
+135,Ashdown Forest,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ashdown Forest' WHERE scale = 0.00004 AND code = 135
+136,High Weald Royal Tunbridge Wells,UPDATE ScotlandsMountains.dbo.Maps SET description = 'High Weald Royal Tunbridge Wells' WHERE scale = 0.00004 AND code = 136
+137,Ashford,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ashford' WHERE scale = 0.00004 AND code = 137
+138,Dover Folkstone & Hythe,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Dover Folkstone & Hythe' WHERE scale = 0.00004 AND code = 138
+139,Bideford Ilfracombe & Barnstaple,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Bideford Ilfracombe & Barnstaple' WHERE scale = 0.00004 AND code = 139
+139,Bideford Ilfracombe & Barnstaple,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Bideford Ilfracombe & Barnstaple' WHERE scale = 0.00004 AND code = 139
+141,Cheddar Gorge & Mendip Hills West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Cheddar Gorge & Mendip Hills West' WHERE scale = 0.00004 AND code = 141
+142,Shepton Mallet & Mendip Hills East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Shepton Mallet & Mendip Hills East' WHERE scale = 0.00004 AND code = 142
+143,Warminster & Trowbridge,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Warminster & Trowbridge' WHERE scale = 0.00004 AND code = 143
+144,Basingstoke Alton & Whitchurch East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Basingstoke Alton & Whitchurch East' WHERE scale = 0.00004 AND code = 144
+144,Basingstoke Alton & Whitchurch West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Basingstoke Alton & Whitchurch West' WHERE scale = 0.00004 AND code = 144
+145,Guildford & Farnham,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Guildford & Farnham' WHERE scale = 0.00004 AND code = 145
+146,Dorking Box Hill & Reigate,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Dorking Box Hill & Reigate' WHERE scale = 0.00004 AND code = 146
+147,Sevenoaks & Tonbridge,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Sevenoaks & Tonbridge' WHERE scale = 0.00004 AND code = 147
+148,Maidstone & the Medway Towns,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Maidstone & the Medway Towns' WHERE scale = 0.00004 AND code = 148
+149,Sittingbourne & Faversham,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Sittingbourne & Faversham' WHERE scale = 0.00004 AND code = 149
+150,Canterbury & the Isle of Thanet,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Canterbury & the Isle of Thanet' WHERE scale = 0.00004 AND code = 150
+151,Cardiff & Bridgeend East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Cardiff & Bridgeend East' WHERE scale = 0.00004 AND code = 151
+151,Cardiff & Bridgeend West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Cardiff & Bridgeend West' WHERE scale = 0.00004 AND code = 151
+152,Newport & Ponypo-Casnewydd a Phont-y-pwl,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Newport & Ponypo-Casnewydd a Phont-y-pwl' WHERE scale = 0.00004 AND code = 152
+153,Western-Super-Mare,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Western-Super-Mare' WHERE scale = 0.00004 AND code = 153
+154,BristWest & Portishead Congresbury,UPDATE ScotlandsMountains.dbo.Maps SET description = 'BristWest & Portishead Congresbury' WHERE scale = 0.00004 AND code = 154
+155,Bristol & Bath,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Bristol & Bath' WHERE scale = 0.00004 AND code = 155
+156,Chippenham & Bradford-on-Avon,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Chippenham & Bradford-on-Avon' WHERE scale = 0.00004 AND code = 156
+157,Marlborough & Savernake Forest,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Marlborough & Savernake Forest' WHERE scale = 0.00004 AND code = 157
+158,Newbury & Hungerford,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Newbury & Hungerford' WHERE scale = 0.00004 AND code = 158
+159,Reading Wokingham Panbourne,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Reading Wokingham Panbourne' WHERE scale = 0.00004 AND code = 159
+160,Windsor Weybridge & Bracknell,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Windsor Weybridge & Bracknell' WHERE scale = 0.00004 AND code = 160
+161,London South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'London South' WHERE scale = 0.00004 AND code = 161
+162,Greenwich & Gravesend,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Greenwich & Gravesend' WHERE scale = 0.00004 AND code = 162
+163,Gravesend & Rochester,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Gravesend & Rochester' WHERE scale = 0.00004 AND code = 163
+164,Gower- Gwyr & Llanelli,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Gower- Gwyr & Llanelli' WHERE scale = 0.00004 AND code = 164
+165,Swansea,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Swansea' WHERE scale = 0.00004 AND code = 165
+166,Rhonda & Merthyr Tydfil-Merthyr Tudfu East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Rhonda & Merthyr Tydfil-Merthyr Tudfu East' WHERE scale = 0.00004 AND code = 166
+166,Rhonda & Merthyr Tydfil-Merthyr Tudfu West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Rhonda & Merthyr Tydfil-Merthyr Tudfu West' WHERE scale = 0.00004 AND code = 166
+167,Thornbury Dursley & Yate,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Thornbury Dursley & Yate' WHERE scale = 0.00004 AND code = 167
+168,Stroud Tetbury & Malmesbury,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Stroud Tetbury & Malmesbury' WHERE scale = 0.00004 AND code = 168
+169,Cirencester & Swindon,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Cirencester & Swindon' WHERE scale = 0.00004 AND code = 169
+170,Abingdon Wantage & Vale of White Horse East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Abingdon Wantage & Vale of White Horse East' WHERE scale = 0.00004 AND code = 170
+170,Abingdon Wantage & Vale of White Horse West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Abingdon Wantage & Vale of White Horse West' WHERE scale = 0.00004 AND code = 170
+171,Chiltern Hills West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Chiltern Hills West' WHERE scale = 0.00004 AND code = 171
+172,Chiltern Hills East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Chiltern Hills East' WHERE scale = 0.00004 AND code = 172
+173,London North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'London North' WHERE scale = 0.00004 AND code = 173
+174,Epping Forest & Lee Valley,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Epping Forest & Lee Valley' WHERE scale = 0.00004 AND code = 174
+175,Southend on Sea & Basildon East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Southend on Sea & Basildon East' WHERE scale = 0.00004 AND code = 175
+175,Southend on Sea & Basildon West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Southend on Sea & Basildon West' WHERE scale = 0.00004 AND code = 175
+176,Blackwater Estuary,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Blackwater Estuary' WHERE scale = 0.00004 AND code = 176
+177,Caemarthen & Kidwelly,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Caemarthen & Kidwelly' WHERE scale = 0.00004 AND code = 177
+178,Lianelli & Ammanford,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Lianelli & Ammanford' WHERE scale = 0.00004 AND code = 178
+179,Gloucester Cheltenham Stroud,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Gloucester Cheltenham Stroud' WHERE scale = 0.00004 AND code = 179
+180,Oxford Witney & Woodstock East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Oxford Witney & Woodstock East' WHERE scale = 0.00004 AND code = 180
+180,Oxford Witney & Woodstock West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Oxford Witney & Woodstock West' WHERE scale = 0.00004 AND code = 180
+181,Chiltern Hills North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Chiltern Hills North' WHERE scale = 0.00004 AND code = 181
+182,St Albans & Hatfield,UPDATE ScotlandsMountains.dbo.Maps SET description = 'St Albans & Hatfield' WHERE scale = 0.00004 AND code = 182
+183,Chelmsford & The Rodings East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Chelmsford & The Rodings East' WHERE scale = 0.00004 AND code = 183
+183,Chelmsford & The Rodings West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Chelmsford & The Rodings West' WHERE scale = 0.00004 AND code = 183
+184,"Colchester, Harwich & Clacton on Sea East","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Colchester, Harwich & Clacton on Sea East' WHERE scale = 0.00004 AND code = 184"
+184,"Colchester, Harwich & Clacton on Sea West","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Colchester, Harwich & Clacton on Sea West' WHERE scale = 0.00004 AND code = 184"
+185,Newcastle Emlyn,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Newcastle Emlyn' WHERE scale = 0.00004 AND code = 185
+186,Llandelio & Brechfa Forest,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Llandelio & Brechfa Forest' WHERE scale = 0.00004 AND code = 186
+187,Llandovery North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Llandovery North' WHERE scale = 0.00004 AND code = 187
+187,Llandovery South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Llandovery South' WHERE scale = 0.00004 AND code = 187
+188,Builth Wells,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Builth Wells' WHERE scale = 0.00004 AND code = 188
+189,Hereford & Ross on Wye,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Hereford & Ross on Wye' WHERE scale = 0.00004 AND code = 189
+190,Malvern Hills & Bredon Hill,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Malvern Hills & Bredon Hill' WHERE scale = 0.00004 AND code = 190
+191,Banbury Bicester & Chipping Norton East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Banbury Bicester & Chipping Norton East' WHERE scale = 0.00004 AND code = 191
+191,Banbury Bicester & Chipping Norton West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Banbury Bicester & Chipping Norton West' WHERE scale = 0.00004 AND code = 191
+192,Buckingham & Milton Keynes East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Buckingham & Milton Keynes East' WHERE scale = 0.00004 AND code = 192
+192,Buckingham & Milton Keynes West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Buckingham & Milton Keynes West' WHERE scale = 0.00004 AND code = 192
+193,"Luton & Stevenage, Hitchin&Ampthill","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Luton & Stevenage, Hitchin&Ampthill' WHERE scale = 0.00004 AND code = 193"
+194,Hertford & Bishop's Stortford,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Hertford & Bishop''s Stortford' WHERE scale = 0.00004 AND code = 194
+195,Braintree & Saffron Walden East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Braintree & Saffron Walden East' WHERE scale = 0.00004 AND code = 195
+195,Braintree & Saffron Walden West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Braintree & Saffron Walden West' WHERE scale = 0.00004 AND code = 195
+196,"Sudbury, Hadleigh & Dedham Vale","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Sudbury, Hadleigh & Dedham Vale' WHERE scale = 0.00004 AND code = 196"
+197,"Ipswich, Felixstowe & Harwich","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ipswich, Felixstowe & Harwich' WHERE scale = 0.00004 AND code = 197"
+198,Cardigan & New Quay East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Cardigan & New Quay East' WHERE scale = 0.00004 AND code = 198
+198,Cardigan & New Quay West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Cardigan & New Quay West' WHERE scale = 0.00004 AND code = 198
+199,Lampeter,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Lampeter' WHERE scale = 0.00004 AND code = 199
+200,Llandrindod Wells & Elan Valley East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Llandrindod Wells & Elan Valley East' WHERE scale = 0.00004 AND code = 200
+200,Llandrindod Wells & Elan Valley West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Llandrindod Wells & Elan Valley West' WHERE scale = 0.00004 AND code = 200
+201,Knighton & Presteigne North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Knighton & Presteigne North' WHERE scale = 0.00004 AND code = 201
+201,Knighton & Presteigne South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Knighton & Presteigne South' WHERE scale = 0.00004 AND code = 201
+202,Leominster & Bromyard,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Leominster & Bromyard' WHERE scale = 0.00004 AND code = 202
+203,Ludlow Tenbury Well Cleobury Mortimer,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ludlow Tenbury Well Cleobury Mortimer' WHERE scale = 0.00004 AND code = 203
+204,Worcester & Droitwich Spa,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Worcester & Droitwich Spa' WHERE scale = 0.00004 AND code = 204
+205,Stratford upon Avon & Evesham,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Stratford upon Avon & Evesham' WHERE scale = 0.00004 AND code = 205
+206,Edge Hill & Fenny Compton,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Edge Hill & Fenny Compton' WHERE scale = 0.00004 AND code = 206
+207,Newport Pagnell & Northampton South East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Newport Pagnell & Northampton South East' WHERE scale = 0.00004 AND code = 207
+207,Newport Pagnell & Northampton South West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Newport Pagnell & Northampton South West' WHERE scale = 0.00004 AND code = 207
+208,"Bedford & St Neots, S&y & Biggleswade West","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Bedford & St Neots, S&y & Biggleswade West' WHERE scale = 0.00004 AND code = 208"
+209,"Cambridge, Royston, Duxford & Linton","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Cambridge, Royston, Duxford & Linton' WHERE scale = 0.00004 AND code = 209"
+210,"Newmarket & Haverhill, Barrow, Clare","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Newmarket & Haverhill, Barrow, Clare' WHERE scale = 0.00004 AND code = 210"
+211,Bury St Edmunds & Stowmarket East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Bury St Edmunds & Stowmarket East' WHERE scale = 0.00004 AND code = 211
+211,Bury St Edmunds & Stowmarket West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Bury St Edmunds & Stowmarket West' WHERE scale = 0.00004 AND code = 211
+212,Woodbridge & Saxmundham,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Woodbridge & Saxmundham' WHERE scale = 0.00004 AND code = 212
+213,Aberystuyth Cwm Rheidd,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Aberystuyth Cwm Rheidd' WHERE scale = 0.00004 AND code = 213
+214,Llanidloes & Newtown East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Llanidloes & Newtown East' WHERE scale = 0.00004 AND code = 214
+214,Llanidloes & Newtown West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Llanidloes & Newtown West' WHERE scale = 0.00004 AND code = 214
+215,Newtown-Y Drenewydd & Machynlleth East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Newtown-Y Drenewydd & Machynlleth East' WHERE scale = 0.00004 AND code = 215
+215,Newtown-Y Drenewydd & Machynlleth West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Newtown-Y Drenewydd & Machynlleth West' WHERE scale = 0.00004 AND code = 215
+216,Welshpool & Montgomery,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Welshpool & Montgomery' WHERE scale = 0.00004 AND code = 216
+217,The Long Mynd & Wenlock Edge,UPDATE ScotlandsMountains.dbo.Maps SET description = 'The Long Mynd & Wenlock Edge' WHERE scale = 0.00004 AND code = 217
+218,Kidderminster & Wyre Forest,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Kidderminster & Wyre Forest' WHERE scale = 0.00004 AND code = 218
+219,"Wolverhampton & Dudley, Stourbridge & Kidderminster North","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Wolverhampton & Dudley, Stourbridge & Kidderminster North' WHERE scale = 0.00004 AND code = 219"
+219,"Wolverhampton & Dudley, Stourbridge & Kidderminster South","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Wolverhampton & Dudley, Stourbridge & Kidderminster South' WHERE scale = 0.00004 AND code = 219"
+220,"Birmingham, Walsall, Sihull & Redditch North","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Birmingham, Walsall, Sihull & Redditch North' WHERE scale = 0.00004 AND code = 220"
+220,"Birmingham, Walsall, Sihull & Redditch South","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Birmingham, Walsall, Sihull & Redditch South' WHERE scale = 0.00004 AND code = 220"
+221,Coventry & Warwick Royal Leamington,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Coventry & Warwick Royal Leamington' WHERE scale = 0.00004 AND code = 221
+222,"Rugby & Daventry, Southampton, Lutterworth","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Rugby & Daventry, Southampton, Lutterworth' WHERE scale = 0.00004 AND code = 222"
+223,Northampton & Market Harborough North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Northampton & Market Harborough North' WHERE scale = 0.00004 AND code = 223
+223,Northampton & Market Harborough South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Northampton & Market Harborough South' WHERE scale = 0.00004 AND code = 223
+224,Corby Kettering Wellingborough North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Corby Kettering Wellingborough North' WHERE scale = 0.00004 AND code = 224
+224,Corby Kettering Wellingborough South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Corby Kettering Wellingborough South' WHERE scale = 0.00004 AND code = 224
+225,"Huntingson & St Ives, Grafham Water East","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Huntingson & St Ives, Grafham Water East' WHERE scale = 0.00004 AND code = 225"
+225,"Huntingson & St Ives, Grafham Water West","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Huntingson & St Ives, Grafham Water West' WHERE scale = 0.00004 AND code = 225"
+226,"Ely & Newmarket, Mildenhall & Soham","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ely & Newmarket, Mildenhall & Soham' WHERE scale = 0.00004 AND code = 226"
+227,Peterbrough East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Peterbrough East' WHERE scale = 0.00004 AND code = 227
+227,Peterbrough West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Peterbrough West' WHERE scale = 0.00004 AND code = 227
+228,"March & Ely, Chatteris & Littleport East","UPDATE ScotlandsMountains.dbo.Maps SET description = 'March & Ely, Chatteris & Littleport East' WHERE scale = 0.00004 AND code = 228"
+228,"March & Ely, Chatteris & Littleport West","UPDATE ScotlandsMountains.dbo.Maps SET description = 'March & Ely, Chatteris & Littleport West' WHERE scale = 0.00004 AND code = 228"
+229,Thetford Forest in the Brecks,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Thetford Forest in the Brecks' WHERE scale = 0.00004 AND code = 229
+230,"Diss & Harleston, East Harling East","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Diss & Harleston, East Harling East' WHERE scale = 0.00004 AND code = 230"
+230,"Diss & Harleston, East Harling West","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Diss & Harleston, East Harling West' WHERE scale = 0.00004 AND code = 230"
+231,"Southwold, Bungay, Haleswoth","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Southwold, Bungay, Haleswoth' WHERE scale = 0.00004 AND code = 231"
+232,Nuneaton & Tamworth,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Nuneaton & Tamworth' WHERE scale = 0.00004 AND code = 232
+233,Leicester & Hinckley East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Leicester & Hinckley East' WHERE scale = 0.00004 AND code = 233
+233,Leicester & Hinckley West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Leicester & Hinckley West' WHERE scale = 0.00004 AND code = 233
+234,"Rutland Water, Stamford & Oakham","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Rutland Water, Stamford & Oakham' WHERE scale = 0.00004 AND code = 234"
+235,Wisbech & Peterborough Nth East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Wisbech & Peterborough Nth East' WHERE scale = 0.00004 AND code = 235
+235,Wisbech & Peterborough Nth West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Wisbech & Peterborough Nth West' WHERE scale = 0.00004 AND code = 235
+236,"King's Lynn, Downham Market East","UPDATE ScotlandsMountains.dbo.Maps SET description = 'King''s Lynn, Downham Market East' WHERE scale = 0.00004 AND code = 236"
+236,"King's Lynn, Downham Market West","UPDATE ScotlandsMountains.dbo.Maps SET description = 'King''s Lynn, Downham Market West' WHERE scale = 0.00004 AND code = 236"
+237,"Norwich, Wymondham, Attleborough East","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Norwich, Wymondham, Attleborough East' WHERE scale = 0.00004 AND code = 237"
+237,"Norwich, Wymondham, Attleborough West","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Norwich, Wymondham, Attleborough West' WHERE scale = 0.00004 AND code = 237"
+238,"East Dereham & Aylsham, Castle Acre East","UPDATE ScotlandsMountains.dbo.Maps SET description = 'East Dereham & Aylsham, Castle Acre East' WHERE scale = 0.00004 AND code = 238"
+238,"East Dereham & Aylsham, Castle Acre West","UPDATE ScotlandsMountains.dbo.Maps SET description = 'East Dereham & Aylsham, Castle Acre West' WHERE scale = 0.00004 AND code = 238"
+239,"Lake Vyrnwy Llanfyllun,Tanat Valley","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Lake Vyrnwy Llanfyllun,Tanat Valley' WHERE scale = 0.00004 AND code = 239"
+240,Oswestry,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Oswestry' WHERE scale = 0.00004 AND code = 240
+241,Shrewsbury Wem Shawbury Baschurch North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Shrewsbury Wem Shawbury Baschurch North' WHERE scale = 0.00004 AND code = 241
+241,Shrewsbury Wem Shawbury Baschurch South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Shrewsbury Wem Shawbury Baschurch South' WHERE scale = 0.00004 AND code = 241
+242,Telford Ironbridge The Wrekin,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Telford Ironbridge The Wrekin' WHERE scale = 0.00004 AND code = 242
+243,"Carlisle, Brampton, Longtown & Gretna Green","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Carlisle, Brampton, Longtown & Gretna Green' WHERE scale = 0.00004 AND code = 243"
+244,Cannock Chase and Chasewater,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Cannock Chase and Chasewater' WHERE scale = 0.00004 AND code = 244
+245,The National Forest East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'The National Forest East' WHERE scale = 0.00004 AND code = 245
+245,The National Forest West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'The National Forest West' WHERE scale = 0.00004 AND code = 245
+246,"Loughborough, Melton Mowbray & Syston","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Loughborough, Melton Mowbray & Syston' WHERE scale = 0.00004 AND code = 246"
+247,Grantham,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Grantham' WHERE scale = 0.00004 AND code = 247
+248,Bourne & Heckington,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Bourne & Heckington' WHERE scale = 0.00004 AND code = 248
+249,Spalding & Holbeach East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Spalding & Holbeach East' WHERE scale = 0.00004 AND code = 249
+249,Spalding & Holbeach West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Spalding & Holbeach West' WHERE scale = 0.00004 AND code = 249
+250,Norfolk Coast West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Norfolk Coast West' WHERE scale = 0.00004 AND code = 250
+251,Norfk Coast Central,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Norfk Coast Central' WHERE scale = 0.00004 AND code = 251
+252,Norfk Coast East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Norfk Coast East' WHERE scale = 0.00004 AND code = 252
+253,Lleyn Peninsula West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Lleyn Peninsula West' WHERE scale = 0.00004 AND code = 253
+254,Lleyn Peninsula East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Lleyn Peninsula East' WHERE scale = 0.00004 AND code = 254
+255,Llanglen & Berwyn,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Llanglen & Berwyn' WHERE scale = 0.00004 AND code = 255
+256,Wrexham,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Wrexham' WHERE scale = 0.00004 AND code = 256
+257,Crewe & Nantwich East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Crewe & Nantwich East' WHERE scale = 0.00004 AND code = 257
+257,Crewe & Nantwich West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Crewe & Nantwich West' WHERE scale = 0.00004 AND code = 257
+258,Stoke on Trent Newcastle under Lyme,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Stoke on Trent Newcastle under Lyme' WHERE scale = 0.00004 AND code = 258
+259,Derby Uttoxeter Ashbourne & Cheadle East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Derby Uttoxeter Ashbourne & Cheadle East' WHERE scale = 0.00004 AND code = 259
+259,Derby Uttoxeter Ashbourne & Cheadle West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Derby Uttoxeter Ashbourne & Cheadle West' WHERE scale = 0.00004 AND code = 259
+260,"Nottingham, Vale of Belvoir East","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Nottingham, Vale of Belvoir East' WHERE scale = 0.00004 AND code = 260"
+260,"Nottingham, Vale of Belvoir West","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Nottingham, Vale of Belvoir West' WHERE scale = 0.00004 AND code = 260"
+261,Boston East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Boston East' WHERE scale = 0.00004 AND code = 261
+261,Boston West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Boston West' WHERE scale = 0.00004 AND code = 261
+262,Anglesey West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Anglesey West' WHERE scale = 0.00004 AND code = 262
+263,Anglesey North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Anglesey North' WHERE scale = 0.00004 AND code = 263
+263,Anglesey East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Anglesey East' WHERE scale = 0.00004 AND code = 263
+264,Vale of Clwyd-Dyffryn Clwyd North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Vale of Clwyd-Dyffryn Clwyd North' WHERE scale = 0.00004 AND code = 264
+264,Vale of Clwyd-Dyffryn Clwyd South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Vale of Clwyd-Dyffryn Clwyd South' WHERE scale = 0.00004 AND code = 264
+265,Clwydian Range,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Clwydian Range' WHERE scale = 0.00004 AND code = 265
+266,Wirral & Chester North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Wirral & Chester North' WHERE scale = 0.00004 AND code = 266
+266,Wirral & Chester South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Wirral & Chester South' WHERE scale = 0.00004 AND code = 266
+267,Northwich & Delamere Forest,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Northwich & Delamere Forest' WHERE scale = 0.00004 AND code = 267
+268,Wilmslow Macclesfield Congleton North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Wilmslow Macclesfield Congleton North' WHERE scale = 0.00004 AND code = 268
+268,Wilmslow Macclesfield Congleton South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Wilmslow Macclesfield Congleton South' WHERE scale = 0.00004 AND code = 268
+269,Chesterfield & Alfreton,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Chesterfield & Alfreton' WHERE scale = 0.00004 AND code = 269
+270,Sherwood Forest,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Sherwood Forest' WHERE scale = 0.00004 AND code = 270
+271,Newark on Trent North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Newark on Trent North' WHERE scale = 0.00004 AND code = 271
+271,Newark on Trent South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Newark on Trent South' WHERE scale = 0.00004 AND code = 271
+272,"Lincoln, Sleaford, Metheringham & Nathenby North","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Lincoln, Sleaford, Metheringham & Nathenby North' WHERE scale = 0.00004 AND code = 272"
+272,"Lincoln, Sleaford, Metheringham & Nathenby South","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Lincoln, Sleaford, Metheringham & Nathenby South' WHERE scale = 0.00004 AND code = 272"
+273,Lincolnshire Wolds South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Lincolnshire Wolds South' WHERE scale = 0.00004 AND code = 273
+274,"Skegness, Alford & Spilsby","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Skegness, Alford & Spilsby' WHERE scale = 0.00004 AND code = 274"
+275,"Liverpool, St Helens, Widnes & Runcorn","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Liverpool, St Helens, Widnes & Runcorn' WHERE scale = 0.00004 AND code = 275"
+276,Bolton Wigan & Warrington,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Bolton Wigan & Warrington' WHERE scale = 0.00004 AND code = 276
+277,Manchester & Salford,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Manchester & Salford' WHERE scale = 0.00004 AND code = 277
+278,"Sheffield & Barnsley, Rotherham Nth","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Sheffield & Barnsley, Rotherham Nth' WHERE scale = 0.00004 AND code = 278"
+278,"Sheffield & Barnsley, Rotherham South","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Sheffield & Barnsley, Rotherham South' WHERE scale = 0.00004 AND code = 278"
+279,"Doncaster, Conisbrough, Maltby & Thorne North","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Doncaster, Conisbrough, Maltby & Thorne North' WHERE scale = 0.00004 AND code = 279"
+279,"Doncaster, Conisbrough, Maltby & Thorne South","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Doncaster, Conisbrough, Maltby & Thorne South' WHERE scale = 0.00004 AND code = 279"
+280,"Isle of Axhme, Scunthorpe & Gainsborough","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Isle of Axhme, Scunthorpe & Gainsborough' WHERE scale = 0.00004 AND code = 280"
+281,Anchme Valley North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Anchme Valley North' WHERE scale = 0.00004 AND code = 281
+281,Anchme Valley South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Anchme Valley South' WHERE scale = 0.00004 AND code = 281
+282,Lincolnshire Wolds North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Lincolnshire Wolds North' WHERE scale = 0.00004 AND code = 282
+283,Louth & Mablethorpe,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Louth & Mablethorpe' WHERE scale = 0.00004 AND code = 283
+284,"Grimsby, Cleethorpes & Immingham","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Grimsby, Cleethorpes & Immingham' WHERE scale = 0.00004 AND code = 284"
+285,Southport & Chorley East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Southport & Chorley East' WHERE scale = 0.00004 AND code = 285
+285,Southport & Chorley WEst,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Southport & Chorley WEst' WHERE scale = 0.00004 AND code = 285
+286,Blackpool & Preston,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Blackpool & Preston' WHERE scale = 0.00004 AND code = 286
+287,West Pennine Moors,UPDATE ScotlandsMountains.dbo.Maps SET description = 'West Pennine Moors' WHERE scale = 0.00004 AND code = 287
+288,"Bradford, Huddersfield E Calerdale North","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Bradford, Huddersfield E Calerdale North' WHERE scale = 0.00004 AND code = 288"
+288,"Bradford, Huddersfield E Calerdale South","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Bradford, Huddersfield E Calerdale South' WHERE scale = 0.00004 AND code = 288"
+289,"Leeds, Harrogate, Wetherby & Pontefract North","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Leeds, Harrogate, Wetherby & Pontefract North' WHERE scale = 0.00004 AND code = 289"
+289,"Leeds, Harrogate, Wetherby & Pontefract South","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Leeds, Harrogate, Wetherby & Pontefract South' WHERE scale = 0.00004 AND code = 289"
+290,"York, Selby & Tadcaster North","UPDATE ScotlandsMountains.dbo.Maps SET description = 'York, Selby & Tadcaster North' WHERE scale = 0.00004 AND code = 290"
+290,"York, Selby & Tadcaster South","UPDATE ScotlandsMountains.dbo.Maps SET description = 'York, Selby & Tadcaster South' WHERE scale = 0.00004 AND code = 290"
+291,Goe & Gilberdyke,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Goe & Gilberdyke' WHERE scale = 0.00004 AND code = 291
+292,Withernsea & Spurn Head,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Withernsea & Spurn Head' WHERE scale = 0.00004 AND code = 292
+292,Withernsea & Spurn Head,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Withernsea & Spurn Head' WHERE scale = 0.00004 AND code = 292
+293,Kingston upon Hull & Beverley,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Kingston upon Hull & Beverley' WHERE scale = 0.00004 AND code = 293
+294,Market Weighton & Yorkshire Wolds Ctrl,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Market Weighton & Yorkshire Wolds Ctrl' WHERE scale = 0.00004 AND code = 294
+295,"Bridlington, Driffield & Hornsea","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Bridlington, Driffield & Hornsea' WHERE scale = 0.00004 AND code = 295"
+296,Lancaster Morecambe & Fleetwood,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Lancaster Morecambe & Fleetwood' WHERE scale = 0.00004 AND code = 296
+297,Lower Wharfedale & Washburn Valley,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Lower Wharfedale & Washburn Valley' WHERE scale = 0.00004 AND code = 297
+298,Nidderdale,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Nidderdale' WHERE scale = 0.00004 AND code = 298
+299,Ripon & Borourghbridge,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ripon & Borourghbridge' WHERE scale = 0.00004 AND code = 299
+300,Howardian Hills & Malton East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Howardian Hills & Malton East' WHERE scale = 0.00004 AND code = 300
+300,Howardian Hills & Malton West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Howardian Hills & Malton West' WHERE scale = 0.00004 AND code = 300
+301,Scarborough Bridlington Flamborough Head,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Scarborough Bridlington Flamborough Head' WHERE scale = 0.00004 AND code = 301
+302,Northallerton & Thirsk,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Northallerton & Thirsk' WHERE scale = 0.00004 AND code = 302
+303,Whitehaven & Workington,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Whitehaven & Workington' WHERE scale = 0.00004 AND code = 303
+304,Darlington & Richmond East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Darlington & Richmond East' WHERE scale = 0.00004 AND code = 304
+304,Darlington & Richmond West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Darlington & Richmond West' WHERE scale = 0.00004 AND code = 304
+305,"Bishop Auckland, Spennymoor & Newtown Aycliffe","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Bishop Auckland, Spennymoor & Newtown Aycliffe' WHERE scale = 0.00004 AND code = 305"
+306,Middlesbrough & Hartlepool,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Middlesbrough & Hartlepool' WHERE scale = 0.00004 AND code = 306
+307,Consett & Derwent Water,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Consett & Derwent Water' WHERE scale = 0.00004 AND code = 307
+308,Durham & Sunderland,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Durham & Sunderland' WHERE scale = 0.00004 AND code = 308
+309,Stranrear & The Rhins North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Stranrear & The Rhins North' WHERE scale = 0.00004 AND code = 309
+309,Stranrear & The Rhins South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Stranrear & The Rhins South' WHERE scale = 0.00004 AND code = 309
+310,Glenluce & Kirkcowan,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Glenluce & Kirkcowan' WHERE scale = 0.00004 AND code = 310
+311,Wigtown Whithorn & The Machars,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Wigtown Whithorn & The Machars' WHERE scale = 0.00004 AND code = 311
+312,Kirkcudbright & Castle Douglas Gatehouse,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Kirkcudbright & Castle Douglas Gatehouse' WHERE scale = 0.00004 AND code = 312
+313,Dumfries & Dalbeattie,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Dumfries & Dalbeattie' WHERE scale = 0.00004 AND code = 313
+314,Sway & Firth,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Sway & Firth' WHERE scale = 0.00004 AND code = 314
+315,"Carlisle, Brampton, Longtown & Gretna Green","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Carlisle, Brampton, Longtown & Gretna Green' WHERE scale = 0.00004 AND code = 315"
+316,Newcastle Upon Tyne East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Newcastle Upon Tyne East' WHERE scale = 0.00004 AND code = 316
+316,Newcastle Upon Tyne West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Newcastle Upon Tyne West' WHERE scale = 0.00004 AND code = 316
+317,Ballantrae Barr & Barhill,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ballantrae Barr & Barhill' WHERE scale = 0.00004 AND code = 317
+317,Ballantrae Barr & Barhill,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ballantrae Barr & Barhill' WHERE scale = 0.00004 AND code = 317
+318,Galloway Forest Park North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Galloway Forest Park North' WHERE scale = 0.00004 AND code = 318
+319,Galloway Forest Park South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Galloway Forest Park South' WHERE scale = 0.00004 AND code = 319
+320,Castle Douglas Loch Ken & New Galloway,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Castle Douglas Loch Ken & New Galloway' WHERE scale = 0.00004 AND code = 320
+321,Nithsdale & Dumfries,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Nithsdale & Dumfries' WHERE scale = 0.00004 AND code = 321
+322,"Annandale, Annan Lockerbie & Beattock North","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Annandale, Annan Lockerbie & Beattock North' WHERE scale = 0.00004 AND code = 322"
+322,"Annandale, Annan Lockerbie & Beattock South","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Annandale, Annan Lockerbie & Beattock South' WHERE scale = 0.00004 AND code = 322"
+323,Eskdale and Castle o'er Forest North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Eskdale and Castle o''er Forest North' WHERE scale = 0.00004 AND code = 323
+323,Eskdale and Castle o'er Forest South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Eskdale and Castle o''er Forest South' WHERE scale = 0.00004 AND code = 323
+324,Liddesdale & Kershope Forest,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Liddesdale & Kershope Forest' WHERE scale = 0.00004 AND code = 324
+325,Morpeth & Blyth & Ashington & Longframlington,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Morpeth & Blyth & Ashington & Longframlington' WHERE scale = 0.00004 AND code = 325
+326,Ayr & Troon North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ayr & Troon North' WHERE scale = 0.00004 AND code = 326
+326,Ayr & Troon South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ayr & Troon South' WHERE scale = 0.00004 AND code = 326
+327,Cumnock & Dalmellington,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Cumnock & Dalmellington' WHERE scale = 0.00004 AND code = 327
+328,Sanquhar & New Cumnock North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Sanquhar & New Cumnock North' WHERE scale = 0.00004 AND code = 328
+328,Sanquhar & New Cumnock South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Sanquhar & New Cumnock South' WHERE scale = 0.00004 AND code = 328
+329,Lowther Hills Sanquhar & Leadhills,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Lowther Hills Sanquhar & Leadhills' WHERE scale = 0.00004 AND code = 329
+330,Moffat & St Mary's Loch,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Moffat & St Mary''s Loch' WHERE scale = 0.00004 AND code = 330
+331,Teviotdale South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Teviotdale South' WHERE scale = 0.00004 AND code = 331
+332,Alnwick & Amble Craster & Whittingham,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Alnwick & Amble Craster & Whittingham' WHERE scale = 0.00004 AND code = 332
+333,Kilmarnock & Irvine,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Kilmarnock & Irvine' WHERE scale = 0.00004 AND code = 333
+334,East Kilbride Galston & Darvel,UPDATE ScotlandsMountains.dbo.Maps SET description = 'East Kilbride Galston & Darvel' WHERE scale = 0.00004 AND code = 334
+335,Lanark & Tinto Hills,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Lanark & Tinto Hills' WHERE scale = 0.00004 AND code = 335
+336,Biggar & Broughton,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Biggar & Broughton' WHERE scale = 0.00004 AND code = 336
+337,Peebles & Interleithen,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Peebles & Interleithen' WHERE scale = 0.00004 AND code = 337
+338,Galashiels Selkirk & Melrose,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Galashiels Selkirk & Melrose' WHERE scale = 0.00004 AND code = 338
+339,Kelso & Cdstream & Lower Tweed Valley East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Kelso & Cdstream & Lower Tweed Valley East' WHERE scale = 0.00004 AND code = 339
+339,Kelso & Cdstream & Lower Tweed Valley West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Kelso & Cdstream & Lower Tweed Valley West' WHERE scale = 0.00004 AND code = 339
+340,Holy Island & Bamburgh,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Holy Island & Bamburgh' WHERE scale = 0.00004 AND code = 340
+341,Greenock Largs & Millport North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Greenock Largs & Millport North' WHERE scale = 0.00004 AND code = 341
+341,Greenock Largs & Millport South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Greenock Largs & Millport South' WHERE scale = 0.00004 AND code = 341
+342,Glasgow,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Glasgow' WHERE scale = 0.00004 AND code = 342
+343,Motherwell & Coatbridge,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Motherwell & Coatbridge' WHERE scale = 0.00004 AND code = 343
+344,Pentland Hills,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Pentland Hills' WHERE scale = 0.00004 AND code = 344
+345,Lammermuir Hills East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Lammermuir Hills East' WHERE scale = 0.00004 AND code = 345
+345,Lammermuir Hills West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Lammermuir Hills West' WHERE scale = 0.00004 AND code = 345
+346,Berwick-upon-Tweed,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Berwick-upon-Tweed' WHERE scale = 0.00004 AND code = 346
+347,Loch Lomond South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Loch Lomond South' WHERE scale = 0.00004 AND code = 347
+348,Campsie Fells,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Campsie Fells' WHERE scale = 0.00004 AND code = 348
+349,Falkirk Cumbernauld & Livingston East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Falkirk Cumbernauld & Livingston East' WHERE scale = 0.00004 AND code = 349
+349,Falkirk Cumbernauld & Livingston West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Falkirk Cumbernauld & Livingston West' WHERE scale = 0.00004 AND code = 349
+350,Edinburgh,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Edinburgh' WHERE scale = 0.00004 AND code = 350
+351,Dunbar & North Berwick East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Dunbar & North Berwick East' WHERE scale = 0.00004 AND code = 351
+351,Dunbar & North Berwick West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Dunbar & North Berwick West' WHERE scale = 0.00004 AND code = 351
+352,Slay South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Slay South' WHERE scale = 0.00004 AND code = 352
+353,Islay North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Islay North' WHERE scale = 0.00004 AND code = 353
+353,Islay South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Islay South' WHERE scale = 0.00004 AND code = 353
+354,Consay & Oronsay,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Consay & Oronsay' WHERE scale = 0.00004 AND code = 354
+354,Consay & Oronsay,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Consay & Oronsay' WHERE scale = 0.00004 AND code = 354
+355,Jura & Scarba,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Jura & Scarba' WHERE scale = 0.00004 AND code = 355
+355,Jura & Scarba North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Jura & Scarba North' WHERE scale = 0.00004 AND code = 355
+355,Jura & Scarba South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Jura & Scarba South' WHERE scale = 0.00004 AND code = 355
+356,Kintyre South Campeltown North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Kintyre South Campeltown North' WHERE scale = 0.00004 AND code = 356
+356,Kintyre South Campeltown South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Kintyre South Campeltown South' WHERE scale = 0.00004 AND code = 356
+357,Kintyre North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Kintyre North' WHERE scale = 0.00004 AND code = 357
+357,Kintyre South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Kintyre South' WHERE scale = 0.00004 AND code = 357
+358,Lochgilphead & Knapdale North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Lochgilphead & Knapdale North' WHERE scale = 0.00004 AND code = 358
+358,Lochgilphead & Knapdale South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Lochgilphead & Knapdale South' WHERE scale = 0.00004 AND code = 358
+359,Oban Kerrera & Loch Melfort,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Oban Kerrera & Loch Melfort' WHERE scale = 0.00004 AND code = 359
+359,Oban Kerrera & Loch Melfort,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Oban Kerrera & Loch Melfort' WHERE scale = 0.00004 AND code = 359
+360,Loch Awe & Inveraray North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Loch Awe & Inveraray North' WHERE scale = 0.00004 AND code = 360
+360,Loch Awe & Inveraray South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Loch Awe & Inveraray South' WHERE scale = 0.00004 AND code = 360
+361,Isle of Arran North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Isle of Arran North' WHERE scale = 0.00004 AND code = 361
+361,Isle of Arran South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Isle of Arran South' WHERE scale = 0.00004 AND code = 361
+362,Cowal West & Isle of Bute North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Cowal West & Isle of Bute North' WHERE scale = 0.00004 AND code = 362
+362,Cowal West & Isle of Bute South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Cowal West & Isle of Bute South' WHERE scale = 0.00004 AND code = 362
+363,Cowal East Dunoon & Inveraray North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Cowal East Dunoon & Inveraray North' WHERE scale = 0.00004 AND code = 363
+363,Cowal East Dunoon & Inveraray South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Cowal East Dunoon & Inveraray South' WHERE scale = 0.00004 AND code = 363
+364,Loch Lomond North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Loch Lomond North' WHERE scale = 0.00004 AND code = 364
+364,Loch Lomond South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Loch Lomond South' WHERE scale = 0.00004 AND code = 364
+365,The Trossachs North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'The Trossachs North' WHERE scale = 0.00004 AND code = 365
+365,The Trossachs South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'The Trossachs South' WHERE scale = 0.00004 AND code = 365
+366,Stirling & Ochil Hills East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Stirling & Ochil Hills East' WHERE scale = 0.00004 AND code = 366
+366,Stirling & Ochil Hills West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Stirling & Ochil Hills West' WHERE scale = 0.00004 AND code = 366
+367,Dunfermline Kirkcaldy & Glenrothes Sth,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Dunfermline Kirkcaldy & Glenrothes Sth' WHERE scale = 0.00004 AND code = 367
+367,Dunfermline Kirkcaldy & Glenrothes East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Dunfermline Kirkcaldy & Glenrothes East' WHERE scale = 0.00004 AND code = 367
+367,Dunfermline Kirkcaldy & Glenrothes West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Dunfermline Kirkcaldy & Glenrothes West' WHERE scale = 0.00004 AND code = 367
+368,Crieff Comrie & Glen Artney,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Crieff Comrie & Glen Artney' WHERE scale = 0.00004 AND code = 368
+368,Crieff Comrie & Glen Artney West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Crieff Comrie & Glen Artney West' WHERE scale = 0.00004 AND code = 368
+369,Perth & Kinross,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Perth & Kinross' WHERE scale = 0.00004 AND code = 369
+370,Glenrothes North Falkland & Lomond Hil,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Glenrothes North Falkland & Lomond Hil' WHERE scale = 0.00004 AND code = 370
+371,St Andrews & East Fife,UPDATE ScotlandsMountains.dbo.Maps SET description = 'St Andrews & East Fife' WHERE scale = 0.00004 AND code = 371
+371,St Andrews & East Fife North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'St Andrews & East Fife North' WHERE scale = 0.00004 AND code = 371
+372,Coll & Tiree North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Coll & Tiree North' WHERE scale = 0.00004 AND code = 372
+372,Coll & Tiree South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Coll & Tiree South' WHERE scale = 0.00004 AND code = 372
+372,Coll & Tiree South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Coll & Tiree South' WHERE scale = 0.00004 AND code = 372
+373,Iona Staffa & Ross of Mull,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Iona Staffa & Ross of Mull' WHERE scale = 0.00004 AND code = 373
+373,Iona Staffa & Ross of Mull,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Iona Staffa & Ross of Mull' WHERE scale = 0.00004 AND code = 373
+374,Isle of Mull North & Tobermory East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Isle of Mull North & Tobermory East' WHERE scale = 0.00004 AND code = 374
+374,Isle of Mull North & Tobermory West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Isle of Mull North & Tobermory West' WHERE scale = 0.00004 AND code = 374
+375,Isle of Mull East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Isle of Mull East' WHERE scale = 0.00004 AND code = 375
+375,Isle of MullWest,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Isle of MullWest' WHERE scale = 0.00004 AND code = 375
+376,Oban & North Lorn,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Oban & North Lorn' WHERE scale = 0.00004 AND code = 376
+376,Oban & North Lorn,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Oban & North Lorn' WHERE scale = 0.00004 AND code = 376
+377,Loch Etive & Glen Orchy East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Loch Etive & Glen Orchy East' WHERE scale = 0.00004 AND code = 377
+377,Loch Etive & Glen Orchy West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Loch Etive & Glen Orchy West' WHERE scale = 0.00004 AND code = 377
+378,Ben Lawers & Glen Lyon East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ben Lawers & Glen Lyon East' WHERE scale = 0.00004 AND code = 378
+378,Ben Lawers & Glen Lyon West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ben Lawers & Glen Lyon West' WHERE scale = 0.00004 AND code = 378
+379,Dunkeld Aberfeldy & Glen Almond East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Dunkeld Aberfeldy & Glen Almond East' WHERE scale = 0.00004 AND code = 379
+379,Dunkeld Aberfeldy & Glen Almond West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Dunkeld Aberfeldy & Glen Almond West' WHERE scale = 0.00004 AND code = 379
+380,Dundee & Sidlaw Hills East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Dundee & Sidlaw Hills East' WHERE scale = 0.00004 AND code = 380
+380,Dundee & Sidlaw Hills West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Dundee & Sidlaw Hills West' WHERE scale = 0.00004 AND code = 380
+381,Blairgowrie Kirriemuir & Glamis,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Blairgowrie Kirriemuir & Glamis' WHERE scale = 0.00004 AND code = 381
+382,Arbroath Montrose & Carnoustie North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Arbroath Montrose & Carnoustie North' WHERE scale = 0.00004 AND code = 382
+382,Arbroath Montrose & Carnoustie South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Arbroath Montrose & Carnoustie South' WHERE scale = 0.00004 AND code = 382
+383,Morvern & Lochaline East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Morvern & Lochaline East' WHERE scale = 0.00004 AND code = 383
+383,Morvern & Lochaline West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Morvern & Lochaline West' WHERE scale = 0.00004 AND code = 383
+384,Glen Coe & Glen Etive,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Glen Coe & Glen Etive' WHERE scale = 0.00004 AND code = 384
+385,Rannoch Moor & Ben Alder East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Rannoch Moor & Ben Alder East' WHERE scale = 0.00004 AND code = 385
+385,Rannoch Moor & Ben Alder West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Rannoch Moor & Ben Alder West' WHERE scale = 0.00004 AND code = 385
+386,Pitlochry & Loch Tummel East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Pitlochry & Loch Tummel East' WHERE scale = 0.00004 AND code = 386
+386,Pitlochry & Loch Tummel West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Pitlochry & Loch Tummel West' WHERE scale = 0.00004 AND code = 386
+387,Glen Shee & Braemar North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Glen Shee & Braemar North' WHERE scale = 0.00004 AND code = 387
+387,Glen Shee & Braemar South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Glen Shee & Braemar South' WHERE scale = 0.00004 AND code = 387
+388,Lochnagar Glen Muick & Glen Clova North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Lochnagar Glen Muick & Glen Clova North' WHERE scale = 0.00004 AND code = 388
+388,Lochnagar Glen Muick & Glen Clova South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Lochnagar Glen Muick & Glen Clova South' WHERE scale = 0.00004 AND code = 388
+389,Forfar Brechin & Edzell,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Forfar Brechin & Edzell' WHERE scale = 0.00004 AND code = 389
+390,Ardnamurchan,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ardnamurchan' WHERE scale = 0.00004 AND code = 390
+390,Ardnamurchan East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ardnamurchan East' WHERE scale = 0.00004 AND code = 390
+390,Ardnamurchan West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ardnamurchan West' WHERE scale = 0.00004 AND code = 390
+391,Ardgour & Strontian,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ardgour & Strontian' WHERE scale = 0.00004 AND code = 391
+392,Ben Nevis,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ben Nevis' WHERE scale = 0.00004 AND code = 392
+393,Ben Alder Loch Ericht & Loch Laggan,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ben Alder Loch Ericht & Loch Laggan' WHERE scale = 0.00004 AND code = 393
+394,Athl East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Athl East' WHERE scale = 0.00004 AND code = 394
+394,Athl West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Athl West' WHERE scale = 0.00004 AND code = 394
+395,Glen Esk & Glen Tanar,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Glen Esk & Glen Tanar' WHERE scale = 0.00004 AND code = 395
+396,Stonehaven Inverbervie & Laurencekirk,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Stonehaven Inverbervie & Laurencekirk' WHERE scale = 0.00004 AND code = 396
+396,Stonehaven Inverbervie & Laurencekirk,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Stonehaven Inverbervie & Laurencekirk' WHERE scale = 0.00004 AND code = 396
+397,Rum Eigg Muck Canna & Solay,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Rum Eigg Muck Canna & Solay' WHERE scale = 0.00004 AND code = 397
+397,Rum Eigg Muck Canna & Solay,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Rum Eigg Muck Canna & Solay' WHERE scale = 0.00004 AND code = 397
+397,Rum Eigg Muck Canna & Solay,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Rum Eigg Muck Canna & Solay' WHERE scale = 0.00004 AND code = 397
+398,Forfar Brechin & Edzell East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Forfar Brechin & Edzell East' WHERE scale = 0.00004 AND code = 398
+398,Forfar Brechin & Edzell West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Forfar Brechin & Edzell West' WHERE scale = 0.00004 AND code = 398
+399,Loch Arkaig,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Loch Arkaig' WHERE scale = 0.00004 AND code = 399
+400,Loch Lochy & Glen Roy,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Loch Lochy & Glen Roy' WHERE scale = 0.00004 AND code = 400
+401,Loch Laggan & Creag Meagaidh,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Loch Laggan & Creag Meagaidh' WHERE scale = 0.00004 AND code = 401
+402,Strathspey,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Strathspey' WHERE scale = 0.00004 AND code = 402
+403,Cairn Gorm & Aviemore North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Cairn Gorm & Aviemore North' WHERE scale = 0.00004 AND code = 403
+403,Cairn Gorm & Aviemore South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Cairn Gorm & Aviemore South' WHERE scale = 0.00004 AND code = 403
+404,Braemar Tomintoul & Glen Avon North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Braemar Tomintoul & Glen Avon North' WHERE scale = 0.00004 AND code = 404
+404,Braemar Tomintoul & Glen Avon South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Braemar Tomintoul & Glen Avon South' WHERE scale = 0.00004 AND code = 404
+405,Aboyne Alford & Strathdon East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Aboyne Alford & Strathdon East' WHERE scale = 0.00004 AND code = 405
+405,Aboyne Alford & Strathdon West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Aboyne Alford & Strathdon West' WHERE scale = 0.00004 AND code = 405
+406,Aberdeen & Banchory East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Aberdeen & Banchory East' WHERE scale = 0.00004 AND code = 406
+406,Aberdeen & Banchory West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Aberdeen & Banchory West' WHERE scale = 0.00004 AND code = 406
+407,Skye - Dunvegan,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Skye - Dunvegan' WHERE scale = 0.00004 AND code = 407
+408,Skye - Trotternish & The Storr,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Skye - Trotternish & The Storr' WHERE scale = 0.00004 AND code = 408
+408,Skye - Trotternish & The Storr,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Skye - Trotternish & The Storr' WHERE scale = 0.00004 AND code = 408
+409,Raasay Rona & Scalpay,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Raasay Rona & Scalpay' WHERE scale = 0.00004 AND code = 409
+409,Raasay Rona & Scalpay,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Raasay Rona & Scalpay' WHERE scale = 0.00004 AND code = 409
+409,Raasay Rona & Scalpay,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Raasay Rona & Scalpay' WHERE scale = 0.00004 AND code = 409
+410,Skye - Portree & Bracadale,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Skye - Portree & Bracadale' WHERE scale = 0.00004 AND code = 410
+411,Skye - Cuillin Hills,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Skye - Cuillin Hills' WHERE scale = 0.00004 AND code = 411
+412,Skye - Sleat,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Skye - Sleat' WHERE scale = 0.00004 AND code = 412
+412,Skye - Sleat,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Skye - Sleat' WHERE scale = 0.00004 AND code = 412
+413,Knoydart Loch Hourn & Loch Duich North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Knoydart Loch Hourn & Loch Duich North' WHERE scale = 0.00004 AND code = 413
+413,Knoydart Loch Hourn & Loch Duich South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Knoydart Loch Hourn & Loch Duich South' WHERE scale = 0.00004 AND code = 413
+414,Glan Shiel & Kintail Forest North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Glan Shiel & Kintail Forest North' WHERE scale = 0.00004 AND code = 414
+414,Glan Shiel & Kintail Forest South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Glan Shiel & Kintail Forest South' WHERE scale = 0.00004 AND code = 414
+415,Glen Affric & Glen Moriston,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Glen Affric & Glen Moriston' WHERE scale = 0.00004 AND code = 415
+416,Inverness Loch Ness & Culloden North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Inverness Loch Ness & Culloden North' WHERE scale = 0.00004 AND code = 416
+416,Inverness Loch Ness & Culloden South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Inverness Loch Ness & Culloden South' WHERE scale = 0.00004 AND code = 416
+417,Monadhliath Mountains North & Strathdea,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Monadhliath Mountains North & Strathdea' WHERE scale = 0.00004 AND code = 417
+417,Grantown-on-Spey & Hills of Cromdale,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Grantown-on-Spey & Hills of Cromdale' WHERE scale = 0.00004 AND code = 417
+418,Lochindorb Grantown-on-Spey & Carrbrid,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Lochindorb Grantown-on-Spey & Carrbrid' WHERE scale = 0.00004 AND code = 418
+419,Grantown-on-Spey & Hills of Cromdale North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Grantown-on-Spey & Hills of Cromdale North' WHERE scale = 0.00004 AND code = 419
+419,Grantown-on-Spey & Hills of Cromdale North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Grantown-on-Spey & Hills of Cromdale North' WHERE scale = 0.00004 AND code = 419
+419,Grantown-on-Spey & Hills of Cromdale South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Grantown-on-Spey & Hills of Cromdale South' WHERE scale = 0.00004 AND code = 419
+419,Grantown-on-Spey & Hills of Cromdale South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Grantown-on-Spey & Hills of Cromdale South' WHERE scale = 0.00004 AND code = 419
+420,Coreen Hills & Glenlivet East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Coreen Hills & Glenlivet East' WHERE scale = 0.00004 AND code = 420
+420,Coreen Hills & Glenlivet West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Coreen Hills & Glenlivet West' WHERE scale = 0.00004 AND code = 420
+421,Ellon & Inverurie East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ellon & Inverurie East' WHERE scale = 0.00004 AND code = 421
+421,Ellon & Inverurie West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ellon & Inverurie West' WHERE scale = 0.00004 AND code = 421
+422,Nairn & Cawdor,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Nairn & Cawdor' WHERE scale = 0.00004 AND code = 422
+423,Elgin Forres & Lossiemouth,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Elgin Forres & Lossiemouth' WHERE scale = 0.00004 AND code = 423
+423,Elgin Forres & Lossiemouth,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Elgin Forres & Lossiemouth' WHERE scale = 0.00004 AND code = 423
+424,Buckie & Keith North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Buckie & Keith North' WHERE scale = 0.00004 AND code = 424
+424,Buckie & Keith South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Buckie & Keith South' WHERE scale = 0.00004 AND code = 424
+425,Huntly & Cullen North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Huntly & Cullen North' WHERE scale = 0.00004 AND code = 425
+425,Huntly & Cullen South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Huntly & Cullen South' WHERE scale = 0.00004 AND code = 425
+426,Banff Macduff & Turriff North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Banff Macduff & Turriff North' WHERE scale = 0.00004 AND code = 426
+426,Banff Macduff & Turriff South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Banff Macduff & Turriff South' WHERE scale = 0.00004 AND code = 426
+427,Peterhead & Fraserburgh North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Peterhead & Fraserburgh North' WHERE scale = 0.00004 AND code = 427
+427,Peterhead & Fraserburgh South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Peterhead & Fraserburgh South' WHERE scale = 0.00004 AND code = 427
+428,Kyle of Lochalsh Plockton & Applecross North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Kyle of Lochalsh Plockton & Applecross North' WHERE scale = 0.00004 AND code = 428
+428,Kyle of Lochalsh Plockton & Applecross South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Kyle of Lochalsh Plockton & Applecross South' WHERE scale = 0.00004 AND code = 428
+429,Glen Carron & West Monar,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Glen Carron & West Monar' WHERE scale = 0.00004 AND code = 429
+430,"Loch Monar Glen, Cannich & Glen Strathfarrar","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Loch Monar Glen, Cannich & Glen Strathfarrar' WHERE scale = 0.00004 AND code = 430"
+430,"Loch Monar Glen, Cannich & Glen Strathfarrar","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Loch Monar Glen, Cannich & Glen Strathfarrar' WHERE scale = 0.00004 AND code = 430"
+431,Glen Urquhart & Strathglass,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Glen Urquhart & Strathglass' WHERE scale = 0.00004 AND code = 431
+432,Black Isle,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Black Isle' WHERE scale = 0.00004 AND code = 432
+432,Black Isle,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Black Isle' WHERE scale = 0.00004 AND code = 432
+433,Torridon - Beinn Eighe & Liathach,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Torridon - Beinn Eighe & Liathach' WHERE scale = 0.00004 AND code = 433
+434,Gairloch & Loch Ewe,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Gairloch & Loch Ewe' WHERE scale = 0.00004 AND code = 434
+435,An Teallach & Slioch North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'An Teallach & Slioch North' WHERE scale = 0.00004 AND code = 435
+435,An Teallach & Slioch South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'An Teallach & Slioch South' WHERE scale = 0.00004 AND code = 435
+436,Beinn Dearg & Loch Fannich North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Beinn Dearg & Loch Fannich North' WHERE scale = 0.00004 AND code = 436
+436,Beinn Dearg & Loch Fannich North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Beinn Dearg & Loch Fannich North' WHERE scale = 0.00004 AND code = 436
+436,Beinn Dearg & Loch Fannich South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Beinn Dearg & Loch Fannich South' WHERE scale = 0.00004 AND code = 436
+436,Beinn Dearg & Loch Fannich South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Beinn Dearg & Loch Fannich South' WHERE scale = 0.00004 AND code = 436
+437,Ben Wyvis & Strathpeffer North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ben Wyvis & Strathpeffer North' WHERE scale = 0.00004 AND code = 437
+437,Ben Wyvis & Strathpeffer South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ben Wyvis & Strathpeffer South' WHERE scale = 0.00004 AND code = 437
+438,Dornoch & Tain East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Dornoch & Tain East' WHERE scale = 0.00004 AND code = 438
+438,Dornoch & Tain West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Dornoch & Tain West' WHERE scale = 0.00004 AND code = 438
+439,Coigach & Summer Isles East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Coigach & Summer Isles East' WHERE scale = 0.00004 AND code = 439
+439,Coigach & Summer Isles West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Coigach & Summer Isles West' WHERE scale = 0.00004 AND code = 439
+440,Glen Cassley & Glen Oykel North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Glen Cassley & Glen Oykel North' WHERE scale = 0.00004 AND code = 440
+440,Glen Cassley & Glen Oykel South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Glen Cassley & Glen Oykel South' WHERE scale = 0.00004 AND code = 440
+441,Lairg Bonar Bridge & Golspie East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Lairg Bonar Bridge & Golspie East' WHERE scale = 0.00004 AND code = 441
+441,Lairg Bonar Bridge & Golspie West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Lairg Bonar Bridge & Golspie West' WHERE scale = 0.00004 AND code = 441
+442,Assynt & Lochinver East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Assynt & Lochinver East' WHERE scale = 0.00004 AND code = 442
+442,Assynt & Lochinver West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Assynt & Lochinver West' WHERE scale = 0.00004 AND code = 442
+443,Ben Klibreck & Ben Armine,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ben Klibreck & Ben Armine' WHERE scale = 0.00004 AND code = 443
+443,Ben Klibreck & Ben Armine,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ben Klibreck & Ben Armine' WHERE scale = 0.00004 AND code = 443
+444,Helmsdale & Strath of Kildonan East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Helmsdale & Strath of Kildonan East' WHERE scale = 0.00004 AND code = 444
+444,Helmsdale & Strath of Kildonan East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Helmsdale & Strath of Kildonan East' WHERE scale = 0.00004 AND code = 444
+444,Helmsdale & Strath of Kildonan West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Helmsdale & Strath of Kildonan West' WHERE scale = 0.00004 AND code = 444
+444,Helmsdale & Strath of Kildonan West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Helmsdale & Strath of Kildonan West' WHERE scale = 0.00004 AND code = 444
+445,Foinaven Arkle Kylesku & Scourie,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Foinaven Arkle Kylesku & Scourie' WHERE scale = 0.00004 AND code = 445
+446,Durness & Cape Wrath,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Durness & Cape Wrath' WHERE scale = 0.00004 AND code = 446
+447,Ben Hope Ben Loyal & Kyle of Tongue North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ben Hope Ben Loyal & Kyle of Tongue North' WHERE scale = 0.00004 AND code = 447
+447,Ben Hope Ben Loyal & Kyle of Tongue South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Ben Hope Ben Loyal & Kyle of Tongue South' WHERE scale = 0.00004 AND code = 447
+448,Strath Naver - Srath Nabhair & Loch Loy North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Strath Naver - Srath Nabhair & Loch Loy North' WHERE scale = 0.00004 AND code = 448
+448,Strath Naver - Srath Nabhair & Loch Loy South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Strath Naver - Srath Nabhair & Loch Loy South' WHERE scale = 0.00004 AND code = 448
+449,Strath Halladale & Strathy Point North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Strath Halladale & Strathy Point North' WHERE scale = 0.00004 AND code = 449
+449,Strath Halladale & Strathy Point South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Strath Halladale & Strathy Point South' WHERE scale = 0.00004 AND code = 449
+450,Wick & The Flow Country East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Wick & The Flow Country East' WHERE scale = 0.00004 AND code = 450
+450,Wick & The Flow Country West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Wick & The Flow Country West' WHERE scale = 0.00004 AND code = 450
+451,Thurso & John o'Groats,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Thurso & John o''Groats' WHERE scale = 0.00004 AND code = 451
+451,Thurso & John o'Groats East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Thurso & John o''Groats East' WHERE scale = 0.00004 AND code = 451
+451,Thurso & John o'Groats West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Thurso & John o''Groats West' WHERE scale = 0.00004 AND code = 451
+452,Barra & Vatersay,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Barra & Vatersay' WHERE scale = 0.00004 AND code = 452
+452,Barra & Vatersay North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Barra & Vatersay North' WHERE scale = 0.00004 AND code = 452
+452,Barra & Vatersay South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Barra & Vatersay South' WHERE scale = 0.00004 AND code = 452
+453,Benbecula & South Uist,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Benbecula & South Uist' WHERE scale = 0.00004 AND code = 453
+453,Benbecula & South Uist North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Benbecula & South Uist North' WHERE scale = 0.00004 AND code = 453
+453,Benbecula & South Uist South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Benbecula & South Uist South' WHERE scale = 0.00004 AND code = 453
+454,North Uist & Berneray East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'North Uist & Berneray East' WHERE scale = 0.00004 AND code = 454
+454,North Uist & Berneray East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'North Uist & Berneray East' WHERE scale = 0.00004 AND code = 454
+454,North Uist & Berneray East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'North Uist & Berneray East' WHERE scale = 0.00004 AND code = 454
+454,North Uist & Berneray West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'North Uist & Berneray West' WHERE scale = 0.00004 AND code = 454
+454,North Uist & Berneray West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'North Uist & Berneray West' WHERE scale = 0.00004 AND code = 454
+454,North Uist & Berneray West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'North Uist & Berneray West' WHERE scale = 0.00004 AND code = 454
+455,South Harris,UPDATE ScotlandsMountains.dbo.Maps SET description = 'South Harris' WHERE scale = 0.00004 AND code = 455
+455,South Harris,UPDATE ScotlandsMountains.dbo.Maps SET description = 'South Harris' WHERE scale = 0.00004 AND code = 455
+456,North Harris,UPDATE ScotlandsMountains.dbo.Maps SET description = 'North Harris' WHERE scale = 0.00004 AND code = 456
+456,North Harris,UPDATE ScotlandsMountains.dbo.Maps SET description = 'North Harris' WHERE scale = 0.00004 AND code = 456
+457,South East Lewis,UPDATE ScotlandsMountains.dbo.Maps SET description = 'South East Lewis' WHERE scale = 0.00004 AND code = 457
+458,West Lewis,UPDATE ScotlandsMountains.dbo.Maps SET description = 'West Lewis' WHERE scale = 0.00004 AND code = 458
+458,West Lewis,UPDATE ScotlandsMountains.dbo.Maps SET description = 'West Lewis' WHERE scale = 0.00004 AND code = 458
+459,Central Lewis & Stornaway,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Central Lewis & Stornaway' WHERE scale = 0.00004 AND code = 459
+459,Central Lewis & Stornaway,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Central Lewis & Stornaway' WHERE scale = 0.00004 AND code = 459
+459,Central Lewis & Stornaway East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Central Lewis & Stornaway East' WHERE scale = 0.00004 AND code = 459
+459,Central Lewis & Stornaway West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Central Lewis & Stornaway West' WHERE scale = 0.00004 AND code = 459
+460,North Lewis,UPDATE ScotlandsMountains.dbo.Maps SET description = 'North Lewis' WHERE scale = 0.00004 AND code = 460
+460,North Lewis East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'North Lewis East' WHERE scale = 0.00004 AND code = 460
+460,North Lewis West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'North Lewis West' WHERE scale = 0.00004 AND code = 460
+461,Orkney - East Mainland North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Orkney - East Mainland North' WHERE scale = 0.00004 AND code = 461
+461,Orkney - East Mainland South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Orkney - East Mainland South' WHERE scale = 0.00004 AND code = 461
+462,Orkney - Hoy South Walls & Flotta,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Orkney - Hoy South Walls & Flotta' WHERE scale = 0.00004 AND code = 462
+463,Orkney - West Mainland,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Orkney - West Mainland' WHERE scale = 0.00004 AND code = 463
+464,Orkney - Westray Papa Westray Rousay,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Orkney - Westray Papa Westray Rousay' WHERE scale = 0.00004 AND code = 464
+465,"Orkney - Sanday, Eday North Ronaldsay & Stronsay","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Orkney - Sanday, Eday North Ronaldsay & Stronsay' WHERE scale = 0.00004 AND code = 465"
+465,"Orkney - Sanday, Eday North Ronaldsay & Stronsay North","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Orkney - Sanday, Eday North Ronaldsay & Stronsay North' WHERE scale = 0.00004 AND code = 465"
+465,"Orkney - Sanday, Eday North Ronaldsay & Stronsay South","UPDATE ScotlandsMountains.dbo.Maps SET description = 'Orkney - Sanday, Eday North Ronaldsay & Stronsay South' WHERE scale = 0.00004 AND code = 465"
+466,Shetland - Mainland South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Shetland - Mainland South' WHERE scale = 0.00004 AND code = 466
+466,Shetland - Mainland South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Shetland - Mainland South' WHERE scale = 0.00004 AND code = 466
+466,Shetland - Mainland South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Shetland - Mainland South' WHERE scale = 0.00004 AND code = 466
+467,Shetland - Mainland Central East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Shetland - Mainland Central East' WHERE scale = 0.00004 AND code = 467
+467,Shetland - Mainland Central West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Shetland - Mainland Central West' WHERE scale = 0.00004 AND code = 467
+467,Shetland - Mainland Central West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Shetland - Mainland Central West' WHERE scale = 0.00004 AND code = 467
+468,Shetland - Mainland North East,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Shetland - Mainland North East' WHERE scale = 0.00004 AND code = 468
+469,Shetland - Mainland North West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Shetland - Mainland North West' WHERE scale = 0.00004 AND code = 469
+469,Shetland - Mainland South West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Shetland - Mainland South West' WHERE scale = 0.00004 AND code = 469
+469,Shetland - Mainland South West,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Shetland - Mainland South West' WHERE scale = 0.00004 AND code = 469
+470,Shetland - Unst Yell & Fetlar,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Shetland - Unst Yell & Fetlar' WHERE scale = 0.00004 AND code = 470
+470,Shetland - Unst Yell & Fetlar North,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Shetland - Unst Yell & Fetlar North' WHERE scale = 0.00004 AND code = 470
+470,Shetland - Unst Yell & Fetlar South,UPDATE ScotlandsMountains.dbo.Maps SET description = 'Shetland - Unst Yell & Fetlar South' WHERE scale = 0.00004 AND code = 470
