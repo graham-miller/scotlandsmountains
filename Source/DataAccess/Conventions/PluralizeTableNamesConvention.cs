@@ -1,7 +1,11 @@
-﻿using FluentNHibernate.Conventions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using FluentNHibernate.Conventions;
 using FluentNHibernate.Conventions.Instances;
 
-namespace ScotlandsMountains.DataAccess.Conventions
+namespace DataAccess.Conventions
 {
     public class PluralizeTableNamesConvention : IClassConvention
     {

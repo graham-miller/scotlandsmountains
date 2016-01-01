@@ -6,7 +6,7 @@
 
             $.ajax(options.source, {
                 success: function (data) {
-                    var hideInfoboxOnMouseout = true;
+
                     var mountains = data.Data;
                     for (var i = mountains.length - 1; i >= 0; i--) {
                         var mountain = mountains[i];
@@ -24,7 +24,6 @@
                         pushpin.mountain = mountain;
 
                         maps.Events.addHandler(pushpin, "click", function (e) {
-                            hideInfoboxOnMouseout = false;
                             window.location.href = "#/mountains/" + e.target.mountain.id + "/" + e.target.mountain.name;
                         });
 
@@ -40,10 +39,7 @@
 
                         maps.Events.addHandler(pushpin, "mouseout", function () {
                             options.map.getRootElement().style.cursor = "url(http://ecn.dev.virtualearth.net/mapcontrol/v7.0/cursors/grab.cur), move";
-                            if (hideInfoboxOnMouseout) {
-                                options.infobox.setOptions({ visible: false });
-                            }
-                            hideInfoboxOnMouseout = true;
+                            options.infobox.setOptions({ visible: false });
                         });
 
                         options.layer.push(pushpin);

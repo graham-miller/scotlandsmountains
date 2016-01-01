@@ -19,8 +19,8 @@
 
             $.ajax("/api/mountains/" + bindings.id).done(function(data) {
                 var mountain = data.Data;
-                document.title = mountain.name + " on Scotland's Mountains";
-                map.navigateTo(mountain);
+                document.title = "Scotland's Mountains | " + mountain.name;
+                map.navigateTo(mountain.latitude, mountain.longitude);
             });
         });
 

@@ -34,14 +34,12 @@
         })
         .data("ui-autocomplete")._renderItem = function (ul, item) {
             return $('<li class="search-result">')
-                .append(
-                    '<a>' +
-                        '<div title="' + item.name + '">' + item.name + '</div>' +
-                        '<div title="' + item.description + '">' +
-                            item.description +
-                        '</div>' +
-                    '</a>')
-                .appendTo(ul);
+               .append(
+                   '<a>' +
+                       '<div title="' + item.name + '">' + item.name + '</div>' +
+                       '<div title="' + item.description + '">' + item.description + '</div>' +
+                   '</a>')
+               .appendTo(ul);
         };
     };
 

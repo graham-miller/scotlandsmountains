@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using DataAccess;
 using NUnit.Framework;
-using ScotlandsMountains.DataAccess;
 using ScotlandsMountains.Domain.Dobih.Csv;
 
 namespace ScotlandsMountains.IntegrationTests
@@ -13,7 +13,7 @@ namespace ScotlandsMountains.IntegrationTests
         [Test]
         public void CreateDatabase()
         {
-            NHibernateBootstrapper.Bootstrap();
+            NHibernateBootstrapper.Bootstrap(GetConnectionString());
             NHibernateBootstrapper.CreateSchema();
         }
 
@@ -22,12 +22,15 @@ namespace ScotlandsMountains.IntegrationTests
         {
             var sut = new Importer(GetPathToDobihCsv());
 
-            NHibernateBootstrapper.Bootstrap();
+            NHibernateBootstrapper.Bootstrap(GetConnectionString());
             NHibernateBootstrapper.CreateSchema();
 
             using (var session = NHibernateBootstrapper.GetSession())
             using (var transaction = session.BeginTransaction())
             {
+                foreach (var mountain in sut.Mountains)
+                    session.SaveOrUpdate(mountain);
+
                 foreach (var map in sut.Maps)
                     session.SaveOrUpdate(map);
 
@@ -37,11 +40,16 @@ namespace ScotlandsMountains.IntegrationTests
                 foreach (var table in sut.Tables)
                     session.SaveOrUpdate(table);
 
-                foreach (var mountain in sut.Mountains)
-                    session.SaveOrUpdate(mountain);
-
                 transaction.Commit();
             }
+        }
+
+        private string GetConnectionString()
+        {
+            var codeBase = Assembly.GetExecutingAssembly().CodeBase;
+            var uri = new UriBuilder(codeBase);
+            var path = Uri.UnescapeDataString(uri.Path);
+            return "Data Source=" + Path.GetDirectoryName(path) + @"\ScotlandsMountains.sdf";
         }
 
         private string GetPathToDobihCsv()

@@ -1,6 +1,6 @@
 ﻿using System.Web.Optimization;
 
-namespace ScotlandsMountains.Web
+namespace Web
 {
     public class BundleConfig
     {

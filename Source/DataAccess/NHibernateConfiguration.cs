@@ -5,7 +5,7 @@ using FluentNHibernate.Automapping;
 using NHibernate.Util;
 using ScotlandsMountains.Domain.Entities;
 
-namespace ScotlandsMountains.DataAccess
+namespace DataAccess
 {
     public class NHibernateConfiguration : DefaultAutomappingConfiguration
     {

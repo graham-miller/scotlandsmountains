@@ -78,7 +78,6 @@
 
         var reset = function () {
             map.setView(defaultOptions);
-            infobox.setOptions({ visible: false });
             hideGrahams();
             hideCorbetts();
             showMunros();
@@ -105,20 +104,11 @@
         var showMunros = function () { munroLayer.setOptions({ visible: true }); };
         var hideMunros = function () { munroLayer.setOptions({ visible: false }); };
 
-        var navigateTo = function (mountain) {
-            var location = new maps.Location(mountain.latitude, mountain.longitude);
-
+        var navigateTo = function (latitude, longitude) {
             var mapOptions = map.getOptions();
             mapOptions.zoom = 13;
-            mapOptions.center = location;
+            mapOptions.center = new maps.Location(latitude, longitude);
             map.setView(mapOptions);
-
-            infobox.setLocation(location);
-            infobox.setOptions({
-                visible: true,
-                title: mountain.name,
-                description: mountain.description
-            });
         };
 
         return {

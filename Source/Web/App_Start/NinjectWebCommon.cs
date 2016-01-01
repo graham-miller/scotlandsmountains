@@ -1,10 +1,12 @@
-using ScotlandsMountains.DataAccess;
+using System.Web.Http;
+using System.Web.Http.Dependencies;
+using DataAccess;
 using NHibernate;
 
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(ScotlandsMountains.Web.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(ScotlandsMountains.Web.NinjectWebCommon), "Stop")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(ScotlandsMountains.Web.App_Start.NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(ScotlandsMountains.Web.App_Start.NinjectWebCommon), "Stop")]
 
-namespace ScotlandsMountains.Web
+namespace ScotlandsMountains.Web.App_Start
 {
     using System;
     using System.Web;

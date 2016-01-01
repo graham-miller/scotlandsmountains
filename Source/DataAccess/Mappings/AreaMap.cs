@@ -1,7 +1,7 @@
 ﻿using FluentNHibernate.Mapping;
 using ScotlandsMountains.Domain.Entities;
 
-namespace ScotlandsMountains.DataAccess.Mappings
+namespace DataAccess.Mappings
 {
     public class AreaMap : ClassMap<Area>
     {

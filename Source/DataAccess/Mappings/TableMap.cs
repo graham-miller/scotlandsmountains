@@ -1,7 +1,7 @@
 ﻿using FluentNHibernate.Mapping;
 using ScotlandsMountains.Domain.Entities;
 
-namespace ScotlandsMountains.DataAccess.Mappings
+namespace DataAccess.Mappings
 {
     public class TableMap : ClassMap<Table>
     {
@@ -11,10 +11,10 @@ namespace ScotlandsMountains.DataAccess.Mappings
             Map(x => x.Name);
 
             HasManyToMany(x => x.Mountains)
-                .Inverse()
-                .Cascade.AllDeleteOrphan()
+                .Cascade.None()
                 .ParentKeyColumn("TableId")
-                .ChildKeyColumn("MountainId");
+                .ChildKeyColumn("MountainId")
+                .Cascade.None();
         }
     }
 }

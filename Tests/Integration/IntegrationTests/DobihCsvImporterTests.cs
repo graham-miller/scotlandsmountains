@@ -34,13 +34,13 @@ namespace ScotlandsMountains.IntegrationTests
         [Test]
         public void CountOfTablesIsCorrect()
         {
-            Assert.That(_actualTables.Count, Is.EqualTo(11));
+            Assert.That(_actualTables.Count, Is.EqualTo(9));
         }
 
         [Test]
         public void CountOfMountainsIsCorrect()
         {
-            Assert.That(_actualMountains.Count, Is.EqualTo(10792));
+            Assert.That(_actualMountains.Count, Is.EqualTo(2203));
         }
 
         [Test]
@@ -69,11 +69,9 @@ namespace ScotlandsMountains.IntegrationTests
 
             Assert.That(benNevis.DobihId, Is.EqualTo(278));
 
-            Assert.That(benNevis.Tables.Count, Is.EqualTo(4));
+            Assert.That(benNevis.Tables.Count, Is.EqualTo(2));
             Assert.That(benNevis.Tables[0].Name, Is.EqualTo("Munro"));
             Assert.That(benNevis.Tables[1].Name, Is.EqualTo("Murdo"));
-            Assert.That(benNevis.Tables[2].Name, Is.EqualTo("Marilyn"));
-            Assert.That(benNevis.Tables[3].Name, Is.EqualTo("Tump"));
         }
 
         [Test]
@@ -86,13 +84,13 @@ namespace ScotlandsMountains.IntegrationTests
         [Test]
         public void CountOfMapsIsCorrect()
         {
-            Assert.That(_actualMaps.Count, Is.EqualTo(243));
+            Assert.That(_actualMaps.Count, Is.EqualTo(137));
         }
 
         [Test]
         public void CountOfAreasIsCorrect()
         {
-            Assert.That(_actualAreas.Count, Is.EqualTo(70));
+            Assert.That(_actualAreas.Count, Is.EqualTo(61));
         }
 
         [Test]
@@ -101,13 +99,12 @@ namespace ScotlandsMountains.IntegrationTests
             Assert.That(SubjectUnderTest.Tables[0].Mountains.Count, Is.EqualTo(282));
             Assert.That(SubjectUnderTest.Tables[1].Mountains.Count, Is.EqualTo(221));
             Assert.That(SubjectUnderTest.Tables[2].Mountains.Count, Is.EqualTo(223));
-            Assert.That(SubjectUnderTest.Tables[3].Mountains.Count, Is.EqualTo(88));
+            Assert.That(SubjectUnderTest.Tables[3].Mountains.Count, Is.EqualTo(89));
             Assert.That(SubjectUnderTest.Tables[4].Mountains.Count, Is.EqualTo(227));
             Assert.That(SubjectUnderTest.Tables[5].Mountains.Count, Is.EqualTo(452));
-            Assert.That(SubjectUnderTest.Tables[6].Mountains.Count, Is.EqualTo(774));
-            Assert.That(SubjectUnderTest.Tables[7].Mountains.Count, Is.EqualTo(50));
+            Assert.That(SubjectUnderTest.Tables[6].Mountains.Count, Is.EqualTo(775));
+            Assert.That(SubjectUnderTest.Tables[7].Mountains.Count, Is.EqualTo(51));
             Assert.That(SubjectUnderTest.Tables[8].Mountains.Count, Is.EqualTo(442));
-            Assert.That(SubjectUnderTest.Tables[9].Mountains.Count, Is.EqualTo(1217));
         }
 
         private string GetPathToDobihCsv()

@@ -9,10 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Tests\Common\Comm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Source\Domain\Domain.csproj", "{42273E1C-BE8A-4533-A838-4E9584C78D60}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{B12B9051-0A2A-4252-BB09-CB5BC8245DF9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B12B9051-0A2A-4252-BB09-CB5BC8245DF9}"
 	ProjectSection(SolutionItems) = preProject
-		Docs\explorer-map-list.csv = Docs\explorer-map-list.csv
-		Docs\landranger-map-list.csv = Docs\landranger-map-list.csv
+		Todo.txt = Todo.txt
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "Source\DataAccess\DataAccess.csproj", "{21C105D7-7CEF-4008-A3C3-BAC2FB3F1CC5}"

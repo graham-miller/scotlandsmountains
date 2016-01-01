@@ -1,7 +1,7 @@
 ﻿using FluentNHibernate.Mapping;
 using ScotlandsMountains.Domain.Entities;
 
-namespace ScotlandsMountains.DataAccess.Mappings
+namespace DataAccess.Mappings
 {
     public class MountainMap : ClassMap<Mountain>
     {
@@ -27,7 +27,7 @@ namespace ScotlandsMountains.DataAccess.Mappings
                 });
                 m.Map(x => x.Latitude).Column("Location_Latitude");
                 m.Map(x => x.Longitude).Column("Location_Longitude");
-                m.References(x => x.Area).Column("Location_AreaId").Cascade.All();
+                m.References(x => x.Area).Column("Location_AreaId").Cascade.None();
             });
 
             Component(x => x.Summit, m =>
@@ -37,18 +37,20 @@ namespace ScotlandsMountains.DataAccess.Mappings
             });
 
             HasManyToMany(x => x.Maps)
-                .Cascade.AllDeleteOrphan()
+                .Cascade.None()
                 .ParentKeyColumn("MountainId")
-                .ChildKeyColumn("MapId");
+                .ChildKeyColumn("MapId")
+                .Cascade.None();
 
             References(x => x.Parent)
                 .Column("ParentMountainId")
                 .Cascade.None();
 
             HasManyToMany(x => x.Tables)
-                .Cascade.AllDeleteOrphan()
+                .Cascade.None()
                 .ParentKeyColumn("MountainId")
-                .ChildKeyColumn("TableId");
+                .ChildKeyColumn("TableId")
+                .Cascade.None();
         }
     }
 }

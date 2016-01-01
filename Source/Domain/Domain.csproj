@@ -57,6 +57,7 @@
     <Compile Include="Entities\Table.cs" />
     <Compile Include="ValueTypes\Location.cs" />
     <Compile Include="Entities\Map.cs" />
+    <Compile Include="ValueTypes\MapDescription.cs" />
     <Compile Include="Entities\Mountain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

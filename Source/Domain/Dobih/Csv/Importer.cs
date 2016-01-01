@@ -63,8 +63,10 @@ namespace ScotlandsMountains.Domain.Dobih.Csv
 
         private void GetMountains()
         {
+            var ordered = _records.OrderByDescending(x => x[(int)Field.Feet]).ToList();
+
             Mountains = new List<Mountain>();
-            var ordered = _records.OrderByDescending(x => Int32.Parse(x[(int)Field.Feet])).ToList();
+
             foreach(var record in ordered)
                 Mountains.Add(MapToMountain(record));
         }
@@ -128,29 +130,22 @@ namespace ScotlandsMountains.Domain.Dobih.Csv
                     new Table {Name = "Corbett top"},
                     new Table {Name = "Graham top"},
                     new Table {Name = "Donald top"},
-                    new Table {Name = "Murdo"},
-                    new Table {Name = "Marilyn"},
-                    new Table {Name = "Tump"}
+                    new Table {Name = "Murdo"}
                 };
         }
 
         private static bool ShouldBeIncluded(string[] record)
         {
             return
-                record[(int)Field.Country] == "S" &&
-                (
-                    record[(int)Field.Munro] == "1" ||
-                    record[(int)Field.Corbett] == "1" ||
-                    record[(int)Field.Graham] == "1" ||
-                    record[(int)Field.Donald] == "1" ||
-                    record[(int)Field.MunroTop] == "1" ||
-                    record[(int)Field.CorbettTop] == "1" ||
-                    record[(int)Field.GrahamTop] == "1" ||
-                    record[(int)Field.DonaldTop] == "1" ||
-                    record[(int)Field.Murdo] == "1" ||
-                    record[(int)Field.Marilyn] == "1" ||
-                    record[(int)Field.Tump] == "1"
-                );
+                record[(int)Field.Munro] == "1" ||
+                record[(int)Field.Corbett] == "1" ||
+                record[(int)Field.Graham] == "1" ||
+                record[(int)Field.Donald] == "1" ||
+                record[(int)Field.MunroTop] == "1" ||
+                record[(int)Field.CorbettTop] == "1" ||
+                record[(int)Field.GrahamTop] == "1" ||
+                record[(int)Field.DonaldTop] == "1" ||
+                record[(int)Field.Murdo] == "1";
         }
 
         private IList<Table> GetTablesFrom(string[] record)
@@ -183,12 +178,6 @@ namespace ScotlandsMountains.Domain.Dobih.Csv
 
             if (record[(int)Field.Murdo] == "1")
                 tables.Add(Tables[8]);
-
-            if (record[(int)Field.Marilyn] == "1")
-                tables.Add(Tables[9]);
-
-            if (record[(int)Field.Tump] == "1")
-                tables.Add(Tables[10]);
 
             return tables;
         }

@@ -1,4 +1,8 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
 using NHibernate;
 using Newtonsoft.Json;
@@ -6,14 +10,10 @@ using ScotlandsMountains.Domain.Entities;
 using ScotlandsMountains.Web.Helpers;
 using ScotlandsMountains.Web.Models;
 
-namespace ScotlandsMountains.Web.Controllers
+namespace Web.Controllers
 {
     public class MountainsController : ApiController
     {
-        private static JsonNetResult _munros = null;
-        private static JsonNetResult _corbetts = null;
-        private static JsonNetResult _grahams = null;
-
         private readonly ISession _session;
 
         public MountainsController(ISession session)
@@ -28,7 +28,6 @@ namespace ScotlandsMountains.Web.Controllers
             var data = _session.QueryOver<Mountain>()
                     .WhereRestrictionOn(x => x.Name).IsInsensitiveLike("%" + term + "%")
                     .OrderBy(x => x.Height.Feet).Desc
-                    .Take(50)
                     .List()
                     .Select(x => new MountainModel(x));
 
@@ -38,25 +37,25 @@ namespace ScotlandsMountains.Web.Controllers
         [HttpGet]
         public JsonNetResult Munros()
         {
-            return _munros ?? (_munros = List("Munro"));
+            return List("Munro");
         }
 
         [HttpGet]
         public JsonNetResult Corbetts()
         {
-            return _corbetts ?? (_corbetts = List("Corbett"));
+            return List("Corbett");
         }
 
         [HttpGet]
         public JsonNetResult Grahams()
         {
-            return _grahams ?? (_grahams = List("Graham"));
+            return List("Graham");
         }
 
         private JsonNetResult List(string name)
         {
             var data = _session.QueryOver<Table>()
-                               .Where(x => x.Name == name)
+                               .WhereRestrictionOn(x => x.Name).IsInsensitiveLike(name)
                                .Fetch(x => x.Mountains).Eager
                                .SingleOrDefault()
                                .Mountains
