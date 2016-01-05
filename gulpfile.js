@@ -1,128 +1,28 @@
 'use strict';
 
-var gulp = require('gulp'),
-    plugins = require('gulp-load-plugins')(),
-    del = require('del'),
-    config = require('./gulpconfig.js'),
-    browserSync = require('browser-sync').create(),
-    data = require('./src/data/data.js'),
-    fs = require('fs');
-    
-gulp.task('clean', function(){
-    del.sync(config.destAll);
-});
+var gulp = require('gulp');
+var config = require('./gulpconfig.js');
+var plugins = require('gulp-load-plugins')();
+var browserSync = require('browser-sync').create();
+var del = require('del');
+var fs = require('fs');
+var data = require('./server/data/data.js');
 
-gulp.task('html', function(){
-    return gulp
-        .src(config.srcHtml)
-        .pipe(plugins.plumber({errorHandler: plugins.notify.onError("Error: <%= error.message %>")}))
-        .pipe(gulp.dest(config.dest))
-        .pipe(browserSync.stream());
-});
-
-gulp.task('js', function(){
-    return gulp
-        .src(config.srcJs)
-        .pipe(plugins.plumber({errorHandler: plugins.notify.onError("Error: <%= error.message %>")}))
-        .pipe(plugins.sourcemaps.init())
-            .pipe(plugins.concat(config.jsFileName))
-            .pipe(plugins.ngAnnotate())
-            .pipe(plugins.uglify())
-        .pipe(plugins.sourcemaps.write())        
-        .pipe(gulp.dest(config.destJs))        
-        .pipe(browserSync.stream());
-});
-
-gulp.task('sass', function(){
-    return gulp
-        .src(config.srcSass)
-        .pipe(plugins.plumber({errorHandler: plugins.notify.onError("Error: <%= error.message %>")}))
-        .pipe(plugins.sourcemaps.init())
-            .pipe(plugins.concat(config.cssFileName))
-            .pipe(plugins.sass(config.sassOptions))
-        .pipe(plugins.sourcemaps.write())
-        .pipe(plugins.autoprefixer(config.autoprefixerOptions))
-        .pipe(gulp.dest(config.destCss))
-        .pipe(browserSync.stream());
-});
-
-gulp.task('img', function(){
-    return gulp
-        .src(config.srcImg)
-        .pipe(gulp.dest(config.destImg));
-});
-
-gulp.task('css', function(){
-    return gulp
-        .src(config.srcCss)
-        .pipe(gulp.dest(config.destCss));
-});
-
-gulp.task('fav', function(){
-    return gulp
-        .src(config.srcFav)
-        .pipe(gulp.dest(config.destFav));
-});
-
-gulp.task('libjs', function(){
-    return gulp
-        .src(config.libJs)
-        .pipe(gulp.dest(config.destJs));
-});
-
-gulp.task('libcss', function(){
-    return gulp
-        .src(config.libCss)
-        .pipe(gulp.dest(config.destCss));
-});
-
-gulp.task('libcssimg', function(){
-    return gulp
-        .src(config.libCssImg)
-        .pipe(gulp.dest(config.destCssImg));
-});
-
-gulp.task('libfonts', function(){
-    return gulp
-        .src(config.libFonts)
-        .pipe(gulp.dest(config.destFonts));
-});
-
-gulp.task('serve', ['build'], function() {
+gulp.task('serve', function() {
 
     browserSync.init({
         server: {
-            baseDir: config.dest
+            baseDir: config.wwwroot
         }
     });
 
-    gulp.watch(config.srcHtml, ['html']);
-    gulp.watch(config.srcJs, ['js']);
-    gulp.watch(config.srcSass, ['sass']);
-    gulp.watch(config.destAll).on('change', browserSync.reload);
+    //gulp.watch(config.wwwroot, ['task name']);
 });
 
 gulp.task('dataclean', function(){
-    del.sync(config.destData);
+    del.sync('./client/wwwroot/api');
 });
 
 gulp.task('data', ['dataclean'], function(callback){
-    data.copyTo(config.srcData, config.destData, callback);
+    data.copyTo('./resources/dobih/DoBIH_v15.1.csv', './client/wwwroot/api/', callback);
 });
-
-gulp.task('deployclean', function(){
-    del.sync(config.deployAll, { force: true });
-});
-
-gulp.task('deploycname', function(){
-    fs.writeFileSync(config.destDeploy + 'CNAME', config.domain);
-});
-
-gulp.task('deploy', ['deployclean', 'data', 'build', 'deploycname'], function(){
-    return gulp
-        .src(config.srcDeploy)
-        .pipe(gulp.dest(config.destDeploy));
-});
-
-gulp.task('build', ['clean', 'html', 'js', 'sass', 'img', 'css', 'fav', 'libjs', 'libcss', 'libcssimg', 'libfonts']);
-gulp.task('default', ['serve']);

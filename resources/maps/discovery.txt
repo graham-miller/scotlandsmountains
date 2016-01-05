@@ -1,0 +1,89 @@
+1 Donegal (NW) 9781907122415
+2 Donegal (NCent) 9781907122422
+3 Donegal (NE), Derry 9781907122439
+4 Coleraine 9781905306640
+5 Ballycastle 9781905306565
+6 Donegal (Cent), Tyrone 9781907122446
+7 Londonderry 9781905306718
+8 Ballymoney 9781905306527
+9 Larne 9781905306695
+10 Donegal (SW) 9781907122453
+11 Donegal (S) 9781907122460
+12 Strabane 9781905306688
+13 The Sperrins 9781905306503
+14 Lough Neagh 9781905306657
+15 Belfast 9781905306725
+16 Donegal, Fermanagh, Leitrim, Sligo 9781907122477
+17 Lower Lough Erne 9781905306664
+18 Enniskillen 9781905306633
+19 Armagh 9781905306480
+20 Craigavon 9781905306701
+21 Strangford Lough 9781905306572
+22 Mayo 9781907122194
+23 Mayo 9781907122200
+24 Mayo, Sligo 9781907122828
+25 Sligo (E), Leitrim, Roscommon 9781907122484
+26 Cavan, Fermanagh, Leitrim, Roscommon, Sligo 9781907122491
+27 Upper Lough Erne 9781905306596
+28 Monaghan 9781905306305
+29 The Mournes 9781905306602
+30 Mayo (W Cent) 9781907122217
+31 Mayo 9781907122224
+32 Mayo, Roscommon, Sligo 9781907122538
+33 Leitrim, Longford, Roscommon, Sligo 9781907122835
+34 Cavan, Leitrim, Longford, Meath, Westmeath 9781907122545
+35 Cavan, Louth, Meath, Monaghan 9781907122552
+36 Armagh, Down, Louth, Meath, Monaghan 9781907122842
+37 Mayo (SW), Galway 9781907122231
+38 Galway, Mayo (Scent) 9781907122248
+39 Galway, Mayo, Roscommon 9781907122262
+40 Galway, Longford, Roscommon, Westmeath 9781907122279
+41 Longford, Meath, Westmeath 9781907122125
+42 Meath, Westmeath 9781907122132
+43 Dublin, Louth, Meath, Westmeath 9781907122149
+44 Galway 9781907122859
+45 Galway 9781907122866
+46 Galway 9781907122286
+47 Galway, Offaly, Roscommon, Westmeath 9781907122293
+48 Offaly, Westmeath 9781907122156
+49 Kildare, Meath, Offaly, Westmeath 9781907122163
+50 Dublin, Kildare, Meath & Wicklow 9781907122170
+51 Clare, Galway 9781907122057
+52 Clare, Galway 9781907122873
+53 Clare, Galway, Offaly, Tipperary 9781907122569
+54 Laois, Offaly, Tipperary 9781907122576
+55 Kildare, Laois, Offaly, Wicklow 9781907122880
+56 Wicklow, Dublin and Kildare 9781907122026
+57 Clare 9781907122897
+58 Clare, Limerick, Tipperary 9781907122903
+59 Clare, Offaly, Tipperary 9781907122583
+60 Kilkenny, Laois, Tipperary 9781907122590
+61 Carlow, Kildare, Kilkenny, Laois, Wicklow 9781907122606
+62 Carlow, Wexford, Wicklow 9781907122910
+63 Clare, Kerry 9781907122927
+64 Clare, Kerry, Limerick 9781907122934
+65 Clare, Limerick, Tipperary 9781907122941
+66 Tipperary, Limerick 9781907122613
+67 Kilkenny, Tipperary 9781907122958
+68 Carlow, Kilkenny, Wexford 9781907122965
+69 Wexford 9781907122972
+70 Kerry 9781907122064
+71 Kerry 9781907122989
+72 Kerry, Cork, Limerick 9781907122996
+73 Cork, Limerick 9781907122620
+74 Cork, Limerick, Tipperary, Waterford 9781908852007
+75 Kilkenny, Tipperary, Waterford 9781908852014
+76 Carlow, Kilkenny, Waterford, Wexford 9781908852021
+77 Wexford 9781907122637
+78 Kerry 9781907122033
+79 Cork, Kerry 9781907122644
+80 Cork 9781908852038
+81 Cork, Waterford 9781908852045
+82 Waterford 9781907122651
+83 Kerry 9781907122071
+84 Cork, Kerry 9781907122088
+85 Cork, Kerry 9781907122095
+86 Cork 9781907122101
+87 Cork 9781908852052
+88 Cork 9781907122118
+89 Cork 9781908852069
