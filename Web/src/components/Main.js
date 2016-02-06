@@ -2,18 +2,20 @@ require('normalize.css');
 require('styles/App.css');
 
 import React from 'react';
+//import injectTapEventPlugin from 'react-tap-event-plugin';
+import TitleBar from './TitleBar'
 
-let yeomanImage = require('../images/yeoman.png');
+// Needed for onTouchTap, can be removed when react 1.0 is released https://github.com/zilverline/react-tap-event-plugin
+//injectTapEventPlugin();
 
 class AppComponent extends React.Component {
-  render() {
-    return (
-      <div className="index">
-        <img src={yeomanImage} alt="Yeoman Generator" />
-        <div className="notice">Please edit <code>src/components/Main.js</code> to get started!</div>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div>
+                <TitleBar />
+            </div>
+            );
+    }
 }
 
 AppComponent.defaultProps = {
