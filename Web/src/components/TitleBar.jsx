@@ -4,8 +4,10 @@ import FlatButton from 'material-ui/lib/flat-button';
 
 const TitleBar = () => (
     <AppBar
-        title={<span>Scotland's Mountains</span>}
-        iconElementRight={<FlatButton label="Login" />} />
+        showMenuIconButton={true}
+        title={<span>Scotland&apos;s Mountains</span>}
+        iconElementRight={<FlatButton label="Login" />}
+        />
 );
 
 export default TitleBar;
