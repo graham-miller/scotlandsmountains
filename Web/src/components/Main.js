@@ -2,23 +2,30 @@ require('normalize.css');
 require('styles/App.css');
 
 import React from 'react';
-import TitleBar from './TitleBar'
-
-// Before you do any rendering, initialize the plugin
-import injectTapEventPlugin from 'react-tap-event-plugin';
-injectTapEventPlugin();
+import AppBarComponent from './layout/AppBarComponent'
+import LeftNavComponent from './layout/LeftNavComponent'
 
 class AppComponent extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {open: false};
+    }
+
+    handleToggle() {
+        this.setState({open: !this.state.open});
+    }
+
     render() {
         return (
             <div>
-                <TitleBar />
+                <AppBarComponent />
+                <LeftNavComponent />
             </div>
             );
     }
 }
 
-AppComponent.defaultProps = {
-};
+AppComponent.defaultProps = { };
 
 export default AppComponent;
