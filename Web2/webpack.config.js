@@ -23,19 +23,16 @@ module.exports = {
                 include: [path.resolve(__dirname, "src")]
             },
             {
-                test: /\.sass$/,
-                loader: 'react-hot!style-loader!css-loader!sass-loader',
-                include: [path.resolve(__dirname, "src")],
-            },
-            {
                 test: /\.css$/,
                 loader: 'react-hot!style-loader!css-loader',
-                include: [path.resolve(__dirname, "src")],
+            },
+            {
+                test: /\.sass$/,
+                loader: 'react-hot!style-loader!css-loader!sass-loader',
             },
             {
                 test: /\.(png|jpg)$/,
                 loader: 'react-hot!url-loader?limit=8192',
-                include: [path.resolve(__dirname, "src")],
             }
         ]
     },

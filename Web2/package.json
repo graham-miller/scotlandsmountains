@@ -11,6 +11,8 @@
   "author": "Graham Miller",
   "license": "GPL-3.0",
   "dependencies": {
+    "leaflet": "^0.7.7",
+    "material-ui": "^0.14.4",
     "react": "^0.14.7",
     "react-dom": "^0.14.7"
   },
