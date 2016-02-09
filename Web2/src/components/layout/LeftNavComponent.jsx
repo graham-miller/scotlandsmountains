@@ -8,13 +8,11 @@ class LeftNavComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = LayoutStore.getState();
+        
+        // React components using ES6 classes no longer autobind `this` to non React methods
         this.onChange = this.onChange.bind(this)
     }
 
-    getInitialState() {
-        return LayoutStore.getState();
-    }
-    
     componentDidMount() {
         LayoutStore.listen(this.onChange);
     }
@@ -40,7 +38,5 @@ class LeftNavComponent extends React.Component {
             );
     }
 }
-
-LeftNavComponent.defaultProps = { };
 
 export default LeftNavComponent;
