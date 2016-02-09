@@ -1,26 +1,50 @@
 var path = require("path");
+var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        app: ['./src/index.js']
+        app: [
+            'webpack-dev-server/client?http://0.0.0.0:3000',
+            'webpack/hot/only-dev-server',
+            './src/index.js'
+        ]
     },
     output: {
         path: path.resolve(__dirname, "build"),
-        publicPath: "/assets/",
-        filename: 'bundle.js'
+        publicPath: '/',
+        filename: 'assets/bundle.js'
     },
     module: {
         loaders: [
             {
                 test: /\.jsx?$/,
-                loader: 'babel-loader',
-                query: {
-                    presets: ['es2015', 'react']
-                }
+                loader: 'react-hot!babel-loader?' + JSON.stringify({ presets: ['es2015', 'react'] }),
+                include: [path.resolve(__dirname, "src")]
             },
-            { test: /\.sass$/, loader: 'style-loader!css-loader!sass-loader' }, // use ! to chain loaders
-            { test: /\.css$/, loader: 'style-loader!css-loader' },
-            { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' } // inline base64 URLs for <=8k images, direct URLs for the rest
+            {
+                test: /\.sass$/,
+                loader: 'react-hot!style-loader!css-loader!sass-loader',
+                include: [path.resolve(__dirname, "src")],
+            },
+            {
+                test: /\.css$/,
+                loader: 'react-hot!style-loader!css-loader',
+                include: [path.resolve(__dirname, "src")],
+            },
+            {
+                test: /\.(png|jpg)$/,
+                loader: 'react-hot!url-loader?limit=8192',
+                include: [path.resolve(__dirname, "src")],
+            }
         ]
-    }
+    },
+    devtool: "#cheap-source-map",
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+            inject: 'body',
+        })
+    ]
 };
