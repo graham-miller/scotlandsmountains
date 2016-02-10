@@ -24,17 +24,18 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: 'react-hot!style-loader!css-loader',
+                loader: 'react-hot!style-loader!css-loader'
             },
             {
                 test: /\.sass$/,
-                loader: 'react-hot!style-loader!css-loader!sass-loader',
+                loader: 'react-hot!style-loader!css-loader!sass-loader'
             },
             {
                 test: /\.(png|jpg)$/,
-                loader: 'react-hot!url-loader?limit=8192',
+                loader: 'react-hot!url-loader?limit=8192'
             }
-        ]
+        ],
+        noParse: [/\proj4.js$/]
     },
     devtool: "#cheap-source-map",
     plugins: [

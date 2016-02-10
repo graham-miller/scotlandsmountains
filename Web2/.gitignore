@@ -28,3 +28,6 @@ node_modules
 
 # Bower
 bower_components/
+
+# Local secrets http://ejohn.org/blog/keeping-passwords-in-source-control/
+app.config.json
