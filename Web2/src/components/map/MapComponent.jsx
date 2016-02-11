@@ -1,6 +1,7 @@
 require('../../../node_modules/leaflet/dist/leaflet.js');
 require('../../../node_modules/leaflet/dist/leaflet.css');
 require('os-leaflet');
+const config = require('../../config.js');
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -19,7 +20,10 @@ class MapComponent extends React.Component {
             center: [56.659406, -4.011214]
         });
 
-        var openspaceLayer = L.tileLayer.OSOpenSpace("", {});
+        console.log(config.oSOpenSpaceApiKey)
+        debugger;
+        
+        var openspaceLayer = L.tileLayer.OSOpenSpace(config.oSOpenSpaceApiKey, {});
         map.addLayer(openspaceLayer);
     }
     
