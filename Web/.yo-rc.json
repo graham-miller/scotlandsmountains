@@ -1,7 +1,0 @@
-{
-  "generator-react-webpack": {
-    "appName": "scotlandsMountains",
-    "style": "sass",
-    "postcss": true
-  }
-}
