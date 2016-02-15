@@ -3,8 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D62DADAE-DEF3-449D-8079-246E61BBE95F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{2C11DFB5-D7C4-4190-ADE2-8C034EA527CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportConsole", "src\ImportConsole\ImportConsole.csproj", "{CEEEBF3A-5110-4982-9620-F597C2758076}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CEEEBF3A-5110-4982-9620-F597C2758076}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEEEBF3A-5110-4982-9620-F597C2758076}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEEEBF3A-5110-4982-9620-F597C2758076}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEEEBF3A-5110-4982-9620-F597C2758076}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CEEEBF3A-5110-4982-9620-F597C2758076} = {D62DADAE-DEF3-449D-8079-246E61BBE95F}
 	EndGlobalSection
 EndGlobal

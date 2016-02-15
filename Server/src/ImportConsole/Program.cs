@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ImportConsole
+namespace ScotlandsMountains.ImportConsole
 {
     class Program
     {
