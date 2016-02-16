@@ -11,7 +11,7 @@
 
         public string this[Field.Definition fieldDefinition]
         {
-            get { return _fields[fieldDefinition.Index]; }
+            get { return _fields[fieldDefinition.Index].Trim(); }
         }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using ScotlandsMountains.Domain.Entities;
@@ -12,9 +13,10 @@ namespace ScotlandsMountains.ImportConsole.Dobih.EntityFactories
                 .Select(r => new
                 {
                     Code = r[Field.Section],
-                    Name = r[Field.SectionName],
+                    Name = r[Field.SectionName].Split(new[] { ":" }, StringSplitOptions.RemoveEmptyEntries)[1].Trim()
                 })
                 .Distinct()
+                .OrderBy(x => x.Code)
                 .Select((x, i) => new Section
                 {
                     Id = i+1,

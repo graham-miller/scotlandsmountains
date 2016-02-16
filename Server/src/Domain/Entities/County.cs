@@ -2,5 +2,6 @@
 {
     public class County : Entity
     {
+        public string Name { get; set; }
     }
 }

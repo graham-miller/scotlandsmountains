@@ -20,10 +20,11 @@ namespace ScotlandsMountains.ImportConsole.Dobih.EntityFactories
         public EntityFactory(IList<Record> records)
         {
             Sections = new SectionsFactory(records).Sections;
-            //Islands = new IslandsFactory(records).Islands;
-            //Counties = new CountiesFactory(records).Counties;
-            //TopologicalSections = new TopologicalSectionsFactory(records).TopologicalSections;
-            //Maps = new MapsFactory(records).Maps;
+            Islands = new IslandsFactory(records).Islands;
+            Counties = new CountiesFactory(records).Counties;
+            TopologicalSections = new TopologicalSectionsFactory(records).TopologicalSections;
+            Maps1To25000 = new MapsFactory(records).Maps1To25000;
+            Maps1To50000 = new MapsFactory(records).Maps1To50000;
 
             //Mountains = new MountainsFactory(records).Mountains;
         }
@@ -32,7 +33,8 @@ namespace ScotlandsMountains.ImportConsole.Dobih.EntityFactories
         public IList<Island> Islands { get; private set; }
         public IList<County> Counties { get; private set; }
         public IList<TopologicalSection> TopologicalSections { get; set; }
-        public IList<Map> Maps { get; set; }
+        public IList<Map> Maps1To25000 { get; set; }
+        public IList<Map> Maps1To50000 { get; set; }
         public IList<Mountain> Mountains { get; set; }
     }
 }

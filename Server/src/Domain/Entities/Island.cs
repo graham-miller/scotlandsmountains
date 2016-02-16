@@ -2,5 +2,6 @@
 {
     public class Island : Entity
     {
+        public string Name { get; set; }
     }
 }
