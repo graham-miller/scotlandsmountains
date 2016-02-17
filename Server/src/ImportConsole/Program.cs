@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using ScotlandsMountains.ImportConsole.Dobih;
 using ScotlandsMountains.ImportConsole.Dobih.EntityFactories;
@@ -15,8 +14,9 @@ namespace ScotlandsMountains.ImportConsole
 
             var records = new Reader(GetPathToDobihCsv(), GetDobihFilter()).Read();
             var factory = new EntityFactory(records);
+            factory.CreateFirebaseJson(GetPathToFirebaseJson());
 
-            Console.WriteLine("Record count: {0}", records.Count().ToString("#,##0"));
+            Console.WriteLine("Record count: {0}", records.Count.ToString("#,##0"));
 
             Console.WriteLine("Press any key to exit:");
             Console.ReadKey(true);
@@ -24,9 +24,19 @@ namespace ScotlandsMountains.ImportConsole
 
         private static string GetPathToDobihCsv()
         {
+            return GetDocsFolder() + "\\DatabaseOfBritishAndIrishHills\\DoBIH_v15.1.csv";
+        }
+
+        private static string GetPathToFirebaseJson()
+        {
+            return GetDocsFolder() + "\\FirebaseData\\firebase.json";
+        }
+
+        private static string GetDocsFolder()
+        {
             return new DirectoryInfo(Assembly.GetExecutingAssembly().Location)
                 .Parent.Parent.Parent.Parent.Parent.Parent.FullName
-                + "\\Docs\\DatabaseOfBritishAndIrishHills\\DoBIH_v15.1.csv";
+                + "\\Docs";
         }
 
         private static Func<Record, bool> GetDobihFilter()

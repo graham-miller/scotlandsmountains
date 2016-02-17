@@ -1,17 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
 using ScotlandsMountains.Domain.Entities;
-
-//Section, e.g. 01A
-//Section name, e.g. 01A: Loch Tay to Perth
-
-//Island
-
-//Topo Section
-
-//County
-
-//Map 1:50k, e.g. 51 52
-//Map 1:25k, e.g.OL47W 368W 379W
 
 namespace ScotlandsMountains.ImportConsole.Dobih.EntityFactories
 {
@@ -29,12 +19,20 @@ namespace ScotlandsMountains.ImportConsole.Dobih.EntityFactories
             //Mountains = new MountainsFactory(records).Mountains;
         }
 
-        public IList<Section> Sections { get; private set; }
-        public IList<Island> Islands { get; private set; }
-        public IList<County> Counties { get; private set; }
-        public IList<TopologicalSection> TopologicalSections { get; set; }
-        public IList<Map> Maps1To25000 { get; set; }
-        public IList<Map> Maps1To50000 { get; set; }
-        public IList<Mountain> Mountains { get; set; }
+        public IList<Section> Sections { get; }
+        public IList<Island> Islands { get; }
+        public IList<County> Counties { get; }
+        public IList<TopologicalSection> TopologicalSections { get; }
+        public IList<Map> Maps1To25000 { get; }
+        public IList<Map> Maps1To50000 { get; }
+        public IList<Mountain> Mountains { get; }
+
+        public void CreateFirebaseJson(string path)
+        {
+            var json = JsonConvert.SerializeObject(this);
+
+            using (var writer = new StreamWriter(path))
+                writer.Write(json);
+        }
     }
 }
