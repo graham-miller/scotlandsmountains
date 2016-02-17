@@ -2,6 +2,7 @@
 using System.IO;
 using Newtonsoft.Json;
 using ScotlandsMountains.Domain.Entities;
+using Newtonsoft.Json.Serialization;
 
 namespace ScotlandsMountains.ImportConsole.Dobih.EntityFactories
 {
@@ -29,7 +30,12 @@ namespace ScotlandsMountains.ImportConsole.Dobih.EntityFactories
 
         public void CreateFirebaseJson(string path)
         {
-            var json = JsonConvert.SerializeObject(this);
+            var settings = new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+            };
+
+            var json = JsonConvert.SerializeObject(this, Formatting.Indented, settings);
 
             using (var writer = new StreamWriter(path))
                 writer.Write(json);

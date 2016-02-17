@@ -24,19 +24,19 @@ namespace ScotlandsMountains.ImportConsole
 
         private static string GetPathToDobihCsv()
         {
-            return GetDocsFolder() + "\\DatabaseOfBritishAndIrishHills\\DoBIH_v15.1.csv";
+            return GetDocsFolder() + @"\DatabaseOfBritishAndIrishHills\DoBIH_v15.1.csv";
         }
 
         private static string GetPathToFirebaseJson()
         {
-            return GetDocsFolder() + "\\FirebaseData\\firebase.json";
+            return GetDocsFolder() + @"\FirebaseData\firebase.json";
         }
 
         private static string GetDocsFolder()
         {
             return new DirectoryInfo(Assembly.GetExecutingAssembly().Location)
                 .Parent.Parent.Parent.Parent.Parent.Parent.FullName
-                + "\\Docs";
+                + @"\Docs";
         }
 
         private static Func<Record, bool> GetDobihFilter()

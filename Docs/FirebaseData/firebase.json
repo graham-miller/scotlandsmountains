@@ -1,1 +1,3432 @@
-{"Sections":[{"Code":"01A","Name":"Loch Tay to Perth","Id":1},{"Code":"01B","Name":"Strathyre to Strathallan","Id":2},{"Code":"01C","Name":"Loch Lomond to Strathyre","Id":3},{"Code":"01D","Name":"Inveraray to Crianlarich","Id":4},{"Code":"01E","Name":"Loch Long to Loch Lomond","Id":5},{"Code":"02A","Name":"Loch Rannoch to Glen Lyon","Id":6},{"Code":"02B","Name":"Glen Lyon to Glen Dochart & Loch Tay","Id":7},{"Code":"03A","Name":"Loch Leven to Rannoch Station","Id":8},{"Code":"03B","Name":"Loch Linnhe to Loch Etive","Id":9},{"Code":"03C","Name":"Glen Etive to Glen Lochy","Id":10},{"Code":"04A","Name":"Fort William to Loch Treig & Loch Leven","Id":11},{"Code":"04B","Name":"Loch Treig to Loch Ericht","Id":12},{"Code":"05A","Name":"Loch Ericht to Glen Tromie & Glen Garry","Id":13},{"Code":"05B","Name":"Loch Ericht to Glen Tromie & Glen Garry","Id":14},{"Code":"06A","Name":"Glen Tromie to Glen Tilt","Id":15},{"Code":"06B","Name":"Pitlochry to Braemar & Blairgowrie","Id":16},{"Code":"07A","Name":"Braemar to Montrose","Id":17},{"Code":"07B","Name":"Braemar to Montrose","Id":18},{"Code":"08A","Name":"Cairngorms","Id":19},{"Code":"08B","Name":"Cairngorms","Id":20},{"Code":"09A","Name":"Inverness to Strathspey","Id":21},{"Code":"09B","Name":"Glen Albyn and the Monadh Liath","Id":22},{"Code":"09C","Name":"Loch Lochy to Loch Laggan","Id":23},{"Code":"10A","Name":"Glen Shiel to Loch Hourn and Loch Quoich","Id":24},{"Code":"10B","Name":"Knoydart to Glen Kingie","Id":25},{"Code":"10C","Name":"Loch Arkaig to Glen Moriston","Id":26},{"Code":"10D","Name":"Mallaig to Fort William","Id":27},{"Code":"11A","Name":"Loch Duich to Cannich","Id":28},{"Code":"11B","Name":"Glen Affric to Glen Moriston","Id":29},{"Code":"12A","Name":"Kyle of Lochalsh to Garve","Id":30},{"Code":"12B","Name":"Killilan to Inverness","Id":31},{"Code":"13A","Name":"Loch Torridon to Loch Maree","Id":32},{"Code":"13B","Name":"Applecross to Achnasheen","Id":33},{"Code":"14A","Name":"Loch Maree to Loch Broom","Id":34},{"Code":"14B","Name":"The Fannaichs","Id":35},{"Code":"15A","Name":"Loch Broom to Strath Oykel","Id":36},{"Code":"15B","Name":"Loch Vaich to Moray Firth","Id":37},{"Code":"16A","Name":"Cape Wrath Peninsula","Id":38},{"Code":"16B","Name":"Durness to Loch Shin","Id":39},{"Code":"16C","Name":"Tongue to Wick and Helmsdale","Id":40},{"Code":"16D","Name":"Altnaharra to Dornoch","Id":41},{"Code":"16E","Name":"Scourie to Lairg","Id":42},{"Code":"16F","Name":"Lochinver to Ullapool","Id":43},{"Code":"17A","Name":"North Skye and Raasay","Id":44},{"Code":"17B","Name":"Minginish and the Cuillin Hills","Id":45},{"Code":"17C","Name":"South-East Skye and Scalpay","Id":46},{"Code":"17D","Name":"Canna, Rhum and Eigg","Id":47},{"Code":"17E","Name":"Mull and Nearby Islands","Id":48},{"Code":"17F","Name":"Coll and Tiree","Id":49},{"Code":"18A","Name":"Moidart and Ardnamurchan","Id":50},{"Code":"18B","Name":"Sunart and Ardgour","Id":51},{"Code":"18C","Name":"Morvern and Kingairloch","Id":52},{"Code":"19A","Name":"Oban to Loch Fyne","Id":53},{"Code":"19B","Name":"Knapdale and Kintyre","Id":54},{"Code":"19C","Name":"Loch Fyne to Bute and the Firth of Clyde","Id":55},{"Code":"20A","Name":"Jura, Scarba and Colonsay","Id":56},{"Code":"20B","Name":"Islay","Id":57},{"Code":"20C","Name":"Arran and Holy Island","Id":58},{"Code":"21A","Name":"Tomintoul to Banff","Id":59},{"Code":"21B","Name":"Fraserburgh to the Dee Valley","Id":60},{"Code":"22","Name":"Shetland Islands","Id":61},{"Code":"23","Name":"Orkney Islands","Id":62},{"Code":"24A","Name":"Lewis and Nearby Islands","Id":63},{"Code":"24B","Name":"Harris and Nearby Islands","Id":64},{"Code":"24C","Name":"North Uist, South Uist and Nearby Islands","Id":65},{"Code":"24D","Name":"Barra to Barra Head","Id":66},{"Code":"25","Name":"St Kilda","Id":67},{"Code":"26A","Name":"Central Scotland from Dumbarton to Montrose","Id":68},{"Code":"26B","Name":"Central Scotland from Dumbarton to Montrose","Id":69},{"Code":"27A","Name":"Ayr to the River Clyde","Id":70},{"Code":"27B","Name":"Carrick and Galloway","Id":71},{"Code":"27C","Name":"The Glenkens to Annandale","Id":72},{"Code":"28A","Name":"Firth of Forth to the River Tweed","Id":73},{"Code":"28B","Name":"The River Tweed to the English Border","Id":74},{"Code":"33","Name":"The Scottish Border to the River Tyne","Id":75}],"Islands":[{"Name":"Arran","Id":1},{"Name":"Barra","Id":2},{"Name":"Benbecula","Id":3},{"Name":"Berneray","Id":4},{"Name":"Boreray","Id":5},{"Name":"Bressay","Id":6},{"Name":"Bute","Id":7},{"Name":"Canna","Id":8},{"Name":"Coll","Id":9},{"Name":"Colonsay","Id":10},{"Name":"Danna","Id":11},{"Name":"Dun (t)","Id":12},{"Name":"East Burra","Id":13},{"Name":"Eday","Id":14},{"Name":"Eigg","Id":15},{"Name":"Eileach an Naoimh","Id":16},{"Name":"Eilean Dubh Mor","Id":17},{"Name":"Eilean Liubhaird","Id":18},{"Name":"Eilean Shona (t)","Id":19},{"Name":"Eriskay","Id":20},{"Name":"Erraid (t)","Id":21},{"Name":"Fair Isle","Id":22},{"Name":"Fetlar","Id":23},{"Name":"Flotta","Id":24},{"Name":"Foula","Id":25},{"Name":"Fuaigh Mor","Id":26},{"Name":"Fudheigh","Id":27},{"Name":"Garbh Eileach","Id":28},{"Name":"Garbh Eilean","Id":29},{"Name":"Gigha","Id":30},{"Name":"Gometra (t)","Id":31},{"Name":"Great Bernera","Id":32},{"Name":"Great Cumbrae","Id":33},{"Name":"Handa","Id":34},{"Name":"Haskeir Island","Id":35},{"Name":"Hellisay","Id":36},{"Name":"Hirta","Id":37},{"Name":"Holy Island (Arran)","Id":38},{"Name":"Hoy","Id":39},{"Name":"Inchcailloch","Id":40},{"Name":"Inchtavannach","Id":41},{"Name":"Iona","Id":42},{"Name":"Islay","Id":43},{"Name":"Isle of Ewe","Id":44},{"Name":"Jura","Id":45},{"Name":"Kerrera","Id":46},{"Name":"Lewis and Harris","Id":47},{"Name":"Lismore","Id":48},{"Name":"Longa","Id":49},{"Name":"Luing","Id":50},{"Name":"Lunga","Id":51},{"Name":"Mingulay","Id":52},{"Name":"Mono Tump island","Id":53},{"Name":"Mono Tump island (t)","Id":54},{"Name":"Mousa","Id":55},{"Name":"Muck","Id":56},{"Name":"Muckle Roe","Id":57},{"Name":"Mull","Id":58},{"Name":"Neave Island","Id":59},{"Name":"Non Tump island","Id":60},{"Name":"Non Tump island (t)","Id":61},{"Name":"North Uist","Id":62},{"Name":"Noss","Id":63},{"Name":"Oldany Island (t)","Id":64},{"Name":"Orkney Mainland","Id":65},{"Name":"Oronsay (t)","Id":66},{"Name":"Out Skerries","Id":67},{"Name":"Pabaigh Mor","Id":68},{"Name":"Pabbay","Id":69},{"Name":"Papa Little","Id":70},{"Name":"Papa Stour","Id":71},{"Name":"Priest Island","Id":72},{"Name":"Raasay","Id":73},{"Name":"Rona (North)","Id":74},{"Name":"Rona (Raasay)","Id":75},{"Name":"Ronay","Id":76},{"Name":"Rousay","Id":77},{"Name":"Rum","Id":78},{"Name":"Sanda Island","Id":79},{"Name":"Sanday (Canna)","Id":80},{"Name":"Sanday (Orkney)","Id":81},{"Name":"Sandray","Id":82},{"Name":"Scalpay (Harris)","Id":83},{"Name":"Scalpay (Skye)","Id":84},{"Name":"Scarba","Id":85},{"Name":"Scarp","Id":86},{"Name":"Seil","Id":87},{"Name":"Shetland Mainland","Id":88},{"Name":"Shuna","Id":89},{"Name":"Skye","Id":90},{"Name":"Soay","Id":91},{"Name":"South Ronaldsay","Id":92},{"Name":"South Uist","Id":93},{"Name":"Stack of Sandwick","Id":94},{"Name":"Stronsay","Id":95},{"Name":"Sula Sgeir","Id":96},{"Name":"Tanera Beg","Id":97},{"Name":"Tanera More","Id":98},{"Name":"Taransay","Id":99},{"Name":"Tiree","Id":100},{"Name":"Ulva","Id":101},{"Name":"Unst","Id":102},{"Name":"Vaila","Id":103},{"Name":"Vatersay","Id":104},{"Name":"Vementry","Id":105},{"Name":"West Burra","Id":106},{"Name":"Westray","Id":107},{"Name":"Whalsay","Id":108},{"Name":"Wiay","Id":109},{"Name":"Yell","Id":110}],"Counties":[{"Name":"Aberdeen","Id":1},{"Name":"Aberdeenshire","Id":2},{"Name":"Angus","Id":3},{"Name":"Argyll and Bute","Id":4},{"Name":"Clackmannanshire","Id":5},{"Name":"Dumfries and Galloway","Id":6},{"Name":"Dundee","Id":7},{"Name":"East Ayrshire","Id":8},{"Name":"East Dunbartonshire","Id":9},{"Name":"East Lothian","Id":10},{"Name":"East Renfrewshire","Id":11},{"Name":"Edinburgh","Id":12},{"Name":"Falkirk","Id":13},{"Name":"Fife","Id":14},{"Name":"Glasgow","Id":15},{"Name":"Highland","Id":16},{"Name":"Inverclyde","Id":17},{"Name":"Midlothian","Id":18},{"Name":"Moray","Id":19},{"Name":"Na h-Eileanan Siar [Western Isles]","Id":20},{"Name":"North Ayrshire","Id":21},{"Name":"North Lanarkshire","Id":22},{"Name":"Northumberland","Id":23},{"Name":"Orkney Islands","Id":24},{"Name":"Perth and Kinross","Id":25},{"Name":"Renfrewshire","Id":26},{"Name":"Scottish Borders","Id":27},{"Name":"Shetland Islands","Id":28},{"Name":"South Ayrshire","Id":29},{"Name":"South Lanarkshire","Id":30},{"Name":"Stirling","Id":31},{"Name":"West Dunbartonshire","Id":32},{"Name":"West Lothian","Id":33}],"TopologicalSections":[{"Code":"A01","Name":"Cape Wrath to Loch Shin","Id":1},{"Code":"A02","Name":"Strathmore to Strath Naver","Id":2},{"Code":"A03","Name":"Strath of Kildonan to Dunnet Head","Id":3},{"Code":"A04","Name":"Altnaharra to the Dornoch Firth","Id":4},{"Code":"A05","Name":"Scourie and the Point of Stoer to Lairg","Id":5},{"Code":"A06","Name":"Loch Assynt to Loch Veyatie","Id":6},{"Code":"B01","Name":"Southern and Western Coigach","Id":7},{"Code":"B02","Name":"Inverkirkaig to Oykel Bridge","Id":8},{"Code":"B03","Name":"Loch Broom to Bonar Bridge","Id":9},{"Code":"B04","Name":"Loch Vaich to Tarbat Ness","Id":10},{"Code":"B05","Name":"Strath na Sealga to Loch Broom","Id":11},{"Code":"B06","Name":"Loch Ewe to Fisherfield Forest","Id":12},{"Code":"B07","Name":"Slioch","Id":13},{"Code":"B08","Name":"The Fannaichs to Contin","Id":14},{"Code":"B09","Name":"Applecross - Loch Torridon to Loch Kishorn","Id":15},{"Code":"B10","Name":"Loch Carron to Coulin Forest","Id":16},{"Code":"C01","Name":"Loch Torridon to Loch Maree","Id":17},{"Code":"D01","Name":"Glen Carron to Loch Luichart","Id":18},{"Code":"D02","Name":"Loch Alsh to the Black Isle","Id":19},{"Code":"D03","Name":"Killilan to Strathglass","Id":20},{"Code":"E01","Name":"Dornie to Cannich","Id":21},{"Code":"E02","Name":"Shiel Bridge to Inverness","Id":22},{"Code":"E03","Name":"Loch Hourn to Glen Shiel","Id":23},{"Code":"E04","Name":"Loch Quoich to Loch Ness","Id":24},{"Code":"E05","Name":"Knoydart to Barrisdale Forest","Id":25},{"Code":"E06","Name":"North Morar to Kingie","Id":26},{"Code":"E07","Name":"Loch Arkaig to Loch Garry","Id":27},{"Code":"F01","Name":"Arisaig to Strathan","Id":28},{"Code":"F02","Name":"Loch Eil to Loch Arkaig","Id":29},{"Code":"F03","Name":"Moidart - Sound of Arisaig to Loch Shiel","Id":30},{"Code":"G01","Name":"Polloch to Loch Eil","Id":31},{"Code":"G02","Name":"Ardnamurchan, Sunart and Ardgour","Id":32},{"Code":"G03","Name":"Morvern and Kingairloch","Id":33},{"Code":"H01","Name":"Loch Ness to Southern Stratherrick","Id":34},{"Code":"H02","Name":"Loch Lochy to the Western Monadh Liath","Id":35},{"Code":"H03","Name":"Glen Gloy to Glen Roy","Id":36},{"Code":"H04","Name":"Glen Roy to Loch Laggan","Id":37},{"Code":"H05","Name":"The Eastern Monadh Liath to the Moray Firth","Id":38},{"Code":"H06","Name":"River Findhorn to Strathspey","Id":39},{"Code":"I01","Name":"Ben Nevis to Loch Treig","Id":40},{"Code":"I02","Name":"The Mamores","Id":41},{"Code":"I03","Name":"Blackwater Reservoir to Glen Spean","Id":42},{"Code":"I04","Name":"Rannoch Station to Balgowan","Id":43},{"Code":"I05","Name":"Aonach Eagach to Rannoch Station","Id":44},{"Code":"I06","Name":"Port Appin to Glen Coe","Id":45},{"Code":"I07","Name":"Loch Creran to Loch Etive","Id":46},{"Code":"J01","Name":"Dalwhinnie to the River Tummel","Id":47},{"Code":"J02","Name":"Glen Tromie and Pass of Drumochter to Glen Tilt","Id":48},{"Code":"J03","Name":"The Cairngorms to the Hills of Cromdale","Id":49},{"Code":"J04","Name":"Strathspey to Glen Rinnes","Id":50},{"Code":"J05","Name":"The Ladder Hills to Banff","Id":51},{"Code":"J06","Name":"River Don to Kinnaird Head","Id":52},{"Code":"J07","Name":"Between the Dee and Don","Id":53},{"Code":"K01","Name":"Glen Tilt to Blairgowrie","Id":54},{"Code":"K02","Name":"River Dee to Strath Ardle and Glen Shee","Id":55},{"Code":"K03","Name":"The East Mounth to Strathmore","Id":56},{"Code":"K04","Name":"Glen Esk to Aberdeen","Id":57},{"Code":"K05","Name":"The Sidlaws - Perth to Montrose","Id":58},{"Code":"L01","Name":"Loch Etive to the Black Mount","Id":59},{"Code":"L02","Name":"Ben Cruachan to Bridge of Orchy","Id":60},{"Code":"L03","Name":"Rannoch Moor to Pitlochry","Id":61},{"Code":"L04","Name":"Glen Orchy to Glen Lochay","Id":62},{"Code":"L05","Name":"Glen Lyon to Loch Tay","Id":63},{"Code":"M01","Name":"Firth of Lorn to Loch Awe","Id":64},{"Code":"M02","Name":"Lochgilphead to Crianlarich","Id":65},{"Code":"M03","Name":"The Arrochar Alps to Glen Fyne","Id":66},{"Code":"M04","Name":"Knapdale and Kintyre","Id":67},{"Code":"M05","Name":"Ardgoil - Loch Fyne to Loch Long","Id":68},{"Code":"M06","Name":"Cowal - Strachur to the Kyles of Bute","Id":69},{"Code":"M07","Name":"Loch Long to Loch Lomond","Id":70},{"Code":"N01","Name":"Crianlarich Hills to Loch Arklet","Id":71},{"Code":"N02","Name":"Strath Gartney to Strathyre","Id":72},{"Code":"N03","Name":"Ben Lomond to the Campsie Fells","Id":73},{"Code":"N04","Name":"Lochearnhead to Strath Tay","Id":74},{"Code":"N05","Name":"Strathyre to Strathallan","Id":75},{"Code":"N06","Name":"The Ochils and Fife","Id":76},{"Code":"O01","Name":"The Rhins to the River Cree","Id":77},{"Code":"O02","Name":"Carrick and Galloway Forest","Id":78},{"Code":"O03","Name":"The Glenkens to Nithsdale","Id":79},{"Code":"O04","Name":"Dalbeattie to Criffel","Id":80},{"Code":"P01","Name":"The Clyde Muirshiels - Ardrossan to Greenock","Id":81},{"Code":"P02","Name":"Ayr and Sanquhar to the River Clyde","Id":82},{"Code":"P03","Name":"Glasgow to Galashiels and North Berwick","Id":83},{"Code":"P04","Name":"Lammermuir - Dunbar to River Tweed","Id":84},{"Code":"P05","Name":"The Lowther Hills to the Solway Firth","Id":85},{"Code":"P06","Name":"Moffat to Peebles","Id":86},{"Code":"P07","Name":"Gretna to Kelso, west of Teviotdale and Eskdale","Id":87},{"Code":"P08","Name":"Hawick to Langholm and Liddesdale","Id":88},{"Code":"P09","Name":"Carlisle to Kielder and the North Tyne","Id":89},{"Code":"P10","Name":"Jedburgh to Bellingham","Id":90},{"Code":"P11","Name":"The Northern Cheviots to Tyneside","Id":91},{"Code":"X01","Name":"St Kilda, Rona and the Neighbours of Lewis-Harris","Id":92},{"Code":"X02","Name":"Gallan Head to Loch Reasort","Id":93},{"Code":"X03","Name":"Tarbert to the Butt of Lewis","Id":94},{"Code":"X04","Name":"The Park Peninsula","Id":95},{"Code":"X05","Name":"South Harris","Id":96},{"Code":"X06","Name":"North Uist, South Uist and Nearby Islands","Id":97},{"Code":"X07","Name":"Barra to Barra Head","Id":98},{"Code":"Y01","Name":"The Trotternish Peninsula","Id":99},{"Code":"Y02","Name":"Duirinish to the Black Cuillin","Id":100},{"Code":"Y03","Name":"The Red Cuillin to the Sleat","Id":101},{"Code":"Y04","Name":"Small Isles of the Inner Hebrides","Id":102},{"Code":"Y05","Name":"Calgary to Salen","Id":103},{"Code":"Y06","Name":"The Ross of Mull to Ardmeanach and Craignure","Id":104},{"Code":"Y07","Name":"Lussa River to the Firth of Lorn","Id":105},{"Code":"Z01","Name":"Outlying Islands of Shetland","Id":106},{"Code":"Z02","Name":"Shetland Mainland","Id":107},{"Code":"Z03","Name":"Orkney Islands","Id":108},{"Code":"Z04","Name":"Coastal Islands of Scotland","Id":109},{"Code":"Z05","Name":"Jura, Islay and Surrounding Islands","Id":110},{"Code":"Z06","Name":"Arran and Holy Island","Id":111},{"Code":"Z08","Name":"Tump islands Northern Isles","Id":112},{"Code":"Z09","Name":"Tump islands Outer Hebrides","Id":113},{"Code":"Z10","Name":"Tump islands Inner Hebrides","Id":114},{"Code":"Z11","Name":"Tump islands Solway to Cape Wrath","Id":115},{"Code":"Z12","Name":"Tump islands Cape Wrath to Tweed","Id":116},{"Code":"Z16","Name":"Tump islands Freshwater","Id":117}],"Maps1To25000":[{"Code":"309N","Scale":0.00004,"Id":1},{"Code":"309S","Scale":0.00004,"Id":2},{"Code":"310","Scale":0.00004,"Id":3},{"Code":"311","Scale":0.00004,"Id":4},{"Code":"312","Scale":0.00004,"Id":5},{"Code":"313","Scale":0.00004,"Id":6},{"Code":"314","Scale":0.00004,"Id":7},{"Code":"317","Scale":0.00004,"Id":8},{"Code":"318","Scale":0.00004,"Id":9},{"Code":"319","Scale":0.00004,"Id":10},{"Code":"320","Scale":0.00004,"Id":11},{"Code":"321","Scale":0.00004,"Id":12},{"Code":"322N","Scale":0.00004,"Id":13},{"Code":"322S","Scale":0.00004,"Id":14},{"Code":"323N","Scale":0.00004,"Id":15},{"Code":"323S","Scale":0.00004,"Id":16},{"Code":"324","Scale":0.00004,"Id":17},{"Code":"326N","Scale":0.00004,"Id":18},{"Code":"326S","Scale":0.00004,"Id":19},{"Code":"327","Scale":0.00004,"Id":20},{"Code":"328N","Scale":0.00004,"Id":21},{"Code":"328S","Scale":0.00004,"Id":22},{"Code":"329","Scale":0.00004,"Id":23},{"Code":"330","Scale":0.00004,"Id":24},{"Code":"331","Scale":0.00004,"Id":25},{"Code":"333","Scale":0.00004,"Id":26},{"Code":"334","Scale":0.00004,"Id":27},{"Code":"335","Scale":0.00004,"Id":28},{"Code":"336","Scale":0.00004,"Id":29},{"Code":"337","Scale":0.00004,"Id":30},{"Code":"338","Scale":0.00004,"Id":31},{"Code":"339E","Scale":0.00004,"Id":32},{"Code":"339W","Scale":0.00004,"Id":33},{"Code":"341N","Scale":0.00004,"Id":34},{"Code":"341S","Scale":0.00004,"Id":35},{"Code":"342","Scale":0.00004,"Id":36},{"Code":"343","Scale":0.00004,"Id":37},{"Code":"344","Scale":0.00004,"Id":38},{"Code":"345E","Scale":0.00004,"Id":39},{"Code":"345W","Scale":0.00004,"Id":40},{"Code":"346","Scale":0.00004,"Id":41},{"Code":"347","Scale":0.00004,"Id":42},{"Code":"348","Scale":0.00004,"Id":43},{"Code":"349E","Scale":0.00004,"Id":44},{"Code":"349W","Scale":0.00004,"Id":45},{"Code":"350","Scale":0.00004,"Id":46},{"Code":"351E","Scale":0.00004,"Id":47},{"Code":"351W","Scale":0.00004,"Id":48},{"Code":"352","Scale":0.00004,"Id":49},{"Code":"353E","Scale":0.00004,"Id":50},{"Code":"353W","Scale":0.00004,"Id":51},{"Code":"354","Scale":0.00004,"Id":52},{"Code":"355N","Scale":0.00004,"Id":53},{"Code":"355S","Scale":0.00004,"Id":54},{"Code":"356N","Scale":0.00004,"Id":55},{"Code":"356S","Scale":0.00004,"Id":56},{"Code":"357N","Scale":0.00004,"Id":57},{"Code":"357S","Scale":0.00004,"Id":58},{"Code":"358N","Scale":0.00004,"Id":59},{"Code":"358S","Scale":0.00004,"Id":60},{"Code":"359","Scale":0.00004,"Id":61},{"Code":"36","Scale":0.00004,"Id":62},{"Code":"360N","Scale":0.00004,"Id":63},{"Code":"360S","Scale":0.00004,"Id":64},{"Code":"361N","Scale":0.00004,"Id":65},{"Code":"361S","Scale":0.00004,"Id":66},{"Code":"362N","Scale":0.00004,"Id":67},{"Code":"362S","Scale":0.00004,"Id":68},{"Code":"363N","Scale":0.00004,"Id":69},{"Code":"363S","Scale":0.00004,"Id":70},{"Code":"364","Scale":0.00004,"Id":71},{"Code":"364N","Scale":0.00004,"Id":72},{"Code":"364S","Scale":0.00004,"Id":73},{"Code":"365N","Scale":0.00004,"Id":74},{"Code":"365S","Scale":0.00004,"Id":75},{"Code":"366E","Scale":0.00004,"Id":76},{"Code":"366W","Scale":0.00004,"Id":77},{"Code":"367E","Scale":0.00004,"Id":78},{"Code":"367W","Scale":0.00004,"Id":79},{"Code":"368","Scale":0.00004,"Id":80},{"Code":"368E","Scale":0.00004,"Id":81},{"Code":"368W","Scale":0.00004,"Id":82},{"Code":"369","Scale":0.00004,"Id":83},{"Code":"370","Scale":0.00004,"Id":84},{"Code":"371N","Scale":0.00004,"Id":85},{"Code":"371S","Scale":0.00004,"Id":86},{"Code":"372E","Scale":0.00004,"Id":87},{"Code":"372W","Scale":0.00004,"Id":88},{"Code":"373","Scale":0.00004,"Id":89},{"Code":"374E","Scale":0.00004,"Id":90},{"Code":"374W","Scale":0.00004,"Id":91},{"Code":"375E","Scale":0.00004,"Id":92},{"Code":"375W","Scale":0.00004,"Id":93},{"Code":"376","Scale":0.00004,"Id":94},{"Code":"377","Scale":0.00004,"Id":95},{"Code":"377E","Scale":0.00004,"Id":96},{"Code":"377W","Scale":0.00004,"Id":97},{"Code":"378","Scale":0.00004,"Id":98},{"Code":"378E","Scale":0.00004,"Id":99},{"Code":"378W","Scale":0.00004,"Id":100},{"Code":"379E","Scale":0.00004,"Id":101},{"Code":"379W","Scale":0.00004,"Id":102},{"Code":"38","Scale":0.00004,"Id":103},{"Code":"380E","Scale":0.00004,"Id":104},{"Code":"380W","Scale":0.00004,"Id":105},{"Code":"381","Scale":0.00004,"Id":106},{"Code":"382N","Scale":0.00004,"Id":107},{"Code":"382S","Scale":0.00004,"Id":108},{"Code":"383E","Scale":0.00004,"Id":109},{"Code":"383W","Scale":0.00004,"Id":110},{"Code":"384","Scale":0.00004,"Id":111},{"Code":"385E","Scale":0.00004,"Id":112},{"Code":"385W","Scale":0.00004,"Id":113},{"Code":"386","Scale":0.00004,"Id":114},{"Code":"386E","Scale":0.00004,"Id":115},{"Code":"386W","Scale":0.00004,"Id":116},{"Code":"387","Scale":0.00004,"Id":117},{"Code":"387N","Scale":0.00004,"Id":118},{"Code":"387S","Scale":0.00004,"Id":119},{"Code":"388","Scale":0.00004,"Id":120},{"Code":"388N","Scale":0.00004,"Id":121},{"Code":"388S","Scale":0.00004,"Id":122},{"Code":"389","Scale":0.00004,"Id":123},{"Code":"390E","Scale":0.00004,"Id":124},{"Code":"390W","Scale":0.00004,"Id":125},{"Code":"391","Scale":0.00004,"Id":126},{"Code":"392","Scale":0.00004,"Id":127},{"Code":"393","Scale":0.00004,"Id":128},{"Code":"394","Scale":0.00004,"Id":129},{"Code":"394E","Scale":0.00004,"Id":130},{"Code":"394W","Scale":0.00004,"Id":131},{"Code":"395","Scale":0.00004,"Id":132},{"Code":"396","Scale":0.00004,"Id":133},{"Code":"397","Scale":0.00004,"Id":134},{"Code":"398E","Scale":0.00004,"Id":135},{"Code":"398W","Scale":0.00004,"Id":136},{"Code":"399","Scale":0.00004,"Id":137},{"Code":"4","Scale":0.00004,"Id":138},{"Code":"40","Scale":0.00004,"Id":139},{"Code":"400","Scale":0.00004,"Id":140},{"Code":"401","Scale":0.00004,"Id":141},{"Code":"402","Scale":0.00004,"Id":142},{"Code":"403","Scale":0.00004,"Id":143},{"Code":"403N","Scale":0.00004,"Id":144},{"Code":"403S","Scale":0.00004,"Id":145},{"Code":"404","Scale":0.00004,"Id":146},{"Code":"404N","Scale":0.00004,"Id":147},{"Code":"404S","Scale":0.00004,"Id":148},{"Code":"405","Scale":0.00004,"Id":149},{"Code":"405E","Scale":0.00004,"Id":150},{"Code":"405W","Scale":0.00004,"Id":151},{"Code":"406E","Scale":0.00004,"Id":152},{"Code":"406W","Scale":0.00004,"Id":153},{"Code":"407","Scale":0.00004,"Id":154},{"Code":"408","Scale":0.00004,"Id":155},{"Code":"409","Scale":0.00004,"Id":156},{"Code":"410","Scale":0.00004,"Id":157},{"Code":"411","Scale":0.00004,"Id":158},{"Code":"412","Scale":0.00004,"Id":159},{"Code":"413N","Scale":0.00004,"Id":160},{"Code":"413S","Scale":0.00004,"Id":161},{"Code":"414N","Scale":0.00004,"Id":162},{"Code":"414S","Scale":0.00004,"Id":163},{"Code":"415","Scale":0.00004,"Id":164},{"Code":"416N","Scale":0.00004,"Id":165},{"Code":"416S","Scale":0.00004,"Id":166},{"Code":"417","Scale":0.00004,"Id":167},{"Code":"418","Scale":0.00004,"Id":168},{"Code":"419","Scale":0.00004,"Id":169},{"Code":"419N","Scale":0.00004,"Id":170},{"Code":"419S","Scale":0.00004,"Id":171},{"Code":"420","Scale":0.00004,"Id":172},{"Code":"420E","Scale":0.00004,"Id":173},{"Code":"420W","Scale":0.00004,"Id":174},{"Code":"421E","Scale":0.00004,"Id":175},{"Code":"421W","Scale":0.00004,"Id":176},{"Code":"422","Scale":0.00004,"Id":177},{"Code":"423","Scale":0.00004,"Id":178},{"Code":"424N","Scale":0.00004,"Id":179},{"Code":"424S","Scale":0.00004,"Id":180},{"Code":"425N","Scale":0.00004,"Id":181},{"Code":"425S","Scale":0.00004,"Id":182},{"Code":"426N","Scale":0.00004,"Id":183},{"Code":"426S","Scale":0.00004,"Id":184},{"Code":"427N","Scale":0.00004,"Id":185},{"Code":"427S","Scale":0.00004,"Id":186},{"Code":"428N","Scale":0.00004,"Id":187},{"Code":"428S","Scale":0.00004,"Id":188},{"Code":"429","Scale":0.00004,"Id":189},{"Code":"430","Scale":0.00004,"Id":190},{"Code":"431","Scale":0.00004,"Id":191},{"Code":"432","Scale":0.00004,"Id":192},{"Code":"433","Scale":0.00004,"Id":193},{"Code":"434","Scale":0.00004,"Id":194},{"Code":"435N","Scale":0.00004,"Id":195},{"Code":"435S","Scale":0.00004,"Id":196},{"Code":"436N","Scale":0.00004,"Id":197},{"Code":"436S","Scale":0.00004,"Id":198},{"Code":"437N","Scale":0.00004,"Id":199},{"Code":"437S","Scale":0.00004,"Id":200},{"Code":"438E","Scale":0.00004,"Id":201},{"Code":"438W","Scale":0.00004,"Id":202},{"Code":"439E","Scale":0.00004,"Id":203},{"Code":"439W","Scale":0.00004,"Id":204},{"Code":"440N","Scale":0.00004,"Id":205},{"Code":"440S","Scale":0.00004,"Id":206},{"Code":"441E","Scale":0.00004,"Id":207},{"Code":"441W","Scale":0.00004,"Id":208},{"Code":"442E","Scale":0.00004,"Id":209},{"Code":"442W","Scale":0.00004,"Id":210},{"Code":"443","Scale":0.00004,"Id":211},{"Code":"444E","Scale":0.00004,"Id":212},{"Code":"444W","Scale":0.00004,"Id":213},{"Code":"445","Scale":0.00004,"Id":214},{"Code":"446","Scale":0.00004,"Id":215},{"Code":"447N","Scale":0.00004,"Id":216},{"Code":"447S","Scale":0.00004,"Id":217},{"Code":"448N","Scale":0.00004,"Id":218},{"Code":"448S","Scale":0.00004,"Id":219},{"Code":"449N","Scale":0.00004,"Id":220},{"Code":"449S","Scale":0.00004,"Id":221},{"Code":"450E","Scale":0.00004,"Id":222},{"Code":"450W","Scale":0.00004,"Id":223},{"Code":"451E","Scale":0.00004,"Id":224},{"Code":"451W","Scale":0.00004,"Id":225},{"Code":"452N","Scale":0.00004,"Id":226},{"Code":"452S","Scale":0.00004,"Id":227},{"Code":"453N","Scale":0.00004,"Id":228},{"Code":"453S","Scale":0.00004,"Id":229},{"Code":"454E","Scale":0.00004,"Id":230},{"Code":"454W","Scale":0.00004,"Id":231},{"Code":"455","Scale":0.00004,"Id":232},{"Code":"456","Scale":0.00004,"Id":233},{"Code":"457","Scale":0.00004,"Id":234},{"Code":"458","Scale":0.00004,"Id":235},{"Code":"459E","Scale":0.00004,"Id":236},{"Code":"459W","Scale":0.00004,"Id":237},{"Code":"460E","Scale":0.00004,"Id":238},{"Code":"460W","Scale":0.00004,"Id":239},{"Code":"461N","Scale":0.00004,"Id":240},{"Code":"461S","Scale":0.00004,"Id":241},{"Code":"462","Scale":0.00004,"Id":242},{"Code":"463","Scale":0.00004,"Id":243},{"Code":"464","Scale":0.00004,"Id":244},{"Code":"465N","Scale":0.00004,"Id":245},{"Code":"465S","Scale":0.00004,"Id":246},{"Code":"466N","Scale":0.00004,"Id":247},{"Code":"466S","Scale":0.00004,"Id":248},{"Code":"467E","Scale":0.00004,"Id":249},{"Code":"467W","Scale":0.00004,"Id":250},{"Code":"468","Scale":0.00004,"Id":251},{"Code":"469N","Scale":0.00004,"Id":252},{"Code":"469S","Scale":0.00004,"Id":253},{"Code":"470N","Scale":0.00004,"Id":254},{"Code":"470S","Scale":0.00004,"Id":255},{"Code":"OL","Scale":0.00004,"Id":256},{"Code":"OL16E","Scale":0.00004,"Id":257},{"Code":"OL16W","Scale":0.00004,"Id":258},{"Code":"OL37N","Scale":0.00004,"Id":259},{"Code":"OL37S","Scale":0.00004,"Id":260},{"Code":"OL38","Scale":0.00004,"Id":261},{"Code":"OL39N","Scale":0.00004,"Id":262},{"Code":"OL39S","Scale":0.00004,"Id":263},{"Code":"OL42W","Scale":0.00004,"Id":264},{"Code":"OL46N","Scale":0.00004,"Id":265},{"Code":"OL46S","Scale":0.00004,"Id":266},{"Code":"OL47E","Scale":0.00004,"Id":267},{"Code":"OL47W","Scale":0.00004,"Id":268},{"Code":"OL48E","Scale":0.00004,"Id":269},{"Code":"OL48W","Scale":0.00004,"Id":270},{"Code":"OL49E","Scale":0.00004,"Id":271},{"Code":"OL49W","Scale":0.00004,"Id":272},{"Code":"OL50","Scale":0.00004,"Id":273},{"Code":"OL51E","Scale":0.00004,"Id":274},{"Code":"OL51W","Scale":0.00004,"Id":275},{"Code":"OL52N","Scale":0.00004,"Id":276},{"Code":"OL52S","Scale":0.00004,"Id":277},{"Code":"OL53N","Scale":0.00004,"Id":278},{"Code":"OL53S","Scale":0.00004,"Id":279},{"Code":"OL54","Scale":0.00004,"Id":280},{"Code":"OL55","Scale":0.00004,"Id":281},{"Code":"OL56","Scale":0.00004,"Id":282},{"Code":"OL57N","Scale":0.00004,"Id":283},{"Code":"OL57S","Scale":0.00004,"Id":284},{"Code":"OL58N","Scale":0.00004,"Id":285},{"Code":"OL58S","Scale":0.00004,"Id":286},{"Code":"OL59E","Scale":0.00004,"Id":287},{"Code":"OL59W","Scale":0.00004,"Id":288},{"Code":"OL60","Scale":0.00004,"Id":289},{"Code":"OL61N","Scale":0.00004,"Id":290},{"Code":"OL61S","Scale":0.00004,"Id":291},{"Code":"OL62E","Scale":0.00004,"Id":292},{"Code":"OL62W","Scale":0.00004,"Id":293}],"Maps1To50000":[{"Code":"1","Scale":0.00002,"Id":1},{"Code":"10","Scale":0.00002,"Id":2},{"Code":"11","Scale":0.00002,"Id":3},{"Code":"12","Scale":0.00002,"Id":4},{"Code":"13","Scale":0.00002,"Id":5},{"Code":"14","Scale":0.00002,"Id":6},{"Code":"15","Scale":0.00002,"Id":7},{"Code":"16","Scale":0.00002,"Id":8},{"Code":"17","Scale":0.00002,"Id":9},{"Code":"18","Scale":0.00002,"Id":10},{"Code":"19","Scale":0.00002,"Id":11},{"Code":"2","Scale":0.00002,"Id":12},{"Code":"20","Scale":0.00002,"Id":13},{"Code":"21","Scale":0.00002,"Id":14},{"Code":"22","Scale":0.00002,"Id":15},{"Code":"23","Scale":0.00002,"Id":16},{"Code":"24","Scale":0.00002,"Id":17},{"Code":"25","Scale":0.00002,"Id":18},{"Code":"26","Scale":0.00002,"Id":19},{"Code":"27","Scale":0.00002,"Id":20},{"Code":"28","Scale":0.00002,"Id":21},{"Code":"29","Scale":0.00002,"Id":22},{"Code":"3","Scale":0.00002,"Id":23},{"Code":"30","Scale":0.00002,"Id":24},{"Code":"31","Scale":0.00002,"Id":25},{"Code":"32","Scale":0.00002,"Id":26},{"Code":"33","Scale":0.00002,"Id":27},{"Code":"34","Scale":0.00002,"Id":28},{"Code":"35","Scale":0.00002,"Id":29},{"Code":"36","Scale":0.00002,"Id":30},{"Code":"37","Scale":0.00002,"Id":31},{"Code":"38","Scale":0.00002,"Id":32},{"Code":"39","Scale":0.00002,"Id":33},{"Code":"4","Scale":0.00002,"Id":34},{"Code":"40","Scale":0.00002,"Id":35},{"Code":"41","Scale":0.00002,"Id":36},{"Code":"42","Scale":0.00002,"Id":37},{"Code":"43","Scale":0.00002,"Id":38},{"Code":"44","Scale":0.00002,"Id":39},{"Code":"45","Scale":0.00002,"Id":40},{"Code":"46","Scale":0.00002,"Id":41},{"Code":"47","Scale":0.00002,"Id":42},{"Code":"48","Scale":0.00002,"Id":43},{"Code":"49","Scale":0.00002,"Id":44},{"Code":"5","Scale":0.00002,"Id":45},{"Code":"50","Scale":0.00002,"Id":46},{"Code":"51","Scale":0.00002,"Id":47},{"Code":"52","Scale":0.00002,"Id":48},{"Code":"53","Scale":0.00002,"Id":49},{"Code":"54","Scale":0.00002,"Id":50},{"Code":"55","Scale":0.00002,"Id":51},{"Code":"56","Scale":0.00002,"Id":52},{"Code":"57","Scale":0.00002,"Id":53},{"Code":"58","Scale":0.00002,"Id":54},{"Code":"59","Scale":0.00002,"Id":55},{"Code":"6","Scale":0.00002,"Id":56},{"Code":"60","Scale":0.00002,"Id":57},{"Code":"61","Scale":0.00002,"Id":58},{"Code":"62","Scale":0.00002,"Id":59},{"Code":"63","Scale":0.00002,"Id":60},{"Code":"64","Scale":0.00002,"Id":61},{"Code":"65","Scale":0.00002,"Id":62},{"Code":"66","Scale":0.00002,"Id":63},{"Code":"67","Scale":0.00002,"Id":64},{"Code":"68","Scale":0.00002,"Id":65},{"Code":"69","Scale":0.00002,"Id":66},{"Code":"7","Scale":0.00002,"Id":67},{"Code":"70","Scale":0.00002,"Id":68},{"Code":"71","Scale":0.00002,"Id":69},{"Code":"72","Scale":0.00002,"Id":70},{"Code":"73","Scale":0.00002,"Id":71},{"Code":"74","Scale":0.00002,"Id":72},{"Code":"75","Scale":0.00002,"Id":73},{"Code":"76","Scale":0.00002,"Id":74},{"Code":"77","Scale":0.00002,"Id":75},{"Code":"78","Scale":0.00002,"Id":76},{"Code":"79","Scale":0.00002,"Id":77},{"Code":"8","Scale":0.00002,"Id":78},{"Code":"80","Scale":0.00002,"Id":79},{"Code":"82","Scale":0.00002,"Id":80},{"Code":"83","Scale":0.00002,"Id":81},{"Code":"84","Scale":0.00002,"Id":82},{"Code":"85","Scale":0.00002,"Id":83},{"Code":"9","Scale":0.00002,"Id":84}],"Mountains":null}
+{
+  "sections": [
+    {
+      "code": "01A",
+      "name": "Loch Tay to Perth",
+      "id": 1
+    },
+    {
+      "code": "01B",
+      "name": "Strathyre to Strathallan",
+      "id": 2
+    },
+    {
+      "code": "01C",
+      "name": "Loch Lomond to Strathyre",
+      "id": 3
+    },
+    {
+      "code": "01D",
+      "name": "Inveraray to Crianlarich",
+      "id": 4
+    },
+    {
+      "code": "01E",
+      "name": "Loch Long to Loch Lomond",
+      "id": 5
+    },
+    {
+      "code": "02A",
+      "name": "Loch Rannoch to Glen Lyon",
+      "id": 6
+    },
+    {
+      "code": "02B",
+      "name": "Glen Lyon to Glen Dochart & Loch Tay",
+      "id": 7
+    },
+    {
+      "code": "03A",
+      "name": "Loch Leven to Rannoch Station",
+      "id": 8
+    },
+    {
+      "code": "03B",
+      "name": "Loch Linnhe to Loch Etive",
+      "id": 9
+    },
+    {
+      "code": "03C",
+      "name": "Glen Etive to Glen Lochy",
+      "id": 10
+    },
+    {
+      "code": "04A",
+      "name": "Fort William to Loch Treig & Loch Leven",
+      "id": 11
+    },
+    {
+      "code": "04B",
+      "name": "Loch Treig to Loch Ericht",
+      "id": 12
+    },
+    {
+      "code": "05A",
+      "name": "Loch Ericht to Glen Tromie & Glen Garry",
+      "id": 13
+    },
+    {
+      "code": "05B",
+      "name": "Loch Ericht to Glen Tromie & Glen Garry",
+      "id": 14
+    },
+    {
+      "code": "06A",
+      "name": "Glen Tromie to Glen Tilt",
+      "id": 15
+    },
+    {
+      "code": "06B",
+      "name": "Pitlochry to Braemar & Blairgowrie",
+      "id": 16
+    },
+    {
+      "code": "07A",
+      "name": "Braemar to Montrose",
+      "id": 17
+    },
+    {
+      "code": "07B",
+      "name": "Braemar to Montrose",
+      "id": 18
+    },
+    {
+      "code": "08A",
+      "name": "Cairngorms",
+      "id": 19
+    },
+    {
+      "code": "08B",
+      "name": "Cairngorms",
+      "id": 20
+    },
+    {
+      "code": "09A",
+      "name": "Inverness to Strathspey",
+      "id": 21
+    },
+    {
+      "code": "09B",
+      "name": "Glen Albyn and the Monadh Liath",
+      "id": 22
+    },
+    {
+      "code": "09C",
+      "name": "Loch Lochy to Loch Laggan",
+      "id": 23
+    },
+    {
+      "code": "10A",
+      "name": "Glen Shiel to Loch Hourn and Loch Quoich",
+      "id": 24
+    },
+    {
+      "code": "10B",
+      "name": "Knoydart to Glen Kingie",
+      "id": 25
+    },
+    {
+      "code": "10C",
+      "name": "Loch Arkaig to Glen Moriston",
+      "id": 26
+    },
+    {
+      "code": "10D",
+      "name": "Mallaig to Fort William",
+      "id": 27
+    },
+    {
+      "code": "11A",
+      "name": "Loch Duich to Cannich",
+      "id": 28
+    },
+    {
+      "code": "11B",
+      "name": "Glen Affric to Glen Moriston",
+      "id": 29
+    },
+    {
+      "code": "12A",
+      "name": "Kyle of Lochalsh to Garve",
+      "id": 30
+    },
+    {
+      "code": "12B",
+      "name": "Killilan to Inverness",
+      "id": 31
+    },
+    {
+      "code": "13A",
+      "name": "Loch Torridon to Loch Maree",
+      "id": 32
+    },
+    {
+      "code": "13B",
+      "name": "Applecross to Achnasheen",
+      "id": 33
+    },
+    {
+      "code": "14A",
+      "name": "Loch Maree to Loch Broom",
+      "id": 34
+    },
+    {
+      "code": "14B",
+      "name": "The Fannaichs",
+      "id": 35
+    },
+    {
+      "code": "15A",
+      "name": "Loch Broom to Strath Oykel",
+      "id": 36
+    },
+    {
+      "code": "15B",
+      "name": "Loch Vaich to Moray Firth",
+      "id": 37
+    },
+    {
+      "code": "16A",
+      "name": "Cape Wrath Peninsula",
+      "id": 38
+    },
+    {
+      "code": "16B",
+      "name": "Durness to Loch Shin",
+      "id": 39
+    },
+    {
+      "code": "16C",
+      "name": "Tongue to Wick and Helmsdale",
+      "id": 40
+    },
+    {
+      "code": "16D",
+      "name": "Altnaharra to Dornoch",
+      "id": 41
+    },
+    {
+      "code": "16E",
+      "name": "Scourie to Lairg",
+      "id": 42
+    },
+    {
+      "code": "16F",
+      "name": "Lochinver to Ullapool",
+      "id": 43
+    },
+    {
+      "code": "17A",
+      "name": "North Skye and Raasay",
+      "id": 44
+    },
+    {
+      "code": "17B",
+      "name": "Minginish and the Cuillin Hills",
+      "id": 45
+    },
+    {
+      "code": "17C",
+      "name": "South-East Skye and Scalpay",
+      "id": 46
+    },
+    {
+      "code": "17D",
+      "name": "Canna, Rhum and Eigg",
+      "id": 47
+    },
+    {
+      "code": "17E",
+      "name": "Mull and Nearby Islands",
+      "id": 48
+    },
+    {
+      "code": "17F",
+      "name": "Coll and Tiree",
+      "id": 49
+    },
+    {
+      "code": "18A",
+      "name": "Moidart and Ardnamurchan",
+      "id": 50
+    },
+    {
+      "code": "18B",
+      "name": "Sunart and Ardgour",
+      "id": 51
+    },
+    {
+      "code": "18C",
+      "name": "Morvern and Kingairloch",
+      "id": 52
+    },
+    {
+      "code": "19A",
+      "name": "Oban to Loch Fyne",
+      "id": 53
+    },
+    {
+      "code": "19B",
+      "name": "Knapdale and Kintyre",
+      "id": 54
+    },
+    {
+      "code": "19C",
+      "name": "Loch Fyne to Bute and the Firth of Clyde",
+      "id": 55
+    },
+    {
+      "code": "20A",
+      "name": "Jura, Scarba and Colonsay",
+      "id": 56
+    },
+    {
+      "code": "20B",
+      "name": "Islay",
+      "id": 57
+    },
+    {
+      "code": "20C",
+      "name": "Arran and Holy Island",
+      "id": 58
+    },
+    {
+      "code": "21A",
+      "name": "Tomintoul to Banff",
+      "id": 59
+    },
+    {
+      "code": "21B",
+      "name": "Fraserburgh to the Dee Valley",
+      "id": 60
+    },
+    {
+      "code": "22",
+      "name": "Shetland Islands",
+      "id": 61
+    },
+    {
+      "code": "23",
+      "name": "Orkney Islands",
+      "id": 62
+    },
+    {
+      "code": "24A",
+      "name": "Lewis and Nearby Islands",
+      "id": 63
+    },
+    {
+      "code": "24B",
+      "name": "Harris and Nearby Islands",
+      "id": 64
+    },
+    {
+      "code": "24C",
+      "name": "North Uist, South Uist and Nearby Islands",
+      "id": 65
+    },
+    {
+      "code": "24D",
+      "name": "Barra to Barra Head",
+      "id": 66
+    },
+    {
+      "code": "25",
+      "name": "St Kilda",
+      "id": 67
+    },
+    {
+      "code": "26A",
+      "name": "Central Scotland from Dumbarton to Montrose",
+      "id": 68
+    },
+    {
+      "code": "26B",
+      "name": "Central Scotland from Dumbarton to Montrose",
+      "id": 69
+    },
+    {
+      "code": "27A",
+      "name": "Ayr to the River Clyde",
+      "id": 70
+    },
+    {
+      "code": "27B",
+      "name": "Carrick and Galloway",
+      "id": 71
+    },
+    {
+      "code": "27C",
+      "name": "The Glenkens to Annandale",
+      "id": 72
+    },
+    {
+      "code": "28A",
+      "name": "Firth of Forth to the River Tweed",
+      "id": 73
+    },
+    {
+      "code": "28B",
+      "name": "The River Tweed to the English Border",
+      "id": 74
+    },
+    {
+      "code": "33",
+      "name": "The Scottish Border to the River Tyne",
+      "id": 75
+    }
+  ],
+  "islands": [
+    {
+      "name": "Arran",
+      "id": 1
+    },
+    {
+      "name": "Barra",
+      "id": 2
+    },
+    {
+      "name": "Benbecula",
+      "id": 3
+    },
+    {
+      "name": "Berneray",
+      "id": 4
+    },
+    {
+      "name": "Boreray",
+      "id": 5
+    },
+    {
+      "name": "Bressay",
+      "id": 6
+    },
+    {
+      "name": "Bute",
+      "id": 7
+    },
+    {
+      "name": "Canna",
+      "id": 8
+    },
+    {
+      "name": "Coll",
+      "id": 9
+    },
+    {
+      "name": "Colonsay",
+      "id": 10
+    },
+    {
+      "name": "Danna",
+      "id": 11
+    },
+    {
+      "name": "Dun (t)",
+      "id": 12
+    },
+    {
+      "name": "East Burra",
+      "id": 13
+    },
+    {
+      "name": "Eday",
+      "id": 14
+    },
+    {
+      "name": "Eigg",
+      "id": 15
+    },
+    {
+      "name": "Eileach an Naoimh",
+      "id": 16
+    },
+    {
+      "name": "Eilean Dubh Mor",
+      "id": 17
+    },
+    {
+      "name": "Eilean Liubhaird",
+      "id": 18
+    },
+    {
+      "name": "Eilean Shona (t)",
+      "id": 19
+    },
+    {
+      "name": "Eriskay",
+      "id": 20
+    },
+    {
+      "name": "Erraid (t)",
+      "id": 21
+    },
+    {
+      "name": "Fair Isle",
+      "id": 22
+    },
+    {
+      "name": "Fetlar",
+      "id": 23
+    },
+    {
+      "name": "Flotta",
+      "id": 24
+    },
+    {
+      "name": "Foula",
+      "id": 25
+    },
+    {
+      "name": "Fuaigh Mor",
+      "id": 26
+    },
+    {
+      "name": "Fudheigh",
+      "id": 27
+    },
+    {
+      "name": "Garbh Eileach",
+      "id": 28
+    },
+    {
+      "name": "Garbh Eilean",
+      "id": 29
+    },
+    {
+      "name": "Gigha",
+      "id": 30
+    },
+    {
+      "name": "Gometra (t)",
+      "id": 31
+    },
+    {
+      "name": "Great Bernera",
+      "id": 32
+    },
+    {
+      "name": "Great Cumbrae",
+      "id": 33
+    },
+    {
+      "name": "Handa",
+      "id": 34
+    },
+    {
+      "name": "Haskeir Island",
+      "id": 35
+    },
+    {
+      "name": "Hellisay",
+      "id": 36
+    },
+    {
+      "name": "Hirta",
+      "id": 37
+    },
+    {
+      "name": "Holy Island (Arran)",
+      "id": 38
+    },
+    {
+      "name": "Hoy",
+      "id": 39
+    },
+    {
+      "name": "Inchcailloch",
+      "id": 40
+    },
+    {
+      "name": "Inchtavannach",
+      "id": 41
+    },
+    {
+      "name": "Iona",
+      "id": 42
+    },
+    {
+      "name": "Islay",
+      "id": 43
+    },
+    {
+      "name": "Isle of Ewe",
+      "id": 44
+    },
+    {
+      "name": "Jura",
+      "id": 45
+    },
+    {
+      "name": "Kerrera",
+      "id": 46
+    },
+    {
+      "name": "Lewis and Harris",
+      "id": 47
+    },
+    {
+      "name": "Lismore",
+      "id": 48
+    },
+    {
+      "name": "Longa",
+      "id": 49
+    },
+    {
+      "name": "Luing",
+      "id": 50
+    },
+    {
+      "name": "Lunga",
+      "id": 51
+    },
+    {
+      "name": "Mingulay",
+      "id": 52
+    },
+    {
+      "name": "Mono Tump island",
+      "id": 53
+    },
+    {
+      "name": "Mono Tump island (t)",
+      "id": 54
+    },
+    {
+      "name": "Mousa",
+      "id": 55
+    },
+    {
+      "name": "Muck",
+      "id": 56
+    },
+    {
+      "name": "Muckle Roe",
+      "id": 57
+    },
+    {
+      "name": "Mull",
+      "id": 58
+    },
+    {
+      "name": "Neave Island",
+      "id": 59
+    },
+    {
+      "name": "Non Tump island",
+      "id": 60
+    },
+    {
+      "name": "Non Tump island (t)",
+      "id": 61
+    },
+    {
+      "name": "North Uist",
+      "id": 62
+    },
+    {
+      "name": "Noss",
+      "id": 63
+    },
+    {
+      "name": "Oldany Island (t)",
+      "id": 64
+    },
+    {
+      "name": "Orkney Mainland",
+      "id": 65
+    },
+    {
+      "name": "Oronsay (t)",
+      "id": 66
+    },
+    {
+      "name": "Out Skerries",
+      "id": 67
+    },
+    {
+      "name": "Pabaigh Mor",
+      "id": 68
+    },
+    {
+      "name": "Pabbay",
+      "id": 69
+    },
+    {
+      "name": "Papa Little",
+      "id": 70
+    },
+    {
+      "name": "Papa Stour",
+      "id": 71
+    },
+    {
+      "name": "Priest Island",
+      "id": 72
+    },
+    {
+      "name": "Raasay",
+      "id": 73
+    },
+    {
+      "name": "Rona (North)",
+      "id": 74
+    },
+    {
+      "name": "Rona (Raasay)",
+      "id": 75
+    },
+    {
+      "name": "Ronay",
+      "id": 76
+    },
+    {
+      "name": "Rousay",
+      "id": 77
+    },
+    {
+      "name": "Rum",
+      "id": 78
+    },
+    {
+      "name": "Sanda Island",
+      "id": 79
+    },
+    {
+      "name": "Sanday (Canna)",
+      "id": 80
+    },
+    {
+      "name": "Sanday (Orkney)",
+      "id": 81
+    },
+    {
+      "name": "Sandray",
+      "id": 82
+    },
+    {
+      "name": "Scalpay (Harris)",
+      "id": 83
+    },
+    {
+      "name": "Scalpay (Skye)",
+      "id": 84
+    },
+    {
+      "name": "Scarba",
+      "id": 85
+    },
+    {
+      "name": "Scarp",
+      "id": 86
+    },
+    {
+      "name": "Seil",
+      "id": 87
+    },
+    {
+      "name": "Shetland Mainland",
+      "id": 88
+    },
+    {
+      "name": "Shuna",
+      "id": 89
+    },
+    {
+      "name": "Skye",
+      "id": 90
+    },
+    {
+      "name": "Soay",
+      "id": 91
+    },
+    {
+      "name": "South Ronaldsay",
+      "id": 92
+    },
+    {
+      "name": "South Uist",
+      "id": 93
+    },
+    {
+      "name": "Stack of Sandwick",
+      "id": 94
+    },
+    {
+      "name": "Stronsay",
+      "id": 95
+    },
+    {
+      "name": "Sula Sgeir",
+      "id": 96
+    },
+    {
+      "name": "Tanera Beg",
+      "id": 97
+    },
+    {
+      "name": "Tanera More",
+      "id": 98
+    },
+    {
+      "name": "Taransay",
+      "id": 99
+    },
+    {
+      "name": "Tiree",
+      "id": 100
+    },
+    {
+      "name": "Ulva",
+      "id": 101
+    },
+    {
+      "name": "Unst",
+      "id": 102
+    },
+    {
+      "name": "Vaila",
+      "id": 103
+    },
+    {
+      "name": "Vatersay",
+      "id": 104
+    },
+    {
+      "name": "Vementry",
+      "id": 105
+    },
+    {
+      "name": "West Burra",
+      "id": 106
+    },
+    {
+      "name": "Westray",
+      "id": 107
+    },
+    {
+      "name": "Whalsay",
+      "id": 108
+    },
+    {
+      "name": "Wiay",
+      "id": 109
+    },
+    {
+      "name": "Yell",
+      "id": 110
+    }
+  ],
+  "counties": [
+    {
+      "name": "Aberdeen",
+      "id": 1
+    },
+    {
+      "name": "Aberdeenshire",
+      "id": 2
+    },
+    {
+      "name": "Angus",
+      "id": 3
+    },
+    {
+      "name": "Argyll and Bute",
+      "id": 4
+    },
+    {
+      "name": "Clackmannanshire",
+      "id": 5
+    },
+    {
+      "name": "Dumfries and Galloway",
+      "id": 6
+    },
+    {
+      "name": "Dundee",
+      "id": 7
+    },
+    {
+      "name": "East Ayrshire",
+      "id": 8
+    },
+    {
+      "name": "East Dunbartonshire",
+      "id": 9
+    },
+    {
+      "name": "East Lothian",
+      "id": 10
+    },
+    {
+      "name": "East Renfrewshire",
+      "id": 11
+    },
+    {
+      "name": "Edinburgh",
+      "id": 12
+    },
+    {
+      "name": "Falkirk",
+      "id": 13
+    },
+    {
+      "name": "Fife",
+      "id": 14
+    },
+    {
+      "name": "Glasgow",
+      "id": 15
+    },
+    {
+      "name": "Highland",
+      "id": 16
+    },
+    {
+      "name": "Inverclyde",
+      "id": 17
+    },
+    {
+      "name": "Midlothian",
+      "id": 18
+    },
+    {
+      "name": "Moray",
+      "id": 19
+    },
+    {
+      "name": "Na h-Eileanan Siar [Western Isles]",
+      "id": 20
+    },
+    {
+      "name": "North Ayrshire",
+      "id": 21
+    },
+    {
+      "name": "North Lanarkshire",
+      "id": 22
+    },
+    {
+      "name": "Northumberland",
+      "id": 23
+    },
+    {
+      "name": "Orkney Islands",
+      "id": 24
+    },
+    {
+      "name": "Perth and Kinross",
+      "id": 25
+    },
+    {
+      "name": "Renfrewshire",
+      "id": 26
+    },
+    {
+      "name": "Scottish Borders",
+      "id": 27
+    },
+    {
+      "name": "Shetland Islands",
+      "id": 28
+    },
+    {
+      "name": "South Ayrshire",
+      "id": 29
+    },
+    {
+      "name": "South Lanarkshire",
+      "id": 30
+    },
+    {
+      "name": "Stirling",
+      "id": 31
+    },
+    {
+      "name": "West Dunbartonshire",
+      "id": 32
+    },
+    {
+      "name": "West Lothian",
+      "id": 33
+    }
+  ],
+  "topologicalSections": [
+    {
+      "code": "A01",
+      "name": "Cape Wrath to Loch Shin",
+      "id": 1
+    },
+    {
+      "code": "A02",
+      "name": "Strathmore to Strath Naver",
+      "id": 2
+    },
+    {
+      "code": "A03",
+      "name": "Strath of Kildonan to Dunnet Head",
+      "id": 3
+    },
+    {
+      "code": "A04",
+      "name": "Altnaharra to the Dornoch Firth",
+      "id": 4
+    },
+    {
+      "code": "A05",
+      "name": "Scourie and the Point of Stoer to Lairg",
+      "id": 5
+    },
+    {
+      "code": "A06",
+      "name": "Loch Assynt to Loch Veyatie",
+      "id": 6
+    },
+    {
+      "code": "B01",
+      "name": "Southern and Western Coigach",
+      "id": 7
+    },
+    {
+      "code": "B02",
+      "name": "Inverkirkaig to Oykel Bridge",
+      "id": 8
+    },
+    {
+      "code": "B03",
+      "name": "Loch Broom to Bonar Bridge",
+      "id": 9
+    },
+    {
+      "code": "B04",
+      "name": "Loch Vaich to Tarbat Ness",
+      "id": 10
+    },
+    {
+      "code": "B05",
+      "name": "Strath na Sealga to Loch Broom",
+      "id": 11
+    },
+    {
+      "code": "B06",
+      "name": "Loch Ewe to Fisherfield Forest",
+      "id": 12
+    },
+    {
+      "code": "B07",
+      "name": "Slioch",
+      "id": 13
+    },
+    {
+      "code": "B08",
+      "name": "The Fannaichs to Contin",
+      "id": 14
+    },
+    {
+      "code": "B09",
+      "name": "Applecross - Loch Torridon to Loch Kishorn",
+      "id": 15
+    },
+    {
+      "code": "B10",
+      "name": "Loch Carron to Coulin Forest",
+      "id": 16
+    },
+    {
+      "code": "C01",
+      "name": "Loch Torridon to Loch Maree",
+      "id": 17
+    },
+    {
+      "code": "D01",
+      "name": "Glen Carron to Loch Luichart",
+      "id": 18
+    },
+    {
+      "code": "D02",
+      "name": "Loch Alsh to the Black Isle",
+      "id": 19
+    },
+    {
+      "code": "D03",
+      "name": "Killilan to Strathglass",
+      "id": 20
+    },
+    {
+      "code": "E01",
+      "name": "Dornie to Cannich",
+      "id": 21
+    },
+    {
+      "code": "E02",
+      "name": "Shiel Bridge to Inverness",
+      "id": 22
+    },
+    {
+      "code": "E03",
+      "name": "Loch Hourn to Glen Shiel",
+      "id": 23
+    },
+    {
+      "code": "E04",
+      "name": "Loch Quoich to Loch Ness",
+      "id": 24
+    },
+    {
+      "code": "E05",
+      "name": "Knoydart to Barrisdale Forest",
+      "id": 25
+    },
+    {
+      "code": "E06",
+      "name": "North Morar to Kingie",
+      "id": 26
+    },
+    {
+      "code": "E07",
+      "name": "Loch Arkaig to Loch Garry",
+      "id": 27
+    },
+    {
+      "code": "F01",
+      "name": "Arisaig to Strathan",
+      "id": 28
+    },
+    {
+      "code": "F02",
+      "name": "Loch Eil to Loch Arkaig",
+      "id": 29
+    },
+    {
+      "code": "F03",
+      "name": "Moidart - Sound of Arisaig to Loch Shiel",
+      "id": 30
+    },
+    {
+      "code": "G01",
+      "name": "Polloch to Loch Eil",
+      "id": 31
+    },
+    {
+      "code": "G02",
+      "name": "Ardnamurchan, Sunart and Ardgour",
+      "id": 32
+    },
+    {
+      "code": "G03",
+      "name": "Morvern and Kingairloch",
+      "id": 33
+    },
+    {
+      "code": "H01",
+      "name": "Loch Ness to Southern Stratherrick",
+      "id": 34
+    },
+    {
+      "code": "H02",
+      "name": "Loch Lochy to the Western Monadh Liath",
+      "id": 35
+    },
+    {
+      "code": "H03",
+      "name": "Glen Gloy to Glen Roy",
+      "id": 36
+    },
+    {
+      "code": "H04",
+      "name": "Glen Roy to Loch Laggan",
+      "id": 37
+    },
+    {
+      "code": "H05",
+      "name": "The Eastern Monadh Liath to the Moray Firth",
+      "id": 38
+    },
+    {
+      "code": "H06",
+      "name": "River Findhorn to Strathspey",
+      "id": 39
+    },
+    {
+      "code": "I01",
+      "name": "Ben Nevis to Loch Treig",
+      "id": 40
+    },
+    {
+      "code": "I02",
+      "name": "The Mamores",
+      "id": 41
+    },
+    {
+      "code": "I03",
+      "name": "Blackwater Reservoir to Glen Spean",
+      "id": 42
+    },
+    {
+      "code": "I04",
+      "name": "Rannoch Station to Balgowan",
+      "id": 43
+    },
+    {
+      "code": "I05",
+      "name": "Aonach Eagach to Rannoch Station",
+      "id": 44
+    },
+    {
+      "code": "I06",
+      "name": "Port Appin to Glen Coe",
+      "id": 45
+    },
+    {
+      "code": "I07",
+      "name": "Loch Creran to Loch Etive",
+      "id": 46
+    },
+    {
+      "code": "J01",
+      "name": "Dalwhinnie to the River Tummel",
+      "id": 47
+    },
+    {
+      "code": "J02",
+      "name": "Glen Tromie and Pass of Drumochter to Glen Tilt",
+      "id": 48
+    },
+    {
+      "code": "J03",
+      "name": "The Cairngorms to the Hills of Cromdale",
+      "id": 49
+    },
+    {
+      "code": "J04",
+      "name": "Strathspey to Glen Rinnes",
+      "id": 50
+    },
+    {
+      "code": "J05",
+      "name": "The Ladder Hills to Banff",
+      "id": 51
+    },
+    {
+      "code": "J06",
+      "name": "River Don to Kinnaird Head",
+      "id": 52
+    },
+    {
+      "code": "J07",
+      "name": "Between the Dee and Don",
+      "id": 53
+    },
+    {
+      "code": "K01",
+      "name": "Glen Tilt to Blairgowrie",
+      "id": 54
+    },
+    {
+      "code": "K02",
+      "name": "River Dee to Strath Ardle and Glen Shee",
+      "id": 55
+    },
+    {
+      "code": "K03",
+      "name": "The East Mounth to Strathmore",
+      "id": 56
+    },
+    {
+      "code": "K04",
+      "name": "Glen Esk to Aberdeen",
+      "id": 57
+    },
+    {
+      "code": "K05",
+      "name": "The Sidlaws - Perth to Montrose",
+      "id": 58
+    },
+    {
+      "code": "L01",
+      "name": "Loch Etive to the Black Mount",
+      "id": 59
+    },
+    {
+      "code": "L02",
+      "name": "Ben Cruachan to Bridge of Orchy",
+      "id": 60
+    },
+    {
+      "code": "L03",
+      "name": "Rannoch Moor to Pitlochry",
+      "id": 61
+    },
+    {
+      "code": "L04",
+      "name": "Glen Orchy to Glen Lochay",
+      "id": 62
+    },
+    {
+      "code": "L05",
+      "name": "Glen Lyon to Loch Tay",
+      "id": 63
+    },
+    {
+      "code": "M01",
+      "name": "Firth of Lorn to Loch Awe",
+      "id": 64
+    },
+    {
+      "code": "M02",
+      "name": "Lochgilphead to Crianlarich",
+      "id": 65
+    },
+    {
+      "code": "M03",
+      "name": "The Arrochar Alps to Glen Fyne",
+      "id": 66
+    },
+    {
+      "code": "M04",
+      "name": "Knapdale and Kintyre",
+      "id": 67
+    },
+    {
+      "code": "M05",
+      "name": "Ardgoil - Loch Fyne to Loch Long",
+      "id": 68
+    },
+    {
+      "code": "M06",
+      "name": "Cowal - Strachur to the Kyles of Bute",
+      "id": 69
+    },
+    {
+      "code": "M07",
+      "name": "Loch Long to Loch Lomond",
+      "id": 70
+    },
+    {
+      "code": "N01",
+      "name": "Crianlarich Hills to Loch Arklet",
+      "id": 71
+    },
+    {
+      "code": "N02",
+      "name": "Strath Gartney to Strathyre",
+      "id": 72
+    },
+    {
+      "code": "N03",
+      "name": "Ben Lomond to the Campsie Fells",
+      "id": 73
+    },
+    {
+      "code": "N04",
+      "name": "Lochearnhead to Strath Tay",
+      "id": 74
+    },
+    {
+      "code": "N05",
+      "name": "Strathyre to Strathallan",
+      "id": 75
+    },
+    {
+      "code": "N06",
+      "name": "The Ochils and Fife",
+      "id": 76
+    },
+    {
+      "code": "O01",
+      "name": "The Rhins to the River Cree",
+      "id": 77
+    },
+    {
+      "code": "O02",
+      "name": "Carrick and Galloway Forest",
+      "id": 78
+    },
+    {
+      "code": "O03",
+      "name": "The Glenkens to Nithsdale",
+      "id": 79
+    },
+    {
+      "code": "O04",
+      "name": "Dalbeattie to Criffel",
+      "id": 80
+    },
+    {
+      "code": "P01",
+      "name": "The Clyde Muirshiels - Ardrossan to Greenock",
+      "id": 81
+    },
+    {
+      "code": "P02",
+      "name": "Ayr and Sanquhar to the River Clyde",
+      "id": 82
+    },
+    {
+      "code": "P03",
+      "name": "Glasgow to Galashiels and North Berwick",
+      "id": 83
+    },
+    {
+      "code": "P04",
+      "name": "Lammermuir - Dunbar to River Tweed",
+      "id": 84
+    },
+    {
+      "code": "P05",
+      "name": "The Lowther Hills to the Solway Firth",
+      "id": 85
+    },
+    {
+      "code": "P06",
+      "name": "Moffat to Peebles",
+      "id": 86
+    },
+    {
+      "code": "P07",
+      "name": "Gretna to Kelso, west of Teviotdale and Eskdale",
+      "id": 87
+    },
+    {
+      "code": "P08",
+      "name": "Hawick to Langholm and Liddesdale",
+      "id": 88
+    },
+    {
+      "code": "P09",
+      "name": "Carlisle to Kielder and the North Tyne",
+      "id": 89
+    },
+    {
+      "code": "P10",
+      "name": "Jedburgh to Bellingham",
+      "id": 90
+    },
+    {
+      "code": "P11",
+      "name": "The Northern Cheviots to Tyneside",
+      "id": 91
+    },
+    {
+      "code": "X01",
+      "name": "St Kilda, Rona and the Neighbours of Lewis-Harris",
+      "id": 92
+    },
+    {
+      "code": "X02",
+      "name": "Gallan Head to Loch Reasort",
+      "id": 93
+    },
+    {
+      "code": "X03",
+      "name": "Tarbert to the Butt of Lewis",
+      "id": 94
+    },
+    {
+      "code": "X04",
+      "name": "The Park Peninsula",
+      "id": 95
+    },
+    {
+      "code": "X05",
+      "name": "South Harris",
+      "id": 96
+    },
+    {
+      "code": "X06",
+      "name": "North Uist, South Uist and Nearby Islands",
+      "id": 97
+    },
+    {
+      "code": "X07",
+      "name": "Barra to Barra Head",
+      "id": 98
+    },
+    {
+      "code": "Y01",
+      "name": "The Trotternish Peninsula",
+      "id": 99
+    },
+    {
+      "code": "Y02",
+      "name": "Duirinish to the Black Cuillin",
+      "id": 100
+    },
+    {
+      "code": "Y03",
+      "name": "The Red Cuillin to the Sleat",
+      "id": 101
+    },
+    {
+      "code": "Y04",
+      "name": "Small Isles of the Inner Hebrides",
+      "id": 102
+    },
+    {
+      "code": "Y05",
+      "name": "Calgary to Salen",
+      "id": 103
+    },
+    {
+      "code": "Y06",
+      "name": "The Ross of Mull to Ardmeanach and Craignure",
+      "id": 104
+    },
+    {
+      "code": "Y07",
+      "name": "Lussa River to the Firth of Lorn",
+      "id": 105
+    },
+    {
+      "code": "Z01",
+      "name": "Outlying Islands of Shetland",
+      "id": 106
+    },
+    {
+      "code": "Z02",
+      "name": "Shetland Mainland",
+      "id": 107
+    },
+    {
+      "code": "Z03",
+      "name": "Orkney Islands",
+      "id": 108
+    },
+    {
+      "code": "Z04",
+      "name": "Coastal Islands of Scotland",
+      "id": 109
+    },
+    {
+      "code": "Z05",
+      "name": "Jura, Islay and Surrounding Islands",
+      "id": 110
+    },
+    {
+      "code": "Z06",
+      "name": "Arran and Holy Island",
+      "id": 111
+    },
+    {
+      "code": "Z08",
+      "name": "Tump islands Northern Isles",
+      "id": 112
+    },
+    {
+      "code": "Z09",
+      "name": "Tump islands Outer Hebrides",
+      "id": 113
+    },
+    {
+      "code": "Z10",
+      "name": "Tump islands Inner Hebrides",
+      "id": 114
+    },
+    {
+      "code": "Z11",
+      "name": "Tump islands Solway to Cape Wrath",
+      "id": 115
+    },
+    {
+      "code": "Z12",
+      "name": "Tump islands Cape Wrath to Tweed",
+      "id": 116
+    },
+    {
+      "code": "Z16",
+      "name": "Tump islands Freshwater",
+      "id": 117
+    }
+  ],
+  "maps1To25000": [
+    {
+      "code": "309N",
+      "scale": 0.00004,
+      "id": 1
+    },
+    {
+      "code": "309S",
+      "scale": 0.00004,
+      "id": 2
+    },
+    {
+      "code": "310",
+      "scale": 0.00004,
+      "id": 3
+    },
+    {
+      "code": "311",
+      "scale": 0.00004,
+      "id": 4
+    },
+    {
+      "code": "312",
+      "scale": 0.00004,
+      "id": 5
+    },
+    {
+      "code": "313",
+      "scale": 0.00004,
+      "id": 6
+    },
+    {
+      "code": "314",
+      "scale": 0.00004,
+      "id": 7
+    },
+    {
+      "code": "317",
+      "scale": 0.00004,
+      "id": 8
+    },
+    {
+      "code": "318",
+      "scale": 0.00004,
+      "id": 9
+    },
+    {
+      "code": "319",
+      "scale": 0.00004,
+      "id": 10
+    },
+    {
+      "code": "320",
+      "scale": 0.00004,
+      "id": 11
+    },
+    {
+      "code": "321",
+      "scale": 0.00004,
+      "id": 12
+    },
+    {
+      "code": "322N",
+      "scale": 0.00004,
+      "id": 13
+    },
+    {
+      "code": "322S",
+      "scale": 0.00004,
+      "id": 14
+    },
+    {
+      "code": "323N",
+      "scale": 0.00004,
+      "id": 15
+    },
+    {
+      "code": "323S",
+      "scale": 0.00004,
+      "id": 16
+    },
+    {
+      "code": "324",
+      "scale": 0.00004,
+      "id": 17
+    },
+    {
+      "code": "326N",
+      "scale": 0.00004,
+      "id": 18
+    },
+    {
+      "code": "326S",
+      "scale": 0.00004,
+      "id": 19
+    },
+    {
+      "code": "327",
+      "scale": 0.00004,
+      "id": 20
+    },
+    {
+      "code": "328N",
+      "scale": 0.00004,
+      "id": 21
+    },
+    {
+      "code": "328S",
+      "scale": 0.00004,
+      "id": 22
+    },
+    {
+      "code": "329",
+      "scale": 0.00004,
+      "id": 23
+    },
+    {
+      "code": "330",
+      "scale": 0.00004,
+      "id": 24
+    },
+    {
+      "code": "331",
+      "scale": 0.00004,
+      "id": 25
+    },
+    {
+      "code": "333",
+      "scale": 0.00004,
+      "id": 26
+    },
+    {
+      "code": "334",
+      "scale": 0.00004,
+      "id": 27
+    },
+    {
+      "code": "335",
+      "scale": 0.00004,
+      "id": 28
+    },
+    {
+      "code": "336",
+      "scale": 0.00004,
+      "id": 29
+    },
+    {
+      "code": "337",
+      "scale": 0.00004,
+      "id": 30
+    },
+    {
+      "code": "338",
+      "scale": 0.00004,
+      "id": 31
+    },
+    {
+      "code": "339E",
+      "scale": 0.00004,
+      "id": 32
+    },
+    {
+      "code": "339W",
+      "scale": 0.00004,
+      "id": 33
+    },
+    {
+      "code": "341N",
+      "scale": 0.00004,
+      "id": 34
+    },
+    {
+      "code": "341S",
+      "scale": 0.00004,
+      "id": 35
+    },
+    {
+      "code": "342",
+      "scale": 0.00004,
+      "id": 36
+    },
+    {
+      "code": "343",
+      "scale": 0.00004,
+      "id": 37
+    },
+    {
+      "code": "344",
+      "scale": 0.00004,
+      "id": 38
+    },
+    {
+      "code": "345E",
+      "scale": 0.00004,
+      "id": 39
+    },
+    {
+      "code": "345W",
+      "scale": 0.00004,
+      "id": 40
+    },
+    {
+      "code": "346",
+      "scale": 0.00004,
+      "id": 41
+    },
+    {
+      "code": "347",
+      "scale": 0.00004,
+      "id": 42
+    },
+    {
+      "code": "348",
+      "scale": 0.00004,
+      "id": 43
+    },
+    {
+      "code": "349E",
+      "scale": 0.00004,
+      "id": 44
+    },
+    {
+      "code": "349W",
+      "scale": 0.00004,
+      "id": 45
+    },
+    {
+      "code": "350",
+      "scale": 0.00004,
+      "id": 46
+    },
+    {
+      "code": "351E",
+      "scale": 0.00004,
+      "id": 47
+    },
+    {
+      "code": "351W",
+      "scale": 0.00004,
+      "id": 48
+    },
+    {
+      "code": "352",
+      "scale": 0.00004,
+      "id": 49
+    },
+    {
+      "code": "353E",
+      "scale": 0.00004,
+      "id": 50
+    },
+    {
+      "code": "353W",
+      "scale": 0.00004,
+      "id": 51
+    },
+    {
+      "code": "354",
+      "scale": 0.00004,
+      "id": 52
+    },
+    {
+      "code": "355N",
+      "scale": 0.00004,
+      "id": 53
+    },
+    {
+      "code": "355S",
+      "scale": 0.00004,
+      "id": 54
+    },
+    {
+      "code": "356N",
+      "scale": 0.00004,
+      "id": 55
+    },
+    {
+      "code": "356S",
+      "scale": 0.00004,
+      "id": 56
+    },
+    {
+      "code": "357N",
+      "scale": 0.00004,
+      "id": 57
+    },
+    {
+      "code": "357S",
+      "scale": 0.00004,
+      "id": 58
+    },
+    {
+      "code": "358N",
+      "scale": 0.00004,
+      "id": 59
+    },
+    {
+      "code": "358S",
+      "scale": 0.00004,
+      "id": 60
+    },
+    {
+      "code": "359",
+      "scale": 0.00004,
+      "id": 61
+    },
+    {
+      "code": "36",
+      "scale": 0.00004,
+      "id": 62
+    },
+    {
+      "code": "360N",
+      "scale": 0.00004,
+      "id": 63
+    },
+    {
+      "code": "360S",
+      "scale": 0.00004,
+      "id": 64
+    },
+    {
+      "code": "361N",
+      "scale": 0.00004,
+      "id": 65
+    },
+    {
+      "code": "361S",
+      "scale": 0.00004,
+      "id": 66
+    },
+    {
+      "code": "362N",
+      "scale": 0.00004,
+      "id": 67
+    },
+    {
+      "code": "362S",
+      "scale": 0.00004,
+      "id": 68
+    },
+    {
+      "code": "363N",
+      "scale": 0.00004,
+      "id": 69
+    },
+    {
+      "code": "363S",
+      "scale": 0.00004,
+      "id": 70
+    },
+    {
+      "code": "364",
+      "scale": 0.00004,
+      "id": 71
+    },
+    {
+      "code": "364N",
+      "scale": 0.00004,
+      "id": 72
+    },
+    {
+      "code": "364S",
+      "scale": 0.00004,
+      "id": 73
+    },
+    {
+      "code": "365N",
+      "scale": 0.00004,
+      "id": 74
+    },
+    {
+      "code": "365S",
+      "scale": 0.00004,
+      "id": 75
+    },
+    {
+      "code": "366E",
+      "scale": 0.00004,
+      "id": 76
+    },
+    {
+      "code": "366W",
+      "scale": 0.00004,
+      "id": 77
+    },
+    {
+      "code": "367E",
+      "scale": 0.00004,
+      "id": 78
+    },
+    {
+      "code": "367W",
+      "scale": 0.00004,
+      "id": 79
+    },
+    {
+      "code": "368",
+      "scale": 0.00004,
+      "id": 80
+    },
+    {
+      "code": "368E",
+      "scale": 0.00004,
+      "id": 81
+    },
+    {
+      "code": "368W",
+      "scale": 0.00004,
+      "id": 82
+    },
+    {
+      "code": "369",
+      "scale": 0.00004,
+      "id": 83
+    },
+    {
+      "code": "370",
+      "scale": 0.00004,
+      "id": 84
+    },
+    {
+      "code": "371N",
+      "scale": 0.00004,
+      "id": 85
+    },
+    {
+      "code": "371S",
+      "scale": 0.00004,
+      "id": 86
+    },
+    {
+      "code": "372E",
+      "scale": 0.00004,
+      "id": 87
+    },
+    {
+      "code": "372W",
+      "scale": 0.00004,
+      "id": 88
+    },
+    {
+      "code": "373",
+      "scale": 0.00004,
+      "id": 89
+    },
+    {
+      "code": "374E",
+      "scale": 0.00004,
+      "id": 90
+    },
+    {
+      "code": "374W",
+      "scale": 0.00004,
+      "id": 91
+    },
+    {
+      "code": "375E",
+      "scale": 0.00004,
+      "id": 92
+    },
+    {
+      "code": "375W",
+      "scale": 0.00004,
+      "id": 93
+    },
+    {
+      "code": "376",
+      "scale": 0.00004,
+      "id": 94
+    },
+    {
+      "code": "377",
+      "scale": 0.00004,
+      "id": 95
+    },
+    {
+      "code": "377E",
+      "scale": 0.00004,
+      "id": 96
+    },
+    {
+      "code": "377W",
+      "scale": 0.00004,
+      "id": 97
+    },
+    {
+      "code": "378",
+      "scale": 0.00004,
+      "id": 98
+    },
+    {
+      "code": "378E",
+      "scale": 0.00004,
+      "id": 99
+    },
+    {
+      "code": "378W",
+      "scale": 0.00004,
+      "id": 100
+    },
+    {
+      "code": "379E",
+      "scale": 0.00004,
+      "id": 101
+    },
+    {
+      "code": "379W",
+      "scale": 0.00004,
+      "id": 102
+    },
+    {
+      "code": "38",
+      "scale": 0.00004,
+      "id": 103
+    },
+    {
+      "code": "380E",
+      "scale": 0.00004,
+      "id": 104
+    },
+    {
+      "code": "380W",
+      "scale": 0.00004,
+      "id": 105
+    },
+    {
+      "code": "381",
+      "scale": 0.00004,
+      "id": 106
+    },
+    {
+      "code": "382N",
+      "scale": 0.00004,
+      "id": 107
+    },
+    {
+      "code": "382S",
+      "scale": 0.00004,
+      "id": 108
+    },
+    {
+      "code": "383E",
+      "scale": 0.00004,
+      "id": 109
+    },
+    {
+      "code": "383W",
+      "scale": 0.00004,
+      "id": 110
+    },
+    {
+      "code": "384",
+      "scale": 0.00004,
+      "id": 111
+    },
+    {
+      "code": "385E",
+      "scale": 0.00004,
+      "id": 112
+    },
+    {
+      "code": "385W",
+      "scale": 0.00004,
+      "id": 113
+    },
+    {
+      "code": "386",
+      "scale": 0.00004,
+      "id": 114
+    },
+    {
+      "code": "386E",
+      "scale": 0.00004,
+      "id": 115
+    },
+    {
+      "code": "386W",
+      "scale": 0.00004,
+      "id": 116
+    },
+    {
+      "code": "387",
+      "scale": 0.00004,
+      "id": 117
+    },
+    {
+      "code": "387N",
+      "scale": 0.00004,
+      "id": 118
+    },
+    {
+      "code": "387S",
+      "scale": 0.00004,
+      "id": 119
+    },
+    {
+      "code": "388",
+      "scale": 0.00004,
+      "id": 120
+    },
+    {
+      "code": "388N",
+      "scale": 0.00004,
+      "id": 121
+    },
+    {
+      "code": "388S",
+      "scale": 0.00004,
+      "id": 122
+    },
+    {
+      "code": "389",
+      "scale": 0.00004,
+      "id": 123
+    },
+    {
+      "code": "390E",
+      "scale": 0.00004,
+      "id": 124
+    },
+    {
+      "code": "390W",
+      "scale": 0.00004,
+      "id": 125
+    },
+    {
+      "code": "391",
+      "scale": 0.00004,
+      "id": 126
+    },
+    {
+      "code": "392",
+      "scale": 0.00004,
+      "id": 127
+    },
+    {
+      "code": "393",
+      "scale": 0.00004,
+      "id": 128
+    },
+    {
+      "code": "394",
+      "scale": 0.00004,
+      "id": 129
+    },
+    {
+      "code": "394E",
+      "scale": 0.00004,
+      "id": 130
+    },
+    {
+      "code": "394W",
+      "scale": 0.00004,
+      "id": 131
+    },
+    {
+      "code": "395",
+      "scale": 0.00004,
+      "id": 132
+    },
+    {
+      "code": "396",
+      "scale": 0.00004,
+      "id": 133
+    },
+    {
+      "code": "397",
+      "scale": 0.00004,
+      "id": 134
+    },
+    {
+      "code": "398E",
+      "scale": 0.00004,
+      "id": 135
+    },
+    {
+      "code": "398W",
+      "scale": 0.00004,
+      "id": 136
+    },
+    {
+      "code": "399",
+      "scale": 0.00004,
+      "id": 137
+    },
+    {
+      "code": "4",
+      "scale": 0.00004,
+      "id": 138
+    },
+    {
+      "code": "40",
+      "scale": 0.00004,
+      "id": 139
+    },
+    {
+      "code": "400",
+      "scale": 0.00004,
+      "id": 140
+    },
+    {
+      "code": "401",
+      "scale": 0.00004,
+      "id": 141
+    },
+    {
+      "code": "402",
+      "scale": 0.00004,
+      "id": 142
+    },
+    {
+      "code": "403",
+      "scale": 0.00004,
+      "id": 143
+    },
+    {
+      "code": "403N",
+      "scale": 0.00004,
+      "id": 144
+    },
+    {
+      "code": "403S",
+      "scale": 0.00004,
+      "id": 145
+    },
+    {
+      "code": "404",
+      "scale": 0.00004,
+      "id": 146
+    },
+    {
+      "code": "404N",
+      "scale": 0.00004,
+      "id": 147
+    },
+    {
+      "code": "404S",
+      "scale": 0.00004,
+      "id": 148
+    },
+    {
+      "code": "405",
+      "scale": 0.00004,
+      "id": 149
+    },
+    {
+      "code": "405E",
+      "scale": 0.00004,
+      "id": 150
+    },
+    {
+      "code": "405W",
+      "scale": 0.00004,
+      "id": 151
+    },
+    {
+      "code": "406E",
+      "scale": 0.00004,
+      "id": 152
+    },
+    {
+      "code": "406W",
+      "scale": 0.00004,
+      "id": 153
+    },
+    {
+      "code": "407",
+      "scale": 0.00004,
+      "id": 154
+    },
+    {
+      "code": "408",
+      "scale": 0.00004,
+      "id": 155
+    },
+    {
+      "code": "409",
+      "scale": 0.00004,
+      "id": 156
+    },
+    {
+      "code": "410",
+      "scale": 0.00004,
+      "id": 157
+    },
+    {
+      "code": "411",
+      "scale": 0.00004,
+      "id": 158
+    },
+    {
+      "code": "412",
+      "scale": 0.00004,
+      "id": 159
+    },
+    {
+      "code": "413N",
+      "scale": 0.00004,
+      "id": 160
+    },
+    {
+      "code": "413S",
+      "scale": 0.00004,
+      "id": 161
+    },
+    {
+      "code": "414N",
+      "scale": 0.00004,
+      "id": 162
+    },
+    {
+      "code": "414S",
+      "scale": 0.00004,
+      "id": 163
+    },
+    {
+      "code": "415",
+      "scale": 0.00004,
+      "id": 164
+    },
+    {
+      "code": "416N",
+      "scale": 0.00004,
+      "id": 165
+    },
+    {
+      "code": "416S",
+      "scale": 0.00004,
+      "id": 166
+    },
+    {
+      "code": "417",
+      "scale": 0.00004,
+      "id": 167
+    },
+    {
+      "code": "418",
+      "scale": 0.00004,
+      "id": 168
+    },
+    {
+      "code": "419",
+      "scale": 0.00004,
+      "id": 169
+    },
+    {
+      "code": "419N",
+      "scale": 0.00004,
+      "id": 170
+    },
+    {
+      "code": "419S",
+      "scale": 0.00004,
+      "id": 171
+    },
+    {
+      "code": "420",
+      "scale": 0.00004,
+      "id": 172
+    },
+    {
+      "code": "420E",
+      "scale": 0.00004,
+      "id": 173
+    },
+    {
+      "code": "420W",
+      "scale": 0.00004,
+      "id": 174
+    },
+    {
+      "code": "421E",
+      "scale": 0.00004,
+      "id": 175
+    },
+    {
+      "code": "421W",
+      "scale": 0.00004,
+      "id": 176
+    },
+    {
+      "code": "422",
+      "scale": 0.00004,
+      "id": 177
+    },
+    {
+      "code": "423",
+      "scale": 0.00004,
+      "id": 178
+    },
+    {
+      "code": "424N",
+      "scale": 0.00004,
+      "id": 179
+    },
+    {
+      "code": "424S",
+      "scale": 0.00004,
+      "id": 180
+    },
+    {
+      "code": "425N",
+      "scale": 0.00004,
+      "id": 181
+    },
+    {
+      "code": "425S",
+      "scale": 0.00004,
+      "id": 182
+    },
+    {
+      "code": "426N",
+      "scale": 0.00004,
+      "id": 183
+    },
+    {
+      "code": "426S",
+      "scale": 0.00004,
+      "id": 184
+    },
+    {
+      "code": "427N",
+      "scale": 0.00004,
+      "id": 185
+    },
+    {
+      "code": "427S",
+      "scale": 0.00004,
+      "id": 186
+    },
+    {
+      "code": "428N",
+      "scale": 0.00004,
+      "id": 187
+    },
+    {
+      "code": "428S",
+      "scale": 0.00004,
+      "id": 188
+    },
+    {
+      "code": "429",
+      "scale": 0.00004,
+      "id": 189
+    },
+    {
+      "code": "430",
+      "scale": 0.00004,
+      "id": 190
+    },
+    {
+      "code": "431",
+      "scale": 0.00004,
+      "id": 191
+    },
+    {
+      "code": "432",
+      "scale": 0.00004,
+      "id": 192
+    },
+    {
+      "code": "433",
+      "scale": 0.00004,
+      "id": 193
+    },
+    {
+      "code": "434",
+      "scale": 0.00004,
+      "id": 194
+    },
+    {
+      "code": "435N",
+      "scale": 0.00004,
+      "id": 195
+    },
+    {
+      "code": "435S",
+      "scale": 0.00004,
+      "id": 196
+    },
+    {
+      "code": "436N",
+      "scale": 0.00004,
+      "id": 197
+    },
+    {
+      "code": "436S",
+      "scale": 0.00004,
+      "id": 198
+    },
+    {
+      "code": "437N",
+      "scale": 0.00004,
+      "id": 199
+    },
+    {
+      "code": "437S",
+      "scale": 0.00004,
+      "id": 200
+    },
+    {
+      "code": "438E",
+      "scale": 0.00004,
+      "id": 201
+    },
+    {
+      "code": "438W",
+      "scale": 0.00004,
+      "id": 202
+    },
+    {
+      "code": "439E",
+      "scale": 0.00004,
+      "id": 203
+    },
+    {
+      "code": "439W",
+      "scale": 0.00004,
+      "id": 204
+    },
+    {
+      "code": "440N",
+      "scale": 0.00004,
+      "id": 205
+    },
+    {
+      "code": "440S",
+      "scale": 0.00004,
+      "id": 206
+    },
+    {
+      "code": "441E",
+      "scale": 0.00004,
+      "id": 207
+    },
+    {
+      "code": "441W",
+      "scale": 0.00004,
+      "id": 208
+    },
+    {
+      "code": "442E",
+      "scale": 0.00004,
+      "id": 209
+    },
+    {
+      "code": "442W",
+      "scale": 0.00004,
+      "id": 210
+    },
+    {
+      "code": "443",
+      "scale": 0.00004,
+      "id": 211
+    },
+    {
+      "code": "444E",
+      "scale": 0.00004,
+      "id": 212
+    },
+    {
+      "code": "444W",
+      "scale": 0.00004,
+      "id": 213
+    },
+    {
+      "code": "445",
+      "scale": 0.00004,
+      "id": 214
+    },
+    {
+      "code": "446",
+      "scale": 0.00004,
+      "id": 215
+    },
+    {
+      "code": "447N",
+      "scale": 0.00004,
+      "id": 216
+    },
+    {
+      "code": "447S",
+      "scale": 0.00004,
+      "id": 217
+    },
+    {
+      "code": "448N",
+      "scale": 0.00004,
+      "id": 218
+    },
+    {
+      "code": "448S",
+      "scale": 0.00004,
+      "id": 219
+    },
+    {
+      "code": "449N",
+      "scale": 0.00004,
+      "id": 220
+    },
+    {
+      "code": "449S",
+      "scale": 0.00004,
+      "id": 221
+    },
+    {
+      "code": "450E",
+      "scale": 0.00004,
+      "id": 222
+    },
+    {
+      "code": "450W",
+      "scale": 0.00004,
+      "id": 223
+    },
+    {
+      "code": "451E",
+      "scale": 0.00004,
+      "id": 224
+    },
+    {
+      "code": "451W",
+      "scale": 0.00004,
+      "id": 225
+    },
+    {
+      "code": "452N",
+      "scale": 0.00004,
+      "id": 226
+    },
+    {
+      "code": "452S",
+      "scale": 0.00004,
+      "id": 227
+    },
+    {
+      "code": "453N",
+      "scale": 0.00004,
+      "id": 228
+    },
+    {
+      "code": "453S",
+      "scale": 0.00004,
+      "id": 229
+    },
+    {
+      "code": "454E",
+      "scale": 0.00004,
+      "id": 230
+    },
+    {
+      "code": "454W",
+      "scale": 0.00004,
+      "id": 231
+    },
+    {
+      "code": "455",
+      "scale": 0.00004,
+      "id": 232
+    },
+    {
+      "code": "456",
+      "scale": 0.00004,
+      "id": 233
+    },
+    {
+      "code": "457",
+      "scale": 0.00004,
+      "id": 234
+    },
+    {
+      "code": "458",
+      "scale": 0.00004,
+      "id": 235
+    },
+    {
+      "code": "459E",
+      "scale": 0.00004,
+      "id": 236
+    },
+    {
+      "code": "459W",
+      "scale": 0.00004,
+      "id": 237
+    },
+    {
+      "code": "460E",
+      "scale": 0.00004,
+      "id": 238
+    },
+    {
+      "code": "460W",
+      "scale": 0.00004,
+      "id": 239
+    },
+    {
+      "code": "461N",
+      "scale": 0.00004,
+      "id": 240
+    },
+    {
+      "code": "461S",
+      "scale": 0.00004,
+      "id": 241
+    },
+    {
+      "code": "462",
+      "scale": 0.00004,
+      "id": 242
+    },
+    {
+      "code": "463",
+      "scale": 0.00004,
+      "id": 243
+    },
+    {
+      "code": "464",
+      "scale": 0.00004,
+      "id": 244
+    },
+    {
+      "code": "465N",
+      "scale": 0.00004,
+      "id": 245
+    },
+    {
+      "code": "465S",
+      "scale": 0.00004,
+      "id": 246
+    },
+    {
+      "code": "466N",
+      "scale": 0.00004,
+      "id": 247
+    },
+    {
+      "code": "466S",
+      "scale": 0.00004,
+      "id": 248
+    },
+    {
+      "code": "467E",
+      "scale": 0.00004,
+      "id": 249
+    },
+    {
+      "code": "467W",
+      "scale": 0.00004,
+      "id": 250
+    },
+    {
+      "code": "468",
+      "scale": 0.00004,
+      "id": 251
+    },
+    {
+      "code": "469N",
+      "scale": 0.00004,
+      "id": 252
+    },
+    {
+      "code": "469S",
+      "scale": 0.00004,
+      "id": 253
+    },
+    {
+      "code": "470N",
+      "scale": 0.00004,
+      "id": 254
+    },
+    {
+      "code": "470S",
+      "scale": 0.00004,
+      "id": 255
+    },
+    {
+      "code": "OL",
+      "scale": 0.00004,
+      "id": 256
+    },
+    {
+      "code": "OL16E",
+      "scale": 0.00004,
+      "id": 257
+    },
+    {
+      "code": "OL16W",
+      "scale": 0.00004,
+      "id": 258
+    },
+    {
+      "code": "OL37N",
+      "scale": 0.00004,
+      "id": 259
+    },
+    {
+      "code": "OL37S",
+      "scale": 0.00004,
+      "id": 260
+    },
+    {
+      "code": "OL38",
+      "scale": 0.00004,
+      "id": 261
+    },
+    {
+      "code": "OL39N",
+      "scale": 0.00004,
+      "id": 262
+    },
+    {
+      "code": "OL39S",
+      "scale": 0.00004,
+      "id": 263
+    },
+    {
+      "code": "OL42W",
+      "scale": 0.00004,
+      "id": 264
+    },
+    {
+      "code": "OL46N",
+      "scale": 0.00004,
+      "id": 265
+    },
+    {
+      "code": "OL46S",
+      "scale": 0.00004,
+      "id": 266
+    },
+    {
+      "code": "OL47E",
+      "scale": 0.00004,
+      "id": 267
+    },
+    {
+      "code": "OL47W",
+      "scale": 0.00004,
+      "id": 268
+    },
+    {
+      "code": "OL48E",
+      "scale": 0.00004,
+      "id": 269
+    },
+    {
+      "code": "OL48W",
+      "scale": 0.00004,
+      "id": 270
+    },
+    {
+      "code": "OL49E",
+      "scale": 0.00004,
+      "id": 271
+    },
+    {
+      "code": "OL49W",
+      "scale": 0.00004,
+      "id": 272
+    },
+    {
+      "code": "OL50",
+      "scale": 0.00004,
+      "id": 273
+    },
+    {
+      "code": "OL51E",
+      "scale": 0.00004,
+      "id": 274
+    },
+    {
+      "code": "OL51W",
+      "scale": 0.00004,
+      "id": 275
+    },
+    {
+      "code": "OL52N",
+      "scale": 0.00004,
+      "id": 276
+    },
+    {
+      "code": "OL52S",
+      "scale": 0.00004,
+      "id": 277
+    },
+    {
+      "code": "OL53N",
+      "scale": 0.00004,
+      "id": 278
+    },
+    {
+      "code": "OL53S",
+      "scale": 0.00004,
+      "id": 279
+    },
+    {
+      "code": "OL54",
+      "scale": 0.00004,
+      "id": 280
+    },
+    {
+      "code": "OL55",
+      "scale": 0.00004,
+      "id": 281
+    },
+    {
+      "code": "OL56",
+      "scale": 0.00004,
+      "id": 282
+    },
+    {
+      "code": "OL57N",
+      "scale": 0.00004,
+      "id": 283
+    },
+    {
+      "code": "OL57S",
+      "scale": 0.00004,
+      "id": 284
+    },
+    {
+      "code": "OL58N",
+      "scale": 0.00004,
+      "id": 285
+    },
+    {
+      "code": "OL58S",
+      "scale": 0.00004,
+      "id": 286
+    },
+    {
+      "code": "OL59E",
+      "scale": 0.00004,
+      "id": 287
+    },
+    {
+      "code": "OL59W",
+      "scale": 0.00004,
+      "id": 288
+    },
+    {
+      "code": "OL60",
+      "scale": 0.00004,
+      "id": 289
+    },
+    {
+      "code": "OL61N",
+      "scale": 0.00004,
+      "id": 290
+    },
+    {
+      "code": "OL61S",
+      "scale": 0.00004,
+      "id": 291
+    },
+    {
+      "code": "OL62E",
+      "scale": 0.00004,
+      "id": 292
+    },
+    {
+      "code": "OL62W",
+      "scale": 0.00004,
+      "id": 293
+    }
+  ],
+  "maps1To50000": [
+    {
+      "code": "1",
+      "scale": 0.00002,
+      "id": 1
+    },
+    {
+      "code": "10",
+      "scale": 0.00002,
+      "id": 2
+    },
+    {
+      "code": "11",
+      "scale": 0.00002,
+      "id": 3
+    },
+    {
+      "code": "12",
+      "scale": 0.00002,
+      "id": 4
+    },
+    {
+      "code": "13",
+      "scale": 0.00002,
+      "id": 5
+    },
+    {
+      "code": "14",
+      "scale": 0.00002,
+      "id": 6
+    },
+    {
+      "code": "15",
+      "scale": 0.00002,
+      "id": 7
+    },
+    {
+      "code": "16",
+      "scale": 0.00002,
+      "id": 8
+    },
+    {
+      "code": "17",
+      "scale": 0.00002,
+      "id": 9
+    },
+    {
+      "code": "18",
+      "scale": 0.00002,
+      "id": 10
+    },
+    {
+      "code": "19",
+      "scale": 0.00002,
+      "id": 11
+    },
+    {
+      "code": "2",
+      "scale": 0.00002,
+      "id": 12
+    },
+    {
+      "code": "20",
+      "scale": 0.00002,
+      "id": 13
+    },
+    {
+      "code": "21",
+      "scale": 0.00002,
+      "id": 14
+    },
+    {
+      "code": "22",
+      "scale": 0.00002,
+      "id": 15
+    },
+    {
+      "code": "23",
+      "scale": 0.00002,
+      "id": 16
+    },
+    {
+      "code": "24",
+      "scale": 0.00002,
+      "id": 17
+    },
+    {
+      "code": "25",
+      "scale": 0.00002,
+      "id": 18
+    },
+    {
+      "code": "26",
+      "scale": 0.00002,
+      "id": 19
+    },
+    {
+      "code": "27",
+      "scale": 0.00002,
+      "id": 20
+    },
+    {
+      "code": "28",
+      "scale": 0.00002,
+      "id": 21
+    },
+    {
+      "code": "29",
+      "scale": 0.00002,
+      "id": 22
+    },
+    {
+      "code": "3",
+      "scale": 0.00002,
+      "id": 23
+    },
+    {
+      "code": "30",
+      "scale": 0.00002,
+      "id": 24
+    },
+    {
+      "code": "31",
+      "scale": 0.00002,
+      "id": 25
+    },
+    {
+      "code": "32",
+      "scale": 0.00002,
+      "id": 26
+    },
+    {
+      "code": "33",
+      "scale": 0.00002,
+      "id": 27
+    },
+    {
+      "code": "34",
+      "scale": 0.00002,
+      "id": 28
+    },
+    {
+      "code": "35",
+      "scale": 0.00002,
+      "id": 29
+    },
+    {
+      "code": "36",
+      "scale": 0.00002,
+      "id": 30
+    },
+    {
+      "code": "37",
+      "scale": 0.00002,
+      "id": 31
+    },
+    {
+      "code": "38",
+      "scale": 0.00002,
+      "id": 32
+    },
+    {
+      "code": "39",
+      "scale": 0.00002,
+      "id": 33
+    },
+    {
+      "code": "4",
+      "scale": 0.00002,
+      "id": 34
+    },
+    {
+      "code": "40",
+      "scale": 0.00002,
+      "id": 35
+    },
+    {
+      "code": "41",
+      "scale": 0.00002,
+      "id": 36
+    },
+    {
+      "code": "42",
+      "scale": 0.00002,
+      "id": 37
+    },
+    {
+      "code": "43",
+      "scale": 0.00002,
+      "id": 38
+    },
+    {
+      "code": "44",
+      "scale": 0.00002,
+      "id": 39
+    },
+    {
+      "code": "45",
+      "scale": 0.00002,
+      "id": 40
+    },
+    {
+      "code": "46",
+      "scale": 0.00002,
+      "id": 41
+    },
+    {
+      "code": "47",
+      "scale": 0.00002,
+      "id": 42
+    },
+    {
+      "code": "48",
+      "scale": 0.00002,
+      "id": 43
+    },
+    {
+      "code": "49",
+      "scale": 0.00002,
+      "id": 44
+    },
+    {
+      "code": "5",
+      "scale": 0.00002,
+      "id": 45
+    },
+    {
+      "code": "50",
+      "scale": 0.00002,
+      "id": 46
+    },
+    {
+      "code": "51",
+      "scale": 0.00002,
+      "id": 47
+    },
+    {
+      "code": "52",
+      "scale": 0.00002,
+      "id": 48
+    },
+    {
+      "code": "53",
+      "scale": 0.00002,
+      "id": 49
+    },
+    {
+      "code": "54",
+      "scale": 0.00002,
+      "id": 50
+    },
+    {
+      "code": "55",
+      "scale": 0.00002,
+      "id": 51
+    },
+    {
+      "code": "56",
+      "scale": 0.00002,
+      "id": 52
+    },
+    {
+      "code": "57",
+      "scale": 0.00002,
+      "id": 53
+    },
+    {
+      "code": "58",
+      "scale": 0.00002,
+      "id": 54
+    },
+    {
+      "code": "59",
+      "scale": 0.00002,
+      "id": 55
+    },
+    {
+      "code": "6",
+      "scale": 0.00002,
+      "id": 56
+    },
+    {
+      "code": "60",
+      "scale": 0.00002,
+      "id": 57
+    },
+    {
+      "code": "61",
+      "scale": 0.00002,
+      "id": 58
+    },
+    {
+      "code": "62",
+      "scale": 0.00002,
+      "id": 59
+    },
+    {
+      "code": "63",
+      "scale": 0.00002,
+      "id": 60
+    },
+    {
+      "code": "64",
+      "scale": 0.00002,
+      "id": 61
+    },
+    {
+      "code": "65",
+      "scale": 0.00002,
+      "id": 62
+    },
+    {
+      "code": "66",
+      "scale": 0.00002,
+      "id": 63
+    },
+    {
+      "code": "67",
+      "scale": 0.00002,
+      "id": 64
+    },
+    {
+      "code": "68",
+      "scale": 0.00002,
+      "id": 65
+    },
+    {
+      "code": "69",
+      "scale": 0.00002,
+      "id": 66
+    },
+    {
+      "code": "7",
+      "scale": 0.00002,
+      "id": 67
+    },
+    {
+      "code": "70",
+      "scale": 0.00002,
+      "id": 68
+    },
+    {
+      "code": "71",
+      "scale": 0.00002,
+      "id": 69
+    },
+    {
+      "code": "72",
+      "scale": 0.00002,
+      "id": 70
+    },
+    {
+      "code": "73",
+      "scale": 0.00002,
+      "id": 71
+    },
+    {
+      "code": "74",
+      "scale": 0.00002,
+      "id": 72
+    },
+    {
+      "code": "75",
+      "scale": 0.00002,
+      "id": 73
+    },
+    {
+      "code": "76",
+      "scale": 0.00002,
+      "id": 74
+    },
+    {
+      "code": "77",
+      "scale": 0.00002,
+      "id": 75
+    },
+    {
+      "code": "78",
+      "scale": 0.00002,
+      "id": 76
+    },
+    {
+      "code": "79",
+      "scale": 0.00002,
+      "id": 77
+    },
+    {
+      "code": "8",
+      "scale": 0.00002,
+      "id": 78
+    },
+    {
+      "code": "80",
+      "scale": 0.00002,
+      "id": 79
+    },
+    {
+      "code": "82",
+      "scale": 0.00002,
+      "id": 80
+    },
+    {
+      "code": "83",
+      "scale": 0.00002,
+      "id": 81
+    },
+    {
+      "code": "84",
+      "scale": 0.00002,
+      "id": 82
+    },
+    {
+      "code": "85",
+      "scale": 0.00002,
+      "id": 83
+    },
+    {
+      "code": "9",
+      "scale": 0.00002,
+      "id": 84
+    }
+  ],
+  "mountains": null
+}
