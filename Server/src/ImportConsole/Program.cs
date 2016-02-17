@@ -26,7 +26,7 @@ namespace ScotlandsMountains.ImportConsole
         {
             return new DirectoryInfo(Assembly.GetExecutingAssembly().Location)
                 .Parent.Parent.Parent.Parent.Parent.Parent.FullName
-                + "\\Docs\\DoBIH\\DoBIH_v15.1.csv";
+                + "\\Docs\\DatabaseOfBritishAndIrishHills\\DoBIH_v15.1.csv";
         }
 
         private static Func<Record, bool> GetDobihFilter()
