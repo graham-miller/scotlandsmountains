@@ -15,8 +15,7 @@ namespace ScotlandsMountains.ImportConsole.DatabaseOfBritishAndIrishHills.Entity
             Counties = new CountiesFactory(records).Counties;
             TopologicalSections = new TopologicalSectionsFactory(records).TopologicalSections;
             Maps = maps;
-
-            //Mountains = new MountainsFactory(records).Mountains;
+            Mountains = new MountainsFactory(records, maps).Mountains;
         }
 
         public IList<Section> Sections { get; }
