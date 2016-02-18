@@ -48,18 +48,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dobih\EntityFactories\CountiesFactory.cs" />
-    <Compile Include="Dobih\EntityFactories\EntityFactory.cs" />
-    <Compile Include="Dobih\EntityFactories\IslandsFactory.cs" />
-    <Compile Include="Dobih\EntityFactories\MapsFactory.cs" />
-    <Compile Include="Dobih\EntityFactories\MountainsFactory.cs" />
-    <Compile Include="Dobih\EntityFactories\SectionsFactory.cs" />
-    <Compile Include="Dobih\EntityFactories\TopologicalSectionsFactory.cs" />
-    <Compile Include="Dobih\Field.cs" />
-    <Compile Include="Dobih\Reader.cs" />
-    <Compile Include="Dobih\Record.cs" />
+    <Compile Include="DatabaseOfBritishAndIrishHills\EntityFactories\CountiesFactory.cs" />
+    <Compile Include="DatabaseOfBritishAndIrishHills\EntityFactories\EntityFactory.cs" />
+    <Compile Include="DatabaseOfBritishAndIrishHills\EntityFactories\IslandsFactory.cs" />
+    <Compile Include="OrdnanceSurvey\MapsFactory.cs" />
+    <Compile Include="DatabaseOfBritishAndIrishHills\EntityFactories\MountainsFactory.cs" />
+    <Compile Include="DatabaseOfBritishAndIrishHills\EntityFactories\SectionsFactory.cs" />
+    <Compile Include="DatabaseOfBritishAndIrishHills\EntityFactories\TopologicalSectionsFactory.cs" />
+    <Compile Include="DatabaseOfBritishAndIrishHills\Field.cs" />
+    <Compile Include="DatabaseOfBritishAndIrishHills\Reader.cs" />
+    <Compile Include="DatabaseOfBritishAndIrishHills\Record.cs" />
+    <Compile Include="OrdnanceSurvey\Reader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ImportConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

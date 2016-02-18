@@ -5,13 +5,22 @@
 5 Orkney – Northern Isles 9780319228111
 6 Orkney – Mainland 9780319228128
 7 Orkney – Southern Isles 9780319228135
-8 Stornoway & North Lewis / Steòrnabhagh agus Ceann a Tuath Leòdhais 9780319226087
+8
+Stornoway & North Lewis /
+Steòrnabhagh agus Ceann a Tuath
+Leòdhais
+9780319226087
 9 Cape Wrath 9780319231234
 10 Strath Naver / Srath Nabhair 9780319226100
 11 Thurso & Dunbeath 9780319231630
 12 Thurso & Wick 9780319226124
-13 West Lewis & North Harris / Taobh Siar Leòdhais agus Ceann a Tuath na Hearadh 9780319231241
-14 Tarbert & Loch Seaforth / An Tairbeart agus Loch Shìphoirt 9780319231258
+13
+West Lewis & North Harris / Taobh
+Siar Leòdhais agus Ceann a Tuath na
+Hearadh
+9780319231241
+14 Tarbert & Loch Seaforth / An Tairbeart
+agus Loch Shìphoirt 9780319231258
 15 Loch Assynt 9780319231265
 16 Lairg & Loch Shin 9780319231067
 17 Helmsdale & Strath of Kildonan 9780319226179
@@ -19,7 +28,8 @@
 19 Gairloch & Ullapool 9780319231074
 20 Beinn Dearg & Loch Broom 9780319231081
 21 Dornoch & Alness 9780319231098
-22 Benbecula & South Uist / Beinn na Faoghla agus Uibhist a Deas 9780319226223
+22 Benbecula & South Uist / Beinn na
+Faoghla agus Uibhist a Deas 9780319226223
 23 North Skye 9780319229897
 24 Raasay & Applecross 9780319231104
 25 Glen Carron & Glen Affric 9780319231111
@@ -28,7 +38,8 @@
 28 Elgin & Dufftown 9780319231029
 29 Banff & Huntly 9780319231043
 30 Fraserburgh 9780319231692
-31 Barra & South Uist / Barraigh agus Uibhist a Deas 9780319226315
+31 Barra & South Uist / Barraigh agus
+Uibhist a Deas 9780319226315
 32 South Skye & Cuillin Hills 9780319229903
 33 Loch Alsh, Glen Shiel & Loch Hourn 9780319229910
 34 Fort Augustus 9780319231012
@@ -66,10 +77,13 @@
 66 Edinburgh 9780319228708
 67 Duns, Dunbar & Eyemouth 9780319228760
 68 South Kintyre & Campbeltown 9780319229637
+OS LANDRANGER
+Planning a perfect day out
+1:50 000 scale (2 cm to 1 km or 1¼ inches to 1 mile)
 69 Isle of Arran 9780319229644
 70 Ayr, Kilmarnock & Troon 9780319229651
 71 Lanark & Upper Nithsdale 9780319229712
-72 Upper Clyde Valley 9780319226728
+72 Upper Clyde Valley 9780319242087
 73 Peebles, Galashiels & Selkirk 9780319229729
 74 Kelso & Coldstream 9780319231388
 75 Berwick-upon-Tweed 9780319228968
@@ -78,7 +92,7 @@
 78 Nithsdale & Annandale 9780319229590
 79 Hawick & Eskdale 9780319229606
 80 Cheviot Hills & Kielder Water 9780319229668
-81 Alnwick & Morpeth 9780319228722
+81 Alnwick & Morpeth 9780319242094
 82 Stranraer & Glenluce 9780319229491
 83 Newton Stewart & Kirkcudbright 9780319229552
 84 Dumfries & Castle Douglas 9780319229569
@@ -113,17 +127,20 @@
 113 Grimsby 9780319229415
 114 Anglesey / Môn 9780319231838
 115 Snowdon / Yr Wyddfa 9780319231845
-116 Denbigh & Colwyn Bay / Dinbych a Bae Colwyn 9780319231883
+116 Denbigh & Colwyn Bay / Dinbych a
+Bae Colwyn 9780319231883
 117 Chester & Wrexham / Caer a Wrecsam 9780319231609
 118 Stoke-on-Trent & Macclesfield 9780319229064
 119 Buxton & Matlock 9780319231890
-120 Mansfield & Worksop 9780319229378
+120 Mansfield & Worksop 9780319242100
 121 Lincoln & Newark-on-Trent 9780319229422
 122 Skegness & Horncastle 9780319229392
 123 Lleyn Peninsula / Pen Llŷn 9780319231852
 124 Porthmadog & Dolgellau 9780319231869
-125 Bala & Lake Vyrnwy / Y Bala a Llŷn Efyrnwy 9780319229286
-126 Shrewsbury & Oswestry / Amwythig a Chroesoswallt 9780319228753
+125 Bala & Lake Vyrnwy / Y Bala a Llŷn
+Efyrnwy 9780319229286
+126 Shrewsbury & Oswestry / Amwythig a
+Chroesoswallt 9780319228753
 127 Stafford & Telford 9780319228517
 128 Derby & Burton upon Trent 9780319231616
 129 Nottingham & Loughborough 9780319231623
@@ -133,7 +150,8 @@
 133 North East Norfolk 9780319231791
 134 Norwich & The Broads 9780319231807
 135 Aberystwyth & Machynlleth 9780319228944
-136 Newtown & Llanidloes / Y Drenewydd a Llanidloes 9780319231050
+136 Newtown & Llanidloes / Y Drenewydd
+a Llanidloes 9780319231050
 137 Church Stretton & Ludlow / Llwydlo 9780319229071
 138 Kidderminster & Wyre Forest 9780319228340
 139 Birmingham & Wolverhampton 9780319231753
@@ -142,23 +160,30 @@
 142 Peterborough 9780319229248
 143 Ely & Wisbech 9780319231319
 144 Thetford & Diss 9780319229255
-145 Cardigan & Mynydd Preseli / Aberteifi a Mynydd Preseli 9780319231005
-146 Lampeter & Llandovery / Llanbedr Pont Steffan a Llanymddyfri 9780319229460
-147 Elan Valley & Builth Wells / Cwm Elan a Llanfair-ym-Muallt 9780319229477
-148 Presteigne & Hay-on-Wye / Llanandras a’r Gelli Gandryll 9780319229484
+145 Cardigan & Mynydd Preseli /
+Aberteifi a Mynydd Preseli 9780319231005
+146 Lampeter & Llandovery / Llanbedr
+Pont Steffan a Llanymddyfri 9780319229460
+147 Elan Valley & Builth Wells / Cwm Elan a
+Llanfair-ym-Muallt 9780319229477
+148 Presteigne & Hay-on-Wye / Llanandras
+a’r Gelli Gandryll 9780319229484
 149 Hereford & Leominster 9780319229538
 150 Worcester & The Malverns 9780319231777
 151 Stratford-upon-Avon 9780319231784
 152 Northampton & Milton Keynes 9780319231715
 153 Bedford & Huntingdon 9780319231722
 154 Cambridge & Newmarket 9780319231739
-155 Bury St Edmunds 9780319229279
+155 Bury St Edmunds 9780319242117
 156 Saxmundham 9780319231326
-157 St David’s & Haverfordwest / Tyddewi a Hwlffordd 9780319231036
-158 Tenby & Pembroke / Dinbych-y-pysgod a Phenfro 9780319231333
+157 St David’s & Haverfordwest / Tyddewi
+a Hwlffordd 9780319231036
+158 Tenby & Pembroke / Dinbych-ypysgod
+a Phenfro 9780319231333
 159 Swansea & Gower / Abertawe a Gŵyr 9780319231340
 160 Brecon Beacons / Bannau Brycheiniog 9780319231357
-161 The Black Mountains / Y Mynyddoedd Duon 9780319229873
+161 The Black Mountains / Y Mynyddoedd
+Duon 9780319229873
 162 Gloucester & Forest of Dean 9780319229118
 163 Cheltenham & Cirencester 9780319229125
 164 Oxford 9780319229132
@@ -167,8 +192,10 @@
 167 Chelmsford 9780319232101
 168 Colchester 9780319229224
 169 Ipswich & The Naze 9780319229231
-170 Vale of Glamorgan west / Bro Morgannwg 9780319232866
-171 Cardiff & Newport / Caerdydd a Chasnewydd 9780319229033
+170 Vale of Glamorgan west / Bro
+Morgannwg 9780319232866
+171 Cardiff & Newport / Caerdydd a
+Chasnewydd 9780319229033
 172 Bristol & Bath 9780319229149
 173 Swindon & Devizes 9780319231746
 174 Newbury & Wantage 9780319228739
@@ -179,7 +206,7 @@
 179 Canterbury & East Kent 9780319228784
 180 Barnstaple & Ilfracombe 9780319230008
 181 Minehead & Brendon Hills 9780319231814
-182 Weston-super-Mare 9780319228609
+182 Weston-super-Mare 9780319242124
 183 Yeovil & Frome 9780319228616
 184 Salisbury & The Plain 9780319228623
 185 Winchester & Basingstoke 9780319228845

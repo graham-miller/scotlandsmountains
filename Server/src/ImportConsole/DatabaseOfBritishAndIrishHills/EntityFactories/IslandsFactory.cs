@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ScotlandsMountains.Domain.Entities;
 
-namespace ScotlandsMountains.ImportConsole.Dobih.EntityFactories
+namespace ScotlandsMountains.ImportConsole.DatabaseOfBritishAndIrishHills.EntityFactories
 {
     public class IslandsFactory
     {

@@ -1,21 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
-using ScotlandsMountains.Domain.Entities;
 using Newtonsoft.Json.Serialization;
+using ScotlandsMountains.Domain.Entities;
 
-namespace ScotlandsMountains.ImportConsole.Dobih.EntityFactories
+namespace ScotlandsMountains.ImportConsole.DatabaseOfBritishAndIrishHills.EntityFactories
 {
     public class EntityFactory
     {
-        public EntityFactory(IList<Record> records)
+        public EntityFactory(IList<Record> records, IList<Map> maps)
         {
             Sections = new SectionsFactory(records).Sections;
             Islands = new IslandsFactory(records).Islands;
             Counties = new CountiesFactory(records).Counties;
             TopologicalSections = new TopologicalSectionsFactory(records).TopologicalSections;
-            Maps1To25000 = new MapsFactory(records).Maps1To25000;
-            Maps1To50000 = new MapsFactory(records).Maps1To50000;
+            Maps = maps;
 
             //Mountains = new MountainsFactory(records).Mountains;
         }
@@ -24,8 +23,7 @@ namespace ScotlandsMountains.ImportConsole.Dobih.EntityFactories
         public IList<Island> Islands { get; }
         public IList<County> Counties { get; }
         public IList<TopologicalSection> TopologicalSections { get; }
-        public IList<Map> Maps1To25000 { get; }
-        public IList<Map> Maps1To50000 { get; }
+        public IList<Map> Maps { get; }
         public IList<Mountain> Mountains { get; }
 
         public void CreateFirebaseJson(string path)

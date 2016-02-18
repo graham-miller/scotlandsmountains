@@ -1,4 +1,4 @@
-﻿namespace ScotlandsMountains.ImportConsole.Dobih
+﻿namespace ScotlandsMountains.ImportConsole.DatabaseOfBritishAndIrishHills
 {
     public static class Field
     {
