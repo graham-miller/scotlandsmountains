@@ -8,12 +8,10 @@ namespace ScotlandsMountains.ImportConsole.DatabaseOfBritishAndIrishHills.Entity
 {
     public class MountainsFactory
     {
-        private IList<Record> _records;
         private IList<Map> _maps;
 
         public MountainsFactory(IList<Record> records, IList<Map> maps)
         {
-            _records = records;
             _maps = maps;
             
             Mountains = new List<Mountain>();
@@ -22,7 +20,7 @@ namespace ScotlandsMountains.ImportConsole.DatabaseOfBritishAndIrishHills.Entity
                 AddNewMountainFrom(record);
         }
 
-        public IList<Mountain> Mountains { get; private set; }
+        public IList<Mountain> Mountains { get; }
 
         private void AddNewMountainFrom(Record record)
         {
@@ -32,23 +30,39 @@ namespace ScotlandsMountains.ImportConsole.DatabaseOfBritishAndIrishHills.Entity
                 DobihId = record[Field.Number],
                 Name = record[Field.Name],
                 Height = CreateHeight(record),
-                Location = CreateLocation(record)
+                Location = CreateLocation(record),
+                Prominence = CreateProminence(record),
+                SummitFeature = record[Field.Feature],
+                SummitObservations = record[Field.Observations]
             };
 
             Mountains.Add(mountain);
         }
 
-        private Height CreateHeight(Record record)
+        private static Height CreateHeight(Record record)
         {
             return new Height { Metres = decimal.Parse(record[Field.Metres]) };
         }
 
-        private Location CreateLocation(Record record)
+        private static Location CreateLocation(Record record)
         {
             return new Location
             {
                 Latitude = double.Parse(record[Field.Latitude]),
                 Longitude = double.Parse(record[Field.Longitude])
+            };
+        }
+
+        private static Prominence CreateProminence(Record record)
+        {
+            return new Prominence
+            {
+                Metres = Math.Round(decimal.Parse(record[Field.Drop])),
+                KeyCol = new KeyCol
+                {
+                    Description = record[Field.ColGridRef],
+                    Height = new Height {Metres = Math.Round(decimal.Parse(record[Field.ColHeight]))}
+                }
             };
         }
 
