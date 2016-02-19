@@ -8,11 +8,11 @@ namespace ScotlandsMountains.ImportConsole.DatabaseOfBritishAndIrishHills.Entity
 {
     public class MountainsFactory
     {
-        private IList<Map> _maps;
+        private readonly EntityFactory _entities;
 
-        public MountainsFactory(IList<Record> records, IList<Map> maps)
+        public MountainsFactory(IList<Record> records, EntityFactory entities)
         {
-            _maps = maps;
+            _entities = entities;
             
             Mountains = new List<Mountain>();
 
@@ -33,8 +33,14 @@ namespace ScotlandsMountains.ImportConsole.DatabaseOfBritishAndIrishHills.Entity
                 Location = CreateLocation(record),
                 Prominence = CreateProminence(record),
                 SummitFeature = record[Field.Feature],
-                SummitObservations = record[Field.Observations]
+                SummitObservations = record[Field.Observations],
+                SectionId = GetSectionId(record),
+                IslandId = GetIslandId(record),
+                CountyIds = GetCountyIds(record),
+                TopologicalSectionId = GetTopologicalSectionId(record),
+                MapIds = GetMapIds(record)
             };
+
 
             Mountains.Add(mountain);
         }
@@ -58,12 +64,44 @@ namespace ScotlandsMountains.ImportConsole.DatabaseOfBritishAndIrishHills.Entity
             return new Prominence
             {
                 Metres = Math.Round(decimal.Parse(record[Field.Drop])),
-                KeyCol = new KeyCol
-                {
-                    Description = record[Field.ColGridRef],
-                    Height = new Height {Metres = Math.Round(decimal.Parse(record[Field.ColHeight]))}
-                }
+                KeyCol = CreateKeyCol(record)
             };
+        }
+
+        private static KeyCol CreateKeyCol(Record record)
+        {
+            return new KeyCol
+            {
+                Description = record[Field.ColGridRef],
+                Height = new Height {Metres = Math.Round(decimal.Parse(record[Field.ColHeight]))}
+            };
+        }
+
+        private int GetSectionId(Record record)
+        {
+            return _entities.Sections.Single(x => x.Name == record[Field.SectionName].SectionName()).Id;
+        }
+
+        private int? GetIslandId(Record record)
+        {
+            return _entities.Islands.SingleOrDefault(x => x.Name == record[Field.Island])?.Id;
+        }
+
+        private int[] GetCountyIds(Record record)
+        {
+            var county = record[Field.County].SplitCounties();
+            return _entities.Counties.Where(x => county.Contains(x.Name)).Select(x => x.Id).ToArray();
+        }
+
+        private int GetTopologicalSectionId(Record record)
+        {
+            return _entities.TopologicalSections.Single(x => x.Name == record[Field.TopoSection].SectionName()).Id;
+        }
+
+        private int[] GetMapIds(Record record)
+        {
+            var maps = record[Field.Map1To25K].SplitMaps().Concat(record[Field.Map1To50K].SplitMaps());
+            return _entities.Maps.Where(x => maps.Contains(x.Name)).Select(x => x.Id).ToArray();
         }
 
         private int _id = 0;

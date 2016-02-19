@@ -10,7 +10,7 @@ namespace ScotlandsMountains.ImportConsole.DatabaseOfBritishAndIrishHills.Entity
         public CountiesFactory(IList<Record> records)
         {
             Counties = records
-                .SelectMany(r => r[Field.County].Split(new[] {"/"}, StringSplitOptions.RemoveEmptyEntries))
+                .SelectMany(r => r[Field.County].SplitCounties())
                 .Distinct()
                 .Where(x => !string.IsNullOrEmpty(x))
                 .OrderBy(x => x)

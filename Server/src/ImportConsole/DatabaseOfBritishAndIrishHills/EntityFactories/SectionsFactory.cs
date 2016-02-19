@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using ScotlandsMountains.Domain.Entities;
@@ -13,7 +12,7 @@ namespace ScotlandsMountains.ImportConsole.DatabaseOfBritishAndIrishHills.Entity
                 .Select(r => new
                 {
                     Code = r[Field.Section],
-                    Name = r[Field.SectionName].Split(new[] { ":" }, StringSplitOptions.RemoveEmptyEntries)[1].Trim()
+                    Name = r[Field.SectionName].SectionName()
                 })
                 .Distinct()
                 .OrderBy(x => x.Code)

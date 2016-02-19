@@ -51,6 +51,7 @@
     <Compile Include="DatabaseOfBritishAndIrishHills\EntityFactories\CountiesFactory.cs" />
     <Compile Include="DatabaseOfBritishAndIrishHills\EntityFactories\EntityFactory.cs" />
     <Compile Include="DatabaseOfBritishAndIrishHills\EntityFactories\IslandsFactory.cs" />
+    <Compile Include="DatabaseOfBritishAndIrishHills\EntityFactories\FieldExtensions.cs" />
     <Compile Include="OrdnanceSurvey\MapsFactory.cs" />
     <Compile Include="DatabaseOfBritishAndIrishHills\EntityFactories\MountainsFactory.cs" />
     <Compile Include="DatabaseOfBritishAndIrishHills\EntityFactories\SectionsFactory.cs" />

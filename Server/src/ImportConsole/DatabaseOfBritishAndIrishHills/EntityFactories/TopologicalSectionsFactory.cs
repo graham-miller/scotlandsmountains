@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using ScotlandsMountains.Domain.Entities;
@@ -7,13 +6,13 @@ namespace ScotlandsMountains.ImportConsole.DatabaseOfBritishAndIrishHills.Entity
 {
     public class TopologicalSectionsFactory
     {
-        public TopologicalSectionsFactory(IList<Record> records)
+        public TopologicalSectionsFactory(IEnumerable<Record> records)
         {
             TopologicalSections = records
                 .Select(r => new
                 {
-                    Code = r[Field.TopoSection].Split(new[] { ":" }, StringSplitOptions.RemoveEmptyEntries)[0].Trim(),
-                    Name = r[Field.TopoSection].Split(new[] { ":" }, StringSplitOptions.RemoveEmptyEntries)[1].Trim()
+                    Code = r[Field.TopoSection].SectionCode(),
+                    Name = r[Field.TopoSection].SectionName()
                 })
                 .Distinct()
                 .OrderBy(x => x.Code)
