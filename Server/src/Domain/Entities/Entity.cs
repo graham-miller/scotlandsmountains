@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace ScotlandsMountains.Domain.Entities
 {
@@ -9,6 +10,7 @@ namespace ScotlandsMountains.Domain.Entities
             Key = Guid.NewGuid().ToString("N");
         }
 
+        [JsonIgnore]
         public string Key { get; set; }
     }
 }

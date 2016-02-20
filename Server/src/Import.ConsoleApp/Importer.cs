@@ -13,11 +13,11 @@ namespace ScotlandsMountains.Import.ConsoleApp
             ReadDobihRecords();
             ReadMapRecords();
             CreateEntities();
-            //WriteEntitiesToFirebase();
+            WriteEntitiesToFirebase();
             CreateMountains();
-            //WriteMountainsToFirebase();
+            WriteMountainsToFirebase();
             CreateMountainSummaries();
-            //WriteMountainsSummariesToFirebase();
+            WriteMountainSummariesToFirebase();
         }
 
         private void ReadDobihRecords()
