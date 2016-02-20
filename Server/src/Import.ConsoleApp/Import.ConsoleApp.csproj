@@ -79,6 +79,7 @@
     <Compile Include="DatabaseOfBritishAndIrishHills\EntityFactories\EntityFactory.cs" />
     <Compile Include="DatabaseOfBritishAndIrishHills\EntityFactories\IslandsFactory.cs" />
     <Compile Include="DatabaseOfBritishAndIrishHills\EntityFactories\FieldExtensions.cs" />
+    <Compile Include="DatabaseOfBritishAndIrishHills\EntityFactories\MountainSummariesFactory.cs" />
     <Compile Include="FirebaseWriter.cs" />
     <Compile Include="Importer.cs" />
     <Compile Include="OrdnanceSurvey\MapsFactory.cs" />

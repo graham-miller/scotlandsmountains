@@ -16,6 +16,8 @@ namespace ScotlandsMountains.Import.ConsoleApp
             //WriteEntitiesToFirebase();
             CreateMountains();
             //WriteMountainsToFirebase();
+            CreateMountainSummaries();
+            //WriteMountainsSummariesToFirebase();
         }
 
         private void ReadDobihRecords()
@@ -50,9 +52,21 @@ namespace ScotlandsMountains.Import.ConsoleApp
                 writer.Write(_mountains);
         }
 
+        private void CreateMountainSummaries()
+        {
+            _mountainSummariesFactory = new MountainSummariesFactory(_mountains, _entityFactory);
+        }
+
+        private void WriteMountainSummariesToFirebase()
+        {
+            using (var writer = new FirebaseWriter())
+                writer.Write(_mountainSummariesFactory);
+        }
+
         private IList<Record> _records;
         private IList<Map> _maps;
         private IList<Mountain> _mountains;
+        private MountainSummariesFactory _mountainSummariesFactory;
         private EntityFactory _entityFactory;
     }
 }

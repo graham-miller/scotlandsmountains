@@ -30,4 +30,9 @@ namespace ScotlandsMountains.Domain.Entities
 
         public string[] ClassificationKeys { get; set; }
     }
+
+    public class MountainSummary : Entity
+    {
+        public object[] Data { get; set; }
+    }
 }
