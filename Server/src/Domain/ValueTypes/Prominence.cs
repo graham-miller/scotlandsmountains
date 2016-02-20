@@ -4,9 +4,9 @@ namespace ScotlandsMountains.Domain.ValueTypes
 {
     public class Prominence
     {
-        public decimal Metres { get; set; }
+        public double Metres { get; set; }
 
-        public decimal Feet => Convert.ToFeetFrom(Metres);
+        public double Feet => Convert.ToFeetFrom(Metres);
 
         public KeyCol KeyCol { get; set; }
     }

@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using ScotlandsMountains.Domain.Entities;
 
-namespace ScotlandsMountains.ImportConsole.OrdnanceSurvey
+namespace ScotlandsMountains.Import.ConsoleApp.OrdnanceSurvey
 {
     public class Reader
     {
@@ -47,15 +47,12 @@ namespace ScotlandsMountains.ImportConsole.OrdnanceSurvey
 
                 var firstSpaceIndex = line.IndexOf(Space);
                 var lastSpaceIndex = line.LastIndexOf(Space);
-
-                _id++;
                 var code = line.Substring(0, firstSpaceIndex);
                 var name = line.Substring(firstSpaceIndex + 1, lastSpaceIndex - firstSpaceIndex - 1);
                 var isbn = line.Substring(lastSpaceIndex + 1);
 
                 _maps.Add(new Map
                 {
-                    Id = _id,
                     Publisher = Publisher,
                     Series = series,
                     Scale = scale,
@@ -99,7 +96,6 @@ namespace ScotlandsMountains.ImportConsole.OrdnanceSurvey
         private const decimal Scale1To25000 = 0.00004m;
         private const decimal Scale1To50000 = 0.00002m;
 
-        private int _id = 0;
         private List<Map> _maps = new List<Map>();
         private readonly string _explorerPath;
         private readonly string _explorerActivePath;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ScotlandsMountains.ImportConsole.DatabaseOfBritishAndIrishHills.EntityFactories
+namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.EntityFactories
 {
     internal static class FieldExtensions
     {
@@ -31,6 +31,11 @@ namespace ScotlandsMountains.ImportConsole.DatabaseOfBritishAndIrishHills.Entity
                 name += " (East)";
             }
             return name;
+        }
+
+        public static bool IsTrue(this string s)
+        {
+            return s == "1";
         }
 
         public static IEnumerable<string> SplitCounties(this string s)

@@ -1,7 +1,14 @@
-﻿namespace ScotlandsMountains.Domain.Entities
+﻿using System;
+
+namespace ScotlandsMountains.Domain.Entities
 {
     public abstract class Entity
     {
-        public int Id { get; set; }
+        protected Entity()
+        {
+            Key = Guid.NewGuid().ToString("N");
+        }
+
+        public string Key { get; set; }
     }
 }

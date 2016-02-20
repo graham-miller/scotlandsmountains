@@ -46,12 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\Classifications.cs" />
+    <Compile Include="Entities\Classification.cs" />
     <Compile Include="Entities\County.cs" />
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\Island.cs" />
     <Compile Include="Entities\Map.cs" />
     <Compile Include="Entities\Mountain.cs" />
-    <Compile Include="Calculations\Convert.cs" />
+    <Compile Include="Constants\Convert.cs" />
     <Compile Include="ValueTypes\KeyCol.cs" />
     <Compile Include="ValueTypes\Prominence.cs" />
     <Compile Include="Entities\Section.cs" />
@@ -60,7 +62,6 @@
     <Compile Include="ValueTypes\Height.cs" />
     <Compile Include="ValueTypes\Location.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ScotlandsMountains.Domain.Entities;
 
-namespace ScotlandsMountains.ImportConsole.DatabaseOfBritishAndIrishHills.EntityFactories
+namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.EntityFactories
 {
     public class SectionsFactory
     {
@@ -16,9 +16,8 @@ namespace ScotlandsMountains.ImportConsole.DatabaseOfBritishAndIrishHills.Entity
                 })
                 .Distinct()
                 .OrderBy(x => x.Code)
-                .Select((x, i) => new Section
+                .Select(x => new Section
                 {
-                    Id = i+1,
                     Code = x.Code,
                     Name = x.Name
                 })

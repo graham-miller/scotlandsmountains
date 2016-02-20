@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ScotlandsMountains.Domain.Entities;
 
-namespace ScotlandsMountains.ImportConsole.DatabaseOfBritishAndIrishHills.EntityFactories
+namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.EntityFactories
 {
     public class IslandsFactory
     {
@@ -16,11 +16,7 @@ namespace ScotlandsMountains.ImportConsole.DatabaseOfBritishAndIrishHills.Entity
                 .Distinct()
                 .Where(x => !string.IsNullOrEmpty(x.Name))
                 .OrderBy(x => x.Name)
-                .Select((x, i) => new Island
-                {
-                    Id = i + 1,
-                    Name = x.Name
-                })
+                .Select(x => new Island {Name = x.Name})
                 .ToList();
         }
 

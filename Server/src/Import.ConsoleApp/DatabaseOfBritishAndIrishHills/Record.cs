@@ -1,4 +1,4 @@
-﻿namespace ScotlandsMountains.ImportConsole.DatabaseOfBritishAndIrishHills
+﻿namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills
 {
     public class Record
     {

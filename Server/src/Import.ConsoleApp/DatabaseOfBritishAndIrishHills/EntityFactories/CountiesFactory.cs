@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ScotlandsMountains.Domain.Entities;
 
-namespace ScotlandsMountains.ImportConsole.DatabaseOfBritishAndIrishHills.EntityFactories
+namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.EntityFactories
 {
     public class CountiesFactory
     {
@@ -14,11 +14,7 @@ namespace ScotlandsMountains.ImportConsole.DatabaseOfBritishAndIrishHills.Entity
                 .Distinct()
                 .Where(x => !string.IsNullOrEmpty(x))
                 .OrderBy(x => x)
-                .Select((x, i) => new County
-                {
-                    Id = i + 1,
-                    Name = x
-                })
+                .Select(x => new County {Name = x})
                 .ToList();
         }
 

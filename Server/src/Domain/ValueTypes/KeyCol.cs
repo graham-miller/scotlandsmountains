@@ -2,7 +2,7 @@
 {
     public class KeyCol
     {
-        public string Description { get; set; }
+        public string Location { get; set; }
 
         public Height Height { get; set; }
     }

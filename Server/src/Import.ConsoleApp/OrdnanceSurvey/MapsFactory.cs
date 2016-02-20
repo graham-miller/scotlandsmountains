@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ScotlandsMountains.Domain.Entities;
-using ScotlandsMountains.ImportConsole.DatabaseOfBritishAndIrishHills;
+using ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills;
 
-namespace ScotlandsMountains.ImportConsole.OrdnanceSurvey
+namespace ScotlandsMountains.Import.ConsoleApp.OrdnanceSurvey
 {
     public class MapsFactory
     {
@@ -15,9 +15,8 @@ namespace ScotlandsMountains.ImportConsole.OrdnanceSurvey
                 .Distinct()
                 .Where(x => !string.IsNullOrEmpty(x))
                 .OrderBy(x => x)
-                .Select((x, i) => new Map
+                .Select(x => new Map
                 {
-                    Id = i + 1,
                     Code = x,
                     Scale = 0.00004m
                 })
@@ -28,9 +27,8 @@ namespace ScotlandsMountains.ImportConsole.OrdnanceSurvey
                 .Distinct()
                 .Where(x => !string.IsNullOrEmpty(x))
                 .OrderBy(x => x)
-                .Select((x, i) => new Map
+                .Select(x => new Map
                 {
-                    Id = i + 1,
                     Code = x,
                     Scale = 0.00002m
                 })

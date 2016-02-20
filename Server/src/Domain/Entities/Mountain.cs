@@ -18,14 +18,16 @@ namespace ScotlandsMountains.Domain.Entities
 
         public Prominence Prominence { get; set; }
 
-        public int SectionId { get; set; }
+        public string SectionKey { get; set; }
 
-        public int? IslandId { get; set; }
+        public string IslandKey { get; set; }
 
-        public int[] CountyIds { get; set; }
+        public string[] CountyKeys { get; set; }
 
-        public int TopologicalSectionId { get; set; }
+        public string TopologicalSectionKey { get; set; }
 
-        public int[] MapIds { get; set; }
+        public string[] MapKeys { get; set; }
+
+        public string[] ClassificationKeys { get; set; }
     }
 }
