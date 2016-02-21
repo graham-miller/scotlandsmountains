@@ -1,8 +1,9 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills;
 using ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.EntityFactories;
-using System.Collections.Generic;
 using ScotlandsMountains.Domain.Entities;
+using DobihReader = ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.Reader;
+using OsReader = ScotlandsMountains.Import.ConsoleApp.OrdnanceSurvey.Reader;
 
 namespace ScotlandsMountains.Import.ConsoleApp
 {
@@ -13,21 +14,16 @@ namespace ScotlandsMountains.Import.ConsoleApp
             ReadDobihRecords();
             ReadMapRecords();
             CreateEntities();
-            WriteEntitiesToFirebase();
-            CreateMountains();
-            WriteMountainsToFirebase();
-            CreateMountainSummaries();
-            WriteMountainSummariesToFirebase();
         }
 
         private void ReadDobihRecords()
         {
-            _records = new DatabaseOfBritishAndIrishHills.Reader(ImportConfiguration.DobihCsvPath, ImportConfiguration.DobihFilter).Read();
+            _records = new DobihReader(ImportConfiguration.DobihCsvPath, ImportConfiguration.DobihFilter).Read();
         }
 
         private void ReadMapRecords()
         {
-            _maps = new OrdnanceSurvey.Reader(ImportConfiguration.ExplorerTxtPath, ImportConfiguration.ExplorerActiveTxtPath, ImportConfiguration.LandrangerTxtPath, ImportConfiguration.LandrangerActiveTxtPath).Read();
+            _maps = new OsReader(ImportConfiguration.ExplorerTxtPath, ImportConfiguration.ExplorerActiveTxtPath, ImportConfiguration.LandrangerTxtPath, ImportConfiguration.LandrangerActiveTxtPath).Read();
         }
 
         private void CreateEntities()
@@ -35,38 +31,8 @@ namespace ScotlandsMountains.Import.ConsoleApp
             _entityFactory = new EntityFactory(_records, _maps);
         }
 
-        private void WriteEntitiesToFirebase()
-        {
-            using (var writer = new FirebaseWriter())
-                writer.Write(_entityFactory);
-        }
-
-        private void CreateMountains()
-        {
-            _mountains = new MountainsFactory(_records, _entityFactory).Mountains;
-        }
-
-        private void WriteMountainsToFirebase()
-        {
-            using (var writer = new FirebaseWriter())
-                writer.Write(_mountains);
-        }
-
-        private void CreateMountainSummaries()
-        {
-            _mountainSummariesFactory = new MountainSummariesFactory(_mountains, _entityFactory);
-        }
-
-        private void WriteMountainSummariesToFirebase()
-        {
-            using (var writer = new FirebaseWriter())
-                writer.Write(_mountainSummariesFactory);
-        }
-
         private IList<Record> _records;
         private IList<Map> _maps;
-        private IList<Mountain> _mountains;
-        private MountainSummariesFactory _mountainSummariesFactory;
         private EntityFactory _entityFactory;
     }
 }

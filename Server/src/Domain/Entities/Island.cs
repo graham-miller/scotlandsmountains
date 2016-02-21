@@ -1,6 +1,6 @@
 ﻿namespace ScotlandsMountains.Domain.Entities
 {
-    public class Island : Entity
+    public class Island : MountainContainer
     {
         public string Name { get; set; }
     }

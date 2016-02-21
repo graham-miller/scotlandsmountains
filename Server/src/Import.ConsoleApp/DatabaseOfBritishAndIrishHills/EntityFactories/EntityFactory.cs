@@ -13,6 +13,7 @@ namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.En
             TopologicalSections = new TopologicalSectionsFactory(records).TopologicalSections;
             Maps = maps;
             Classifications = new ClassificationsFactory().Classifications;
+            Mountains = new MountainsFactory(records, this).Mountains;
         }
 
         public IEnumerable<Section> Sections { get; }

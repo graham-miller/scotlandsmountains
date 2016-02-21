@@ -1,4 +1,5 @@
 ﻿using ScotlandsMountains.Domain.ValueTypes;
+using System.Collections.Generic;
 
 namespace ScotlandsMountains.Domain.Entities
 {
@@ -18,21 +19,16 @@ namespace ScotlandsMountains.Domain.Entities
 
         public Prominence Prominence { get; set; }
 
-        public string SectionKey { get; set; }
+        public Section Section { get; set; }
 
-        public string IslandKey { get; set; }
+        public Island Island { get; set; }
 
-        public string[] CountyKeys { get; set; }
+        public IList<County> Counties { get; set; } = new List<County>();
 
-        public string TopologicalSectionKey { get; set; }
+        public TopologicalSection TopologicalSection { get; set; }
 
-        public string[] MapKeys { get; set; }
+        public IList<Map> Maps { get; set; } = new List<Map>();
 
-        public string[] ClassificationKeys { get; set; }
-    }
-
-    public class MountainSummary : Entity
-    {
-        public object[] Data { get; set; }
+        public IList<Classification> Classifications { get; set; } = new List<Classification>();
     }
 }

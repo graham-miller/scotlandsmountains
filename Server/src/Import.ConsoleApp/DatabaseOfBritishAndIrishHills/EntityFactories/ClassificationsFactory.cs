@@ -9,16 +9,16 @@ namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.En
         {
             Classifications = new List<Classification>
             {
-                new Classification {Name = Domain.Constants.Classifications.Munro},
-                new Classification {Name = Domain.Constants.Classifications.MunroTop},
-                new Classification {Name = Domain.Constants.Classifications.Corbett},
-                new Classification {Name = Domain.Constants.Classifications.CorbettTop},
-                new Classification {Name = Domain.Constants.Classifications.Graham},
-                new Classification {Name = Domain.Constants.Classifications.GrahamTop},
-                new Classification {Name = Domain.Constants.Classifications.Murdo},
-                new Classification {Name = Domain.Constants.Classifications.Donald},
-                new Classification {Name = Domain.Constants.Classifications.DonaldDewey},
-                new Classification {Name = Domain.Constants.Classifications.HighlandFive}
+                new Classification {Name = Classification.Munro},
+                new Classification {Name = Classification.MunroTop},
+                new Classification {Name = Classification.Corbett},
+                new Classification {Name = Classification.CorbettTop},
+                new Classification {Name = Classification.Graham},
+                new Classification {Name = Classification.GrahamTop},
+                new Classification {Name = Classification.Murdo},
+                new Classification {Name = Classification.Donald},
+                new Classification {Name = Classification.DonaldDewey},
+                new Classification {Name = Classification.HighlandFive}
             };
         }
 

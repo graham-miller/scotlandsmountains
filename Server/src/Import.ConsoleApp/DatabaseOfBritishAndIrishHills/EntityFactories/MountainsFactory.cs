@@ -8,140 +8,151 @@ namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.En
 {
     public class MountainsFactory
     {
-        private readonly EntityFactory _entities;
-
         public MountainsFactory(IList<Record> records, EntityFactory entities)
         {
-            _entities = entities;
-            
-            Mountains = new List<Mountain>();
-
             foreach (var record in records.OrderByDescending(r => decimal.Parse(r[Field.Metres])))
-                AddNewMountainFrom(record);
+                Mountains.Add(new MountainFactory(record, entities).Mountain);
         }
 
-        public IList<Mountain> Mountains { get; }
+        public IList<Mountain> Mountains { get; } = new List<Mountain>();
 
-        private void AddNewMountainFrom(Record record)
+        private class MountainFactory
         {
-            var mountain = new Mountain
+            private readonly Record _record;
+            private readonly EntityFactory _entities;
+
+            public MountainFactory(Record record, EntityFactory entities)
             {
-                DobihId = record[Field.Number],
-                Name = record[Field.Name],
-                Height = CreateHeight(record),
-                Location = CreateLocation(record),
-                Prominence = CreateProminence(record),
-                SummitFeature = record[Field.Feature],
-                SummitObservations = record[Field.Observations],
-                SectionKey = GetSectionId(record),
-                IslandKey = GetIslandId(record),
-                CountyKeys = GetCountyIds(record),
-                TopologicalSectionKey = GetTopologicalSectionId(record),
-                MapKeys = GetMapIds(record),
-                ClassificationKeys = GetClassificationIds(record)
-            };
+                _record = record;
+                _entities = entities;
 
-            Mountains.Add(mountain);
-        }
+                Mountain = new Mountain
+                {
+                    DobihId = record[Field.Number],
+                    Name = record[Field.Name],
+                    Height = CreateHeight(),
+                    Location = CreateLocation(),
+                    Prominence = CreateProminence(),
+                    SummitFeature = record[Field.Feature],
+                    SummitObservations = record[Field.Observations],
+                };
 
-        private static Height CreateHeight(Record record)
-        {
-            return new Height { Metres = double.Parse(record[Field.Metres]) };
-        }
+                CreateRelationships();
+            }
 
-        private static Location CreateLocation(Record record)
-        {
-            var latitude = double.Parse(record[Field.Latitude]);
-            var longitude = double.Parse(record[Field.Longitude]);
-            var height = double.Parse(record[Field.Metres]);
+            public Mountain Mountain { get; }
 
-            return new Location
+            private Height CreateHeight()
             {
-                Latitude = latitude,
-                Longitude = longitude,
-            };
-        }
+                return new Height { Metres = double.Parse(_record[Field.Metres]) };
+            }
 
-        private static Prominence CreateProminence(Record record)
-        {
-            return new Prominence
+            private Location CreateLocation()
             {
-                Metres = Math.Round(double.Parse(record[Field.Drop])),
-                KeyCol = CreateKeyCol(record)
-            };
-        }
+                var latitude = double.Parse(_record[Field.Latitude]);
+                var longitude = double.Parse(_record[Field.Longitude]);
+                var height = double.Parse(_record[Field.Metres]);
 
-        private static KeyCol CreateKeyCol(Record record)
-        {
-            return new KeyCol
+                return new Location
+                {
+                    Latitude = latitude,
+                    Longitude = longitude,
+                };
+            }
+
+            private Prominence CreateProminence()
             {
-                Location = record[Field.ColGridRef],
-                Height = new Height {Metres = Math.Round(double.Parse(record[Field.ColHeight]))}
-            };
-        }
+                return new Prominence
+                {
+                    Metres = Math.Round(double.Parse(_record[Field.Drop])),
+                    KeyCol = CreateKeyCol()
+                };
+            }
 
-        private string GetSectionId(Record record)
-        {
-            return _entities.Sections.Single(x => x.Name == record[Field.SectionName].SectionName()).Key;
-        }
+            private KeyCol CreateKeyCol()
+            {
+                return new KeyCol
+                {
+                    Location = _record[Field.ColGridRef],
+                    Height = new Height { Metres = Math.Round(double.Parse(_record[Field.ColHeight])) }
+                };
+            }
 
-        private string GetIslandId(Record record)
-        {
-            return _entities.Islands.SingleOrDefault(x => x.Name == record[Field.Island])?.Key;
-        }
+            private void CreateRelationships()
+            {
+                CreateSectionRelationships();
+                CreateIslandRelationships();
+                CreateCountyRelationships();
+                CreateTopologicalSectionRelationships();
+                CreateMapRelationships();
+                CreateClassificationRelationships();
+            }
 
-        private string[] GetCountyIds(Record record)
-        {
-            var county = record[Field.County].SplitCounties();
-            return _entities.Counties.Where(x => county.Contains(x.Name)).Select(x => x.Key).ToArray();
-        }
+            private void CreateSectionRelationships()
+            {
+                Mountain.Section = _entities.Sections.Single(x => x.Name == _record[Field.SectionName].SectionName());
+                Mountain.Section.Mountains.Add(Mountain);
+            }
 
-        private string GetTopologicalSectionId(Record record)
-        {
-            return _entities.TopologicalSections.Single(x => x.Name == record[Field.TopoSection].SectionName()).Key;
-        }
+            private void CreateIslandRelationships()
+            {
+                var island = _entities.Islands.SingleOrDefault(x => x.Name == _record[Field.Island]);
+                if (island != null)
+                {
+                    Mountain.Island = island;
+                    island.Mountains.Add(Mountain);
+                }
+            }
 
-        private string[] GetMapIds(Record record)
-        {
-            var maps = record[Field.Map1To25K].SplitMaps().Concat(record[Field.Map1To50K].SplitMaps());
-            return _entities.Maps.Where(x => maps.Contains(x.Code)).Select(x => x.Key).ToArray();
-        }
+            private void CreateCountyRelationships()
+            {
+                var countyNames = _record[Field.County].SplitCounties();
+                foreach (var county in _entities.Counties.Where(x => countyNames.Contains(x.Name)).ToList())
+                {
+                    Mountain.Counties.Add(county);
+                    county.Mountains.Add(Mountain);
+                }
+            }
 
-        private string[] GetClassificationIds(Record record)
-        {
-            var classifications = new List<string>();
+            private void CreateTopologicalSectionRelationships()
+            {
+                Mountain.TopologicalSection = _entities.TopologicalSections.Single(x => x.Name == _record[Field.TopoSection].SectionName());
+                Mountain.TopologicalSection.Mountains.Add(Mountain);
+            }
 
-            if (record[Field.Munro].IsTrue())
-                classifications.Add(_entities.Classifications.Single(x => x.Name == Domain.Constants.Classifications.Munro).Key);
+            private void CreateMapRelationships()
+            {
+                var mapCodes = _record[Field.Map1To25K].SplitMaps().Concat(_record[Field.Map1To50K].SplitMaps());
+                foreach(var map in _entities.Maps.Where(x => mapCodes.Contains(x.Code)))
+                {
+                    Mountain.Maps.Add(map);
+                    map.Mountains.Add(Mountain);
+                }
+            }
 
-            if (record[Field.MunroTop].IsTrue())
-                classifications.Add(_entities.Classifications.Single(x => x.Name == Domain.Constants.Classifications.MunroTop).Key);
+            private void CreateClassificationRelationships()
+            {
+                CreateClassificationRelationship(_record[Field.Munro], Classification.Munro);
+                CreateClassificationRelationship(_record[Field.MunroTop], Classification.MunroTop);
+                CreateClassificationRelationship(_record[Field.Corbett], Classification.Corbett);
+                CreateClassificationRelationship(_record[Field.CorbettTop], Classification.CorbettTop);
+                CreateClassificationRelationship(_record[Field.Graham], Classification.Graham);
+                CreateClassificationRelationship(_record[Field.GrahamTop], Classification.GrahamTop);
+                CreateClassificationRelationship(_record[Field.Murdo], Classification.Murdo);
+                CreateClassificationRelationship(_record[Field.Donald], Classification.Donald);
+                CreateClassificationRelationship(_record[Field.DonaldDewey], Classification.DonaldDewey);
+                CreateClassificationRelationship(_record[Field.HighlandFive], Classification.HighlandFive);
+            }
 
-            if (record[Field.Corbett].IsTrue())
-                classifications.Add(_entities.Classifications.Single(x => x.Name == Domain.Constants.Classifications.Corbett).Key);
-
-            if (record[Field.CorbettTop].IsTrue())
-                classifications.Add(_entities.Classifications.Single(x => x.Name == Domain.Constants.Classifications.CorbettTop).Key);
-
-            if (record[Field.Graham].IsTrue())
-                classifications.Add(_entities.Classifications.Single(x => x.Name == Domain.Constants.Classifications.Graham).Key);
-
-            if (record[Field.GrahamTop].IsTrue())
-                classifications.Add(_entities.Classifications.Single(x => x.Name == Domain.Constants.Classifications.GrahamTop).Key);
-
-            if (record[Field.Murdo].IsTrue())
-                classifications.Add(_entities.Classifications.Single(x => x.Name == Domain.Constants.Classifications.Murdo).Key);
-
-            if (record[Field.Donald].IsTrue())
-                classifications.Add(_entities.Classifications.Single(x => x.Name == Domain.Constants.Classifications.Donald).Key);
-
-            if (record[Field.DonaldDewey].IsTrue())
-                classifications.Add(_entities.Classifications.Single(x => x.Name == Domain.Constants.Classifications.DonaldDewey).Key);
-
-            if (record[Field.HighlandFive].IsTrue())
-                classifications.Add(_entities.Classifications.Single(x => x.Name == Domain.Constants.Classifications.HighlandFive).Key);
-
-            return classifications.ToArray();
+            private void CreateClassificationRelationship(string fieldValue, string classificationName)
+            {
+                if (fieldValue.IsTrue())
+                {
+                    var classification = _entities.Classifications.Single(x => x.Name == classificationName);
+                    Mountain.Classifications.Add(classification);
+                    classification.Mountains.Add(Mountain);
+                }
+            }
         }
     }
 }
