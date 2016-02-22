@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FireSharp;
+using FireSharp.Config;
+using System;
 using System.Diagnostics;
 
 namespace ScotlandsMountains.Import.ConsoleApp
@@ -7,18 +9,36 @@ namespace ScotlandsMountains.Import.ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Import in progress ({0}).", FormattedNow());
+            Console.WriteLine("In progress ({0})...", FormattedNow());
 
             var stopwatch = new Stopwatch();
             stopwatch.Start();
 
-            new Importer().Import();
+            //ClearFirebase();
+            CreateFirebaseJson();
 
             stopwatch.Start();
 
-            Console.WriteLine("Import complete ({0}), in {1}s", FormattedNow(), Math.Round((double)(stopwatch.ElapsedMilliseconds/1000)).ToString("#,##0"));
+            Console.WriteLine("Complete ({0}), in {1}s", FormattedNow(), Math.Round((double)(stopwatch.ElapsedMilliseconds / 1000)).ToString("#,##0"));
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey(true);
+        }
+
+        private static void ClearFirebase()
+        {
+            using (var client = new FirebaseClient(new FirebaseConfig
+            {
+                AuthSecret = "",
+                BasePath = "https://scotlandsmountains.firebaseio.com/"
+            }))
+            {
+                client.Delete("");
+            }
+        }
+
+        private static void CreateFirebaseJson()
+        {
+            new Importer().Import();
         }
 
         private static string FormattedNow()

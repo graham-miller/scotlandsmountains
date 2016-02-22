@@ -127,21 +127,20 @@ namespace ScotlandsMountains.Import.ConsoleApp
 
                     WriteProperty(mountain, x => x.DobihId);
                     WriteProperty(mountain, x => x.Name);
-                    //WriteProperty(mountain, x => x.Height);
-                    //WriteProperty(mountain, x => x.Location);
                     WriteProperty(mountain, x => x.SummitFeature);
                     WriteProperty(mountain, x => x.SummitObservations);
-                    //WriteProperty(mountain, x => x.Prominence);
+
+                    WriteValueTypeProperty(mountain, x => x.Height);
+                    WriteValueTypeProperty(mountain, x => x.Location);
+                    WriteValueTypeProperty(mountain, x => x.Prominence);
 
                     WriteContainerKey(mountain, x => x.Section);
                     WriteContainerKey(mountain, x => x.Island);
-
-                    //Counties
-
                     WriteContainerKey(mountain, x => x.TopologicalSection);
 
-                    //Maps
-                    //Classifications
+                    WriteContainerKeys(mountain, x => x.Counties);
+                    WriteContainerKeys(mountain, x => x.Maps);
+                    WriteContainerKeys(mountain, x => x.Classifications);
 
                     _writer.WriteEndObject();
                 }
@@ -178,6 +177,14 @@ namespace ScotlandsMountains.Import.ConsoleApp
                 _writer.WriteValue(propertyInfo.GetValue(entity));
             }
 
+            private void WriteValueTypeProperty<TEntity, TProperty>(TEntity entity, Expression<Func<TEntity, TProperty>> expression)
+            {
+                var body = expression.Body as MemberExpression;
+                var propertyInfo = body.Member as PropertyInfo;
+                _writer.WritePropertyName(propertyInfo.Name.Camelize());
+                _writer.WriteRawValue(JsonConvert.SerializeObject(propertyInfo.GetValue(entity), Formatting.Indented));
+            }
+
             private void WriteMountains(MountainContainer container)
             {
                 _writer.WritePropertyName(MountainsPropertyName);
@@ -197,10 +204,25 @@ namespace ScotlandsMountains.Import.ConsoleApp
                 _writer.WritePropertyName(propertyInfo.Name.Camelize());
 
                 var value = propertyInfo.GetValue(mountain) as MountainContainer;
-                if(value != null)
+                if (value != null)
                     _writer.WriteValue(value.Key);
                 else
                     _writer.WriteNull();
+            }
+
+            private void WriteContainerKeys<T>(Mountain mountain, Expression<Func<Mountain, IEnumerable<T>>> expression) where T : MountainContainer
+            {
+                var body = expression.Body as MemberExpression;
+                var propertyInfo = body.Member as PropertyInfo;
+                _writer.WritePropertyName(propertyInfo.Name.Camelize());
+
+                _writer.WriteStartObject();
+                foreach (var item in propertyInfo.GetValue(mountain) as IEnumerable<MountainContainer>)
+                {
+                    _writer.WritePropertyName(item.Key);
+                    _writer.WriteValue(true);
+                }
+                _writer.WriteEndObject();
             }
 
             private const string MountainsPropertyName = "mountains";
