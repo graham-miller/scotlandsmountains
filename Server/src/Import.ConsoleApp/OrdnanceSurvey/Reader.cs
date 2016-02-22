@@ -96,7 +96,7 @@ namespace ScotlandsMountains.Import.ConsoleApp.OrdnanceSurvey
         private const decimal Scale1To25000 = 0.00004m;
         private const decimal Scale1To50000 = 0.00002m;
 
-        private List<Map> _maps = new List<Map>();
+        private readonly List<Map> _maps = new List<Map>();
         private readonly string _explorerPath;
         private readonly string _explorerActivePath;
         private readonly string _landrangerPath;

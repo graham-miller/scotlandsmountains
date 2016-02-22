@@ -5,20 +5,20 @@ namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.En
 {
     public class ClassificationsFactory
     {
-        public ClassificationsFactory()
+        public ClassificationsFactory(HashIds hashIds)
         {
             Classifications = new List<Classification>
             {
-                new Classification {Name = Classification.Munro},
-                new Classification {Name = Classification.MunroTop},
-                new Classification {Name = Classification.Corbett},
-                new Classification {Name = Classification.CorbettTop},
-                new Classification {Name = Classification.Graham},
-                new Classification {Name = Classification.GrahamTop},
-                new Classification {Name = Classification.Murdo},
-                new Classification {Name = Classification.Donald},
-                new Classification {Name = Classification.DonaldDewey},
-                new Classification {Name = Classification.HighlandFive}
+                new Classification {Key = hashIds.Next(), Name = Classification.Munro},
+                new Classification {Key = hashIds.Next(), Name = Classification.MunroTop},
+                new Classification {Key = hashIds.Next(), Name = Classification.Corbett},
+                new Classification {Key = hashIds.Next(), Name = Classification.CorbettTop},
+                new Classification {Key = hashIds.Next(), Name = Classification.Graham},
+                new Classification {Key = hashIds.Next(), Name = Classification.GrahamTop},
+                new Classification {Key = hashIds.Next(), Name = Classification.Murdo},
+                new Classification {Key = hashIds.Next(), Name = Classification.Donald},
+                new Classification {Key = hashIds.Next(), Name = Classification.DonaldDewey},
+                new Classification {Key = hashIds.Next(), Name = Classification.HighlandFive}
             };
         }
 

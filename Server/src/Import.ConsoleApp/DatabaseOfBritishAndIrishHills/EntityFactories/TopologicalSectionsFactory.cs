@@ -6,7 +6,7 @@ namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.En
 {
     public class TopologicalSectionsFactory
     {
-        public TopologicalSectionsFactory(IEnumerable<Record> records)
+        public TopologicalSectionsFactory(IEnumerable<Record> records, HashIds hashIds)
         {
             TopologicalSections = records
                 .Select(r => new
@@ -18,6 +18,7 @@ namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.En
                 .OrderBy(x => x.Code)
                 .Select(x => new TopologicalSection
                 {
+                    Key = hashIds.Next(),
                     Code = x.Code,
                     Name = x.Name
                 })

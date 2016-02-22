@@ -5,16 +5,20 @@ namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.En
 {
     public class EntityFactory
     {
-        public EntityFactory(IList<Record> records, IList<Map> maps)
+        public EntityFactory(IList<Record> records, IList<Map> maps, HashIds hashIds)
         {
-            Sections = new SectionsFactory(records).Sections;
-            Islands = new IslandsFactory(records).Islands;
-            Counties = new CountiesFactory(records).Counties;
-            TopologicalSections = new TopologicalSectionsFactory(records).TopologicalSections;
+            _hashIds = hashIds;
+
+            Sections = new SectionsFactory(records, hashIds).Sections;
+            Islands = new IslandsFactory(records, hashIds).Islands;
+            Counties = new CountiesFactory(records, hashIds).Counties;
+            TopologicalSections = new TopologicalSectionsFactory(records, hashIds).TopologicalSections;
             Maps = maps;
-            Classifications = new ClassificationsFactory().Classifications;
+            Classifications = new ClassificationsFactory(hashIds).Classifications;
             Mountains = new MountainsFactory(records, this).Mountains;
         }
+
+        public HashIds HashIds { get; }
 
         public IEnumerable<Section> Sections { get; }
 
@@ -29,5 +33,12 @@ namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.En
         public IList<Classification> Classifications { get; }
 
         public IList<Mountain> Mountains { get; }
+
+        public string NextHashId()
+        {
+            return _hashIds.Next();
+        }
+
+        private readonly HashIds _hashIds;
     }
 }

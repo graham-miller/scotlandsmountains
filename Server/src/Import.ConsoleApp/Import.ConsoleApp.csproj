@@ -33,7 +33,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Hashids.net, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\hashids.net.1.1.2\lib\net45\Hashids.net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Humanizer, Version=2.0.1.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Humanizer.Core.2.0.1\lib\dotnet\Humanizer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
@@ -51,6 +63,8 @@
     <Compile Include="DatabaseOfBritishAndIrishHills\EntityFactories\EntityFactory.cs" />
     <Compile Include="DatabaseOfBritishAndIrishHills\EntityFactories\IslandsFactory.cs" />
     <Compile Include="DatabaseOfBritishAndIrishHills\EntityFactories\FieldExtensions.cs" />
+    <Compile Include="FilebaseFileWriter.cs" />
+    <Compile Include="HashIdGenerator.cs" />
     <Compile Include="Importer.cs" />
     <Compile Include="OrdnanceSurvey\MapsFactory.cs" />
     <Compile Include="DatabaseOfBritishAndIrishHills\EntityFactories\MountainsFactory.cs" />
@@ -66,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj">

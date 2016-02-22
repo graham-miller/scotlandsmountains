@@ -8,7 +8,7 @@ namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.En
 {
     public class MountainsFactory
     {
-        public MountainsFactory(IList<Record> records, EntityFactory entities)
+        public MountainsFactory(IEnumerable<Record> records, EntityFactory entities)
         {
             foreach (var record in records.OrderByDescending(r => decimal.Parse(r[Field.Metres])))
                 Mountains.Add(new MountainFactory(record, entities).Mountain);
@@ -28,6 +28,7 @@ namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.En
 
                 Mountain = new Mountain
                 {
+                    Key = entities.NextHashId(),
                     DobihId = record[Field.Number],
                     Name = record[Field.Name],
                     Height = CreateHeight(),
@@ -51,7 +52,6 @@ namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.En
             {
                 var latitude = double.Parse(_record[Field.Latitude]);
                 var longitude = double.Parse(_record[Field.Longitude]);
-                var height = double.Parse(_record[Field.Metres]);
 
                 return new Location
                 {

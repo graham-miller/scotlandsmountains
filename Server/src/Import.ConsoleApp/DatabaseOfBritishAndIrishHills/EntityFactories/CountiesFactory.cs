@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using ScotlandsMountains.Domain.Entities;
@@ -7,14 +6,18 @@ namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.En
 {
     public class CountiesFactory
     {
-        public CountiesFactory(IList<Record> records)
+        public CountiesFactory(IEnumerable<Record> records, HashIds hashIds)
         {
             Counties = records
                 .SelectMany(r => r[Field.County].SplitCounties())
                 .Distinct()
                 .Where(x => !string.IsNullOrEmpty(x))
                 .OrderBy(x => x)
-                .Select(x => new County {Name = x})
+                .Select(x => new County
+                {
+                    Key = hashIds.Next(),
+                    Name = x
+                })
                 .ToList();
         }
 

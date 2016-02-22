@@ -6,7 +6,7 @@ namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.En
 {
     public class IslandsFactory
     {
-        public IslandsFactory(IList<Record> records)
+        public IslandsFactory(IEnumerable<Record> records, HashIds hashIds)
         {
             Islands = records
                 .Select(r => new
@@ -16,7 +16,11 @@ namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.En
                 .Distinct()
                 .Where(x => !string.IsNullOrEmpty(x.Name))
                 .OrderBy(x => x.Name)
-                .Select(x => new Island {Name = x.Name})
+                .Select(x => new Island
+                {
+                    Key = hashIds.Next(),
+                    Name = x.Name
+                })
                 .ToList();
         }
 

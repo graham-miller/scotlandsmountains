@@ -6,7 +6,7 @@ namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.En
 {
     public class SectionsFactory
     {
-        public SectionsFactory(IEnumerable<Record> records)
+        public SectionsFactory(IEnumerable<Record> records, HashIds hashIds)
         {
             Sections = records
                 .Select(r => new
@@ -18,6 +18,7 @@ namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.En
                 .OrderBy(x => x.Code)
                 .Select(x => new Section
                 {
+                    Key = hashIds.Next(),
                     Code = x.Code,
                     Name = x.Name
                 })
