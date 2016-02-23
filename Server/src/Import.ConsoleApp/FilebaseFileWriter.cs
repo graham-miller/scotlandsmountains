@@ -8,6 +8,7 @@ using Humanizer;
 using Newtonsoft.Json;
 using ScotlandsMountains.Domain.Entities;
 using ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.EntityFactories;
+using Newtonsoft.Json.Serialization;
 
 namespace ScotlandsMountains.Import.ConsoleApp
 {
@@ -182,7 +183,7 @@ namespace ScotlandsMountains.Import.ConsoleApp
                 var body = expression.Body as MemberExpression;
                 var propertyInfo = body.Member as PropertyInfo;
                 _writer.WritePropertyName(propertyInfo.Name.Camelize());
-                _writer.WriteRawValue(JsonConvert.SerializeObject(propertyInfo.GetValue(entity), Formatting.Indented));
+                _writer.WriteRawValue(JsonConvert.SerializeObject(propertyInfo.GetValue(entity), Formatting.Indented, JsonSerializerSettings));
             }
 
             private void WriteMountains(MountainContainer container)
@@ -228,6 +229,11 @@ namespace ScotlandsMountains.Import.ConsoleApp
             private const string MountainsPropertyName = "mountains";
             private readonly JsonWriter _writer;
             private readonly EntityFactory _entityFactory;
+
+            private static readonly JsonSerializerSettings JsonSerializerSettings = new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+            };
         }
     }
 }

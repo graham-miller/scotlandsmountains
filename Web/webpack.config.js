@@ -1,4 +1,4 @@
-var path = require("path");
+var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -11,7 +11,7 @@ module.exports = {
         ]
     },
     output: {
-        path: path.resolve(__dirname, "build"),
+        path: path.resolve(__dirname, 'build'),
         publicPath: '/',
         filename: 'assets/bundle.js'
     },
@@ -20,24 +20,31 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 loader: 'react-hot!babel-loader?' + JSON.stringify({ presets: ['es2015', 'react'] }),
-                include: [path.resolve(__dirname, "src")]
+                include: [path.resolve(__dirname, 'src')]
             },
             {
                 test: /\.css$/,
-                loader: 'react-hot!style-loader!css-loader'
+                loader: 'react-hot!style-loader!css-loader',
             },
             {
                 test: /\.sass$/,
-                loader: 'react-hot!style-loader!css-loader!sass-loader'
+                loader: 'react-hot!style-loader!css-loader!sass-loader',
+                include: [path.resolve(__dirname, 'src')]
             },
             {
                 test: /\.(png|jpg)$/,
-                loader: 'react-hot!url-loader?limit=8192'
+                loader: 'react-hot!url-loader?limit=8192',
+                include: [path.resolve(__dirname, 'src')]
+            },
+            {
+                test: /\.(png)$/,
+                loader: 'file-loader?name=images/leaflet/[path][name].[ext]&context=./node_modules/leaflet/dist/images',
+                include: [path.resolve(__dirname, 'node_modules/leaflet/dist/images')]
             }
         ],
         noParse: [/\proj4.js$/]
     },
-    devtool: "#cheap-source-map",
+    devtool: '#cheap-source-map',
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({

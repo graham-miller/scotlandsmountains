@@ -13,6 +13,7 @@
   "license": "GPL-3.0",
   "dependencies": {
     "alt": "^0.18.2",
+    "firebase": "^2.4.1",
     "leaflet": "^0.7.7",
     "material-ui": "^0.14.4",
     "normalize-css": "^2.3.1",
@@ -28,6 +29,7 @@
     "babel-preset-react": "^6.5.0",
     "config-leaf": "^0.1.2",
     "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
     "html-webpack-plugin": "^2.8.1",
     "normalize.css": "^3.0.3",
     "open": "0.0.5",
