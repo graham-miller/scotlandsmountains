@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using ScotlandsMountains.Domain.Entities;
 
-namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.EntityFactories
+namespace ScotlandsMountains.Importer.DatabaseOfBritishAndIrishHills.EntityFactories
 {
     public class ClassificationsFactory
     {

@@ -1,4 +1,4 @@
-﻿namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills
+﻿namespace ScotlandsMountains.Importer.DatabaseOfBritishAndIrishHills
 {
     public static class Field
     {

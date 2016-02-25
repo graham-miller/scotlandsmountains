@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ScotlandsMountains.Domain.Entities;
-using ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills;
+using ScotlandsMountains.Importer.DatabaseOfBritishAndIrishHills;
 
-namespace ScotlandsMountains.Import.ConsoleApp.OrdnanceSurvey
+namespace ScotlandsMountains.Importer.OrdnanceSurvey
 {
     public class MapsFactory
     {

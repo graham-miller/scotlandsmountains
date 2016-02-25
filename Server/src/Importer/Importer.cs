@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
-using ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills;
-using ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.EntityFactories;
+using ScotlandsMountains.Importer.DatabaseOfBritishAndIrishHills;
+using ScotlandsMountains.Importer.DatabaseOfBritishAndIrishHills.EntityFactories;
 using ScotlandsMountains.Domain.Entities;
-using DobihReader = ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.Reader;
-using OsReader = ScotlandsMountains.Import.ConsoleApp.OrdnanceSurvey.Reader;
+using DobihReader = ScotlandsMountains.Importer.DatabaseOfBritishAndIrishHills.Reader;
+using OsReader = ScotlandsMountains.Importer.OrdnanceSurvey.Reader;
 
-namespace ScotlandsMountains.Import.ConsoleApp
+namespace ScotlandsMountains.Importer
 {
-    public class Importer
+    public class ImportProcess
     {
-        public void Import()
+        public void Run()
         {
             CreateHashIds();
             ReadDobihRecords();

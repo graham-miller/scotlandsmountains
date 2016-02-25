@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.EntityFactories
+namespace ScotlandsMountains.Importer.DatabaseOfBritishAndIrishHills.EntityFactories
 {
     internal static class FieldExtensions
     {

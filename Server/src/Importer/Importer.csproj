@@ -7,8 +7,8 @@
     <ProjectGuid>{CEEEBF3A-5110-4982-9620-F597C2758076}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ScotlandsMountains.Import.ConsoleApp</RootNamespace>
-    <AssemblyName>ScotlandsMountains.Import.ConsoleApp</AssemblyName>
+    <RootNamespace>ScotlandsMountains.Importer</RootNamespace>
+    <AssemblyName>ScotlandsMountains.Importer</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

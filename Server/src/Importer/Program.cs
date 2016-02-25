@@ -3,7 +3,7 @@ using FireSharp.Config;
 using System;
 using System.Diagnostics;
 
-namespace ScotlandsMountains.Import.ConsoleApp
+namespace ScotlandsMountains.Importer
 {
     class Program
     {
@@ -15,7 +15,7 @@ namespace ScotlandsMountains.Import.ConsoleApp
             stopwatch.Start();
 
             //ClearFirebase();
-            CreateFirebaseJson();
+            RunImportProcess();
 
             stopwatch.Start();
 
@@ -26,19 +26,21 @@ namespace ScotlandsMountains.Import.ConsoleApp
 
         private static void ClearFirebase()
         {
-            using (var client = new FirebaseClient(new FirebaseConfig
+            var firebaseConfig = new FirebaseConfig
             {
                 AuthSecret = "",
                 BasePath = "https://scotlandsmountains.firebaseio.com/"
-            }))
+            };
+
+            using (var client = new FirebaseClient(firebaseConfig))
             {
                 client.Delete("");
             }
         }
 
-        private static void CreateFirebaseJson()
+        private static void RunImportProcess()
         {
-            new Importer().Import();
+            new ImportProcess().Run();
         }
 
         private static string FormattedNow()

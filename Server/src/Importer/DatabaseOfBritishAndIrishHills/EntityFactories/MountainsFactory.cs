@@ -4,7 +4,7 @@ using ScotlandsMountains.Domain.Entities;
 using ScotlandsMountains.Domain.ValueTypes;
 using System.Linq;
 
-namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.EntityFactories
+namespace ScotlandsMountains.Importer.DatabaseOfBritishAndIrishHills.EntityFactories
 {
     public class MountainsFactory
     {

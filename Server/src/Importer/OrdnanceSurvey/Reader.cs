@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using ScotlandsMountains.Domain.Entities;
 
-namespace ScotlandsMountains.Import.ConsoleApp.OrdnanceSurvey
+namespace ScotlandsMountains.Importer.OrdnanceSurvey
 {
     public class Reader
     {

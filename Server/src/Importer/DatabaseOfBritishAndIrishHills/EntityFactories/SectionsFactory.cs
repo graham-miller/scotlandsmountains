@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ScotlandsMountains.Domain.Entities;
 
-namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.EntityFactories
+namespace ScotlandsMountains.Importer.DatabaseOfBritishAndIrishHills.EntityFactories
 {
     public class SectionsFactory
     {

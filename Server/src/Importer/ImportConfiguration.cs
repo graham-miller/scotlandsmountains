@@ -1,9 +1,9 @@
 using System;
 using System.IO;
 using System.Reflection;
-using ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills;
+using ScotlandsMountains.Importer.DatabaseOfBritishAndIrishHills;
 
-namespace ScotlandsMountains.Import.ConsoleApp
+namespace ScotlandsMountains.Importer
 {
     public static class ImportConfiguration
     {

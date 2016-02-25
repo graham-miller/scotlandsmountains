@@ -7,10 +7,10 @@ using System.Text;
 using Humanizer;
 using Newtonsoft.Json;
 using ScotlandsMountains.Domain.Entities;
-using ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills.EntityFactories;
+using ScotlandsMountains.Importer.DatabaseOfBritishAndIrishHills.EntityFactories;
 using Newtonsoft.Json.Serialization;
 
-namespace ScotlandsMountains.Import.ConsoleApp
+namespace ScotlandsMountains.Importer
 {
     public static class FilebaseFileWriter
     {

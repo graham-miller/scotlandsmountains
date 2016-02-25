@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using HashidsNet;
 
-namespace ScotlandsMountains.Import.ConsoleApp
+namespace ScotlandsMountains.Importer
 {
     public class HashIds
     {

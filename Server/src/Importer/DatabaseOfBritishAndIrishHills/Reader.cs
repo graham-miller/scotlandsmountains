@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.VisualBasic.FileIO;
 
-namespace ScotlandsMountains.Import.ConsoleApp.DatabaseOfBritishAndIrishHills
+namespace ScotlandsMountains.Importer.DatabaseOfBritishAndIrishHills
 {
     public class Reader
     {

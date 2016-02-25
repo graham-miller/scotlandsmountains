@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\Domain\Domain
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B60C31E9-50D0-40D7-9AC9-A9E33BBFDE90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Import.ConsoleApp", "src\Import.ConsoleApp\Import.ConsoleApp.csproj", "{CEEEBF3A-5110-4982-9620-F597C2758076}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Importer", "src\Importer\Importer.csproj", "{CEEEBF3A-5110-4982-9620-F597C2758076}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
