@@ -4,6 +4,9 @@ using ScotlandsMountains.Importer.DatabaseOfBritishAndIrishHills.EntityFactories
 using ScotlandsMountains.Domain.Entities;
 using DobihReader = ScotlandsMountains.Importer.DatabaseOfBritishAndIrishHills.Reader;
 using OsReader = ScotlandsMountains.Importer.OrdnanceSurvey.Reader;
+using System.IO;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace ScotlandsMountains.Importer
 {
@@ -16,6 +19,7 @@ namespace ScotlandsMountains.Importer
             ReadMapRecords();
             CreateEntities();
             WriteFirebaseFile();
+            WriteSearchFile();
         }
 
         private void CreateHashIds()
@@ -43,6 +47,15 @@ namespace ScotlandsMountains.Importer
         private void WriteFirebaseFile()
         {
             FilebaseFileWriter.Write(_entityFactory, ImportConfiguration.FirebaseJsonPath);
+        }
+
+        private void WriteSearchFile()
+        {
+            File.WriteAllText(ImportConfiguration.SearchJsonPath,
+                JsonConvert.SerializeObject(
+                    _entityFactory,
+                    Formatting.Indented,
+                    new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() }));
         }
 
         private HashIds _hashIds;

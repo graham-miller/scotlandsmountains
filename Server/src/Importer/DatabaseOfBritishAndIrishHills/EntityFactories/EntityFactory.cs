@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using ScotlandsMountains.Domain.Entities;
+using ScotlandsMountains.Domain.Abstractions;
 
 namespace ScotlandsMountains.Importer.DatabaseOfBritishAndIrishHills.EntityFactories
 {
-    public class EntityFactory
+    public class EntityFactory : IDomainRoot
     {
         public EntityFactory(IList<Record> records, IList<Map> maps, HashIds hashIds)
         {
@@ -17,8 +18,6 @@ namespace ScotlandsMountains.Importer.DatabaseOfBritishAndIrishHills.EntityFacto
             Classifications = new ClassificationsFactory(hashIds).Classifications;
             Mountains = new MountainsFactory(records, this).Mountains;
         }
-
-        public HashIds HashIds { get; }
 
         public IEnumerable<Section> Sections { get; }
 
