@@ -54,6 +54,7 @@
     <Compile Include="Abstractions\IDomainRoot.cs" />
     <Compile Include="Entities\Classification.cs" />
     <Compile Include="Entities\County.cs" />
+    <Compile Include="Search\Index.cs" />
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\Island.cs" />
     <Compile Include="Entities\Map.cs" />
@@ -70,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <EmbeddedResource Include="Search\index.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
