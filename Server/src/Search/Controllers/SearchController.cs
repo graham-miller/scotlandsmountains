@@ -1,6 +1,10 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNet.Mvc;
+﻿using Microsoft.AspNet.Mvc;
 using ScotlandsMountains.Domain.Abstractions;
+using System.Linq;
+using System;
+using Search.Models;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace Search.Controllers
 {
@@ -10,9 +14,22 @@ namespace Search.Controllers
         public IDomainRoot DomainRoot { get; set; }
 
         [HttpGet, Route("api/[controller]/{term}")]
-        public IEnumerable<string> Index(string term)
+        public JsonResult Index(string term)
         {
-            return new [] { term };
+            var results = DomainRoot.Mountains
+                    .Where(x => x.Name.IndexOf(term, StringComparison.OrdinalIgnoreCase) >= 0)
+                    .OrderByDescending(x => x.Height.Metres)
+                    .Take(50)
+                    .Select(Result.Create)
+                    .ToArray();
+
+            var settings = new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver(),
+                Formatting = Formatting.Indented
+            };
+
+            return new JsonResult(results, settings);
         }
     }
 }
