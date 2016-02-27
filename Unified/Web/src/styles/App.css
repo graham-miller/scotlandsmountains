@@ -1,0 +1,7 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body, #app, #react-root, #map {
+    height: 100%;
+}
