@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0-*",
+  "description": "Importer Console Application",
+  "authors": [ "Graham" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+
+  "compilationOptions": {
+    "emitEntryPoint": true
+  },
+
+  "dependencies": {
+    "Domain": "1.0.0-*",
+    "FireSharp": "2.0.3",
+    "hashids.net": "1.1.2",
+    "Humanizer.Core": "2.0.1"
+  },
+
+  "commands": {
+    "Importer": "Importer"
+  },
+
+  "frameworks": {
+    "dnx451": {
+      "frameworkAssemblies": {
+        "Microsoft.VisualBasic": "10.0.0.0"
+      }
+    }
+  }
+}

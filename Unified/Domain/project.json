@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0-*",
+  "description": "Domain Class Library",
+  "authors": [ "Graham" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+  "frameworks": {
+    "net451": { }
+  },
+  "dependencies": {
+    "Newtonsoft.Json": "8.0.2"
+  }
+}
