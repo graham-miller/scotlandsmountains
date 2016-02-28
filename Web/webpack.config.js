@@ -2,6 +2,7 @@ require('es6-promise').polyfill();
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var WebpackNotifierPlugin = require('webpack-notifier');
 
 module.exports = {
     entry: {
@@ -51,6 +52,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html',
             inject: 'body',
-        })
+        }),
+        new WebpackNotifierPlugin()
     ]
 };

@@ -25,7 +25,7 @@
     "dnx451": {
       "dependencies": {
         "ScotlandsMountains.Domain": "1.0.0-*",
-        "ScotlandsMountains.Importer": "1.0.0-*"
+        "ScotlandsMountains.Resources": "1.0.0-*"
       }
     }
   },

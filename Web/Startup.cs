@@ -36,6 +36,12 @@ namespace Search
 
             app.UseIISPlatformHandler();
 
+            app.UseDefaultFiles(new Microsoft.AspNet.StaticFiles.DefaultFilesOptions
+            {
+                DefaultFileNames = new[] { "index.html" },
+                RequestPath = ""
+            });
+
             app.UseStaticFiles();
 
             app.UseMvc();
