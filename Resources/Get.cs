@@ -8,7 +8,7 @@ namespace ScotlandsMountains.Resources
         private static readonly string BaseNS = typeof(Get).Namespace;
         private static readonly string DobihNS = BaseNS + @".DatabaseOfBritishAndIrishHills";
         private static readonly string OrdnanceSurveyNS = BaseNS + @".OrdnanceSurvey";
-        private static readonly string SearchDataNS = BaseNS + @"SearchData";
+        private static readonly string SearchDataNS = BaseNS + @".SearchData";
 
         public static Stream DobihCsv => GetManifestResourceStream(DobihNS + ".DoBIH_v15.1.csv");
 
