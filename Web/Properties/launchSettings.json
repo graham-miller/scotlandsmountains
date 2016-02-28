@@ -11,6 +11,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
+      "launchUrl": "api/search/ben",
       "environmentVariables": {
         "Hosting:Environment": "Development"
       }

@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using ScotlandsMountains.Domain.Abstractions;
-using ScotlandsMountains.Domain.Search;
+using ScotlandsMountains.Web.Models;
 
 namespace Search
 {

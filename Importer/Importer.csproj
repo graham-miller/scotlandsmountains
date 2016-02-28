@@ -96,7 +96,6 @@
     <Compile Include="DatabaseOfBritishAndIrishHills\Record.cs" />
     <Compile Include="FilebaseFileWriter.cs" />
     <Compile Include="HashIdGenerator.cs" />
-    <Compile Include="ImportConfiguration.cs" />
     <Compile Include="Importer.cs" />
     <Compile Include="OrdnanceSurvey\MapsFactory.cs" />
     <Compile Include="OrdnanceSurvey\Reader.cs" />
@@ -112,6 +111,10 @@
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{cc644235-16c9-4f12-bd89-3d41900bb004}</Project>
       <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Resources\Resources.csproj">
+      <Project>{d6a9ffb5-b8e7-44fd-a036-0ac891d6d22d}</Project>
+      <Name>Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

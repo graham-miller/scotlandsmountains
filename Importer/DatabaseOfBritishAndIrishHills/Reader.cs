@@ -6,28 +6,19 @@ namespace ScotlandsMountains.Importer.DatabaseOfBritishAndIrishHills
 {
     public class Reader
     {
-        public Reader(string path, Func<Record, bool> filter)
-        {
-            _path = path;
-            _filter = filter;
-        }
-
         public IList<Record> Read()
         {
-            CreateConfiguredTextFieldParser();
-            DiscardHeaderRow();
-            return FilteredRecords();
-        }
-
-        private void CreateConfiguredTextFieldParser()
-        {
-            _parser = new TextFieldParser(_path)
+            using (var stream = Resources.Get.DobihCsv)
+            using (_parser = new TextFieldParser(stream))
             {
-                TextFieldType = FieldType.Delimited,
-                CommentTokens = new[] {"#"},
-                Delimiters = new[] {","},
-                HasFieldsEnclosedInQuotes = true
-            };
+                _parser.TextFieldType = FieldType.Delimited;
+                _parser.CommentTokens = new[] { "#" };
+                _parser.Delimiters = new[] { "," };
+                _parser.HasFieldsEnclosedInQuotes = true;
+
+                DiscardHeaderRow();
+                return FilteredRecords();
+            }
         }
 
         private void DiscardHeaderRow()
@@ -41,14 +32,17 @@ namespace ScotlandsMountains.Importer.DatabaseOfBritishAndIrishHills
             while (!_parser.EndOfData)
             {
                 var record = new Record(_parser.ReadFields());
-                if (_filter(record))
+                if (ShouldInclude(record))
                     records.Add(record);
             }
             return records;
         }
 
-        private readonly string _path;
-        private readonly Func<Record, bool> _filter;
+        private static bool ShouldInclude(Record record)
+        {
+            return record[Field.Country] == "S" || record[Field.Country] == "ES";
+        }
+
         private TextFieldParser _parser;
     }
 }

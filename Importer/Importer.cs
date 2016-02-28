@@ -7,11 +7,16 @@ using OsReader = ScotlandsMountains.Importer.OrdnanceSurvey.Reader;
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System;
 
 namespace ScotlandsMountains.Importer
 {
     public class ImportProcess
     {
+        private static readonly string BasePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\GitHub\ScotlandsMountains\Resources";
+        private static readonly string FirebaseJsonPath = BasePath + @"\FirebaseData\firebase.json";
+        private static readonly string SearchJsonPath = BasePath + @"\SearchData\search.json";
+
         public void Run()
         {
             CreateHashIds();
@@ -29,12 +34,12 @@ namespace ScotlandsMountains.Importer
 
         private void ReadDobihRecords()
         {
-            _records = new DobihReader(ImportConfiguration.DobihCsvPath, ImportConfiguration.DobihFilter).Read();
+            _records = new DobihReader().Read();
         }
 
         private void ReadMapRecords()
         {
-            _maps = new OsReader(ImportConfiguration.ExplorerTxtPath, ImportConfiguration.ExplorerActiveTxtPath, ImportConfiguration.LandrangerTxtPath, ImportConfiguration.LandrangerActiveTxtPath).Read();
+            _maps = new OsReader().Read();
             foreach (var map in _maps)
                 map.Key = _hashIds.Next();
         }
@@ -46,12 +51,12 @@ namespace ScotlandsMountains.Importer
 
         private void WriteFirebaseFile()
         {
-            FilebaseFileWriter.Write(_entityFactory, ImportConfiguration.FirebaseJsonPath);
+            FilebaseFileWriter.Write(_entityFactory, FirebaseJsonPath);
         }
 
         private void WriteSearchFile()
         {
-            File.WriteAllText(ImportConfiguration.SearchJsonPath,
+            File.WriteAllText(SearchJsonPath,
                 JsonConvert.SerializeObject(
                     _entityFactory,
                     Formatting.Indented,

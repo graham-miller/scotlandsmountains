@@ -7,10 +7,11 @@
     <ProjectGuid>{D6A9FFB5-B8E7-44FD-A036-0AC891D6D22D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Resources</RootNamespace>
-    <AssemblyName>Resources</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>ScotlandsMountains.Resources</RootNamespace>
+    <AssemblyName>ScotlandsMountains.Resources</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,21 +41,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Get.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StreamExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DatabaseOfBritishAndIrishHills\database_notes.pdf" />
-    <None Include="DatabaseOfBritishAndIrishHills\DoBIH_v15.1.csv" />
+    <EmbeddedResource Include="DatabaseOfBritishAndIrishHills\DoBIH_v15.1.csv" />
     <None Include="FirebaseData\firebase.json" />
     <None Include="OrdnanceSurvey\ordnance-survey-leisure-map-catalogue.pdf" />
     <None Include="OrdnanceSurvey\ordnance-survey-products-and-services-catalogue.pdf" />
-    <None Include="SearchData\search.json" />
+    <EmbeddedResource Include="SearchData\search.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="OrdnanceSurvey\explorer-active.txt" />
-    <Content Include="OrdnanceSurvey\explorer.txt" />
-    <Content Include="OrdnanceSurvey\landranger-active.txt" />
-    <Content Include="OrdnanceSurvey\landranger.txt" />
+    <EmbeddedResource Include="OrdnanceSurvey\explorer-active.txt" />
+    <EmbeddedResource Include="OrdnanceSurvey\explorer.txt" />
+    <EmbeddedResource Include="OrdnanceSurvey\landranger-active.txt" />
+    <EmbeddedResource Include="OrdnanceSurvey\landranger.txt" />
     <Content Include="OrdnanceSurvey\Links.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

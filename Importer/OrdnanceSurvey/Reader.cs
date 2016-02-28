@@ -3,36 +3,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using ScotlandsMountains.Domain.Entities;
+using ScotlandsMountains.Resources;
 
 namespace ScotlandsMountains.Importer.OrdnanceSurvey
 {
     public class Reader
     {
-        public Reader(
-            string explorerPath,
-            string explorerActivePath,
-            string landrangerPath,
-            string landrangerActivePath)
-        {
-            _explorerPath = explorerPath;
-            _explorerActivePath = explorerActivePath;
-            _landrangerPath = landrangerPath;
-            _landrangerActivePath = landrangerActivePath;
-        }
-
         public IList<Map> Read()
         {
-            Read(_explorerPath, Explorer, Scale1To25000);
-            Read(_explorerActivePath, ExplorerActive, Scale1To25000);
-            Read(_landrangerPath, Landranger, Scale1To50000);
-            Read(_landrangerActivePath, LandrangerActive, Scale1To50000);
+            using (var stream = Get.ExplorerTxt)
+                Read(stream, Explorer, Scale1To25000);
+
+            using (var stream = Get.ExplorerActiveTxt)
+                Read(stream, ExplorerActive, Scale1To25000);
+
+            using (var stream = Get.LandrangerTxt)
+                Read(stream, Landranger, Scale1To50000);
+
+            using (var stream = Get.LandrangerActiveTxt)
+                Read(stream, LandrangerActive, Scale1To50000);
+
             return _maps;
         }
 
-        private void Read(string path, string series, decimal scale)
+        private void Read(Stream stream, string series, decimal scale)
         {
             var lineIndex = 0;
-            var lines = File.ReadAllLines(path);
+            var lines = stream.ReadAllLines();
 
             while (lineIndex < lines.Length)
             {
@@ -97,9 +94,5 @@ namespace ScotlandsMountains.Importer.OrdnanceSurvey
         private const decimal Scale1To50000 = 0.00002m;
 
         private readonly List<Map> _maps = new List<Map>();
-        private readonly string _explorerPath;
-        private readonly string _explorerActivePath;
-        private readonly string _landrangerPath;
-        private readonly string _landrangerActivePath;
     }
 }
