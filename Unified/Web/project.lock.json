@@ -3,13 +3,6 @@
   "version": 2,
   "targets": {
     "DNX,Version=v4.5.1": {
-      "Domain/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5.1",
-        "dependencies": {
-          "Newtonsoft.Json": "8.0.2"
-        }
-      },
       "Microsoft.AspNet.Antiforgery/1.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -1355,6 +1348,13 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
+      "ScotlandsMountains.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1",
+        "dependencies": {
+          "Newtonsoft.Json": "8.0.2"
+        }
+      },
       "System.Collections/4.0.0": {
         "type": "package",
         "compile": {
@@ -1568,13 +1568,6 @@
       }
     },
     "DNX,Version=v4.5.1/win7-x86": {
-      "Domain/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5.1",
-        "dependencies": {
-          "Newtonsoft.Json": "8.0.2"
-        }
-      },
       "Microsoft.AspNet.Antiforgery/1.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -2923,6 +2916,13 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
+      "ScotlandsMountains.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1",
+        "dependencies": {
+          "Newtonsoft.Json": "8.0.2"
+        }
+      },
       "System.Collections/4.0.0": {
         "type": "package",
         "compile": {
@@ -3136,13 +3136,6 @@
       }
     },
     "DNX,Version=v4.5.1/win7-x64": {
-      "Domain/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5.1",
-        "dependencies": {
-          "Newtonsoft.Json": "8.0.2"
-        }
-      },
       "Microsoft.AspNet.Antiforgery/1.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -4491,6 +4484,13 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
+      "ScotlandsMountains.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1",
+        "dependencies": {
+          "Newtonsoft.Json": "8.0.2"
+        }
+      },
       "System.Collections/4.0.0": {
         "type": "package",
         "compile": {
@@ -4705,9 +4705,9 @@
     }
   },
   "libraries": {
-    "Domain/1.0.0": {
+    "ScotlandsMountains.Domain/1.0.0": {
       "type": "project",
-      "path": "../Domain/project.json"
+      "path": "../wrap/ScotlandsMountains.Domain/project.json"
     },
     "Microsoft.AspNet.Antiforgery/1.0.0-rc1-final": {
       "type": "package",
@@ -6552,7 +6552,6 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Domain >= 1.0.0-*",
       "Microsoft.AspNet.IISPlatformHandler >= 1.0.0-rc1-final",
       "Microsoft.AspNet.Mvc >= 6.0.0-rc1-final",
       "Microsoft.AspNet.Server.Kestrel >= 1.0.0-rc1-final",
@@ -6561,8 +6560,11 @@
       "Microsoft.Extensions.Configuration.Json >= 1.0.0-rc1-final",
       "Microsoft.Extensions.Logging >= 1.0.0-rc1-final",
       "Microsoft.Extensions.Logging.Console >= 1.0.0-rc1-final",
-      "Microsoft.Extensions.Logging.Debug >= 1.0.0-rc1-final"
+      "Microsoft.Extensions.Logging.Debug >= 1.0.0-rc1-final",
+      "Newtonsoft.Json >= 8.0.2"
     ],
-    "DNX,Version=v4.5.1": []
+    "DNX,Version=v4.5.1": [
+      "ScotlandsMountains.Domain >= 1.0.0-*"
+    ]
   }
 }
