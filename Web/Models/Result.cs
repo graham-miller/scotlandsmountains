@@ -13,7 +13,7 @@ namespace ScotlandsMountains.Web.Models
             {
                 Key = mountain.Key,
                 Name = mountain.Name,
-                Height = string.Format("{0}m ({1}ft)", mountain.Height.Metres.ToString("#,##0"), mountain.Height.Feet.ToString("#,##0")),
+                Height = $"{mountain.Height.Metres.ToString("#,##0")}m ({mountain.Height.Feet.ToString("#,##0")}ft)",
                 Classification = string.Join(", ", mountain.Classifications.Select(x => x.Name))
             };
         }

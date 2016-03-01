@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.VisualBasic.FileIO;
 
 namespace ScotlandsMountains.Importer.DatabaseOfBritishAndIrishHills

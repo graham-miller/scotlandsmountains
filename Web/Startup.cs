@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 using ScotlandsMountains.Domain.Abstractions;
 using ScotlandsMountains.Web.Models;
 
-namespace Search
+namespace ScotlandsMountains.Web
 {
     public class Startup
     {

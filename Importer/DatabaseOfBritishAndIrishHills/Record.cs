@@ -9,9 +9,6 @@
             _fields = fields;
         }
 
-        public string this[Field.Definition fieldDefinition]
-        {
-            get { return _fields[fieldDefinition.Index].Trim(); }
-        }
+        public string this[Field.Definition fieldDefinition] => _fields[fieldDefinition.Index].Trim();
     }
 }

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ScotlandsMountains.Domain.Entities
+﻿namespace ScotlandsMountains.Domain.Entities
 {
     public abstract class Entity
     {

@@ -19,7 +19,7 @@ namespace ScotlandsMountains.Importer
 
             stopwatch.Start();
 
-            Console.WriteLine("Complete ({0}), in {1}s", FormattedNow(), Math.Round((double)(stopwatch.ElapsedMilliseconds / 1000)).ToString("#,##0"));
+            Console.WriteLine("Complete ({0}), in {1}s", FormattedNow(), Math.Round((double)(stopwatch.Elapsed.Seconds)).ToString("#,##0"));
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey(true);
         }
