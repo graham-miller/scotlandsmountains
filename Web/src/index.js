@@ -1,5 +1,5 @@
-require('./styles/App.css');
-require('normalize.css');
+import './styles/App.css';
+import 'normalize.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';

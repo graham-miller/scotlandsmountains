@@ -1,5 +1,5 @@
-var alt = require('../alt');
-var LayoutActions = require('../actions/LayoutActions');
+import alt from '../alt';
+import LayoutActions from '../actions/LayoutActions';
 
 class LayoutStore {
     constructor() {
@@ -15,4 +15,4 @@ class LayoutStore {
     }
 }
 
-module.exports = alt.createStore(LayoutStore, 'LayoutStore');
+export default alt.createStore(LayoutStore, 'LayoutStore');

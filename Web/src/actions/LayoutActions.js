@@ -1,4 +1,4 @@
-var alt = require('../alt');
+import alt from '../alt';
 
 class LayoutActions {
     toggleLeftNav() {
@@ -6,4 +6,4 @@ class LayoutActions {
      }
 }
 
-module.exports = alt.createActions(LayoutActions);
+export default alt.createActions(LayoutActions);
