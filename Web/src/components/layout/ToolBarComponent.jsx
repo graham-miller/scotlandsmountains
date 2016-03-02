@@ -15,18 +15,21 @@ import MapsLayers from 'material-ui/lib/svg-icons/maps/layers';
 import MapsMyLocation from 'material-ui/lib/svg-icons/maps/my-location';
 import ActionAccountCircle from 'material-ui/lib/svg-icons/action/account-circle';
 
+import MapActions from '../../actions/MapActions';
+
 class ToolBarComponent extends React.Component {
+
     render() {
         return (
             <Toolbar style={{position:'fixed',top:'64',minWidth:'440px', height:'46', zIndex:'1350'}}>
-                <ToolbarGroup firstChild="true" float="left">
+                <ToolbarGroup firstChild={true} float="left">
                     <IconButton tooltip="Search">
                         <ActionSearch />
                     </IconButton>
-                    <IconButton tooltip="Zoom in">
+                    <IconButton tooltip="Zoom in" onTouchTap={MapActions.zoomIn}>
                         <ContentAddCircleOutline />
                     </IconButton>
-                    <IconButton tooltip="Zoom out">
+                    <IconButton tooltip="Zoom out" onTouchTap={MapActions.zoomOut}>
                         <ContentRemoveCircleOutline />
                     </IconButton>
                     <IconButton tooltip="Reset">
@@ -45,7 +48,7 @@ class ToolBarComponent extends React.Component {
                         <MapsMyLocation />
                     </IconButton>
                 </ToolbarGroup>
-                <ToolbarGroup lastChild="true" float="right">
+                <ToolbarGroup lastChild={true} float="right">
                     <IconButton tooltip="Login">
                         <ActionAccountCircle />
                     </IconButton>

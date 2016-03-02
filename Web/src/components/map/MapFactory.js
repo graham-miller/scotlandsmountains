@@ -9,7 +9,7 @@ import L from 'leaflet';
 require.context('../../../node_modules/leaflet/dist/images/', true, /\.(png)$/);
 
 const buildMap = function (htmlElement) {
-
+    
     L.Icon.Default.imagePath = 'images/leaflet';
 
     var map = new L.Map(htmlElement, {

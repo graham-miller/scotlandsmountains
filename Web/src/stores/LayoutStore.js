@@ -6,13 +6,19 @@ class LayoutStore {
         this.leftNavOpen = false;
 
         this.bindListeners({
-            handleToggleLeftNav: LayoutActions.TOGGLE_LEFT_NAV
+            handleOpenLeftNav: LayoutActions.OPEN_LEFT_NAV,
+            handleCloseLeftNav: LayoutActions.CLOSE_LEFT_NAV,
         });
     }
 
-    handleToggleLeftNav() {
-        this.leftNavOpen = !this.leftNavOpen;
+    handleOpenLeftNav() {
+        this.leftNavOpen = true;
     }
+
+    handleCloseLeftNav() {
+        this.leftNavOpen = false;
+    }
+
 }
 
 export default alt.createStore(LayoutStore, 'LayoutStore');

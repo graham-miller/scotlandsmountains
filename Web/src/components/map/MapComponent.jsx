@@ -1,15 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import buildMap from './MapFactory';
+import MapStore from '../../stores/MapStore';
+import MapActions from '../../actions/MapActions';
 
 class MapComponent extends React.Component {
-
+     
     componentDidMount() {
-        this.map = buildMap(ReactDOM.findDOMNode(this)); 
+        MapActions.createMap(ReactDOM.findDOMNode(this))
     }
 
     componentWillUnmount() {
-        this.map = null;
+        MapActions.destroyMap()
+    }
+    
+    onChange(state) {
+        this.setState(state);
     }
     
     render() {
