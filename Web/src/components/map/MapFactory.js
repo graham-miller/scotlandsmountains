@@ -19,10 +19,15 @@ const buildMap = function (htmlElement) {
         minZoom: 0,
         maxZoom: L.OSOpenSpace.RESOLUTIONS.length - 1,
         zoom: 2,
-        center: [56.659406, -4.011214]
+        center: [56.659406, -4.011214],
+        zoomControl: false
     });
 
-    console.log('OS Open Space API Key: ' + config.oSOpenSpaceApiKey);
+    L.control.scale({
+        position: 'bottomleft',
+        metric: true,
+        imperial: true
+    }).addTo(map);
 
     var openspaceLayer = L.tileLayer.OSOpenSpace(config.oSOpenSpaceApiKey, {});
     map.addLayer(openspaceLayer);
@@ -36,9 +41,6 @@ const buildMap = function (htmlElement) {
             L.marker([mountain.location.latitude, mountain.location.longitude])
                 .addTo(map)
                 .bindPopup(mountain.name);
-            console.log(mountain.name);
-            console.log(mountain.location.latitude);
-            console.log(mountain.location.longitude);
         });
     });
 

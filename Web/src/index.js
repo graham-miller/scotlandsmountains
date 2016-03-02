@@ -5,6 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import AppBarComponent from './components/layout/AppBarComponent.jsx'
+import ToolBarComponent from './components/layout/ToolBarComponent.jsx'
 import LeftNavComponent from './components/layout/LeftNavComponent.jsx'
 import MapComponent from './components/map/MapComponent.jsx'
 
@@ -18,6 +19,7 @@ class App extends React.Component {
         return (
             <div id="react-root">
                 <AppBarComponent />
+                <ToolBarComponent />
                 <LeftNavComponent />
                 <MapComponent />
             </div>

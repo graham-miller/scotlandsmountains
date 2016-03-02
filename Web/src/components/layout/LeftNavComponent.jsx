@@ -30,7 +30,7 @@ class LeftNavComponent extends React.Component {
             <div>
                 <LeftNav
                     open={this.state.leftNavOpen}
-                    style={{paddingTop:'64px'}}>
+                    style={{paddingTop:'110px'}}>
                     <MenuItem>Menu Item</MenuItem>
                     <MenuItem>Menu Item 2</MenuItem>
                 </LeftNav>
