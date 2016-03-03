@@ -46,7 +46,7 @@ module.exports = {
         ],
         noParse: [/\proj4.js$/]
     },
-    devtool: '#cheap-source-map',
+    devtool: 'source-map',
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
