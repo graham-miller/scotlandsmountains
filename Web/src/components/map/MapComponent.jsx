@@ -12,11 +12,7 @@ class MapComponent extends React.Component {
     componentWillUnmount() {
         MapActions.destroyMap()
     }
-    
-    onChange(state) {
-        this.setState(state);
-    }
-    
+        
     render() {
         return (
             <div id='map'></div>
