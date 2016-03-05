@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node ./node_modules/webpack/bin/webpack",
+    "build": "node ./node_modules/webpack/bin/webpack --colors --progress",
     "start": "node server.js",
     "encrypt": "encrypt ./src/config.js ./src/config.js.cast5",
     "decrypt": "decrypt ./src/config.js.cast5 ./src/config.js"
