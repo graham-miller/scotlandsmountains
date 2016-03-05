@@ -2,6 +2,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+body {
+    background-color: #d2eafc;
+}
+
 #map {
     position: absolute;
     top: 110px; /* 64 + 46 */
