@@ -1,11 +1,14 @@
 import React from 'react';
-import LayoutStore from '../../stores/LayoutStore';
-import LayoutActions from '../../actions/LayoutActions';
+import LayoutStore from './LayoutStore';
+import LayoutActions from './LayoutActions';
+
 import AppBar from 'material-ui/lib/app-bar';
 import IconButton from 'material-ui/lib/icon-button';
 
 import NavigationMenu from 'material-ui/lib/svg-icons/navigation/menu';
 import NavigationClose from 'material-ui/lib/svg-icons/navigation/close';
+
+import AccountComponent from '../account/AccountComponent.jsx'
 
 class AppBarComponent extends React.Component {
      
@@ -55,9 +58,11 @@ class AppBarComponent extends React.Component {
 
         return (
             <AppBar
+                className="app-bar"
                 style={{position:'fixed',top:'0', height:'64', zIndex:'1400'}}
                 iconElementLeft={menuButton}
                 title={<span>Scotland&apos;s Mountains</span>}
+                iconElementRight={<AccountComponent />}
                 />
         );
     }

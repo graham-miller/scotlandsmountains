@@ -1,6 +1,6 @@
 import alt from '../alt';
-import MapActions from '../actions/MapActions';
-import buildMap from '../components/map/MapFactory';
+import MapActions from './MapActions';
+import buildMap from './MapFactory';
 
 class MapStore {
     constructor() {
@@ -10,6 +10,7 @@ class MapStore {
             handleCreateMap: MapActions.CREATE_MAP,
             handleZoomIn: MapActions.ZOOM_IN,
             handleZoomOut: MapActions.ZOOM_OUT,
+            handleReset: MapActions.RESET,
             handleDestroyMap: MapActions.DESTROY_MAP
         });
     }
@@ -24,6 +25,10 @@ class MapStore {
 
     handleZoomOut() {
         this.map.zoomOut(); 
+    }
+    
+    handleReset() {
+        this.map.reset(); 
     }
 
     handleDestroyMap() {

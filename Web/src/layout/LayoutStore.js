@@ -1,5 +1,5 @@
 import alt from '../alt';
-import LayoutActions from '../actions/LayoutActions';
+import LayoutActions from './LayoutActions';
 
 class LayoutStore {
     constructor() {

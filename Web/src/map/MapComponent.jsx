@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MapStore from '../../stores/MapStore';
-import MapActions from '../../actions/MapActions';
+import MapStore from './MapStore';
+import MapActions from './MapActions';
 
 class MapComponent extends React.Component {
      

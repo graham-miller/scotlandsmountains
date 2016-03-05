@@ -1,27 +1,29 @@
-import '../../../node_modules/leaflet/dist/leaflet.js';
-import '../../../node_modules/leaflet/dist/leaflet.css';
+import '../../node_modules/leaflet/dist/leaflet.js';
+import '../../node_modules/leaflet/dist/leaflet.css';
 import 'os-leaflet';
 import 'firebase';
 
-import config from '../../config.js';
+import config from '../config.js';
 import L from 'leaflet';
 
-require.context('../../../node_modules/leaflet/dist/images/', true, /\.(png)$/);
+require.context('../../node_modules/leaflet/dist/images/', true, /\.(png)$/);
+
+const defaultOptions = {
+    crs: L.OSOpenSpace.getCRS(),
+    continuousWorld: true,
+    worldCopyJump: false,
+    minZoom: 0,
+    maxZoom: L.OSOpenSpace.RESOLUTIONS.length - 1,
+    zoom: 2,
+    center: [56.659406, -4.011214],
+    zoomControl: false
+};
 
 const buildMap = function (htmlElement) {
     
     L.Icon.Default.imagePath = 'images/leaflet';
 
-    var map = new L.Map(htmlElement, {
-        crs: L.OSOpenSpace.getCRS(),
-        continuousWorld: true,
-        worldCopyJump: false,
-        minZoom: 0,
-        maxZoom: L.OSOpenSpace.RESOLUTIONS.length - 1,
-        zoom: 2,
-        center: [56.659406, -4.011214],
-        zoomControl: false
-    });
+    var map = new L.Map(htmlElement, defaultOptions);
 
     L.control.scale({
         position: 'bottomleft',
@@ -43,6 +45,11 @@ const buildMap = function (htmlElement) {
                 .bindPopup(mountain.name);
         });
     });
+
+    map.reset = function() {
+        alert("reset()");
+        map.setView(L.latLng(56.659406, -4.011214), 2);
+    }
 
     return map;
 };

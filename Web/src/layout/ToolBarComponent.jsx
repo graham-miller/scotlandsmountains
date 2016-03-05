@@ -1,21 +1,19 @@
 import React from 'react';
-import LayoutActions from '../../actions/LayoutActions';
+import LayoutActions from './LayoutActions';
+import MapActions from '../map/MapActions';
 
 import Toolbar from 'material-ui/lib/toolbar/toolbar';
 import ToolbarGroup from 'material-ui/lib/toolbar/toolbar-group';
 import IconButton from 'material-ui/lib/icon-button';
 
-import ActionSearch from 'material-ui/lib/svg-icons/action/search';
 import ContentAddCircleOutline from 'material-ui/lib/svg-icons/content/add-circle-outline';
 import ContentRemoveCircleOutline from 'material-ui/lib/svg-icons/content/remove-circle-outline';
+import ActionSearch from 'material-ui/lib/svg-icons/action/search';
 import NavigationRefresh from 'material-ui/lib/svg-icons/navigation/refresh';
 import MapsSatellite from 'material-ui/lib/svg-icons/maps/satellite';
 import MapsMap from 'material-ui/lib/svg-icons/maps/map';
 import MapsLayers from 'material-ui/lib/svg-icons/maps/layers';
 import MapsMyLocation from 'material-ui/lib/svg-icons/maps/my-location';
-import ActionAccountCircle from 'material-ui/lib/svg-icons/action/account-circle';
-
-import MapActions from '../../actions/MapActions';
 
 class ToolBarComponent extends React.Component {
 
@@ -46,11 +44,6 @@ class ToolBarComponent extends React.Component {
                     </IconButton>
                     <IconButton tooltip="My location">
                         <MapsMyLocation />
-                    </IconButton>
-                </ToolbarGroup>
-                <ToolbarGroup lastChild={true} float="right">
-                    <IconButton tooltip="Login">
-                        <ActionAccountCircle />
                     </IconButton>
                 </ToolbarGroup>
             </Toolbar>

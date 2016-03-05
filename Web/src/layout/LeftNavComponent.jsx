@@ -1,5 +1,5 @@
 import React from 'react';
-import LayoutStore from '../../stores/LayoutStore';
+import LayoutStore from './LayoutStore';
 import LeftNav from 'material-ui/lib/left-nav';
 import MenuItem from 'material-ui/lib/menus/menu-item';
 

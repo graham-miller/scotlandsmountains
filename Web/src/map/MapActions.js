@@ -14,6 +14,10 @@ class MapActions {
         return true;
     }
 
+    reset() {
+        return true;
+    }
+
     destroyMap() {
         return true;
     }
