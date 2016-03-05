@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "d3f51fd1f3c6d297017a"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "332e0e7062feca4bca4e"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -47217,7 +47217,8 @@
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
-	var center = [56.659406, -4.011214];
+	//const center = [56.659406, -4.011214];
+	var center = [56.964957, -4.659999];
 	var zoom = 2;
 	
 	var MapStore = function () {
