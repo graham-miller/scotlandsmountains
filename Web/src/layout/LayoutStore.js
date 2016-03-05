@@ -4,10 +4,13 @@ import LayoutActions from './LayoutActions';
 class LayoutStore {
     constructor() {
         this.leftNavOpen = false;
+        this.searchOpen = false;
 
         this.bindListeners({
             handleOpenLeftNav: LayoutActions.OPEN_LEFT_NAV,
             handleCloseLeftNav: LayoutActions.CLOSE_LEFT_NAV,
+            handleOpenSearch: LayoutActions.OPEN_SEARCH,
+            handleCloseSearch: LayoutActions.CLOSE_SEARCH
         });
     }
 
@@ -17,6 +20,14 @@ class LayoutStore {
 
     handleCloseLeftNav() {
         this.leftNavOpen = false;
+    }
+    
+    handleOpenSearch() {
+        this.SearchOpen = true;
+    }
+
+    handleCloseSearch() {
+        this.searchOpen = false;
     }
 
 }

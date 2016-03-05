@@ -10,6 +10,14 @@ class LayoutActions {
         return true;
     }
 
+    openSearch() {
+        return true;
+    }
+
+    closeSearch() {
+        return true;
+    }
+
 }
 
 export default alt.createActions(LayoutActions);
