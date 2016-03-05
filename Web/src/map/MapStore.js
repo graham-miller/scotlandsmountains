@@ -2,6 +2,9 @@ import alt from '../alt';
 import MapActions from './MapActions';
 import buildMap from './MapFactory';
 
+const center = [56.659406, -4.011214];
+const zoom = 2;
+
 class MapStore {
     constructor() {
         this.map = null;
@@ -16,7 +19,7 @@ class MapStore {
     }
 
     handleCreateMap(htmlElement) {
-        this.map = buildMap(htmlElement); 
+        this.map = buildMap(htmlElement, center, zoom); 
     }
 
     handleZoomIn() {
@@ -28,7 +31,7 @@ class MapStore {
     }
     
     handleReset() {
-        this.map.reset(); 
+        this.map.setView(center, zoom); 
     }
 
     handleDestroyMap() {

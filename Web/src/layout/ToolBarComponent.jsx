@@ -30,7 +30,7 @@ class ToolBarComponent extends React.Component {
                     <IconButton tooltip="Zoom out" onTouchTap={MapActions.zoomOut}>
                         <ContentRemoveCircleOutline />
                     </IconButton>
-                    <IconButton tooltip="Reset">
+                    <IconButton tooltip="Reset" onTouchTap={MapActions.reset}>
                         <NavigationRefresh />
                     </IconButton>
                     <IconButton tooltip="Aerial view">

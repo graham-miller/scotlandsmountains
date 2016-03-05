@@ -8,22 +8,20 @@ import L from 'leaflet';
 
 require.context('../../node_modules/leaflet/dist/images/', true, /\.(png)$/);
 
-const defaultOptions = {
-    crs: L.OSOpenSpace.getCRS(),
-    continuousWorld: true,
-    worldCopyJump: false,
-    minZoom: 0,
-    maxZoom: L.OSOpenSpace.RESOLUTIONS.length - 1,
-    zoom: 2,
-    center: [56.659406, -4.011214],
-    zoomControl: false
-};
-
-const buildMap = function (htmlElement) {
+const buildMap = function (htmlElement, center, zoom) {
     
     L.Icon.Default.imagePath = 'images/leaflet';
 
-    var map = new L.Map(htmlElement, defaultOptions);
+    var map = new L.Map(htmlElement, {
+        crs: L.OSOpenSpace.getCRS(),
+        continuousWorld: true,
+        worldCopyJump: false,
+        minZoom: 0,
+        maxZoom: L.OSOpenSpace.RESOLUTIONS.length - 1,
+        zoom: zoom,
+        center: center,
+        zoomControl: false
+    });
 
     L.control.scale({
         position: 'bottomleft',
