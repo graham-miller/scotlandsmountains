@@ -23,9 +23,11 @@ class ToolBarComponent extends React.Component {
         return (
             <Toolbar style={{position:'fixed',top:'64',minWidth:'440px', height:'46', zIndex:'1350'}}>
                 <ToolbarGroup firstChild={true} float="left">
+                    
                     <IconButton tooltip="Search">
                         <ActionSearch />
                     </IconButton>
+                    
                     <IconButton tooltip="Zoom in" onTouchTap={MapActions.zoomIn}>
                         <ContentAddCircleOutline />
                     </IconButton>
@@ -49,6 +51,7 @@ class ToolBarComponent extends React.Component {
                     <IconButton tooltip="My location">
                         <MapsMyLocation />
                     </IconButton>
+                    
                 </ToolbarGroup>
             </Toolbar>
         );

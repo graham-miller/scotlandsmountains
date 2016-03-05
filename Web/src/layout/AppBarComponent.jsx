@@ -1,6 +1,4 @@
 import React from 'react';
-import LayoutStore from './LayoutStore';
-import LayoutActions from './LayoutActions';
 
 import AppBar from 'material-ui/lib/app-bar';
 import IconButton from 'material-ui/lib/icon-button';
@@ -11,36 +9,32 @@ import NavigationClose from 'material-ui/lib/svg-icons/navigation/close';
 import AccountComponent from '../account/AccountComponent.jsx'
 
 class AppBarComponent extends React.Component {
-     
+
     constructor(props) {
         super(props);
-        this.state = LayoutStore.getState();
-        
+
         // React components using ES6 classes no longer autobind `this` to non React methods
-        this.onChange = this.onChange.bind(this)
-    }
-
-    componentDidMount() {
-        LayoutStore.listen(this.onChange);
-    }
-
-    componentWillUnmount() {
-        LayoutStore.unlisten(this.onChange);
+        this.handleOpenLeftNav = this.handleOpenLeftNav.bind(this)
+        this.handleCloseLeftNav = this.handleCloseLeftNav.bind(this)
     }
     
-    onChange(state) {
-        this.setState(state);
+    handleOpenLeftNav() {
+        this.props.onOpenLeftNav();
+    }
+    
+    handleCloseLeftNav() {
+        this.props.onCloseLeftNav();
     }
 
     render() {
 
         var menuButton;
 
-        if(this.state.leftNavOpen) {
+        if(this.props.leftNavOpen) {
             menuButton = (
                 <IconButton
                     tooltip="Close menu"
-                    onTouchTap={LayoutActions.closeLeftNav}>
+                    onTouchTap={this.handleCloseLeftNav}>
                     <NavigationClose />
                 </IconButton>
             );
@@ -48,13 +42,11 @@ class AppBarComponent extends React.Component {
             menuButton = (
                 <IconButton
                     tooltip="Open menu"
-                    onTouchTap={LayoutActions.openLeftNav}>
+                    onTouchTap={this.handleOpenLeftNav}>
                     <NavigationMenu />
                 </IconButton>
             );
         }
-
-
 
         return (
             <AppBar
