@@ -5,6 +5,8 @@ import MapActions from '../map/MapActions';
 import Toolbar from 'material-ui/lib/toolbar/toolbar';
 import ToolbarGroup from 'material-ui/lib/toolbar/toolbar-group';
 import IconButton from 'material-ui/lib/icon-button';
+import IconMenu from 'material-ui/lib/menus/icon-menu';
+import MenuItem from 'material-ui/lib/menus/menu-item';
 
 import ContentAddCircleOutline from 'material-ui/lib/svg-icons/content/add-circle-outline';
 import ContentRemoveCircleOutline from 'material-ui/lib/svg-icons/content/remove-circle-outline';
@@ -33,15 +35,17 @@ class ToolBarComponent extends React.Component {
                     <IconButton tooltip="Reset" onTouchTap={MapActions.reset}>
                         <NavigationRefresh />
                     </IconButton>
-                    <IconButton tooltip="Aerial view">
-                        <MapsSatellite />
-                    </IconButton>
-                    <IconButton tooltip="Map view">
-                        <MapsMap />
-                    </IconButton>
-                    <IconButton tooltip="Layers">
-                        <MapsLayers />
-                    </IconButton>
+
+                    <IconMenu
+                        iconButtonElement={
+                            <IconButton tooltip="Layers">
+                                <MapsLayers />
+                            </IconButton>
+                        }>
+                        <MenuItem primaryText="Map view" leftIcon={<MapsMap />} />
+                        <MenuItem primaryText="Aerial view" leftIcon={<MapsSatellite />} />
+                    </IconMenu>
+
                     <IconButton tooltip="My location">
                         <MapsMyLocation />
                     </IconButton>
