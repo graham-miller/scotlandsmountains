@@ -2,7 +2,8 @@ import alt from '../alt';
 import MapActions from './MapActions';
 import buildMap from './MapFactory';
 
-const center = [56.659406, -4.011214];
+//const center = [56.659406, -4.011214];
+const center = [56.964957, -4.659999];
 const zoom = 2;
 
 class MapStore {
