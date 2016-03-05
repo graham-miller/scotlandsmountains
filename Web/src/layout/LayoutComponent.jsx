@@ -1,3 +1,5 @@
+'use strict';
+
 import '../styles/App.css';
 import 'normalize.css';
 
@@ -46,6 +48,14 @@ class LayoutComponent extends React.Component {
         LayoutActions.closeLeftNav();
     }
     
+    handleOpenSearch() {
+        LayoutActions.openSearch();
+    }
+    
+    handleCloseSearch() {
+        LayoutActions.closeSearch();
+    }
+    
     render() {
         
         return (
@@ -54,7 +64,10 @@ class LayoutComponent extends React.Component {
                     leftNavOpen={this.state.leftNavOpen}
                     onOpenLeftNav={this.handleOpenLeftNav}
                     onCloseLeftNav={this.handleCloseLeftNav} />
-                <ToolBarComponent />
+                <ToolBarComponent
+                    searchOpen={this.state.searchOpen}
+                    onOpenSearch={this.handleOpenSearch}
+                    onCloseSearch={this.handleCloseSearch} />
                 <LeftNavComponent open={this.state.leftNavOpen}/>
                 <MapComponent />
             </div>

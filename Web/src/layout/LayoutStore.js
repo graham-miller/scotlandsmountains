@@ -1,3 +1,5 @@
+'use strict';
+
 import alt from '../alt';
 import LayoutActions from './LayoutActions';
 
@@ -23,7 +25,7 @@ class LayoutStore {
     }
     
     handleOpenSearch() {
-        this.SearchOpen = true;
+        this.searchOpen = true;
     }
 
     handleCloseSearch() {

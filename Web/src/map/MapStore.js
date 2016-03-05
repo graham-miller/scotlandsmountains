@@ -1,3 +1,5 @@
+'use strict';
+
 import alt from '../alt';
 import MapActions from './MapActions';
 import buildMap from './MapFactory';

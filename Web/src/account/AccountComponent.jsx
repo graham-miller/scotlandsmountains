@@ -1,3 +1,5 @@
+'use strict';
+
 import React from 'react';
 import AccountActions from './AccountActions';
 import AccountStore from './AccountStore';
