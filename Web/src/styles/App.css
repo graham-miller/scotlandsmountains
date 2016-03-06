@@ -13,3 +13,16 @@ body {
     right: 0;
     bottom: 0;
 }
+
+#toolbar-search {
+    position: relative;
+}
+
+#toolbar-search input {
+    margin-top: 10px;
+    position: absolute;
+    width: 300px;
+    border: 2px solid #1e1e1e;
+    padding: 2px 4px 2px 4px;
+    border-radius: 5px;
+}

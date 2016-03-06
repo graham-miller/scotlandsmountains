@@ -18,6 +18,7 @@ import MapsMap from 'material-ui/lib/svg-icons/maps/map';
 import MapsLayers from 'material-ui/lib/svg-icons/maps/layers';
 import MapsMyLocation from 'material-ui/lib/svg-icons/maps/my-location';
 
+import MapButtonsComponent from './MapButtonsComponent.jsx';
 import SearchComponent from '../search/SearchComponent.jsx';
 
 class ToolBarComponent extends React.Component {
@@ -39,6 +40,7 @@ class ToolBarComponent extends React.Component {
     }
 
     render() {
+
         return (
             <Toolbar style={{position:'fixed',top:'64',minWidth:'440px', height:'46', zIndex:'1350'}}>
                 <ToolbarGroup firstChild={true} float="left">
@@ -48,29 +50,9 @@ class ToolBarComponent extends React.Component {
                         onOpen={this.handleOpenSearch}
                         onClose={this.handleCloseSearch} />
                     
-                    <IconButton tooltip="Zoom in" onTouchTap={MapActions.zoomIn}>
-                        <ContentAddCircleOutline />
-                    </IconButton>
-                    <IconButton tooltip="Zoom out" onTouchTap={MapActions.zoomOut}>
-                        <ContentRemoveCircleOutline />
-                    </IconButton>
-                    <IconButton tooltip="Reset" onTouchTap={MapActions.reset}>
-                        <NavigationRefresh />
-                    </IconButton>
-
-                    <IconMenu
-                        iconButtonElement={
-                            <IconButton tooltip="Layers">
-                                <MapsLayers />
-                            </IconButton>
-                        }>
-                        <MenuItem primaryText="Map view" leftIcon={<MapsMap />} />
-                        <MenuItem primaryText="Aerial view" leftIcon={<MapsSatellite />} />
-                    </IconMenu>
-
-                    <IconButton tooltip="My location">
-                        <MapsMyLocation />
-                    </IconButton>
+                    <span style={{display: this.props.searchOpen ? 'none' : 'inline'}}>
+                        <MapButtonsComponent />            
+                    </span>
                     
                 </ToolbarGroup>
             </Toolbar>
