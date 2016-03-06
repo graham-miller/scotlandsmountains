@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "77501cff2d23cf98978f"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "ccf2b742106890d5a20f"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -28199,7 +28199,7 @@
 	
 	
 	// module
-	exports.push([module.id, "* {\r\n    font-family: 'Roboto', sans-serif;\r\n}\r\n\r\nbody {\r\n    background-color: #d2eafc;\r\n}\r\n\r\n#map {\r\n    position: absolute;\r\n    top: 110px; /* 64 + 46 */\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n}\r\n\r\n#toolbar-search {\r\n    position: relative;\r\n}\r\n\r\n#toolbar-search input {\r\n    margin-top: 10px;\r\n    position: absolute;\r\n    width: 300px;\r\n    border: 2px solid #1e1e1e;\r\n    padding: 2px 4px 2px 4px;\r\n    border-radius: 5px;\r\n}\r\n", ""]);
+	exports.push([module.id, "* {\r\n    font-family: 'Roboto', sans-serif;\r\n}\r\n\r\nbody {\r\n    background-color: #d2eafc;\r\n}\r\n\r\n#map {\r\n    position: absolute;\r\n    top: 110px; /* 64 + 46 */\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n}\r\n\r\n#toolbar-search {\r\n    position: relative;\r\n}\r\n\r\n#toolbar-search input {\r\n    margin-top: 10px;\r\n    position: absolute;\r\n    width: 250px;\r\n    border: 2px solid #1e1e1e;\r\n    padding: 2px 4px 2px 4px;\r\n    border-radius: 5px;\r\n}\r\n", ""]);
 	
 	// exports
 
