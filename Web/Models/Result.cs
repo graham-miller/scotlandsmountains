@@ -9,12 +9,15 @@ namespace ScotlandsMountains.Web.Models
 
         public static Result Create(Mountain mountain)
         {
+            if (mountain == null) return null;
+
             return new Result
             {
                 Key = mountain.Key,
                 Name = mountain.Name,
                 Height = $"{mountain.Height.Metres.ToString("#,##0")}m ({mountain.Height.Feet.ToString("#,##0")}ft)",
-                Classification = string.Join(", ", mountain.Classifications.Select(x => x.Name))
+                Classification = string.Join(", ", mountain.Classifications.Select(x => x.Name)),
+                LatLong = new[] {mountain.Location.Latitude, mountain.Location.Longitude}
             };
         }
 
@@ -22,5 +25,6 @@ namespace ScotlandsMountains.Web.Models
         public string Name { get; private set; }
         public string Height { get; private set; }
         public string Classification { get; private set; }
+        public double[] LatLong { get; private set; }
     }
 }
