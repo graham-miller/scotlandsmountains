@@ -2,13 +2,20 @@
   "name": "scotlands-mountains",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "node ./node_modules/webpack/bin/webpack --colors --progress",
     "start": "node server.js",
     "encrypt": "encrypt ./src/config.js ./src/config.js.cast5",
     "decrypt": "decrypt ./src/config.js.cast5 ./src/config.js"
+  },
+  "jest": {
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/react-dom",
+      "<rootDir>/node_modules/react-addons-test-utils"
+    ]
   },
   "author": "Graham Miller",
   "license": "GPL-3.0",
@@ -24,17 +31,22 @@
     "react-tap-event-plugin": "^0.2.2"
   },
   "devDependencies": {
-    "babel-core": "^6.5.1",
+    "babel-core": "^6.7.0",
+    "babel-jest": "^9.0.2",
     "babel-loader": "^6.2.2",
+    "babel-polyfill": "^6.6.1",
     "babel-preset-es2015": "^6.5.0",
+    "babel-preset-jest": "^1.0.0",
     "babel-preset-react": "^6.5.0",
     "config-leaf": "^0.1.2",
     "css-loader": "^0.23.1",
     "es6-promise": "^3.1.2",
     "file-loader": "^0.8.5",
     "html-webpack-plugin": "^2.8.1",
+    "jest-cli": "^0.9.1",
     "normalize.css": "^3.0.3",
     "open": "0.0.5",
+    "react-addons-test-utils": "^0.14.7",
     "react-hot-loader": "^1.3.0",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",

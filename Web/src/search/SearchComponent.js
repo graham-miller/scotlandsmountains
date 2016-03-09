@@ -17,8 +17,6 @@ class SearchComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = SearchStore.getState();
-        
-        // React components using ES6 classes no longer autobind `this` to non React methods
         this.handleOpen = this.handleOpen.bind(this)
         this.handleClose = this.handleClose.bind(this)
         this.onChange = this.onChange.bind(this)

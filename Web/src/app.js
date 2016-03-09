@@ -3,7 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import LayoutComponent from './layout/LayoutComponent.jsx'
+import LayoutComponent from './layout/LayoutComponent.js'
 
 class App extends React.Component {
 

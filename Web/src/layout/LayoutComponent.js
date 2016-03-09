@@ -6,10 +6,10 @@ import 'normalize.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import AppBarComponent from './AppBarComponent.jsx'
-import ToolBarComponent from './ToolBarComponent.jsx'
-import LeftNavComponent from './LeftNavComponent.jsx'
-import MapComponent from '../map/MapComponent.jsx'
+import AppBarComponent from './AppBarComponent.js'
+import ToolBarComponent from './ToolBarComponent.js'
+import LeftNavComponent from './LeftNavComponent.js'
+import MapComponent from '../map/MapComponent.js'
 
 import LayoutStore from './LayoutStore';
 import LayoutActions from './LayoutActions';
@@ -23,8 +23,6 @@ class LayoutComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = LayoutStore.getState();
-        
-        // React components using ES6 classes no longer autobind `this` to non React methods
         this.onChange = this.onChange.bind(this)
     }
 

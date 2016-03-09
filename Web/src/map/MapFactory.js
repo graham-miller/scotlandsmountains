@@ -10,8 +10,8 @@ import L from 'leaflet';
 
 require.context('../../node_modules/leaflet/dist/images/', true, /\.(png)$/);
 
-const buildMap = function (htmlElement, center, zoom) {
-    
+const buildMap = function(htmlElement, center, zoom) {
+
     L.Icon.Default.imagePath = 'images/leaflet';
 
     var map = new L.Map(htmlElement, {
@@ -36,9 +36,9 @@ const buildMap = function (htmlElement, center, zoom) {
 
     var ref = new Firebase("https://scotlandsmountains.firebaseio.com");
 
-    ref.child("classifications/3aPe0nqy/mountains").on('child_added', function (snapshot) {
+    ref.child("classifications/3aPe0nqy/mountains").on('child_added', function(snapshot) {
         var groupKey = snapshot.key();
-        ref.child("mountains/" + groupKey).once('value', function (snapshot) {
+        ref.child("mountains/" + groupKey).once('value', function(snapshot) {
             var mountain = snapshot.val();
             L.marker([mountain.location.latitude, mountain.location.longitude])
                 .addTo(map)

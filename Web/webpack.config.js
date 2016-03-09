@@ -9,7 +9,7 @@ module.exports = {
         app: [
             'webpack-dev-server/client?http://0.0.0.0:3000',
             'webpack/hot/only-dev-server',
-            './src/index.js'
+            './src/app.js'
         ]
     },
     output: {
@@ -20,9 +20,10 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.jsx?$/,
+                test: /\.js$/,
                 loader: 'react-hot!babel-loader?' + JSON.stringify({ presets: ['es2015', 'react'] }),
-                include: [path.resolve(__dirname, 'src')]
+                include: [path.resolve(__dirname, 'src')],
+                exclude: /__test__/
             },
             {
                 test: /\.css$/,

@@ -18,8 +18,8 @@ import MapsMap from 'material-ui/lib/svg-icons/maps/map';
 import MapsLayers from 'material-ui/lib/svg-icons/maps/layers';
 import MapsMyLocation from 'material-ui/lib/svg-icons/maps/my-location';
 
-import MapButtonsComponent from './MapButtonsComponent.jsx';
-import SearchComponent from '../search/SearchComponent.jsx';
+import MapButtonsComponent from './MapButtonsComponent.js';
+import SearchComponent from '../search/SearchComponent.js';
 
 class ToolBarComponent extends React.Component {
 

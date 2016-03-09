@@ -8,7 +8,7 @@ import IconButton from 'material-ui/lib/icon-button';
 import NavigationMenu from 'material-ui/lib/svg-icons/navigation/menu';
 import NavigationClose from 'material-ui/lib/svg-icons/navigation/close';
 
-import AccountComponent from '../account/AccountComponent.jsx'
+import AccountComponent from '../account/AccountComponent.js'
 
 class AppBarComponent extends React.Component {
 
