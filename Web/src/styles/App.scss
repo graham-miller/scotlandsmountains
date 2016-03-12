@@ -1,0 +1,38 @@
+$app-bar-height: 64px;
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body, #app-container, #app-component, #map-component { height: 100%; }
+
+body {
+    background-color: #f6f6f6;
+}
+
+#map {
+    background-color: #f6f6f6;
+    margin-top: $app-bar-height;
+}
+
+#footer-component {
+    background-color: #606060;
+    color: #f6f6f6;
+    font-size: 0.8em;
+    padding: 1em;
+}
+
+/*
+#toolbar-search {
+    position: relative;
+}
+
+#toolbar-search input {
+    margin-top: 10px;
+    position: absolute;
+    width: 250px;
+    border: 2px solid #1e1e1e;
+    padding: 2px 4px 2px 4px;
+    border-radius: 5px;
+}
+*/

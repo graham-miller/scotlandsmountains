@@ -30,8 +30,8 @@ module.exports = {
                 loader: 'react-hot!style-loader!css-loader',
             },
             {
-                test: /\.sass$/,
-                loader: 'react-hot!style-loader!css-loader!sass-loader',
+                test: /\.scss$/,
+                loaders: ["react-hot", "style", "css", "sass"],
                 include: [path.resolve(__dirname, 'src')]
             },
             {

@@ -1,8 +1,6 @@
 'use strict';
 
 import React from 'react';
-import AccountActions from './AccountActions';
-import AccountStore from './AccountStore';
 
 import IconMenu from 'material-ui/lib/menus/icon-menu';
 import IconButton from 'material-ui/lib/icon-button';

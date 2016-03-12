@@ -1,14 +1,14 @@
 'use strict';
 
-import '../../node_modules/leaflet/dist/leaflet.js';
-import '../../node_modules/leaflet/dist/leaflet.css';
+import '../../../node_modules/leaflet/dist/leaflet.js';
+import '../../../node_modules/leaflet/dist/leaflet.css';
 import 'os-leaflet';
 import 'firebase';
 
-import config from '../config.js';
+import config from '../../config.js';
 import L from 'leaflet';
 
-require.context('../../node_modules/leaflet/dist/images/', true, /\.(png)$/);
+require.context('../../../node_modules/leaflet/dist/images/', true, /\.(png)$/);
 
 const buildMap = function(htmlElement, center, zoom) {
 
