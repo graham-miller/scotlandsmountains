@@ -3,10 +3,10 @@
 import '../../../node_modules/leaflet/dist/leaflet.js';
 import '../../../node_modules/leaflet/dist/leaflet.css';
 import 'os-leaflet';
-import 'firebase';
 
 import config from '../../config.js';
 import L from 'leaflet';
+import $ from 'jquery';
 
 require.context('../../../node_modules/leaflet/dist/images/', true, /\.(png)$/);
 
@@ -34,16 +34,12 @@ const buildMap = function(htmlElement, center, zoom) {
     var openspaceLayer = L.tileLayer.OSOpenSpace(config.oSOpenSpaceApiKey, {});
     map.addLayer(openspaceLayer);
 
-    var ref = new Firebase("https://scotlandsmountains.firebaseio.com");
-
-    ref.child("classifications/3aPe0nqy/mountains").on('child_added', function(snapshot) {
-        var groupKey = snapshot.key();
-        ref.child("mountains/" + groupKey).once('value', function(snapshot) {
-            var mountain = snapshot.val();
-            L.marker([mountain.location.latitude, mountain.location.longitude])
+    $.get('/api/classification/munro/mountains', function(data) {
+        data.forEach(function(mountain) {
+            L.marker(mountain.latLong)
                 .addTo(map)
                 .bindPopup(mountain.name);
-        });
+        }, this);
     });
 
     map.reset = function(center, zoom) {

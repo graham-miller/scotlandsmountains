@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "jest",
+    "debug": "node ./node_modules/webpack/bin/webpack --colors --progress --watch",
     "build": "node ./node_modules/webpack/bin/webpack --colors --progress",
     "start": "node server.js",
     "encrypt": "encrypt ./src/config.js ./src/config.js.cast5",
@@ -20,7 +21,7 @@
   "author": "Graham Miller",
   "license": "GPL-3.0",
   "dependencies": {
-    "firebase": "^2.4.1",
+    "jquery": "^2.2.1",
     "leaflet": "^0.7.7",
     "material-ui": "^0.14.4",
     "normalize-css": "^2.3.1",

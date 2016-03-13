@@ -7,7 +7,7 @@ import ToolBarComponent from './ToolBarComponent';
 import SearchBarComponent from './SearchBarComponent';
 import buildMap from './MapFactory';
 
-const center = [56.964957, -4.659999];
+const center = [57.5, -4.6];
 const zoom = 2;
 
 class MapComponent extends React.Component {
