@@ -8,7 +8,7 @@ import SearchBarComponent from './SearchBarComponent';
 import buildMap from './MapFactory';
 
 const center = [57.5, -4.6];
-const zoom = 2;
+const zoom = 7;
 
 class MapComponent extends React.Component {
 
