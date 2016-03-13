@@ -20,7 +20,6 @@
   "author": "Graham Miller",
   "license": "GPL-3.0",
   "dependencies": {
-    "alt": "^0.18.2",
     "firebase": "^2.4.1",
     "leaflet": "^0.7.7",
     "material-ui": "^0.14.4",

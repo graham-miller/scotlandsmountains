@@ -1,10 +1,12 @@
 $app-bar-height: 64px;
+$tool-bar-height: 46px;
+$map-margin: $app-bar-height + $tool-bar-height;
 
 * {
     font-family: 'Roboto', sans-serif;
 }
 
-html, body, #app-container, #app-component, #map-component { height: 100%; }
+html, body, #app-container, #app-component, #map-component, #map { height: 100%; }
 
 body {
     background-color: #f6f6f6;
@@ -12,7 +14,6 @@ body {
 
 #map {
     background-color: #f6f6f6;
-    margin-top: $app-bar-height;
 }
 
 #footer-component {

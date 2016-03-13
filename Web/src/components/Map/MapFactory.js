@@ -46,9 +46,8 @@ const buildMap = function(htmlElement, center, zoom) {
         });
     });
 
-    map.reset = function() {
-        alert("reset()");
-        map.setView(L.latLng(56.659406, -4.011214), 2);
+    map.reset = function(center, zoom) {
+        map.setView(center, zoom);
     }
 
     return map;

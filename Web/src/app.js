@@ -10,6 +10,10 @@ import AppBarComponent from './components/AppBar/AppBarComponent.js'
 import MapComponent from './components/Map/MapComponent.js'
 import FooterComponent from './components/Footer/FooterComponent.js'
 
+// Needed for onTouchTap, can be removed when react 1.0 is released https://github.com/zilverline/react-tap-event-plugin
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+
 class App extends React.Component {
 
     render() {
