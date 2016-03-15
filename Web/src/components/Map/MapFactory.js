@@ -17,7 +17,7 @@ const buildMap = function(htmlElement, center, zoom) {
 
     var map = new L.Map(htmlElement, {
         minZoom: 0,
-        maxZoom: 19,
+        maxZoom: 18,
         zoom: 7,
         center: center,
         zoomControl: false
