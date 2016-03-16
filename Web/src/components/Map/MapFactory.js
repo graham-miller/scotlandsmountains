@@ -21,15 +21,7 @@ const buildMap = function(htmlElement, center, zoom) {
         zoomControl: false
     });
 
-    var osUrl = 'http://ecn.t{s}.tiles.virtualearth.net/tiles/r{q}?g=5142&lbl=l1&productSet=mmOS&key=' + config.bingMapsKey;
-    var aerialUrl = 'http://ecn.t{s}.tiles.virtualearth.net/tiles/a{q}.jpeg?g=5142';
-    var roadUrl = 'http://ecn.t{s}.tiles.virtualearth.net/tiles/r{q}.jpeg?g=5142&mkt=en-GB&shading=hill';
-    var layer = new BingLayer(aerialUrl, {
-        subdomains: ['0', '1', '2', '3'],
-        attribution: '&copy; <a href="http://bing.com/maps">Bing Maps</a>',
-        detectRetina: true
-    });
-
+    var layer = new BingLayer(config.bingMapsKey);
     map.addLayer(layer);
 
     $.get('/api/classification/munro/mountains', function(data) {
