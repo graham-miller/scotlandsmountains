@@ -14,48 +14,23 @@ const buildMap = function(htmlElement, center, zoom) {
     L.Icon.Default.imagePath = 'images/leaflet';
 
     var map = new L.Map(htmlElement, {
-        minZoom: 6,
-        maxZoom: 18,
+        // minZoom: 6,
+        // maxZoom: 18,
         zoom: zoom,
         center: center,
         zoomControl: false
     });
 
-    var layer = new BingLayer('http://ak.dynamic.t{s}.tiles.virtualearth.net/comp/ch/{q}?mkt=en-GB&it=G,OS,BX,RL&shading=hill&n=z&og=118&key=' + config.bingMapsKey + '&c4w=1', {
-        subdomains: ['0', '1', '2', '3', '4', '5', '6', '7'],
+    var osUrl = 'http://ecn.t{s}.tiles.virtualearth.net/tiles/r{q}?g=5142&lbl=l1&productSet=mmOS&key=' + config.bingMapsKey;
+    var aerialUrl = 'http://ecn.t{s}.tiles.virtualearth.net/tiles/a{q}.jpeg?g=5142';
+    var roadUrl = 'http://ecn.t{s}.tiles.virtualearth.net/tiles/r{q}.jpeg?g=5142&mkt=en-GB&shading=hill';
+    var layer = new BingLayer(aerialUrl, {
+        subdomains: ['0', '1', '2', '3'],
         attribution: '&copy; <a href="http://bing.com/maps">Bing Maps</a>',
         detectRetina: true
     });
 
     map.addLayer(layer);
-
-    // var map = new L.Map(htmlElement, {
-    //     minZoom: 0,
-    //     maxZoom: 18,
-    //     zoom: 7,
-    //     center: center,
-    //     zoomControl: false
-    // });
-
-    // var aerialLayer = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-    //     attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-    // });
-
-    // map.addLayer(aerialLayer);
-
-    // var map = new L.Map(htmlElement, {
-    //     crs: L.OSOpenSpace.getCRS(),
-    //     continuousWorld: true,
-    //     worldCopyJump: false,
-    //     minZoom: 0,
-    //     maxZoom: L.OSOpenSpace.RESOLUTIONS.length - 1,
-    //     zoom: zoom,
-    //     center: center,
-    //     zoomControl: false
-    // });
-
-    // var openspaceLayer = L.tileLayer.OSOpenSpace(config.oSOpenSpaceApiKey, {});
-    // map.addLayer(openspaceLayer);
 
     $.get('/api/classification/munro/mountains', function(data) {
         data.forEach(function(mountain) {

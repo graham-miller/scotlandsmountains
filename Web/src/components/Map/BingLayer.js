@@ -1,6 +1,19 @@
 'use strict';
 
+// import config from '../../config.js';
+// import L from 'leaflet';
+
+
+// class BingLayer extends L.TileLayer {
+
+//     getTileUrl(tilePoint) {}
+
+
+// }
+
+
 var BingLayer = L.TileLayer.extend({
+    
     getTileUrl: function (tilePoint) {
         this._adjustTilePoint(tilePoint);
         return L.Util.template(this._url, {
@@ -8,6 +21,7 @@ var BingLayer = L.TileLayer.extend({
             q: this._quadKey(tilePoint.x, tilePoint.y, this._getZoomForUrl())
         });
     },
+    
     _quadKey: function (x, y, z) {
         var quadKey = [];
         for (var i = z; i > 0; i--) {
