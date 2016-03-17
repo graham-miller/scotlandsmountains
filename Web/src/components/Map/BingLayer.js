@@ -2,16 +2,11 @@
 
 import L from 'leaflet';
 
-
 class BingLayer extends L.TileLayer {
 
-    constructor(bingMapsKey) {
+    constructor(bingMapsKey, url) {
 
-        var osUrl = 'http://ecn.t{s}.tiles.virtualearth.net/tiles/r{q}?g=5142&lbl=l1&productSet=mmOS&key={k}';
-        var aerialUrl = 'http://ecn.t{s}.tiles.virtualearth.net/tiles/a{q}.jpeg?g=5142';
-        var roadUrl = 'http://ecn.t{s}.tiles.virtualearth.net/tiles/r{q}.jpeg?g=5142&mkt=en-GB&shading=hill';
-
-        super(roadUrl, {
+        super(url, {
             subdomains: ['0', '1', '2', '3'],
             attribution: '&copy; <a href="http://bing.com/maps">Bing Maps</a>',
             detectRetina: true
@@ -47,4 +42,24 @@ class BingLayer extends L.TileLayer {
     }
 }
 
-export default BingLayer;
+class RoadLayer extends BingLayer {
+    constructor(bingMapsKey) {
+        super(bingMapsKey, 'http://ecn.t{s}.tiles.virtualearth.net/tiles/r{q}.jpeg?g=5142&mkt=en-GB&shading=hill');
+    }
+}
+
+class MapLayer extends BingLayer {
+    constructor(bingMapsKey) {
+        super(bingMapsKey, 'http://ecn.t{s}.tiles.virtualearth.net/tiles/r{q}?g=5142&lbl=l1&productSet=mmOS&key={k}');
+    }
+}
+
+class AerialLayer extends BingLayer {
+    constructor(bingMapsKey) {
+        super(bingMapsKey, 'http://ecn.t{s}.tiles.virtualearth.net/tiles/a{q}.jpeg?g=5142');
+    }
+}
+
+export { RoadLayer };
+export { MapLayer };
+export { AerialLayer };

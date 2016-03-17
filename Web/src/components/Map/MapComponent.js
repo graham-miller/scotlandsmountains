@@ -14,11 +14,17 @@ class MapComponent extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {showSearch: false};
+        this.state = {
+            showSearch: false,
+            view: 'Map'
+        };
+        
         this.toggleSearch = this.toggleSearch.bind(this)
         this.zoomIn = this.zoomIn.bind(this)
         this.zoomOut = this.zoomOut.bind(this)
         this.reset = this.reset.bind(this)
+        this.showMapView = this.showMapView.bind(this)
+        this.showAerialView = this.showAerialView.bind(this)
     }
 
     componentDidMount() {
@@ -37,6 +43,10 @@ class MapComponent extends React.Component {
 
     reset() { this.map.reset(center, zoom); }
 
+    showMapView() { this.map.showMapView(); }
+
+    showAerialView() { this.map.showAerialView(); }
+
     render() {
         
         let searchBar = this.state.showSearch ? <SearchBarComponent /> : null;
@@ -47,7 +57,9 @@ class MapComponent extends React.Component {
                     toggleSearch={this.toggleSearch}
                     zoomIn={this.zoomIn}
                     zoomOut={this.zoomOut}
-                    reset={this.reset} />
+                    reset={this.reset} 
+                    showMapView={this.showMapView} 
+                    showAerialView={this.showAerialView} />
                 {searchBar}
                 <div id="map" ref="map"></div>
             </div>
