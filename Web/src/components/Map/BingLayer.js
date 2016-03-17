@@ -44,19 +44,19 @@ class BingLayer extends L.TileLayer {
 
 class RoadLayer extends BingLayer {
     constructor(bingMapsKey) {
-        super(bingMapsKey, 'http://ecn.t{s}.tiles.virtualearth.net/tiles/r{q}.jpeg?g=5142&mkt=en-GB&shading=hill');
+        super(bingMapsKey, 'https://ecn.t{s}.tiles.virtualearth.net/tiles/r{q}.jpeg?g=5142&mkt=en-GB&shading=hill');
     }
 }
 
 class MapLayer extends BingLayer {
     constructor(bingMapsKey) {
-        super(bingMapsKey, 'http://ecn.t{s}.tiles.virtualearth.net/tiles/r{q}?g=5142&lbl=l1&productSet=mmOS&key={k}');
+        super(bingMapsKey, 'https://ecn.t{s}.tiles.virtualearth.net/tiles/r{q}?g=5142&lbl=l1&productSet=mmOS&key={k}');
     }
 }
 
 class AerialLayer extends BingLayer {
     constructor(bingMapsKey) {
-        super(bingMapsKey, 'http://ecn.t{s}.tiles.virtualearth.net/tiles/a{q}.jpeg?g=5142');
+        super(bingMapsKey, 'https://ecn.t{s}.tiles.virtualearth.net/tiles/a{q}.jpeg?g=5142');
     }
 }
 

@@ -43,11 +43,11 @@ class ToolBarComponent extends React.Component {
                     <IconMenu
                         iconButtonElement={<IconButton><MapsLayers /></IconButton>}>
                         <MenuItem
-                            onTouchTap={this.props.showMapView}
+                            onTouchTap={this.props.setBaseLayer.bind(this, 'map')}
                             primaryText="Map view"
                             leftIcon={<MapsMap />} />
                         <MenuItem
-                            onTouchTap={this.props.showAerialView}
+                            onTouchTap={this.props.setBaseLayer.bind(this, 'aerial')}
                             primaryText="Aerial view"
                             leftIcon={<MapsSatellite />} />
                     </IconMenu>
@@ -67,8 +67,7 @@ ToolBarComponent.propTypes = {
     zoomIn: React.PropTypes.func.isRequired,
     zoomOut: React.PropTypes.func.isRequired,
     reset: React.PropTypes.func.isRequired,
-    showMapView: React.PropTypes.func.isRequired,
-    showAerialView: React.PropTypes.func.isRequired
+    setBaseLayer: React.PropTypes.func.isRequired
 };
 
 export default ToolBarComponent;

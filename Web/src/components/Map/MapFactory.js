@@ -24,8 +24,35 @@ const buildMap = function(htmlElement, center, zoom) {
     var roadLayer = new RoadLayer(config.bingMapsKey);
     var mapLayer = new MapLayer(config.bingMapsKey);
     var aerialLayer = new AerialLayer(config.bingMapsKey);
+    var currentLayer = 'map';
+    
+    map.reset = function(center, zoom) {
+        currentLayer = 'map';
+        map.setView(center, zoom);
+    }
+    
+    map.setBaseLayer = function (layer) {
+        currentLayer = layer == null ? currentLayer : layer;
+        if (currentLayer === 'map') {
+            map.removeLayer(aerialLayer);
+            if (map.getZoom() > 10) {
+                map.addLayer(mapLayer);
+                map.removeLayer(roadLayer);
+            } else {
+                map.addLayer(roadLayer);
+                map.removeLayer(mapLayer);
+            }
+        }
+        if (currentLayer === 'aerial') {
+            map.addLayer(aerialLayer);
+            map.removeLayer(mapLayer);
+            map.removeLayer(roadLayer);
+        }
+    }
 
-    map.addLayer(roadLayer);
+    map.on('zoomend', function (e) { map.setBaseLayer(); });
+
+    map.setBaseLayer()
 
     $.get('/api/classification/munro/mountains', function(data) {
         data.forEach(function(mountain) {
@@ -40,22 +67,6 @@ const buildMap = function(htmlElement, center, zoom) {
         metric: true,
         imperial: true
     }).addTo(map);
-
-    map.reset = function(center, zoom) {
-        map.setView(center, zoom);
-    }
-
-    map.showMapView = function () {
-        map.removeLayer(aerialLayer);
-        map.removeLayer(mapLayer);
-        map.addLayer(roadLayer);
-    }
-
-    map.showAerialView = function () {
-        map.removeLayer(roadLayer);
-        map.removeLayer(mapLayer);
-        map.addLayer(aerialLayer);
-    }
 
     return map;
 };

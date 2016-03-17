@@ -23,8 +23,7 @@ class MapComponent extends React.Component {
         this.zoomIn = this.zoomIn.bind(this)
         this.zoomOut = this.zoomOut.bind(this)
         this.reset = this.reset.bind(this)
-        this.showMapView = this.showMapView.bind(this)
-        this.showAerialView = this.showAerialView.bind(this)
+        this.setBaseLayer = this.setBaseLayer.bind(this)
     }
 
     componentDidMount() {
@@ -43,9 +42,7 @@ class MapComponent extends React.Component {
 
     reset() { this.map.reset(center, zoom); }
 
-    showMapView() { this.map.showMapView(); }
-
-    showAerialView() { this.map.showAerialView(); }
+    setBaseLayer(layer) { this.map.setBaseLayer(layer); }
 
     render() {
         
@@ -58,8 +55,7 @@ class MapComponent extends React.Component {
                     zoomIn={this.zoomIn}
                     zoomOut={this.zoomOut}
                     reset={this.reset} 
-                    showMapView={this.showMapView} 
-                    showAerialView={this.showAerialView} />
+                    setBaseLayer={this.setBaseLayer} />
                 {searchBar}
                 <div id="map" ref="map"></div>
             </div>
