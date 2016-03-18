@@ -8,6 +8,17 @@ $map-margin: $app-bar-height + $tool-bar-height;
 
 html, body, #app-container, #app-component, #map-component, #map { height: 100%; }
 
+#content-container {
+    position: absolute;
+    top: 0;
+    min-height: 100%;
+    width: 100%;
+    padding-top: $app-bar-height;
+    margin-bottom: $app-bar-height;
+    z-index: 1399;
+    background-color: #e8e8e8;
+}
+
 body {
     background-color: #f6f6f6;
 }
