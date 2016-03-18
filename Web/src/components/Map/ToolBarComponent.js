@@ -20,9 +20,6 @@ import MapsMyLocation from 'material-ui/lib/svg-icons/maps/my-location';
 class ToolBarComponent extends React.Component {
 
     render() {
-        
-        //<IconButton onTouchTap={}>
-
         return (
             <Toolbar style={{position:'fixed',top:'64',minWidth:'440px', height:'46', zIndex:'1350'}}>
                 <ToolbarGroup firstChild={true} float="left">
