@@ -5,12 +5,24 @@ $tool-bar-height: 56px;
     font-family: 'Roboto', sans-serif;
 }
 
-html, body, #app-container, #app-component, #map-component, #map { height: 100%; background-color: #e8e8e8; }
+html, body, #app-container, #app-component, #map-component, #map { height: 100%; background-color: #e8e8e8; z-index: 1; }
 
 #app-component {
     position: relative;
     padding-top: $app-bar-height;
     box-sizing: border-box;
+}
+
+#map-control-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+}
+
+#map-control {
+    width: 100%;
+    position: absolute;
+    z-index: 2;
 }
 
 #footer-component {

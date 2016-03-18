@@ -13,8 +13,8 @@ class SearchBarComponent extends React.Component {
     render() {
         
         return (
-            <Toolbar style={{position:'fixed',top:'110',minWidth:'440px', height:'36', zIndex:'1350'}}>
-                <ToolbarGroup firstChild={true} float="left">
+            <Toolbar>
+                <ToolbarGroup firstChild={true}>
                     <input
                         type="search" ref="search"
                         autoFocus placeholder="Search"
