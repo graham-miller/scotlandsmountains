@@ -5,7 +5,12 @@ $tool-bar-height: 56px;
     font-family: 'Roboto', sans-serif;
 }
 
-html, body, #app-container, #app-component, #map-container, #map-component, #map { height: 100%; background-color: #e8e8e8; }
+html, body,
+#app-container, #app-component,
+#map-container, #map-component, #map {
+    height: 100%;
+    background-color: #e8e8e8;
+}
 
 #app-component {
     position: relative;
