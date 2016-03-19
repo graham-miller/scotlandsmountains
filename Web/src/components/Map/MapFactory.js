@@ -20,6 +20,9 @@ const buildMap = function(htmlElement, center, zoom) {
         center: center,
         zoomControl: false
     });
+    map.attributionControl.setPrefix(false);
+    //map.attributionControl.addAttribution('<a href="http://leafletjs.com/" target="_blank" title="A JS library for interactive maps">Leaflet</a>');
+    //map.attributionControl.addAttribution('<a href="http://www.hills-database.co.uk/" target="_blank">The Database of British and Irish Hills</a>');    
 
     var roadLayer = new RoadLayer(config.bingMapsKey);
     var mapLayer = new MapLayer(config.bingMapsKey);

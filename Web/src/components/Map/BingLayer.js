@@ -4,15 +4,15 @@ import L from 'leaflet';
 
 class BingLayer extends L.TileLayer {
 
-    constructor(bingMapsKey, url) {
+    constructor(options) {
 
-        super(url, {
+        super(options.url, {
             subdomains: ['0', '1', '2', '3'],
-            attribution: '&copy; <a href="http://bing.com/maps">Bing Maps</a>',
+            attribution: options.attribution,
             detectRetina: true
         });
 
-        this._bingMapsKey = bingMapsKey;
+        this._bingMapsKey = options.bingMapsKey;
     }
 
     getTileUrl (tilePoint) {
@@ -44,19 +44,31 @@ class BingLayer extends L.TileLayer {
 
 class RoadLayer extends BingLayer {
     constructor(bingMapsKey) {
-        super(bingMapsKey, 'https://ecn.t{s}.tiles.virtualearth.net/tiles/r{q}.jpeg?g=5142&mkt=en-GB&shading=hill');
+        super({
+            bingMapsKey: bingMapsKey,
+            url: 'https://ecn.t{s}.tiles.virtualearth.net/tiles/r{q}.jpeg?g=5142&mkt=en-GB&shading=hill',
+            attribution: '&copy; 2016 HERE &copy; 2016 Microsoft Corporation'
+        });
     }
 }
 
 class MapLayer extends BingLayer {
     constructor(bingMapsKey) {
-        super(bingMapsKey, 'https://ecn.t{s}.tiles.virtualearth.net/tiles/r{q}?g=5142&lbl=l1&productSet=mmOS&key={k}');
+        super({
+            bingMapsKey: bingMapsKey,
+            url: 'https://ecn.t{s}.tiles.virtualearth.net/tiles/r{q}?g=5142&lbl=l1&productSet=mmOS&key={k}',
+            attribution: '&copy; 2016 Microsoft Corporation Image courtesy of Ordnance Survey'
+        });
     }
 }
 
 class AerialLayer extends BingLayer {
     constructor(bingMapsKey) {
-        super(bingMapsKey, 'https://ecn.t{s}.tiles.virtualearth.net/tiles/a{q}.jpeg?g=5142');
+        super({
+            bingMapsKey: bingMapsKey,
+            url: 'https://ecn.t{s}.tiles.virtualearth.net/tiles/a{q}.jpeg?g=5142',
+            attribution: 'Earthstar Geographics SIO &copy; 2016 Microsoft Corporation'
+        });
     }
 }
 
