@@ -6,7 +6,76 @@ class AboutComponent extends React.Component {
     
     render() {
         return (
-            <div id="content-container">About goes here!</div>
+            <div>
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+                About goes here!<br />
+            </div>
         );
     }
 }

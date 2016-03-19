@@ -19,11 +19,18 @@ injectTapEventPlugin();
 class App extends React.Component {
 
     render() {
+        var mapDisplay = this.props.children == null ? 'block' : 'none';
+        var contentDisplay = this.props.children == null ? 'none' : 'block';
+
         return (
             <div id="app-component">
                 <AppBarComponent />
-                <MapComponent />
-                {this.props.children}
+                <div id="map-container" style={{display: mapDisplay}}>
+                    <MapComponent />
+                </div>
+                <div id="content-container" style={{display: contentDisplay}}>
+                    {this.props.children}
+                </div>
                 <FooterComponent />
             </div>
         );

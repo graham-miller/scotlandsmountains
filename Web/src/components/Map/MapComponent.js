@@ -50,18 +50,16 @@ class MapComponent extends React.Component {
         
         return (
             <div id="map-component">
-                <div id="map-control-container">
-                    <div id="map-control">
-                        <ToolBarComponent
-                            toggleSearch={this.toggleSearch}
-                            zoomIn={this.zoomIn}
-                            zoomOut={this.zoomOut}
-                            reset={this.reset} 
-                            setBaseLayer={this.setBaseLayer} />
-                        {searchBar}
-                    </div>
-                </div>
                 <div id="map" ref="map"></div>
+                <div id="map-control">
+                    <ToolBarComponent
+                        toggleSearch={this.toggleSearch}
+                        zoomIn={this.zoomIn}
+                        zoomOut={this.zoomOut}
+                        reset={this.reset} 
+                        setBaseLayer={this.setBaseLayer} />
+                    {searchBar}
+                </div>
             </div>
         );
     }
