@@ -13,7 +13,7 @@ class SearchBarComponent extends React.Component {
     render() {
         
         return (
-            <Toolbar style={{height:'46'}}>
+            <Toolbar style={{paddingTop: '6px', height: '46px'}}>
                 <ToolbarGroup firstChild={true}>
                     <input
                         type="search" ref="search"
