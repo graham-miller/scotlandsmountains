@@ -33,15 +33,33 @@ html, body,
 }
 
 #footer-component {
+    position: relative;
+    .handle {
+        cursor: pointer;
+        padding-top: 2px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+        height: 25px;
+        width: 50px;
+        top: -25px;
+        margin-left: -25px;
+        left: 50%;
+        background-color: #606060;
+        border-top-left-radius: 25px; 
+        border-top-right-radius: 25px; 
+    }
+    .content {
     background-color: #606060;
     color: #e8e8e8;
     font-size: 0.8em;
     padding: 1em;
-    
-    .legal {
-        text-align: center;
-        padding-top: 5em;
-        a:link, a:visited { color: #e8e8e8; text-decoration: none; }
-        a:hover, a:active { color: #e8e8e8; text-decoration: underline; }
+        .legal {
+            text-align: center;
+            padding-top: 5em;
+            a:link, a:visited { color: #e8e8e8; text-decoration: none; }
+            a:hover, a:active { color: #e8e8e8; text-decoration: underline; }
+        }
     }
 }
