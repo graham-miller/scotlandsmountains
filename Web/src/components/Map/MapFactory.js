@@ -9,6 +9,16 @@ import { RoadLayer, MapLayer, AerialLayer } from './BingLayer';
 
 require.context('../../../node_modules/leaflet/dist/images/', true, /\.(png)$/);
 
+/*
+    TODO retrieve layer meta data from Bing maps API, see:
+     -  https://msdn.microsoft.com/en-us/library/ff701716.aspx
+     -  https://msdn.microsoft.com/en-us/library/ff701712.aspx
+    Meta data urls:
+     -  http://dev.virtualearth.net/REST/v1/Imagery/Metadata/OrdnanceSurvey?o=json&incl=ImageryProviders&key=AtpjQPLgDNxkSUWxAwtDKaJNRE6oRj1bw6kxYpvAy-NCvNGFQdJxveEZ_CQOBEVU
+     -  http://dev.virtualearth.net/REST/v1/Imagery/Metadata/Aerial?o=json&incl=ImageryProviders&key=AtpjQPLgDNxkSUWxAwtDKaJNRE6oRj1bw6kxYpvAy-NCvNGFQdJxveEZ_CQOBEVU
+     -  http://dev.virtualearth.net/REST/v1/Imagery/Metadata/Road?o=json&incl=ImageryProviders&key=AtpjQPLgDNxkSUWxAwtDKaJNRE6oRj1bw6kxYpvAy-NCvNGFQdJxveEZ_CQOBEVU
+*/
+
 const buildMap = function(htmlElement, center, zoom) {
 
     L.Icon.Default.imagePath = 'images/leaflet';
