@@ -54,6 +54,8 @@ module.exports = {
             template: './src/index.html',
             inject: 'body',
         }),
-        new WebpackNotifierPlugin()
+        new WebpackNotifierPlugin(),
+        new webpack.optimize.UglifyJsPlugin(),
+        new webpack.optimize.OccurenceOrderPlugin()
     ]
 };
