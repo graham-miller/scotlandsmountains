@@ -44,8 +44,7 @@ module.exports = {
                 loader: 'file-loader?name=images/leaflet/[path][name].[ext]&context=./node_modules/leaflet/dist/images',
                 include: [path.resolve(__dirname, 'node_modules/leaflet/dist/images')]
             }
-        ],
-        noParse: [/\proj4.js$/]
+        ]
     },
     devtool: 'source-map',
     plugins: [

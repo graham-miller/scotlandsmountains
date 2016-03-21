@@ -19,11 +19,21 @@ import MapsMyLocation from 'material-ui/lib/svg-icons/maps/my-location';
 
 class ToolBarComponent extends React.Component {
 
+    static propTypes() {
+        return {
+            toggleSearch: React.PropTypes.func.isRequired,
+            zoomIn: React.PropTypes.func.isRequired,
+            zoomOut: React.PropTypes.func.isRequired,
+            reset: React.PropTypes.func.isRequired,
+            setBaseLayer: React.PropTypes.func.isRequired
+        };
+    }
+
     render() {
         return (
-            <Toolbar style={{height:'46'}}> 
-                <ToolbarGroup firstChild={true} style={{float: 'none'}}>
-                    
+            <Toolbar style={{ height: '46' }}>
+                <ToolbarGroup firstChild={true} style={{ float: 'none' }}>
+
                     <IconButton onTouchTap={this.props.toggleSearch}>
                         <ActionSearch />
                     </IconButton>
@@ -40,11 +50,11 @@ class ToolBarComponent extends React.Component {
                     <IconMenu
                         iconButtonElement={<IconButton><MapsLayers /></IconButton>}>
                         <MenuItem
-                            onTouchTap={this.props.setBaseLayer.bind(this, 'map')}
+                            onTouchTap={this.props.setBaseLayer.bind(this, 'map') }
                             primaryText="Map view"
                             leftIcon={<MapsMap />} />
                         <MenuItem
-                            onTouchTap={this.props.setBaseLayer.bind(this, 'aerial')}
+                            onTouchTap={this.props.setBaseLayer.bind(this, 'aerial') }
                             primaryText="Aerial view"
                             leftIcon={<MapsSatellite />} />
                     </IconMenu>
@@ -52,19 +62,11 @@ class ToolBarComponent extends React.Component {
                     <IconButton>
                         <MapsMyLocation />
                     </IconButton>
-                    
+
                 </ToolbarGroup>
             </Toolbar>
         );
     }
 }
-
-ToolBarComponent.propTypes = {
-    toggleSearch: React.PropTypes.func.isRequired,
-    zoomIn: React.PropTypes.func.isRequired,
-    zoomOut: React.PropTypes.func.isRequired,
-    reset: React.PropTypes.func.isRequired,
-    setBaseLayer: React.PropTypes.func.isRequired
-};
 
 export default ToolBarComponent;

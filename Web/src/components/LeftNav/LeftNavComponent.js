@@ -10,11 +10,18 @@ import NavigationClose from 'material-ui/lib/svg-icons/navigation/close';
 
 class LeftNavComponent extends React.Component {
 
+    static propTypes() {
+        return {
+            open: React.PropTypes.bool.isRequired,
+            onClose: React.PropTypes.func.isRequired
+        };
+    }
+
     render() {
         return (
             <div>
                 <LeftNav open={this.props.open}>
-                    <MenuItem onTouchTap={this.props.onClose} style={{padding: '12px 0 4px 6px'}} >
+                    <MenuItem onTouchTap={this.props.onClose} style={{ padding: '12px 0 4px 6px' }} >
                         <NavigationClose />
                     </MenuItem>
                     <MenuItem>Menu Item 1</MenuItem>
