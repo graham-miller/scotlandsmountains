@@ -12,26 +12,15 @@ describe('LeftNavComponent', () => {
     it('validates props', () => {
         
         const error = console.error;
-        console.error = jest.fn();
+        console.error = jest.genMockFunction();
         
         const shallowRenderer = TestUtils.createRenderer();
-        shallowRenderer.render(React.createElement(LeftNavComponent));
+        shallowRenderer.render(React.createElement(LeftNavComponent, {open: ""}));
         const sut = shallowRenderer.getRenderOutput();
         
-        expect(console.error.mock.calls.length).toBe(9)
-        expect(console.error).toBeCalledWith('Warning: Failed propType: LeftNav: prop type `header` is invalid; it must be a function, usually from React.PropTypes.');
-        expect(console.error).toBeCalledWith('Warning: Failed propType: LeftNav: prop type `header` is invalid; it must be a function, usually from React.PropTypes.');
-        expect(console.error).toBeCalledWith('Warning: Failed propType: LeftNav: prop type `menuItemClassName` is invalid; it must be a function, usually from React.PropTypes.');
-        expect(console.error).toBeCalledWith('Warning: Failed propType: LeftNav: prop type `menuItemClassNameLink` is invalid; it must be a function, usually from React.PropTypes.');
-        expect(console.error).toBeCalledWith('Warning: Failed propType: LeftNav: prop type `menuItemClassNameSubheader` is invalid; it must be a function, usually from React.PropTypes.');
-        expect(console.error).toBeCalledWith('Warning: Failed propType: LeftNav: prop type `menuItems` is invalid; it must be a function, usually from React.PropTypes.');
-        expect(console.error).toBeCalledWith('Warning: Failed propType: LeftNav: prop type `onChange` is invalid; it must be a function, usually from React.PropTypes.');
-        expect(console.error).toBeCalledWith('Warning: Failed propType: LeftNav: prop type `onNavClose` is invalid; it must be a function, usually from React.PropTypes.');
-        expect(console.error).toBeCalledWith('Warning: Failed propType: LeftNav: prop type `onNavOpen` is invalid; it must be a function, usually from React.PropTypes.');
-        expect(console.error).toBeCalledWith('Warning: Failed propType: LeftNav: prop type `selectedIndex` is invalid; it must be a function, usually from React.PropTypes.');
+        expect(console.error).toBeCalledWith('Warning: Failed propType: Invalid prop `open` of type `string` supplied to `LeftNavComponent`, expected `boolean`.');
+        expect(console.error).toBeCalledWith('Warning: Failed propType: Required prop `onClose` was not specified in `LeftNavComponent`.');
         
         console.error = error;
     });    
-
-
 });

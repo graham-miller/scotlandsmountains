@@ -10,13 +10,6 @@ import NavigationClose from 'material-ui/lib/svg-icons/navigation/close';
 
 class LeftNavComponent extends React.Component {
 
-    static propTypes() {
-        return {
-            open: React.PropTypes.bool.isRequired,
-            onClose: React.PropTypes.func.isRequired
-        };
-    }
-
     render() {
         return (
             <div>
@@ -31,5 +24,10 @@ class LeftNavComponent extends React.Component {
         );
     }
 }
+
+LeftNavComponent.propTypes = {
+    open: React.PropTypes.bool.isRequired,
+    onClose: React.PropTypes.func.isRequired
+};
 
 export default LeftNavComponent;

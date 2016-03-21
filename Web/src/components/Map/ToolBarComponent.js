@@ -19,16 +19,6 @@ import MapsMyLocation from 'material-ui/lib/svg-icons/maps/my-location';
 
 class ToolBarComponent extends React.Component {
 
-    static propTypes() {
-        return {
-            toggleSearch: React.PropTypes.func.isRequired,
-            zoomIn: React.PropTypes.func.isRequired,
-            zoomOut: React.PropTypes.func.isRequired,
-            reset: React.PropTypes.func.isRequired,
-            setBaseLayer: React.PropTypes.func.isRequired
-        };
-    }
-
     render() {
         return (
             <Toolbar style={{ height: '46' }}>
@@ -68,5 +58,13 @@ class ToolBarComponent extends React.Component {
         );
     }
 }
+
+ToolBarComponent.propTypes = {
+    toggleSearch: React.PropTypes.func.isRequired,
+    zoomIn: React.PropTypes.func.isRequired,
+    zoomOut: React.PropTypes.func.isRequired,
+    reset: React.PropTypes.func.isRequired,
+    setBaseLayer: React.PropTypes.func.isRequired
+};
 
 export default ToolBarComponent;
