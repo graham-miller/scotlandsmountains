@@ -5,6 +5,7 @@
     "main": "app.js",
     "scripts": {
         "test": "jest --watch",
+        "coverage": "jest --coverage",
         "debug": "node ./node_modules/webpack/bin/webpack --colors --progress --watch",
         "build": "node ./node_modules/webpack/bin/webpack --colors --progress",
         "start": "node server.js",

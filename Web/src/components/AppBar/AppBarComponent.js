@@ -15,17 +15,17 @@ class AppBarComponent extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { leftNavOpen: false };
-        this.handleOpenLeftNav = this.handleOpenLeftNav.bind(this); 
-        this.handleCloseLeftNav = this.handleCloseLeftNav.bind(this); 
+        this.state = { leftNavIsOpen: false };
+        this.openLeftNav = this.openLeftNav.bind(this); 
+        this.closeLeftNav = this.closeLeftNav.bind(this); 
     }
 
-    handleOpenLeftNav() {
-        this.setState({ leftNavOpen: true })
+    openLeftNav() {
+        this.setState({ leftNavIsOpen: true });
     }
 
-    handleCloseLeftNav() {
-        this.setState({ leftNavOpen: false })
+    closeLeftNav() {
+        this.setState({ leftNavIsOpen: false });
     }
 
     render() {
@@ -37,7 +37,7 @@ class AppBarComponent extends React.Component {
                     style={{ position: 'fixed', top: '0' }}
                     iconElementLeft={
                         <IconButton
-                            onTouchTap={this.state.leftNavOpen ? this.handleCloseLeftNav : this.handleOpenLeftNav}>
+                            onTouchTap={this.openLeftNav}>
                             <NavigationMenu />
                         </IconButton>
                     }
@@ -45,8 +45,8 @@ class AppBarComponent extends React.Component {
                     iconElementRight={<AccountComponent />} >
                 </AppBar>
                 <LeftNavComponent
-                    open={this.state.leftNavOpen}
-                    onClose={this.handleCloseLeftNav} />
+                    isOpen={this.state.leftNavIsOpen}
+                    close={this.closeLeftNav} />
             </div>
         );
     }

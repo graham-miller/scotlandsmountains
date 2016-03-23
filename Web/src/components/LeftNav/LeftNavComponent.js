@@ -12,8 +12,8 @@ class LeftNavComponent extends React.Component {
 
     render() {
         return (
-            <LeftNav open={this.props.open}>
-                <MenuItem onTouchTap={this.props.onClose} style={{ padding: '12px 0 4px 6px' }} >
+            <LeftNav open={this.props.isOpen}>
+                <MenuItem onTouchTap={this.props.close} style={{ padding: '12px 0 4px 6px' }} >
                     <NavigationClose />
                 </MenuItem>
                 <MenuItem>Menu Item 1</MenuItem>
@@ -24,8 +24,8 @@ class LeftNavComponent extends React.Component {
 }
 
 LeftNavComponent.propTypes = {
-    open: React.PropTypes.bool.isRequired,
-    onClose: React.PropTypes.func.isRequired
+    isOpen: React.PropTypes.bool.isRequired,
+    close: React.PropTypes.func.isRequired
 };
 
 export default LeftNavComponent;

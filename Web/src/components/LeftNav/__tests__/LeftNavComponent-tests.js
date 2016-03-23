@@ -19,11 +19,11 @@ describe('LeftNavComponent', () => {
         console.error = jest.genMockFunction();
         
         const shallowRenderer = TestUtils.createRenderer();
-        shallowRenderer.render(React.createElement(LeftNavComponent, {open: ""}));
+        shallowRenderer.render(React.createElement(LeftNavComponent));
         const sut = shallowRenderer.getRenderOutput();
         
-        expect(console.error).toBeCalledWith('Warning: Failed propType: Invalid prop `open` of type `string` supplied to `LeftNavComponent`, expected `boolean`.');
-        expect(console.error).toBeCalledWith('Warning: Failed propType: Required prop `onClose` was not specified in `LeftNavComponent`.');
+        expect(console.error).toBeCalledWith('Warning: Failed propType: Required prop `isOpen` was not specified in `LeftNavComponent`.');
+        expect(console.error).toBeCalledWith('Warning: Failed propType: Required prop `close` was not specified in `LeftNavComponent`.');
         
         console.error = error;
     });
@@ -33,28 +33,33 @@ describe('LeftNavComponent', () => {
         it('open is true if {open: true} passed in props', () => {
             
             const shallowRenderer = TestUtils.createRenderer();
-            shallowRenderer.render(React.createElement(LeftNavComponent, {open: true}));
+            shallowRenderer.render(React.createElement(LeftNavComponent, {isOpen: true}));
             const sut = shallowRenderer.getRenderOutput();
+            
             expect(sut.props.open).toBeTruthy();
         })
         
         it('sets open=false from props', () => {
-            
+         
             const shallowRenderer = TestUtils.createRenderer();
-            shallowRenderer.render(React.createElement(LeftNavComponent, {open: false}));
+            shallowRenderer.render(React.createElement(LeftNavComponent, {isOpen: false}));
             const sut = shallowRenderer.getRenderOutput();
+            
             expect(sut.props.open).toBeFalsy();
         })
         
     });
     
-    it('it calls props.onClose when first menu item clicked', () => {
-        
-        const onClose = jest.genMockFunction();
-        const leftNavComponent = TestUtils.renderIntoDocument(<LeftNavComponent open={true} onClose={onClose} />);
-        
-        TestUtils.Simulate.touchTap(ReactDOM.findDOMNode(leftNavComponent).firstChild.firstChild);
-        expect(onClose).toBeCalled();
+    it('it calls close() when first menu item clicked', () => {
+
+        const close = jest.genMockFunction();
+        const shallowRenderer = TestUtils.createRenderer();
+        shallowRenderer.render(React.createElement(LeftNavComponent, {isOpen: true, close: close}));
+        const sut = shallowRenderer.getRenderOutput();
+
+        sut.props.children[0].props.onTouchTap();
+
+        expect(close).toBeCalled();
     })
      
 });
