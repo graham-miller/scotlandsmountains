@@ -4,7 +4,7 @@
     "description": "",
     "main": "app.js",
     "scripts": {
-        "test": "jest",
+        "test": "jest --watch",
         "debug": "node ./node_modules/webpack/bin/webpack --colors --progress --watch",
         "build": "node ./node_modules/webpack/bin/webpack --colors --progress",
         "start": "node server.js",
@@ -15,7 +15,8 @@
         "unmockedModulePathPatterns": [
             "<rootDir>/node_modules/react",
             "<rootDir>/node_modules/react-dom",
-            "<rootDir>/node_modules/react-addons-test-utils"
+            "<rootDir>/node_modules/react-addons-test-utils",
+            "<rootDir>/node_modules/material-ui"
         ]
     },
     "author": "Graham Miller",
