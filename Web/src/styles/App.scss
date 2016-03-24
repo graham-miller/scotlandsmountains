@@ -30,7 +30,7 @@ html, body, #app-container, #app-component, #map-container, #map-component, #map
         top: -$height/2;
         margin-left: -$height/2;
         left: 50%;
-        background-color: $dark-grey;
+        background-color: rgba($dark-grey, .8);
         border-top-left-radius: $height/2; 
         border-top-right-radius: $height/2; 
     }
