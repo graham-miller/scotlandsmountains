@@ -1,23 +1,36 @@
 'use strict';
 
 import React from 'react';
+import { Link } from 'react-router'
+import { hashHistory } from 'react-router'
 
 import LeftNav from 'material-ui/lib/left-nav';
 import MenuItem from 'material-ui/lib/menus/menu-item';
 import RaisedButton from 'material-ui/lib/raised-button';
 
-import NavigationClose from 'material-ui/lib/svg-icons/navigation/close';
+import NavigationArrowBack from 'material-ui/lib/svg-icons/navigation/arrow-back';
 
 class LeftNavComponent extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.handleSelect = this.handleSelect.bind(this);
+    }
+    
+    handleSelect(url) {
+        this.props.close();
+        if(url !== undefined) {
+            hashHistory.push(url);
+        }
+    }
 
     render() {
         return (
             <LeftNav open={this.props.isOpen}>
-                <MenuItem onTouchTap={this.props.close} style={{ padding: '12px 0 4px 6px' }} >
-                    <NavigationClose />
+                <MenuItem onTouchTap={() => {this.handleSelect()}} style={{ padding: '12px 0 4px 6px' }} >
+                    <NavigationArrowBack />
                 </MenuItem>
-                <MenuItem>Menu Item 1</MenuItem>
-                <MenuItem>Menu Item 2</MenuItem>
+                <MenuItem onTouchTap={() => {this.handleSelect('/about')}}>About</MenuItem>
             </LeftNav>
         );
     }

@@ -1,7 +1,10 @@
 $app-bar-height: 64px;
 $tool-bar-height: 56px;
 $light-grey: #e8e8e8;
-$dark-grey: #606060;
+$mid-grey: #606060;
+$dark-grey: #222222;
+
+@mixin prevent-margin-collapse() { padding-top: 1px; margin-top: -1px; }
 
 * { font-family: 'Roboto', sans-serif; }
 
@@ -9,12 +12,19 @@ html, body, #app-container, #app-component, #map-container, #map-component, #map
 
 #app-component { position: relative; padding-top: $app-bar-height; box-sizing: border-box; }
 
-#map-container { position: relative; }
+#map-container { position: relative; color: $dark-grey;}
 
-#content-container { min-height: 100%; }
+#content-container {
+    position: static;
+    color: $dark-grey;
+    min-height: 100%;
+    @include prevent-margin-collapse;
+    .content {
+        padding: 0 1em;
+    }
+}
 
 #map-control {
-    position: absolute; top: 0; width: 100%;
     .search-results {
         ul { list-style-type: none; margin: 0; padding: 0;}
         margin: 0;
@@ -24,7 +34,7 @@ html, body, #app-container, #app-component, #map-container, #map-component, #map
 }
 
 .scrollable {
-    border: $dark-grey 1px solid;
+    border: $mid-grey 1px solid;
     padding: 0.5em;
     height: 200px;
     overflow-x: hidden;
@@ -33,6 +43,8 @@ html, body, #app-container, #app-component, #map-container, #map-component, #map
 
 #footer-component {
     $height: 50px;
+    
+    color: $light-grey;
     position: relative;
     .handle {
         cursor: pointer;
@@ -46,11 +58,11 @@ html, body, #app-container, #app-component, #map-container, #map-component, #map
         top: -$height/2;
         margin-left: -$height/2;
         left: 50%;
-        background-color: rgba($dark-grey, .8);
+        background-color: rgba($mid-grey, .8);
         border-top-left-radius: $height/2; 
         border-top-right-radius: $height/2; 
     }
-    .content { background-color: $dark-grey; color: $light-grey; font-size: 0.8em; padding: 1em;
+    .content { background-color: $mid-grey; font-size: 0.8em; padding: 1em;
         .legal { text-align: center; padding-top: 5em;
             a:link, a:visited { color: $light-grey; text-decoration: none; }
             a:hover, a:active { color: $light-grey; text-decoration: underline; }

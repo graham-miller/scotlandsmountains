@@ -29,7 +29,9 @@ class App extends React.Component {
                     <MapComponent />
                 </div>
                 <div id="content-container" style={{display: contentDisplay}}>
-                    {this.props.children}
+                    <div className="content">
+                        {this.props.children}
+                    </div>
                 </div>
                 <FooterComponent />
             </div>
