@@ -30,8 +30,8 @@ module.exports = {
                 loader: 'react-hot!style-loader!css-loader',
             },
             {
-                test: /\.scss$/,
-                loaders: ["react-hot", "style", "css", "sass"],
+                test: /\.less$/,
+                loader: "style-loader!css-loader!less-loader",    
                 include: [path.resolve(__dirname, 'src')]
             },
             {
@@ -53,8 +53,8 @@ module.exports = {
             template: './src/index.html',
             inject: 'body',
         }),
-        new WebpackNotifierPlugin(),
-        new webpack.optimize.UglifyJsPlugin(),
-        new webpack.optimize.OccurenceOrderPlugin()
+        new WebpackNotifierPlugin()//,
+        //new webpack.optimize.UglifyJsPlugin(),
+        //new webpack.optimize.OccurenceOrderPlugin()
     ]
 };

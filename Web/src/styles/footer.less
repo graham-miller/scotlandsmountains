@@ -1,0 +1,31 @@
+@import "./variables.less";
+
+#footer-component {
+    @height: 50px;
+    
+    color: @light-grey;
+    position: relative;
+    z-index: 2; /*ensure we are over map*/
+    .handle {
+        cursor: pointer;
+        padding-top: 2px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+        height: @height;
+        width: @height;
+        top: -@height/2;
+        margin-left: -@height/2;
+        left: 50%;
+        background-color: fade(@mid-grey, 80%);
+        border-top-left-radius: @height/2; 
+        border-top-right-radius: @height/2;
+    }
+    .content { background-color: @mid-grey; font-size: 0.8em; padding: 1em;
+        .legal { text-align: center; padding-top: 5em;
+            a:link, a:visited { color: @light-grey; text-decoration: none; }
+            a:hover, a:active { color: @light-grey; text-decoration: underline; }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+@import "./variables.less";
+
+#map-container-outer, #map-container-inner, #map-component, #map { height: 100%; width: 100%; }
+#map-container-outer { position: absolute; top: 0; }
+#map-container-inner { position: relative; z-index: 1;  /*ensure we are under footer*/ }
+
+#map-control {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    .search-results {
+        ul { list-style-type: none; margin: 0; padding: 0;}
+        margin: 0;
+        padding: 0 12px 12px 12px;
+        background-color: @light-grey;
+    }
+}
+
+.scrollable {
+    border: @mid-grey 1px solid;
+    padding: 0.5em;
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}

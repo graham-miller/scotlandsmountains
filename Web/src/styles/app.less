@@ -1,0 +1,10 @@
+@import "./variables.less";
+
+* { font-family: 'Roboto', sans-serif; }
+
+body { background-color: @light-grey; }
+
+html, body, #app-container, #app-component, #below-app-bar-outer, #below-app-bar-inner { height: 100%; width: 100%; }
+#app-component { position: relative; }
+#below-app-bar-outer { position: absolute; top: 0; box-sizing: border-box; padding-top: @app-bar-height; }
+#below-app-bar-inner { position: relative; }
