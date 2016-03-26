@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import ToolBarComponent from './ToolBarComponent';
 import SearchBarComponent from './SearchBarComponent';
 import buildMap from './MapFactory';
+import { hashHistory } from 'react-router';
 
 const center = [57.5, -4.6];
 const zoom = 7;
@@ -28,9 +29,17 @@ class MapComponent extends React.Component {
 
     componentDidMount() {
         this.map = buildMap(ReactDOM.findDOMNode(this.refs.map), center, zoom);
+        
+        this.map.on('moveend zoomend', (e) => {
+            const center = this.map.getCenter();
+            const location = `[${center.lat},${center.lng}],${this.map.getZoom()}`;
+            hashHistory.push({search: '?display=map&location=' + location });
+        });
+        
     }
 
     componentWillUnmount() {
+        this.map.off('moveend zoomend');
         this.map = null;
     }
 

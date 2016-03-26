@@ -41,7 +41,7 @@ class AppBarComponent extends React.Component {
                             <NavigationMenu />
                         </IconButton>
                     }
-                    title={<span>Scotland&apos; s Mountains</span>}
+                    title={<span>Scotland&apos;s Mountains</span>}
                     iconElementRight={<AccountComponent />} >
                 </AppBar>
                 <LeftNavComponent
