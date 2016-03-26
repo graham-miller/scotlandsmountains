@@ -18,6 +18,10 @@ class FooterComponent extends React.Component {
         $(window).on('DOMContentLoaded load resize scroll', this.updateHandle);
     }
 
+    componentWillUnmount() {
+        $(window).off('DOMContentLoaded load resize scroll', this.updateHandle);
+    }
+
     componentDidMount() {
         this.updateHandle();
     }
@@ -51,7 +55,7 @@ class FooterComponent extends React.Component {
          
         return (
             <div id="footer-component">
-                <div className="handle" onClick={onClick}>{icon}</div>
+                {this.props.showHandle ? <div className="handle" onClick={onClick}>{icon}</div> : null}
                 <div className="content">
                     <h2>Scotland's Mountains</h2>
                     <div className="legal">

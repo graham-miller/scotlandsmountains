@@ -8,23 +8,34 @@ $dark-grey: #222222;
 
 * { font-family: 'Roboto', sans-serif; }
 
-html, body, #app-container, #app-component, #map-container, #map-component, #map { height: 100%; background-color: $light-grey; }
+body { background-color: $light-grey; }
 
-#app-component { position: relative; padding-top: $app-bar-height; box-sizing: border-box; }
+html, body,
+#app-container, #app-component,
+#below-app-bar-outer, #below-app-bar-inner,
+#map-container-outer, #map-container-inner, #map-component, #map { height: 100%; width: 100%; }
 
-#map-container { position: relative; color: $dark-grey;}
+#content-container-outer, #content-container-inner { min-height: 100%; width: 100%; }
 
-#content-container {
-    position: static;
-    color: $dark-grey;
-    min-height: 100%;
-    @include prevent-margin-collapse;
-    .content {
-        padding: 0 1em;
-    }
-}
+#app-component { position: relative; }
+
+#below-app-bar-outer { position: absolute; top: 0; box-sizing: border-box; padding-top: $app-bar-height; }
+
+#below-app-bar-inner { position: relative; }
+
+#map-container-outer, #content-container-outer { position: absolute; top: 0; }
+#map-container-inner, #content-container-inner { position: relative; }
+
+#map-container-outer { z-index: 1; }
+#content-container-outer.hidden { display: none; }
+#content-container-outer.visible { display: block; z-index: 2; }
+#content-container-outer { background-color: $light-grey; }
+#content-container-inner { padding: 0 1em 1em 1em; box-sizing: border-box; }
 
 #map-control {
+    position: absolute;
+    top: 0;
+    width: 100%;
     .search-results {
         ul { list-style-type: none; margin: 0; padding: 0;}
         margin: 0;
@@ -46,6 +57,7 @@ html, body, #app-container, #app-component, #map-container, #map-component, #map
     
     color: $light-grey;
     position: relative;
+    z-index: 3;
     .handle {
         cursor: pointer;
         padding-top: 2px;

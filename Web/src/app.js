@@ -19,21 +19,28 @@ injectTapEventPlugin();
 class App extends React.Component {
 
     render() {
-        var mapDisplay = this.props.children == null ? 'block' : 'none';
-        var contentDisplay = this.props.children == null ? 'none' : 'block';
+        var mapIsActive = this.props.children == null;
+        var contentClassName = this.props.children == null ? 'hidden' : 'visible';
 
         return (
             <div id="app-component">
                 <AppBarComponent />
-                <div id="map-container" style={{display: mapDisplay}}>
-                    <MapComponent />
-                </div>
-                <div id="content-container" style={{display: contentDisplay}}>
-                    <div className="content">
-                        {this.props.children}
+                <div id="below-app-bar-outer">
+                    <div id="below-app-bar-inner">
+                        <div id="map-container-outer">
+                            <div id="map-container-inner">
+                                <MapComponent />
+                            </div>
+                            {mapIsActive ? <FooterComponent showHandle={true} /> : null }
+                        </div>
+                        <div id="content-container-outer" className={mapIsActive ? 'active' : 'visible'}>
+                            <div id="content-container-inner">
+                                {this.props.children}
+                            </div>
+                            {mapIsActive ? null : <FooterComponent showHandle={false} /> }
+                        </div>
                     </div>
-                </div>
-                <FooterComponent />
+                </div>                
             </div>
         );
     }
