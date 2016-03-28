@@ -5,7 +5,8 @@ import 'normalize.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router'
+import { Router, Route, IndexRoute, Link } from 'react-router'
+import { routerHistory } from './scripts/history.js';
 
 import AppBarComponent from './components/AppBar/AppBarComponent.js'
 import MapComponent from './components/Map/MapComponent.js'
@@ -47,7 +48,7 @@ class App extends React.Component {
 }
 
 ReactDOM.render((
-    <Router history={hashHistory}>
+    <Router history={routerHistory}>
         <Route path="/" component={App}>
             <IndexRoute component={null} />
             <Route path="about" component={AboutComponent} />

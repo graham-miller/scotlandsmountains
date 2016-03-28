@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link } from 'react-router'
-import { hashHistory } from 'react-router'
+import { history } from '../../scripts/history.js'
 
 import LeftNav from 'material-ui/lib/left-nav';
 import MenuItem from 'material-ui/lib/menus/menu-item';
@@ -20,7 +20,7 @@ class LeftNavComponent extends React.Component {
     handleSelect(url) {
         this.props.close();
         if(url !== undefined) {
-            hashHistory.push(url);
+            history.push(url);
         }
     }
 
