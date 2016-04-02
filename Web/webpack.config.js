@@ -13,7 +13,7 @@ module.exports = {
         ]
     },
     output: {
-        path: path.resolve(__dirname, 'wwwroot'),
+        path: path.resolve(__dirname, 'build'),
         publicPath: '/',
         filename: 'assets/bundle.js'
     },
