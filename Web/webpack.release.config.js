@@ -6,11 +6,7 @@ var WebpackNotifierPlugin = require('webpack-notifier');
 
 module.exports = {
     entry: {
-        app: [
-            'webpack-dev-server/client?http://0.0.0.0:3000',
-            'webpack/hot/only-dev-server',
-            './src/app.js'
-        ]
+        app: [ './src/app.js' ]
     },
     output: {
         path: path.resolve(__dirname, 'build'),
@@ -21,13 +17,13 @@ module.exports = {
         loaders: [
             {
                 test: /\.js$/,
-                loader: 'react-hot!babel-loader?' + JSON.stringify({ presets: ['es2015', 'react'] }),
+                loader: 'babel-loader?' + JSON.stringify({ presets: ['es2015', 'react'] }),
                 include: [path.resolve(__dirname, 'src')],
                 exclude: /__test__/
             },
             {
                 test: /\.css$/,
-                loader: 'react-hot!style-loader!css-loader',
+                loader: 'style-loader!css-loader',
             },
             {
                 test: /\.less$/,
@@ -36,7 +32,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg)$/,
-                loader: 'react-hot!url-loader?limit=8192',
+                loader: 'url-loader?limit=8192',
                 include: [path.resolve(__dirname, 'src')]
             },
             {
@@ -46,15 +42,14 @@ module.exports = {
             }
         ]
     },
-    devtool: 'source-map',
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             inject: 'body',
         }),
-        new WebpackNotifierPlugin()//,
-        //new webpack.optimize.UglifyJsPlugin(),
-        //new webpack.optimize.OccurenceOrderPlugin()
+        new WebpackNotifierPlugin(),
+        new webpack.optimize.UglifyJsPlugin(),
+        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.DefinePlugin({ DEBUG: false })
     ]
 };

@@ -67,7 +67,7 @@ const buildMap = function(htmlElement, center, zoom) {
 
     map.setBaseLayer()
 
-    $.get('/api/classification/munro/mountains', function(data) {
+    $.get(config.apiBaseUrl + '/api/classification/munro/mountains', function(data) {
         data.forEach(function(mountain) {
             L.marker(mountain.latLong)
                 .addTo(map)

@@ -4,6 +4,7 @@ import React from 'react';
 
 import $ from 'jquery';
 
+import config from '../../config.js';
 import Toolbar from 'material-ui/lib/toolbar/toolbar';
 import ToolbarGroup from 'material-ui/lib/toolbar/toolbar-group';
 import IconButton from 'material-ui/lib/icon-button';
@@ -30,7 +31,7 @@ class SearchBarComponent extends React.Component {
             clearTimeout(this.state.timer);
             this.setState({
                 timer: setTimeout(() => {
-                    $.get('/api/search/' + encodeURIComponent(term), (data) => {
+                    $.get(config.apiBaseUrl + '/api/search/' + encodeURIComponent(term), (data) => {
                         this.setState({results: data});
                     });
                 }, 250)    
