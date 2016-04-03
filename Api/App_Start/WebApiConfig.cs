@@ -9,7 +9,7 @@ namespace ScotlandsMountains.Api
         {
             config.MapHttpAttributeRoutes();
 
-            var cors = new EnableCorsAttribute("https://scotlandsmountains.net", "*", "*");
+            var cors = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors(cors);
         }
     }
