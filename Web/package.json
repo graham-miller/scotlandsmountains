@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "jest --watch",
-    "debug": "node ./node_modules/webpack/bin/webpack --config=./webpack.debug.config.js --colors --progress --watch",
-    "build": "node ./node_modules/webpack/bin/webpack --config=./webpack.release.config.js --colors --progress",
+    "debug": "node ./node_modules/webpack/bin/webpack --config=./webpack.dev.config.js --colors --progress --watch",
+    "build": "node ./node_modules/webpack/bin/webpack --config=./webpack.prod.config.js --colors --progress",
     "start": "node server.js",
     "encrypt": "encrypt ./src/config.js ./src/config.js.cast5",
     "decrypt": "decrypt ./src/config.js.cast5 ./src/config.js"

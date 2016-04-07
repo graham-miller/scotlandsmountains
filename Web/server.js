@@ -13,7 +13,7 @@ server.listen(3001);
 // Webpack dev server
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
-var config = require('./webpack.debug.config');
+var config = require('./webpack.dev.config');
 var open = require('open');
 
 new WebpackDevServer(webpack(config), {

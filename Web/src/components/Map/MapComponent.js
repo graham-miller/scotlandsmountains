@@ -46,6 +46,7 @@ class MapComponent extends React.Component {
             
         this.map = buildMap(ReactDOM.findDOMNode(this.refs.map), center, zoom);
         this.map.on('moveend zoomend', this.updateQueryString);
+        
         history.listen((location) => {
             if(programaticallyUpdatedHash) {
                 programaticallyUpdatedHash = false;
