@@ -4,7 +4,7 @@ import React from 'react';
 
 import $ from 'jquery';
 
-import config from '../../config.js';
+import config from '../config';
 import Toolbar from 'material-ui/lib/toolbar/toolbar';
 import ToolbarGroup from 'material-ui/lib/toolbar/toolbar-group';
 import IconButton from 'material-ui/lib/icon-button';

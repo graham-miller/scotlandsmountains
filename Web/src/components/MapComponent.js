@@ -5,8 +5,8 @@ import ReactDOM from 'react-dom';
 
 import ToolBarComponent from './ToolBarComponent';
 import SearchBarComponent from './SearchBarComponent';
-import buildMap from './MapFactory';
-import { history } from '../../scripts/history.js';
+import buildMap from '../scripts/map/MapFactory';
+import { history } from '../scripts/history';
 import { parse, stringify } from 'query-string';
 
 const defaultCenter = [57.353201,-4.011214];

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link } from 'react-router'
-import { history } from '../../scripts/history.js'
+import { history } from '../scripts/history'
 
 import LeftNav from 'material-ui/lib/left-nav';
 import MenuItem from 'material-ui/lib/menus/menu-item';

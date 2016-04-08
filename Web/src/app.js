@@ -6,50 +6,21 @@ import 'normalize.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, Link } from 'react-router'
-import { routerHistory } from './scripts/history.js';
+import { routerHistory } from './scripts/history';
 
-import AppBarComponent from './components/AppBar/AppBarComponent.js'
-import MapComponent from './components/Map/MapComponent.js'
-import AboutComponent from './components/About/AboutComponent.js'
-import FooterComponent from './components/Footer/FooterComponent.js'
+import AppComponent from './components/AppComponent';
+import AppBarComponent from './components/AppBarComponent';
+import MapComponent from './components/MapComponent';
+import AboutComponent from './components/AboutComponent';
+import FooterComponent from './components/FooterComponent';
 
 // Needed for onTouchTap, can be removed when react 1.0 is released https://github.com/zilverline/react-tap-event-plugin
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
-class App extends React.Component {
-
-    render() {
-        var mapIsActive = this.props.children == null;
-        var contentClassName = this.props.children == null ? 'hidden' : 'visible';
-
-        return (
-            <div id="app-component">
-                <AppBarComponent />
-                <div id="below-app-bar-outer">
-                    <div id="below-app-bar-inner">
-                        <div id="map-container-outer">
-                            <div id="map-container-inner">
-                                <MapComponent />
-                            </div>
-                            {mapIsActive ? <FooterComponent showHandle={true} /> : null }
-                        </div>
-                        <div id="content-container-outer" className={mapIsActive ? 'active' : 'visible'}>
-                            <div id="content-container-inner">
-                                {this.props.children}
-                            </div>
-                            {mapIsActive ? null : <FooterComponent showHandle={false} /> }
-                        </div>
-                    </div>
-                </div>                
-            </div>
-        );
-    }
-}
-
 ReactDOM.render((
     <Router history={routerHistory}>
-        <Route path="/" component={App}>
+        <Route path="/" component={AppComponent}>
             <IndexRoute component={null} />
             <Route path="about" component={AboutComponent} />
         </Route>
