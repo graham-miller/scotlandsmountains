@@ -15,7 +15,7 @@ class BingLayer extends L.TileLayer {
         this._bingMapsKey = options.bingMapsKey;
     }
 
-    getTileUrl (tilePoint) {
+    getTileUrl(tilePoint) {
         this._adjustTilePoint(tilePoint);
         return L.Util.template(this._url, {
             s: this._getSubdomain(tilePoint),
@@ -24,7 +24,7 @@ class BingLayer extends L.TileLayer {
         });
     }
 
-    _quadKey (x, y, z) {
+    _quadKey(x, y, z) {
         var quadKey = [];
         for (var i = z; i > 0; i--) {
             var digit = '0';
@@ -41,6 +41,16 @@ class BingLayer extends L.TileLayer {
         return quadKey.join('');
     }
 }
+
+/*
+    TODO retrieve layer meta data from Bing maps API, see:
+     -  https://msdn.microsoft.com/en-us/library/ff701716.aspx
+     -  https://msdn.microsoft.com/en-us/library/ff701712.aspx
+    Meta data urls:
+     -  http://dev.virtualearth.net/REST/v1/Imagery/Metadata/OrdnanceSurvey?o=json&incl=ImageryProviders&key=AtpjQPLgDNxkSUWxAwtDKaJNRE6oRj1bw6kxYpvAy-NCvNGFQdJxveEZ_CQOBEVU
+     -  http://dev.virtualearth.net/REST/v1/Imagery/Metadata/Aerial?o=json&incl=ImageryProviders&key=AtpjQPLgDNxkSUWxAwtDKaJNRE6oRj1bw6kxYpvAy-NCvNGFQdJxveEZ_CQOBEVU
+     -  http://dev.virtualearth.net/REST/v1/Imagery/Metadata/Road?o=json&incl=ImageryProviders&key=AtpjQPLgDNxkSUWxAwtDKaJNRE6oRj1bw6kxYpvAy-NCvNGFQdJxveEZ_CQOBEVU
+*/
 
 class RoadLayer extends BingLayer {
     constructor(bingMapsKey) {

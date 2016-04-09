@@ -6,20 +6,12 @@ import ReactDOM from 'react-dom';
 import ToolBarComponent from './ToolBarComponent';
 import SearchBarComponent from './SearchBarComponent';
 import buildMap from '../scripts/map/Factory';
-import '../scripts/map/Hash';
-
-const defaultCenter = [57.353,-4.011];
-const defaultZoom = 7;
-let programaticallyUpdatedHash = false;
 
 class MapComponent extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            showSearch: false,
-            view: 'Map'
-        };
+        this.state = { showSearch: false };
 
         this.toggleSearch = this.toggleSearch.bind(this)
         this.zoomIn = this.zoomIn.bind(this)
@@ -29,8 +21,7 @@ class MapComponent extends React.Component {
     }
 
     componentDidMount() {
-        this.map = buildMap(ReactDOM.findDOMNode(this.refs.map), defaultCenter, defaultZoom);
-        this.hash = new L.Hash(this.map);
+        this.map = buildMap(ReactDOM.findDOMNode(this.refs.map));
     }
 
     componentWillUnmount() {
@@ -43,7 +34,7 @@ class MapComponent extends React.Component {
 
     zoomOut() { this.map.zoomOut(); }
 
-    reset() { this.map.reset(defaultCenter, defaultZoom); }
+    reset() { this.map.reset(); }
 
     setBaseLayer(layer) { this.map.setBaseLayer(layer); }
 
