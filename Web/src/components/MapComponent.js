@@ -5,11 +5,10 @@ import ReactDOM from 'react-dom';
 
 import ToolBarComponent from './ToolBarComponent';
 import SearchBarComponent from './SearchBarComponent';
-import buildMap from '../scripts/map/MapFactory';
-import { history } from '../scripts/history';
-import { parse, stringify } from 'query-string';
+import buildMap from '../scripts/map/Factory';
+import '../scripts/map/Hash';
 
-const defaultCenter = [57.353201,-4.011214];
+const defaultCenter = [57.353,-4.011];
 const defaultZoom = 7;
 let programaticallyUpdatedHash = false;
 
@@ -27,55 +26,15 @@ class MapComponent extends React.Component {
         this.zoomOut = this.zoomOut.bind(this)
         this.reset = this.reset.bind(this)
         this.setBaseLayer = this.setBaseLayer.bind(this)
-        this.updateQueryString = this.updateQueryString.bind(this)
     }
 
     componentDidMount() {
-
-        let center = defaultCenter;
-        let zoom = defaultZoom;
-
-        if (window.location.href.indexOf('?') > -1) {
-            let queryString = window.location.href.substr(window.location.href.indexOf('?'));
-            var query = parse(queryString);
-            if(query.hasOwnProperty('map') && query.hasOwnProperty('lat') && query.hasOwnProperty('lng') && query.hasOwnProperty('zoom')){
-                center = [query.lat, query.lng];
-                zoom = query.zoom;
-            }
-        }        
-            
-        this.map = buildMap(ReactDOM.findDOMNode(this.refs.map), center, zoom);
-        this.map.on('moveend zoomend', this.updateQueryString);
-        
-        history.listen((location) => {
-            if(programaticallyUpdatedHash) {
-                programaticallyUpdatedHash = false;
-            } else {
-                let query = location.query;
-                if(query.hasOwnProperty('map') && query.hasOwnProperty('lat') && query.hasOwnProperty('lng') && query.hasOwnProperty('zoom')){
-                    this.map.setView([query.lat, query.lng], query.zoom);
-                }
-            }
-        })
-        this.updateQueryString();
+        this.map = buildMap(ReactDOM.findDOMNode(this.refs.map), defaultCenter, defaultZoom);
+        this.hash = new L.Hash(this.map);
     }
 
     componentWillUnmount() {
-        this.map.off('moveend zoomend');
         this.map = null;
-    }
-
-    updateQueryString() {
-        const center = this.map.getCenter();
-        const lat = Math.round(center.lat * 1000000) / 1000000
-        const lng = Math.round(center.lng * 1000000) / 1000000
-        programaticallyUpdatedHash = true;
-        history.push({ query: {
-            map: 'road',
-            lat: lat,
-            lng: lng,
-            zoom: this.map.getZoom()
-        }});
     }
 
     toggleSearch() { this.setState({ showSearch: !this.state.showSearch }); }

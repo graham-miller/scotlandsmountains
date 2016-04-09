@@ -44,6 +44,10 @@ const buildMap = function(htmlElement, center, zoom) {
         map.setView(center, zoom);
     }
     
+    map.getBaseLayer = function () {
+        return currentLayer;
+    }
+
     map.setBaseLayer = function (layer) {
         currentLayer = layer == null ? currentLayer : layer;
         if (currentLayer === 'map') {
