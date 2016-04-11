@@ -1,7 +1,7 @@
 'use strict';
 
 import './styles/index.less';
-import 'normalize.css';
+import 'normalize-css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -14,8 +14,11 @@ import MapComponent from './components/MapComponent';
 import AboutComponent from './components/AboutComponent';
 import FooterComponent from './components/FooterComponent';
 
-// Needed for onTouchTap, can be removed when react 1.0 is released https://github.com/zilverline/react-tap-event-plugin
 import injectTapEventPlugin from 'react-tap-event-plugin';
+
+// Needed by material-ui for onTouchTap event.
+// Can go away when react 1.0 release, check this repo:
+// https://github.com/zilverline/react-tap-event-plugin
 injectTapEventPlugin();
 
 ReactDOM.render((

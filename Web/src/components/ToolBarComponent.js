@@ -21,7 +21,7 @@ class ToolBarComponent extends React.Component {
 
     render() {
         return (
-            <Toolbar style={{ height: '46' }}>
+            <Toolbar style={{ height: '46px' }}>
                 <ToolbarGroup firstChild={true} style={{ float: 'none' }}>
 
                     <IconButton onTouchTap={this.props.toggleSearch}>

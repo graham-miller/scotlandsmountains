@@ -34,7 +34,7 @@ class AppBarComponent extends React.Component {
             <div>
                 <AppBar
                     id="app-bar-component"
-                    style={{ position: 'fixed', top: '0' }}
+                    style={{ position: 'fixed', top: '0px' }}
                     iconElementLeft={
                         <IconButton
                             onTouchTap={this.openLeftNav}>
