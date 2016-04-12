@@ -9,7 +9,7 @@ import setMountainLayers from './MountainLayers';
 
 require.context('../../../node_modules/leaflet/dist/images/', true, /\.(png)$/);
 
-const defaultCenter = [57.353,-4.011];
+const defaultCenter = [56.659, -4.011];
 const defaultZoom = 7;
 
 const buildMap = function(htmlElement) {

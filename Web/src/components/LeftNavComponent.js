@@ -25,11 +25,21 @@ class LeftNavComponent extends React.Component {
     }
 
     render() {
+        
+        let mapLink = null;
+        
+        if(!this.props.mapIsActive){
+            mapLink = <MenuItem onTouchTap={() => {this.handleSelect('')}}>Map</MenuItem>
+        }
+        
         return (
             <LeftNav open={this.props.isOpen}>
                 <MenuItem onTouchTap={() => {this.handleSelect()}} style={{ padding: '12px 0 4px 6px' }} >
                     <NavigationArrowBack />
                 </MenuItem>
+                
+                {mapLink}
+                
                 <MenuItem onTouchTap={() => {this.handleSelect('/about')}}>About</MenuItem>
             </LeftNav>
         );

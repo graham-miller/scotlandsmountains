@@ -45,6 +45,7 @@ class AppBarComponent extends React.Component {
                     iconElementRight={<AccountComponent />} >
                 </AppBar>
                 <LeftNavComponent
+                    mapIsActive={this.props.mapIsActive}
                     isOpen={this.state.leftNavIsOpen}
                     close={this.closeLeftNav} />
             </div>
