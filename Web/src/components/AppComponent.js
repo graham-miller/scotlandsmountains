@@ -22,7 +22,7 @@ class AppComponent extends React.Component {
                         <div id="below-app-bar-inner">
                             <div id="map-container-outer">
                                 <div id="map-container-inner">
-                                    <MapComponent />
+                                    <MapComponent isActive={mapIsActive} />
                                 </div>
                                 {mapIsActive ? <FooterComponent showHandle={true} /> : null }
                             </div>

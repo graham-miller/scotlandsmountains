@@ -19,8 +19,8 @@ class GettyComponent extends React.Component {
         };
 
         var style2 = {
-            padding: '0',
-            margin: '0',
+            padding: '0px',
+            margin: '0px',
             textAlign: 'left'
         };
 
@@ -35,7 +35,7 @@ class GettyComponent extends React.Component {
         var style4 = {
             overflow: 'hidden',
             position: 'relative',
-            height: '0',
+            height: '0px',
             padding: padding + '% 0 0 0',
             width: '100%',
         };
@@ -43,16 +43,16 @@ class GettyComponent extends React.Component {
         var style5 = {
             display: 'inline-block',
             position: 'absolute',
-            top: '0',
-            left: '0',
+            top: '0px',
+            left: '0px',
             width: '100%',
             height: '100%',
-            margin: '0',
+            margin: '0px',
             border: 'none'
         };
 
         var style6 = {
-            margin: '0'
+            margin: '0px'
         };
 
         return (

@@ -56,7 +56,12 @@
 
 		init: function(map) {
 			this.map = map;
-
+            
+            this.map.updateHash = function() {
+                var hash = this.formatHash(this.map);
+                location.replace(hash);
+            }.bind(this);
+            
 			// reset the hash
 			this.lastHash = null;
 			this.onHashChange();

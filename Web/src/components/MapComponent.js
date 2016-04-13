@@ -18,12 +18,20 @@ class MapComponent extends React.Component {
         this.zoomOut = this.zoomOut.bind(this)
         this.reset = this.reset.bind(this)
         this.setBaseLayer = this.setBaseLayer.bind(this)
+        this.shouldComponentUpdate = this.shouldComponentUpdate.bind(this)
     }
 
     componentDidMount() {
         this.map = buildMap(ReactDOM.findDOMNode(this.refs.map));
     }
-
+    
+    shouldComponentUpdate (nextProps, nextState) {
+        if (nextProps.isActive) {
+            this.map.updateHash();
+        }
+        return false;
+    }
+    
     componentWillUnmount() {
         this.map = null;
     }

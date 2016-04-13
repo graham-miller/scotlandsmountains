@@ -8,7 +8,7 @@ import LeftNav from 'material-ui/lib/left-nav';
 import MenuItem from 'material-ui/lib/menus/menu-item';
 import RaisedButton from 'material-ui/lib/raised-button';
 
-import NavigationArrowBack from 'material-ui/lib/svg-icons/navigation/arrow-back';
+import NavigationClose from 'material-ui/lib/svg-icons/navigation/close';
 
 class LeftNavComponent extends React.Component {
 
@@ -29,13 +29,13 @@ class LeftNavComponent extends React.Component {
         let mapLink = null;
         
         if(!this.props.mapIsActive){
-            mapLink = <MenuItem onTouchTap={() => {this.handleSelect('')}}>Map</MenuItem>
+            mapLink = <MenuItem onTouchTap={() => {this.handleSelect('/')}}>Map</MenuItem>
         }
         
         return (
             <LeftNav open={this.props.isOpen}>
-                <MenuItem onTouchTap={() => {this.handleSelect()}} style={{ padding: '12px 0 4px 6px' }} >
-                    <NavigationArrowBack />
+                <MenuItem onTouchTap={() => {this.handleSelect()}} style={{ padding: '20px 0 20px 4px' }} >
+                    <NavigationClose />
                 </MenuItem>
                 
                 {mapLink}
