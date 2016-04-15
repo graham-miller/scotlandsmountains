@@ -3,6 +3,7 @@
 import React from 'react';
 
 import AppBarComponent from './AppBarComponent';
+import ContainerComponent from './ContainerComponent';
 import MapComponent from './MapComponent';
 import FooterComponent from './FooterComponent';
 import MuiThemeProvider from 'material-ui/lib/MuiThemeProvider';
@@ -20,18 +21,18 @@ class AppComponent extends React.Component {
                     <AppBarComponent mapIsActive={mapIsActive} />
                     <div id="below-app-bar-outer">
                         <div id="below-app-bar-inner">
-                            <div id="map-container-outer">
-                                <div id="map-container-inner">
-                                    <MapComponent isActive={mapIsActive} />
-                                </div>
-                                {mapIsActive ? <FooterComponent showHandle={true} /> : null }
-                            </div>
-                            <div id="content-container-outer" className={mapIsActive ? 'active' : 'visible'}>
-                                <div id="content-container-inner">
-                                    {this.props.children}
-                                </div>
-                                {mapIsActive ? null : <FooterComponent showHandle={false} /> }
-                            </div>
+
+                            <ContainerComponent
+                                outerStyle={{display: mapIsActive ? 'block' : 'none', zIndex: 1, backgroundColor: '#e8e8e8', height: '100%'}}
+                                innerStyle={{height: '100%'}}
+                                content={<MapComponent isActive={mapIsActive} />}
+                                footer={mapIsActive ? <FooterComponent showHandle={true} /> : null } />
+
+                            <ContainerComponent
+                                outerStyle={{display: mapIsActive ? 'none' : 'block', zIndex: 2, backgroundColor: '#e8e8e8', height: '100%', minHeight: '100%'}}
+                                innerStyle={{minHeight: '100%', padding: '0px 1em 1em 1em'}}
+                                content={this.props.children}
+                                footer={mapIsActive ? null : <FooterComponent showHandle={false} />} />
                         </div>
                     </div>          
                 </div>          

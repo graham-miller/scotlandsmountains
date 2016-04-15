@@ -51,8 +51,8 @@ class MapComponent extends React.Component {
         let searchBar = this.state.showSearch ? <SearchBarComponent /> : null;
 
         return (
-            <div id="map-component">
-                <div id="map" ref="map"></div>
+            <div id="map-component" style={{height: '100%'}}>
+                <div id="map" ref="map" style={{height: '100%'}}></div>
                 <div id="map-control">
                     <ToolBarComponent
                         toggleSearch={this.toggleSearch}
