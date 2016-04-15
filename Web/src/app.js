@@ -1,6 +1,6 @@
 'use strict';
 
-import './styles/index.less';
+import './styles/app.less';
 import 'normalize-css';
 
 import React from 'react';

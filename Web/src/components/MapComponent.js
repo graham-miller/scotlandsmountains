@@ -29,7 +29,7 @@ class MapComponent extends React.Component {
         if (nextProps.isActive) {
             this.map.updateHash();
         }
-        return false;
+        return true;
     }
     
     componentWillUnmount() {
