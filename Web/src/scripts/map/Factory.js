@@ -29,7 +29,7 @@ const buildMap = function(htmlElement) {
     setBaseLayers(map);
     setMountainLayers(map);
     
-    var hash = new L.Hash(map);
+    map.hash = new L.Hash(map);
 
     map.reset = function() {
         map.setBaseLayer(map.MAP_VIEW);
