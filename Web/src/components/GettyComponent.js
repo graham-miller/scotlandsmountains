@@ -9,10 +9,7 @@ class GettyComponent extends React.Component {
         var padding = this.props.height / this.props.width * 100;
 
         var style1 = {
-            //backgroundColor: '#fff',
             display: 'inline-block',
-            //fontFamily: '\'Helvetica Neue\',Helvetica,Arial,sans-serif',
-            //color: '#a7a7a7',
             fontSize: '11px',
             width: '100%',
             maxWidth: this.props.width + 'px'
@@ -29,7 +26,7 @@ class GettyComponent extends React.Component {
             textDecoration: 'none',
             fontWeight: 'normal !important',
             border: 'none',
-            display: 'none'//'inline-block'
+            display: 'none'
         };
 
         var style4 = {

@@ -1,7 +1,6 @@
 'use strict';
 
 import React from 'react';
-
 import AppBarComponent from './AppBarComponent';
 import ContainerComponent from './ContainerComponent';
 import MapComponent from './MapComponent';
@@ -12,31 +11,27 @@ import theme from '../scripts/theme';
 class AppComponent extends React.Component {
 
     render() {
-        var mapIsActive = this.props.children == null;
-        var contentClassName = this.props.children == null ? 'hidden' : 'visible';
 
-        return (
-            <MuiThemeProvider muiTheme={theme}>
-                <ContainerComponent
-                    outerStyle={{backgroundColor:'#e8e8e8',height:'100%',paddingTop:'64px'}}
-                    innerStyle={{height:'100%'}}
-                    header={<AppBarComponent mapIsActive={mapIsActive} />}
-                    content={
-                        <div style={{height:'100%'}}>
-                            <ContainerComponent
-                                outerStyle={{display:mapIsActive?'block':'none',zIndex:1,height:'100%'}}
-                                innerStyle={{height:'100%'}}
-                                content={<MapComponent isActive={mapIsActive} />}
-                                footer={mapIsActive ? <FooterComponent showHandle={true} /> : null } />
-                            <ContainerComponent
-                                outerStyle={{display:mapIsActive?'none':'block',zIndex:2,height:'100%',minHeight:'100%'}}
-                                innerStyle={{minHeight:'100%',padding:'0px 1em 1em 1em'}}
-                                content={this.props.children}
-                                footer={mapIsActive ? null : <FooterComponent showHandle={false} />} />
-                        </div>
-                    } />
-            </MuiThemeProvider>
-        );
+        let mapIsActive = this.props.children == null;
+
+        let map = <ContainerComponent
+            outerClassName={'map ' + (mapIsActive ? 'active' : 'inactive')} 
+            innerClassName="map"
+            content={<MapComponent isActive={mapIsActive} />}
+            footer={mapIsActive ? <FooterComponent showHandle={true} /> : null } />
+
+        let content = <ContainerComponent
+            outerClassName={'content ' + (mapIsActive ? 'inactive' : 'active')} 
+            innerClassName="content"
+            content={this.props.children}
+            footer={mapIsActive ? null : <FooterComponent showHandle={false} />} />
+
+        let app = <ContainerComponent
+            outerClassName="app" innerClassName="app"
+            header={<AppBarComponent mapIsActive={mapIsActive} />}
+            content={<div style={{height:'100%'}}>{map}{content}</div>} />
+
+        return (<MuiThemeProvider muiTheme={theme}>{app}</MuiThemeProvider>);
     }
 }
 

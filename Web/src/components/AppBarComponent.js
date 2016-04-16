@@ -1,13 +1,10 @@
 'use strict';
 
 import React from 'react';
-
 import AppBar from 'material-ui/lib/app-bar';
 import IconButton from 'material-ui/lib/icon-button';
-
 import NavigationMenu from 'material-ui/lib/svg-icons/navigation/menu';
 import NavigationClose from 'material-ui/lib/svg-icons/navigation/close';
-
 import AccountComponent from './AccountComponent';
 import LeftNavComponent from './LeftNavComponent';
 
@@ -33,8 +30,7 @@ class AppBarComponent extends React.Component {
         return (
             <div>
                 <AppBar
-                    id="app-bar-component"
-                    style={{ position: 'fixed', top: '0px' }}
+                    className="fixed-to-top"
                     iconElementLeft={
                         <IconButton
                             onTouchTap={this.openLeftNav}>

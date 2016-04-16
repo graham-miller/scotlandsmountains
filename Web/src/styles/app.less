@@ -11,6 +11,36 @@
 body { background-color: @light-grey; }
 html, body, #app-container { height: 100%; width: 100%; }
 
+.fixed-to-top { position: fixed !important; top: 0; }
+
+.container-outer {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    background-color: @light-grey;
+    &.app, &.map, &.content { height: 100%; }
+    &.app { padding-top: @app-bar-height; }
+    &.map { z-index: 1; }
+    &.content { z-index: 2; min-height: 100%; }
+    &.map, &.content {
+        &.active { display: block; }
+        &.inactive { display: none; }        
+    }
+}
+
+.container-inner {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    &.app, &.map { height: 100%; }
+    &.content { min-height: 100%; padding: 0px 1em 1em 1em; }
+}
+
+
+
+
+
 #map-control {
     position: absolute;
     top: 0;

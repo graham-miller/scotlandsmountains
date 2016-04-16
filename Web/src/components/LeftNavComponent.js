@@ -3,11 +3,9 @@
 import React from 'react';
 import { Link } from 'react-router'
 import { history } from '../scripts/history'
-
 import LeftNav from 'material-ui/lib/left-nav';
 import MenuItem from 'material-ui/lib/menus/menu-item';
 import RaisedButton from 'material-ui/lib/raised-button';
-
 import NavigationClose from 'material-ui/lib/svg-icons/navigation/close';
 
 class LeftNavComponent extends React.Component {

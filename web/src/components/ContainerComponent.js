@@ -6,23 +6,10 @@ class ContainerComponent extends React.Component {
 
     render() {
 
-        const baseOuterStyle = {
-            boxSizing: 'border-box',
-            position: 'absolute',
-            width: '100%',
-            top: '0px'
-        }
-        
-        const baseInnerStyle = {
-            boxSizing: 'border-box',
-            position: 'relative',
-            width: '100%'
-        }
-        
         return (
-            <div style={Object.assign(baseOuterStyle, this.props.outerStyle)}>
+            <div className={'container-outer ' + this.props.outerClassName}>
                 { this.props.header }
-                <div style={Object.assign(baseInnerStyle, this.props.innerStyle)}>
+                <div className={'container-inner ' + this.props.innerClassName}>
                 { this.props.content }
                 </div>
                 { this.props.footer }

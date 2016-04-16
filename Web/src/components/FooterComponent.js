@@ -2,7 +2,6 @@
 
 import React from 'react';
 import $ from 'jquery';
-
 import NavigationExpandMore from 'material-ui/lib/svg-icons/navigation/expand-more';
 import NavigationExpandLess from 'material-ui/lib/svg-icons/navigation/expand-less';
 
