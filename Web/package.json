@@ -52,6 +52,7 @@
     "babel-preset-jest": "^10.0.2",
     "babel-preset-react": "^6.5.0",
     "config-leaf": "^0.2.0",
+    "copy-webpack-plugin": "^2.1.1",
     "css-loader": "^0.23.1",
     "es6-promise": "^3.1.2",
     "file-loader": "^0.8.5",

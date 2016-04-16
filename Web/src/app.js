@@ -13,7 +13,6 @@ import AppBarComponent from './components/AppBarComponent';
 import MapComponent from './components/MapComponent';
 import AboutComponent from './components/AboutComponent';
 import FooterComponent from './components/FooterComponent';
-
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 // Needed by material-ui for onTouchTap event.

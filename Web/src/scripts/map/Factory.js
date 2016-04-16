@@ -9,7 +9,7 @@ import setMountainLayers from './MountainLayers';
 
 require.context('../../../node_modules/leaflet/dist/images/', true, /\.(png)$/);
 
-const defaultCenter = [56.659, -4.011];
+const defaultCenter = [57.302, -4.459];
 const defaultZoom = 7;
 
 const buildMap = function(htmlElement) {
@@ -22,7 +22,7 @@ const buildMap = function(htmlElement) {
         zoom: defaultZoom,
         center: defaultCenter,
         zoomControl: false,
-        maxBounds: L.latLngBounds([53.632969, -9.65002], [61.854691, 0.73213])
+        maxBounds: L.latLngBounds([53.633, -9.650], [61.855, 0.732])
     });
     
     map.attributionControl.setPrefix(false);
