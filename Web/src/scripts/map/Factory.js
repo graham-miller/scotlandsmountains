@@ -22,8 +22,9 @@ const buildMap = function(htmlElement) {
         zoom: defaultZoom,
         center: defaultCenter,
         zoomControl: false,
-        maxBounds: L.latLngBounds([54, -10], [62, 2])
+        maxBounds: L.latLngBounds([53.632969, -9.65002], [61.854691, 0.73213])
     });
+    
     map.attributionControl.setPrefix(false);
     
     setBaseLayers(map);
