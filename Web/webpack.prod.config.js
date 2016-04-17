@@ -3,6 +3,7 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var WebpackNotifierPlugin = require('webpack-notifier');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
@@ -10,7 +11,7 @@ module.exports = {
         app: ['./src/app.js']
     },
     output: {
-        path: path.resolve(__dirname, 'build'),
+        path: path.resolve(__dirname, 'dist'),
         publicPath: '/',
         filename: 'assets/bundle.js'
     },
@@ -44,6 +45,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             inject: 'body',
@@ -52,9 +54,6 @@ module.exports = {
         new webpack.optimize.UglifyJsPlugin(),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.DefinePlugin({ 'process.env': { 'NODE_ENV': JSON.stringify('production') } }),
-        new CopyWebpackPlugin([
-            { from: 'favicons', to: 'favicons' },
-            { from: 'favicons/favicon.ico', to: 'favicon.ico' },
-        ])
+        new CopyWebpackPlugin([{ from: 'static' }])
     ]
 };

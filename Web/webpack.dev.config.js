@@ -3,6 +3,7 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var WebpackNotifierPlugin = require('webpack-notifier');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
@@ -14,7 +15,7 @@ module.exports = {
         ]
     },
     output: {
-        path: path.resolve(__dirname, 'build'),
+        path: path.resolve(__dirname, 'dist'),
         publicPath: '/',
         filename: 'assets/bundle.js'
     },
@@ -49,6 +50,7 @@ module.exports = {
     },
     devtool: 'source-map',
     plugins: [
+        new CleanWebpackPlugin(['dist']),
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             template: './src/index.html',
@@ -56,9 +58,6 @@ module.exports = {
         }),
         new WebpackNotifierPlugin(),
         new webpack.DefinePlugin({ 'process.env': { 'NODE_ENV': JSON.stringify('development') } }),
-        new CopyWebpackPlugin([
-            { from: 'favicons', to: 'favicons' },
-            { from: 'favicons/favicon.ico', to: 'favicon.ico' },
-        ])
+        new CopyWebpackPlugin([{ from: 'static' }])
     ]   
 };
