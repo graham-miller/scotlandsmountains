@@ -5,7 +5,7 @@ import AppBarComponent from './AppBarComponent';
 import ContainerComponent from './ContainerComponent';
 import MapComponent from './MapComponent';
 import FooterComponent from './FooterComponent';
-import MuiThemeProvider from 'material-ui/lib/MuiThemeProvider';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import theme from '../scripts/theme'; 
 
 class AppComponent extends React.Component {

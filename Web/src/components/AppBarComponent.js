@@ -1,10 +1,10 @@
 'use strict';
 
 import React from 'react';
-import AppBar from 'material-ui/lib/app-bar';
-import IconButton from 'material-ui/lib/icon-button';
-import NavigationMenu from 'material-ui/lib/svg-icons/navigation/menu';
-import NavigationClose from 'material-ui/lib/svg-icons/navigation/close';
+import AppBar from 'material-ui/AppBar';
+import IconButton from 'material-ui/IconButton';
+import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
+import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import AccountComponent from './AccountComponent';
 import LeftNavComponent from './LeftNavComponent';
 
