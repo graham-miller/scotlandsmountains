@@ -4,6 +4,7 @@ import React from 'react';
 import $ from 'jquery';
 import NavigationExpandMore from 'material-ui/svg-icons/navigation/expand-more';
 import NavigationExpandLess from 'material-ui/svg-icons/navigation/expand-less';
+import { Link } from 'react-router'
 
 class FooterComponent extends React.Component {
     
@@ -62,10 +63,10 @@ class FooterComponent extends React.Component {
                             Website design / logo &copy; 2016 Graham Miller
                         </p>
                         <p>
-                            <a href="#">Terms and conditions</a>&nbsp;&middot;&nbsp;
-                            <a href="#">Copyright</a>&nbsp;&middot;&nbsp;
-                            <a href="#">Privacy policy</a>&nbsp;&middot;&nbsp;
-                            <a href="#">Disclaimer</a>
+                            <Link to="/legal/termsandconditions">Terms and conditions</Link>&nbsp;&middot;&nbsp;
+                            <Link to="/legal/privacypolicy">Privacy policy</Link>&nbsp;&middot;&nbsp;
+                            <Link to="/legal/disclaimer">Disclaimer</Link>&nbsp;&middot;&nbsp;
+                            <Link to="/legal/copyright">Copyright</Link>
                         </p>
                     </div>  
                 </div>

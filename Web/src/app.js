@@ -22,7 +22,8 @@ ReactDOM.render((
     <Router history={routerHistory}>
         <Route path="/" component={AppComponent}>
             <IndexRoute component={null} />
-            <Route path="about" component={AboutComponent} />
-            <Route path="legal" component={LegalComponent} />
+            <Route path="/about" component={AboutComponent} />
+            <Route path="/legal" component={LegalComponent} />
+            <Route path="/legal/:activeDoc" component={LegalComponent} />
         </Route>
     </Router>), document.getElementById('app-container'));

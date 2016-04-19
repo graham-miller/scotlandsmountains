@@ -5,8 +5,10 @@ import { Link } from 'react-router'
 import { history } from './history'
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
+import {List, ListItem} from 'material-ui/List';
 import RaisedButton from 'material-ui/RaisedButton';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
+import ArrowDropRight from 'material-ui/svg-icons/navigation-arrow-drop-right';
 
 class LeftNavComponent extends React.Component {
 
@@ -39,6 +41,16 @@ class LeftNavComponent extends React.Component {
                 {mapLink}
                 
                 <MenuItem onTouchTap={() => {this.handleSelect('/about')}}>About</MenuItem>
+                
+                <MenuItem
+                    primaryText="Legal notices"
+                    rightIcon={<ArrowDropRight />}
+                    menuItems={[
+                        <MenuItem onTouchTap={() => {this.handleSelect('/legal/termsandconditions')}}>Terms and conditions</MenuItem>,
+                        <MenuItem onTouchTap={() => {this.handleSelect('/legal/privacypolicy')}}>Privacy policy</MenuItem>,
+                        <MenuItem onTouchTap={() => {this.handleSelect('/legal/disclaimer')}}>Disclaimer</MenuItem>,
+                        <MenuItem onTouchTap={() => {this.handleSelect('/legal/copyright')}}>Copyright</MenuItem>
+                    ]} />
             </Drawer>
         );
     }

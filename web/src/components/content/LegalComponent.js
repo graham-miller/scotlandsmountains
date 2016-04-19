@@ -9,37 +9,46 @@ class LegalComponent extends React.Component {
 
     constructor(props) {
         super(props);
-        
+
         this.state = {
+            value: this.props.params.activeDoc,
             docs: [
-                {key: 'privacypolicy', display: 'Privacy policy'},
-                {key: 'termsandconditions', display: 'Terms & conditions'},
-                {key: 'disclaimer', display: 'Disclaimer'},
-                {key: 'copyright', display: 'Copyright'},
+                { page: 'termsandconditions', display: 'Terms & conditions' },
+                { page: 'privacypolicy', display: 'Privacy policy' },
+                { page: 'disclaimer', display: 'Disclaimer' },
+                { page: 'copyright', display: 'Copyright' },
             ]
-        }
+        };
+        
+        this.handleChange = this.handleChange.bind(this); 
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.state.docs.map((doc) => {
-            $.get(`/static/legal/${doc.key}.html`, (html) => {
-                ReactDOM.findDOMNode(this.refs[doc.key]).innerHTML = html;
+            $.get(`/static/legal/${doc.page}.html`, (html) => {
+                doc.html = html;
+                this.setState(this.state)
             })
-            
+
         });
     }
 
+    handleChange (value) {
+        this.setState({value: value});
+    }
+    
     render() {
         return (
             <div>
-                <Tabs>
-                {this.state.docs.map((doc) => {
-                    return (
-                        <Tab label={doc.display}>
-                            <div ref={doc.key}></div>
-                        </Tab>
-                    );
-                })}
+                <h2>The small print...</h2>
+                <Tabs value={this.state.value} onChange={this.handleChange}>
+                    {this.state.docs.map((doc) => {
+                        return (
+                            <Tab key={doc.page} value={doc.page} label={doc.display}>
+                                <div dangerouslySetInnerHTML={{ __html: doc.html }}></div>
+                            </Tab>
+                        );
+                    }) }
                 </Tabs>
             </div>
         );
