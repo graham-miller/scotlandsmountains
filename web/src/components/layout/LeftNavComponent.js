@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link } from 'react-router'
-import { history } from '../scripts/history'
+import { history } from './history'
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';

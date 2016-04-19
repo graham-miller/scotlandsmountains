@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ToolBarComponent from './ToolBarComponent';
 import SearchBarComponent from './SearchBarComponent';
-import buildMap from '../scripts/map/Factory';
+import buildMap from './Factory';
 
 class MapComponent extends React.Component {
 

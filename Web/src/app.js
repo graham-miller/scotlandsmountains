@@ -6,13 +6,11 @@ import 'normalize-css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, Link } from 'react-router'
-import { routerHistory } from './scripts/history';
+import { routerHistory } from './components/layout/history';
 
-import AppComponent from './components/AppComponent';
-import AppBarComponent from './components/AppBarComponent';
-import MapComponent from './components/MapComponent';
-import AboutComponent from './components/AboutComponent';
-import FooterComponent from './components/FooterComponent';
+import AppComponent from './components/layout/AppComponent';
+import AboutComponent from './components/content/AboutComponent';
+import LegalComponent from './components/content/LegalComponent';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 // Needed by material-ui for onTouchTap event.
@@ -25,5 +23,6 @@ ReactDOM.render((
         <Route path="/" component={AppComponent}>
             <IndexRoute component={null} />
             <Route path="about" component={AboutComponent} />
+            <Route path="legal" component={LegalComponent} />
         </Route>
     </Router>), document.getElementById('app-container'));
