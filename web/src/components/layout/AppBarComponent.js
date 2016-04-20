@@ -12,17 +12,17 @@ class AppBarComponent extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { leftNavIsOpen: false };
+        this.state = { leftNavOpen: false };
         this.openLeftNav = this.openLeftNav.bind(this); 
         this.closeLeftNav = this.closeLeftNav.bind(this); 
     }
 
     openLeftNav() {
-        this.setState({ leftNavIsOpen: true });
+        this.setState({ leftNavOpen: true });
     }
 
     closeLeftNav() {
-        this.setState({ leftNavIsOpen: false });
+        this.setState({ leftNavOpen: false });
     }
 
     render() {
@@ -42,7 +42,7 @@ class AppBarComponent extends React.Component {
                 </AppBar>
                 <LeftNavComponent
                     mapIsActive={this.props.mapIsActive}
-                    isOpen={this.state.leftNavIsOpen}
+                    open={this.state.leftNavOpen}
                     close={this.closeLeftNav} />
             </div>
         );

@@ -14,11 +14,29 @@ class LeftNavComponent extends React.Component {
 
     constructor(props) {
         super(props);
+        
+        this.state = {open: this.props.open};
+        
         this.handleSelect = this.handleSelect.bind(this);
+        this.handleToggle = this.handleToggle.bind(this);
+        this.handleClose = this.handleClose.bind(this);
     }
-    
-    handleSelect(url) {
+
+    componentWillReceiveProps (nextProps) {
+        this.setState({open: nextProps.open});
+    }
+
+    handleToggle () {
+        this.setState({open: !this.state.open});
+    }
+
+    handleClose () {
+        this.setState({open: false});
         this.props.close();
+    }
+      
+    handleSelect(url) {
+        this.handleClose();
         if(url !== undefined) {
             history.push(url);
         }
@@ -33,7 +51,11 @@ class LeftNavComponent extends React.Component {
         }
         
         return (
-            <Drawer open={this.props.isOpen}>
+            <Drawer
+                docked={false}
+                open={this.state.open}
+                onRequestChange={(open) => this.setState({open})} >
+                
                 <MenuItem onTouchTap={() => {this.handleSelect()}} style={{ padding: '12px 0 4px 4px' }} >
                     <NavigationClose />
                 </MenuItem>
@@ -57,7 +79,7 @@ class LeftNavComponent extends React.Component {
 }
 
 LeftNavComponent.propTypes = {
-    isOpen: React.PropTypes.bool.isRequired,
+    open: React.PropTypes.bool.isRequired,
     close: React.PropTypes.func.isRequired
 };
 

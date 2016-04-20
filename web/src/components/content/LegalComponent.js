@@ -4,14 +4,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import $ from 'jquery';
+import { history } from '../layout/history'
 
 class LegalComponent extends React.Component {
 
     constructor(props) {
         super(props);
 
-        console.log(this.props.params.activeDoc);
-        
         this.state = {
             value: this.props.params.activeDoc,
             docs: [
@@ -23,6 +22,7 @@ class LegalComponent extends React.Component {
         };
         
         this.handleChange = this.handleChange.bind(this); 
+        this.handleActive = this.handleActive.bind(this); 
     }
 
     componentWillMount () {
@@ -42,6 +42,10 @@ class LegalComponent extends React.Component {
     handleChange (value) {
         this.setState({value: value});
     }
+
+    handleActive(tab) {
+        history.push(`/legal/${tab.props.value}`)
+    }
     
     render() {
         return (
@@ -49,7 +53,11 @@ class LegalComponent extends React.Component {
                 <Tabs value={this.state.value} onChange={this.handleChange}>
                     {this.state.docs.map((doc) => {
                         return (
-                            <Tab key={doc.page} value={doc.value} label={doc.label}>
+                            <Tab
+                                key={doc.page}
+                                value={doc.value}
+                                label={doc.label}
+                                onActive={this.handleActive} >
                                 <div
                                     className="padded"
                                     dangerouslySetInnerHTML={{ __html: doc.html }} />
