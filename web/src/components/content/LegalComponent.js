@@ -27,7 +27,7 @@ class LegalComponent extends React.Component {
 
     componentWillMount () {
         this.state.docs.map((doc) => {
-            $.get(`/static/legal/${doc.value}.html`, (html) => {
+            $.get(`/legal/${doc.value}.html`, (html) => {
                 doc.html = html;
                 this.setState(this.state)
             })
