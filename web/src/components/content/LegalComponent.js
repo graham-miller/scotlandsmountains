@@ -10,27 +10,33 @@ class LegalComponent extends React.Component {
     constructor(props) {
         super(props);
 
+        console.log(this.props.params.activeDoc);
+        
         this.state = {
             value: this.props.params.activeDoc,
             docs: [
-                { page: 'termsandconditions', display: 'Terms & conditions' },
-                { page: 'privacypolicy', display: 'Privacy policy' },
-                { page: 'disclaimer', display: 'Disclaimer' },
-                { page: 'copyright', display: 'Copyright' },
+                { value: 'terms', label: 'Terms' },
+                { value: 'privacy', label: 'Privacy' },
+                { value: 'disclaimer', label: 'Disclaimer' },
+                { value: 'copyright', label: 'Copyright' },
             ]
         };
         
         this.handleChange = this.handleChange.bind(this); 
     }
 
-    componentWillMount() {
+    componentWillMount () {
         this.state.docs.map((doc) => {
-            $.get(`/static/legal/${doc.page}.html`, (html) => {
+            $.get(`/static/legal/${doc.value}.html`, (html) => {
                 doc.html = html;
                 this.setState(this.state)
             })
 
         });
+    }
+
+    componentWillReceiveProps (nextProps) {
+        this.setState({value: nextProps.params.activeDoc});
     }
 
     handleChange (value) {
@@ -40,12 +46,13 @@ class LegalComponent extends React.Component {
     render() {
         return (
             <div>
-                <h2>The small print...</h2>
                 <Tabs value={this.state.value} onChange={this.handleChange}>
                     {this.state.docs.map((doc) => {
                         return (
-                            <Tab key={doc.page} value={doc.page} label={doc.display}>
-                                <div dangerouslySetInnerHTML={{ __html: doc.html }}></div>
+                            <Tab key={doc.page} value={doc.value} label={doc.label}>
+                                <div
+                                    className="padded"
+                                    dangerouslySetInnerHTML={{ __html: doc.html }} />
                             </Tab>
                         );
                     }) }

@@ -46,8 +46,8 @@ class LeftNavComponent extends React.Component {
                     primaryText="Legal notices"
                     rightIcon={<ArrowDropRight />}
                     menuItems={[
-                        <MenuItem onTouchTap={() => {this.handleSelect('/legal/termsandconditions')}}>Terms and conditions</MenuItem>,
-                        <MenuItem onTouchTap={() => {this.handleSelect('/legal/privacypolicy')}}>Privacy policy</MenuItem>,
+                        <MenuItem onTouchTap={() => {this.handleSelect('/legal/terms')}}>Terms and conditions</MenuItem>,
+                        <MenuItem onTouchTap={() => {this.handleSelect('/legal/privacy')}}>Privacy policy</MenuItem>,
                         <MenuItem onTouchTap={() => {this.handleSelect('/legal/disclaimer')}}>Disclaimer</MenuItem>,
                         <MenuItem onTouchTap={() => {this.handleSelect('/legal/copyright')}}>Copyright</MenuItem>
                     ]} />

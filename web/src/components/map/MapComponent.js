@@ -27,6 +27,7 @@ class MapComponent extends React.Component {
     shouldComponentUpdate (nextProps, nextState) {
         if (nextProps.isActive) {
             if (!this.map.hash.isListening) {
+                this.map.updateHash();
                 this.map.invalidateSize();
                 this.map.hash.startListening();
             }

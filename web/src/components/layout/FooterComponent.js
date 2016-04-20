@@ -63,8 +63,8 @@ class FooterComponent extends React.Component {
                             Website design / logo &copy; 2016 Graham Miller
                         </p>
                         <p>
-                            <Link to="/legal/termsandconditions">Terms and conditions</Link>&nbsp;&middot;&nbsp;
-                            <Link to="/legal/privacypolicy">Privacy policy</Link>&nbsp;&middot;&nbsp;
+                            <Link to="/legal/terms">Terms and conditions</Link>&nbsp;&middot;&nbsp;
+                            <Link to="/legal/privacy">Privacy policy</Link>&nbsp;&middot;&nbsp;
                             <Link to="/legal/disclaimer">Disclaimer</Link>&nbsp;&middot;&nbsp;
                             <Link to="/legal/copyright">Copyright</Link>
                         </p>

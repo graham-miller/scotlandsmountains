@@ -6,6 +6,7 @@
 @sm-primary: #909740;
 
 .prevent-margin-collapse() { padding-top: 1px; margin-top: -1px; }
+.over-map() { z-index: 2000; }
 
 * { font-family: 'Roboto', sans-serif; }
 body { background-color: @light-grey; }
@@ -34,7 +35,8 @@ html, body, #app-container { height: 100%; width: 100%; }
     position: relative;
     width: 100%;
     &.app, &.map { height: 100%; }
-    &.content { min-height: 100%; padding: 0px 1em 1em 1em; }
+    &.content { min-height: 100%; }
+    .padded { padding: 0px 1em 1em 1em; }
 }
 
 
@@ -45,6 +47,7 @@ html, body, #app-container { height: 100%; width: 100%; }
     position: absolute;
     top: 0;
     width: 100%;
+    .over-map;
     input[type=search] { height: 1.5em; }
     .search-results {
         ul { list-style-type: none; margin: 0; padding: 0;}
@@ -67,7 +70,7 @@ html, body, #app-container { height: 100%; width: 100%; }
     
     color: @light-grey;
     position: relative;
-    z-index: 2; /*ensure we are over map*/
+    .over-map;
     .handle {
         cursor: pointer;
         padding-top: 2px;

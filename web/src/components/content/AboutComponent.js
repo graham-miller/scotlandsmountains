@@ -7,7 +7,7 @@ class AboutComponent extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="padded">
                 <h2>About</h2>
                 <p>
                     Scotland's Mountains is developed and operated by Graham Miller.
