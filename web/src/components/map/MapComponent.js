@@ -21,18 +21,13 @@ class MapComponent extends React.Component {
     }
 
     componentDidMount() {
-        this.map = buildMap(ReactDOM.findDOMNode(this.refs.map));
+        this.map = buildMap(ReactDOM.findDOMNode(this.refs.map), this.props.isActive);
     }
     
     shouldComponentUpdate (nextProps, nextState) {
-        if (nextProps.isActive) {
-            if (!this.map.hash.isListening) {
-                this.map.updateHash();
-                this.map.invalidateSize();
-                this.map.hash.startListening();
-            }
-        } else {
-            this.map.hash.stopListening();
+        if ((!this.props.isActive) && nextProps.isActive) {
+            this.map.updateHash();
+            this.map.invalidateSize();
         }
         return true;
     }

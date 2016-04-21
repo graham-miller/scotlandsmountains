@@ -10,9 +10,21 @@ import theme from './theme';
 
 class AppComponent extends React.Component {
 
+    constructor(props) {
+        super(props);
+
+        this.state = {mapIsActive: this.props.children == null};
+
+        this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this);
+    }
+
+    componentWillReceiveProps (nextProps) {
+        this.setState({mapIsActive: nextProps.children == null});
+    }
+
     render() {
 
-        let mapIsActive = this.props.children == null;
+        let mapIsActive = this.state.mapIsActive;
 
         let map = <ContainerComponent
             outerClassName={'map ' + (mapIsActive ? 'active' : 'inactive')} 
@@ -31,7 +43,11 @@ class AppComponent extends React.Component {
             header={<AppBarComponent mapIsActive={mapIsActive} />}
             content={<div style={{height:'100%'}}>{map}{content}</div>} />
 
-        return (<MuiThemeProvider muiTheme={theme}>{app}</MuiThemeProvider>);
+        return (
+            <MuiThemeProvider muiTheme={theme}>
+                {app}
+            </MuiThemeProvider>
+        );
     }
 }
 

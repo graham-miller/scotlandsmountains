@@ -86,9 +86,9 @@
         firstHash: true,
 		onMapMove: function() {
 			// bail if we're moving the map (updating from a hash),
-			// or if the map is not yet loaded
+			// or if the map is not yet loaded or inactive
 
-			if (this.movingMap || !this.map._loaded) {
+		    if (this.movingMap || !this.map._loaded || !this.map.isActive) {
 				return false;
 			}
 

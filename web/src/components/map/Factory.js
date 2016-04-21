@@ -12,7 +12,7 @@ require.context('../../../node_modules/leaflet/dist/images/', true, /\.(png)$/);
 const defaultCenter = [57.302, -4.459];
 const defaultZoom = 7;
 
-const buildMap = function(htmlElement) {
+const buildMap = function(htmlElement, isActive) {
 
     L.Icon.Default.imagePath = 'images/leaflet';
 
@@ -24,7 +24,8 @@ const buildMap = function(htmlElement) {
         zoomControl: false,
         maxBounds: L.latLngBounds([53.633, -9.650], [61.855, 0.732])
     });
-    
+
+    map.isActive = isActive;
     map.attributionControl.setPrefix(false);
     
     setBaseLayers(map);
