@@ -25,6 +25,7 @@ html, body, #app-container { height: 100%; width: 100%; }
     &.map { z-index: 1; }
     &.content { z-index: 2; min-height: 100%; }
     &.map, &.content {
+        box-sizing: border-box;
         &.active { display: block; }
         &.inactive { display: none; }        
     }
@@ -36,12 +37,16 @@ html, body, #app-container { height: 100%; width: 100%; }
     width: 100%;
     &.app, &.map { height: 100%; }
     &.content { min-height: 100%; }
-    .padded { padding: 0px 1em 1em 1em; }
 }
 
-
-
-
+.padded {
+    padding: 1em;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto; 
+}
 
 #map-control {
     position: absolute;

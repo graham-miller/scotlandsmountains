@@ -15,7 +15,7 @@ const setBaseLayers = function (map) {
             aerial: 'Aerial',
         },
         culture: 'en-GB',
-        attribution: '&copy; 2016 Microsoft Corporation'
+        attribution: ''
     };
 
     let roadLayer = new L.BingLayer(config.bingMapsKey, {
@@ -27,7 +27,7 @@ const setBaseLayers = function (map) {
     let mapLayer = new L.BingLayer(config.bingMapsKey, {
         type: defaults.mapTypes.os,
         culture: defaults.culture,
-        attribution: defaults.attribution
+        attribution: '&copy; 2016 Microsoft Corporation image courtesy of Ordnance Survey'
     });
     
     let aerialLayer = new L.BingLayer(config.bingMapsKey, {
