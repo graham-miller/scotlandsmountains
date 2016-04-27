@@ -17,6 +17,7 @@ html, body, #app-container, #app { height: 100%; width: 100%; box-sizing: border
 
 .full-height { height: 100%; }
 .fixed-to-top { position: fixed !important; top: 0; }
+.clearfix:after { content:""; display:block; clear:both; }
 
 .container-outer {
     box-sizing: border-box;
@@ -98,22 +99,44 @@ html, body, #app-container, #app { height: 100%; width: 100%; box-sizing: border
     }
     .content { background-color: @mid-grey; font-size: 0.8em; padding: 1em;
         .legal { text-align: center; padding-top: 5em;
-            a:link, a:visited { color: @light-grey; text-decoration: none; }
-            a:hover, a:active { color: @light-grey; text-decoration: underline; }
+            a:link, a:visited { color: @light-grey; text-decoration: none; border-bottom: dotted 1px #ffffff; }
+            a:hover, a:active { color: @light-grey; text-decoration: none; border-bottom: solid 1px #ffffff; }
         }
     }
 }
 
-#cookie-control {
+.cookie-control {
     box-sizing: border-box;
-    
-    
     width: 100%;
-    position: fixed;
-    bottom: 0;
-    z-index: 10000;
-    color: #ffffff;
-    margin: 1em;
     padding: 1em;
-    background-color: fade(#000000, 70%);
+    h3 {margin: 0;}
+    &.container {
+        background-color: transparent;
+        position: fixed;
+        bottom: 0;
+        z-index: 10000;
+    }
+    &.content {
+        -webkit-border-radius: 0.5em;
+        -moz-border-radius: 0.5em;
+        border-radius: 0.5em;
+        color: #ffffff;
+        background-color: fade(#000000, 80%);
+    }
+    a:link, a:visited { color: #ffffff; text-decoration: none; border-bottom: dotted 1px #ffffff; }
+    a:hover, a:active { color: #ffffff; text-decoration: none; border-bottom: solid 1px #ffffff; }
+    button {
+        float: right;
+        background-color: #000000;
+        color: #ffffff;
+        border: none;
+        padding: 0.5em 1em;
+        -webkit-border-radius: 0.5em;
+        -moz-border-radius: 0.5em;
+        border-radius: 0.5em;
+        cursor: pointer;
+        &:hover {
+            background-color: @sm-primary;
+        }
+    }
 }

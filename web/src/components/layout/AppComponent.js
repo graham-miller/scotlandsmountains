@@ -48,7 +48,7 @@ class AppComponent extends React.Component {
             <MuiThemeProvider muiTheme={theme}>
                 <div id="app">
                     {app}
-                    {/*<CookieComponent />*/}
+                    <CookieComponent />
                 </div>
             </MuiThemeProvider>
         );

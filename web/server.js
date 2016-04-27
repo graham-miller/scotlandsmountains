@@ -17,8 +17,13 @@ var config = require('./webpack.dev.config');
 var open = require('open');
 
 new WebpackDevServer(webpack(config), {
+    https: true,
     proxy: {
-        '/api/*': 'http://localhost:3001'
+        '/api/*': {
+            //changeOrigin: true,
+            target: 'http://localhost:3001',
+            //secure: false
+        }
     },
     publicPath: config.output.publicPath,
     hot: true,
@@ -28,5 +33,5 @@ new WebpackDevServer(webpack(config), {
         console.log(err);
     }
     console.log('Listening at localhost:3000');
-    open('http://localhost:3000');
+    open('https://localhost:3000');
 });

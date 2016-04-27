@@ -31,25 +31,26 @@ class CookieComponent extends React.Component {
 
     handleAccept() {
         this.setState({cookiesAccepted: true});
-        cookie.set(this.KEY, this.value);
+        cookie.set(this.KEY, this.VALUE);
     }
     
     render() {
                 
+        if (this.state.cookiesAccepted) { return null; }
+            
         return (
-            <div id="cookie-control">
-                <h3>Cookies</h3>
-                <p>
-                    Scotland's Mountains uses cookies to improve functionality and performance. If you 
-                    continue browsing the site, you agree to the use of cookies on this website. See
-                    our <Link to="/legal/privacy">Privacy Policy</Link> for details.
-                </p>
-                <p>
-                    <FlatButton
-                        label="Accept"
-                        primary={true}
-                        onTouchTap={this.handleAccept} />
-                </p>
+            <div className="cookie-control container">
+                <div className="cookie-control content clearfix">
+                    <h3>Cookies</h3>
+                    <p>
+                        Scotland's Mountains uses cookies to improve functionality and performance. If you 
+                        continue browsing the site, you agree to the use of cookies on this website. See
+                        our <Link to="/legal/privacy">Privacy Policy</Link> for details.
+                    </p>
+                    <p>
+                        <button onClick={this.handleAccept}>Dismiss</button>
+                    </p>
+                </div>
             </div>
         );
     }

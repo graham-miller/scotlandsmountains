@@ -9,7 +9,7 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
     entry: {
         app: [
-            'webpack-dev-server/client?http://0.0.0.0:3000',
+            'webpack-dev-server/client?https://0.0.0.0:3000',
             'webpack/hot/only-dev-server',
             './src/app.js'
         ]
