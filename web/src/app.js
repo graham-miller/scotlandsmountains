@@ -11,6 +11,7 @@ import { routerHistory } from './components/layout/history';
 import AppComponent from './components/layout/AppComponent';
 import AboutComponent from './components/content/AboutComponent';
 import LegalComponent from './components/content/LegalComponent';
+import AttributionsComponent from './components/content/AttributionsComponent';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 // Needed by material-ui for onTouchTap event.
@@ -25,5 +26,6 @@ ReactDOM.render((
             <Route path="/about" component={AboutComponent} />
             <Route path="/legal" component={LegalComponent} />
             <Route path="/legal/:activeDoc" component={LegalComponent} />
+            <Route path="/attributions" component={AttributionsComponent} />
         </Route>
     </Router>), document.getElementById('app-container'));

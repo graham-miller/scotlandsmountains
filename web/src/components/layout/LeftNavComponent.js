@@ -62,6 +62,7 @@ class LeftNavComponent extends React.Component {
                 
                 {mapLink}
                 
+                <MenuItem onTouchTap={() => {this.handleSelect('/attributions')}}>Attributions</MenuItem>
                 <MenuItem onTouchTap={() => {this.handleSelect('/about')}}>About</MenuItem>
                 
                 <MenuItem
