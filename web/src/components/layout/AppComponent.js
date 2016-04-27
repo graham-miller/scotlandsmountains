@@ -5,6 +5,7 @@ import AppBarComponent from './AppBarComponent';
 import ContainerComponent from './ContainerComponent';
 import MapComponent from '../map/MapComponent';
 import FooterComponent from './FooterComponent';
+import CookieComponent from './CookieComponent';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import theme from './theme'; 
 
@@ -45,7 +46,10 @@ class AppComponent extends React.Component {
 
         return (
             <MuiThemeProvider muiTheme={theme}>
-                {app}
+                <div id="app">
+                    {app}
+                    {/*<CookieComponent />*/}
+                </div>
             </MuiThemeProvider>
         );
     }

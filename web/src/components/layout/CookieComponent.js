@@ -1,0 +1,58 @@
+'use strict';
+
+import React from 'react';
+import {Card, CardActions, CardTitle, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
+import { Link } from 'react-router'
+import cookie from 'cookie_js/cookie.js';
+
+class CookieComponent extends React.Component {
+    
+    constructor(props) {
+        super(props);
+
+        this.KEY = "cookiesAccepted"
+        this.VALUE = "accepted"
+
+        cookie.defaults.expires = 365;
+        cookie.defaults.secure = true;
+
+        this.state = {cookiesAccepted: cookie.get(this.KEY) === this.VALUE};
+
+        this.handleAccept = this.handleAccept.bind(this);
+    }
+
+    setCookieFromState () {
+        if(this.state.cookiesAccepted) {
+        } else {
+            cookie.remove(this.KEY);
+        }
+    }
+
+    handleAccept() {
+        this.setState({cookiesAccepted: true});
+        cookie.set(this.KEY, this.value);
+    }
+    
+    render() {
+                
+        return (
+            <div id="cookie-control">
+                <h3>Cookies</h3>
+                <p>
+                    Scotland's Mountains uses cookies to improve functionality and performance. If you 
+                    continue browsing the site, you agree to the use of cookies on this website. See
+                    our <Link to="/legal/privacy">Privacy Policy</Link> for details.
+                </p>
+                <p>
+                    <FlatButton
+                        label="Accept"
+                        primary={true}
+                        onTouchTap={this.handleAccept} />
+                </p>
+            </div>
+        );
+    }
+}
+
+export default CookieComponent;
