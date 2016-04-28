@@ -11,6 +11,7 @@ import { routerHistory } from './components/layout/history';
 import AppComponent from './components/layout/AppComponent';
 import AboutComponent from './components/content/AboutComponent';
 import LegalComponent from './components/content/LegalComponent';
+import ClassificationComponent from './components/classification/ClassificationComponent';
 import AttributionsComponent from './components/content/AttributionsComponent';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
@@ -27,5 +28,6 @@ ReactDOM.render((
             <Route path="/legal" component={LegalComponent} />
             <Route path="/legal/:activeDoc" component={LegalComponent} />
             <Route path="/attributions" component={AttributionsComponent} />
+            <Route path="/classification/:classification" component={ClassificationComponent} />
         </Route>
     </Router>), document.getElementById('app-container'));
