@@ -141,3 +141,21 @@ html, body, #app-container, #app { height: 100%; width: 100%; box-sizing: border
         }
     }
 }
+
+table {
+    border-collapse: collapse;
+    th {
+        font-weight: bold;
+        text-align: left;
+        color: @mid-grey;
+    }
+    thead {
+        border-bottom: 2px solid @mid-grey;
+    }
+    tbody tr {
+        border-bottom: 1px solid @mid-grey;
+    }
+    th, td {
+        padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+}

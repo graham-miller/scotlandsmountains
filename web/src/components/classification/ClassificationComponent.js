@@ -35,24 +35,34 @@ class ClassificationComponent extends React.Component {
     }
     
     render() {
+        
         return (
             <div className="padded">
                 <h1>{this.state.classification.charAt(0).toUpperCase() + this.state.classification.slice(1) + 's'}</h1>
                 <table>
+                    <colgroup>
+                        <col />
+                        <col />
+                        <col style={{width: '10em'}} />
+                        <col />
+                    </colgroup>
                     <thead>
                         <tr>
-                            <td>Name</td>
-                            <td>Height</td>
-                            <td></td>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Height</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                     {
-                        this.state.mountains.map(function(mountain) {
+                        this.state.mountains.map(function(mountain, index) {
                             return (
-                                <tr>
+                                <tr key={mountain.key}>
+                                    <td>{index + 1}</td>
                                     <td>{mountain.name}</td>
                                     <td>{mountain.height}</td>
+                                    <td></td>
                                 </tr>
                             );
                         })
