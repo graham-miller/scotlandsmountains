@@ -4,6 +4,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 
+import config from '../../config.js';
+
 class ClassificationComponent extends React.Component {
 
     constructor(props) {
@@ -29,7 +31,7 @@ class ClassificationComponent extends React.Component {
     }
     
     loadMountains(classification) {
-        $.get(`/api/classification/${classification}/mountains`, (data) => {
+        $.get(`${config.apiBaseUrl}/api/classification/${classification}/mountains`, (data) => {
             this.setState({mountains: data})
         });
     }
