@@ -43,9 +43,9 @@ class CookieComponent extends React.Component {
                 <div className="cookie-control content clearfix">
                     <h3>Cookies</h3>
                     <p>
-                        Scotland's Mountains uses cookies to improve functionality and performance. If you 
-                        continue browsing the site, you agree to the use of cookies on this website. See
-                        our <Link to="/legal/privacy">Privacy Policy</Link> for details.
+                        Scotland's Mountains uses cookies to improve functionality and performance. By 
+                        using this site, you agree to this use. See our&nbsp;
+                        <Link to="/legal/privacy">Privacy Policy</Link> for details.
                     </p>
                     <p>
                         <button onClick={this.handleAccept}>Dismiss</button>
