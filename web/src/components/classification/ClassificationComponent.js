@@ -75,12 +75,5 @@ class ClassificationComponent extends React.Component {
         );
     }
 }
-        // "key": "3mzAVRq1",
-        // "name": "Ben Nevis",
-        // "height": "1,344m (4,409ft)",
-        // "classification": "Munro, Murdo",
-        // "latLong": [
-        //     56.796849,
-        //     -5.003525
 
 export default ClassificationComponent;
