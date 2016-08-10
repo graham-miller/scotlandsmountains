@@ -8,7 +8,9 @@ namespace ScotlandsMountains.Resources
         {
             public static Stream HillCsvZip()
             {
-                return null;
+                return typeof(Load)
+                    .Assembly
+                    .GetManifestResourceStream(typeof(Load).Namespace + ".Raw.Dobih.hillcsv.zip");
             }
         }
     }
