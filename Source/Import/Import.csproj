@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OsFile.cs" />
     <Compile Include="DobihFile.cs" />
     <Compile Include="DobihRecord.cs" />
     <Compile Include="Importer.cs" />

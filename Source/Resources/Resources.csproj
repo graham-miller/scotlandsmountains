@@ -43,9 +43,15 @@
     <Compile Include="Load.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Raw\OS\Links.txt" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Raw\Dobih\hillcsv.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Raw\OS\ordnance-survey-leisure-map-catalogue.pdf" />
+    <EmbeddedResource Include="Raw\OS\ordnance-survey-products-and-services-catalogue.pdf" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

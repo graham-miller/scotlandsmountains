@@ -10,7 +10,7 @@ namespace ScotlandsMountains.Import
     {
         public DobihFile()
         {
-            using (var file = Load.Dobih.HillCsvZip())
+            using (var file = Load.Dobih.HillCsvZip)
             using (var zip = new ZipArchive(file, ZipArchiveMode.Read))
             using (var csv = zip.Entries[0].Open())
             using (var parser = new TextFieldParser(csv)
