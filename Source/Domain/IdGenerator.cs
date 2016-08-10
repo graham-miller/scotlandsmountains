@@ -1,21 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using HashidsNet;
+﻿using HashidsNet;
 
 namespace ScotlandsMountains.Domain
 {
     public sealed class IdGenerator
     {
+        private const string Salt = "Scotland's Mountains";
+
         private static volatile IdGenerator _instance;
         private static readonly object SyncRoot = new object();
 
         private readonly Hashids _hashids;
-        private readonly List<string> _history = new List<string>();
-        private int _sequence;
 
         private IdGenerator()
         {
-            _hashids = new Hashids("Scotland's Mountains");
+            _hashids = new Hashids(Salt);
         }
 
         public static IdGenerator Instance
@@ -37,16 +35,9 @@ namespace ScotlandsMountains.Domain
             }
         }
 
-        public string GenerateId()
+        public string GenerateId(int number)
         {
-            _sequence++;
-            var id = _hashids.Encode(_sequence);
-
-            if (_history.Contains(id))
-                throw new Exception("Duplicate entity ID detected");
-
-            _history.Add(id);
-            return id;
+            return _hashids.Encode(number);
         }
     }
 }

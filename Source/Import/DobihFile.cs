@@ -25,11 +25,11 @@ namespace ScotlandsMountains.Import
                     .ToDictionary(k => k.Key, v => v.Value);
 
                 while (!parser.EndOfData)
-                    _records.Add(new DobihRecord(parser.ReadFields(), this));
+                    Records.Add(new DobihRecord(parser.ReadFields(), this));
             }
         }
 
         public IDictionary<string,int> ColumnIndex { get; private set; } 
-        private IList<DobihRecord> _records = new List<DobihRecord>();
+        public IList<DobihRecord> Records { get; } = new List<DobihRecord>();
     }
 }
