@@ -10,9 +10,12 @@ namespace ScotlandsMountains.Import
         {
             var dobihFile = new DobihFile();
 
+            //var classifications = dobi
+            //var sections 
+
             var domainRoot = new DomainRoot
             {
-                Mountains = dobihFile.Records.Select(RecordTransformedToMountain).ToList()
+                Mountains = dobihFile.Records.Select(RecordTransformedToMountain).OrderByDescending(m => m.Height).ToList(),
             };
 
             dobihFile = null;
@@ -29,7 +32,6 @@ namespace ScotlandsMountains.Import
                 Height = new Height
                 {
                     Metres = record.Metres,
-                    Feet = record.Feet
                 },
                 Location = new Location
                 {

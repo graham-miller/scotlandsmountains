@@ -5,6 +5,7 @@ namespace ScotlandsMountains.Domain
     public sealed class IdGenerator
     {
         private const string Salt = "Scotland's Mountains";
+        private const int MinHashLength = 8;
 
         private static volatile IdGenerator _instance;
         private static readonly object SyncRoot = new object();
@@ -13,7 +14,7 @@ namespace ScotlandsMountains.Domain
 
         private IdGenerator()
         {
-            _hashids = new Hashids(Salt);
+            _hashids = new Hashids(Salt, MinHashLength);
         }
 
         public static IdGenerator Instance

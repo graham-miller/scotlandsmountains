@@ -12,9 +12,9 @@ namespace ScotlandsMountains.Import
             SetProperties(raw);
         }
 
-        public string SixFigure { get; set; }
+        public string SixFigure { get; private set; }
 
-        public string TenFigure { get; set; }
+        public string TenFigure { get; private set; }
 
         private void SetProperties(string raw)
         {
