@@ -32,13 +32,13 @@ namespace ScotlandsMountains.Import
 
         private void ReadLandrangerMaps()
         {
-            var records = Capture(Pages(5,12), @"^[A-Z0-9]* (\S| )*\d{13} \d{2}(\/\d{2}){2} ((Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{4} ?){2}$", 10);
+            var records = Capture(Pages(5,12), @"^[A-Z0-9]* (\S| )*\d{13} \d{2}(\/\d{2}){2} (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{4} (January|February|March|April|May|June|July|August|September|October|November|December) \d{4}$", 10);
         }
 
         private List<string> Pages(int from, int to)
         {
             return _lines
-                .SkipWhile(x => !x.Contains("Page " + (from + 1)))
+                .SkipWhile(x => !x.Contains("Page " + (from - 1)))
                 .Skip(1)
                 .TakeWhile(x => !x.Contains("Page " + to))
                 .ToList();
@@ -59,7 +59,7 @@ namespace ScotlandsMountains.Import
                 {
                     //yield return cache;
                     result.Add(cache);
-                    position++;
+                    position += cacheSize;
                     cache = string.Empty;
                     cacheSize = 0;
                 }
