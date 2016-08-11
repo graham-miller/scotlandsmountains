@@ -8,19 +8,21 @@ namespace ScotlandsMountains.Import
     {
         public static DomainRoot Import()
         {
-            var dobihFile = new DobihFile();
+            var osFile = new OsFile();
+            //var dobihFile = new DobihFile();
 
-            //var classifications = dobi
-            //var sections 
+            ////var classifications = dobi
+            ////var sections 
 
-            var domainRoot = new DomainRoot
-            {
-                Mountains = dobihFile.Records.Select(RecordTransformedToMountain).OrderByDescending(m => m.Height).ToList(),
-            };
+            //var domainRoot = new DomainRoot
+            //{
+            //    Mountains = dobihFile.Records.Select(RecordTransformedToMountain).OrderByDescending(m => m.Height).ToList(),
+            //};
 
-            dobihFile = null;
+            //dobihFile = null;
 
-            return domainRoot;
+            //return domainRoot;
+            return null;
         }
 
         private static Mountain RecordTransformedToMountain(DobihRecord record)

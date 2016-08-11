@@ -50,6 +50,7 @@
     <Compile Include="Height.cs" />
     <Compile Include="IdGenerator.cs" />
     <Compile Include="Location.cs" />
+    <Compile Include="Map.cs" />
     <Compile Include="Mountain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
