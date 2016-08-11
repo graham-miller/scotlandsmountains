@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using ScotlandsMountains.Domain;
 
 namespace ScotlandsMountains.Import
 {
@@ -32,7 +33,23 @@ namespace ScotlandsMountains.Import
 
         private void ReadLandrangerMaps()
         {
-            var records = Capture(Pages(5,12), @"^[A-Z0-9]* (\S| )*\d{13} \d{2}(\/\d{2}){2} (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{4} (January|February|March|April|May|June|July|August|September|October|November|December) \d{4}$", 10);
+            var LandrangerCaptureRegex = new Regex(@"^[A-Z0-9]* (\S| )*\d{13} \d{2}(\/\d{2}){2} (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{4} (January|February|March|April|May|June|July|August|September|October|November|December) \d{4}$");
+            var LandrangerParseRegex = new Regex(@"^(?'Code'\S*) (?'Name'.*) (?'Isbn'\d{13}).*$");
+
+            _file.LandrangerMaps = Capture(Pages(5,12), LandrangerCaptureRegex, 10)
+                .Select(x => {
+                    var match = LandrangerParseRegex.Match(x);
+                    return new Map
+                    {
+                        Publisher = MapConstants.OrdnanceSurvey,
+                        Series = MapConstants.Landranger,
+                        Code = match.Groups["Code"].Value,
+                        Name = match.Groups["Name"].Value,
+                        Isbn = match.Groups["Isbn"].Value,
+                        Scale = MapConstants.OneTo50000
+                    };
+                })
+                .ToList();
         }
 
         private List<string> Pages(int from, int to)
@@ -44,11 +61,8 @@ namespace ScotlandsMountains.Import
                 .ToList();
         }
 
-        private static IEnumerable<string> Capture(List<string> lines, string pattern, int maxLIneCacheSize)
+        private static IEnumerable<string> Capture(List<string> lines, Regex regex, int maxLIneCacheSize = 10)
         {
-            var regex = new Regex(pattern);
-            var result = new List<string>();
-
             var position = 0;
             var cache = string.Empty;
             var cacheSize = 0;
@@ -57,8 +71,7 @@ namespace ScotlandsMountains.Import
             {
                 if (regex.IsMatch(cache))
                 {
-                    //yield return cache;
-                    result.Add(cache);
+                    yield return cache;
                     position += cacheSize;
                     cache = string.Empty;
                     cacheSize = 0;
@@ -72,8 +85,7 @@ namespace ScotlandsMountains.Import
                         cacheSize = 0;
                     }
 
-                    if (position + cacheSize >= lines.Count)
-                        break;
+                    if (position + cacheSize >= lines.Count) break;
 
                     if (string.IsNullOrEmpty(cache))
                         cache += lines[position + cacheSize];
@@ -83,8 +95,6 @@ namespace ScotlandsMountains.Import
                     cacheSize++;
                 }
             } while (true);
-
-            return result;
         }
     }
 }
