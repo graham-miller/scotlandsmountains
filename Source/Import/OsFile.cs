@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using ScotlandsMountains.Domain;
 
 namespace ScotlandsMountains.Import
@@ -14,7 +13,7 @@ namespace ScotlandsMountains.Import
 
             //WriteToFile();
 
-            var parser = new OsFileParser(this);
+            var parser = new OsFileParser2(this);
         }
 
         public readonly IList<string> Lines;
@@ -23,6 +22,7 @@ namespace ScotlandsMountains.Import
         public IList<Map> LandrangerActiveMaps { get; set; } = new List<Map>();
         public IList<Map> ExplorerMaps { get; set; } = new List<Map>();
         public IList<Map> ExplorerActiveMaps { get; set; } = new List<Map>();
+        public IList<Map> DiscovererMaps { get; set; } = new List<Map>();
         public IList<Map> DiscoveryMaps { get; set; } = new List<Map>();
 
         private void WriteToFile()
@@ -37,17 +37,3 @@ namespace ScotlandsMountains.Import
         }
     }
 }
-
-/*
-Landranger Title ISBN Pub date Edn Revised Date
-
-1
-Shetland – Yell, Unst and
-Fetlar 9780319260999 24/02/16
-Feb
-2016 May 2015
-
-Leisure map catalogue
-v1.51 © Crown copyright
-Page 5 of 60
-*/

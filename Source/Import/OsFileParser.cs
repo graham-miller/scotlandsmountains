@@ -1,154 +1,193 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using ScotlandsMountains.Domain;
 
 namespace ScotlandsMountains.Import
 {
-    internal class OsFileParser
+    internal class OsFileParser2
     {
+        private const int MaxLIneCacheSize = 10;
+
         private readonly OsFile _file;
         private readonly IList<string> _lines;
 
-        private static class MapConstants
-        {
-            public const string OrdnanceSurvey = "Ordnance Survey";
-            public const string Landranger = "Landranger";
-            public const string LandrangerActive = "Landranger Active";
-            public const string Explorer = "Explorer";
-            public const string ExplorerActive = "Explorer Active";
-            public const string Discovery = "Discovery";
-            public const decimal OneTo50000 = 1 / 50000m;
-            public const decimal OneTo25000 = 1 / 25000m;
-        }
+        private int _position = 0;
+        private string _cache = string.Empty;
+        private int _cacheSize = 0;
 
-        public OsFileParser(OsFile file)
+        private Strategy _strategy = new NullStrategy();
+
+        public OsFileParser2(OsFile file)
         {
             _file = file;
             _lines = file.Lines;
 
-            ReadLandrangerMaps();
-        }
-
-        private void ReadLandrangerMaps()
-        {
-            var LandrangerCaptureRegex = new Regex(@"^[A-Z0-9]* (\S| )*\d{13} \d{2}(\/\d{2}){2} (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{4} (January|February|March|April|May|June|July|August|September|October|November|December) \d{4}$");
-            var LandrangerParseRegex = new Regex(@"^(?'Code'\S*) (?'Name'.*) (?'Isbn'\d{13}).*$");
-
-            _file.LandrangerMaps = Capture(Pages(5,12), LandrangerCaptureRegex, 10)
-                .Select(x => {
-                    var match = LandrangerParseRegex.Match(x);
-                    return new Map
-                    {
-                        Publisher = MapConstants.OrdnanceSurvey,
-                        Series = MapConstants.Landranger,
-                        Code = match.Groups["Code"].Value,
-                        Name = match.Groups["Name"].Value,
-                        Isbn = match.Groups["Isbn"].Value,
-                        Scale = MapConstants.OneTo50000
-                    };
-                })
-                .ToList();
-        }
-
-        private List<string> Pages(int from, int to)
-        {
-            return _lines
-                .SkipWhile(x => !x.Contains("Page " + (from - 1)))
-                .Skip(1)
-                .TakeWhile(x => !x.Contains("Page " + to))
-                .ToList();
-        }
-
-        private static IEnumerable<string> Capture(List<string> lines, Regex regex, int maxLIneCacheSize = 10)
-        {
-            var position = 0;
-            var cache = string.Empty;
-            var cacheSize = 0;
-
             do
             {
-                if (regex.IsMatch(cache))
-                {
-                    yield return cache;
-                    position += cacheSize;
-                    cache = string.Empty;
-                    cacheSize = 0;
-                }
+                if (CacheContainsMapRecord())
+                    CreateMapEntityAndResetCache();
                 else
+                    AppendCacheFromFile();
+
+            } while (!EndOfFile());
+        }
+
+        private bool CacheContainsMapRecord()
+        {
+            return _strategy.IsMatch(_cache);
+        }
+
+        private void AppendCacheFromFile()
+        {
+            if (_cacheSize >= MaxLIneCacheSize)
+            {
+                _position++;
+                _cache = string.Empty;
+                _cacheSize = 0;
+            }
+
+            var nextValueToCache = _lines[_position + _cacheSize];
+
+            SetStrategyBasedOn(nextValueToCache);
+
+            if (string.IsNullOrEmpty(_cache))
+                _cache += nextValueToCache;
+            else
+                _cache = _cache + " " + nextValueToCache;
+
+            _cacheSize++;
+        }
+
+        private void SetStrategyBasedOn(string nextValueToCache)
+        {
+            if (nextValueToCache.Contains("OS Landranger current editions"))
+                _strategy = new LandrangerStrategy(_file);
+            else if (nextValueToCache.Contains("OS Landranger – Active current editions"))
+                _strategy = new LandrangerActiveStrategy(_file);
+            else if (nextValueToCache.Contains("OS Explorer current editions"))
+                _strategy = new ExplorerStrategy(_file);
+            else if (nextValueToCache.Contains("OS Explorer – Active current editions"))
+                _strategy = new ExplorerActiveStrategy(_file);
+            else if (nextValueToCache.Contains("OS Travel – Tour current editions"))
+                _strategy = new NullStrategy();
+            else if (nextValueToCache.Contains("Historical map and guides current editions"))
+                _strategy = new NullStrategy();
+            else if (nextValueToCache.Contains("OS Wall Map (laminated & tubed)"))
+                _strategy = new NullStrategy();
+            else if (nextValueToCache.Contains("Administrative boundary maps"))
+                _strategy = new NullStrategy();
+            else if (nextValueToCache.Contains("Irish maps, atlases and guides"))
+                _strategy = new NullStrategy();
+            else if (nextValueToCache.Contains("Irish Discoverer Map current editions"))
+                _strategy = new DiscovererStrategy(_file);
+            else if (nextValueToCache.Contains("Irish Discovery Map current editions"))
+                _strategy = new DiscoveryStrategy(_file);
+            else if (nextValueToCache.Contains("Irish Street Map"))
+                _strategy = new NullStrategy();
+        }
+
+        private void CreateMapEntityAndResetCache()
+        {
+            _strategy.CreateMap(_cache);
+            _position += _cacheSize;
+            _cache = string.Empty;
+            _cacheSize = 0;
+        }
+
+        private bool EndOfFile()
+        {
+            return _position + _cacheSize >= _lines.Count;
+        }
+
+        abstract class Strategy
+        {
+            public virtual bool IsMatch(string record)
+            {
+                return CaptureRegex.IsMatch(record);
+            }
+
+            public virtual void CreateMap(string record)
+            {
+                var match = ExtractRegex.Match(record);
+                AddTo.Add(new Map
                 {
-                    if (cacheSize >= maxLIneCacheSize)
-                    {
-                        position++;
-                        cache = string.Empty;
-                        cacheSize = 0;
-                    }
+                    Publisher = "Ordnance Survey",
+                    Series = Series,
+                    Code = match.Groups["Code"].Value,
+                    Name = match.Groups["Name"].Value,
+                    Isbn = match.Groups["Isbn"].Value,
+                    Scale = Scale
+                });
+            }
 
-                    if (position + cacheSize >= lines.Count) break;
+            protected Regex CaptureRegex = new Regex(@"^(OL\d{1,2}|\d{1,3}) (\S| )*\d{13} \d{2}(\/\d{2}){2} [a-zA-Z]{3,9} \d{4} [a-zA-Z]{3,9} \d{4}$");
+            protected Regex ExtractRegex = new Regex(@"^(?'Code'(OL\d{1,2}|\d{1,3})) (?'Name'.*) (?'Isbn'\d{13}).*$");
+            protected IList<Map> AddTo;
+            protected string Series;
+            protected decimal Scale;
+        }
 
-                    if (string.IsNullOrEmpty(cache))
-                        cache += lines[position + cacheSize];
-                    else
-                        cache = cache + " " + lines[position + cacheSize];
+        private class NullStrategy : Strategy
+        {
+            public override bool IsMatch(string record) { return false; }
+        }
 
-                    cacheSize++;
-                }
-            } while (true);
+        private class LandrangerStrategy : Strategy
+        {
+            public LandrangerStrategy(OsFile file)
+            {
+                AddTo = file.LandrangerMaps;
+                Series = "Landranger";
+                Scale = 1 / 50000m;
+            }
+        }
+
+        private class LandrangerActiveStrategy : LandrangerStrategy
+        {
+            public LandrangerActiveStrategy(OsFile file) : base(file)
+            {
+                AddTo = file.LandrangerActiveMaps;
+                Series = "Landranger Active";
+            }
+        }
+
+        private class ExplorerStrategy : Strategy
+        {
+            public ExplorerStrategy(OsFile file)
+            {
+                AddTo = file.ExplorerMaps;
+                Series = "Explorer";
+                Scale = 1 / 50000m;
+            }
+        }
+
+        private class ExplorerActiveStrategy : ExplorerStrategy
+        {
+            public ExplorerActiveStrategy(OsFile file) : base(file)
+            {
+                AddTo = file.ExplorerActiveMaps;
+                Series = "Explorer Active";
+            }
+        }
+
+        private class DiscovererStrategy : Strategy
+        {
+            public DiscovererStrategy(OsFile file)
+            {
+                CaptureRegex = new Regex(@"^(OL\d{1,2}|\d{1,3}) (\S| )*\d{13} \d{2}(\/\d{2}){2} .*$");
+                AddTo = file.DiscovererMaps;
+                Series = "Discoverer";
+                Scale = 1 / 50000m;
+            }
+        }
+
+        private class DiscoveryStrategy : DiscovererStrategy
+        {
+            public DiscoveryStrategy(OsFile file) : base(file)
+            {
+                AddTo = file.DiscoveryMaps;
+                Series = "Discovery";
+            }
         }
     }
 }
-
-/*
-OS Landranger current editions
-Landranger Title ISBN Pub date Edn Revised Date
-1
-Shetland – Yell, Unst and
-Fetlar
-9780319260999
-24/02/16
-Feb
-2016
-May 2015
-
-Leisure map catalogue
-v1.51 © Crown copyright
-Page 5 of 60
-
-OS Landranger – Active current editions
-Landranger
-Active
-Title ISBN Pub date Edn  Revised Date
-1
-Shetland – Yell, Unst and
-Fetlar
-9780319473245
-24/02/16
-Feb
-2016
-May 2015
-
-OS Explorer current editions
-Explorer  Title ISBN
-Pub
-date
-Edn Revised date
-OL1 Peak District – Dark Peak area 9780319242407 10/06/15
-May
-2015 December 2010
-
-OS Explorer – Active current editions
-Explorer
-Active
-Title ISBN-13 Pub date Edn Revised Date
-OL1 Peak District – Dark Peak area 9780319469194 10/06/15
-May 2015 December 2010
-
-Irish Discoverer Map current editions
-Discoverer Title ISBN-13 Pub date Edn
-4 Coleraine 9781905306640 11/04/12 E
-
-Irish Discovery Map current editions
-Discovery Title ISBN-13 Pub date Edn
-1 Donegal (NW) 9781907122415 30/01/12 4th
-*/
