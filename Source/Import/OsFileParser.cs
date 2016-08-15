@@ -4,20 +4,24 @@ using ScotlandsMountains.Domain;
 
 namespace ScotlandsMountains.Import
 {
-    internal class OsFileParser2
+    public interface IOsFileParser
+    {
+        void Parse(OsFile file);
+    }
+
+    internal class OsFileParser : IOsFileParser
     {
         private const int MaxLIneCacheSize = 10;
 
-        private readonly OsFile _file;
-        private readonly IList<string> _lines;
-
-        private int _position = 0;
+        private OsFile _file;
+        private IList<string> _lines;
+        private int _position;
         private string _cache = string.Empty;
-        private int _cacheSize = 0;
+        private int _cacheSize;
 
         private Strategy _strategy = new NullStrategy();
 
-        public OsFileParser2(OsFile file)
+        public void Parse(OsFile file)
         {
             _file = file;
             _lines = file.Lines;

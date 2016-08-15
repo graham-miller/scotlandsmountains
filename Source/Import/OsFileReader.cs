@@ -8,7 +8,12 @@ using ScotlandsMountains.Resources;
 
 namespace ScotlandsMountains.Import
 {
-    internal class OsFileReader
+    public interface IOsFileReader
+    {
+        List<string> ReadLines();
+    }
+
+    internal class OsFileReader : IOsFileReader
     {
         public List<string> ReadLines()
         {

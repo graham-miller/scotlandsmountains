@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using ScotlandsMountains.Domain;
 
@@ -6,11 +7,14 @@ namespace ScotlandsMountains.Import
 {
     public static class Importer
     {
-        public static DomainRoot Import()
+        public static DomainRoot Import(IOsFileReader osFileReader = null, IOsFileParser osFileParser = null, bool debug = false)
         {
-            var osFile = new OsFile();
-            //var dobihFile = new DobihFile();
+            osFileReader = osFileReader ?? new OsFileReader();
+            osFileParser = osFileParser ?? new OsFileParser();
 
+            var osFile = new OsFile(osFileReader, osFileParser, debug);
+
+            //var dobihFile = new DobihFile();
             ////var classifications = dobi
             ////var sections 
 
@@ -24,7 +28,6 @@ namespace ScotlandsMountains.Import
             //return domainRoot;
             return null;
         }
-
         private static Mountain RecordTransformedToMountain(DobihRecord record)
         {
             return new Mountain
