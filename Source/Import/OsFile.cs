@@ -18,14 +18,14 @@ namespace ScotlandsMountains.Import
             if (debug) WriteRecordsToFile();
         }
 
-        public readonly IList<string> Lines;
+        public IList<string> Lines { get; }
 
-        public IList<Map> LandrangerMaps { get; set; } = new List<Map>();
-        public IList<Map> LandrangerActiveMaps { get; set; } = new List<Map>();
-        public IList<Map> ExplorerMaps { get; set; } = new List<Map>();
-        public IList<Map> ExplorerActiveMaps { get; set; } = new List<Map>();
-        public IList<Map> DiscovererMaps { get; set; } = new List<Map>();
-        public IList<Map> DiscoveryMaps { get; set; } = new List<Map>();
+        public IList<Map> LandrangerMaps { get;} = new List<Map>();
+        public IList<Map> LandrangerActiveMaps { get;} = new List<Map>();
+        public IList<Map> ExplorerMaps { get; } = new List<Map>();
+        public IList<Map> ExplorerActiveMaps { get; } = new List<Map>();
+        public IList<Map> DiscovererMaps { get; } = new List<Map>();
+        public IList<Map> DiscoveryMaps { get; } = new List<Map>();
 
         private void WriteLineToFile()
         {

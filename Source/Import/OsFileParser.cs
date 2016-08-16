@@ -9,10 +9,8 @@ namespace ScotlandsMountains.Import
         void Parse(OsFile file);
     }
 
-    internal class OsFileParser : IOsFileParser
+    public class OsFileParser : IOsFileParser
     {
-        private const int MaxLIneCacheSize = 10;
-
         private OsFile _file;
         private IList<string> _lines;
         private int _position;
@@ -43,11 +41,14 @@ namespace ScotlandsMountains.Import
 
         private void AppendCacheFromFile()
         {
-            if (_cacheSize >= MaxLIneCacheSize)
+            if (_cacheSize >= _strategy.MaxLineCacheSize || _position + _cacheSize >= _lines.Count)
             {
                 _position++;
                 _cache = string.Empty;
                 _cacheSize = 0;
+
+                if(_position >= _lines.Count)
+                    return;
             }
 
             var nextValueToCache = _lines[_position + _cacheSize];
@@ -100,7 +101,7 @@ namespace ScotlandsMountains.Import
 
         private bool EndOfFile()
         {
-            return _position + _cacheSize >= _lines.Count;
+            return _position > _lines.Count;
         }
 
         abstract class Strategy
@@ -124,7 +125,9 @@ namespace ScotlandsMountains.Import
                 });
             }
 
-            protected Regex CaptureRegex = new Regex(@"^(OL\d{1,2}|\d{1,3}) (\S| )*\d{13} \d{2}(\/\d{2}){2} [a-zA-Z]{3,9} \d{4} [a-zA-Z]{3,9} \d{4}$");
+            public int MaxLineCacheSize;
+
+            protected Regex CaptureRegex = new Regex(@"^(OL\d{1,2}|\d{1,3}) \S(\S| )* \d{13} \d{2}(\/\d{2}){2} [a-zA-Z]{3,9} \d{4} [a-zA-Z]{3,9} \d{4}$");
             protected Regex ExtractRegex = new Regex(@"^(?'Code'(OL\d{1,2}|\d{1,3})) (?'Name'.*) (?'Isbn'\d{13}).*$");
             protected IList<Map> AddTo;
             protected string Series;
@@ -141,8 +144,9 @@ namespace ScotlandsMountains.Import
             public LandrangerStrategy(OsFile file)
             {
                 AddTo = file.LandrangerMaps;
-                Series = "Landranger";
-                Scale = 1 / 50000m;
+                Series = MapConstants.Landranger;
+                Scale = MapConstants.OneTo50K;
+                MaxLineCacheSize = 10;
             }
         }
 
@@ -151,7 +155,7 @@ namespace ScotlandsMountains.Import
             public LandrangerActiveStrategy(OsFile file) : base(file)
             {
                 AddTo = file.LandrangerActiveMaps;
-                Series = "Landranger Active";
+                Series = MapConstants.LandrangerActive;
             }
         }
 
@@ -160,8 +164,9 @@ namespace ScotlandsMountains.Import
             public ExplorerStrategy(OsFile file)
             {
                 AddTo = file.ExplorerMaps;
-                Series = "Explorer";
-                Scale = 1 / 50000m;
+                Series = MapConstants.Explorer;
+                Scale = MapConstants.OneTo25K;
+                MaxLineCacheSize = 5;
             }
         }
 
@@ -170,7 +175,7 @@ namespace ScotlandsMountains.Import
             public ExplorerActiveStrategy(OsFile file) : base(file)
             {
                 AddTo = file.ExplorerActiveMaps;
-                Series = "Explorer Active";
+                Series = MapConstants.ExplorerActive;
             }
         }
 
@@ -180,8 +185,9 @@ namespace ScotlandsMountains.Import
             {
                 CaptureRegex = new Regex(@"^(OL\d{1,2}|\d{1,3}) (\S| )*\d{13} \d{2}(\/\d{2}){2} .*$");
                 AddTo = file.DiscovererMaps;
-                Series = "Discoverer";
-                Scale = 1 / 50000m;
+                Series = MapConstants.Discoverer;
+                Scale = MapConstants.OneTo50K;
+                MaxLineCacheSize = 1;
             }
         }
 
@@ -190,7 +196,7 @@ namespace ScotlandsMountains.Import
             public DiscoveryStrategy(OsFile file) : base(file)
             {
                 AddTo = file.DiscoveryMaps;
-                Series = "Discovery";
+                Series = MapConstants.Discovery;
             }
         }
     }

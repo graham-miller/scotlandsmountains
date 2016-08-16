@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MapConstants.cs" />
     <Compile Include="OsFile.cs" />
     <Compile Include="DobihFile.cs" />
     <Compile Include="DobihRecord.cs" />
