@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using ScotlandsMountains.Domain;
 
-namespace ScotlandsMountains.Import
+namespace ScotlandsMountains.Import.Os
 {
     public class OsFile
     {
         public OsFile(IOsFileReader osFileReader, IOsFileParser oSFileParser, bool debug = false)
         {
-            Lines = osFileReader.ReadLines();
+            Lines = osFileReader.Lines;
 
             if (debug) WriteLineToFile();
 

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ScotlandsMountains.Import
+namespace ScotlandsMountains.Import.Dobih
 {
-    internal class DobihRecord
+    public class DobihRecord
     {
         private static class FieldNames
         {
@@ -59,7 +59,7 @@ namespace ScotlandsMountains.Import
 
         private string GetString(string fieldName)
         {
-            return _fields[_dobihFile.ColumnIndex[fieldName]];
+            return _fields[_dobihFile.ColumnIndexes[fieldName]];
         }
 
         private List<string> GetList(string fieldName, string separator)

@@ -3,6 +3,7 @@ using System.Linq;
 using Moq;
 using NUnit.Framework;
 using ScotlandsMountains.Import;
+using ScotlandsMountains.Import.Os;
 
 namespace ScotlandsMountains.ImportTests
 {
@@ -14,7 +15,7 @@ namespace ScotlandsMountains.ImportTests
         {
             var mockReader = new Mock<IOsFileReader>();
             mockReader
-                .Setup(x => x.ReadLines())
+                .Setup(x => x.Lines)
                 .Returns(new List<string>
                 {
                     "1   OS Landranger current editions",
@@ -52,7 +53,7 @@ namespace ScotlandsMountains.ImportTests
         {
             var mockReader = new Mock<IOsFileReader>();
             mockReader
-                .Setup(x => x.ReadLines())
+                .Setup(x => x.Lines)
                 .Returns(new List<string>
                 {
                     "2  OS Landranger – Active current editions",
@@ -92,7 +93,7 @@ namespace ScotlandsMountains.ImportTests
         {
             var mockReader = new Mock<IOsFileReader>();
             mockReader
-                .Setup(x => x.ReadLines())
+                .Setup(x => x.Lines)
                 .Returns(new List<string>
                 {
                     "3           OS Explorer current editions",
@@ -126,7 +127,7 @@ namespace ScotlandsMountains.ImportTests
         {
             var mockReader = new Mock<IOsFileReader>();
             mockReader
-                .Setup(x => x.ReadLines())
+                .Setup(x => x.Lines)
                 .Returns(new List<string>
                 {
                     "4           OS Explorer – Active current editions",
@@ -158,7 +159,7 @@ namespace ScotlandsMountains.ImportTests
         {
             var mockReader = new Mock<IOsFileReader>();
             mockReader
-                .Setup(x => x.ReadLines())
+                .Setup(x => x.Lines)
                 .Returns(new List<string>
                 {
                     "10   Irish Discoverer Map current editions",
@@ -185,7 +186,7 @@ namespace ScotlandsMountains.ImportTests
         {
             var mockReader = new Mock<IOsFileReader>();
             mockReader
-                .Setup(x => x.ReadLines())
+                .Setup(x => x.Lines)
                 .Returns(new List<string>
                 {
                     "11   Irish Discovery Map current editions",

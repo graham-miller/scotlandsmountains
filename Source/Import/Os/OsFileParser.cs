@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using ScotlandsMountains.Domain;
 
-namespace ScotlandsMountains.Import
+namespace ScotlandsMountains.Import.Os
 {
     public interface IOsFileParser
     {

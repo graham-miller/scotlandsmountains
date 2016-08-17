@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.IO.Compression;
+using System.Linq;
 using Microsoft.VisualBasic.FileIO;
 using ScotlandsMountains.Resources;
-using System.Linq;
 
-namespace ScotlandsMountains.Import
+namespace ScotlandsMountains.Import.Dobih
 {
-    internal class DobihFile
+    public class DobihFile
     {
         public DobihFile()
         {
@@ -20,7 +20,7 @@ namespace ScotlandsMountains.Import
                 TrimWhiteSpace = true
             })
             {
-                ColumnIndex = parser.ReadFields()
+                ColumnIndexes = parser.ReadFields()
                     .Select((s,i) => new {Key = s, Value = i})
                     .ToDictionary(k => k.Key, v => v.Value);
 
@@ -29,7 +29,7 @@ namespace ScotlandsMountains.Import
             }
         }
 
-        public IDictionary<string,int> ColumnIndex { get; private set; } 
+        public IDictionary<string,int> ColumnIndexes { get; private set; } 
         public IList<DobihRecord> Records { get; } = new List<DobihRecord>();
     }
 }

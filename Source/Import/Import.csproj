@@ -47,12 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MapConstants.cs" />
-    <Compile Include="OsFile.cs" />
-    <Compile Include="DobihFile.cs" />
-    <Compile Include="DobihRecord.cs" />
+    <Compile Include="Os\OsFile.cs" />
+    <Compile Include="Dobih\DobihFile.cs" />
+    <Compile Include="Dobih\DobihRecord.cs" />
     <Compile Include="Importer.cs" />
-    <Compile Include="OsFileParser.cs" />
-    <Compile Include="OsFileReader.cs" />
+    <Compile Include="Os\OsFileParser.cs" />
+    <Compile Include="Os\OsFileReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
