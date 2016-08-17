@@ -13,7 +13,7 @@ namespace ScotlandsMountains.Import
         List<string> ReadLines();
     }
 
-    internal class OsFileReader : IOsFileReader
+    public class OsFileReader : IOsFileReader
     {
         public List<string> ReadLines()
         {

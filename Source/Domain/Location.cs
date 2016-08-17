@@ -1,4 +1,4 @@
-﻿namespace ScotlandsMountains.Import
+﻿namespace ScotlandsMountains.Domain
 {
     public class Location
     {

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Moq;
 using NUnit.Framework;
@@ -206,6 +205,21 @@ namespace ScotlandsMountains.ImportTests
             Assert.That(actual.Name, Is.EqualTo("Donegal (NW)"));
             Assert.That(actual.Isbn, Is.EqualTo("9781907122415"));
             Assert.That(actual.Scale, Is.EqualTo(MapConstants.OneTo50K));
+        }
+
+        [Test]
+        public void CanParseEntireCatalogue()
+        {
+            var sut = new OsFile(new OsFileReader(), new OsFileParser());
+
+            Assert.That(sut.LandrangerMaps.Count, Is.EqualTo(204));
+            Assert.That(sut.LandrangerActiveMaps.Count, Is.EqualTo(204));
+
+            Assert.That(sut.ExplorerMaps.Count, Is.EqualTo(403));
+            Assert.That(sut.ExplorerActiveMaps.Count, Is.EqualTo(403));
+
+            Assert.That(sut.DiscovererMaps.Count, Is.EqualTo(18));
+            Assert.That(sut.DiscoveryMaps.Count, Is.EqualTo(73));
         }
     }
 }

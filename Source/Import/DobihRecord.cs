@@ -6,7 +6,7 @@ namespace ScotlandsMountains.Import
 {
     internal class DobihRecord
     {
-        private class FieldNames
+        private static class FieldNames
         {
             public const string Number = "Number";
             public const string Name = "Name";
@@ -18,11 +18,11 @@ namespace ScotlandsMountains.Import
             public const string Feet = "Feet";
             public const string Latitude = "Latitude";
             public const string Longitude = "Longitude";
-            public const string GridRefXY = "GridrefXY";
+            public const string GridRefXy = "GridrefXY";
             public const string GridRef = "Grid ref";
         }
 
-        private class Separators
+        private static class Separators
         {
             public const string Space = " ";
             public const string Comma = ",";
@@ -35,27 +35,27 @@ namespace ScotlandsMountains.Import
             _dobihFile = dobihFile;
         }
 
-        public int Number { get { return GetInt(FieldNames.Number); } }
+        public int Number => GetInt(FieldNames.Number);
 
-        public string Name { get { return GetString(FieldNames.Name); } }
+        public string Name => GetString(FieldNames.Name);
 
-        public string Section { get { return GetSectionName(FieldNames.SectionName); } }
+        public string Section => GetSectionName(FieldNames.SectionName);
 
-        public List<string> Classifications { get { return GetList(FieldNames.Classification, Separators.Comma); } }
+        public List<string> Classifications => GetList(FieldNames.Classification, Separators.Comma);
 
-        public List<string> Maps1To50000 { get { return GetList(FieldNames.Map1To50000, Separators.Space); } }
+        public List<string> Maps1To50000 => GetList(FieldNames.Map1To50000, Separators.Space);
 
-        public List<string> Maps1To25000 { get { return GetList(FieldNames.Map1To25000, Separators.Space); } }
+        public List<string> Maps1To25000 => GetList(FieldNames.Map1To25000, Separators.Space);
 
-        public double Metres { get { return GetDouble(FieldNames.Metres); } }
+        public double Metres => GetDouble(FieldNames.Metres);
 
-        public double Feet { get { return GetDouble(FieldNames.Feet); } }
+        public double Feet => GetDouble(FieldNames.Feet);
 
-        public double Latitude { get { return GetDouble(FieldNames.Latitude); } }
+        public double Latitude => GetDouble(FieldNames.Latitude);
 
-        public double Longitude { get { return GetDouble(FieldNames.Longitude); } }
+        public double Longitude => GetDouble(FieldNames.Longitude);
 
-        public string GridRef { get { return GetGridRef(); } }
+        public string GridRef => GetGridRef();
 
         private string GetString(string fieldName)
         {
@@ -64,7 +64,7 @@ namespace ScotlandsMountains.Import
 
         private List<string> GetList(string fieldName, string separator)
         {
-            return GetString(fieldName).Split(new string[] { separator }, StringSplitOptions.RemoveEmptyEntries)
+            return GetString(fieldName).Split(new [] { separator }, StringSplitOptions.RemoveEmptyEntries)
                 .Select(x => x.Trim())
                 .ToList();
         }
@@ -87,7 +87,7 @@ namespace ScotlandsMountains.Import
 
         private string GetGridRef()
         {
-            var raw = GetString(FieldNames.GridRefXY);
+            var raw = GetString(FieldNames.GridRefXy);
 
             if (string.IsNullOrWhiteSpace(raw))
                 raw = GetString(FieldNames.GridRef);
@@ -95,114 +95,7 @@ namespace ScotlandsMountains.Import
             return raw;
         }
 
-        private DobihFile _dobihFile;
-        private string[] _fields;
-
-        //Number
-        //Name
-        //Parent(SMC)
-        //Parent name(SMC)
-        //Section
-        //Section name
-        //Area
-        //Island
-        //Topo Section
-        //County
-        //Classification
-        //Map 1:50k
-        //Map 1:25k
-        //Metres
-        //Feet
-        //Grid ref
-        //Grid ref 10
-        //Drop
-        //Col grid ref
-        //Col height
-        //Feature
-        //Observations
-        //Survey
-        //Climbed
-        //Country
-        //County Top
-        //Revision
-        //Comments
-        //Streetmap/OSiViewer
-        //Geograph/MountainViews
-        //Hill-bagging
-        //Xcoord
-        //Ycoord
-        //Latitude
-        //Longitude
-        //GridrefXY
-        //_Section
-        //Parent(Ma)
-        //Parent name(Ma)
-        //MVNumber
-        //Ma
-        //Ma=
-        //Hu
-        //Hu =
-        //Tu
-        //Tu=
-        //Sim
-        //M
-        //MT
-        //F
-        //C
-        //G
-        //D
-        //DT
-        //Mur
-        //CT
-        //GT
-        //Hew
-        //N
-        //5
-        //5D
-        //5H
-        //4
-        //3
-        //2
-        //1
-        //1=
-        //0
-        //W
-        //WO
-        //B
-        //CoH
-        //CoH=
-        //CoU
-        //CoU =
-        //CoA
-        //CoA=
-        //CoL
-        //CoL =
-        //SIB
-        //sMa
-        //sHu
-        //sSim
-        //s5
-        //s5D
-        //s5H
-        //s5M
-        //s4
-        //Sy
-        //Fel
-        //BL
-        //Bg
-        //T100
-        //xMT
-        //xC
-        //xG
-        //xN
-        //xDT
-        //Dil
-        //VL
-        //A
-        //5M
-        //Ca
-        //Bin
-        //O
-        //Un
+        private readonly DobihFile _dobihFile;
+        private readonly string[] _fields;
     }
 }

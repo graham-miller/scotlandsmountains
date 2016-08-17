@@ -28,8 +28,10 @@ namespace ScotlandsMountains.Import
             {
                 if (CacheContainsMapRecord())
                     CreateMapEntityAndResetCache();
+                else if (CacheIsTooBig())
+                    ResetCache();
                 else
-                    AppendCacheFromFile();
+                    ReadNextLine();
 
             } while (!EndOfFile());
         }
@@ -39,28 +41,44 @@ namespace ScotlandsMountains.Import
             return _strategy.IsMatch(_cache);
         }
 
-        private void AppendCacheFromFile()
+        private void CreateMapEntityAndResetCache()
         {
-            if (_cacheSize >= _strategy.MaxLineCacheSize || _position + _cacheSize >= _lines.Count)
-            {
-                _position++;
-                _cache = string.Empty;
-                _cacheSize = 0;
+            _strategy.CreateMap(_cache);
+            ResetCache();
+        }
 
-                if(_position >= _lines.Count)
-                    return;
-            }
+        private bool CacheIsTooBig()
+        {
+            return (_cacheSize > _strategy.MaxLineCacheSize) || (_position + _cacheSize >= _lines.Count);
+        }
 
-            var nextValueToCache = _lines[_position + _cacheSize];
-
-            SetStrategyBasedOn(nextValueToCache);
+        private void ReadNextLine()
+        {
+            var line = _lines[_position + _cacheSize];
 
             if (string.IsNullOrEmpty(_cache))
-                _cache += nextValueToCache;
+            {
+                SetStrategyBasedOn(line);
+                _cache += line;
+            }
             else
-                _cache = _cache + " " + nextValueToCache;
+            {
+                _cache = _cache + " " + line;
+            }
 
             _cacheSize++;
+        }
+
+        private void ResetCache()
+        {
+            _position++;
+            _cache = string.Empty;
+            _cacheSize = 0;
+        }
+
+        private bool EndOfFile()
+        {
+            return _position > _lines.Count;
         }
 
         private void SetStrategyBasedOn(string nextValueToCache)
@@ -91,21 +109,13 @@ namespace ScotlandsMountains.Import
                 _strategy = new NullStrategy();
         }
 
-        private void CreateMapEntityAndResetCache()
-        {
-            _strategy.CreateMap(_cache);
-            _position += _cacheSize;
-            _cache = string.Empty;
-            _cacheSize = 0;
-        }
-
-        private bool EndOfFile()
-        {
-            return _position > _lines.Count;
-        }
-
         abstract class Strategy
         {
+            protected Strategy(OsFile file)
+            {
+                File = file;
+            }
+
             public virtual bool IsMatch(string record)
             {
                 return CaptureRegex.IsMatch(record);
@@ -113,91 +123,95 @@ namespace ScotlandsMountains.Import
 
             public virtual void CreateMap(string record)
             {
-                var match = ExtractRegex.Match(record);
+                var match = _extractRegex.Match(record);
                 AddTo.Add(new Map
                 {
                     Publisher = "Ordnance Survey",
                     Series = Series,
-                    Code = match.Groups["Code"].Value,
-                    Name = match.Groups["Name"].Value,
-                    Isbn = match.Groups["Isbn"].Value,
+                    Code = match.Groups["Code"].Value.Trim(),
+                    Name = match.Groups["Name"].Value.Trim(),
+                    Isbn = match.Groups["Isbn"].Value.Trim(),
                     Scale = Scale
                 });
             }
 
-            public int MaxLineCacheSize;
 
-            protected Regex CaptureRegex = new Regex(@"^(OL\d{1,2}|\d{1,3}) \S(\S| )* \d{13} \d{2}(\/\d{2}){2} [a-zA-Z]{3,9} \d{4} [a-zA-Z]{3,9} \d{4}$");
-            protected Regex ExtractRegex = new Regex(@"^(?'Code'(OL\d{1,2}|\d{1,3})) (?'Name'.*) (?'Isbn'\d{13}).*$");
-            protected IList<Map> AddTo;
-            protected string Series;
-            protected decimal Scale;
+            private readonly Regex _extractRegex = new Regex(@"^(?'Code'(OL\d{1,2}|\d{1,3})) (?'Name'.*) (?'Isbn'\d{13}).*$");
+
+            public virtual int MaxLineCacheSize { get; } = 1;
+
+            protected readonly OsFile File;
+
+            protected virtual Regex CaptureRegex { get; }
+            protected virtual IList<Map> AddTo { get; }
+            protected virtual string Series { get; }
+            protected virtual decimal Scale { get; }
         }
 
         private class NullStrategy : Strategy
         {
+            public NullStrategy() : base(null) { }
+
+            public override int MaxLineCacheSize => 0;
+
             public override bool IsMatch(string record) { return false; }
         }
 
         private class LandrangerStrategy : Strategy
         {
-            public LandrangerStrategy(OsFile file)
-            {
-                AddTo = file.LandrangerMaps;
-                Series = MapConstants.Landranger;
-                Scale = MapConstants.OneTo50K;
-                MaxLineCacheSize = 10;
-            }
+            public LandrangerStrategy(OsFile file) : base(file) { }
+
+            public override int MaxLineCacheSize => 10;
+            protected override Regex CaptureRegex => new Regex(@"^\d{1,3} \S(\S| )* \d{13} \d{2}(\/\d{2}){2} [a-zA-Z]{3,9} \d{4} [a-zA-Z]{3,9} \d{4}$");
+            protected override IList<Map> AddTo => File.LandrangerMaps;
+            protected override string Series => MapConstants.Landranger;
+            protected override decimal Scale => MapConstants.OneTo50K;
         }
 
         private class LandrangerActiveStrategy : LandrangerStrategy
         {
-            public LandrangerActiveStrategy(OsFile file) : base(file)
-            {
-                AddTo = file.LandrangerActiveMaps;
-                Series = MapConstants.LandrangerActive;
-            }
+            public LandrangerActiveStrategy(OsFile file) : base(file) { }
+
+            protected override IList<Map> AddTo => File.LandrangerActiveMaps;
+            protected override string Series => MapConstants.LandrangerActive;
         }
 
         private class ExplorerStrategy : Strategy
         {
-            public ExplorerStrategy(OsFile file)
-            {
-                AddTo = file.ExplorerMaps;
-                Series = MapConstants.Explorer;
-                Scale = MapConstants.OneTo25K;
-                MaxLineCacheSize = 5;
-            }
+            public ExplorerStrategy(OsFile file) : base(file) { }
+
+            public override int MaxLineCacheSize => 9;
+            protected override Regex CaptureRegex => new Regex(@"^(OL\d{1,2}|\d{1,3}) \S(\S| )* \d{13} \d{2}(\/\d{2}){2} [a-zA-Z]{3,9} \d{4} [a-zA-Z]{3,9} \d{4}$");
+            protected override IList<Map> AddTo => File.ExplorerMaps;
+            protected override string Series => MapConstants.Explorer;
+            protected override decimal Scale => MapConstants.OneTo25K;
         }
 
         private class ExplorerActiveStrategy : ExplorerStrategy
         {
-            public ExplorerActiveStrategy(OsFile file) : base(file)
-            {
-                AddTo = file.ExplorerActiveMaps;
-                Series = MapConstants.ExplorerActive;
-            }
+            public ExplorerActiveStrategy(OsFile file) : base(file) { }
+
+            protected override IList<Map> AddTo => File.ExplorerActiveMaps;
+            protected override string Series => MapConstants.ExplorerActive;
         }
 
         private class DiscovererStrategy : Strategy
         {
-            public DiscovererStrategy(OsFile file)
-            {
-                CaptureRegex = new Regex(@"^(OL\d{1,2}|\d{1,3}) (\S| )*\d{13} \d{2}(\/\d{2}){2} .*$");
-                AddTo = file.DiscovererMaps;
-                Series = MapConstants.Discoverer;
-                Scale = MapConstants.OneTo50K;
-                MaxLineCacheSize = 1;
-            }
+            public DiscovererStrategy(OsFile file) : base(file) { }
+
+            public override int MaxLineCacheSize => 3;
+            protected override Regex CaptureRegex => new Regex(@"^\d{1,2} \S(\S| )*\d{13} \d{2}(\/\d{2}){2} .*$");
+            protected override IList<Map> AddTo => File.DiscovererMaps;
+            protected override string Series => MapConstants.Discoverer;
+            protected override decimal Scale => MapConstants.OneTo50K;
         }
 
         private class DiscoveryStrategy : DiscovererStrategy
         {
-            public DiscoveryStrategy(OsFile file) : base(file)
-            {
-                AddTo = file.DiscoveryMaps;
-                Series = MapConstants.Discovery;
-            }
+            public DiscoveryStrategy(OsFile file) : base(file) { }
+
+            protected override IList<Map> AddTo => File.DiscoveryMaps;
+            protected override string Series => MapConstants.Discovery;
         }
     }
 }

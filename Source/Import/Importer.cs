@@ -1,7 +1,4 @@
-﻿using System;
-using System.Diagnostics.Eventing.Reader;
-using System.Linq;
-using ScotlandsMountains.Domain;
+﻿using ScotlandsMountains.Domain;
 
 namespace ScotlandsMountains.Import
 {

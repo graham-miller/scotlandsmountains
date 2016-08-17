@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace ScotlandsMountains.Import
+namespace ScotlandsMountains.Domain
 {
     public class GridRef
     {

@@ -6,18 +6,12 @@ namespace ScotlandsMountains.Resources
     {
         public static class Dobih
         {
-            public static Stream HillCsvZip
-            {
-                get { return Open("Dobih.hillcsv.zip"); }
-            }
+            public static Stream HillCsvZip => Open("Dobih.hillcsv.zip");
         }
 
         public static class Os
         {
-            public static Stream MapCatalogue
-            {
-                get { return Open("OS.ordnance-survey-leisure-map-catalogue.pdf"); }
-            }
+            public static Stream MapCatalogue => Open("OS.ordnance-survey-leisure-map-catalogue.pdf");
         }
 
         private static Stream Open(string path)
