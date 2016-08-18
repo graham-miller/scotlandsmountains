@@ -40,12 +40,9 @@ namespace ScotlandsMountains.ImportTests
 
             var actual = sut.LandrangerMaps.First();
 
-            Assert.That(actual.Publisher, Is.EqualTo(MapConstants.OrdnanceSurvey));
-            Assert.That(actual.Series, Is.EqualTo(MapConstants.Landranger));
             Assert.That(actual.Code, Is.EqualTo("1"));
             Assert.That(actual.Name, Is.EqualTo("Shetland – Yell, Unst and Fetlar"));
             Assert.That(actual.Isbn, Is.EqualTo("9780319260999"));
-            Assert.That(actual.Scale, Is.EqualTo(MapConstants.OneTo50K));
         }
 
         [Test]
@@ -80,12 +77,9 @@ namespace ScotlandsMountains.ImportTests
 
             var actual = sut.LandrangerActiveMaps.First();
 
-            Assert.That(actual.Publisher, Is.EqualTo(MapConstants.OrdnanceSurvey));
-            Assert.That(actual.Series, Is.EqualTo(MapConstants.LandrangerActive));
             Assert.That(actual.Code, Is.EqualTo("1"));
             Assert.That(actual.Name, Is.EqualTo("Shetland – Yell, Unst and Fetlar"));
             Assert.That(actual.Isbn, Is.EqualTo("9780319473245"));
-            Assert.That(actual.Scale, Is.EqualTo(MapConstants.OneTo50K));
         }
 
         [Test]
@@ -114,12 +108,9 @@ namespace ScotlandsMountains.ImportTests
 
             var actual = sut.ExplorerMaps.First();
 
-            Assert.That(actual.Publisher, Is.EqualTo(MapConstants.OrdnanceSurvey));
-            Assert.That(actual.Series, Is.EqualTo(MapConstants.Explorer));
             Assert.That(actual.Code, Is.EqualTo("OL1"));
             Assert.That(actual.Name, Is.EqualTo("Peak District – Dark Peak area"));
             Assert.That(actual.Isbn, Is.EqualTo("9780319242407"));
-            Assert.That(actual.Scale, Is.EqualTo(MapConstants.OneTo25K));
         }
 
         [Test]
@@ -146,12 +137,9 @@ namespace ScotlandsMountains.ImportTests
 
             var actual = sut.ExplorerActiveMaps.First();
 
-            Assert.That(actual.Publisher, Is.EqualTo(MapConstants.OrdnanceSurvey));
-            Assert.That(actual.Series, Is.EqualTo(MapConstants.ExplorerActive));
             Assert.That(actual.Code, Is.EqualTo("OL1"));
             Assert.That(actual.Name, Is.EqualTo("Peak District – Dark Peak area"));
             Assert.That(actual.Isbn, Is.EqualTo("9780319469194"));
-            Assert.That(actual.Scale, Is.EqualTo(MapConstants.OneTo25K));
         }
 
         [Test]
@@ -173,12 +161,9 @@ namespace ScotlandsMountains.ImportTests
 
             var actual = sut.DiscovererMaps.First();
 
-            Assert.That(actual.Publisher, Is.EqualTo(MapConstants.OrdnanceSurvey));
-            Assert.That(actual.Series, Is.EqualTo(MapConstants.Discoverer));
             Assert.That(actual.Code, Is.EqualTo("4"));
             Assert.That(actual.Name, Is.EqualTo("Coleraine"));
             Assert.That(actual.Isbn, Is.EqualTo("9781905306640"));
-            Assert.That(actual.Scale, Is.EqualTo(MapConstants.OneTo50K));
         }
 
         [Test]
@@ -200,12 +185,9 @@ namespace ScotlandsMountains.ImportTests
 
             var actual = sut.DiscoveryMaps.First();
 
-            Assert.That(actual.Publisher, Is.EqualTo(MapConstants.OrdnanceSurvey));
-            Assert.That(actual.Series, Is.EqualTo(MapConstants.Discovery));
             Assert.That(actual.Code, Is.EqualTo("1"));
             Assert.That(actual.Name, Is.EqualTo("Donegal (NW)"));
             Assert.That(actual.Isbn, Is.EqualTo("9781907122415"));
-            Assert.That(actual.Scale, Is.EqualTo(MapConstants.OneTo50K));
         }
 
         [Test]

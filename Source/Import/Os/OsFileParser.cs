@@ -124,14 +124,11 @@ namespace ScotlandsMountains.Import.Os
             public virtual void CreateMap(string record)
             {
                 var match = _extractRegex.Match(record);
-                AddTo.Add(new Map
+                AddTo.Add(new OsRecord
                 {
-                    Publisher = "Ordnance Survey",
-                    Series = Series,
                     Code = match.Groups["Code"].Value.Trim(),
                     Name = match.Groups["Name"].Value.Trim(),
-                    Isbn = match.Groups["Isbn"].Value.Trim(),
-                    Scale = Scale
+                    Isbn = match.Groups["Isbn"].Value.Trim()
                 });
             }
 
@@ -143,9 +140,7 @@ namespace ScotlandsMountains.Import.Os
             protected readonly OsFile File;
 
             protected virtual Regex CaptureRegex { get; }
-            protected virtual IList<Map> AddTo { get; }
-            protected virtual string Series { get; }
-            protected virtual decimal Scale { get; }
+            protected virtual IList<OsRecord> AddTo { get; }
         }
 
         private class NullStrategy : Strategy
@@ -163,17 +158,14 @@ namespace ScotlandsMountains.Import.Os
 
             public override int MaxLineCacheSize => 10;
             protected override Regex CaptureRegex => new Regex(@"^\d{1,3} \S(\S| )* \d{13} \d{2}(\/\d{2}){2} [a-zA-Z]{3,9} \d{4} [a-zA-Z]{3,9} \d{4}$");
-            protected override IList<Map> AddTo => File.LandrangerMaps;
-            protected override string Series => MapConstants.Landranger;
-            protected override decimal Scale => MapConstants.OneTo50K;
+            protected override IList<OsRecord> AddTo => File.LandrangerMaps;
         }
 
         private class LandrangerActiveStrategy : LandrangerStrategy
         {
             public LandrangerActiveStrategy(OsFile file) : base(file) { }
 
-            protected override IList<Map> AddTo => File.LandrangerActiveMaps;
-            protected override string Series => MapConstants.LandrangerActive;
+            protected override IList<OsRecord> AddTo => File.LandrangerActiveMaps;
         }
 
         private class ExplorerStrategy : Strategy
@@ -182,17 +174,14 @@ namespace ScotlandsMountains.Import.Os
 
             public override int MaxLineCacheSize => 9;
             protected override Regex CaptureRegex => new Regex(@"^(OL\d{1,2}|\d{1,3}) \S(\S| )* \d{13} \d{2}(\/\d{2}){2} [a-zA-Z]{3,9} \d{4} [a-zA-Z]{3,9} \d{4}$");
-            protected override IList<Map> AddTo => File.ExplorerMaps;
-            protected override string Series => MapConstants.Explorer;
-            protected override decimal Scale => MapConstants.OneTo25K;
+            protected override IList<OsRecord> AddTo => File.ExplorerMaps;
         }
 
         private class ExplorerActiveStrategy : ExplorerStrategy
         {
             public ExplorerActiveStrategy(OsFile file) : base(file) { }
 
-            protected override IList<Map> AddTo => File.ExplorerActiveMaps;
-            protected override string Series => MapConstants.ExplorerActive;
+            protected override IList<OsRecord> AddTo => File.ExplorerActiveMaps;
         }
 
         private class DiscovererStrategy : Strategy
@@ -201,17 +190,14 @@ namespace ScotlandsMountains.Import.Os
 
             public override int MaxLineCacheSize => 3;
             protected override Regex CaptureRegex => new Regex(@"^\d{1,2} \S(\S| )*\d{13} \d{2}(\/\d{2}){2} .*$");
-            protected override IList<Map> AddTo => File.DiscovererMaps;
-            protected override string Series => MapConstants.Discoverer;
-            protected override decimal Scale => MapConstants.OneTo50K;
+            protected override IList<OsRecord> AddTo => File.DiscovererMaps;
         }
 
         private class DiscoveryStrategy : DiscovererStrategy
         {
             public DiscoveryStrategy(OsFile file) : base(file) { }
 
-            protected override IList<Map> AddTo => File.DiscoveryMaps;
-            protected override string Series => MapConstants.Discovery;
+            protected override IList<OsRecord> AddTo => File.DiscoveryMaps;
         }
     }
 }

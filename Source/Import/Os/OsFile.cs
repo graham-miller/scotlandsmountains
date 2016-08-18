@@ -1,31 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using ScotlandsMountains.Domain;
 
 namespace ScotlandsMountains.Import.Os
 {
-    public class OsFile
+    public interface IOsFile
     {
-        public OsFile(IOsFileReader osFileReader, IOsFileParser oSFileParser, bool debug = false)
+        IList<OsRecord> LandrangerMaps { get; }
+        IList<OsRecord> LandrangerActiveMaps { get; }
+        IList<OsRecord> ExplorerMaps { get; }
+        IList<OsRecord> ExplorerActiveMaps { get; }
+        IList<OsRecord> DiscovererMaps { get; }
+        IList<OsRecord> DiscoveryMaps { get; }
+    }
+
+    public class OsFile : IOsFile
+    {
+        public OsFile(IOsFileReader osFileReader = null, IOsFileParser osFileParser = null, bool debug = false)
         {
+            osFileReader = osFileReader ?? new OsFileReader();
+            osFileParser = osFileParser ?? new OsFileParser();
+
             Lines = osFileReader.Lines;
 
             if (debug) WriteLineToFile();
 
-            oSFileParser.Parse(this);
+            osFileParser.Parse(this);
 
             if (debug) WriteRecordsToFile();
         }
 
         public IList<string> Lines { get; }
 
-        public IList<Map> LandrangerMaps { get;} = new List<Map>();
-        public IList<Map> LandrangerActiveMaps { get;} = new List<Map>();
-        public IList<Map> ExplorerMaps { get; } = new List<Map>();
-        public IList<Map> ExplorerActiveMaps { get; } = new List<Map>();
-        public IList<Map> DiscovererMaps { get; } = new List<Map>();
-        public IList<Map> DiscoveryMaps { get; } = new List<Map>();
+        public IList<OsRecord> LandrangerMaps { get;} = new List<OsRecord>();
+        public IList<OsRecord> LandrangerActiveMaps { get;} = new List<OsRecord>();
+        public IList<OsRecord> ExplorerMaps { get; } = new List<OsRecord>();
+        public IList<OsRecord> ExplorerActiveMaps { get; } = new List<OsRecord>();
+        public IList<OsRecord> DiscovererMaps { get; } = new List<OsRecord>();
+        public IList<OsRecord> DiscoveryMaps { get; } = new List<OsRecord>();
 
         private void WriteLineToFile()
         {
@@ -54,10 +66,10 @@ namespace ScotlandsMountains.Import.Os
             }
         }
 
-        private void WriteRecordsToFile(StreamWriter writer, IList<Map> maps)
+        private void WriteRecordsToFile(StreamWriter writer, IList<OsRecord> maps)
         {
             foreach (var map in maps)
-                writer.WriteLine("\"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\",{5}", map.Publisher, map.Series, map.Code, map.Name, map.Isbn, map.Scale);
+                writer.WriteLine("\"{0}\",\"{1}\",\"{2}\"", map.Code, map.Name, map.Isbn);
         }
 
         private static string GetPathToFileOnDesktopAndDeleteIfExisting(string fileName)

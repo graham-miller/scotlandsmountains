@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Hashids.net, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\hashids.net.1.1.2\lib\net45\Hashids.net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="itextsharp, Version=5.5.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\..\packages\iTextSharp.5.5.9\lib\itextsharp.dll</HintPath>
       <Private>True</Private>
@@ -46,14 +50,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MapConstants.cs" />
+    <Compile Include="Dobih\DobihFileReader.cs" />
+    <Compile Include="IdGenerator.cs" />
+    <Compile Include="Os\MapConstants.cs" />
     <Compile Include="Os\OsFile.cs" />
     <Compile Include="Dobih\DobihFile.cs" />
     <Compile Include="Dobih\DobihRecord.cs" />
-    <Compile Include="Importer.cs" />
+    <Compile Include="DomainRootFactory.cs" />
     <Compile Include="Os\OsFileParser.cs" />
     <Compile Include="Os\OsFileReader.cs" />
+    <Compile Include="Os\OsRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MountainFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj">

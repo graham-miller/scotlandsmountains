@@ -1,4 +1,4 @@
-﻿namespace ScotlandsMountains.Import
+﻿namespace ScotlandsMountains.Import.Os
 {
     public class MapConstants
     {
