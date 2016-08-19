@@ -80,6 +80,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dobih\DobihRecordTests.cs" />
     <Compile Include="ImportTestHarness.cs" />
     <Compile Include="MapsFactoryTests.cs" />
     <Compile Include="MountainFactoryTests.cs" />
