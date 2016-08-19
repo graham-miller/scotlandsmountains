@@ -82,6 +82,7 @@
   <ItemGroup>
     <Compile Include="ImportTestHarness.cs" />
     <Compile Include="MapsFactoryTests.cs" />
+    <Compile Include="MountainFactoryTests.cs" />
     <Compile Include="Os\OsFileParserTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

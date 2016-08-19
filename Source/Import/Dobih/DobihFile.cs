@@ -6,7 +6,7 @@ namespace ScotlandsMountains.Import.Dobih
     public interface IDobihFile
     {
         IDictionary<string, int> ColumnIndexes { get; }
-        IList<DobihRecord> Records { get; }
+        IList<IDobihRecord> Records { get; }
     }
 
     public class DobihFile : IDobihFile
@@ -16,10 +16,10 @@ namespace ScotlandsMountains.Import.Dobih
             dobihFileReader = dobihFileReader ?? new DobihFileReader();
 
             ColumnIndexes = dobihFileReader.ColumnIndexes;
-            Records = dobihFileReader.Lines.Select(x => new DobihRecord(x, this)).ToList();
+            Records = dobihFileReader.Lines.Select(x => new DobihRecord(x, this)).ToList<IDobihRecord>();
         }
 
         public IDictionary<string,int> ColumnIndexes { get; } 
-        public IList<DobihRecord> Records { get; }
+        public IList<IDobihRecord> Records { get; }
     }
 }

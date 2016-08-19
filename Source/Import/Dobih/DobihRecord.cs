@@ -4,7 +4,22 @@ using System.Linq;
 
 namespace ScotlandsMountains.Import.Dobih
 {
-    public class DobihRecord
+    public interface IDobihRecord
+    {
+        int Number { get; }
+        string Name { get; }
+        string Section { get; }
+        List<string> Classifications { get; }
+        List<string> Maps1To50000 { get; }
+        List<string> Maps1To25000 { get; }
+        double Metres { get; }
+        double Feet { get; }
+        double Latitude { get; }
+        double Longitude { get; }
+        string GridRef { get; }
+    }
+
+    public class DobihRecord : IDobihRecord
     {
         private static class FieldNames
         {

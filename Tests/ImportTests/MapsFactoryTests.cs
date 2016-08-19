@@ -2,11 +2,8 @@
 using NUnit.Framework;
 using ScotlandsMountains.Import;
 using ScotlandsMountains.Import.Os;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ScotlandsMountains.Domain;
 
 namespace ScotlandsMountains.ImportTests
@@ -29,7 +26,7 @@ namespace ScotlandsMountains.ImportTests
                 }
             };
 
-        private Maps _sut;
+        private Maps _actual;
 
         [OneTimeSetUp]
         public void OneTimeSetUp()
@@ -48,91 +45,91 @@ namespace ScotlandsMountains.ImportTests
             mockOsFile.Setup(x => x.DiscovererMaps).Returns(osRecords);
             mockOsFile.Setup(x => x.DiscoveryMaps).Returns(osRecords);
 
-            _sut = new MapsFactory(mockIdGenerator.Object).BuildFrom(mockOsFile.Object);
+            _actual = new MapsFactory(mockIdGenerator.Object).BuildFrom(mockOsFile.Object);
         }
 
         [Test]
         public void GivenLandrangerRecordsWhenBuildingThenMappedCorrectly()
         {
-            var actual = _sut.Landranger.First();
+            var map = _actual.Landranger.First();
 
-            Assert.That(actual.Id, Is.EqualTo(Id));
-            Assert.That(actual.Publisher, Is.EqualTo(MapConstants.OrdnanceSurvey));
-            Assert.That(actual.Series, Is.EqualTo(MapConstants.Landranger));
-            Assert.That(actual.Code, Is.EqualTo(Code));
-            Assert.That(actual.Name, Is.EqualTo(Name));
-            Assert.That(actual.Isbn, Is.EqualTo(Isbn));
-            Assert.That(actual.Scale, Is.EqualTo(MapConstants.OneTo50K));
+            Assert.That(map.Id, Is.EqualTo(Id));
+            Assert.That(map.Publisher, Is.EqualTo(MapConstants.OrdnanceSurvey));
+            Assert.That(map.Series, Is.EqualTo(MapConstants.Landranger));
+            Assert.That(map.Code, Is.EqualTo(Code));
+            Assert.That(map.Name, Is.EqualTo(Name));
+            Assert.That(map.Isbn, Is.EqualTo(Isbn));
+            Assert.That(map.Scale, Is.EqualTo(MapConstants.OneTo50K));
         }
 
         [Test]
         public void GivenLandrangerActiveRecordsWhenBuildingThenMappedCorrectly()
         {
-            var actual = _sut.LandrangerActive.First();
+            var map = _actual.LandrangerActive.First();
 
-            Assert.That(actual.Id, Is.EqualTo(Id));
-            Assert.That(actual.Publisher, Is.EqualTo(MapConstants.OrdnanceSurvey));
-            Assert.That(actual.Series, Is.EqualTo(MapConstants.LandrangerActive));
-            Assert.That(actual.Code, Is.EqualTo(Code));
-            Assert.That(actual.Name, Is.EqualTo(Name));
-            Assert.That(actual.Isbn, Is.EqualTo(Isbn));
-            Assert.That(actual.Scale, Is.EqualTo(MapConstants.OneTo50K));
+            Assert.That(map.Id, Is.EqualTo(Id));
+            Assert.That(map.Publisher, Is.EqualTo(MapConstants.OrdnanceSurvey));
+            Assert.That(map.Series, Is.EqualTo(MapConstants.LandrangerActive));
+            Assert.That(map.Code, Is.EqualTo(Code));
+            Assert.That(map.Name, Is.EqualTo(Name));
+            Assert.That(map.Isbn, Is.EqualTo(Isbn));
+            Assert.That(map.Scale, Is.EqualTo(MapConstants.OneTo50K));
         }
 
         [Test]
         public void GivenExplorerRecordsWhenBuildingThenMappedCorrectly()
         {
-            var actual = _sut.Explorer.First();
+            var map = _actual.Explorer.First();
 
-            Assert.That(actual.Id, Is.EqualTo(Id));
-            Assert.That(actual.Publisher, Is.EqualTo(MapConstants.OrdnanceSurvey));
-            Assert.That(actual.Series, Is.EqualTo(MapConstants.Explorer));
-            Assert.That(actual.Code, Is.EqualTo(Code));
-            Assert.That(actual.Name, Is.EqualTo(Name));
-            Assert.That(actual.Isbn, Is.EqualTo(Isbn));
-            Assert.That(actual.Scale, Is.EqualTo(MapConstants.OneTo25K));
+            Assert.That(map.Id, Is.EqualTo(Id));
+            Assert.That(map.Publisher, Is.EqualTo(MapConstants.OrdnanceSurvey));
+            Assert.That(map.Series, Is.EqualTo(MapConstants.Explorer));
+            Assert.That(map.Code, Is.EqualTo(Code));
+            Assert.That(map.Name, Is.EqualTo(Name));
+            Assert.That(map.Isbn, Is.EqualTo(Isbn));
+            Assert.That(map.Scale, Is.EqualTo(MapConstants.OneTo25K));
         }
 
         [Test]
         public void GivenExplorerActiveRecordsWhenBuildingThenMappedCorrectly()
         {
-            var actual = _sut.ExplorerActive.First();
+            var map = _actual.ExplorerActive.First();
 
-            Assert.That(actual.Id, Is.EqualTo(Id));
-            Assert.That(actual.Publisher, Is.EqualTo(MapConstants.OrdnanceSurvey));
-            Assert.That(actual.Series, Is.EqualTo(MapConstants.ExplorerActive));
-            Assert.That(actual.Code, Is.EqualTo(Code));
-            Assert.That(actual.Name, Is.EqualTo(Name));
-            Assert.That(actual.Isbn, Is.EqualTo(Isbn));
-            Assert.That(actual.Scale, Is.EqualTo(MapConstants.OneTo25K));
+            Assert.That(map.Id, Is.EqualTo(Id));
+            Assert.That(map.Publisher, Is.EqualTo(MapConstants.OrdnanceSurvey));
+            Assert.That(map.Series, Is.EqualTo(MapConstants.ExplorerActive));
+            Assert.That(map.Code, Is.EqualTo(Code));
+            Assert.That(map.Name, Is.EqualTo(Name));
+            Assert.That(map.Isbn, Is.EqualTo(Isbn));
+            Assert.That(map.Scale, Is.EqualTo(MapConstants.OneTo25K));
         }
 
         [Test]
         public void GivenDiscovererRecordsWhenBuildingThenMappedCorrectly()
         {
-            var actual = _sut.Discoverer.First();
+            var map = _actual.Discoverer.First();
 
-            Assert.That(actual.Id, Is.EqualTo(Id));
-            Assert.That(actual.Publisher, Is.EqualTo(MapConstants.OrdnanceSurvey));
-            Assert.That(actual.Series, Is.EqualTo(MapConstants.Discoverer));
-            Assert.That(actual.Code, Is.EqualTo(Code));
-            Assert.That(actual.Name, Is.EqualTo(Name));
-            Assert.That(actual.Isbn, Is.EqualTo(Isbn));
-            Assert.That(actual.Scale, Is.EqualTo(MapConstants.OneTo50K));
+            Assert.That(map.Id, Is.EqualTo(Id));
+            Assert.That(map.Publisher, Is.EqualTo(MapConstants.OrdnanceSurvey));
+            Assert.That(map.Series, Is.EqualTo(MapConstants.Discoverer));
+            Assert.That(map.Code, Is.EqualTo(Code));
+            Assert.That(map.Name, Is.EqualTo(Name));
+            Assert.That(map.Isbn, Is.EqualTo(Isbn));
+            Assert.That(map.Scale, Is.EqualTo(MapConstants.OneTo50K));
         }
 
         [Test]
         public void GivenDiscoveryRecordsWhenBuildingThenMappedCorrectly()
         {
-            var actual = _sut.Discovery.First();
+            var map = _actual.Discovery.First();
 
-            Assert.That(actual.Id, Is.EqualTo(Id));
-            Assert.That(actual.Publisher, Is.EqualTo(MapConstants.OrdnanceSurvey));
-            Assert.That(actual.Series, Is.EqualTo(MapConstants.Discovery));
-            Assert.That(actual.Code, Is.EqualTo(Code));
-            Assert.That(actual.Name, Is.EqualTo(Name));
-            Assert.That(actual.Isbn, Is.EqualTo(Isbn));
-            Assert.That(actual.Scale, Is.EqualTo(MapConstants.OneTo50K));
+            Assert.That(map.Id, Is.EqualTo(Id));
+            Assert.That(map.Publisher, Is.EqualTo(MapConstants.OrdnanceSurvey));
+            Assert.That(map.Series, Is.EqualTo(MapConstants.Discovery));
+            Assert.That(map.Code, Is.EqualTo(Code));
+            Assert.That(map.Name, Is.EqualTo(Name));
+            Assert.That(map.Isbn, Is.EqualTo(Isbn));
+            Assert.That(map.Scale, Is.EqualTo(MapConstants.OneTo50K));
         }
     }
 }

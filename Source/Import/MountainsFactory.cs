@@ -22,7 +22,7 @@ namespace ScotlandsMountains.Import
                 .ToList();
         }
 
-        private Mountain Build(DobihRecord record)
+        private Mountain Build(IDobihRecord record)
         {
             return new Mountain
             {
