@@ -2,10 +2,9 @@
 using System.Linq;
 using Moq;
 using NUnit.Framework;
-using ScotlandsMountains.Import;
 using ScotlandsMountains.Import.Os;
 
-namespace ScotlandsMountains.ImportTests
+namespace ScotlandsMountains.ImportTests.Os
 {
     [TestFixture]
     public class OsFileParserTests

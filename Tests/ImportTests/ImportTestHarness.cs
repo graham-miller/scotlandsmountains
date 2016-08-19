@@ -9,7 +9,7 @@ namespace ScotlandsMountains.ImportTests
     public class ImportTestHarness
     {
         [Test]
-        //[Ignore("Slow manual test harness")]
+        [Ignore("Slow manual test harness")]
         public void ImportFromRawFiles()
         {
             var sut = new DomainRootFactory().Build();
@@ -18,7 +18,7 @@ namespace ScotlandsMountains.ImportTests
         }
 
         [Test]
-        //[Ignore("Slow manual test harness")]
+        [Ignore("Slow manual test harness")]
         public void ImportFromDomainJson()
         {
             var sut = DomainRoot.Load();
