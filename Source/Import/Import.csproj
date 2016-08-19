@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Dobih\DobihFileReader.cs" />
     <Compile Include="IdGenerator.cs" />
+    <Compile Include="MapsFactory.cs" />
     <Compile Include="Os\MapConstants.cs" />
     <Compile Include="Os\OsFile.cs" />
     <Compile Include="Dobih\DobihFile.cs" />
@@ -61,7 +62,7 @@
     <Compile Include="Os\OsFileReader.cs" />
     <Compile Include="Os\OsRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MountainFactory.cs" />
+    <Compile Include="MountainsFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj">

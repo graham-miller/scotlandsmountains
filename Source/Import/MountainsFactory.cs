@@ -1,18 +1,28 @@
-﻿using ScotlandsMountains.Domain;
+﻿using System.Collections.Generic;
+using System.Linq;
+using ScotlandsMountains.Domain;
 using ScotlandsMountains.Import.Dobih;
 
 namespace ScotlandsMountains.Import
 {
-    public class MountainFactory
+    public class MountainsFactory
     {
         private readonly IIdGenerator _idGenerator;
 
-        public MountainFactory(IIdGenerator idGenerator)
+        public MountainsFactory(IIdGenerator idGenerator)
         {
             _idGenerator = idGenerator;
         }
 
-        public Mountain BuildFrom(DobihRecord record)
+        public IList<Mountain> BuildFrom(IDobihFile file)
+        {
+            return file.Records
+                .Select(Build)
+                .OrderByDescending(m => m.Height)
+                .ToList();
+        }
+
+        private Mountain Build(DobihRecord record)
         {
             return new Mountain
             {
