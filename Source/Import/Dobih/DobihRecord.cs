@@ -44,10 +44,10 @@ namespace ScotlandsMountains.Import.Dobih
             public const string Colon = ":";
         }
 
-        public DobihRecord(string[] fields, DobihFile dobihFile)
+        public DobihRecord(string[] fields, IDictionary<string, int> columnIndexes)
         {
             _fields = fields;
-            _dobihFile = dobihFile;
+            _columnIndexes = columnIndexes;
         }
 
         public int Number => GetInt(FieldNames.Number);
@@ -74,7 +74,7 @@ namespace ScotlandsMountains.Import.Dobih
 
         private string GetString(string fieldName)
         {
-            return _fields[_dobihFile.ColumnIndexes[fieldName]];
+            return _fields[_columnIndexes[fieldName]];
         }
 
         private List<string> GetList(string fieldName, string separator)
@@ -110,7 +110,7 @@ namespace ScotlandsMountains.Import.Dobih
             return raw;
         }
 
-        private readonly DobihFile _dobihFile;
+        private readonly IDictionary<string, int> _columnIndexes;
         private readonly string[] _fields;
     }
 }
