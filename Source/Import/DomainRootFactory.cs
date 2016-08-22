@@ -15,11 +15,13 @@ namespace ScotlandsMountains.Import
         public DomainRoot Build()
         {
             var maps = new MapsFactory(_idGenerator).BuildFrom(_osFile);
+            var classifications = new ClassificationFactory(_idGenerator).BuildFrom(_dobihFile);
             var mountains = new MountainsFactory(_idGenerator).BuildFrom(_dobihFile);
 
             return new DomainRoot
             {
                 Maps = maps,
+                Classifications = classifications,
                 Mountains = mountains
             };
         }

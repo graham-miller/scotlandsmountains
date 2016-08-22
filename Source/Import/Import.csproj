@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassificationFactory.cs" />
     <Compile Include="Dobih\DobihFileReader.cs" />
     <Compile Include="IdGenerator.cs" />
     <Compile Include="MapsFactory.cs" />

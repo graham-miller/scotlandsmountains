@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classification.cs" />
     <Compile Include="DomainRoot.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="GridRef.cs" />
