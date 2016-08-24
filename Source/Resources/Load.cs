@@ -1,6 +1,4 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
-using System.IO;
+﻿using System.IO;
 
 namespace ScotlandsMountains.Resources
 {
@@ -29,6 +27,8 @@ namespace ScotlandsMountains.Resources
                     }
                 }
             }
+
+            public static Stream ClassificationInfo => Open("ScotlandsMountains.ClassificationInfo.xlsx");
         }
 
         private static Stream Open(string path)

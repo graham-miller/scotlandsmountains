@@ -8,8 +8,8 @@ namespace ScotlandsMountains.ImportTests
     [TestFixture]
     public class ImportTestHarness
     {
-        [Test]
-        //[Ignore("Slow manual test harness")]
+        [Test, Order(1)]
+        [Ignore("Slow manual test harness")]
         public void ImportFromRawFiles()
         {
             var sut = new DomainRootFactory().Build();
@@ -17,7 +17,7 @@ namespace ScotlandsMountains.ImportTests
             sut.Save();
         }
 
-        [Test]
+        [Test, Order(2)]
         [Ignore("Slow manual test harness")]
         public void ImportFromDomainJson()
         {
@@ -27,14 +27,16 @@ namespace ScotlandsMountains.ImportTests
 
         private static void AssertDomain(DomainRoot domainRoot)
         {
-            Assert.That(domainRoot.Maps.Landranger.Count(), Is.EqualTo(204));
-            Assert.That(domainRoot.Maps.LandrangerActive.Count(), Is.EqualTo(204));
-            Assert.That(domainRoot.Maps.Explorer.Count(), Is.EqualTo(403));
-            Assert.That(domainRoot.Maps.ExplorerActive.Count(), Is.EqualTo(403));
-            Assert.That(domainRoot.Maps.Discoverer.Count(), Is.EqualTo(18));
-            Assert.That(domainRoot.Maps.Discovery.Count(), Is.EqualTo(73));
+            Assert.That(domainRoot.Maps.Landranger.Count, Is.EqualTo(204));
+            Assert.That(domainRoot.Maps.LandrangerActive.Count, Is.EqualTo(204));
+            Assert.That(domainRoot.Maps.Explorer.Count, Is.EqualTo(403));
+            Assert.That(domainRoot.Maps.ExplorerActive.Count, Is.EqualTo(403));
+            Assert.That(domainRoot.Maps.Discoverer.Count, Is.EqualTo(18));
+            Assert.That(domainRoot.Maps.Discovery.Count, Is.EqualTo(73));
 
-            Assert.That(domainRoot.Mountains.Count(), Is.EqualTo(20647));
+            Assert.That(domainRoot.Classifications.Count, Is.EqualTo(57));
+
+            Assert.That(domainRoot.Mountains.Count, Is.EqualTo(20647));
         }
     }
 }

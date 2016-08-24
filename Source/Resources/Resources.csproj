@@ -47,6 +47,7 @@
   <ItemGroup>
     <None Include="Raw\OS\Links.txt" />
     <EmbeddedResource Include="Raw\ScotlandsMountains\Domain.json" />
+    <EmbeddedResource Include="Raw\ScotlandsMountains\ClassificationInfo.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Raw\Dobih\hillcsv.zip" />

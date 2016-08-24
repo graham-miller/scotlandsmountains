@@ -2,16 +2,16 @@
 using System.Linq;
 using ScotlandsMountains.Domain;
 using ScotlandsMountains.Import.Dobih;
+using ScotlandsMountains.Import.ScotlandsMountains;
 
 namespace ScotlandsMountains.Import
 {
-    class ClassificationFactory
+    public class ClassificationFactory
     {
-        private readonly IIdGenerator _idGenerator;
-
-        public ClassificationFactory(IIdGenerator idGenerator)
+        public ClassificationFactory(IIdGenerator idGenerator, IClassificationInfoProvider classificationInfoProvider)
         {
             _idGenerator = idGenerator;
+            _classificationInfoProvider = classificationInfoProvider;
         }
 
         public IList<Classification> BuildFrom(IDobihFile dobihFile)
@@ -19,15 +19,19 @@ namespace ScotlandsMountains.Import
             return dobihFile.Records
                 .SelectMany(x => x.Classifications)
                 .Distinct()
+                .Select(x => _classificationInfoProvider.GetClassificationInfoFor(x))
+                .OrderBy(x => x.Order)
                 .Select(x => new Classification
                 {
                     Id = _idGenerator.Generate(),
-                    Name = x
+                    Name = x.Name,
+                    Order  = x.Order,
+                    Description = x.Description
                 })
-                .OrderBy(x => x.Name)
                 .ToList();
         }
 
-
+        private readonly IIdGenerator _idGenerator;
+        private readonly IClassificationInfoProvider _classificationInfoProvider;
     }
 }
