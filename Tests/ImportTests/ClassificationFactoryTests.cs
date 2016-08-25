@@ -12,7 +12,7 @@ namespace ScotlandsMountains.ImportTests
     public class ClassificationFactoryTests
     {
         [Test]
-        public void Test()
+        public void GivenClassificationInfoWhenCreatingClassificationThenClassificationConstructedCorrectly()
         {
             const string id = "ID";
             const string classificationCode = "Classification code";

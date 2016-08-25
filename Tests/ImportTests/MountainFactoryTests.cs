@@ -37,14 +37,14 @@ namespace ScotlandsMountains.ImportTests
             mockRecord.Setup(x => x.GridRef).Returns(GridRef);
 
             var mockIdGenerator = new Mock<IIdGenerator>();
-
             mockIdGenerator.Setup(x => x.Generate(Number)).Returns(Id);
 
+            var mockDomainRoot = new Mock<IDomainRoot>(MockBehavior.Loose);
 
             var mockDobihFile = new Mock<IDobihFile>();
             mockDobihFile.Setup(x => x.Records).Returns(new List<IDobihRecord> { mockRecord.Object });
 
-            _actual = new MountainsFactory(mockIdGenerator.Object).BuildFrom(mockDobihFile.Object).Single();
+            _actual = new MountainsFactory(mockIdGenerator.Object, mockDomainRoot.Object).BuildFrom(mockDobihFile.Object).Single();
         }
 
         [Test]

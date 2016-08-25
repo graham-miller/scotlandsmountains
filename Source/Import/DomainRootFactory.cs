@@ -16,17 +16,15 @@ namespace ScotlandsMountains.Import
 
         public DomainRoot Build()
         {
-            var maps = new MapsFactory(_idGenerator).BuildFrom(_osFile);
-            var classifications = new ClassificationFactory(_idGenerator, _classificationInfoProvider).BuildFrom(_dobihFile);
-
-            var mountains = new MountainsFactory(_idGenerator).BuildFrom(_dobihFile);
-
-            return new DomainRoot
+            var domainRoot = new DomainRoot
             {
-                Maps = maps,
-                Classifications = classifications,
-                Mountains = mountains
+                Maps = new MapsFactory(_idGenerator).BuildFrom(_osFile),
+                Classifications = new ClassificationFactory(_idGenerator, _classificationInfoProvider).BuildFrom(_dobihFile)
             };
+
+            domainRoot.Mountains = new MountainsFactory(_idGenerator, domainRoot).BuildFrom(_dobihFile);
+
+            return domainRoot;
         }
 
         private const int IdGeneratorSequenceSeed = 30000; // IDs below 30,000 are reserved for mountains

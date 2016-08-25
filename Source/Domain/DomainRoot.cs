@@ -4,7 +4,14 @@ using Newtonsoft.Json.Serialization;
 
 namespace ScotlandsMountains.Domain
 {
-    public class DomainRoot
+    public interface IDomainRoot
+    {
+        IList<Classification> Classifications { get; set; }
+        Maps Maps { get; set; }
+        IList<Mountain> Mountains { get; set; }
+    }
+
+    public class DomainRoot : IDomainRoot
     {
         public IList<Mountain> Mountains { get; set; }
 

@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace ScotlandsMountains.Domain
 {
     public class Mountain : Entity
@@ -5,5 +7,6 @@ namespace ScotlandsMountains.Domain
         public string Name { get; set; }
         public Height Height { get; set; }
         public Location Location { get; set; }
+        public IList<string> MapIds { get; set; } 
     }
 }

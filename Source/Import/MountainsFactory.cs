@@ -8,10 +8,12 @@ namespace ScotlandsMountains.Import
     public class MountainsFactory
     {
         private readonly IIdGenerator _idGenerator;
+        private readonly IDomainRoot _domainRoot;
 
-        public MountainsFactory(IIdGenerator idGenerator)
+        public MountainsFactory(IIdGenerator idGenerator, IDomainRoot domainRoot)
         {
             _idGenerator = idGenerator;
+            _domainRoot = domainRoot;
         }
 
         public IList<Mountain> BuildFrom(IDobihFile file)
