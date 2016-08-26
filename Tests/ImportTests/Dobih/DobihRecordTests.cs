@@ -25,6 +25,11 @@ namespace ScotlandsMountains.ImportTests.Dobih
             Assert.That(sut.Latitude, Is.EqualTo(56.796849));
             Assert.That(sut.Longitude, Is.EqualTo(-5.003525));
             Assert.That(sut.GridRef, Is.EqualTo("NN1667571283"));
+            Assert.That(sut.Drop, Is.EqualTo(1344.5));
+            Assert.That(sut.ColGridRef, Is.EqualTo("Sea"));
+            Assert.That(sut.ColMetres, Is.EqualTo(0));
+            Assert.That(sut.Feature, Is.EqualTo("trig point on plinth"));
+            Assert.That(sut.Observations, Is.EqualTo("man-made structure supporting emergency structure is higher"));
         }
 
         private static readonly IDictionary<string, int> ColumnIndexes = new string[]

@@ -18,6 +18,11 @@ namespace ScotlandsMountains.ImportTests
         private const double Latitude = 3;
         private const double Longitude = 4;
         private const string GridRef = "NM123456";
+        private const double Drop = 5;
+        private const string ColGridRef = "ColGridRef";
+        private const double ColMetres = 6;
+        private const string Feature = "Feature";
+        private const string Observations = "Observations";
 
         private Mountain _actual;
 
@@ -35,6 +40,11 @@ namespace ScotlandsMountains.ImportTests
             mockRecord.Setup(x => x.Latitude).Returns(Latitude);
             mockRecord.Setup(x => x.Longitude).Returns(Longitude);
             mockRecord.Setup(x => x.GridRef).Returns(GridRef);
+            mockRecord.Setup(x => x.Drop).Returns(Drop);
+            mockRecord.Setup(x => x.ColGridRef).Returns(ColGridRef);
+            mockRecord.Setup(x => x.ColMetres).Returns(ColMetres);
+            mockRecord.Setup(x => x.Feature).Returns(Feature);
+            mockRecord.Setup(x => x.Observations).Returns(Observations);
 
             var mockIdGenerator = new Mock<IIdGenerator>();
             mockIdGenerator.Setup(x => x.Generate(Number)).Returns(Id);
@@ -71,6 +81,26 @@ namespace ScotlandsMountains.ImportTests
             Assert.That(_actual.Location.Latitude, Is.EqualTo(Latitude));
             Assert.That(_actual.Location.Longitude, Is.EqualTo(Longitude));
             Assert.That(_actual.Location.GridRef.SixFigure, Is.EqualTo(GridRef));
+        }
+
+        [Test]
+        public void ThenProminenceIsMappedCorectly()
+        {
+            Assert.That(_actual.Prominence.Metres, Is.EqualTo(Drop));
+            Assert.That(_actual.Prominence.KeyCol, Is.EqualTo(ColGridRef));
+            Assert.That(_actual.Prominence.KeyColHeight.Metres, Is.EqualTo(ColMetres));
+        }
+
+        [Test]
+        public void ThenFeatureIsMappedCorectly()
+        {
+            Assert.That(_actual.Feature, Is.EqualTo(Feature));
+        }
+
+        [Test]
+        public void ThenObservationsIsMappedCorectly()
+        {
+            Assert.That(_actual.Observations, Is.EqualTo(Observations));
         }
     }
 }

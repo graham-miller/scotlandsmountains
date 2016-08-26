@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ScotlandsMountains.Domain;
 
 namespace ScotlandsMountains.Import.Dobih
 {
@@ -18,6 +19,11 @@ namespace ScotlandsMountains.Import.Dobih
         double Latitude { get; }
         double Longitude { get; }
         string GridRef { get; }
+        double Drop { get; }
+        string ColGridRef { get; }
+        double ColMetres { get; }
+        string Feature { get; }
+        string Observations { get; }
     }
 
     public class DobihRecord : IDobihRecord
@@ -33,6 +39,11 @@ namespace ScotlandsMountains.Import.Dobih
             public const string Map1To25000 = "Map 1:25k";
             public const string Metres = "Metres";
             public const string Feet = "Feet";
+            public const string Drop = "Drop";
+            public const string ColGridRef = "Col grid ref";
+            public const string ColHeight = "Col height";
+            public const string Feature = "Feature";
+            public const string Observations = "Observations";
             public const string Latitude = "Latitude";
             public const string Longitude = "Longitude";
             public const string GridRefXy = "GridrefXY";
@@ -76,6 +87,16 @@ namespace ScotlandsMountains.Import.Dobih
 
         public string GridRef => GetGridRef();
 
+        public double Drop => GetDouble(FieldNames.Drop);
+
+        public string ColGridRef => GetColGridRef();
+
+        public double ColMetres => GetDouble(FieldNames.ColHeight);
+
+        public string Feature => GetString(FieldNames.Feature);
+
+        public string Observations => GetString(FieldNames.Observations);
+
         private string GetString(string fieldName)
         {
             return _fields[_columnIndexes[fieldName]];
@@ -110,6 +131,16 @@ namespace ScotlandsMountains.Import.Dobih
 
             if (string.IsNullOrWhiteSpace(raw))
                 raw = GetString(FieldNames.GridRef);
+
+            return raw;
+        }
+
+        private string GetColGridRef()
+        {
+            var raw = GetString(FieldNames.ColGridRef);
+
+            if (Domain.GridRef.IsValid(raw))
+                return new GridRef(raw).TenFigure;
 
             return raw;
         }

@@ -7,6 +7,9 @@ namespace ScotlandsMountains.Domain
         public string Name { get; set; }
         public Height Height { get; set; }
         public Location Location { get; set; }
-        public IList<string> MapIds { get; set; } 
+        public IList<string> MapIds { get; set; }
+        public Prominence Prominence { get; set; }
+        public string Feature { get; set; }
+        public string Observations { get; set; }
     }
 }

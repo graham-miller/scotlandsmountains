@@ -44,6 +44,17 @@ namespace ScotlandsMountains.Domain
             }
         }
 
+        public static bool IsValid(string s)
+        {
+            if (string.IsNullOrWhiteSpace(s)) return false;
+
+            return
+                SixDigitOsGridRefRegex.IsMatch(s) ||
+                TenDigitOsGridRefRegex.IsMatch(s) ||
+                SixDigitIrishGridRefRegex.IsMatch(s) ||
+                TenDigitIrishGridRefRegex.IsMatch(s);
+        }
+
         private static readonly Regex SixDigitOsGridRefRegex = new Regex(@"^[STNHOW][ABCDEFGHJKLMNOPQRSTUVWXYZ]\d{6}$");
         private static readonly Regex TenDigitOsGridRefRegex = new Regex(@"^[STNHOW][ABCDEFGHJKLMNOPQRSTUVWXYZ]\d{10}$");
         private static readonly Regex SixDigitIrishGridRefRegex = new Regex(@"^[BCDFGHJLMNOQRSTVWXZ]\d{6}$");

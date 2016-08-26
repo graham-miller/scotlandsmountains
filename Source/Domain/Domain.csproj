@@ -58,6 +58,7 @@
     <Compile Include="Map.cs" />
     <Compile Include="Maps.cs" />
     <Compile Include="Mountain.cs" />
+    <Compile Include="Prominence.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Section.cs" />
   </ItemGroup>

@@ -39,7 +39,15 @@ namespace ScotlandsMountains.Import
                     GridRef = new GridRef(record.GridRef),
                     Latitude = record.Latitude,
                     Longitude = record.Longitude
-                }
+                },
+                Prominence = new Prominence
+                {
+                    Metres = record.Drop,
+                    KeyCol = record.ColGridRef,
+                    KeyColHeight = new Height {Metres = record.ColMetres}
+                },
+                Feature = record.Feature,
+                Observations = record.Observations
             };
         }
     }

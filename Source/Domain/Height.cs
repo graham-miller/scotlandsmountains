@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json;
 
 namespace ScotlandsMountains.Domain
 {
@@ -16,6 +17,7 @@ namespace ScotlandsMountains.Domain
             }
         }
 
+        [JsonIgnore]
         public double Feet
         {
             get { return _feet; }

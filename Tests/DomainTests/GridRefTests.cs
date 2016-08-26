@@ -44,5 +44,18 @@ namespace ScotlandsMountains.DomainTests
         {
             Assert.Throws<ArgumentException>(() => new GridRef(string.Empty));
         }
+
+        [TestCase(null, ExpectedResult = false)]
+        [TestCase("", ExpectedResult = false)]
+        [TestCase(" ", ExpectedResult = false)]
+        [TestCase("x", ExpectedResult = false)]
+        [TestCase("NM123456", ExpectedResult = true)]
+        [TestCase("NM1234567890", ExpectedResult = true)]
+        [TestCase("B123456", ExpectedResult = true)]
+        [TestCase("B1234567890", ExpectedResult = true)]
+        public bool GivenStringReturnsIsValidCorrectly(string input)
+        {
+            return GridRef.IsValid(input);
+        }
     }
 }
