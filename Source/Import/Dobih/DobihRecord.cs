@@ -8,7 +8,8 @@ namespace ScotlandsMountains.Import.Dobih
     {
         int Number { get; }
         string Name { get; }
-        string Section { get; }
+        string SectionName { get; }
+        string SectionCode { get; }
         List<string> Classifications { get; }
         List<string> Maps1To50000 { get; }
         List<string> Maps1To25000 { get; }
@@ -25,6 +26,7 @@ namespace ScotlandsMountains.Import.Dobih
         {
             public const string Number = "Number";
             public const string Name = "Name";
+            public const string SectionCode = "Section";
             public const string SectionName = "Section name";
             public const string Classification = "Classification";
             public const string Map1To50000 = "Map 1:50k";
@@ -54,7 +56,9 @@ namespace ScotlandsMountains.Import.Dobih
 
         public string Name => GetString(FieldNames.Name);
 
-        public string Section => GetSectionName(FieldNames.SectionName);
+        public string SectionName => GetSectionName(FieldNames.SectionName);
+
+        public string SectionCode => GetString(FieldNames.SectionCode);
 
         public List<string> Classifications => GetList(FieldNames.Classification, Separators.Comma);
 

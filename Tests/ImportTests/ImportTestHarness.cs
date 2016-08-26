@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using ScotlandsMountains.Domain;
 using ScotlandsMountains.Import;
 
@@ -18,14 +17,14 @@ namespace ScotlandsMountains.ImportTests
         }
 
         [Test, Order(2)]
-        [Ignore("Slow manual test harness")]
+        //[Ignore("Slow manual test harness")]
         public void ImportFromDomainJson()
         {
             var sut = DomainRoot.Load();
             AssertDomain(sut);
         }
 
-        private static void AssertDomain(DomainRoot domainRoot)
+        private static void AssertDomain(IDomainRoot domainRoot)
         {
             Assert.That(domainRoot.Maps.Landranger.Count, Is.EqualTo(204));
             Assert.That(domainRoot.Maps.LandrangerActive.Count, Is.EqualTo(204));
@@ -35,6 +34,8 @@ namespace ScotlandsMountains.ImportTests
             Assert.That(domainRoot.Maps.Discovery.Count, Is.EqualTo(73));
 
             Assert.That(domainRoot.Classifications.Count, Is.EqualTo(57));
+
+            Assert.That(domainRoot.Sections.Count, Is.EqualTo(135));
 
             Assert.That(domainRoot.Mountains.Count, Is.EqualTo(20647));
         }

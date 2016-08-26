@@ -59,6 +59,7 @@
     <Compile Include="Maps.cs" />
     <Compile Include="Mountain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Section.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

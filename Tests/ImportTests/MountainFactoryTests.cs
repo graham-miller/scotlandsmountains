@@ -27,7 +27,7 @@ namespace ScotlandsMountains.ImportTests
             var mockRecord = new Mock<IDobihRecord>();
             mockRecord.Setup(x => x.Number).Returns(Number);
             mockRecord.Setup(x => x.Name).Returns(Name);
-            //mockRecord.Setup(x => x.Section).Returns();
+            //mockRecord.Setup(x => x.SectionName).Returns();
             //mockRecord.Setup(x => x.Classifications).Returns();
             //mockRecord.Setup(x => x.Maps1To50000).Returns();
             //mockRecord.Setup(x => x.Maps1To25000).Returns();

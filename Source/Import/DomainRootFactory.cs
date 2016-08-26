@@ -19,7 +19,8 @@ namespace ScotlandsMountains.Import
             var domainRoot = new DomainRoot
             {
                 Maps = new MapsFactory(_idGenerator).BuildFrom(_osFile),
-                Classifications = new ClassificationFactory(_idGenerator, _classificationInfoProvider).BuildFrom(_dobihFile)
+                Classifications = new ClassificationFactory(_idGenerator, _classificationInfoProvider).BuildFrom(_dobihFile),
+                Sections = new SectionFactory(_idGenerator).BuildFrom(_dobihFile)
             };
 
             domainRoot.Mountains = new MountainsFactory(_idGenerator, domainRoot).BuildFrom(_dobihFile);
