@@ -11,5 +11,6 @@ namespace ScotlandsMountains.Domain
         public Prominence Prominence { get; set; }
         public string Feature { get; set; }
         public string Observations { get; set; }
+        public Country Country { get; set; }
     }
 }

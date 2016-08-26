@@ -10,6 +10,7 @@ namespace ScotlandsMountains.Domain
         IList<Section> Sections { get; set; }
         Maps Maps { get; set; }
         IList<Mountain> Mountains { get; set; }
+        IList<Country> Countries { get; set; }
     }
 
     public class DomainRoot : IDomainRoot
@@ -18,6 +19,7 @@ namespace ScotlandsMountains.Domain
         public IList<Section> Sections { get; set; }
         public Maps Maps { get; set; }
         public IList<Mountain> Mountains { get; set; }
+        public IList<Country> Countries { get; set; }
 
         public static DomainRoot Load()
         {

@@ -4,7 +4,6 @@ using Moq;
 using NUnit.Framework;
 using ScotlandsMountains.Import;
 using ScotlandsMountains.Import.Dobih;
-using ScotlandsMountains.Import.ScotlandsMountains;
 
 namespace ScotlandsMountains.ImportTests
 {

@@ -24,6 +24,7 @@ namespace ScotlandsMountains.Import.Dobih
         double ColMetres { get; }
         string Feature { get; }
         string Observations { get; }
+        string Country { get; }
     }
 
     public class DobihRecord : IDobihRecord
@@ -44,6 +45,7 @@ namespace ScotlandsMountains.Import.Dobih
             public const string ColHeight = "Col height";
             public const string Feature = "Feature";
             public const string Observations = "Observations";
+            public const string Country = "Country";
             public const string Latitude = "Latitude";
             public const string Longitude = "Longitude";
             public const string GridRefXy = "GridrefXY";
@@ -96,6 +98,8 @@ namespace ScotlandsMountains.Import.Dobih
         public string Feature => GetString(FieldNames.Feature);
 
         public string Observations => GetString(FieldNames.Observations);
+
+        public string Country => GetString(FieldNames.Country);
 
         private string GetString(string fieldName)
         {

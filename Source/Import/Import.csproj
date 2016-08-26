@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CountryFactory.cs" />
     <Compile Include="SectionFactory.cs" />
     <Compile Include="ClassificationFactory.cs" />
     <Compile Include="Dobih\DobihFileReader.cs" />
