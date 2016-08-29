@@ -42,6 +42,7 @@ namespace ScotlandsMountains.DomainTests
         [Test]
         public void GivenInvalidThenThrows()
         {
+            // ReSharper disable once ObjectCreationAsStatement
             Assert.Throws<ArgumentException>(() => new GridRef(string.Empty));
         }
 

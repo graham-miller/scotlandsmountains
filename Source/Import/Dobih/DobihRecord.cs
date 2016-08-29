@@ -126,7 +126,7 @@ namespace ScotlandsMountains.Import.Dobih
         private string GetSectionName(string fieldName)
         {
             var s = GetString(fieldName);
-            return s.Substring(s.IndexOf(Separators.Colon) + 1).Trim();
+            return s.Substring(s.IndexOf(Separators.Colon, StringComparison.Ordinal) + 1).Trim();
         }
 
         private string GetGridRef()

@@ -29,6 +29,7 @@ namespace ScotlandsMountains.Import.Dobih
                 TrimWhiteSpace = true
             })
             {
+                // ReSharper disable once AssignNullToNotNullAttribute
                 ColumnIndexes = parser.ReadFields()
                     .Select((s, i) => new { Key = s, Value = i })
                     .ToDictionary(k => k.Key, v => v.Value);

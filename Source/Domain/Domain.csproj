@@ -54,7 +54,6 @@
     <Compile Include="Entity.cs" />
     <Compile Include="GridRef.cs" />
     <Compile Include="Height.cs" />
-    <Compile Include="IdGenerator.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Maps.cs" />

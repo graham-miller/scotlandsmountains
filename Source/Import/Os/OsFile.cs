@@ -6,12 +6,12 @@ namespace ScotlandsMountains.Import.Os
 {
     public interface IOsFile
     {
-        IList<OsRecord> LandrangerMaps { get; }
-        IList<OsRecord> LandrangerActiveMaps { get; }
-        IList<OsRecord> ExplorerMaps { get; }
-        IList<OsRecord> ExplorerActiveMaps { get; }
-        IList<OsRecord> DiscovererMaps { get; }
-        IList<OsRecord> DiscoveryMaps { get; }
+        IList<OsRecord> Landranger { get; }
+        IList<OsRecord> LandrangerActive { get; }
+        IList<OsRecord> Explorer { get; }
+        IList<OsRecord> ExplorerActive { get; }
+        IList<OsRecord> Discoverer { get; }
+        IList<OsRecord> Discovery { get; }
     }
 
     public class OsFile : IOsFile
@@ -32,12 +32,12 @@ namespace ScotlandsMountains.Import.Os
 
         public IList<string> Lines { get; }
 
-        public IList<OsRecord> LandrangerMaps { get;} = new List<OsRecord>();
-        public IList<OsRecord> LandrangerActiveMaps { get;} = new List<OsRecord>();
-        public IList<OsRecord> ExplorerMaps { get; } = new List<OsRecord>();
-        public IList<OsRecord> ExplorerActiveMaps { get; } = new List<OsRecord>();
-        public IList<OsRecord> DiscovererMaps { get; } = new List<OsRecord>();
-        public IList<OsRecord> DiscoveryMaps { get; } = new List<OsRecord>();
+        public IList<OsRecord> Landranger { get;} = new List<OsRecord>();
+        public IList<OsRecord> LandrangerActive { get;} = new List<OsRecord>();
+        public IList<OsRecord> Explorer { get; } = new List<OsRecord>();
+        public IList<OsRecord> ExplorerActive { get; } = new List<OsRecord>();
+        public IList<OsRecord> Discoverer { get; } = new List<OsRecord>();
+        public IList<OsRecord> Discovery { get; } = new List<OsRecord>();
 
         private void WriteLineToFile()
         {
@@ -57,12 +57,12 @@ namespace ScotlandsMountains.Import.Os
                 // header:
                 writer.WriteLine("Publisher,Series,Code,Name,Isbn,Scale");
 
-                WriteRecordsToFile(writer, LandrangerMaps);
-                WriteRecordsToFile(writer, LandrangerActiveMaps);
-                WriteRecordsToFile(writer, ExplorerMaps);
-                WriteRecordsToFile(writer, ExplorerActiveMaps);
-                WriteRecordsToFile(writer, DiscovererMaps);
-                WriteRecordsToFile(writer, DiscoveryMaps);
+                WriteRecordsToFile(writer, Landranger);
+                WriteRecordsToFile(writer, LandrangerActive);
+                WriteRecordsToFile(writer, Explorer);
+                WriteRecordsToFile(writer, ExplorerActive);
+                WriteRecordsToFile(writer, Discoverer);
+                WriteRecordsToFile(writer, Discovery);
             }
         }
 

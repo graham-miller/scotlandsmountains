@@ -80,13 +80,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CountryFactoryTests.cs" />
-    <Compile Include="SectionFactoryTests.cs" />
-    <Compile Include="ClassificationFactoryTests.cs" />
+    <Compile Include="Providers\SectionProviderTests.cs" />
+    <Compile Include="Providers\ClassificationProviderTests.cs" />
+    <Compile Include="Providers\CountryProviderTests.cs" />
     <Compile Include="Dobih\DobihRecordTests.cs" />
     <Compile Include="ImportTestHarness.cs" />
-    <Compile Include="MapsFactoryTests.cs" />
-    <Compile Include="MountainFactoryTests.cs" />
+    <Compile Include="Providers\MountainProviderTests.cs" />
     <Compile Include="Os\OsFileParserTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,17 +1,37 @@
 ﻿using NUnit.Framework;
 using ScotlandsMountains.Domain;
 using ScotlandsMountains.Import;
+using ScotlandsMountains.Import.Dobih;
+using ScotlandsMountains.Import.Os;
+using ScotlandsMountains.Import.Providers;
+using ScotlandsMountains.Import.ScotlandsMountains;
 
 namespace ScotlandsMountains.ImportTests
 {
     [TestFixture]
     public class ImportTestHarness
     {
+        private const int IdGeneratorSequenceSeed = 30000; // IDs below 30,000 are reserved for mountains
+
         [Test, Order(1)]
         //[Ignore("Slow manual test harness")]
         public void ImportFromRawFiles()
         {
-            var sut = new DomainRootFactory().Build();
+            var idGenerator = new IdGenerator(IdGeneratorSequenceSeed);
+            var dobihFile = new DobihFile();
+
+            var parameters = new ImportParameters
+            {
+                DobihFile = dobihFile,
+                MapProvider = new MapProvider(idGenerator, new OsFile()),
+                IdGenerator = idGenerator,
+                CountryProvider = new CountryProvider(idGenerator),
+                ClassificationProvider = new ClassificationProvider(idGenerator, dobihFile, new ClassificationInfoProvider()),
+                SectionProvider = new SectionProvider(idGenerator, dobihFile),
+            };
+
+            var sut = new DomainRootFactory(parameters).Build();
+
             AssertDomain(sut);
             sut.Save();
         }

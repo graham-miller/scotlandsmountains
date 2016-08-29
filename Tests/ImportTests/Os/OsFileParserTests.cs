@@ -37,7 +37,7 @@ namespace ScotlandsMountains.ImportTests.Os
 
             var sut = new OsFile(mockReader.Object, new OsFileParser());
 
-            var actual = sut.LandrangerMaps.First();
+            var actual = sut.Landranger.First();
 
             Assert.That(actual.Code, Is.EqualTo("1"));
             Assert.That(actual.Name, Is.EqualTo("Shetland – Yell, Unst and Fetlar"));
@@ -74,7 +74,7 @@ namespace ScotlandsMountains.ImportTests.Os
 
             var sut = new OsFile(mockReader.Object, new OsFileParser());
 
-            var actual = sut.LandrangerActiveMaps.First();
+            var actual = sut.LandrangerActive.First();
 
             Assert.That(actual.Code, Is.EqualTo("1"));
             Assert.That(actual.Name, Is.EqualTo("Shetland – Yell, Unst and Fetlar"));
@@ -105,7 +105,7 @@ namespace ScotlandsMountains.ImportTests.Os
 
             var sut = new OsFile(mockReader.Object, new OsFileParser());
 
-            var actual = sut.ExplorerMaps.First();
+            var actual = sut.Explorer.First();
 
             Assert.That(actual.Code, Is.EqualTo("OL1"));
             Assert.That(actual.Name, Is.EqualTo("Peak District – Dark Peak area"));
@@ -134,7 +134,7 @@ namespace ScotlandsMountains.ImportTests.Os
 
             var sut = new OsFile(mockReader.Object, new OsFileParser());
 
-            var actual = sut.ExplorerActiveMaps.First();
+            var actual = sut.ExplorerActive.First();
 
             Assert.That(actual.Code, Is.EqualTo("OL1"));
             Assert.That(actual.Name, Is.EqualTo("Peak District – Dark Peak area"));
@@ -158,7 +158,7 @@ namespace ScotlandsMountains.ImportTests.Os
 
             var sut = new OsFile(mockReader.Object, new OsFileParser());
 
-            var actual = sut.DiscovererMaps.First();
+            var actual = sut.Discoverer.First();
 
             Assert.That(actual.Code, Is.EqualTo("4"));
             Assert.That(actual.Name, Is.EqualTo("Coleraine"));
@@ -182,7 +182,7 @@ namespace ScotlandsMountains.ImportTests.Os
 
             var sut = new OsFile(mockReader.Object, new OsFileParser());
 
-            var actual = sut.DiscoveryMaps.First();
+            var actual = sut.Discovery.First();
 
             Assert.That(actual.Code, Is.EqualTo("1"));
             Assert.That(actual.Name, Is.EqualTo("Donegal (NW)"));
@@ -194,14 +194,14 @@ namespace ScotlandsMountains.ImportTests.Os
         {
             var sut = new OsFile(new OsFileReader(), new OsFileParser());
 
-            Assert.That(sut.LandrangerMaps.Count, Is.EqualTo(204));
-            Assert.That(sut.LandrangerActiveMaps.Count, Is.EqualTo(204));
+            Assert.That(sut.Landranger.Count, Is.EqualTo(204));
+            Assert.That(sut.LandrangerActive.Count, Is.EqualTo(204));
 
-            Assert.That(sut.ExplorerMaps.Count, Is.EqualTo(403));
-            Assert.That(sut.ExplorerActiveMaps.Count, Is.EqualTo(403));
+            Assert.That(sut.Explorer.Count, Is.EqualTo(403));
+            Assert.That(sut.ExplorerActive.Count, Is.EqualTo(403));
 
-            Assert.That(sut.DiscovererMaps.Count, Is.EqualTo(18));
-            Assert.That(sut.DiscoveryMaps.Count, Is.EqualTo(73));
+            Assert.That(sut.Discoverer.Count, Is.EqualTo(18));
+            Assert.That(sut.Discovery.Count, Is.EqualTo(73));
         }
     }
 }

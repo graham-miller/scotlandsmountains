@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using ScotlandsMountains.Domain;
 
 namespace ScotlandsMountains.Import.Os
 {
@@ -139,8 +138,8 @@ namespace ScotlandsMountains.Import.Os
 
             protected readonly OsFile File;
 
-            protected virtual Regex CaptureRegex { get; }
-            protected virtual IList<OsRecord> AddTo { get; }
+            protected abstract Regex CaptureRegex { get; }
+            protected abstract IList<OsRecord> AddTo { get; }
         }
 
         private class NullStrategy : Strategy
@@ -148,7 +147,8 @@ namespace ScotlandsMountains.Import.Os
             public NullStrategy() : base(null) { }
 
             public override int MaxLineCacheSize => 0;
-
+            protected override Regex CaptureRegex => null;
+            protected override IList<OsRecord> AddTo => null;
             public override bool IsMatch(string record) { return false; }
         }
 
@@ -158,14 +158,14 @@ namespace ScotlandsMountains.Import.Os
 
             public override int MaxLineCacheSize => 10;
             protected override Regex CaptureRegex => new Regex(@"^\d{1,3} \S(\S| )* \d{13} \d{2}(\/\d{2}){2} [a-zA-Z]{3,9} \d{4} [a-zA-Z]{3,9} \d{4}$");
-            protected override IList<OsRecord> AddTo => File.LandrangerMaps;
+            protected override IList<OsRecord> AddTo => File.Landranger;
         }
 
         private class LandrangerActiveStrategy : LandrangerStrategy
         {
             public LandrangerActiveStrategy(OsFile file) : base(file) { }
 
-            protected override IList<OsRecord> AddTo => File.LandrangerActiveMaps;
+            protected override IList<OsRecord> AddTo => File.LandrangerActive;
         }
 
         private class ExplorerStrategy : Strategy
@@ -174,14 +174,14 @@ namespace ScotlandsMountains.Import.Os
 
             public override int MaxLineCacheSize => 9;
             protected override Regex CaptureRegex => new Regex(@"^(OL\d{1,2}|\d{1,3}) \S(\S| )* \d{13} \d{2}(\/\d{2}){2} [a-zA-Z]{3,9} \d{4} [a-zA-Z]{3,9} \d{4}$");
-            protected override IList<OsRecord> AddTo => File.ExplorerMaps;
+            protected override IList<OsRecord> AddTo => File.Explorer;
         }
 
         private class ExplorerActiveStrategy : ExplorerStrategy
         {
             public ExplorerActiveStrategy(OsFile file) : base(file) { }
 
-            protected override IList<OsRecord> AddTo => File.ExplorerActiveMaps;
+            protected override IList<OsRecord> AddTo => File.ExplorerActive;
         }
 
         private class DiscovererStrategy : Strategy
@@ -190,14 +190,14 @@ namespace ScotlandsMountains.Import.Os
 
             public override int MaxLineCacheSize => 3;
             protected override Regex CaptureRegex => new Regex(@"^\d{1,2} \S(\S| )*\d{13} \d{2}(\/\d{2}){2} .*$");
-            protected override IList<OsRecord> AddTo => File.DiscovererMaps;
+            protected override IList<OsRecord> AddTo => File.Discoverer;
         }
 
         private class DiscoveryStrategy : DiscovererStrategy
         {
             public DiscoveryStrategy(OsFile file) : base(file) { }
 
-            protected override IList<OsRecord> AddTo => File.DiscoveryMaps;
+            protected override IList<OsRecord> AddTo => File.Discovery;
         }
     }
 }

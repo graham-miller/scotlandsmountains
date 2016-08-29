@@ -16,7 +16,7 @@ namespace ScotlandsMountains.Import.Dobih
             dobihFileReader = dobihFileReader ?? new DobihFileReader();
 
             ColumnIndexes = dobihFileReader.ColumnIndexes;
-            Records = dobihFileReader.Lines.Select(x => new DobihRecord(x, this.ColumnIndexes)).ToList<IDobihRecord>();
+            Records = dobihFileReader.Lines.Select(x => new DobihRecord(x, ColumnIndexes)).ToList<IDobihRecord>();
         }
 
         public IDictionary<string,int> ColumnIndexes { get; } 
