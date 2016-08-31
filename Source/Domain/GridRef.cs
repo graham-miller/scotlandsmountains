@@ -12,9 +12,9 @@ namespace ScotlandsMountains.Domain
             SetProperties(raw);
         }
 
-        public string SixFigure { get; private set; }
+        public string SixFigure { get; set; }
 
-        public string TenFigure { get; private set; }
+        public string TenFigure { get; set; }
 
         private void SetProperties(string raw)
         {

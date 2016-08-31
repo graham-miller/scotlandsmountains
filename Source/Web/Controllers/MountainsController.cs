@@ -7,7 +7,7 @@ namespace Web.Controllers
     [Route("api/[controller]")]
     public class MountainsController : Controller
     {
-        private DomainRoot _domainRoot;
+        private readonly DomainRoot _domainRoot;
 
         public MountainsController(DomainRoot domainRoot)
         {
@@ -23,6 +23,17 @@ namespace Web.Controllers
                 return NotFound();
 
             return new ObjectResult(mountain);
+        }
+
+        [HttpGet("{id}/maps")]
+        public IActionResult GetMaps(string id)
+        {
+            var mountain = _domainRoot.Mountains.SingleOrDefault(x => x.Id == id);
+
+            if (mountain == null)
+                return NotFound();
+
+            return new ObjectResult(mountain.MapIds.Select(x => _domainRoot.Maps.GetById(x)));
         }
     }
 }
