@@ -25,6 +25,7 @@ namespace ScotlandsMountains.Import.Dobih
         string Feature { get; }
         string Observations { get; }
         string Country { get; }
+        bool IsIrish();
     }
 
     public class DobihRecord : IDobihRecord
@@ -101,6 +102,11 @@ namespace ScotlandsMountains.Import.Dobih
 
         public string Country => GetString(FieldNames.Country);
 
+        public bool IsIrish()
+        {
+            return Country == Ireland;
+        }
+
         private string GetString(string fieldName)
         {
             return _fields[_columnIndexes[fieldName]];
@@ -151,5 +157,7 @@ namespace ScotlandsMountains.Import.Dobih
 
         private readonly IDictionary<string, int> _columnIndexes;
         private readonly string[] _fields;
+
+        private const string Ireland = "I";
     }
 }

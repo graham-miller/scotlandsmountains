@@ -29,7 +29,7 @@ namespace ScotlandsMountains.ImportTests.Providers
 
             var sut = new SectionProvider(mockIdGenerator.Object, mockDobihFile.Object);
 
-            var actual = sut.GetByDobihId(sectionCode);
+            var actual = sut.GetByDobihId(sectionName);
 
             Assert.That(actual.Id, Is.EqualTo(id));
             Assert.That(actual.Name, Is.EqualTo(sectionName));

@@ -2,6 +2,7 @@
 using System.Linq;
 using ScotlandsMountains.Domain;
 using ScotlandsMountains.Import.Dobih;
+using ScotlandsMountains.Import.Os;
 
 namespace ScotlandsMountains.Import.Providers
 {
@@ -49,11 +50,38 @@ namespace ScotlandsMountains.Import.Providers
                 },
                 Feature = record.Feature,
                 Observations = record.Observations,
-                ClassificationIds = null,
-                MapIds = null,
-                SectionId = null,
-                CountryId = null
+                ClassificationIds = GetClassificationIdsFor(record),
+                MapIds = GetMapIdsFor(record),
+                SectionId = GetSectionIdFor(record),
+                CountryId = GetCountryIdFor(record)
             };
+        }
+
+        private IList<string> GetClassificationIdsFor(IDobihRecord record)
+        {
+            return record.Classifications
+                .Select(x => _importParameters.ClassificationProvider.GetByDobihId(x).Id)
+                .ToList();
+        }
+
+        private IList<string> GetMapIdsFor(IDobihRecord record)
+        {
+            var region = record.Country == "I" ? MapConstants.Region.Ireland : MapConstants.Region.GreatBritain;
+
+            return _importParameters.MapProvider.GetMapsByCode(MapConstants.OneTo50K, region, record.Maps1To50000).Select(x => x.Id)
+                .Concat(_importParameters.MapProvider.GetMapsByCode(MapConstants.OneTo25K, region, record.Maps1To25000).Select(x => x.Id))
+                .ToList();
+        }
+
+
+        private string GetSectionIdFor(IDobihRecord record)
+        {
+            return _importParameters.SectionProvider.GetByDobihId(record.SectionName).Id;
+        }
+
+        private string GetCountryIdFor(IDobihRecord record)
+        {
+            return _importParameters.CountryProvider.GetByDobihId(record.Country).Id;
         }
 
         private readonly ImportParameters _importParameters;

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using ScotlandsMountains.Domain;
 using ScotlandsMountains.Import.Os;
 
@@ -7,6 +8,7 @@ namespace ScotlandsMountains.Import.Providers
     public interface IMapProvider
     {
         Maps GetAll();
+        IList<Map> GetMapsByCode(decimal scale, MapConstants.Region region, IList<string> codes);
     }
 
     public class MapProvider : IMapProvider
@@ -21,6 +23,40 @@ namespace ScotlandsMountains.Import.Providers
         public Maps GetAll()
         {
             return _maps;
+        }
+
+        public IList<Map> GetMapsByCode(decimal scale, MapConstants.Region region, IList<string> codes)
+        {
+            if (region == MapConstants.Region.Ireland)
+            {
+                if (scale == MapConstants.OneTo50K)
+                {
+                    return
+                        _maps.Discoverer.Where(x => codes.Contains(x.Code))
+                            .Concat(_maps.Discovery.Where(x => codes.Contains(x.Code)))
+                            .ToList();
+                }
+            }
+
+            if (region == MapConstants.Region.GreatBritain)
+            {
+                if (scale == MapConstants.OneTo50K)
+                {
+                    return
+                        _maps.Landranger.Where(x => codes.Contains(x.Code))
+                            .Concat(_maps.LandrangerActive.Where(x => codes.Contains(x.Code)))
+                            .ToList();
+                }
+                if (scale == MapConstants.OneTo25K)
+                {
+                    return
+                        _maps.Explorer.Where(x => codes.Contains(x.Code))
+                            .Concat(_maps.ExplorerActive.Where(x => codes.Contains(x.Code)))
+                            .ToList();
+                }
+            }
+
+            return new List<Map>();
         }
 
         private static Maps LoadMaps(IIdGenerator idGenerator, IOsFile osFile)

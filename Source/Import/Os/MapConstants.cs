@@ -11,5 +11,11 @@
         public const string Discovery = "Discovery";
         public const decimal OneTo50K = 1 / 50000m;
         public const decimal OneTo25K = 1 / 25000m;
+
+        public enum Region
+        {
+            GreatBritain,
+            Ireland
+        }
     }
 }

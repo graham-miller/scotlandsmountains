@@ -29,7 +29,7 @@ namespace ScotlandsMountains.Import.Providers
                 .GroupBy(x => x.SectionName)
                 .OrderBy(x => x.First().SectionCode)
                 .ToDictionary(
-                    x => x.First().SectionCode,
+                    x => x.First().SectionName,
                     x => new Section
                     {
                         Id = idGenerator.Generate(),
