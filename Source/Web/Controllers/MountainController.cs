@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using ScotlandsMountains.Domain;
+using System.Globalization;
 
 namespace Web.Controllers
 {
@@ -23,6 +24,13 @@ namespace Web.Controllers
                 return NotFound();
 
             return new ObjectResult(mountain);
+        }
+
+        [HttpGet("search/{term}")]
+        public IActionResult Search(string term)
+        {
+            return new ObjectResult(_domainRoot.Mountains.Where(x => 
+                CultureInfo.CurrentCulture.CompareInfo.IndexOf(x.Name, term, CompareOptions.IgnoreCase) >= 0));
         }
 
         [HttpGet("{id}/Maps")]
