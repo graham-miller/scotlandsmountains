@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classification.cs" />
+    <Compile Include="CollectionExtensions.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="DomainRoot.cs" />
     <Compile Include="Entity.cs" />

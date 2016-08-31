@@ -17,7 +17,7 @@ namespace Web.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(string id)
         {
-            var mountain = _domainRoot.Mountains.SingleOrDefault(x => x.Id == id);
+            var mountain = _domainRoot.Mountains.GetById(id);
 
             if (mountain == null)
                 return NotFound();
@@ -25,15 +25,26 @@ namespace Web.Controllers
             return new ObjectResult(mountain);
         }
 
-        [HttpGet("{id}/maps")]
+        [HttpGet("{id}/Maps")]
         public IActionResult GetMaps(string id)
         {
-            var mountain = _domainRoot.Mountains.SingleOrDefault(x => x.Id == id);
+            var mountain = _domainRoot.Mountains.GetById(id);
 
             if (mountain == null)
                 return NotFound();
 
             return new ObjectResult(mountain.MapIds.Select(x => _domainRoot.Maps.GetById(x)));
+        }
+
+        [HttpGet("{id}/Classifications")]
+        public IActionResult GetClassifications(string id)
+        {
+            var mountain = _domainRoot.Mountains.GetById(id);
+
+            if (mountain == null)
+                return NotFound();
+
+            return new ObjectResult(mountain.ClassificationIds.Select(x => _domainRoot.Classifications.GetById(x)));
         }
     }
 }
