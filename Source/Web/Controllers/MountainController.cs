@@ -5,11 +5,11 @@ using ScotlandsMountains.Domain;
 namespace Web.Controllers
 {
     [Route("api/[controller]")]
-    public class MountainsController : Controller
+    public class MountainController : Controller
     {
         private readonly DomainRoot _domainRoot;
 
-        public MountainsController(DomainRoot domainRoot)
+        public MountainController(DomainRoot domainRoot)
         {
             _domainRoot = domainRoot;
         }
@@ -45,6 +45,28 @@ namespace Web.Controllers
                 return NotFound();
 
             return new ObjectResult(mountain.ClassificationIds.Select(x => _domainRoot.Classifications.GetById(x)));
+        }
+
+        [HttpGet("{id}/Section")]
+        public IActionResult GetSection(string id)
+        {
+            var mountain = _domainRoot.Mountains.GetById(id);
+
+            if (mountain == null)
+                return NotFound();
+
+            return new ObjectResult(_domainRoot.Sections.GetById(mountain.SectionId));
+        }
+
+        [HttpGet("{id}/Country")]
+        public IActionResult GetCountry(string id)
+        {
+            var mountain = _domainRoot.Mountains.GetById(id);
+
+            if (mountain == null)
+                return NotFound();
+
+            return new ObjectResult(_domainRoot.Countries.GetById(mountain.CountryId));
         }
     }
 }
