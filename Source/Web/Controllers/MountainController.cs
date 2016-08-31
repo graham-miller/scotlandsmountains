@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ScotlandsMountains.Domain;
 using System.Globalization;
+using System;
 
 namespace Web.Controllers
 {
@@ -26,11 +27,27 @@ namespace Web.Controllers
             return new ObjectResult(mountain);
         }
 
-        [HttpGet("search/{term}")]
-        public IActionResult Search(string term)
+        [HttpGet("search/{term?}/{page:int?}/{pageSize:int?}")]
+        public IActionResult Search(string term = "", int page = 1, int pageSize = 50)
         {
-            return new ObjectResult(_domainRoot.Mountains.Where(x => 
-                CultureInfo.CurrentCulture.CompareInfo.IndexOf(x.Name, term, CompareOptions.IgnoreCase) >= 0));
+            page = page < 1 ? 1 : page;
+            pageSize = pageSize < 1 ? 1 : pageSize;
+            pageSize = pageSize > 100 ? 100 : pageSize;
+
+            Func<Mountain,bool> isMatch = x => CultureInfo.CurrentCulture.CompareInfo.IndexOf(x.Name, term, CompareOptions.IgnoreCase) >= 0;
+
+            var count = _domainRoot.Mountains.Where(isMatch).Count();
+            var pages = (count / pageSize) + 1;
+
+            page = page > pages ? pages : page;
+
+            var results = _domainRoot.Mountains
+                .Where(isMatch)
+                .OrderByDescending(x => x.Height)
+                .Skip((page-1) * pageSize)
+                .Take(pageSize);
+
+            return new ObjectResult(new { page, pageSize, pages, count, results });
         }
 
         [HttpGet("{id}/Maps")]

@@ -11,7 +11,8 @@ namespace Web
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvcCore()
+            services
+                .AddMvcCore()
                 .AddJsonFormatters(x => {
                     x.Formatting = Newtonsoft.Json.Formatting.Indented;
                     x.ContractResolver = new CamelCasePropertyNamesContractResolver();
