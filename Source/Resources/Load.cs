@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.IO.Compression;
 
 namespace ScotlandsMountains.Resources
 {
@@ -6,12 +7,12 @@ namespace ScotlandsMountains.Resources
     {
         public static class Dobih
         {
-            public static Stream HillCsvZip => Open("Dobih.hillcsv.zip");
+            public static Stream HillCsvZip => Open(Namespaces.HillcsvZip);
         }
 
         public static class Os
         {
-            public static Stream MapCatalogue => Open("OS.ordnance-survey-leisure-map-catalogue.pdf");
+            public static Stream MapCatalogue => Open(Namespaces.MapCataloguePdf);
         }
 
         public static class ScotlandsMountains
@@ -20,20 +21,22 @@ namespace ScotlandsMountains.Resources
             {
                 get
                 {
-                    using (var stream = Open("ScotlandsMountains.Domain.json"))
-                    using (var reader = new StreamReader(stream))
+                    using (var stream = Open(Namespaces.DomainZip))
+                    using (var zip = new ZipArchive(stream, ZipArchiveMode.Read))
+                    using (var entry = zip.GetEntry(FileNames.DomainJson).Open())
+                    using (var reader = new StreamReader(entry))
                     {
                         return reader.ReadToEnd();
                     }
                 }
             }
 
-            public static Stream ClassificationInfo => Open("ScotlandsMountains.ClassificationInfo.xlsx");
+            public static Stream ClassificationInfo => Open(Namespaces.ClassificationInfoXlsx);
         }
 
         private static Stream Open(string path)
         {
-            return typeof(Load).Assembly.GetManifestResourceStream($"{typeof(Load).Namespace}.Raw.{path}");
+            return typeof(Load).Assembly.GetManifestResourceStream(path);
         }
     }
 }

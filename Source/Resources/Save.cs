@@ -1,6 +1,5 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
-using System.IO;
+﻿using System.IO;
+using System.IO.Compression;
 
 namespace ScotlandsMountains.Resources
 {
@@ -10,20 +9,16 @@ namespace ScotlandsMountains.Resources
         {
             public static void DomainJson(string json)
             {
-                var path = SolutionDirectory + @"\Source\Resources\Raw\ScotlandsMountains\Domain.json";
+                var path = Paths.DomainZip;
                 File.WriteAllText(path, json);
-            }
-        }
 
-        [SuppressMessage("ReSharper", "PossibleNullReferenceException")]
-        private static string SolutionDirectory
-        {
-            get
-            {
-                var codeBase = typeof(Load).Assembly.Location;
-                var uri = new UriBuilder(codeBase);
-                var path = Uri.UnescapeDataString(uri.Path);
-                return new FileInfo(path).Directory.Parent.Parent.Parent.Parent.FullName;
+                using (var stream = new FileStream(path, FileMode.Create))
+                using (var zip = new ZipArchive(stream, ZipArchiveMode.Create))
+                using (var entry = zip.CreateEntry(FileNames.DomainJson).Open())
+                using (var writer = new StreamWriter(entry))
+                {
+                    writer.WriteLine(json);
+                }
             }
         }
     }

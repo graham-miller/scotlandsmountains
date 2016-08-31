@@ -36,7 +36,7 @@ namespace ScotlandsMountains.ImportTests
             sut.Save();
         }
 
-        [Test, Order(2)]
+        [Test, Order(2), MaxTime(1000)]
         //[Ignore("Slow manual test harness")]
         public void ImportFromDomainJson()
         {
