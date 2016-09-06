@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ScotlandsMountains.Domain;
 
-namespace Web.Controllers
+namespace ScotlandsMountains.Web.Controllers
 {
     [Route("api/[controller]")]
     public class MapController : Controller

@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using System.IO;
+using Microsoft.AspNetCore.Hosting;
 
-namespace Web
+namespace ScotlandsMountains.Web
 {
     public class Program
     {
@@ -8,6 +9,7 @@ namespace Web
         {
             var host = new WebHostBuilder()
                 .UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
