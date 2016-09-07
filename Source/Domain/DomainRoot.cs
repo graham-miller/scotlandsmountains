@@ -6,11 +6,11 @@ namespace ScotlandsMountains.Domain
 {
     public interface IDomainRoot
     {
-        IList<Classification> Classifications { get; set; }
-        IList<Section> Sections { get; set; }
-        Maps Maps { get; set; }
-        IList<Mountain> Mountains { get; set; }
-        IList<Country> Countries { get; set; }
+        IList<Classification> Classifications { get; }
+        IList<Section> Sections { get; }
+        Maps Maps { get; }
+        IList<Mountain> Mountains { get; }
+        IList<Country> Countries { get; }
     }
 
     public class DomainRoot : IDomainRoot

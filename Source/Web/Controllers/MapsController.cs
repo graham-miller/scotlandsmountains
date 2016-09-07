@@ -4,25 +4,20 @@ using ScotlandsMountains.Domain;
 namespace ScotlandsMountains.Web.Controllers
 {
     [Route("api/[controller]")]
-    public class MapController : Controller
+    public class MapsController : DomainRootController
     {
-        private readonly DomainRoot _domainRoot;
-
-        public MapController(DomainRoot domainRoot)
-        {
-            _domainRoot = domainRoot;
-        }
+        public MapsController(IDomainRoot domainRoot) : base(domainRoot) { }
 
         [HttpGet()]
         public IActionResult Get()
         {
-            return new ObjectResult(_domainRoot.Maps);
+            return new ObjectResult(DomainRoot.Maps);
         }
 
         [HttpGet("{id}")]
         public IActionResult Get(string id)
         {
-            var map = _domainRoot.Maps.GetById(id);
+            var map = DomainRoot.Maps.GetById(id);
 
             if (map == null)
                 return NotFound();

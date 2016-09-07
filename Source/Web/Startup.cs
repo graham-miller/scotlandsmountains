@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using ScotlandsMountains.Domain;
 using Newtonsoft.Json.Serialization;
+using ScotlandsMountains.Domain;
 
 namespace ScotlandsMountains.Web
 {
@@ -36,7 +36,7 @@ namespace ScotlandsMountains.Web
                     x.ContractResolver = new CamelCasePropertyNamesContractResolver();
                 });
 
-            services.AddSingleton(x => DomainRoot.Load());
+            services.AddSingleton<IDomainRoot>(x => DomainRoot.Load());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

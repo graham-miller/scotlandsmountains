@@ -4,25 +4,20 @@ using ScotlandsMountains.Domain;
 namespace ScotlandsMountains.Web.Controllers
 {
     [Route("api/[controller]")]
-    public class CountryController : Controller
+    public class CountriesController : DomainRootController
     {
-        private readonly DomainRoot _domainRoot;
-
-        public CountryController(DomainRoot domainRoot)
-        {
-            _domainRoot = domainRoot;
-        }
+        public CountriesController(IDomainRoot domainRoot) : base(domainRoot) { }
 
         [HttpGet()]
         public IActionResult Get()
         {
-            return new ObjectResult(_domainRoot.Countries);
+            return new ObjectResult(DomainRoot.Countries);
         }
 
         [HttpGet("{id}")]
         public IActionResult Get(string id)
         {
-            var country = _domainRoot.Countries.GetById(id);
+            var country = DomainRoot.Countries.GetById(id);
 
             if (country == null)
                 return NotFound();

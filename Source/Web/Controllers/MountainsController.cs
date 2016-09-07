@@ -7,19 +7,14 @@ using System.Linq;
 namespace ScotlandsMountains.Web.Controllers
 {
     [Route("api/[controller]")]
-    public class MountainController : Controller
+    public class MountainsController : DomainRootController
     {
-        private readonly DomainRoot _domainRoot;
-
-        public MountainController(DomainRoot domainRoot)
-        {
-            _domainRoot = domainRoot;
-        }
+        public MountainsController(IDomainRoot domainRoot) : base(domainRoot) { }
 
         [HttpGet("{id}")]
         public IActionResult Get(string id)
         {
-            var mountain = _domainRoot.Mountains.GetById(id);
+            var mountain = DomainRoot.Mountains.GetById(id);
 
             if (mountain == null)
                 return NotFound();
@@ -36,12 +31,12 @@ namespace ScotlandsMountains.Web.Controllers
 
             Func<Mountain,bool> isMatch = x => CultureInfo.CurrentCulture.CompareInfo.IndexOf(x.Name, term, CompareOptions.IgnoreCase) >= 0;
 
-            var count = _domainRoot.Mountains.Where(isMatch).Count();
+            var count = DomainRoot.Mountains.Where(isMatch).Count();
             var pages = (count / pageSize) + 1;
 
             page = page > pages ? pages : page;
 
-            var results = _domainRoot.Mountains
+            var results = DomainRoot.Mountains
                 .Where(isMatch)
                 .OrderByDescending(x => x.Height)
                 .Skip((page-1) * pageSize)
@@ -53,45 +48,45 @@ namespace ScotlandsMountains.Web.Controllers
         [HttpGet("{id}/Maps")]
         public IActionResult GetMaps(string id)
         {
-            var mountain = _domainRoot.Mountains.GetById(id);
+            var mountain = DomainRoot.Mountains.GetById(id);
 
             if (mountain == null)
                 return NotFound();
 
-            return new ObjectResult(mountain.MapIds.Select(x => _domainRoot.Maps.GetById(x)));
+            return new ObjectResult(mountain.MapIds.Select(x => DomainRoot.Maps.GetById(x)));
         }
 
         [HttpGet("{id}/Classifications")]
         public IActionResult GetClassifications(string id)
         {
-            var mountain = _domainRoot.Mountains.GetById(id);
+            var mountain = DomainRoot.Mountains.GetById(id);
 
             if (mountain == null)
                 return NotFound();
 
-            return new ObjectResult(mountain.ClassificationIds.Select(x => _domainRoot.Classifications.GetById(x)));
+            return new ObjectResult(mountain.ClassificationIds.Select(x => DomainRoot.Classifications.GetById(x)));
         }
 
         [HttpGet("{id}/Section")]
         public IActionResult GetSection(string id)
         {
-            var mountain = _domainRoot.Mountains.GetById(id);
+            var mountain = DomainRoot.Mountains.GetById(id);
 
             if (mountain == null)
                 return NotFound();
 
-            return new ObjectResult(_domainRoot.Sections.GetById(mountain.SectionId));
+            return new ObjectResult(DomainRoot.Sections.GetById(mountain.SectionId));
         }
 
         [HttpGet("{id}/Country")]
         public IActionResult GetCountry(string id)
         {
-            var mountain = _domainRoot.Mountains.GetById(id);
+            var mountain = DomainRoot.Mountains.GetById(id);
 
             if (mountain == null)
                 return NotFound();
 
-            return new ObjectResult(_domainRoot.Countries.GetById(mountain.CountryId));
+            return new ObjectResult(DomainRoot.Countries.GetById(mountain.CountryId));
         }
     }
 }
