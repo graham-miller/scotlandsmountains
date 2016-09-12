@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ScotlandsMountains.Domain;
 
-namespace ScotlandsMountains.Web.Controllers
+namespace ScotlandsMountains.Web.Server.Controllers
 {
     public abstract class DomainRootController : Controller
     {

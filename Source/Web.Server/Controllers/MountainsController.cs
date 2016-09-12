@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using ScotlandsMountains.Domain;
-using System.Linq;
 
-namespace ScotlandsMountains.Web.Controllers
+namespace ScotlandsMountains.Web.Server.Controllers
 {
     [Route("api/[controller]")]
     public class MountainsController : DomainRootController
