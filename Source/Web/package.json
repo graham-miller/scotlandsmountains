@@ -1,13 +1,14 @@
 {
   "name": "scotlands-mountains",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "scripts": {
     "orig:start": "webpack-dev-server --inline --progress --port 8080",
     "test": "karma start",
-    "start": "rimraf wwwroot && webpack --config config/webpack.dev.js --progress --profile --bail --watch",
-    "build": "rimraf wwwroot && webpack --config config/webpack.prod.js --progress --profile --bail",
-    "postinstall": "typings install"
+    "start": "rimraf wwwroot && webpack --config Client/config/webpack.dev.js --progress --profile --bail --watch",
+    "build": "rimraf wwwroot && webpack --config Client/config/webpack.prod.js --progress --profile --bail",
+    "postinstall": "typings install",
+    "version:patch": "npm version patch"
   },
   "license": "MIT",
   "dependencies": {
@@ -39,6 +40,7 @@
     "null-loader": "^0.1.1",
     "phantomjs-prebuilt": "^2.1.7",
     "raw-loader": "^0.5.1",
+    "reflect-metadata": "^0.1.8",
     "rimraf": "^2.5.2",
     "style-loader": "^0.13.1",
     "ts-loader": "^0.8.1",

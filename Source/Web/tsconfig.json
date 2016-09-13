@@ -14,10 +14,7 @@
     "node_modules",
     "wwwroot",
     "Client",
-    "typings",
-    "src",
-    "public",
-    "config"
+    "typings"
   ],
   "compileOnSave": false,
   "buildOnSave": false
