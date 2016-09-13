@@ -50,4 +50,5 @@
     "webpack-dev-server": "^1.14.1",
     "webpack-merge": "^0.14.0"
   }
+, "-vs-binding":{"ProjectOpened":["start"]}
 }
