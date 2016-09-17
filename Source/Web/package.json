@@ -5,7 +5,7 @@
   "scripts": {
     "start": "webpack-dev-server --inline --hot --progress --port 3000",
     "test": "karma start",
-    "build": "rimraf wwwroot && webpack --config Client/config/webpack.prod.js --progress --profile --bail",
+    "build": "rimraf scotlandsmountains.github.io && webpack --config Client/config/webpack.prod.js --progress --profile --bail",
     "postinstall": "typings install"
   },
   "license": "MIT",

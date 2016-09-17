@@ -12,7 +12,7 @@
   },
   "exclude": [
     "node_modules",
-    "wwwroot",
+    "scotlandsmountains.github.io",
     "Client",
     "typings"
   ],

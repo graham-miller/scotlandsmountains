@@ -35,7 +35,7 @@
 
   "publishOptions": {
     "include": [
-      "wwwroot",
+      "scotlandsmountains.github.io",
       "Views",
       "Areas/**/Views",
       "appsettings.json",
