@@ -148,7 +148,18 @@ function addMiddleware(devServer) {
     // If this heuristic doesn’t work well for you, don’t use `proxy`.
     htmlAcceptHeaders: proxy ?
       ['text/html'] :
-      ['text/html', '*/*']
+      ['text/html', '*/*'],
+    // always proxy api calls
+    rewrites: proxy ?
+      [
+        {
+          from: /^\/api\/.*$/,
+          to: function (context) {
+            return proxy + context.parsedUrl.pathname;
+          }
+        }
+      ] :
+      [ ]
   }));
   if (proxy) {
     if (typeof proxy !== 'string') {

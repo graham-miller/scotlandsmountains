@@ -1,7 +1,19 @@
 {
   "name": "scotlandsmountains",
   "version": "1.0.0",
-  "private": true,
+  "description": "Explore Scotland's Mountains",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/graham-miller/scotlandsmountains.git"
+  },
+  "keywords": [ "Scotland", "mountains", "maps" ],
+  "author": "Graham Miller",
+  "license": "MIT",
+  "scripts": {
+    "start": "node Client/scripts/start.js",
+    "build": "node Client/scripts/build.js",
+    "test": "node Client/scripts/test.js --env=jsdom"
+  },
   "devDependencies": {
     "autoprefixer": "6.4.1",
     "babel-core": "6.14.0",
@@ -51,11 +63,6 @@
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },
-  "scripts": {
-    "start": "node Client/scripts/start.js",
-    "build": "node Client/scripts/build.js",
-    "test": "node Client/scripts/test.js --env=jsdom"
-  },
   "jest": {
     "moduleFileExtensions": [
       "jsx",
@@ -83,5 +90,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "homepage": "https://scotlandsmountains.github.io"
+  "homepage": "https://scotlandsmountains.github.io",
+  "proxy": "http://localhost:54944/",
+  "-vs-binding": { "ProjectOpened": [ "start" ] }
 }
