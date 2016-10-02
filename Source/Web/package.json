@@ -60,7 +60,10 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "bootswatch": "^3.3.7",
+    "leaflet": "^1.0.1",
     "react": "^15.3.2",
+    "react-bootstrap": "^0.30.3",
     "react-dom": "^15.3.2"
   },
   "jest": {
