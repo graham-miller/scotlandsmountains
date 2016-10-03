@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 
 import TitleBar from './TitleBar';
-import Map from './MapComponent';
+import Map from './Map';
 
 class App extends Component {
     render() {
@@ -23,8 +23,8 @@ class App extends Component {
                     </Row>
                 </Grid>
             </div>
-      );
-                }
+        );
+    }
 }
 
 export default App;

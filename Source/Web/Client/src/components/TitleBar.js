@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, NavDropdown, MenuItem, NavItem } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, MenuItem } from 'react-bootstrap';
 
-class TitleBar extends Component {
+class Titlebar extends Component {
     render() {
         return (
             <Navbar fixedTop fluid>
@@ -27,4 +27,4 @@ class TitleBar extends Component {
     }
 }
 
-export default TitleBar;
+export default Titlebar;

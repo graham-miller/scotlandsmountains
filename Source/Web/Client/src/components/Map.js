@@ -1,7 +1,7 @@
-import React, { ReactDOM, Component } from 'react';
-import L, { Map, TileLayer } from 'leaflet';
+import React, { Component } from 'react';
+import L from 'leaflet';
 
-class MapComponent extends Component {
+class Map extends Component {
 
     componentDidMount() {
 
@@ -29,4 +29,4 @@ class MapComponent extends Component {
     }
 }
 
-export default MapComponent;
+export default Map;
