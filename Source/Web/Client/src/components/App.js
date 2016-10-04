@@ -3,6 +3,7 @@ import { Grid, Row, Col } from 'react-bootstrap';
 
 import TitleBar from './TitleBar';
 import Map from './Map';
+import Content from './Content';
 
 class App extends Component {
     render() {
@@ -11,7 +12,7 @@ class App extends Component {
                 <TitleBar />
                 <Grid fluid style={{paddingTop:'50px'}} className='full-height'>
                     <Row className='full-height'>
-                        <Col md={6} style={{paddingTop: '15px'}}>Content</Col>
+                        <Col md={6} style={{paddingTop: '15px'}}><Content /></Col>
                         <Col md={6} className='full-height' style={{padding: 0}}><Map /></Col>
                     </Row>
                 </Grid>
