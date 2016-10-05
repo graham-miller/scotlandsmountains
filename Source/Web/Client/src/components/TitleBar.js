@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, NavDropdown, MenuItem } from 'react-bootstrap';
+import { browserHistory } from 'react-router'
+import { Navbar, Nav, NavDropdown, MenuItem, NavItem } from 'react-bootstrap';
 
 class Titlebar extends Component {
+
+    goToUrl(url) {
+        browserHistory.push(url);
+    }
+
     render() {
         return (
             <Navbar fixedTop fluid>
@@ -13,13 +19,7 @@ class Titlebar extends Component {
                 </Navbar.Header>
                 <Navbar.Collapse>
                     <Nav pullRight>
-                        <NavDropdown eventKey={1} title="Dropdown" id="basic-nav-dropdown">
-                            <MenuItem eventKey={1.1}>Action</MenuItem>
-                            <MenuItem eventKey={1.2}>Another action</MenuItem>
-                            <MenuItem eventKey={1.3}>Something else here</MenuItem>
-                            <MenuItem divider />
-                            <MenuItem eventKey={1.3}>Separated link</MenuItem>
-                        </NavDropdown>
+                        <NavItem eventKey={1} href="#" onClick={this.goToUrl('/about')}>About</NavItem>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
