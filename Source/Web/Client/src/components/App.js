@@ -1,31 +1,26 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 
-import TitleBar from './TitleBar';
+import Title from './Title';
 import Map from './Map';
 import Content from './Content';
+import Footer from './Footer';
 
 class App extends Component {
     render() {
         return (
-            <div className='full-height'>
-                <TitleBar />
-                <Grid fluid style={{paddingTop:'50px'}} className='full-height'>
+            <div className='full-height' style={{paddingTop: '50px'}}>
+                <Title />
+                <Grid fluid className='full-height'>
                     <Row className='full-height'>
-                        <Col md={6} style={{paddingTop: '15px'}}><Content /></Col>
-                        <Col md={6} className='full-height' style={{padding: 0}}><Map /></Col>
+                        <Col md={6} style={{padding: '0'}}><Content /></Col>
+                        <Col md={6} style={{padding: '0'}} className='full-height'><Map /></Col>
                     </Row>
                 </Grid>
-                <Grid fluid>
-                    <Row>
-                        <Col md={4}>Footer left</Col>
-                        <Col md={4}>Footer centre</Col>
-                        <Col md={4}>Footer right</Col>
-                    </Row>
-                </Grid>
+                <Footer />
             </div>
         );
-    }
+                }
 }
 
 export default App;

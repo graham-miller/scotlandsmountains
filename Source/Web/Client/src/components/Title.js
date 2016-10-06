@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router'
 import { Navbar, Nav, NavDropdown, MenuItem, NavItem } from 'react-bootstrap';
 
-class Titlebar extends Component {
+class Title extends Component {
 
     goToUrl(url, event) {
         browserHistory.push(url);   
@@ -31,4 +31,4 @@ class Titlebar extends Component {
     }
 }
 
-export default Titlebar;
+export default Title;

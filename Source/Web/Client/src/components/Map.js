@@ -22,7 +22,7 @@ class Map extends Component {
 
     render() {
         return (
-            <div className='full-height' style={{padding: '15px'}}>
+            <div className='full-height'>
                 <div id='map' className='full-height'></div>
             </div>
         );
