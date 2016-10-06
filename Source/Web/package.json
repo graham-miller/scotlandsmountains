@@ -65,7 +65,8 @@
     "leaflet": "^1.0.1",
     "react": "^15.3.2",
     "react-bootstrap": "^0.30.3",
-    "react-dom": "^15.3.2"
+    "react-dom": "^15.3.2",
+    "react-router": "^2.8.1"
   },
   "jest": {
     "moduleFileExtensions": [
