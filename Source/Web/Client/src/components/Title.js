@@ -4,26 +4,29 @@ import { Navbar, Nav, NavItem } from 'react-bootstrap';
 
 class Title extends Component {
 
+    constructor() {
+        super();
+        this.goToUrl = this.goToUrl.bind(this);
+    }
+
     goToUrl(url, event) {
         browserHistory.push(url);   
         event.preventDefault();
     }
 
     render() {
-        var that = this;
-
         return (
             <Navbar fixedTop fluid>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <a href="/" onClick={that.goToUrl.bind(that, '/')}>Scotland&apos;s Mountains</a>
+                        <a href="/" onClick={(e) => this.goToUrl('/', e)}>Scotland&apos;s Mountains</a>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>
                 <Navbar.Collapse>
                     <Nav pullRight>
-                        <NavItem eventKey={1} href="/search" onClick={that.goToUrl.bind(that, '/search')}>Search</NavItem>
-                        <NavItem eventKey={1} href="/about" onClick={that.goToUrl.bind(that, '/about')}>About</NavItem>
+                        <NavItem eventKey={1} href="/search" onClick={(e) => this.goToUrl('/search', e)}>Search</NavItem>
+                        <NavItem eventKey={1} href="/about" onClick={(e) => this.goToUrl('/about', e)}>About</NavItem>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

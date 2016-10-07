@@ -7,24 +7,23 @@ class MountainStore {
         this.mountains = [];
         this.errorMessage = null;
         this.bindListeners({
-            handleUpdateMountains: MountainActions.UPDATE_MOUNTAINS,
-            handleFetchMountains: MountainActions.FETCH_MOUNTAINS,
-            handleMountainsFailed: MountainActions.MOUNTAINS_FAILED
+            handleUpdate: MountainActions.UPDATE,
+            handleSearch: MountainActions.SEARCH,
+            handleFailed: MountainActions.FAILED
         });
     }
 
-    handleUpdateMountains(mountains) {
+    handleUpdate(mountains) {
         this.mountains = mountains;
         this.errorMessage = null;
     }
 
-    handleFetchMountains() {
-        // reset the array while we're fetching new locations so React can
-        // be smart and render a spinner for us since the data is empty.
+    handleSearch() {
+        // reset the array while we're waiting so we can render a spinner
         this.mountains = [];
     }
 
-    handleMountainsFailed(errorMessage) {
+    handleFailed(errorMessage) {
         this.errorMessage = errorMessage;
     }
 }

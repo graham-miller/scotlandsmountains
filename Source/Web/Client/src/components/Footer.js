@@ -12,7 +12,7 @@ class Footer extends Component {
                 </Row>
             </Grid>
         );
-                }
+    }
 }
 
 export default Footer;

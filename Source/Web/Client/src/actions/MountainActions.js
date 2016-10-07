@@ -4,26 +4,21 @@ import MountainSource from '../sources/MountainSource';
 
 class MountainActions {
 
-    fetchMountains() {
-        var that = this;
-        return function(dispatch) {
+    search(term) {
+        return (dispatch) => {
             dispatch();
-            MountainSource.fetch()
-                .then(function(locations) {
-                    that.updateMountains(locations);
-                })
-                .catch(function(errorMessage) {
-                    that.mountainsFailed(errorMessage);
-                });
+            MountainSource.search(term)
+                .then((search) => this.update(search.results))
+                .catch((errMsg) => this.failed(errMsg));
         }
     }
 
-    updateMountains(mountains) {
+    update(mountains) {
         return mountains;
     }
 
-    mountainsFailed(errorMessage) {
-        return errorMessage;
+    failed(errMsg) {
+        return errMsg;
     }
 }
 

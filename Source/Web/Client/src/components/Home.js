@@ -8,13 +8,12 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = MountainStore.getState();
-
         this.onChange = this.onChange.bind(this);
     }
 
     componentDidMount() {
         MountainStore.listen(this.onChange);
-        MountainActions.fetchMountains();
+        MountainActions.search('Ben N');
     }
 
     componentWillUnmount() {
@@ -29,7 +28,7 @@ class Home extends Component {
 
         if (this.state.errorMessage) {
             return (
-                <div>Something is wrong</div>
+                <div>{this.state.errorMessage}</div>
             );
         }
 
