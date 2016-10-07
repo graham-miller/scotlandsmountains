@@ -61,6 +61,7 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "alt": "^0.18.6",
     "bootswatch": "^3.3.7",
     "leaflet": "^1.0.1",
     "react": "^15.3.2",

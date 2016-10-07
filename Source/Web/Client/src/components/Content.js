@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router, Route, Link, browserHistory } from 'react-router'
+import { Router, Route, browserHistory } from 'react-router'
 import Home from './Home'
 import Search from './Search'
 import About from './About'
