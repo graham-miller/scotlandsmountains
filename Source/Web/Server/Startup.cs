@@ -30,7 +30,7 @@ namespace ScotlandsMountains.Web.Server
             //services.AddMvc();
 
             services
-                .AddCors()
+                //.AddCors()
                 .AddMvcCore()
                 .AddJsonFormatters(x => {
                     x.Formatting = Newtonsoft.Json.Formatting.Indented;
@@ -52,7 +52,7 @@ namespace ScotlandsMountains.Web.Server
             app
                 .UseSpaRouting()
                 .UseStaticFiles()
-                .UseCors(builder => builder.AllowAnyOrigin())
+                //.UseCors(builder => builder.AllowAnyOrigin())
                 .UseMvc();
         }
     }

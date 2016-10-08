@@ -9,7 +9,7 @@ class MountainActions {
             dispatch();
             MountainSource.search(term)
                 .then((search) => this.update(search.results))
-                .catch((errMsg) => this.failed(errMsg));
+                .catch((error) => this.failed(error.message));
         }
     }
 

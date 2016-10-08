@@ -1,16 +1,17 @@
-﻿const MountainSource = {
+﻿import request from 'superagent';
+
+const MountainSource = {
     search: (term) => {
-        return fetch(encodeURI('api/mountains/search/' + term), {mode: 'no-cors', redirect: 'follow'})
-        //return fetch(encodeURI('https://scotlandsmountains.azurewebsites.net/api/mountains/search/' + term), {mode: 'no-cors', redirect: 'follow'})
+        return request
+            .get('https://scotlandsmountains.azurewebsites.net/api/mountains/search/' + term)
             .then((response) => {
                 if (!response.ok) {
                     throw Error(response.statusText);
                 }
-                return response.json().then();
+                return response.body;
             })
-            .then((json) => json)
             .catch((error) => {
-                return error.message;
+                throw Error(error.message);
             });
     }
 };
