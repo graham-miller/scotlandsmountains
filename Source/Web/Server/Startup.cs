@@ -30,6 +30,7 @@ namespace ScotlandsMountains.Web.Server
             //services.AddMvc();
 
             services
+                .AddCors()
                 .AddMvcCore()
                 .AddJsonFormatters(x => {
                     x.Formatting = Newtonsoft.Json.Formatting.Indented;
@@ -49,15 +50,16 @@ namespace ScotlandsMountains.Web.Server
                 app.UseDeveloperExceptionPage();
 
             app
-                .UseAngular2Routing()
+                .UseSpaRouting()
                 .UseStaticFiles()
+                .UseCors(builder => builder.WithOrigins("https://scotlandsmountains.net"))
                 .UseMvc();
         }
     }
 
-    public static class Angular2RoutingExtension
+    public static class SpaRoutingExtension
     {
-        public static IApplicationBuilder UseAngular2Routing(this IApplicationBuilder app)
+        public static IApplicationBuilder UseSpaRouting(this IApplicationBuilder app)
         {
             return app.Use(async (context, next) =>
             {
