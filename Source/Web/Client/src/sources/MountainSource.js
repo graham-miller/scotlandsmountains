@@ -1,6 +1,6 @@
 ﻿const MountainSource = {
     search: (term) => {
-        return fetch(encodeURI('api/mountains/search/' + term))
+        return fetch(encodeURI('api/mountains/search/' + term), {mode: 'no-cors'})
             .then((response) => {
                 if (!response.ok) {
                     throw Error(response.statusText);
