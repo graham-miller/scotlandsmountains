@@ -4,7 +4,6 @@ const MountainSource = {
     search: (term) => {
         return request
             .get('https://scotlandsmountains.azurewebsites.net/api/mountains/search/' + term)
-            .withCredentials()
             .then((response) => {
                 if (!response.ok) {
                     throw Error(response.statusText);

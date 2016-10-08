@@ -52,9 +52,12 @@ namespace ScotlandsMountains.Web.Server
             app
                 .UseSpaRouting()
                 .UseStaticFiles()
-                .UseCors(builder => builder.WithOrigins(
-                    "https://scotlandsmountains.net/",
-                    "http://localhost:3000/"))
+                .UseCors(builder => builder
+                    .WithOrigins(
+                        "https://scotlandsmountains.net/",
+                        "http://localhost:3000/")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod())
                 .UseMvc();
         }
     }
