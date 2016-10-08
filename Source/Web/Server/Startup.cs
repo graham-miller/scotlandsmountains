@@ -52,7 +52,7 @@ namespace ScotlandsMountains.Web.Server
             app
                 .UseSpaRouting()
                 .UseStaticFiles()
-                .UseCors(builder => builder.WithOrigins("https://scotlandsmountains.net"))
+                .UseCors(builder => builder.AllowAnyOrigin())
                 .UseMvc();
         }
     }
