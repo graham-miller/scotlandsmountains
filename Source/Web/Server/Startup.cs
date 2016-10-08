@@ -54,8 +54,8 @@ namespace ScotlandsMountains.Web.Server
                 .UseStaticFiles()
                 .UseCors(builder => builder
                     .WithOrigins(
-                        "https://scotlandsmountains.net/",
-                        "http://localhost:3000/")
+                        "https://scotlandsmountains.net",
+                        "http://localhost:3000")
                     .AllowAnyHeader()
                     .AllowAnyMethod())
                 .UseMvc();
