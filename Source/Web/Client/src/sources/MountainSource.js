@@ -1,14 +1,13 @@
-﻿import request from 'superagent';
-
-const MountainSource = {
+﻿const MountainSource = {
     search: (term) => {
-        return request
-            .get('https://scotlandsmountains.azurewebsites.net/api/mountains/search/' + term)
+        return fetch('api/mountains/search/' + term, { mode: 'cors', redirect: 'follow'})
             .then((response) => {
-                if (!response.ok) {
+                if (response.ok) {
+                    return response.json();
+                }
+                else {
                     throw Error(response.statusText);
                 }
-                return response.body;
             })
             .catch((error) => {
                 throw Error(error.message);
