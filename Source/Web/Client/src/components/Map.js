@@ -14,6 +14,10 @@ class Map extends Component {
             maxZoom: 18,
             minZoom: 2,
         }).addTo(this.map);
+
+        var marker = L.divIcon();
+
+        L.marker([56.816922, -4.18265], {icon: marker}).addTo(this.map);
     }
 
     componentWillUnmount() {
