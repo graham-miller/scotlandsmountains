@@ -1,9 +1,49 @@
 import React, { Component } from 'react';
 import L from 'leaflet';
 
+import './Map.css';
+import MountainStore from '../stores/MountainStore';
+
 class Map extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = MountainStore.getState();
+        this.onChange = this.onChange.bind(this);
+    }
+
+    onChange(state) {
+
+        if (this.layer) {
+            this.layer.removeFrom(this.map);
+            this.layer = null;
+        }
+
+        this.layer = L.layerGroup().addTo(this.map);
+
+        var icon = L.divIcon({className: 'marker munro'});
+
+        state.mountains.forEach((mountain) => {
+            var marker = L.marker([mountain.latitude, mountain.longitude], {icon: icon}).addTo(this.layer);
+
+            marker.bindPopup('<p style="padding:0;margin:0;">' + mountain.name + '</p><p style="padding:0;margin:0;">' + mountain.height + '</p>', {closeButton: false});
+            marker.on('mouseover', function (e) {
+                this.openPopup();
+            });
+            marker.on('mouseout', function (e) {
+                this.closePopup();
+            });
+            
+        });
+    }
+    
+    shouldComponentUpdate(nextProps, nextState) {
+        return false;
+    }
+
     componentDidMount() {
+
+        MountainStore.listen(this.onChange);
 
         this.map = L.map('map').setView([56.816922, -4.18265], 7);
 
@@ -14,14 +54,11 @@ class Map extends Component {
             maxZoom: 18,
             minZoom: 2,
         }).addTo(this.map);
-
-        var marker = L.divIcon();
-
-        L.marker([56.816922, -4.18265], {icon: marker}).addTo(this.map);
     }
 
     componentWillUnmount() {
         this.map = null;
+        MountainStore.unlisten(this.onChange);
     }
 
     render() {

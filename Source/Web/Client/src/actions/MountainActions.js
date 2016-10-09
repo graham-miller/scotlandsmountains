@@ -4,6 +4,15 @@ import MountainSource from '../sources/MountainSource';
 
 class MountainActions {
 
+    getTable(name) {
+        return (dispatch) => {
+            dispatch();
+            MountainSource.getTable(name)
+                .then((mountains) => this.update(mountains))
+                .catch((error) => this.failed(error.message));
+        }
+    }
+
     search(term) {
         return (dispatch) => {
             dispatch();

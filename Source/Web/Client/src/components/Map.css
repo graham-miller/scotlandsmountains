@@ -1,0 +1,14 @@
+.marker.munro {
+    margin-left: -6px;
+    margin-top: -6px;
+    height: 12px;
+    width: 12px;
+    background-color: palegoldenrod;
+    border: solid 1px goldenrod;
+    cursor: pointer;
+    display: block;
+    box-sizing: border-box;
+    z-index: 266;
+    border-radius: 6px;
+    box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.5);
+}

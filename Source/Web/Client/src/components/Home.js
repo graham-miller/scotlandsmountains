@@ -13,7 +13,7 @@ class Home extends Component {
 
     componentDidMount() {
         MountainStore.listen(this.onChange);
-        MountainActions.search('Ben N');
+        MountainActions.getTable('munro');
     }
 
     componentWillUnmount() {
@@ -40,13 +40,15 @@ class Home extends Component {
 
         return (
             <div style={{padding: '15px'}}>
-                <ul>
-                    {this.state.mountains.map(function(mountain) {
-                        return (
-                            <li key={mountain.id}>{mountain.name}</li>
-                        );
-                    })}
-                </ul>            
+                <div style={{padding: '2px', height: '300px', maxHeight: '100%', overflowY: 'scroll', overflowX: 'hidden'}}>
+                    <ul>
+                        {this.state.mountains.map(function(mountain) {
+                            return (
+                                <li key={mountain.id}>{mountain.name}</li>
+                            );
+                        })}
+                    </ul>            
+                </div>
             </div>
         );
     }
