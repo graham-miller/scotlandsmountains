@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using ScotlandsMountains.Domain;
+using ScotlandsMountains.Web.Server.Models;
 
 namespace ScotlandsMountains.Web.Server.Controllers
 {
@@ -29,7 +30,7 @@ namespace ScotlandsMountains.Web.Server.Controllers
             pageSize = pageSize < 1 ? 1 : pageSize;
             pageSize = pageSize > 100 ? 100 : pageSize;
 
-            Func<Mountain,bool> isMatch = x => CultureInfo.CurrentCulture.CompareInfo.IndexOf(x.Name, term, CompareOptions.IgnoreCase) >= 0;
+            Func<Mountain, bool> isMatch = x => CultureInfo.InvariantCulture.CompareInfo.IndexOf(x.Name, term, CompareOptions.IgnoreCase) >= 0;
 
             var count = DomainRoot.Mountains.Where(isMatch).Count();
             var pages = (count / pageSize) + 1;
@@ -39,10 +40,27 @@ namespace ScotlandsMountains.Web.Server.Controllers
             var results = DomainRoot.Mountains
                 .Where(isMatch)
                 .OrderByDescending(x => x.Height)
-                .Skip((page-1) * pageSize)
+                .Skip((page - 1) * pageSize)
                 .Take(pageSize);
 
             return new ObjectResult(new { page, pageSize, pages, count, results });
+        }
+
+        [HttpGet("{classificationName}")]
+        public IActionResult Classification(string classificationName)
+        {
+            Func<Classification, bool> isMatch = x => x.Name.Equals(classificationName, StringComparison.InvariantCultureIgnoreCase);
+            var classification = DomainRoot.Classifications.Single(isMatch);
+
+            if (classification == null)
+                return NotFound();
+
+            var mountains = DomainRoot.Mountains
+                .Where(x => x.ClassificationIds.Contains(classification.Id))
+                .OrderByDescending(x => x.Height)
+                .Select(MountainSummary.Build);
+
+            return new ObjectResult(mountains);
         }
 
         [HttpGet("{id}/Maps")]
