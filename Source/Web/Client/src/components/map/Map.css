@@ -3,12 +3,13 @@
     margin-top: -6px;
     height: 12px;
     width: 12px;
-    background-color: palegoldenrod;
-    border: solid 1px goldenrod;
+    background-color: #6495ed;
+    border: solid 1px #0000ff;
     cursor: pointer;
     display: block;
     box-sizing: border-box;
     z-index: 266;
     border-radius: 6px;
-    box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.5);
+    box-shadow: 2px 2px 1px 0 #000000;
+    box-shadow: 2px 2px 1px 0 rgba(0,0,0,0.5);
 }

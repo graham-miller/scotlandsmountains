@@ -26,7 +26,6 @@ class Title extends Component {
                 <Navbar.Collapse>
                     <Nav pullRight>
                         <NavItem eventKey={1} href="/search" onClick={(e) => this.goToUrl('/search', e)}>Search</NavItem>
-                        <NavItem eventKey={1} href="/about" onClick={(e) => this.goToUrl('/about', e)}>About</NavItem>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

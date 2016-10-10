@@ -38,10 +38,17 @@ class Home extends Component {
             )
         }
 
+        const style = {
+            padding: '2px',
+            height: '100%',
+            overflow: 'scroll', overflowX: 'hidden',
+            border: '1px solid #333'
+        }
+
         return (
-            <div style={{padding: '15px'}}>
-                <div style={{padding: '2px', height: '300px', maxHeight: '100%', overflowY: 'scroll', overflowX: 'hidden'}}>
-                    <ul>
+            <div className='full-height'>
+                <div style={style}>
+                    <ul style={{listStyleType: 'none', padding: 0}}>
                         {this.state.mountains.map(function(mountain) {
                             return (
                                 <li key={mountain.id}>{mountain.name}</li>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import L from 'leaflet';
 
 import './Map.css';
-import MountainStore from '../stores/MountainStore';
+import MountainStore from '../../stores/MountainStore';
 
 class Map extends Component {
 
