@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router'
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
 
 class Title extends Component {
 
@@ -16,19 +15,24 @@ class Title extends Component {
 
     render() {
         return (
-            <Navbar fixedTop fluid>
-                <Navbar.Header>
-                    <Navbar.Brand>
-                        <a href="/" onClick={(e) => this.goToUrl('/', e)}>Scotland&apos;s Mountains</a>
-                    </Navbar.Brand>
-                    <Navbar.Toggle />
-                </Navbar.Header>
-                <Navbar.Collapse>
-                    <Nav pullRight>
-                        <NavItem eventKey={1} href="/search" onClick={(e) => this.goToUrl('/search', e)}>Search</NavItem>
-                    </Nav>
-                </Navbar.Collapse>
-            </Navbar>
+            <nav className="navbar navbar-fixed-top navbar-dark bg-inverse bg-faded">
+                <a className="navbar-brand" href="/" onClick={(e) => this.goToUrl('/', e)}>Scotland&apos;s Mountains</a>
+                <div className="pull-xs-right">
+                    <button
+                        className="navbar-toggler hidden-sm-up" type="button"
+                        data-toggle="collapse" data-target="#exCollapsingNavbar2"
+                        aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+                        &#9776;
+                    </button>
+                    <div className="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+                        <ul className="nav navbar-nav">
+                            <li className="nav-item">
+                                <a className="nav-link" href="/search" onClick={(e) => this.goToUrl('/search', e)}>Search</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         );
     }
 }

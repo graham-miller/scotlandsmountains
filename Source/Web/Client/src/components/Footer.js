@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col } from 'react-bootstrap';
 
 class Footer extends Component {
     render() {
         return (
-            <Grid fluid>
-                <Row>
-                    <Col md={4}>
+            <div className='container-fluid'>
+                <div className='row'>
+                    <div className='col-md-4'>
                         <p>
                             Site design / logo &copy; {new Date().getFullYear()} Graham Miller.
                         </p>
                         <p>
-                            Site} developed and operated by Graham Miller.
+                            Site developed and operated by Graham Miller.
                         </p>
                         <p>
                             Mountain data &copy;
@@ -19,11 +18,11 @@ class Footer extends Component {
                             licensed under a
                             &nbsp;<a href='http://creativecommons.org/licenses/by/3.0/deed.en_GB'>Creative Commons Attribution 3.0 Unported License</a>.
                         </p>
-                    </Col>
-                    <Col md={4}>Footer centre</Col>
-                    <Col md={4}>Footer right</Col>
-                </Row>
-            </Grid>
+                    </div>
+                    <div className='col-md-4'>Footer centre</div>
+                    <div className='col-md-4'>Footer right</div>
+                </div>
+            </div>
         );
     }
 }

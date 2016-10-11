@@ -116,8 +116,12 @@ module.exports = {
       // In production, we use a plugin to extract that CSS to a file, but
       // in development "style" loader enables hot editing of CSS.
       {
-        test: /\.css$/,
-        loader: 'style!css!postcss'
+          test: /\.css$/,
+          loader: 'style!css!postcss'
+      },
+      {
+          test: /\.scss$/,
+          loader: 'style!css!postcss!sass'
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
       // allow it implicitly so we also enable it.
@@ -192,6 +196,13 @@ module.exports = {
         title: 'Scotland\'s Mountains',
         excludeWarnings: true,
         alwaysNotify: true
+    }),
+    // jQuery required for Boostrap
+    new webpack.ProvidePlugin({
+        $: 'jquery/dist/jquery.slim.js',
+        jQuery: 'jquery/dist/jquery.slim.js',
+        'Tether': 'tether/dist/js/tether.js',
+        'window.Tether': 'tether/dist/js/tether.js'
     })
   ],
   // Some libraries import Node modules but don't use them in the browser.

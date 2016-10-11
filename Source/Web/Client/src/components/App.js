@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col } from 'react-bootstrap';
 
 import Title from './Title';
 import Map from './map/Map';
@@ -9,14 +8,14 @@ import Footer from './Footer';
 class App extends Component {
     render() {
         return (
-            <div className='full-height' style={{paddingTop: '50px'}}>
+            <div className='full-height'>
                 <Title />
-                <Grid fluid className='full-height'>
-                    <Row className='full-height'>
-                        <Col md={4} className='full-height'><Content /></Col>
-                        <Col md={8} className='full-height'><Map /></Col>
-                    </Row>
-                </Grid>
+                <div className='container-fluid full-height' style={{paddingTop: '70px'}}>
+                    <div className='row full-height'>
+                        <div className='col-md-4 full-height'><Content /></div>
+                        <div className='col-md-8 full-height'><Map /></div>
+                    </div>
+                </div>
                 <Footer />
             </div>
         );
