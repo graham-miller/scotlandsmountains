@@ -10,9 +10,9 @@ class App extends Component {
         return (
             <div className='full-height'>
                 <Title />
-                <div className='container-fluid full-height' style={{paddingTop: '70px'}}>
+                <div className='container-fluid full-height' style={{paddingTop: '70px', marginBottom: '40px'}}>
                     <div className='row full-height'>
-                        <div className='col-md-4 full-height'><Content /></div>
+                        <div className='col-md-4'><Content /></div>
                         <div className='col-md-8 full-height'><Map /></div>
                     </div>
                 </div>
