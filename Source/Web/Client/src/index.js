@@ -6,8 +6,6 @@ import './index.scss';
 require('jquery');
 require('tether');
 
-import './boostrap-theme.scss';
-import 'bootstrap/scss/bootstrap.scss';
 import 'bootstrap/dist/js/bootstrap.js';
 
 import 'leaflet/dist/leaflet.css';

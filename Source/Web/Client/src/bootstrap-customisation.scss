@@ -104,7 +104,7 @@ $border-width: 1px !default;
 //
 // Settings for the `<body>` element.
 
-$body-bg:    #fff !default;
+$body-bg:    $gray-lightest !default;
 $body-color: $gray-dark !default;
 
 
@@ -827,3 +827,5 @@ $pre-bg:                      #f7f7f9 !default;
 $pre-color:                   $gray-dark !default;
 $pre-border-color:            #ccc !default;
 $pre-scrollable-max-height:   340px !default;
+
+@import '~bootstrap/scss/bootstrap.scss';

@@ -1,4 +1,15 @@
-﻿html, body , .full-height {
+﻿@import 'bootstrap-customisation.scss';
+
+
+html, body , .full-height {
     box-sizing: border-box;
     height: 100%;
+}
+
+.footer.container-fluid {
+    font-size: 0.8em;
+    margin-top: 15px;
+    padding-top: 15px;
+    background-color: $gray;
+    color: $gray-lighter;
 }
