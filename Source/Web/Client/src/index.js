@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import App from './modules/app/App';
 import './index.scss';
 
 require('jquery');

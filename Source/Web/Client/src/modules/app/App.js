@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
 import Title from './Title';
-import Map from './map/Map';
-import Content from './Content';
-import Footer from './Footer';
+import Map from '../map/Map';
+import Content from '../content/Content';
+import Footer from '../footer/Footer';
+
+import './App.scss'
 
 class App extends Component {
     render() {

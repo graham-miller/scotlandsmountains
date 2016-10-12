@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import MountainStore from '../stores/MountainStore';
-import MountainActions from '../actions/MountainActions';
+import MountainStore from '../../state/stores/MountainStore';
+import MountainActions from '../../state/actions/MountainActions';
 
 class Home extends Component {
 

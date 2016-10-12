@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import L from 'leaflet';
 
-import './Map.css';
-import MountainStore from '../../stores/MountainStore';
+import './Map.scss';
+import MountainStore from '../../state/stores/MountainStore';
 
 class Map extends Component {
 
