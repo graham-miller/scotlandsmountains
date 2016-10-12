@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import L from 'leaflet';
 
+import Toolbar from './Toolbar';
 import './Map.scss';
 import MountainStore from '../../state/stores/MountainStore';
 
@@ -64,6 +65,7 @@ class Map extends Component {
     render() {
         return (
             <div className='full-height'>
+                <Toolbar />
                 <div id='map' className='full-height'></div>
             </div>
         );

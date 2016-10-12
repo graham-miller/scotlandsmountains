@@ -90,14 +90,14 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         loader: 'eslint',
-        include: paths.appSrc,
+        include: [paths.appSrc, paths.icons]
       }
     ],
     loaders: [
       // Process JS with Babel.
       {
         test: /\.(js|jsx)$/,
-        include: paths.appSrc,
+        include: [paths.appSrc, paths.icons],
         loader: 'babel',
         query: {
           

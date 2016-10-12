@@ -35,5 +35,6 @@ module.exports = {
   testsSetup: resolveApp('Client/src/setupTests.js'),
   appNodeModules: resolveApp('node_modules'),
   ownNodeModules: resolveApp('node_modules'),
+  icons: resolveApp('node_modules/react-icons/md'),
   nodePaths: nodePaths
 };
