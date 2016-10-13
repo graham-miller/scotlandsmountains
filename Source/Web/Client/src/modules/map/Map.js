@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import L from 'leaflet';
 import $ from 'jquery';
 
-import Toolbar from './Toolbar';
-import './Map.scss';
 import MountainStore from '../../state/stores/MountainStore';
 
 class Map extends Component {
@@ -75,7 +73,7 @@ class Map extends Component {
     }
 
     getMapHeight() {
-        const allowance = 110; 
+        const allowance = 85; 
         const minimum = 200; 
         const windowHeight = $(window).height();
 
@@ -87,10 +85,7 @@ class Map extends Component {
 
     render() {
         return (
-            <div>
-                <Toolbar />
-                <div id={this.mapElementId} style={{height: this.getMapHeight()}} ></div>
-            </div>
+            <div id={this.mapElementId} style={{height: this.getMapHeight()}} ></div>
         );
     }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Title from './Title';
-import Map from '../map/Map';
+import MapModule from '../map/MapModule';
 import Content from '../content/Content';
 import Footer from '../footer/Footer';
 
@@ -15,7 +15,7 @@ class App extends Component {
                 <div className='container-fluid' style={{paddingTop: '70px', marginBottom: '40px'}}>
                     <div className='row'>
                         <div className='col-md-4'><Content /></div>
-                        <div className='col-md-8'><Map /></div>
+                        <div className='col-md-8'><MapModule /></div>
                     </div>
                 </div>
                 <Footer />

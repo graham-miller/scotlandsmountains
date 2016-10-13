@@ -40,9 +40,9 @@ class Home extends Component {
 
         const style = {
             padding: '2px',
-            height: '100%',
             overflow: 'scroll', overflowX: 'hidden',
-            border: '1px solid #333'
+            border: '1px solid #333',
+            height: '200px'
         }
 
         return (

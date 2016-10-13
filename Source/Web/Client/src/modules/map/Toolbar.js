@@ -7,13 +7,14 @@ import MdRefresh from 'react-icons/md/refresh';
 import MdMap from 'react-icons/lib/md/map';
 import MdSatellite from 'react-icons/lib/md/satellite';
 
-import './Map.scss';
-
 class Toolbar extends Component {
 
     render() {
+
+        const style = { position: 'absolute', left: '15px', top: '15px', zIndex:10000 };
+
         return (
-            <div className="btn-group" role="group" aria-label="Button group with nested dropdown">
+            <div className="btn-group" role="group" aria-label="Button group with nested dropdown" style={style}>
                 
                 <button type="button" className="btn btn-secondary"><MdAddCircleOutline /></button>
                 <button type="button" className="btn btn-secondary"><MdRemoveCircleOutline /></button>
