@@ -46,7 +46,7 @@ class Home extends Component {
         }
 
         return (
-            <div className='full-height'>
+            <div>
                 <div style={style}>
                     <ul style={{listStyleType: 'none', padding: 0}}>
                         {this.state.mountains.map(function(mountain) {

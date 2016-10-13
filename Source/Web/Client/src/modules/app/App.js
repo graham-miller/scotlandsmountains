@@ -10,12 +10,12 @@ import './App.scss'
 class App extends Component {
     render() {
         return (
-            <div className='full-height'>
+            <div>
                 <Title />
-                <div className='container-fluid full-height' style={{paddingTop: '70px', marginBottom: '40px'}}>
-                    <div className='row full-height'>
+                <div className='container-fluid' style={{paddingTop: '70px', marginBottom: '40px'}}>
+                    <div className='row'>
                         <div className='col-md-4'><Content /></div>
-                        <div className='col-md-8 full-height'><Map /></div>
+                        <div className='col-md-8'><Map /></div>
                     </div>
                 </div>
                 <Footer />

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import L from 'leaflet';
+import $ from 'jquery';
 
 import Toolbar from './Toolbar';
 import './Map.scss';
@@ -9,8 +10,12 @@ class Map extends Component {
 
     constructor(props) {
         super(props);
+
+        this.mapElementId = 'map';
+
         this.state = MountainStore.getState();
         this.onChange = this.onChange.bind(this);
+        this.handleWindowResize = this.handleWindowResize.bind(this);
     }
 
     onChange(state) {
@@ -37,6 +42,11 @@ class Map extends Component {
             
         });
     }
+
+    handleWindowResize() {
+        $('#' + this.mapElementId).height(this.getMapHeight());
+        this.map.invalidateSize({ pan: true, debounceMoveend: true });
+    }
     
     shouldComponentUpdate(nextProps, nextState) {
         return false;
@@ -45,8 +55,9 @@ class Map extends Component {
     componentDidMount() {
 
         MountainStore.listen(this.onChange);
+        window.addEventListener('resize', this.handleWindowResize);
 
-        this.map = L.map('map').setView([56.816922, -4.18265], 7);
+        this.map = L.map(this.mapElementId).setView([56.816922, -4.18265], 7);
 
         this.map.attributionControl.setPrefix('');
 
@@ -60,13 +71,25 @@ class Map extends Component {
     componentWillUnmount() {
         this.map = null;
         MountainStore.unlisten(this.onChange);
+        window.removeEventListener('resize', this.handleWindowResize);
+    }
+
+    getMapHeight() {
+        const allowance = 110; 
+        const minimum = 200; 
+        const windowHeight = $(window).height();
+
+        var mapHeight = windowHeight - allowance;
+        mapHeight = mapHeight < minimum ? minimum : mapHeight;
+
+        return mapHeight;
     }
 
     render() {
         return (
-            <div className='full-height'>
+            <div>
                 <Toolbar />
-                <div id='map' className='full-height'></div>
+                <div id={this.mapElementId} style={{height: this.getMapHeight()}} ></div>
             </div>
         );
     }
