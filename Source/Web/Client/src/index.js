@@ -1,6 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+
+import app from './reducers'
 import App from './modules/app/App';
+
 import './index.scss';
 
 require('jquery');
@@ -8,11 +13,10 @@ require('tether');
 
 import 'bootstrap/dist/js/bootstrap.js';
 
-import 'leaflet/dist/leaflet.css';
-import 'leaflet/dist/images/layers.png';
-import 'leaflet/dist/images/layers-2x.png';
-import 'leaflet/dist/images/marker-icon.png';
-import 'leaflet/dist/images/marker-icon-2x.png';
-import 'leaflet/dist/images/marker-shadow.png';
+let store = createStore(app)
 
-ReactDOM.render(<App />, document.getElementById('sm-app'));
+render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('sm-app'));
