@@ -24,7 +24,7 @@ class Map extends Component {
         this.resizeMap = this.resizeMap.bind(this);
         this.destroyMap = this.destroyMap.bind(this);
     }
-    
+
     createMap(elementId) {
         var map = mapFactory(elementId);
         map.on('zoomend', this.onZoomEnd);
@@ -57,13 +57,18 @@ class Map extends Component {
     }
     
     render() {
+
+        if (this.props.mountains && this.state.map) {
+            this.state.map.displayMountains(this.props.mountains);
+        }
+
         return (
             <div style={{position:'relative'}}>
                 <Toolbar
                     canZoomIn={this.state.canZoomIn}
                     canZoomOut={this.state.canZoomOut}
-                    zoomIn={this.handleZoomIn}
-                    zoomOut={this.handleZoomOut} />
+                    zoomIn={this.zoomIn}
+                    zoomOut={this.zoomOut} />
                 <MapElement
                     createMap={this.createMap}
                     destroyMap={this.destroyMap}

@@ -26,7 +26,7 @@ const displayMountains = function(map, mountains) {
     var icon = L.divIcon({className: 'marker munro'});
 
     mountains.forEach((mountain) => {
-        var marker = L.marker([mountain.latitude, mountain.longitude], {icon: icon}).addTo(this.layer);
+        var marker = L.marker([mountain.latitude, mountain.longitude], {icon: icon}).addTo(map.mountainLayer);
 
         marker.bindPopup('<p style="padding:0;margin:0;">' + mountain.name + '</p><p style="padding:0;margin:0;">' + mountain.height + '</p>', {closeButton: false});
         marker.on('mouseover', function (e) {

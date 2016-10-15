@@ -1,6 +1,5 @@
 ﻿import { connect } from 'react-redux'
-//import { toggleTodo } from '../actions'
-import Map from './Map'
+import Mountains from './Mountains'
 
 const mapStateToProps = (state) => {
     return {
@@ -8,6 +7,6 @@ const mapStateToProps = (state) => {
     }
 }
 
-const MapContainer = connect(mapStateToProps)(Map)
+const MountainsContainer = connect(mapStateToProps)(Mountains)
 
-export default MapContainer
+export default MountainsContainer
