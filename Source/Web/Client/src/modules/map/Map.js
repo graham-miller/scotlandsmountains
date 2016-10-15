@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 
-import { createMap, destroyMap } from '../../actions/map';
-
 import mapFactory from './mapFactory';
 import Toolbar from './Toolbar';
+import MapElement from './MapElement';
 
 import './Map.scss';
 
@@ -13,35 +12,62 @@ class Map extends Component {
         super(props);
 
         this.state = {
-            mapElementId: 'map'
+            map: null,
+            canZoomIn: true,
+            canZoomOut: true
         };
 
-        this.handleWindowResize = this.handleWindowResize.bind(this);
-    }
-
-    handleWindowResize() {
-        this.props.map.resize();
+        this.createMap = this.createMap.bind(this);
+        this.zoomIn = this.zoomIn.bind(this);
+        this.zoomOut = this.zoomOut.bind(this);
+        this.onZoomEnd = this.onZoomEnd.bind(this);
+        this.resizeMap = this.resizeMap.bind(this);
+        this.destroyMap = this.destroyMap.bind(this);
     }
     
-    shouldComponentUpdate(nextProps, nextState) {
-        return false;
+    createMap(elementId) {
+        var map = mapFactory(elementId);
+        map.on('zoomend', this.onZoomEnd);
+
+        this.setState({map: map});
     }
 
-    componentDidMount() {
-        this.props.dispatch(createMap(mapFactory(this.state.mapElementId)));
-        window.addEventListener('resize', this.handleWindowResize);
+    zoomIn() {
+        this.state.map.zoomIn();
+    }
+    
+    zoomOut() {
+        this.state.map.zoomOut();
+    }
+    
+    onZoomEnd() {
+        this.setState({
+            canZoomIn: this.state.map.getZoom() < this.state.map.getMaxZoom(),
+            canZoomOut: this.state.map.getZoom() > this.state.map.getMinZoom()
+        });
     }
 
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.handleWindowResize);
-        this.props.dispatch(destroyMap());
+    resizeMap() {
+        this.state.map.resize();
     }
-
+    
+    destroyMap() {
+        this.state.map.off('zoomend', this.onZoomEnd);
+        this.setState({map: null});
+    }
+    
     render() {
         return (
             <div style={{position:'relative'}}>
-                <Toolbar />
-                <div id={this.state.mapElementId} ></div>
+                <Toolbar
+                    canZoomIn={this.state.canZoomIn}
+                    canZoomOut={this.state.canZoomOut}
+                    zoomIn={this.handleZoomIn}
+                    zoomOut={this.handleZoomOut} />
+                <MapElement
+                    createMap={this.createMap}
+                    destroyMap={this.destroyMap}
+                    resizeMap={this.resizeMap} />
             </div>
         );
     }

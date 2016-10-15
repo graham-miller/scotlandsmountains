@@ -1,5 +1,10 @@
 @import '../../index.scss';
 
+@mixin shadow {
+    box-shadow: 2px 2px 1px 0 #000000;
+    box-shadow: 2px 2px 1px 0 rgba(0,0,0,0.5);
+}
+
 .marker.munro {
     margin-left: -6px;
     margin-top: -6px;
@@ -12,6 +17,13 @@
     box-sizing: border-box;
     z-index: 266;
     border-radius: 6px;
-    box-shadow: 2px 2px 1px 0 #000000;
-    box-shadow: 2px 2px 1px 0 rgba(0,0,0,0.5);
+    @include shadow;
+}
+
+.map.btn-group {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    z-index: 10000;
+    @include shadow;
 }
