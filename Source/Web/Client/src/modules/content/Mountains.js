@@ -12,9 +12,16 @@ class Mountains extends Component {
 
     render() {
 
+        if (this.props.error) {
+            return (<div>Network error</div>);
+        }
+
+        if (this.props.loading) {
+            return (<Loading />);
+        }
+
         return (
             <div>
-                <Loading />
                 <ul>
                 {
                     this.props.mountains.map(mountain =>

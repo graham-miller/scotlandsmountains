@@ -1,4 +1,5 @@
 ﻿const defaultState = {
+    loading: false,
     error: false,
     mountains: []
 };
@@ -7,20 +8,29 @@ const mountains = (state = defaultState, action) => {
     switch (action.type) {
         
         case 'REQUEST_TABLE':
-            return defaultState;
+            return Object.assign({}, {
+                loading: true,
+                error: false,
+                mountains: []
+            });
 
         case 'RECEIVE_TABLE':
-            return Object.assign({}, defaultState, {
+            return Object.assign({}, {
+                loading: false,
+                error: false,
                 mountains: action.mountains
             });
-        
+
         case 'NETWORK_ERROR':
-            return Object.assign({}, defaultState, {
-                error: true
+            return Object.assign({}, {
+                loading: false,
+                error: true,
+                mountains: []
             });
-        
+
         default:
-            return state
+            return Object.assign({}, state);
+
     }
 };
 

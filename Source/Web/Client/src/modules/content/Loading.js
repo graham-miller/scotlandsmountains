@@ -9,7 +9,7 @@ class Loading extends Component {
         return (
             <div>
                 Loading
-                <img src={LoadingGif} style={{margin: '0 0 0 10px'}} />
+                <img src={LoadingGif} role="presentation" style={{margin: '0 0 0 10px'}} />
             </div>
         );
     }
