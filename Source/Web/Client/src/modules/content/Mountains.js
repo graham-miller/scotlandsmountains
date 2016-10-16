@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import { fetchTable } from '../../actions/mountains';
 
+import Loading from './Loading';
+
 class Mountains extends Component {
 
     componentDidMount() {
@@ -11,14 +13,17 @@ class Mountains extends Component {
     render() {
 
         return (
-            <ul>
-            {
-                this.props.mountains.map(mountain =>
-                    <li key={mountain.id}>
-                        {mountain.name}
-                    </li>)
-            }                
-            </ul>
+            <div>
+                <Loading />
+                <ul>
+                {
+                    this.props.mountains.map(mountain =>
+                        <li key={mountain.id}>
+                            {mountain.name}
+                        </li>)
+                }                
+                </ul>
+            </div>
         );
     }
 }
