@@ -832,3 +832,11 @@ $pre-scrollable-max-height:   340px !default;
 
 @import '~bootstrap/scss/bootstrap.scss';
 @import '~leaflet/dist/leaflet.css';
+
+div.scrollable {
+    height: 250px;
+    padding: 2px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border: 1px solid $gray-dark;
+}

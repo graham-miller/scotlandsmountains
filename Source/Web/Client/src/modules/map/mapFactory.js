@@ -1,19 +1,12 @@
 import L from 'leaflet';
 import $ from 'jquery';
 
+import getHeight from '../../util/getHeight';
+
 const resize = function(map) {
-
-    const allowance = 85; 
-    const minimum = 200; 
-    const windowHeight = $(window).height();
-
-    var height = windowHeight - allowance;
-    height = height < minimum ? minimum : height;
-
-    $(map.getContainer()).height(height);
+    $(map.getContainer()).height(getHeight());
     map.invalidateSize({ pan: true, debounceMoveend: true });
 }
-
 
 const displayMountains = function(map, mountains) {
 
@@ -23,10 +16,12 @@ const displayMountains = function(map, mountains) {
 
     map.mountainLayer = L.layerGroup().addTo(map);
 
-    var icon = L.divIcon({className: 'marker munro'});
+    var icon = L.divIcon({className: 'marker'});
 
     mountains.forEach((mountain) => {
         var marker = L.marker([mountain.latitude, mountain.longitude], {icon: icon}).addTo(map.mountainLayer);
+
+        mountain.marker = marker;
 
         marker.bindPopup('<p style="padding:0;margin:0;">' + mountain.name + '</p><p style="padding:0;margin:0;">' + mountain.height + '</p>', {closeButton: false});
         marker.on('mouseover', function (e) {

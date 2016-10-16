@@ -64,15 +64,15 @@ class Map extends Component {
 
         return (
             <div style={{position:'relative'}}>
+                <MapElement
+                    createMap={this.createMap}
+                    destroyMap={this.destroyMap}
+                    resizeMap={this.resizeMap} />
                 <Toolbar
                     canZoomIn={this.state.canZoomIn}
                     canZoomOut={this.state.canZoomOut}
                     zoomIn={this.zoomIn}
                     zoomOut={this.zoomOut} />
-                <MapElement
-                    createMap={this.createMap}
-                    destroyMap={this.destroyMap}
-                    resizeMap={this.resizeMap} />
             </div>
         );
     }

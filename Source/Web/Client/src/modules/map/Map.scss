@@ -5,13 +5,13 @@
     box-shadow: 2px 2px 1px 0 rgba(0,0,0,0.5);
 }
 
-.marker.munro {
+.marker {
     margin-left: -6px;
     margin-top: -6px;
     height: 12px;
     width: 12px;
     background-color: #6495ed;
-    border: solid 1px #0000ff;
+    border: solid 1px #1f66e5;
     cursor: pointer;
     display: block;
     box-sizing: border-box;
@@ -19,11 +19,14 @@
     border-radius: 6px;
     @include shadow;
 }
+    
+.marker.highlighted {
+    background-color: #daed64;
+}
 
 .map.btn-group {
     position: absolute;
     left: 15px;
     top: 15px;
-    z-index: 10000;
     @include shadow;
 }
