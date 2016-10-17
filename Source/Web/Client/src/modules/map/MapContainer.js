@@ -4,7 +4,7 @@ import Map from './Map'
 
 const mapStateToProps = (state) => {
     return {
-        mountains: state.mountains.mountains
+        mountains: state.mountains
     }
 }
 

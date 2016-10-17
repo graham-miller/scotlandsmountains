@@ -1,5 +1,5 @@
 ﻿import { connect } from 'react-redux';
-import Mountains from './Mountains';
+import Search from './Search';
 
 const mapStateToProps = (state) => {
     return {
@@ -7,6 +7,6 @@ const mapStateToProps = (state) => {
     };
 }
 
-const MountainsContainer = connect(mapStateToProps)(Mountains);
+const SearchContainer = connect(mapStateToProps)(Search);
 
-export default MountainsContainer;
+export default SearchContainer;

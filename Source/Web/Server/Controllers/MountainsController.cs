@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using ScotlandsMountains.Domain;
 using ScotlandsMountains.Web.Server.Models;
+using Humanizer;
 
 namespace ScotlandsMountains.Web.Server.Controllers
 {
@@ -41,15 +42,16 @@ namespace ScotlandsMountains.Web.Server.Controllers
                 .Where(isMatch)
                 .OrderByDescending(x => x.Height)
                 .Skip((page - 1) * pageSize)
-                .Take(pageSize);
+                .Take(pageSize)
+                .Select(MountainSummary.Build);
 
-            return new ObjectResult(new { page, pageSize, pages, count, results });
+            return new ObjectResult(new { term, page, pageSize, pages, count, results });
         }
 
         [HttpGet("{classificationName}")]
         public IActionResult Classification(string classificationName)
         {
-            Func<Classification, bool> isMatch = x => x.Name.Equals(classificationName, StringComparison.InvariantCultureIgnoreCase);
+            Func<Classification, bool> isMatch = x => x.Name.Equals(classificationName.Singularize(), StringComparison.InvariantCultureIgnoreCase);
             var classification = DomainRoot.Classifications.Single(isMatch);
 
             if (classification == null)

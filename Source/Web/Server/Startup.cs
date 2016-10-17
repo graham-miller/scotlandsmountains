@@ -37,7 +37,7 @@ namespace ScotlandsMountains.Web.Server
                     x.ContractResolver = new CamelCasePropertyNamesContractResolver();
                 });
 
-            services.AddSingleton<IDomainRoot>(x => DomainRoot.Load());
+            services.AddSingleton<IDomainRoot>(x => DomainRoot.Load().ScotlandOnly());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

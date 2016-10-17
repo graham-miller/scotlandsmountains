@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Redirect, Route, browserHistory } from 'react-router';
 import MountainsContainer from './MountainsContainer';
-import Search from './Search';
+import SearchContainer from './SearchContainer';
 
 class Content extends Component {
 
     render() {
         return (
             <Router history={browserHistory}>
-                <Route path="/" component={MountainsContainer} />
-                <Route path="/search" component={Search} />
+                <Redirect from="/" to="/mountains/munros" />
+                <Route path="/mountains/:table" component={MountainsContainer} />
+                <Route path="/search" component={SearchContainer} />
             </Router>
         );
     }
