@@ -11,6 +11,12 @@ function receiveTable(json) {
     }
 }
 
+export function clearList() {
+    return {
+        type: 'CLEAR_LIST'
+    }
+}
+
 function requestSearch(term) {
     return {
         type: 'REQUEST_SEARCH',
@@ -22,6 +28,13 @@ function receiveSearch(json) {
     return {
         type: 'RECEIVE_SEARCH',
         searchResult: json
+    }
+}
+
+function didntSearch(term) {
+    return {
+        type: 'DIDNT_SEARCH',
+        term
     }
 }
 
@@ -54,6 +67,11 @@ export function fetchTable(table) {
 }
 
 export function search(term) {
+
+    if (!term || term.length < 3) {
+        return dispatch => dispatch(didntSearch(term));
+    }
+
     return dispatch => {
         dispatch(requestSearch(term))
         return fetch('/api/mountains/search/' + term, {

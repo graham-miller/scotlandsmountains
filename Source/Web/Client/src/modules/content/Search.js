@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { search } from '../../actions/mountains';
+import { clearList, search } from '../../actions/mountains';
 
 import Mountain from './Mountain';
 import './Mountains.scss';
@@ -18,7 +18,12 @@ class Search extends Component {
             timeoutId: null
         }
 
+        this.props.dispatch(clearList());
+
         this.search = this.search.bind(this);
+    }
+
+    componentDidMount() {
     }
 
     search(event) {
@@ -40,18 +45,10 @@ class Search extends Component {
 
     render() {
 
-        if (this.props.mountains.status.error) {
-            return (<div>Network error</div>);
-        }
-
-        if (this.props.mountains.status.loading) {
-            return (<Loading />);
-        }
-
-        return (
+        var searchInput = (
             <div>
                 <div>
-                     <h2>Search</h2>
+                    <h2>Search</h2>
                 </div>
                 <div>
                     <input
@@ -59,6 +56,39 @@ class Search extends Component {
                         placeholder="Search" className="form-control" autoFocus={true}
                         onChange={this.search} />
                 </div>
+            </div>
+        );
+
+
+        if (this.props.mountains.status.error) {
+            return (
+                <div>
+                    {searchInput}
+                    <div>Network error</div>
+                </div>
+            );
+        }
+
+        if (this.props.mountains.status.loading) {
+            return (
+                <div>
+                    {searchInput}
+                    <Loading />
+                </div>
+            );
+        }
+
+        if (this.props.mountains.list.length == 0) {
+            return (
+                <div>
+                    {searchInput}
+                </div>
+            );
+        }
+
+        return (
+            <div>
+                {searchInput}
                 <div className="scrollable" style={{height: getHeight()-81}}>
                     <table className="table table-hover table-sm">
                         <tbody>

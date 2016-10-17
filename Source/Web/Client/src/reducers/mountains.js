@@ -40,11 +40,25 @@ const mountains = (state = defaultState, action) => {
                 list: action.mountains
             });
 
+        case 'CLEAR_LIST':
+            return Object.assign({}, state, {
+                list: [],
+            });
         
         case 'REQUEST_SEARCH':
             return Object.assign({}, state, {
                 status: {
                     loading: true,
+                    error: false,
+                },
+                list: [],
+                searchTerm: action.term
+            });
+
+        case 'DIDNT_SEARCH':
+            return Object.assign({}, state, {
+                status: {
+                    loading: false,
                     error: false,
                 },
                 list: [],
