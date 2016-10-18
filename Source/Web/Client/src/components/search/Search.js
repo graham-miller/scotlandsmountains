@@ -4,8 +4,7 @@ import { clearList, search } from '../../actions/mountains';
 
 import Result from './Result';
 import Loading from '../common/Loading';
-
-import getHeight from '../../util/getHeight';
+import FullHeightContainer from '../common/FullHeightContainer'
 
 class Search extends Component {
 
@@ -17,12 +16,12 @@ class Search extends Component {
             timeoutId: null
         }
 
-        this.props.dispatch(clearList());
 
         this.search = this.search.bind(this);
     }
 
-    componentDidMount() {
+    componentWillMount() {
+        this.props.dispatch(clearList());
     }
 
     search(event) {
@@ -52,11 +51,11 @@ class Search extends Component {
                 <div>
                     <input
                         type="search" id="search-input" value={this.state.term}
-                        placeholder="Search" className="form-control" autoFocus={true}
-                        onChange={this.search} />
-                </div>
-            </div>
-        );
+    placeholder="Search" className="form-control" autoFocus={true}
+    onChange={this.search} />
+</div>
+</div>
+);
 
 
         if (this.props.mountains.status.error) {
@@ -77,7 +76,7 @@ class Search extends Component {
             );
         }
 
-        if (this.props.mountains.list.length == 0) {
+        if (this.props.mountains.list.length === 0) {
             return (
                 <div>
                     {searchInput}
@@ -88,7 +87,7 @@ class Search extends Component {
         return (
             <div>
                 {searchInput}
-                <div className="scrollable" style={{height: getHeight()-81}}>
+                <FullHeightContainer className='scrollable' style={{marginTop: '8px'}} allowance='174'>
                     <table className="table table-hover table-sm">
                         <tbody>
                             {
@@ -98,7 +97,7 @@ class Search extends Component {
                             }                
                         </tbody>
                     </table>
-                </div>
+                </FullHeightContainer>
             </div>
         );
     }

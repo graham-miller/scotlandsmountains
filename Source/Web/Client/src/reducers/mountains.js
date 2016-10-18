@@ -82,7 +82,13 @@ const mountains = (state = defaultState, action) => {
             });
 
         case 'NETWORK_ERROR':
-            return Object.assign({}, defaultState);
+            return Object.assign({}, state, {
+                status: {
+                    loading: false,
+                    error: true,
+                },
+                list: []
+            });
 
         default:
             return Object.assign({}, state);

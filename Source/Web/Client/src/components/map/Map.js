@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import mapFactory from './mapFactory';
 import Toolbar from './Toolbar';
 import MapElement from './MapElement';
+import FullHeightContainer from '../common/FullHeightContainer'
 
 import './Map.scss';
 
@@ -64,10 +65,11 @@ class Map extends Component {
 
         return (
             <div style={{position:'relative'}}>
-                <MapElement
-                    createMap={this.createMap}
-                    destroyMap={this.destroyMap}
-                    resizeMap={this.resizeMap} />
+                <FullHeightContainer allowance='80' handleResize={this.resizeMap}>
+                    <MapElement
+                        createMap={this.createMap}
+                        destroyMap={this.destroyMap} />
+                </FullHeightContainer>
                 <Toolbar
                     canZoomIn={this.state.canZoomIn}
                     canZoomOut={this.state.canZoomOut}

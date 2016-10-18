@@ -834,7 +834,6 @@ $pre-scrollable-max-height:   340px !default;
 @import '~leaflet/dist/leaflet.css';
 
 div.scrollable {
-    height: 250px;
     padding: 2px;
     overflow-x: hidden;
     overflow-y: scroll;

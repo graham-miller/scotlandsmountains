@@ -7,15 +7,11 @@ class FullHeightContainer extends Component {
         super(props);
 
         this.handleResize = this.handleResize.bind(this);
-        this.calculateHeight = this.calculateHeight.bind(this);
-    }
-
-    handleResize() {
-        this.setState = { height: this.calculateHeight() };
-        debugger;
+        this.updateHeight = this.updateHeight.bind(this);
     }
     
     componentDidMount() {
+        this.updateHeight();
         window.addEventListener('resize', this.handleResize);
     }
 
@@ -23,23 +19,30 @@ class FullHeightContainer extends Component {
         window.removeEventListener('resize', this.handleResize);
     }
 
-    calculateHeight() {
-        const allowance = 85; 
+    handleResize() {
+        this.updateHeight();
+        if (this.props.handleResize) {
+            this.props.handleResize();
+        }
+    }
+
+    updateHeight() {
         const minimum = 200; 
         const windowHeight = $(window).height();
 
-        var height = windowHeight - allowance;
+        var height = windowHeight - this.props.allowance;
         height = height < minimum ? minimum : height;
 
-        return height;
+        this.element.style.height = height + 'px';
     }
 
     render() {
 
-        const style = { height: this.calculateHeight() };
-
         return (
-            <div style={style}>
+            <div
+                ref={(div) => {this.element = div}}
+                className={this.props.className}
+                style={this.props.style}>
                 {this.props.children}
             </div>
         );

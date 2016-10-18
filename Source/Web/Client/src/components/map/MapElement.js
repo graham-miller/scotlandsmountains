@@ -4,7 +4,7 @@ class MapElement extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {mapElementId: 'map'};
+        this.mapElementId = 'map';
     }
     
     shouldComponentUpdate(nextProps, nextState) {
@@ -12,17 +12,15 @@ class MapElement extends Component {
     }
 
     componentDidMount() {
-        this.props.createMap(this.state.mapElementId);
-        window.addEventListener('resize', this.props.resizeMap);
+        this.props.createMap(this.mapElementId);
     }
 
     componentWillUnmount() {
-        window.removeEventListener('resize', this.props.resizeMap);
         this.props.destroyMap();
     }
 
     render() {
-        return (<div id={this.state.mapElementId}></div>);
+        return (<div id={this.mapElementId}></div>);
     }
 }
 
