@@ -4,7 +4,7 @@ import { fetchTable } from '../../actions/mountains';
 
 import Row from './Row';
 import './Table.scss';
-import Loading from '../common/loading/Loading';
+import Loading from '../common/Loading';
 
 import getHeight from '../../util/getHeight';
 

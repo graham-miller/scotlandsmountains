@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { clearList, search } from '../../actions/mountains';
 
 import Result from './Result';
-import Loading from '../common/loading/Loading';
+import Loading from '../common/Loading';
 
 import getHeight from '../../util/getHeight';
 
