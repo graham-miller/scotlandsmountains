@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Title from './Title';
 import MapContainer from '../map/MapContainer';
-import Content from '../content/Content';
+import Content from './Content';
 import Footer from '../footer/Footer';
 
 import './App.scss'

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import $ from 'jquery';
 
-class Mountain extends Component {
+class Row extends Component {
 
     constructor(props) {
         super(props);
@@ -37,4 +37,4 @@ class Mountain extends Component {
     }
 }
 
-export default Mountain;
+export default Row;

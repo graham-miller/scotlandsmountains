@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 
 import { clearList, search } from '../../actions/mountains';
 
-import Mountain from './Mountain';
-import './Mountains.scss';
-import Loading from './Loading';
+import Result from './Result';
+import Loading from '../common/loading/Loading';
 
 import getHeight from '../../util/getHeight';
 
@@ -93,8 +92,8 @@ class Search extends Component {
                     <table className="table table-hover table-sm">
                         <tbody>
                             {
-                                this.props.mountains.list.map((mountain, index) =>
-                                    <Mountain key={mountain.id} mountain={mountain} index={index} />
+                                this.props.mountains.list.map((mountain) =>
+                                    <Result key={mountain.id} mountain={mountain} />
                                 )
                             }                
                         </tbody>

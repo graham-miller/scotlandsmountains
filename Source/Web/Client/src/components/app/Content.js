@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Router, Redirect, Route, browserHistory } from 'react-router';
-import MountainsContainer from './MountainsContainer';
-import SearchContainer from './SearchContainer';
+import TableContainer from '../table/TableContainer';
+import SearchContainer from '../search/SearchContainer';
 
 class Content extends Component {
 
@@ -9,7 +9,7 @@ class Content extends Component {
         return (
             <Router history={browserHistory}>
                 <Redirect from="/" to="/mountains/munros" />
-                <Route path="/mountains/:table" component={MountainsContainer} />
+                <Route path="/mountains/:table" component={TableContainer} />
                 <Route path="/search" component={SearchContainer} />
             </Router>
         );

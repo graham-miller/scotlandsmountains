@@ -1,5 +1,5 @@
 ﻿import { connect } from 'react-redux';
-import Mountains from './Mountains';
+import Table from './Table';
 
 const mapStateToProps = (state) => {
     return {
@@ -7,6 +7,6 @@ const mapStateToProps = (state) => {
     };
 }
 
-const MountainsContainer = connect(mapStateToProps)(Mountains);
+const TableContainer = connect(mapStateToProps)(Table);
 
-export default MountainsContainer;
+export default TableContainer;

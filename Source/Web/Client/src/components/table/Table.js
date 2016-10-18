@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 
 import { fetchTable } from '../../actions/mountains';
 
-import Mountain from './Mountain';
-import './Mountains.scss';
-import Loading from './Loading';
+import Row from './Row';
+import './Table.scss';
+import Loading from '../common/loading/Loading';
 
 import getHeight from '../../util/getHeight';
 
-class Mountains extends Component {
+class Table extends Component {
 
     componentDidMount() {
         this.props.dispatch(fetchTable(this.props.routeParams.table));
@@ -34,7 +34,7 @@ class Mountains extends Component {
                         <tbody>
                             {
                                 this.props.mountains.list.map((mountain, index) =>
-                                    <Mountain key={mountain.id} mountain={mountain} index={index} />
+                                    <Row key={mountain.id} mountain={mountain} index={index} />
                                 )
                             }                
                         </tbody>
@@ -45,4 +45,4 @@ class Mountains extends Component {
     }
 }
 
-export default Mountains;
+export default Table;
