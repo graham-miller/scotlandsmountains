@@ -7,9 +7,9 @@ import { clearList,fetchTable } from '../../actions/mountains';
 import Loading from '../common/Loading';
 import FullHeightContainer from '../common/FullHeightContainer'
 
-import './Table.scss'
+import './Mountains.scss'
 
-class Table extends Component {
+class Mountains extends Component {
 
     constructor(props) {
         super(props);
@@ -76,4 +76,4 @@ class Table extends Component {
     }
 }
 
-export default Table;
+export default Mountains;
