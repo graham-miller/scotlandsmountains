@@ -11,10 +11,14 @@ class FullHeightContainer extends Component {
     }
     
     componentDidMount() {
-        this.updateHeight();
+        this.handleResize();
         window.addEventListener('resize', this.handleResize);
     }
-
+    
+    componentDidUpdate() {
+        this.handleResize();
+    }
+    
     componentWillUnmount() {
         window.removeEventListener('resize', this.handleResize);
     }

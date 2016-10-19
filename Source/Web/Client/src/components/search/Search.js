@@ -16,7 +16,6 @@ class Search extends Component {
             timeoutId: null
         }
 
-
         this.search = this.search.bind(this);
     }
 
@@ -51,12 +50,11 @@ class Search extends Component {
                 <div>
                     <input
                         type="search" id="search-input" value={this.state.term}
-    placeholder="Search" className="form-control" autoFocus={true}
-    onChange={this.search} />
-</div>
-</div>
-);
-
+                        placeholder="Search" className="form-control" autoFocus={true}
+                        onChange={this.search} />
+                </div>
+            </div>
+        );
 
         if (this.props.mountains.status.error) {
             return (

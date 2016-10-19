@@ -49,7 +49,9 @@ class Map extends Component {
     }
 
     resizeMap() {
-        this.state.map.resize();
+        if (this.state.map) {
+            this.state.map.resize();
+        }
     }
     
     destroyMap() {
@@ -65,7 +67,7 @@ class Map extends Component {
 
         return (
             <div style={{position:'relative'}}>
-                <FullHeightContainer allowance='80' handleResize={this.resizeMap}>
+                <FullHeightContainer allowance='85' handleResize={this.resizeMap}>
                     <MapElement
                         createMap={this.createMap}
                         destroyMap={this.destroyMap} />

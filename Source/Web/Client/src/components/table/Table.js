@@ -4,8 +4,7 @@ import { fetchTable } from '../../actions/mountains';
 
 import Row from './Row';
 import Loading from '../common/Loading';
-
-import getHeight from '../../util/getHeight';
+import FullHeightContainer from '../common/FullHeightContainer'
 
 class Table extends Component {
 
@@ -28,7 +27,7 @@ class Table extends Component {
                 <div>
                     <h2 style={{textTransform: 'capitalize'}}>{this.props.routeParams.table}</h2>
                 </div>
-                <div className="scrollable" style={{height: getHeight()-43}}>
+                <FullHeightContainer className='scrollable' allowance='128'>
                     <table className="table table-hover table-sm">
                         <tbody>
                             {
@@ -38,7 +37,7 @@ class Table extends Component {
                             }                
                         </tbody>
                     </table>
-                </div>
+                </FullHeightContainer>
             </div>
         );
     }

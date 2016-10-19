@@ -837,5 +837,7 @@ div.scrollable {
     padding: 2px;
     overflow-x: hidden;
     overflow-y: scroll;
-    border: 1px solid $gray-dark;
+    border: 1px solid $input-border-color;
+    box-shadow: $input-box-shadow;
+    border-radius: $input-border-radius;
 }

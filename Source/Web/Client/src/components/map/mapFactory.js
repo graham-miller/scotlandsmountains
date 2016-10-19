@@ -1,10 +1,6 @@
 import L from 'leaflet';
-import $ from 'jquery';
-
-import getHeight from '../../util/getHeight';
 
 const resize = function(map) {
-    $(map.getContainer()).height(getHeight());
     map.invalidateSize({ pan: true, debounceMoveend: true });
 }
 
@@ -19,18 +15,14 @@ const displayMountains = function(map, mountains) {
     var icon = L.divIcon({className: 'marker'});
 
     mountains.forEach((mountain) => {
-        var marker = L.marker([mountain.latitude, mountain.longitude], {icon: icon}).addTo(map.mountainLayer);
-
-        mountain.marker = marker;
+        var marker = L.marker([mountain.latitude, mountain.longitude], {
+            icon: icon
+        }).addTo(map.mountainLayer);
 
         marker.bindPopup('<p style="padding:0;margin:0;">' + mountain.name + '</p><p style="padding:0;margin:0;">' + mountain.height + '</p>', {closeButton: false});
-        marker.on('mouseover', function (e) {
-            this.openPopup();
-        });
-        marker.on('mouseout', function (e) {
-            this.closePopup();
-        });
-            
+        marker.on('mouseover', function (e) { this.openPopup(); });
+        marker.on('mouseout', function (e) { this.closePopup(); });
+        mountain.marker = marker;
     });
 }
 
@@ -50,7 +42,6 @@ const mapFactory = function(elementId) {
 
         map.resize = () => resize(map);
         map.displayMountains = (mountains) => displayMountains(map, mountains);
-
 
         map.resize();
 

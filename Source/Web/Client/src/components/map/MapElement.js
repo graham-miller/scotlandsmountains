@@ -20,7 +20,7 @@ class MapElement extends Component {
     }
 
     render() {
-        return (<div id={this.mapElementId}></div>);
+        return (<div id={this.mapElementId} style={{height: '100%'}}></div>);
     }
 }
 
