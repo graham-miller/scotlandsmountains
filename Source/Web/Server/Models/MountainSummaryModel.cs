@@ -2,14 +2,9 @@
 
 namespace ScotlandsMountains.Web.Server.Models
 {
-    public class MountainSummary
+    public class MountainSummaryModel
     {
-        public static MountainSummary Build(Mountain mountain)
-        {
-            return new MountainSummary(mountain);
-        }
-
-        public MountainSummary(Mountain mountain)
+        public MountainSummaryModel(Mountain mountain)
         {
             Id = mountain.Id;
             Name = mountain.Name;

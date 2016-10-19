@@ -77,7 +77,7 @@ namespace ScotlandsMountains.Domain
             {
                 if (_scotlandId == null)
                 {
-                    // TODO should be single, but we've got 2!?
+                    // TODO should be Single not First, but we've got two!?
                     _scotlandId = Countries.First(x => x.Name == "Scotland").Id;
                 }
 

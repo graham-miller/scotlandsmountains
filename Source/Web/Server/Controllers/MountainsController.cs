@@ -13,17 +13,6 @@ namespace ScotlandsMountains.Web.Server.Controllers
     {
         public MountainsController(IDomainRoot domainRoot) : base(domainRoot) { }
 
-        [HttpGet("{id}")]
-        public IActionResult Get(string id)
-        {
-            var mountain = DomainRoot.Mountains.GetById(id);
-
-            if (mountain == null)
-                return NotFound();
-
-            return new ObjectResult(mountain);
-        }
-
         [HttpGet("search/{term?}/{page:int?}/{pageSize:int?}")]
         public IActionResult Search(string term = "", int page = 1, int pageSize = 50)
         {
@@ -43,7 +32,7 @@ namespace ScotlandsMountains.Web.Server.Controllers
                 .OrderByDescending(x => x.Height)
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize)
-                .Select(MountainSummary.Build);
+                .Select(x => new MountainSummaryModel(x));
 
             return new ObjectResult(new { term, page, pageSize, pages, count, results });
         }
@@ -60,53 +49,9 @@ namespace ScotlandsMountains.Web.Server.Controllers
             var mountains = DomainRoot.Mountains
                 .Where(x => x.ClassificationIds.Contains(classification.Id))
                 .OrderByDescending(x => x.Height)
-                .Select(MountainSummary.Build);
+                .Select(x => new MountainSummaryModel(x));
 
             return new ObjectResult(mountains);
-        }
-
-        [HttpGet("{id}/Maps")]
-        public IActionResult GetMaps(string id)
-        {
-            var mountain = DomainRoot.Mountains.GetById(id);
-
-            if (mountain == null)
-                return NotFound();
-
-            return new ObjectResult(mountain.MapIds.Select(x => DomainRoot.Maps.GetById(x)));
-        }
-
-        [HttpGet("{id}/Classifications")]
-        public IActionResult GetClassifications(string id)
-        {
-            var mountain = DomainRoot.Mountains.GetById(id);
-
-            if (mountain == null)
-                return NotFound();
-
-            return new ObjectResult(mountain.ClassificationIds.Select(x => DomainRoot.Classifications.GetById(x)));
-        }
-
-        [HttpGet("{id}/Section")]
-        public IActionResult GetSection(string id)
-        {
-            var mountain = DomainRoot.Mountains.GetById(id);
-
-            if (mountain == null)
-                return NotFound();
-
-            return new ObjectResult(DomainRoot.Sections.GetById(mountain.SectionId));
-        }
-
-        [HttpGet("{id}/Country")]
-        public IActionResult GetCountry(string id)
-        {
-            var mountain = DomainRoot.Mountains.GetById(id);
-
-            if (mountain == null)
-                return NotFound();
-
-            return new ObjectResult(DomainRoot.Countries.GetById(mountain.CountryId));
         }
     }
 }

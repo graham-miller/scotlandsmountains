@@ -14,7 +14,7 @@ namespace ScotlandsMountains.Domain
 
         public Map GetById(string id)
         {
-            return MapSeries.Select(series => series.FirstOrDefault(x => x.Id == id)).FirstOrDefault(map => map != null);
+            return (MapSeries.SelectMany(x => x.Where(y => y.Id == id))).Single();
         }
 
         private IEnumerable<IList<Map>> MapSeries
