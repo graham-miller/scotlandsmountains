@@ -1,15 +1,42 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router';
+import $ from 'jquery';
 
-import { fetchTable } from '../../actions/mountains';
+import { clearList,fetchTable } from '../../actions/mountains';
 
-import Row from './Row';
 import Loading from '../common/Loading';
 import FullHeightContainer from '../common/FullHeightContainer'
 
+import './Table.scss'
+
 class Table extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.onMouseOver = this.onMouseOver.bind(this);
+        this.onMouseOut = this.onMouseOut.bind(this);
+        this.onClick = this.onClick.bind(this);
+    }
+
+    componentWillMount() {
+        this.props.dispatch(clearList());
+    }
 
     componentDidMount() {
         this.props.dispatch(fetchTable(this.props.routeParams.table));
+    }
+
+    onMouseOver(mountain) {
+        $(mountain.marker._icon).addClass('highlighted');
+    }
+
+    onMouseOut(mountain) {
+        $(mountain.marker._icon).removeClass('highlighted');
+    }
+
+    onClick(mountain) {
+        browserHistory.push('/mountain/' + mountain.id + '/' + mountain.name);
     }
 
     render() {
@@ -28,15 +55,21 @@ class Table extends Component {
                     <h2 style={{textTransform: 'capitalize'}}>{this.props.routeParams.table}</h2>
                 </div>
                 <FullHeightContainer className='scrollable' allowance='128'>
-                    <table className="table table-hover table-sm">
-                        <tbody>
-                            {
-                                this.props.mountains.list.map((mountain, index) =>
-                                    <Row key={mountain.id} mountain={mountain} index={index} />
-                                )
-                            }                
-                        </tbody>
-                    </table>
+                    <ol className='classification-table'>
+                        {
+                            this.props.mountains.list.map((mountain, index) =>
+                                <li
+                                    key={mountain.id}
+                                    onMouseOver={() => this.onMouseOver(mountain)}
+                                    onMouseOut={() => this.onMouseOut(mountain)}
+                                    onClick={() => this.onClick(mountain)}>
+                                    <span className='number'>{index+1}</span>
+                                    <span className='name'>{mountain.name}</span>
+                                    <span className='height'>{mountain.height}</span>
+                                </li>
+                            )
+                        }                
+                    </ol>
                 </FullHeightContainer>
             </div>
         );

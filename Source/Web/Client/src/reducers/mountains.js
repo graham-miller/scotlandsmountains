@@ -16,6 +16,24 @@
 const mountains = (state = defaultState, action) => {
     switch (action.type) {
         
+        case 'REQUEST_MOUNTAIN':
+            return Object.assign({}, defaultState, {
+                status: {
+                    loading: true,
+                    error: false,
+                },
+                list: []
+            });
+
+        case 'RECEIVE_MOUNTAIN':
+            return Object.assign({}, defaultState, {
+                status: {
+                    loading: false,
+                    error: false,
+                },
+                list: [action.mountains]
+            });
+
         case 'REQUEST_TABLE':
             return Object.assign({}, state, {
                 status: {

@@ -1,4 +1,18 @@
-﻿function requestTable() {
+﻿function requestMountain(id) {
+    return {
+        type: 'REQUEST_MOUNTAIN',
+        id
+    }
+}
+
+function receiveMountain(json) {
+    return {
+        type: 'RECEIVE_MOUNTAIN',
+        mountain: json
+    }
+}
+
+function requestTable() {
     return {
         type: 'REQUEST_TABLE',
     }
@@ -41,6 +55,28 @@ function didntSearch(term) {
 function networkError() {
     return {
         type: 'NETWORK_ERROR'
+    }
+}
+
+export function fetchMountain(id) {
+    return dispatch => {
+        dispatch(requestMountain())
+        return fetch('/api/mountains/' + id, {
+            redirect: 'follow',
+            mode: 'cors'
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error();
+            }
+            return response.json();
+        })
+        .then(json => {
+            dispatch(receiveMountain(json));
+        })
+        .catch(function(error) {
+            dispatch(networkError());
+        });
     }
 }
 

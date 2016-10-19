@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 class Mountain extends Component {
 
     render() {
-        return (<div>Show mountain details</div>);
+        return (<div>Show mountain details {this.props.params.id}</div>);
     }
 }
 
