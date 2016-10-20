@@ -1,9 +1,8 @@
 ﻿using Moq;
 using NUnit.Framework;
-using ScotlandsMountains.Import;
 using ScotlandsMountains.Import.Providers;
 
-namespace ScotlandsMountains.ImportTests.Providers
+namespace ScotlandsMountains.Import.Tests.Providers
 {
     [TestFixture]
     public class CountryProviderTests

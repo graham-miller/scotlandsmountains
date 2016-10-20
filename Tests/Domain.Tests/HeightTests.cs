@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
-using ScotlandsMountains.Domain;
 
-namespace ScotlandsMountains.DomainTests
+namespace ScotlandsMountains.Domain.Tests
 {
     [TestFixture]
     public class HeightTests

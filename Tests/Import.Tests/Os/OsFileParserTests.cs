@@ -4,7 +4,7 @@ using Moq;
 using NUnit.Framework;
 using ScotlandsMountains.Import.Os;
 
-namespace ScotlandsMountains.ImportTests.Os
+namespace ScotlandsMountains.Import.Tests.Os
 {
     [TestFixture]
     public class OsFileParserTests

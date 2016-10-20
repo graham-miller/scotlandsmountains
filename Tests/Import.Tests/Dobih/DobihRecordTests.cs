@@ -1,9 +1,9 @@
-﻿using NUnit.Framework;
-using ScotlandsMountains.Import.Dobih;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using NUnit.Framework;
+using ScotlandsMountains.Import.Dobih;
 
-namespace ScotlandsMountains.ImportTests.Dobih
+namespace ScotlandsMountains.Import.Tests.Dobih
 {
     [TestFixture]
     public class DobihRecordTests

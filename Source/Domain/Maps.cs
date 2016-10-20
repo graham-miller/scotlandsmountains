@@ -12,7 +12,7 @@ namespace ScotlandsMountains.Domain
         public IList<Map> Discoverer { get; set; }
         public IList<Map> Discovery { get; set; }
 
-        public Map GetById(string id)
+        public virtual /*for testing*/ Map GetById(string id)
         {
             return (MapSeries.SelectMany(x => x.Where(y => y.Id == id))).Single();
         }

@@ -5,9 +5,9 @@ using ScotlandsMountains.Domain;
 
 namespace ScotlandsMountains.Web.Server.Helpers
 {
-    public class EntityResolver
+    public class EntityModelResolver
     {
-        public EntityResolver(IDomainRoot domainRoot)
+        public EntityModelResolver(IDomainRoot domainRoot)
         {
             _domainRoot = domainRoot;
         }

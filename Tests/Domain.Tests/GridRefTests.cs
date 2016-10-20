@@ -1,8 +1,7 @@
-﻿using NUnit.Framework;
-using System;
-using ScotlandsMountains.Domain;
+﻿using System;
+using NUnit.Framework;
 
-namespace ScotlandsMountains.DomainTests
+namespace ScotlandsMountains.Domain.Tests
 {
     [TestFixture]
     public class GridRefTests

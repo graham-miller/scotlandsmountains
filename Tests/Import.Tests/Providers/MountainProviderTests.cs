@@ -3,12 +3,11 @@ using System.Linq;
 using Moq;
 using NUnit.Framework;
 using ScotlandsMountains.Domain;
-using ScotlandsMountains.Import;
 using ScotlandsMountains.Import.Dobih;
 using ScotlandsMountains.Import.Os;
 using ScotlandsMountains.Import.Providers;
 
-namespace ScotlandsMountains.ImportTests.Providers
+namespace ScotlandsMountains.Import.Tests.Providers
 {
     [TestFixture]
     public class MountainProviderTests

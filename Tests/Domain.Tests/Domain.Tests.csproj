@@ -7,10 +7,11 @@
     <ProjectGuid>{7815741C-7285-4DDC-B379-76DDA36F24C3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ScotlandsMountains.DomainTests</RootNamespace>
-    <AssemblyName>ScotlandsMountains.DomainTests</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>ScotlandsMountains.Domain.Tests</RootNamespace>
+    <AssemblyName>ScotlandsMountains.Domain.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

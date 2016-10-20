@@ -15,7 +15,7 @@ namespace ScotlandsMountains.Web.Server.Models
             Feature = mountain.Feature;
             Observations = mountain.Observations;
 
-            var resolver = new EntityResolver(domainRoot);
+            var resolver = new EntityModelResolver(domainRoot);
             Classifications = resolver.Classifications(mountain.ClassificationIds);
             Maps = resolver.Maps(mountain.MapIds);
             Section = resolver.Section(mountain.SectionId);

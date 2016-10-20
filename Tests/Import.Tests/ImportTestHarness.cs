@@ -1,12 +1,11 @@
 ﻿using NUnit.Framework;
 using ScotlandsMountains.Domain;
-using ScotlandsMountains.Import;
 using ScotlandsMountains.Import.Dobih;
 using ScotlandsMountains.Import.Os;
 using ScotlandsMountains.Import.Providers;
 using ScotlandsMountains.Import.ScotlandsMountains;
 
-namespace ScotlandsMountains.ImportTests
+namespace ScotlandsMountains.Import.Tests
 {
     [TestFixture]
     public class ImportTestHarness
