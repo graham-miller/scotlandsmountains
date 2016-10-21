@@ -36,44 +36,44 @@ export function fetchMountain(id) {
     return dispatch => {
         dispatch(requestStart());
         return fetch('/api/mountains/' + id, {
-            redirect: 'follow',
-            mode: 'cors'
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error();
-            }
-            return response.json();
-        })
-        .then(json => {
-            dispatch(receiveMountain(json));
-        })
-        .catch(function(error) {
-            dispatch(requestError());
-        });
-    }
+                redirect: 'follow',
+                mode: 'cors'
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error();
+                }
+                return response.json();
+            })
+            .then(json => {
+                dispatch(receiveMountain(json));
+            })
+            .catch(function(error) {
+                dispatch(requestError());
+            });
+        }
 }
 
 export function fetchClassification(classification) {
     return dispatch => {
         dispatch(requestStart());
         return fetch('/api/classifications/mountains/' + classification, {
-            redirect: 'follow',
-            mode: 'cors'
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error();
-            }
-            return response.json();
-        })
-        .then(json => {
-            dispatch(receiveClassification(json));
-        })
-        .catch(function(error) {
-            dispatch(requestError());
-        });
-    }
+                redirect: 'follow',
+                mode: 'cors'
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error();
+                }
+                return response.json();
+            })
+            .then(json => {
+                dispatch(receiveClassification(json));
+            })
+            .catch(function(error) {
+                dispatch(requestError());
+            });
+        }
 }
 
 export function search(term) {
@@ -85,20 +85,20 @@ export function search(term) {
     return dispatch => {
         dispatch(requestStart());
         return fetch('/api/mountains/search/' + term, {
-            redirect: 'follow',
-            mode: 'cors'
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error();
-            }
-            return response.json();
-        })
-        .then(json => {
-            dispatch(receiveSearch(json));
-        })
-        .catch(function(error) {
-            dispatch(requestError());
-        });
-    }
+                redirect: 'follow',
+                mode: 'cors'
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error();
+                }
+                return response.json();
+            })
+            .then(json => {
+                dispatch(receiveSearch(json));
+            })
+            .catch(function(error) {
+                dispatch(requestError());
+            });
+        }
 }
