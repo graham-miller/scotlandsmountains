@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using NUnit.Framework;
 using ScotlandsMountains.Web.Server.Helpers;
 
@@ -10,48 +9,43 @@ namespace Web.Tests.Helpers
     {
         private EntityModelResolver _sut;
 
-        private const string EntityId = "EntityId";
-        private const string EntityName = "EntityName";
-
-        private static readonly IList<string> EntityIds = new List<string> {EntityId};
 
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            var mockDomainRoot = TestUtilities.GetMockDomainRoot(EntityId, EntityName);
-            _sut = new EntityModelResolver(mockDomainRoot.Object);
+            _sut = new EntityModelResolver(new MockDomainRoot());
         }
 
         [Test]
         public void ThenClassificationsAreResolved()
         {
-            var actual = _sut.Classifications(EntityIds).Single();
-            Assert.That(actual.Id, Is.EqualTo(EntityId));
-            Assert.That(actual.Name, Is.EqualTo(EntityName));
+            var actual = _sut.Classifications(MockDomainRoot.EntityIds).Single();
+            Assert.That(actual.Id, Is.EqualTo(MockDomainRoot.EntityId));
+            Assert.That(actual.Name, Is.EqualTo(MockDomainRoot.EntityName));
         }
 
         [Test]
         public void ThenSectionIsResolved()
         {
-            var actual = _sut.Section(EntityId);
-            Assert.That(actual.Id, Is.EqualTo(EntityId));
-            Assert.That(actual.Name, Is.EqualTo(EntityName));
+            var actual = _sut.Section(MockDomainRoot.EntityId);
+            Assert.That(actual.Id, Is.EqualTo(MockDomainRoot.EntityId));
+            Assert.That(actual.Name, Is.EqualTo(MockDomainRoot.EntityName));
         }
 
         [Test]
         public void ThenMapsAreResolved()
         {
-            var actual = _sut.Maps(EntityIds).Single();
-            Assert.That(actual.Id, Is.EqualTo(EntityId));
-            Assert.That(actual.Name, Is.EqualTo(EntityName));
+            var actual = _sut.Maps(MockDomainRoot.EntityIds).Single();
+            Assert.That(actual.Id, Is.EqualTo(MockDomainRoot.EntityId));
+            Assert.That(actual.Name, Is.EqualTo(MockDomainRoot.EntityName));
         }
 
         [Test]
         public void ThenCountryIsResolved()
         {
-            var actual = _sut.Country(EntityId);
-            Assert.That(actual.Id, Is.EqualTo(EntityId));
-            Assert.That(actual.Name, Is.EqualTo(EntityName));
+            var actual = _sut.Country(MockDomainRoot.EntityId);
+            Assert.That(actual.Id, Is.EqualTo(MockDomainRoot.EntityId));
+            Assert.That(actual.Name, Is.EqualTo(MockDomainRoot.EntityName));
         }
     }
 }

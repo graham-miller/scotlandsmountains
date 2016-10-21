@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 import $ from 'jquery';
 
-import { clearList, search } from '../../actions/mountains';
+import { search } from '../../actions/mountains';
 
 import Loading from '../common/Loading';
 import FullHeightContainer from '../common/FullHeightContainer'
@@ -26,7 +26,7 @@ class Search extends Component {
     }
 
     componentWillMount() {
-        this.props.dispatch(clearList());
+        this.props.dispatch(search(this.state.term));
     }
 
     search(event) {

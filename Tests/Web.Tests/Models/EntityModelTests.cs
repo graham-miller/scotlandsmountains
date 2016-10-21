@@ -7,9 +7,6 @@ namespace Web.Tests.Models
     [TestFixture]
     public class EntityModelTests
     {
-        private const string EntityId = "EntityId";
-        private const string EntityName = "EntityName";
-
         private EntityModel _actual;
 
         [OneTimeSetUp]
@@ -17,8 +14,8 @@ namespace Web.Tests.Models
         {
             var entity = new EntityShim
             {
-                Id = EntityId,
-                Name = EntityName
+                Id = MockDomainRoot.EntityId,
+                Name = MockDomainRoot.EntityName
             };
 
             _actual = new EntityModel(entity);
@@ -27,13 +24,13 @@ namespace Web.Tests.Models
         [Test]
         public void AssertIdMappedCorrectly()
         {
-            Assert.That(_actual.Id, Is.EqualTo(EntityId));
+            Assert.That(_actual.Id, Is.EqualTo(MockDomainRoot.EntityId));
         }
 
         [Test]
         public void AssertNameMappedCorrectly()
         {
-            Assert.That(_actual.Name, Is.EqualTo(EntityName));
+            Assert.That(_actual.Name, Is.EqualTo(MockDomainRoot.EntityName));
         }
 
         class EntityShim : Entity { }

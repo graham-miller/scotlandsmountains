@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 import $ from 'jquery';
 
-import { clearList,fetchTable } from '../../actions/mountains';
+import { fetchClassification } from '../../actions/mountains';
 
 import Loading from '../common/Loading';
 import FullHeightContainer from '../common/FullHeightContainer'
 
-import './Mountains.scss'
+import './Classification.scss'
 
-class Mountains extends Component {
+class Classification extends Component {
 
     constructor(props) {
         super(props);
@@ -19,12 +19,8 @@ class Mountains extends Component {
         this.onClick = this.onClick.bind(this);
     }
 
-    componentWillMount() {
-        this.props.dispatch(clearList());
-    }
-
     componentDidMount() {
-        this.props.dispatch(fetchTable(this.props.routeParams.table));
+        this.props.dispatch(fetchClassification(this.props.routeParams.table));
     }
 
     onMouseOver(mountain) {
@@ -76,4 +72,4 @@ class Mountains extends Component {
     }
 }
 
-export default Mountains;
+export default Classification;

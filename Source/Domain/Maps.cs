@@ -1,9 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
+using Newtonsoft.Json;
 
 namespace ScotlandsMountains.Domain
 {
-    public class Maps
+    [JsonObject]
+    public class Maps : IEnumerable<Map>
     {
         public IList<Map> Landranger { get; set; }
         public IList<Map> LandrangerActive { get; set; }
@@ -12,21 +15,26 @@ namespace ScotlandsMountains.Domain
         public IList<Map> Discoverer { get; set; }
         public IList<Map> Discovery { get; set; }
 
-        public virtual /*for testing*/ Map GetById(string id)
+        public IEnumerator<Map> GetEnumerator()
         {
-            return (MapSeries.SelectMany(x => x.Where(y => y.Id == id))).Single();
+            return MapSeries.GetEnumerator();
         }
 
-        private IEnumerable<IList<Map>> MapSeries
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        private IEnumerable<Map> MapSeries
         {
             get
             {
-                yield return Landranger;
-                yield return LandrangerActive;
-                yield return Explorer;
-                yield return ExplorerActive;
-                yield return Discoverer;
-                yield return Discovery;
+                return Landranger
+                    .Concat(LandrangerActive)
+                    .Concat(Explorer)
+                    .Concat(ExplorerActive)
+                    .Concat(Discoverer)
+                    .Concat(Discovery);
             }
         }
     }

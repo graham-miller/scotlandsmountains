@@ -1,10 +1,9 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using ScotlandsMountains.Domain;
 using ScotlandsMountains.Web.Server.Models;
-using Humanizer;
 
 namespace ScotlandsMountains.Web.Server.Controllers
 {
@@ -12,6 +11,17 @@ namespace ScotlandsMountains.Web.Server.Controllers
     public class MountainsController : DomainRootController
     {
         public MountainsController(IDomainRoot domainRoot) : base(domainRoot) { }
+
+        [HttpGet("{id}")]
+        public IActionResult Get(string id)
+        {
+            var mountain = DomainRoot.Mountains.GetById(id);
+
+            if (mountain == null)
+                return NotFound();
+
+            return new ObjectResult(new MountainModel(mountain, DomainRoot));
+        }
 
         [HttpGet("search/{term?}/{page:int?}/{pageSize:int?}")]
         public IActionResult Search(string term = "", int page = 1, int pageSize = 50)
@@ -35,23 +45,6 @@ namespace ScotlandsMountains.Web.Server.Controllers
                 .Select(x => new MountainSummaryModel(x));
 
             return new ObjectResult(new { term, page, pageSize, pages, count, results });
-        }
-
-        [HttpGet("{classificationName}")]
-        public IActionResult Classification(string classificationName)
-        {
-            Func<Classification, bool> isMatch = x => x.Name.Equals(classificationName.Singularize(), StringComparison.InvariantCultureIgnoreCase);
-            var classification = DomainRoot.Classifications.Single(isMatch);
-
-            if (classification == null)
-                return NotFound();
-
-            var mountains = DomainRoot.Mountains
-                .Where(x => x.ClassificationIds.Contains(classification.Id))
-                .OrderByDescending(x => x.Height)
-                .Select(x => new MountainSummaryModel(x));
-
-            return new ObjectResult(mountains);
         }
     }
 }

@@ -1,116 +1,85 @@
-﻿const defaultState = {
-    status: {
-        loading: false,
-        error: false,
-    },
-    info: {
-        page: 0,
-        pageSize: 0,
-        pages: 0,
-        count: 0,
-    },
-    list: [],
-    searchTerm: ''
+﻿import { REQUEST_START, RECEIVE_MOUNTAIN, RECEIVE_CLASSIFICATION, RECEIVE_SEARCH, REQUEST_IGNORED, REQUEST_ERROR } from '../actions/mountains';
+
+const defaultStatus = {
+    loading: false,
+    error: false
+};
+
+const loadingStatus = {
+    loading: true,
+    error: false
+};
+
+const errorStatus = {
+    loading: false,
+    error: true
+};
+
+const defaultInfo = {
+    page: 0,
+    pageSize: 0,
+    pages: 0,
+    count: 0
+};
+
+const defaultState = {
+    status: defaultStatus,
+    info: defaultInfo,
+    list: []
 };
 
 const mountains = (state = defaultState, action) => {
     switch (action.type) {
         
-        case 'REQUEST_MOUNTAIN':
-            return Object.assign({}, defaultState, {
-                status: {
-                    loading: true,
-                    error: false,
-                },
+        case REQUEST_START:
+            return Object.assign({}, state, {
+                status: loadingStatus,
+                info: defaultInfo,
                 list: []
             });
 
-        case 'RECEIVE_MOUNTAIN':
-            return Object.assign({}, defaultState, {
-                status: {
-                    loading: false,
-                    error: false,
-                },
+        case RECEIVE_MOUNTAIN:
+            return Object.assign({}, state, {
+                status: defaultStatus,
+                info: defaultInfo,
                 list: [action.mountains]
             });
 
-        case 'REQUEST_TABLE':
+        case RECEIVE_CLASSIFICATION:
             return Object.assign({}, state, {
-                status: {
-                    loading: true,
-                    error: false,
-                },
+                status: defaultStatus,
+                info: defaultInfo,
+                list: action.mountains
+            });
+        
+        case REQUEST_IGNORED:
+            return Object.assign({}, state, {
+                status: defaultStatus,
+                info: defaultInfo,
                 list: []
             });
 
-        case 'RECEIVE_TABLE':
+        case RECEIVE_SEARCH:
             return Object.assign({}, state, {
-                status: {
-                    loading: false,
-                    error: false,
-                },
-                info: {
-                    page: 1,
-                    pageSize: 1,
-                    pages: 1,
-                    count: action.mountains.length,
-                },
-                list: action.mountains
-            });
-
-        case 'CLEAR_LIST':
-            return Object.assign({}, state, {
-                list: [],
-            });
-        
-        case 'REQUEST_SEARCH':
-            return Object.assign({}, state, {
-                status: {
-                    loading: true,
-                    error: false,
-                },
-                list: [],
-                searchTerm: action.term
-            });
-
-        case 'DIDNT_SEARCH':
-            return Object.assign({}, state, {
-                status: {
-                    loading: false,
-                    error: false,
-                },
-                list: [],
-                searchTerm: action.term
-            });
-
-        case 'RECEIVE_SEARCH':
-            return Object.assign({}, state, {
-                status: {
-                    loading: false,
-                    error: false,
-                },
+                status: defaultStatus,
                 info: {
                     page: action.searchResult.page,
                     pageSize: action.searchResult.pageSize,
                     pages: action.searchResult.pages,
-                    count: action.searchResult.results.length,
+                    count: action.searchResult.results.length
                 },
-                list: action.searchResult.results,
-                searchTerm: action.searchResult.term
+                list: action.searchResult.results
             });
 
-        case 'NETWORK_ERROR':
+        case REQUEST_ERROR:
             return Object.assign({}, state, {
-                status: {
-                    loading: false,
-                    error: true,
-                },
+                status: errorStatus,
+                info: defaultInfo,
                 list: []
             });
 
         default:
             return Object.assign({}, state);
-
     }
 };
 

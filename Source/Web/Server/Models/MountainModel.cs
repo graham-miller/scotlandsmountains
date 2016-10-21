@@ -4,11 +4,10 @@ using System.Collections.Generic;
 
 namespace ScotlandsMountains.Web.Server.Models
 {
-    public class MountainModel
+    public class MountainModel : EntityModel
     {
-        public MountainModel(Mountain mountain, IDomainRoot domainRoot)
+        public MountainModel(Mountain mountain, IDomainRoot domainRoot) : base(mountain)
         {
-            Name = mountain.Name;
             Height = mountain.Height;
             Location = mountain.Location;
             Prominence = mountain.Prominence;
@@ -22,7 +21,6 @@ namespace ScotlandsMountains.Web.Server.Models
             Country = resolver.Country(mountain.CountryId);
         }
 
-        public string Name { get; set; }
         public Height Height { get; set; }
         public Location Location { get; set; }
         public Prominence Prominence { get; set; }
