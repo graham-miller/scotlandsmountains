@@ -42,7 +42,7 @@ const mountains = (state = defaultState, action) => {
             return Object.assign({}, state, {
                 status: defaultStatus,
                 info: defaultInfo,
-                list: [action.mountains]
+                list: [action.mountain]
             });
 
         case RECEIVE_CLASSIFICATION:

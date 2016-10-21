@@ -3,7 +3,7 @@ import Mountain from './Mountain';
 
 const mapStateToProps = (state) => {
     return {
-        //mountains: state.mountains
+        mountains: state.mountains
     };
 }
 

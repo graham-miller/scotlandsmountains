@@ -15,7 +15,7 @@ const displayMountains = function(map, mountains) {
     var icon = L.divIcon({className: 'marker'});
 
     mountains.forEach((mountain) => {
-        var marker = L.marker([mountain.latitude, mountain.longitude], {
+        var marker = L.marker([mountain.latitude || mountain.location.latitude, mountain.longitude || mountain.location.longitude], {
             icon: icon
         }).addTo(map.mountainLayer);
 
