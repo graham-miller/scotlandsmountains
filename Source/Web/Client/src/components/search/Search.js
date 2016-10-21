@@ -6,6 +6,7 @@ import { search } from '../../actions/mountains';
 
 import Loading from '../common/Loading';
 import FullHeightContainer from '../common/FullHeightContainer'
+import NetworkError from '../common/NetworkError';
 
 import './Search.scss'
 
@@ -72,31 +73,11 @@ class Search extends Component {
             </div>
         );
 
-        if (this.props.mountains.status.error) {
-            return (
-                <div>
-                    {searchInput}
-                    <div>Network error</div>
-                </div>
-            );
-        }
+        if (this.props.mountains.status.error) { return (<div>{searchInput}<NetworkError /></div>); }
 
-        if (this.props.mountains.status.loading) {
-            return (
-                <div>
-                    {searchInput}
-                    <Loading />
-                </div>
-            );
-        }
+        if (this.props.mountains.status.loading) { return (<div>{searchInput}<Loading /></div>); }
 
-        if (this.props.mountains.list.length === 0) {
-            return (
-                <div>
-                    {searchInput}
-                </div>
-            );
-        }
+        if (this.props.mountains.list.length === 0) { return (<div>{searchInput}</div>); }
 
         return (
             <div>

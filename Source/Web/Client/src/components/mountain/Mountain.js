@@ -4,6 +4,7 @@ import { fetchMountain } from '../../actions/mountains';
 
 import FullHeightContainer from '../common/FullHeightContainer';
 import Loading from '../common/Loading';
+import NetworkError from '../common/NetworkError';
 
 import './Mountain.scss';
 
@@ -15,18 +16,13 @@ class Mountain extends Component {
 
     render() {
 
-        if (this.props.mountains.status.error) {
-            return (<div>Network error</div>);
-        }
+        if (this.props.mountains.status.error) { return (<NetworkError />); }
 
-        if (this.props.mountains.status.loading) {
-            return (<Loading />);
-        }
+        if (this.props.mountains.status.loading) { return (<Loading />); }
 
         var mountain = this.props.mountains.list[0];
 
-        if (mountain) {
-            return (
+        return (
             <div>
                 <h2>{mountain.name}</h2>
                 <FullHeightContainer className='scrollable mountain' allowance='128'>
@@ -77,10 +73,8 @@ class Mountain extends Component {
                         </dd>
                     </dl>
                 </FullHeightContainer>
-            </div>);
-        }
-
-        return (<div>Not found</div>);
+            </div>
+        );
     }
 }
 

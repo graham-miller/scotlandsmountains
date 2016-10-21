@@ -841,3 +841,8 @@ div.scrollable {
     box-shadow: $input-box-shadow;
     border-radius: $input-border-radius;
 }
+
+#map {
+    border-radius: $input-border-radius;
+    z-index: 0;
+}

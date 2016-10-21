@@ -5,6 +5,7 @@ import $ from 'jquery';
 import { fetchClassification } from '../../actions/mountains';
 
 import Loading from '../common/Loading';
+import NetworkError from '../common/NetworkError';
 import FullHeightContainer from '../common/FullHeightContainer'
 
 import './Classification.scss'
@@ -37,13 +38,9 @@ class Classification extends Component {
 
     render() {
 
-        if (this.props.mountains.status.error) {
-            return (<div>Network error</div>);
-        }
+        if (this.props.mountains.status.error) { return (<NetworkError />); }
 
-        if (this.props.mountains.status.loading) {
-            return (<Loading />);
-        }
+        if (this.props.mountains.status.loading) { return (<Loading />); }
 
         return (
             <div>
