@@ -11,7 +11,7 @@ class Routes extends Component {
             <Router history={browserHistory}>
                 <Redirect from='/' to='/mountains/munros' />
                 <Route path='/mountains/:table' component={ClassificationContainer} />
-                <Route path='/mountain/:id/:name' component={MountainContainer} />
+                <Route path='/mountain/:id' component={MountainContainer} />
                 <Route path='/search' component={SearchContainer} />
             </Router>
         );

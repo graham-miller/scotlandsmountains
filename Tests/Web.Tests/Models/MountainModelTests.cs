@@ -46,19 +46,22 @@ namespace Web.Tests.Models
         [Test]
         public void ThenHeightIsMappedCorrectly()
         {
-            Assert.That(_sut.Height, Is.SameAs(_mountain.Height));
+            Assert.That(_sut.Height, Is.EqualTo(_mountain.Height.ToString()));
         }
 
         [Test]
         public void ThenLocationIsMappedCorrectly()
         {
-            Assert.That(_sut.Location, Is.SameAs(_mountain.Location));
+            Assert.That(_sut.Latitude, Is.EqualTo(_mountain.Location.Latitude));
+            Assert.That(_sut.Longitude, Is.EqualTo(_mountain.Location.Longitude));
+            Assert.That(_sut.SixFigureGridRef, Is.EqualTo(_mountain.Location.GridRef.SixFigure));
+            Assert.That(_sut.TenFigureGridRef, Is.EqualTo(_mountain.Location.GridRef.TenFigure));
         }
 
         [Test]
         public void ThenProminenceIsMappedCorrectly()
         {
-            Assert.That(_sut.Prominence, Is.SameAs(_mountain.Prominence));
+            Assert.That(_sut.Prominence, Is.EqualTo(_mountain.Prominence.ToString()));
         }
 
         [Test]

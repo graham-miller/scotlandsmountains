@@ -55,16 +55,14 @@ class Search extends Component {
     }
 
     onClick(mountain) {
-        browserHistory.push('/mountain/' + mountain.id + '/' + mountain.name);
+        browserHistory.push('/mountain/' + mountain.id);
     }
 
     render() {
 
         var searchInput = (
             <div>
-                <div>
-                    <h2>Search</h2>
-                </div>
+                <h2>Search</h2>
                 <div>
                     <input
                         type="search" value={this.state.term}

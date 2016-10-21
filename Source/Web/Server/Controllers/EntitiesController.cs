@@ -17,7 +17,7 @@ namespace ScotlandsMountains.Web.Server.Controllers
         [HttpGet()]
         public IActionResult Get()
         {
-            return new ObjectResult(DomainRoot.Countries);
+            return new ObjectResult(_entitiesFunc(DomainRoot));
         }
 
         [HttpGet("{id}")]

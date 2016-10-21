@@ -8,9 +8,12 @@ namespace ScotlandsMountains.Web.Server.Models
     {
         public MountainModel(Mountain mountain, IDomainRoot domainRoot) : base(mountain)
         {
-            Height = mountain.Height;
-            Location = mountain.Location;
-            Prominence = mountain.Prominence;
+            Height = mountain.Height.ToString();
+            Latitude = mountain.Location.Latitude;
+            Longitude = mountain.Location.Longitude;
+            SixFigureGridRef = mountain.Location.GridRef.SixFigure;
+            TenFigureGridRef = mountain.Location.GridRef.TenFigure;
+            Prominence = mountain.Prominence.ToString();
             Feature = mountain.Feature;
             Observations = mountain.Observations;
 
@@ -21,9 +24,12 @@ namespace ScotlandsMountains.Web.Server.Models
             Country = resolver.Country(mountain.CountryId);
         }
 
-        public Height Height { get; set; }
-        public Location Location { get; set; }
-        public Prominence Prominence { get; set; }
+        public string Height { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+        public string SixFigureGridRef { get; set; }
+        public string TenFigureGridRef { get; set; }
+        public string Prominence { get; set; }
         public string Feature { get; set; }
         public string Observations { get; set; }
 

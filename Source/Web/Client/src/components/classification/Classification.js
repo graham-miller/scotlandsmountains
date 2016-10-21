@@ -32,7 +32,7 @@ class Classification extends Component {
     }
 
     onClick(mountain) {
-        browserHistory.push('/mountain/' + mountain.id + '/' + mountain.name);
+        browserHistory.push('/mountain/' + mountain.id);
     }
 
     render() {
@@ -47,9 +47,7 @@ class Classification extends Component {
 
         return (
             <div>
-                <div>
-                    <h2 style={{textTransform: 'capitalize'}}>{this.props.routeParams.table}</h2>
-                </div>
+                <h2 style={{textTransform: 'capitalize'}}>{this.props.routeParams.table}</h2>
                 <FullHeightContainer className='scrollable' allowance='128'>
                     <ol className='classification-table'>
                         {

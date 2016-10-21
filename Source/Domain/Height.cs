@@ -33,6 +33,11 @@ namespace ScotlandsMountains.Domain
             return Metres.CompareTo(other.Metres);
         }
 
+        public override string ToString()
+        {
+            return $"{Metres.ToString("#,##0")}m ({Feet.ToString("#,##0")}ft)";
+        }
+
         private double _feet;
         private double _metres;
     }

@@ -8,7 +8,7 @@ namespace ScotlandsMountains.Web.Server.Models
         {
             Id = mountain.Id;
             Name = mountain.Name;
-            Height = $"{mountain.Height.Metres.ToString("#,##0")}m ({mountain.Height.Feet.ToString("#,##0")}ft)";
+            Height = mountain.Height.ToString();
             Latitude = mountain.Location.Latitude;
             Longitude = mountain.Location.Longitude;
         }
