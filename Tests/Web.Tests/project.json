@@ -11,7 +11,7 @@
   "testRunner": "nunit",
 
   "frameworks": {
-    "net452": {
+    "net460": {
       "dependencies": {
         "Domain": {
           "target": "project"
