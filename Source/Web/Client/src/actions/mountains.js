@@ -1,79 +1,57 @@
-﻿export const REQUEST_START = 'REQUEST_START';
-export const RECEIVE_MOUNTAIN = 'RECEIVE_MOUNTAIN';
-export const RECEIVE_CLASSIFICATION = 'RECEIVE_CLASSIFICATION';
-export const RECEIVE_SEARCH = 'RECEIVE_SEARCH';
-export const REQUEST_IGNORED = 'REQUEST_IGNORED';
-export const REQUEST_ERROR = 'REQUEST_ERROR';
+﻿export const Actions = {
+    RequestStart: 'REQUEST_START',
+    ReceiveMountain: 'RECEIVE_MOUNTAIN',
+    ReceiveClassification: 'RECEIVE_CLASSIFICATION',
+    ReceiveSearch: 'RECEIVE_SEARCH',
+    RequestIgnored: 'REQUEST_IGNORED',
+    RequestError: 'REQUEST_ERROR'
+};
 
-function requestStart() { return { type: REQUEST_START } }
+function requestStart() {
+    return {
+        type: Actions.RequestStart
+    }
+}
 
 function receiveMountain(json) {
     return {
-        type: RECEIVE_MOUNTAIN,
-        mountain: json
+        type: Actions.ReceiveMountain,
+        json
     }
 }
 
 function receiveClassification(json) {
     return {
-        type: RECEIVE_CLASSIFICATION,
-        mountains: json
+        type: Actions.ReceiveClassification,
+        json
     }
 }
 
 function receiveSearch(json) {
     return {
-        type: RECEIVE_SEARCH,
-        searchResult: json
+        type: Actions.ReceiveSearch,
+        json
     }
 }
 
-function requestIgnored() { return { type: REQUEST_IGNORED } }
+function requestIgnored() {
+    return {
+        type: Actions.RequestIgnored
+    }
+}
 
-function requestError() { return { type: REQUEST_ERROR } }
+function requestError() {
+    return {
+        type: Actions.RequestError
+    }
+}
 
 export function fetchMountain(id) {
-    return dispatch => {
-        dispatch(requestStart());
-        return fetch('/api/mountains/' + id, {
-                redirect: 'follow',
-                mode: 'cors'
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error();
-                }
-                return response.json();
-            })
-            .then(json => {
-                dispatch(receiveMountain(json));
-            })
-            .catch(function(error) {
-                dispatch(requestError());
-            });
-        }
+    return callApi('/api/mountains/' + id, receiveMountain);
 }
 
 export function fetchClassification(classification) {
-    return dispatch => {
-        dispatch(requestStart());
-        return fetch('/api/classifications/mountains/' + classification, {
-                redirect: 'follow',
-                mode: 'cors'
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error();
-                }
-                return response.json();
-            })
-            .then(json => {
-                dispatch(receiveClassification(json));
-            })
-            .catch(function(error) {
-                dispatch(requestError());
-            });
-        }
+    return callApi('/api/classifications/mountains/' + classification, receiveClassification);
 }
 
 export function search(term) {
@@ -82,12 +60,13 @@ export function search(term) {
         return dispatch => dispatch(requestIgnored());
     }
 
+    return callApi('/api/mountains/search/' + term, receiveSearch);
+}
+
+function callApi(url, onSuccess) {
     return dispatch => {
         dispatch(requestStart());
-        return fetch('/api/mountains/search/' + term, {
-                redirect: 'follow',
-                mode: 'cors'
-            })
+        return fetch(url, {redirect: 'follow', mode: 'cors'})
             .then(response => {
                 if (!response.ok) {
                     throw new Error();
@@ -95,10 +74,10 @@ export function search(term) {
                 return response.json();
             })
             .then(json => {
-                dispatch(receiveSearch(json));
+                dispatch(onSuccess(json));
             })
             .catch(function(error) {
                 dispatch(requestError());
             });
-        }
+    }
 }

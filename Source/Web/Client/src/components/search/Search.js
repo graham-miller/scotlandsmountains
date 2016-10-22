@@ -77,7 +77,7 @@ class Search extends Component {
 
         if (this.props.mountains.status.loading) { return (<div>{searchInput}<Loading /></div>); }
 
-        if (this.props.mountains.list.length === 0) { return (<div>{searchInput}</div>); }
+        if (!this.props.mountains.searchResult) { return (<div>{searchInput}</div>); }
 
         return (
             <div>
@@ -85,7 +85,7 @@ class Search extends Component {
                 <FullHeightContainer className='scrollable' style={{marginTop: '8px'}} allowance='174'>
                     <ol className='search-results'>
                         {
-                            this.props.mountains.list.map((mountain) =>
+                            this.props.mountains.searchResult.results.map((mountain) =>
                                 <li
                                     key={mountain.id}
                                     onMouseOver={() => this.onMouseOver(mountain)}

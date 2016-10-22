@@ -20,7 +20,9 @@ class Mountain extends Component {
 
         if (this.props.mountains.status.loading) { return (<Loading />); }
 
-        var mountain = this.props.mountains.list[0];
+        if (!this.props.mountains.mountain) { return (<Loading />); }
+
+        var mountain = this.props.mountains.mountain;
 
         return (
             <div>

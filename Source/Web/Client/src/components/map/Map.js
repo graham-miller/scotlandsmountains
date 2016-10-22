@@ -62,7 +62,7 @@ class Map extends Component {
     render() {
 
         if (this.props.mountains && this.state.map) {
-            this.state.map.displayMountains(this.props.mountains.list);
+            this.state.map.displayMountains(this.props.mountains);
         }
 
         return (

@@ -42,13 +42,15 @@ class Classification extends Component {
 
         if (this.props.mountains.status.loading) { return (<Loading />); }
 
+        if (!this.props.mountains.classification) { return (<Loading />); }
+
         return (
             <div>
                 <h2 style={{textTransform: 'capitalize'}}>{this.props.routeParams.table}</h2>
                 <FullHeightContainer className='scrollable' allowance='128'>
                     <ol className='classification-table'>
                         {
-                            this.props.mountains.list.map((mountain, index) =>
+                            this.props.mountains.classification.map((mountain, index) =>
                                 <li
                                     key={mountain.id}
                                     onMouseOver={() => this.onMouseOver(mountain)}

@@ -1,4 +1,4 @@
-﻿import { REQUEST_START, RECEIVE_MOUNTAIN, RECEIVE_CLASSIFICATION, RECEIVE_SEARCH, REQUEST_IGNORED, REQUEST_ERROR } from '../actions/mountains';
+﻿import { Actions } from '../actions/mountains';
 
 const defaultStatus = {
     loading: false,
@@ -15,67 +15,62 @@ const errorStatus = {
     error: true
 };
 
-const defaultInfo = {
-    page: 0,
-    pageSize: 0,
-    pages: 0,
-    count: 0
-};
-
 const defaultState = {
     status: defaultStatus,
-    info: defaultInfo,
-    list: []
+    searchResult: null,
+    classification: null,
+    mountain: null
 };
 
 const mountains = (state = defaultState, action) => {
     switch (action.type) {
         
-        case REQUEST_START:
+        case Actions.RequestStart:
             return Object.assign({}, state, {
                 status: loadingStatus,
-                info: defaultInfo,
-                list: []
+                searchResult: null,
+                classification: null,
+                mountain: null
             });
 
-        case RECEIVE_MOUNTAIN:
+        case Actions.ReceiveMountain:
             return Object.assign({}, state, {
                 status: defaultStatus,
-                info: defaultInfo,
-                list: [action.mountain]
-            });
+                searchResult: null,
+                classification: null,
+                mountain: action.json
+        });
 
-        case RECEIVE_CLASSIFICATION:
+        case Actions.ReceiveClassification:
             return Object.assign({}, state, {
                 status: defaultStatus,
-                info: defaultInfo,
-                list: action.mountains
+                searchResult: null,
+                classification: action.json,
+                mountain: null
             });
         
-        case REQUEST_IGNORED:
+        case Actions.RequestIgnored:
             return Object.assign({}, state, {
                 status: defaultStatus,
-                info: defaultInfo,
-                list: []
+                searchResult: null,
+                classification: null,
+                mountain: null
             });
 
-        case RECEIVE_SEARCH:
+        case Actions.ReceiveSearch:
             return Object.assign({}, state, {
                 status: defaultStatus,
-                info: {
-                    page: action.searchResult.page,
-                    pageSize: action.searchResult.pageSize,
-                    pages: action.searchResult.pages,
-                    count: action.searchResult.results.length
-                },
-                list: action.searchResult.results
+                searchResult: action.json,
+                classification: null,
+                mountain: null
             });
 
-        case REQUEST_ERROR:
+        case Actions.RequestError:
             return Object.assign({}, state, {
                 status: errorStatus,
-                info: defaultInfo,
-                list: []
+                searchResult: null,
+                classification: null,
+                mountain: null
             });
 
         default:
