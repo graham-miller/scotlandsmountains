@@ -15,7 +15,9 @@ class Map extends Component {
         this.state = {
             map: null,
             canZoomIn: true,
-            canZoomOut: true
+            canZoomOut: true,
+            mapView: true,
+            aerialView: false
         };
 
         this.createMap = this.createMap.bind(this);
@@ -23,7 +25,10 @@ class Map extends Component {
         this.zoomOut = this.zoomOut.bind(this);
         this.onZoomEnd = this.onZoomEnd.bind(this);
         this.resizeMap = this.resizeMap.bind(this);
+        this.resetMap = this.resetMap.bind(this);
         this.destroyMap = this.destroyMap.bind(this);
+        this.switchToMapView = this.switchToMapView.bind(this);
+        this.switchToAerialView = this.switchToAerialView.bind(this);
     }
 
     createMap(elementId) {
@@ -53,7 +58,22 @@ class Map extends Component {
             this.state.map.resize();
         }
     }
+
+    resetMap() {
+        this.setState({mapView: true, aerialView: false});
+        this.state.map.reset();
+    }
     
+    switchToMapView() {
+        this.setState({mapView: true, aerialView: false});
+        this.state.map.switchToMapView();
+    }
+
+    switchToAerialView() {
+        this.setState({mapView: false, aerialView: true});
+        this.state.map.switchToAerialView();
+    }
+        
     destroyMap() {
         this.state.map.off('zoomend', this.onZoomEnd);
         this.setState({map: null});
@@ -76,7 +96,12 @@ class Map extends Component {
                     canZoomIn={this.state.canZoomIn}
                     canZoomOut={this.state.canZoomOut}
                     zoomIn={this.zoomIn}
-                    zoomOut={this.zoomOut} />
+                    zoomOut={this.zoomOut}
+                    mapView={this.state.mapView}
+                    aerialView={this.state.aerialView}
+                    resetMap={this.resetMap}
+                    switchToMapView={this.switchToMapView}
+                    switchToAerialView={this.switchToAerialView}/>
             </div>
         );
     }

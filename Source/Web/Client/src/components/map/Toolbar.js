@@ -24,13 +24,22 @@ class Toolbar extends Component {
                     <MdRemoveCircleOutline />
                 </button>
 
-                <button type="button" className="btn btn-secondary"><MdRefresh /></button>
+                <button type="button" className="btn btn-secondary"
+                    onClick={this.props.resetMap}>
+                    <MdRefresh />
+                </button>
 
                 <button type="button" className="btn btn-secondary"
-                    disabled={true}
-                    ><MdMap /></button>
+                    disabled={this.props.mapView}
+                    onClick={this.props.switchToMapView}>
+                    <MdMap />
+                </button>
 
-                <button type="button" className="btn btn-secondary"><MdSatellite /></button>
+                <button type="button" className="btn btn-secondary"
+                    disabled={this.props.aerialView}
+                    onClick={this.props.switchToAerialView}>
+                    <MdSatellite />
+                </button>
                 
             </div>
         );
