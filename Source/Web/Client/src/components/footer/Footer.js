@@ -16,9 +16,9 @@ class Footer extends Component {
                         </p>
                         <p>
                             Mountain data &copy;
-                            &nbsp;<a href='http://www.hills-database.co.uk/'>The Database of British and Irish Hills</a>&nbsp;
+                            &nbsp;<a href='http://www.hills-database.co.uk/' target='_blank'>The Database of British and Irish Hills</a>&nbsp;
                             licensed under a
-                            &nbsp;<a href='http://creativecommons.org/licenses/by/3.0/deed.en_GB'>Creative Commons Attribution 3.0 Unported License</a>.
+                            &nbsp;<a href='http://creativecommons.org/licenses/by/3.0/deed.en_GB' target='_blank'>Creative Commons Attribution 3.0 Unported License</a>.
                         </p>
                     </div>
                     <div className='col-md-4'>Footer centre</div>

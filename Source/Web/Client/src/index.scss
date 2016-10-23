@@ -840,9 +840,5 @@ div.scrollable {
     border: 1px solid $input-border-color;
     box-shadow: $input-box-shadow;
     border-radius: $input-border-radius;
-}
-
-#map {
-    border-radius: $input-border-radius;
-    z-index: 0;
+    background-color: $gray-lightest;
 }

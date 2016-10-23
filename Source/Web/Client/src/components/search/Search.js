@@ -56,7 +56,8 @@ class Search extends Component {
     }
 
     onClick(mountain) {
-        browserHistory.push('/mountain/' + mountain.id);
+        var name = mountain.name.replace(/\s/gmi, '_').replace(/[^a-z0-9\_]/gmi, '')
+        browserHistory.push('/mountain/' + mountain.id + '/' + name);
     }
 
     render() {

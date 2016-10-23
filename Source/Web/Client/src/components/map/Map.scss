@@ -5,6 +5,14 @@
     box-shadow: 2px 2px 1px 0 rgba(0,0,0,0.5);
 }
 
+#map {
+    border: 1px solid $input-border-color;
+    box-shadow: $input-box-shadow;
+    background-color: $gray-lightest;
+    border-radius: $input-border-radius;
+    z-index: 0;
+}
+
 .marker {
     margin-left: -6px;
     margin-top: -6px;
