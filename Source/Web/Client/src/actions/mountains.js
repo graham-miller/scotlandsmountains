@@ -3,7 +3,6 @@
     ReceiveMountain: 'RECEIVE_MOUNTAIN',
     ReceiveClassification: 'RECEIVE_CLASSIFICATION',
     ReceiveSearch: 'RECEIVE_SEARCH',
-    RequestIgnored: 'REQUEST_IGNORED',
     RequestError: 'REQUEST_ERROR'
 };
 
@@ -34,12 +33,6 @@ function receiveSearch(json) {
     }
 }
 
-function requestIgnored() {
-    return {
-        type: Actions.RequestIgnored
-    }
-}
-
 function requestError() {
     return {
         type: Actions.RequestError
@@ -55,11 +48,6 @@ export function fetchClassification(classification) {
 }
 
 export function search(term) {
-
-    if (!term || term.length < 3) {
-        return dispatch => dispatch(requestIgnored());
-    }
-
     return callApi('/api/mountains/search/' + term, receiveSearch);
 }
 

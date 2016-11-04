@@ -1,25 +1,10 @@
 ﻿import { Actions } from '../actions/mountains';
 
-const defaultStatus = {
-    loading: false,
-    error: false
-};
-
-const loadingStatus = {
-    loading: true,
-    error: false
-};
-
-const errorStatus = {
-    loading: false,
-    error: true
-};
+const defaultStatus = { loading: false, error: false };
 
 const defaultState = {
     status: defaultStatus,
-    searchResult: null,
-    classification: null,
-    mountain: null
+    items: []
 };
 
 const mountains = (state = defaultState, action) => {
@@ -27,50 +12,32 @@ const mountains = (state = defaultState, action) => {
         
         case Actions.RequestStart:
             return Object.assign({}, state, {
-                status: loadingStatus,
-                searchResult: null,
-                classification: null,
-                mountain: null
+                status: { loading: true, error: false },
+                items: []
             });
 
         case Actions.ReceiveMountain:
             return Object.assign({}, state, {
                 status: defaultStatus,
-                searchResult: null,
-                classification: null,
-                mountain: action.json
+                items: [action.json]
         });
 
         case Actions.ReceiveClassification:
             return Object.assign({}, state, {
                 status: defaultStatus,
-                searchResult: null,
-                classification: action.json,
-                mountain: null
+                items: action.json
             });
         
-        case Actions.RequestIgnored:
-            return Object.assign({}, state, {
-                status: defaultStatus,
-                searchResult: null,
-                classification: null,
-                mountain: null
-            });
-
         case Actions.ReceiveSearch:
             return Object.assign({}, state, {
                 status: defaultStatus,
-                searchResult: action.json,
-                classification: null,
-                mountain: null
+                items: action.json.results
             });
 
         case Actions.RequestError:
             return Object.assign({}, state, {
-                status: errorStatus,
-                searchResult: null,
-                classification: null,
-                mountain: null
+                status: { loading: false, error: true },
+                items: []
             });
 
         default:
