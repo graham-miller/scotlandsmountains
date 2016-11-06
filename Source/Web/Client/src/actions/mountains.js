@@ -3,7 +3,8 @@
     ReceiveMountain: 'RECEIVE_MOUNTAIN',
     ReceiveClassification: 'RECEIVE_CLASSIFICATION',
     ReceiveSearch: 'RECEIVE_SEARCH',
-    RequestError: 'REQUEST_ERROR'
+    RequestError: 'REQUEST_ERROR',
+    Clear: 'CLEAR'
 };
 
 function requestStart() {
@@ -49,6 +50,12 @@ export function fetchClassification(classification) {
 
 export function search(term) {
     return callApi('/api/mountains/search/' + term, receiveSearch);
+}
+
+export function clear() {
+    return {
+        type: Actions.Clear
+    }
 }
 
 function callApi(url, onSuccess) {

@@ -19,19 +19,22 @@ const mountains = (state = defaultState, action) => {
         case Actions.ReceiveMountain:
             return Object.assign({}, state, {
                 status: defaultStatus,
-                items: [action.json]
+                items: [action.json],
+                lastUpdated: Date.now()
         });
 
         case Actions.ReceiveClassification:
             return Object.assign({}, state, {
                 status: defaultStatus,
-                items: action.json
+                items: action.json,
+                lastUpdated: Date.now()
             });
         
         case Actions.ReceiveSearch:
             return Object.assign({}, state, {
                 status: defaultStatus,
-                items: action.json.results
+                items: action.json.results,
+                lastUpdated: Date.now()
             });
 
         case Actions.RequestError:
@@ -39,6 +42,9 @@ const mountains = (state = defaultState, action) => {
                 status: { loading: false, error: true },
                 items: []
             });
+
+        case Actions.Clear:
+            return defaultState;
 
         default:
             return Object.assign({}, state);

@@ -1,4 +1,4 @@
-﻿import { Actions } from '../actions/map';
+﻿import { MapActions } from '../actions/map';
 import mapFactory from '../factories/mapFactory';
 
 const defaultState = {
@@ -11,44 +11,41 @@ const defaultState = {
 const map = (state = defaultState, action) => {
     switch (action.type) {
         
-        case Actions.Create:
+        case MapActions.Create:
             return Object.assign({}, state, {
                 object: mapFactory(action.elementId)
             });
 
-        case Actions.ZoomIn:
-            state.map.zoomIn();
+        case MapActions.ZoomIn:
+            state.object.zoomIn();
             return Object.assign({}, state, {
-                canZoomIn: state.map.getZoom() < state.map.getMaxZoom(),
-                canZoomOut: state.map.getZoom() > state.map.getMinZoom()
+                canZoomIn: state.object.getZoom() < state.object.getMaxZoom(),
+                canZoomOut: state.object.getZoom() > state.object.getMinZoom()
             });
 
-        case Actions.ZoomOut:
-            state.map.zoomOut();
+        case MapActions.ZoomOut:
+            state.object.zoomOut();
             return Object.assign({}, state, {
-                canZoomIn: state.map.getZoom() < state.map.getMaxZoom(),
-                canZoomOut: state.map.getZoom() > state.map.getMinZoom()
+                canZoomIn: state.object.getZoom() < state.object.getMaxZoom(),
+                canZoomOut: state.object.getZoom() > state.object.getMinZoom()
             });
 
-        case Actions.Reset:
-            state.map.reset();
+        case MapActions.Reset:
+            state.object.reset();
             return Object.assign({}, state, {
-                canZoomIn: state.map.getZoom() < state.map.getMaxZoom(),
-                canZoomOut: state.map.getZoom() > state.map.getMinZoom(),
+                canZoomIn: state.object.getZoom() < state.object.getMaxZoom(),
+                canZoomOut: state.object.getZoom() > state.object.getMinZoom(),
                 baseLayerName: null
             });
 
-        case Actions.SetBaseLayer:
-            state.map.setBaseLayer(action.baseLayer);
+        case MapActions.SetBaseLayer:
+            state.object.setBaseLayer(action.baseLayer);
             return Object.assign({}, state, {
                 baseLayerName: action.baseLayer
             });
 
-        case Actions.Destroy:
-            state.map.setBaseLayer(action.baseLayer);
-            return Object.assign({}, state, {
-                baseLayerName: action.baseLayer
-            });
+        case MapActions.Destroy:
+            return defaultState;
 
         default:
             return Object.assign({}, state);

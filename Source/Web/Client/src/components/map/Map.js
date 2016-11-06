@@ -1,110 +1,51 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 
-import mapFactory from './mapFactory';
+import { create, destroy } from '../../actions/map';
 import Toolbar from './Toolbar';
-import MapElement from './MapElement';
 import FullHeightContainer from '../common/FullHeightContainer'
 
 import './Map.scss';
 
-class Map extends Component {
+class MapComponent extends Component {
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            map: null,
-            canZoomIn: true,
-            canZoomOut: true,
-            mapView: true,
-            aerialView: false
-        };
-
-        this.createMap = this.createMap.bind(this);
-        this.zoomIn = this.zoomIn.bind(this);
-        this.zoomOut = this.zoomOut.bind(this);
-        this.onZoomEnd = this.onZoomEnd.bind(this);
-        this.resizeMap = this.resizeMap.bind(this);
-        this.resetMap = this.resetMap.bind(this);
-        this.destroyMap = this.destroyMap.bind(this);
-        this.switchToMapView = this.switchToMapView.bind(this);
-        this.switchToAerialView = this.switchToAerialView.bind(this);
+    componentDidMount() {
+        this.props.dispatch(create('map'));
     }
 
-    createMap(elementId) {
-        var map = mapFactory(elementId);
-        map.on('zoomend', this.onZoomEnd);
-
-        this.setState({map: map});
-    }
-
-    zoomIn() {
-        this.state.map.zoomIn();
-    }
-    
-    zoomOut() {
-        this.state.map.zoomOut();
-    }
-    
-    onZoomEnd() {
-        this.setState({
-            canZoomIn: this.state.map.getZoom() < this.state.map.getMaxZoom(),
-            canZoomOut: this.state.map.getZoom() > this.state.map.getMinZoom()
-        });
-    }
-
-    resizeMap() {
-        if (this.state.map) {
-            this.state.map.resize();
+    componentWillUpdate(nextProps, nextState) {
+        if (nextProps.lastUpdated !== this.props.lastUpdated) {
+            this.props.map.displayMountains(nextProps.mountains);
         }
     }
 
-    resetMap() {
-        this.setState({mapView: true, aerialView: false});
-        this.state.map.reset();
-    }
-    
-    switchToMapView() {
-        this.setState({mapView: true, aerialView: false});
-        this.state.map.switchToMapView();
-    }
-
-    switchToAerialView() {
-        this.setState({mapView: false, aerialView: true});
-        this.state.map.switchToAerialView();
-    }
-        
-    destroyMap() {
-        this.state.map.off('zoomend', this.onZoomEnd);
-        this.setState({map: null});
+    componentWillUnmount() {    
+        this.props.dispatch(destroy());
     }
     
     render() {
 
-        if (this.props.mountains && this.state.map) {
-            this.state.map.displayMountains(this.props.mountains);
-        }
-
         return (
             <div style={{position:'relative'}}>
                 <FullHeightContainer allowance='85' handleResize={this.resizeMap}>
-                    <MapElement
-                        createMap={this.createMap}
-                        destroyMap={this.destroyMap} />
+                    <div id='map' style={{height: '100%'}} />
                 </FullHeightContainer>
-                <Toolbar
-                    canZoomIn={this.state.canZoomIn}
-                    canZoomOut={this.state.canZoomOut}
-                    zoomIn={this.zoomIn}
-                    zoomOut={this.zoomOut}
-                    mapView={this.state.mapView}
-                    aerialView={this.state.aerialView}
-                    resetMap={this.resetMap}
-                    switchToMapView={this.switchToMapView}
-                    switchToAerialView={this.switchToAerialView}/>
+                <Toolbar/>
             </div>
         );
     }
 }
+
+const mapStateToProps = (state) => {
+
+    return {
+        map : state.map.object,
+        mountains: state.mountains.items,
+        status: state.mountains.status,
+        lastUpdated: state.mountains.lastUpdated
+    };
+}
+
+const Map = connect(mapStateToProps)(MapComponent)
 
 export default Map;

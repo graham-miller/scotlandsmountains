@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import { fetchMountain } from '../../actions/mountains';
 
@@ -8,7 +9,7 @@ import NetworkError from '../common/NetworkError';
 
 import './Mountain.scss';
 
-class Mountain extends Component {
+class MountainComponent extends Component {
 
     componentWillMount() {
         this.props.dispatch(fetchMountain(this.props.params.id));
@@ -16,13 +17,13 @@ class Mountain extends Component {
 
     render() {
 
-        if (this.props.mountains.status.error) { return (<NetworkError />); }
+        if (this.props.status.error) { return (<NetworkError />); }
 
-        if (this.props.mountains.status.loading) { return (<Loading />); }
+        if (this.props.status.loading) { return (<Loading />); }
 
-        if (!this.props.mountains.mountain) { return (<Loading />); }
+        if (!this.props.mountain) { return (<Loading />); }
 
-        var mountain = this.props.mountains.mountain;
+        let mountain = this.props.mountain;
 
         return (
             <div>
@@ -79,5 +80,14 @@ class Mountain extends Component {
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        mountain: state.mountains.items.length === 1 ? state.mountains.items[0] : null,
+        status: state.mountains.status
+    };
+}
+
+const Mountain = connect(mapStateToProps)(MountainComponent);
 
 export default Mountain;

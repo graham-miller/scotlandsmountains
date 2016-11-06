@@ -1,21 +1,37 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import { Router, Redirect, Route, browserHistory } from 'react-router';
-import ClassificationContainer from '../classification/ClassificationContainer';
-import MountainContainer from '../mountain/MountainContainer';
-import SearchContainer from '../search/SearchContainer';
 
-class Routes extends Component {
+import { clear } from '../../actions/mountains'
+
+import Classification from '../classification/Classification';
+import Mountain from '../mountain/Mountain';
+import Search from '../search/Search';
+
+class RoutesComponent extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.resetMountains = this.resetMountains.bind(this);
+    }
+
+    resetMountains() {
+        this.props.dispatch(clear());
+    }
 
     render() {
         return (
             <Router history={browserHistory}>
                 <Redirect from='/' to='/mountains/munros' />
-                <Route path='/mountains/:table' component={ClassificationContainer} />
-                <Route path='/mountain/:id(/:name)' component={MountainContainer} />
-                <Route path='/search' component={SearchContainer} />
+                <Route path='/mountains/:table' component={Classification} onLeave={this.resetMountains} />
+                <Route path='/mountain/:id(/:name)' component={Mountain} onLeave={this.resetMountains} />
+                <Route path='/search' component={Search} onLeave={this.resetMountains} />
             </Router>
         );
-    }
+                }
 }
+
+const Routes = connect()(RoutesComponent)
 
 export default Routes;

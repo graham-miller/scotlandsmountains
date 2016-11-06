@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
 import $ from 'jquery';
 
@@ -10,7 +11,7 @@ import NetworkError from '../common/NetworkError';
 
 import './Search.scss'
 
-class Search extends Component {
+class SearchComponent extends Component {
 
     constructor(props){
         super(props);
@@ -27,7 +28,9 @@ class Search extends Component {
     }
 
     componentWillMount() {
-        this.props.dispatch(search(this.state.term));
+        if (this.state.term.length > 2) {
+            this.props.dispatch(search(this.state.term));
+        }
     }
 
     search(event) {
@@ -42,21 +45,27 @@ class Search extends Component {
 
         this.setState({
             timeoutId: setTimeout(() => {
-                this.props.dispatch(search(this.state.term));
+                if (this.state.term.length > 2) {
+                    this.props.dispatch(search(this.state.term));
+                }
             }, delay)
         });
     }
 
     onMouseOver(mountain) {
-        $(mountain.marker._icon).addClass('highlighted');
+        if (mountain.marker) {
+            $(mountain.marker._icon).addClass('highlighted');
+        }
     }
 
     onMouseOut(mountain) {
-        $(mountain.marker._icon).removeClass('highlighted');
+        if (mountain.marker) {
+            $(mountain.marker._icon).removeClass('highlighted');
+        }
     }
 
     onClick(mountain) {
-        var name = mountain.name.replace(/\s/gmi, '_').replace(/[^a-z0-9\_]/gmi, '')
+        var name = mountain.name.replace(/\s/gmi, '_').replace(/[^a-z0-9_]/gmi, '')
         browserHistory.push('/mountain/' + mountain.id + '/' + name);
     }
 
@@ -74,11 +83,11 @@ class Search extends Component {
             </div>
         );
 
-        if (this.props.mountains.status.error) { return (<div>{searchInput}<NetworkError /></div>); }
+        if (this.props.status.error) { return (<div>{searchInput}<NetworkError /></div>); }
 
-        if (this.props.mountains.status.loading) { return (<div>{searchInput}<Loading /></div>); }
+        if (this.props.status.loading) { return (<div>{searchInput}<Loading /></div>); }
 
-        if (!this.props.mountains.searchResult) { return (<div>{searchInput}</div>); }
+        if (this.props.mountains.length === 0) { return (<div>{searchInput}</div>); }
 
         return (
             <div>
@@ -86,7 +95,7 @@ class Search extends Component {
                 <FullHeightContainer className='scrollable' style={{marginTop: '8px'}} allowance='174'>
                     <ol className='search-results'>
                         {
-                            this.props.mountains.searchResult.results.map((mountain) =>
+                            this.props.mountains.map((mountain) =>
                                 <li
                                     key={mountain.id}
                                     onMouseOver={() => this.onMouseOver(mountain)}
@@ -103,5 +112,14 @@ class Search extends Component {
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        mountains: state.mountains.items,
+        status: state.mountains.status
+    };
+}
+
+const Search = connect(mapStateToProps)(SearchComponent);
 
 export default Search;

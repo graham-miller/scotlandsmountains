@@ -1,4 +1,4 @@
-﻿export const Actions = {
+﻿export const MapActions = {
     Create: 'CREATE',
     ZoomIn: 'ZOOM_IN',
     ZoomOut: 'ZOOM_OUT',
@@ -7,34 +7,40 @@
     Destroy: 'DESTROY'
 };
 
-function create(elementId) {
+export function create(elementId) {
     return {
-        type: Actions.Create,
+        type: MapActions.Create,
         elementId
     }
 }
 
-function zoomIn() {
+export function zoomIn() {
     return {
-        type: Actions.zoomIn
+        type: MapActions.ZoomIn
     }
 }
 
-function zoomOut() {
+export function zoomOut() {
     return {
-        type: Actions.zoomOut
+        type: MapActions.ZoomOut
     }
 }
 
-function reset() {
+export function reset() {
     return {
-        type: Actions.reset
+        type: MapActions.Reset
     }
 }
 
-function setBaseLayer(baseLayer) {
+export function setBaseLayer(baseLayer) {
     return {
-        type: Actions.SetBaseLayer,
+        type: MapActions.SetBaseLayer,
         baseLayer
+    }
+}
+
+export function destroy() {
+    return {
+        type: MapActions.Destroy,
     }
 }

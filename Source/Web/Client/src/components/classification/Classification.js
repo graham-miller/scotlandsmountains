@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
 import $ from 'jquery';
 
@@ -10,7 +11,7 @@ import FullHeightContainer from '../common/FullHeightContainer'
 
 import './Classification.scss'
 
-class Classification extends Component {
+class ClassificationComponent extends Component {
 
     constructor(props) {
         super(props);
@@ -25,25 +26,29 @@ class Classification extends Component {
     }
 
     onMouseOver(mountain) {
-        $(mountain.marker._icon).addClass('highlighted');
+        if (mountain.marker) {
+            $(mountain.marker._icon).addClass('highlighted');
+        }
     }
 
     onMouseOut(mountain) {
-        $(mountain.marker._icon).removeClass('highlighted');
+        if (mountain.marker) {
+            $(mountain.marker._icon).removeClass('highlighted');
+        }
     }
 
     onClick(mountain) {
-        var name = mountain.name.replace(/\s/gmi, '_').replace(/[^a-z0-9\_]/gmi, '')
+        var name = mountain.name.replace(/\s/gmi, '_').replace(/[^a-z0-9_]/gmi, '')
         browserHistory.push('/mountain/' + mountain.id + '/' + name);
     }
 
     render() {
 
-        if (this.props.mountains.status.error) { return (<NetworkError />); }
+        if (this.props.status.error) { return (<NetworkError />); }
 
-        if (this.props.mountains.status.loading) { return (<Loading />); }
+        if (this.props.status.loading) { return (<Loading />); }
 
-        if (!this.props.mountains.classification) { return (<Loading />); }
+        if (!this.props.mountains) { return (<Loading />); }
 
         return (
             <div>
@@ -51,7 +56,7 @@ class Classification extends Component {
                 <FullHeightContainer className='scrollable' allowance='128'>
                     <ol className='classification-table'>
                         {
-                            this.props.mountains.classification.map((mountain, index) =>
+                            this.props.mountains.map((mountain, index) =>
                                 <li
                                     key={mountain.id}
                                     onMouseOver={() => this.onMouseOver(mountain)}
@@ -69,5 +74,14 @@ class Classification extends Component {
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        mountains: state.mountains.items,
+        status: state.mountains.status
+    };
+}
+
+const Classification = connect(mapStateToProps)(ClassificationComponent);
 
 export default Classification;

@@ -1,31 +1,17 @@
 import L from 'leaflet';
 
-const mapboxAttribution = '&copy; <a href="https://www.mapbox.com/about/maps/" target="_blank">Mapbox</a>';
-const mapboxToken = 'pk.eyJ1IjoiZ3JhaGFtbSIsImEiOiJkNDg0MTMwMjAwZjIxMjNlOTExMzk4YTMxZmM0MWIwMSJ9.9xj78sGiHCxyWzdnAg-jEA';
-
-export const MapLayers = {
-    Map: L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/outdoors-v9/tiles/256/{z}/{x}/{y}?access_token=' + mapboxToken, {
-        attribution: mapboxAttribution + ' &copy; <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
-        maxZoom: 18,
-        minZoom: 2
-    }),
-    Aerial: L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/256/{z}/{x}/{y}?access_token=' + mapboxToken, {
-        attribution: mapboxAttribution + ' &copy; <a href="https://www.digitalglobe.com/ target="_blank"">DigitalGlobe</a>',
-        maxZoom: 18,
-        minZoom: 2
-    })
-};
+import MapLayers from './MapLayers';
 
 const resize = function(map) {
     map.invalidateSize({ pan: true, debounceMoveend: true });
 }
 
-const setBaseLayer = function(map, mapLayer) {
+const setBaseLayer = function(map, baseLayer) {
     if (map.currentBaseLayer) {
         map.removeLayer(map.currentBaseLayer);
     }
-    map.currentBaseLayer = mapLayer;
-    map.addLayer(mapLayer);
+    map.currentBaseLayer = baseLayer;
+    map.addLayer(baseLayer);
 }
 
 const reset = function(map) {
@@ -66,7 +52,7 @@ const mapFactory = function(elementId) {
         map.displayMountains = (mountains) => displayMountains(map, mountains);
         map.resize = () => resize(map);
         map.reset = () => reset(map);
-        map.setBaseLayer = () => setBaseLayer(map);
+        map.setBaseLayer = (baseLayer) => setBaseLayer(map, baseLayer);
 
         map.setBaseLayer(MapLayers.Map);
         map.resize();
