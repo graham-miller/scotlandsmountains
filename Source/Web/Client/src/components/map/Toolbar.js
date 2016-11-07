@@ -3,13 +3,12 @@ import React, { Component } from 'react';
 
 import MdAddCircleOutline from 'react-icons/md/add-circle-outline';
 import MdRemoveCircleOutline from 'react-icons/md/remove-circle-outline';
-import MdRefresh from 'react-icons/md/refresh';
 import MdMap from 'react-icons/lib/md/map';
 import MdSatellite from 'react-icons/lib/md/satellite';
 
-import { zoomIn, zoomOut, setBaseLayer, reset } from '../../actions/map';
+import { zoomIn, zoomOut, setBaseLayer } from '../../actions/map';
 
-import MapLayers from '../../factories/MapLayers';
+import MapLayers from '../../map/MapLayers';
 
 class ToolbarComponent extends Component {
 
@@ -79,19 +78,14 @@ class ToolbarComponent extends Component {
                 </button>
 
                 <button type="button" className="btn btn-secondary"
-                    onClick={() => this.props.dispatch(reset())}>
-                    <MdRefresh />
-                </button>
-
-                <button type="button" className="btn btn-secondary"
-                    disabled={this.state.baseLayer === MapLayers.Map}
-                    onClick={() => this.props.dispatch(setBaseLayer(MapLayers.Map))}>
+                    disabled={this.state.baseLayer === MapLayers[0]}
+                    onClick={() => this.props.dispatch(setBaseLayer(MapLayers[0]))}>
                     <MdMap />
                 </button>
 
                 <button type="button" className="btn btn-secondary"
-                    disabled={this.state.baseLayer === MapLayers.Aerial}
-                    onClick={() => this.props.dispatch(setBaseLayer(MapLayers.Aerial))}>
+                    disabled={this.state.baseLayer === MapLayers[1]}
+                    onClick={() => this.props.dispatch(setBaseLayer(MapLayers[1]))}>
                     <MdSatellite />
                 </button>
                 

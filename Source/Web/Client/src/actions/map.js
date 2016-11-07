@@ -41,6 +41,6 @@ export function setBaseLayer(baseLayer) {
 
 export function destroy() {
     return {
-        type: MapActions.Destroy,
+        type: MapActions.Destroy
     }
 }

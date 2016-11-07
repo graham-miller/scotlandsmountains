@@ -4,6 +4,7 @@ import { browserHistory } from 'react-router';
 import $ from 'jquery';
 
 import { search } from '../../actions/mountains';
+import { reset } from '../../actions/map';
 
 import Loading from '../common/Loading';
 import FullHeightContainer from '../common/FullHeightContainer'
@@ -28,6 +29,7 @@ class SearchComponent extends Component {
     }
 
     componentWillMount() {
+        this.props.dispatch(reset());
         if (this.state.term.length > 2) {
             this.props.dispatch(search(this.state.term));
         }

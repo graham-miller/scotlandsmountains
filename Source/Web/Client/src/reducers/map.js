@@ -1,11 +1,11 @@
 ﻿import { MapActions } from '../actions/map';
-import mapFactory from '../factories/mapFactory';
+import MapFactory from '../map/MapFactory';
 
 const map = (mapObject = null, action) => {
     switch (action.type) {
         
         case MapActions.Create:
-            return mapFactory(action.elementId);
+            return MapFactory(action.elementId);
 
         case MapActions.ZoomIn:
             mapObject.zoomIn();
