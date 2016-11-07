@@ -13,7 +13,7 @@ class MapComponent extends Component {
         this.props.dispatch(create('map'));
     }
 
-    componentWillUpdate(nextProps, nextState) {
+    componentWillReceiveProps(nextProps) {
         if (nextProps.lastUpdated !== this.props.lastUpdated) {
             this.props.map.displayMountains(nextProps.mountains);
         }
@@ -39,7 +39,7 @@ class MapComponent extends Component {
 const mapStateToProps = (state) => {
 
     return {
-        map : state.map.object,
+        map : state.map,
         mountains: state.mountains.items,
         status: state.mountains.status,
         lastUpdated: state.mountains.lastUpdated

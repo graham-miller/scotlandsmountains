@@ -27,17 +27,22 @@ const displayMountains = function(map, mountains) {
     map.mountainLayer = L.layerGroup().addTo(map);
 
     var icon = L.divIcon({className: 'marker'});
+    var latLngs = [];
 
     mountains.forEach((mountain) => {
-        var marker = L.marker([mountain.latitude, mountain.longitude], {
-            icon: icon
-        }).addTo(map.mountainLayer);
+        var latLng = [mountain.latitude, mountain.longitude];
+        latLngs.push(latLng);
 
+        var marker = L.marker(latLng, {icon: icon}).addTo(map.mountainLayer);
         marker.bindPopup('<p style="padding:0;margin:0;">' + mountain.name + '</p><p style="padding:0;margin:0;">' + mountain.height + '</p>', {closeButton: false});
         marker.on('mouseover', function (e) { this.openPopup(); });
         marker.on('mouseout', function (e) { this.closePopup(); });
         mountain.marker = marker;
     });
+
+    if (latLngs.length > 0) {
+        map.fitBounds(latLngs, { maxZoom: 12 });
+    }
 }
 
 const mapFactory = function(elementId) {

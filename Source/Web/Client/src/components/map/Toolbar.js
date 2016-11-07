@@ -13,19 +13,67 @@ import MapLayers from '../../factories/MapLayers';
 
 class ToolbarComponent extends Component {
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            canZoomIn: true,
+            canZoomOut: true,
+            baseLayer: null
+        };
+
+        this.currentBaseLayerIs = this.currentBaseLayerIs.bind(this);
+        this.handleZoomEnd = this.handleZoomEnd.bind(this);
+        this.handleLayerAdd = this.handleLayerAdd.bind(this);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (!this.props.map && nextProps.map) {
+            nextProps.map.on('zoomend', this.handleZoomEnd);
+            nextProps.map.on('layeradd', this.handleLayerAdd);
+        }
+        if (this.props.map && !nextProps.map) {
+            nextProps.map.off('zoomend', this.handleZoomEnd);
+            nextProps.map.off('layeradd', this.handleLayerAdd);
+        }
+    }
+
+    handleZoomEnd() {
+        if (this.props.map) {
+            this.setState({
+                canZoomIn: this.props.map.getZoom() < this.props.map.getMaxZoom(),
+                canZoomOut: this.props.map.getZoom() > this.props.map.getMinZoom()
+            });
+        }
+    }
+
+    handleLayerAdd() {
+        if (this.props.map) {
+            this.setState({baseLayer: this.props.map.currentBaseLayer});
+        }
+    }
+
+    currentBaseLayerIs(queriedBaseLayer) {
+        debugger;
+        if (this.props.map) {
+            return this.props.map.currentBaseLayer === queriedBaseLayer;
+        }
+        return false;
+    }
+
     render() {
 
         return (
-            <div className="map btn-group" role="group" aria-label="Button group with nested dropdown" >
+            <div className="map btn-group" role="group" aria-label="Button group with nested dropdown">
                 
                 <button type="button" className="btn btn-secondary"
-                    disabled={!this.props.canZoomIn}
+                    disabled={!this.state.canZoomIn}
                     onClick={() => this.props.dispatch(zoomIn())}>
                     <MdAddCircleOutline />
                 </button>
                 
                 <button type="button" className="btn btn-secondary"
-                    disabled={!this.props.canZoomOut}
+                    disabled={!this.state.canZoomOut}
                     onClick={() => this.props.dispatch(zoomOut())}>
                     <MdRemoveCircleOutline />
                 </button>
@@ -36,13 +84,13 @@ class ToolbarComponent extends Component {
                 </button>
 
                 <button type="button" className="btn btn-secondary"
-                    disabled={this.props.baseLayer === MapLayers.Map}
+                    disabled={this.state.baseLayer === MapLayers.Map}
                     onClick={() => this.props.dispatch(setBaseLayer(MapLayers.Map))}>
                     <MdMap />
                 </button>
 
                 <button type="button" className="btn btn-secondary"
-                    disabled={this.props.baseLayer === MapLayers.Aerial}
+                    disabled={this.state.baseLayer === MapLayers.Aerial}
                     onClick={() => this.props.dispatch(setBaseLayer(MapLayers.Aerial))}>
                     <MdSatellite />
                 </button>
@@ -53,15 +101,9 @@ class ToolbarComponent extends Component {
 }
 
 const mapStateToProps = (state) => {
-
-    return {
-        canZoomIn: state.map.canZoomIn,
-        canZoomOut: state.map.canZoomOut,
-        baseLayer: state.map.baseLayer
-    }
-
+    return {map: state.map};
 }
 
-const Toolbar = connect(mapStateToProps)(ToolbarComponent)
+const Toolbar = connect(mapStateToProps)(ToolbarComponent);
 
 export default Toolbar;

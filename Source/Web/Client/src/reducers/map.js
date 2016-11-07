@@ -1,55 +1,36 @@
 ﻿import { MapActions } from '../actions/map';
 import mapFactory from '../factories/mapFactory';
 
-const defaultState = {
-    object: null,
-    canZoomIn: true,
-    canZoomOut: true,
-    baseLayer: null
-};
-
-const map = (state = defaultState, action) => {
+const map = (mapObject = null, action) => {
     switch (action.type) {
         
         case MapActions.Create:
-            return Object.assign({}, state, {
-                object: mapFactory(action.elementId)
-            });
+            return mapFactory(action.elementId);
 
         case MapActions.ZoomIn:
-            state.object.zoomIn();
-            return Object.assign({}, state, {
-                canZoomIn: state.object.getZoom() < state.object.getMaxZoom(),
-                canZoomOut: state.object.getZoom() > state.object.getMinZoom()
-            });
+            mapObject.zoomIn();
+            break;
 
         case MapActions.ZoomOut:
-            state.object.zoomOut();
-            return Object.assign({}, state, {
-                canZoomIn: state.object.getZoom() < state.object.getMaxZoom(),
-                canZoomOut: state.object.getZoom() > state.object.getMinZoom()
-            });
+            mapObject.zoomOut();
+            break;
 
         case MapActions.Reset:
-            state.object.reset();
-            return Object.assign({}, state, {
-                canZoomIn: state.object.getZoom() < state.object.getMaxZoom(),
-                canZoomOut: state.object.getZoom() > state.object.getMinZoom(),
-                baseLayerName: null
-            });
+            mapObject.reset();
+            break;
 
         case MapActions.SetBaseLayer:
-            state.object.setBaseLayer(action.baseLayer);
-            return Object.assign({}, state, {
-                baseLayerName: action.baseLayer
-            });
+            mapObject.setBaseLayer(action.baseLayer);
+            break;
 
         case MapActions.Destroy:
-            return defaultState;
+            return null;
 
         default:
-            return Object.assign({}, state);
+            break;
     }
+
+    return mapObject;
 };
 
 export default map;
