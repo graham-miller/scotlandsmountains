@@ -2,7 +2,7 @@
 import mountains from './mountains';
 import map from './map';
 
-const app = combineReducers({
+export const app = combineReducers({
     mountains,
     map
 });
