@@ -18,7 +18,7 @@ class ToolbarComponent extends Component {
         this.state = {
             canZoomIn: true,
             canZoomOut: true,
-            baseLayer: null
+            baseLayer: MapLayers[0]
         };
 
         this.currentBaseLayerIs = this.currentBaseLayerIs.bind(this);
