@@ -13,9 +13,9 @@
     "start": "node Client/scripts/start.js",
     "build": "node Client/scripts/build.js",
     "test": "node Client/scripts/test.js --env=jsdom",
-    "test:lint": "node node_modules/eslint/bin/eslint . --ext .js",
+    "test:lint":        "node node_modules/eslint/bin/eslint . --ext .js",
     "test:lint:output": "node node_modules/eslint/bin/eslint . --ext .js --output-file eslint_result.txt",
-    "test:lint:fix": "node node_modules/eslint/bin/eslint . --ext .js --fix"
+    "test:lint:fix":    "node node_modules/eslint/bin/eslint . --ext .js --fix"
   },
   "devDependencies": {
     "autoprefixer": "6.5.0",
@@ -114,7 +114,7 @@
     "plugins": [
       "react"
     ],
-    "rules": {m
+    "rules": {
       "indent": [
         "error",
         4
