@@ -7,7 +7,7 @@ import { fetchClassification } from '../../actions/mountains';
 
 import Loading from '../common/Loading';
 import NetworkError from '../common/NetworkError';
-import FullHeightContainer from '../common/FullHeightContainer'
+import FullHeight from '../common/FullHeight'
 
 import './Classification.scss'
 
@@ -53,7 +53,7 @@ class ClassificationComponent extends Component {
         return (
             <div>
                 <h2 style={{textTransform: 'capitalize'}}>{this.props.routeParams.table}</h2>
-                <FullHeightContainer className='scrollable' allowance='128'>
+                <FullHeight className='scrollable' allowance='128'>
                     <ol className='classification-table'>
                         {
                             this.props.mountains.map((mountain, index) =>
@@ -69,7 +69,7 @@ class ClassificationComponent extends Component {
                             )
                         }                
                     </ol>
-                </FullHeightContainer>
+                </FullHeight>
             </div>
         );
     }

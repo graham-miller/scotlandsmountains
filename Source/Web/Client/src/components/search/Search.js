@@ -7,7 +7,7 @@ import { search } from '../../actions/mountains';
 import { reset } from '../../actions/map';
 
 import Loading from '../common/Loading';
-import FullHeightContainer from '../common/FullHeightContainer'
+import FullHeight from '../common/FullHeight'
 import NetworkError from '../common/NetworkError';
 
 import './Search.scss'
@@ -94,7 +94,7 @@ class SearchComponent extends Component {
         return (
             <div>
                 {searchInput}
-                <FullHeightContainer className='scrollable' style={{marginTop: '8px'}} allowance='174'>
+                <FullHeight className='scrollable' style={{marginTop: '8px'}} allowance='174'>
                     <ol className='search-results'>
                         {
                             this.props.mountains.map((mountain) =>
@@ -109,7 +109,7 @@ class SearchComponent extends Component {
                             )
                         }                
                     </ol>
-                </FullHeightContainer>
+                </FullHeight>
             </div>
         );
     }

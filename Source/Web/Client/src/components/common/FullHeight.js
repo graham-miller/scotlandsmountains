@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 
-class FullHeightContainer extends Component {
+class FullHeight extends Component {
 
     constructor(props) {
         super(props);
@@ -53,4 +53,4 @@ class FullHeightContainer extends Component {
     }
 }
 
-export default FullHeightContainer;
+export default FullHeight;

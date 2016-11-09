@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import { create, destroy } from '../../actions/map';
 import Toolbar from './Toolbar';
-import FullHeightContainer from '../common/FullHeightContainer'
+import FullHeight from '../common/FullHeight'
 
 import './Map.scss';
 
@@ -27,9 +27,9 @@ class MapComponent extends Component {
 
         return (
             <div style={{position:'relative'}}>
-                <FullHeightContainer allowance='85' handleResize={this.resizeMap}>
+                <FullHeight allowance='85' handleResize={this.resizeMap}>
                     <div id='map' style={{height: '100%'}} />
-                </FullHeightContainer>
+                </FullHeight>
                 <Toolbar/>
             </div>
         );

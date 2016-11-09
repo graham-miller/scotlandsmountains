@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { fetchMountain } from '../../actions/mountains';
 
-import FullHeightContainer from '../common/FullHeightContainer';
+import FullHeight from '../common/FullHeight';
 import Loading from '../common/Loading';
 import NetworkError from '../common/NetworkError';
 
@@ -28,7 +28,7 @@ class MountainComponent extends Component {
         return (
             <div>
                 <h2>{mountain.name}</h2>
-                <FullHeightContainer className='scrollable mountain' allowance='128'>
+                <FullHeight className='scrollable mountain' allowance='128'>
                     <dl>
                         <dt>Height</dt>
                         <dd>{mountain.height}</dd>
@@ -75,7 +75,7 @@ class MountainComponent extends Component {
                             )}</ul>
                         </dd>
                     </dl>
-                </FullHeightContainer>
+                </FullHeight>
             </div>
         );
     }
