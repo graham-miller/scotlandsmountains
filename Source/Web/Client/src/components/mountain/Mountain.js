@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import { connect } from "react-redux";
 
-import { fetchMountain } from '../../actions/mountains';
+import { fetchMountain } from "../../actions/mountains";
 
-import FullHeight from '../common/FullHeight';
-import Loading from '../common/Loading';
-import NetworkError from '../common/NetworkError';
+import FullHeight from "../common/FullHeight";
+import Loading from "../common/Loading";
+import NetworkError from "../common/NetworkError";
 
-import './Mountain.scss';
+import "./Mountain.scss";
 
 class MountainComponent extends Component {
 
@@ -86,7 +86,7 @@ const mapStateToProps = (state) => {
         mountain: state.mountains.items.length === 1 ? state.mountains.items[0] : null,
         status: state.mountains.status
     };
-}
+};
 
 const Mountain = connect(mapStateToProps)(MountainComponent);
 

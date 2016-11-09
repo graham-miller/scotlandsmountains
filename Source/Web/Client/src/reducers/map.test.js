@@ -1,5 +1,5 @@
-﻿import map from './map';
+//import map from './map';
 
-it('works', () => {
+it("works", () => {
     expect(true).toEqual(true);
 });

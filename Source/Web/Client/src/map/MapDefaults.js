@@ -1,4 +1,4 @@
-import MapLayers from './MapLayers';
+import MapLayers from "./MapLayers";
 
 const MapDefaults = {
     Zoom: 7,

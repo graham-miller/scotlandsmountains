@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import { Router, Redirect, Route, browserHistory } from 'react-router';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Router, Redirect, Route, browserHistory } from "react-router";
 
-import { clear } from '../../actions/mountains'
+import { clear } from "../../actions/mountains";
 
-import Classification from '../classification/Classification';
-import Mountain from '../mountain/Mountain';
-import Search from '../search/Search';
+import Classification from "../classification/Classification";
+import Mountain from "../mountain/Mountain";
+import Search from "../search/Search";
 
 class RoutesComponent extends Component {
 
@@ -29,9 +29,9 @@ class RoutesComponent extends Component {
                 <Route path='/search' component={Search} onLeave={this.resetMountains} />
             </Router>
         );
-                }
+    }
 }
 
-const Routes = connect()(RoutesComponent)
+const Routes = connect()(RoutesComponent);
 
 export default Routes;

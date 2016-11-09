@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { browserHistory } from 'react-router';
-import $ from 'jquery';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { browserHistory } from "react-router";
+import $ from "jquery";
 
-import { search } from '../../actions/mountains';
-import { reset } from '../../actions/map';
+import { search } from "../../actions/mountains";
+import { reset } from "../../actions/map";
 
-import Loading from '../common/Loading';
-import FullHeight from '../common/FullHeight'
-import NetworkError from '../common/NetworkError';
+import Loading from "../common/Loading";
+import FullHeight from "../common/FullHeight";
+import NetworkError from "../common/NetworkError";
 
-import './Search.scss'
+import "./Search.scss";
 
 class SearchComponent extends Component {
 
@@ -18,9 +18,9 @@ class SearchComponent extends Component {
         super(props);
 
         this.state = {
-            term: '',
+            term: "",
             timeoutId: null
-        }
+        };
 
         this.search = this.search.bind(this);
         this.onMouseOver = this.onMouseOver.bind(this);
@@ -56,19 +56,19 @@ class SearchComponent extends Component {
 
     onMouseOver(mountain) {
         if (mountain.marker) {
-            $(mountain.marker._icon).addClass('highlighted');
+            $(mountain.marker._icon).addClass("highlighted");
         }
     }
 
     onMouseOut(mountain) {
         if (mountain.marker) {
-            $(mountain.marker._icon).removeClass('highlighted');
+            $(mountain.marker._icon).removeClass("highlighted");
         }
     }
 
     onClick(mountain) {
-        var name = mountain.name.replace(/\s/gmi, '_').replace(/[^a-z0-9_]/gmi, '')
-        browserHistory.push('/mountain/' + mountain.id + '/' + name);
+        var name = mountain.name.replace(/\s/gmi, "_").replace(/[^a-z0-9_]/gmi, "");
+        browserHistory.push("/mountain/" + mountain.id + "/" + name);
     }
 
     render() {
@@ -94,7 +94,7 @@ class SearchComponent extends Component {
         return (
             <div>
                 {searchInput}
-                <FullHeight className='scrollable' style={{marginTop: '8px'}} allowance='174'>
+                <FullHeight className='scrollable' style={{marginTop: "8px"}} allowance='174'>
                     <ol className='search-results'>
                         {
                             this.props.mountains.map((mountain) =>
@@ -120,7 +120,7 @@ const mapStateToProps = (state) => {
         mountains: state.mountains.items,
         status: state.mountains.status
     };
-}
+};
 
 const Search = connect(mapStateToProps)(SearchComponent);
 

@@ -1,4 +1,4 @@
-﻿import { Actions } from '../actions/mountains';
+import { Actions } from "../actions/mountains";
 
 const defaultStatus = { loading: false, error: false };
 
@@ -10,44 +10,44 @@ const defaultState = {
 const mountains = (state = defaultState, action) => {
     switch (action.type) {
         
-        case Actions.RequestStart:
-            return Object.assign({}, state, {
-                status: { loading: true, error: false },
-                items: []
-            });
-
-        case Actions.ReceiveMountain:
-            return Object.assign({}, state, {
-                status: defaultStatus,
-                items: [action.json],
-                lastUpdated: Date.now()
+    case Actions.RequestStart:
+        return Object.assign({}, state, {
+            status: { loading: true, error: false },
+            items: []
         });
 
-        case Actions.ReceiveClassification:
-            return Object.assign({}, state, {
-                status: defaultStatus,
-                items: action.json,
-                lastUpdated: Date.now()
-            });
+    case Actions.ReceiveMountain:
+        return Object.assign({}, state, {
+            status: defaultStatus,
+            items: [action.json],
+            lastUpdated: Date.now()
+        });
+
+    case Actions.ReceiveClassification:
+        return Object.assign({}, state, {
+            status: defaultStatus,
+            items: action.json,
+            lastUpdated: Date.now()
+        });
         
-        case Actions.ReceiveSearch:
-            return Object.assign({}, state, {
-                status: defaultStatus,
-                items: action.json.results,
-                lastUpdated: Date.now()
-            });
+    case Actions.ReceiveSearch:
+        return Object.assign({}, state, {
+            status: defaultStatus,
+            items: action.json.results,
+            lastUpdated: Date.now()
+        });
 
-        case Actions.RequestError:
-            return Object.assign({}, state, {
-                status: { loading: false, error: true },
-                items: []
-            });
+    case Actions.RequestError:
+        return Object.assign({}, state, {
+            status: { loading: false, error: true },
+            items: []
+        });
 
-        case Actions.Clear:
-            return defaultState;
+    case Actions.Clear:
+        return defaultState;
 
-        default:
-            return Object.assign({}, state);
+    default:
+        return Object.assign({}, state);
     }
 };
 

@@ -1,0 +1,1007 @@
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\config\env.js[24m
+   [2m7:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2  [2mindent[22m
+  [2m11:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6  [2mindent[22m
+  [2m11:11[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+  [2m12:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6  [2mindent[22m
+  [2m16:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6  [2mindent[22m
+  [2m16:7[22m   [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+  [2m17:33[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+  [2m23:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6  [2mindent[22m
+  [2m23:7[22m   [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\config\paths.js[24m
+   [2m1:20[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+   [2m2:18[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+   [2m8:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2  [2mindent[22m
+  [2m22:43[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+  [2m23:31[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+  [2m23:41[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+  [2m23:47[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+  [2m29:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2  [2mindent[22m
+  [2m29:24[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+  [2m30:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2  [2mindent[22m
+  [2m30:25[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+  [2m31:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2  [2mindent[22m
+  [2m31:23[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+  [2m32:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2  [2mindent[22m
+  [2m32:26[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+  [2m33:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2  [2mindent[22m
+  [2m33:30[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+  [2m34:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2  [2mindent[22m
+  [2m34:22[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+  [2m35:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2  [2mindent[22m
+  [2m35:26[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+  [2m36:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2  [2mindent[22m
+  [2m36:30[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+  [2m37:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2  [2mindent[22m
+  [2m37:30[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+  [2m38:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2  [2mindent[22m
+  [2m38:21[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+  [2m39:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2  [2mindent[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\config\polyfills.js[24m
+   [2m1:24[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+   [2m5:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2  [2mindent[22m
+   [2m5:11[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+   [2m6:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2  [2mindent[22m
+   [2m6:28[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+  [2m10:9[22m   [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+  [2m14:25[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\config\webpack.config.dev.js[24m
+    [2m2:28[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+    [2m3:23[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+    [2m4:28[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+    [2m5:33[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+    [2m6:40[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+    [2m7:37[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+    [2m8:45[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+    [2m9:36[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m10:21[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m11:37[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m15:18[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m19:17[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m31:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+   [2m31:12[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m35:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+   [2m46:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m46:21[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m48:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m48:21[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m50:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m55:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+   [2m57:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m59:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m63:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m63:15[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m65:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m67:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+   [2m73:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m78:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m78:18[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m78:25[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m78:34[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m78:42[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m79:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m82:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+   [2m82:7[22m   [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m82:23[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m86:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+   [2m89:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m90:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+   [2m91:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+   [2m92:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+   [2m92:17[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m93:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+   [2m94:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+   [2m96:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m98:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+   [2m99:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+  [2m100:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+  [2m101:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+  [2m101:17[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m102:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+  [2m108:11[22m  [31merror[39m  Expected indentation of 12 spaces but found 10  [2mindent[22m
+  [2m109:13[22m  [31merror[39m  Expected indentation of 14 spaces but found 12  [2mindent[22m
+  [2m109:19[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m112:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m118:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m119:11[22m  [31merror[39m  Expected indentation of 12 spaces but found 10  [2mindent[22m
+  [2m120:11[22m  [31merror[39m  Expected indentation of 12 spaces but found 10  [2mindent[22m
+  [2m120:19[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m121:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m124:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m125:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+  [2m126:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+  [2m126:17[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m127:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m131:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m132:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+  [2m133:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+  [2m133:17[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m134:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+  [2m135:11[22m  [31merror[39m  Expected indentation of 12 spaces but found 10  [2mindent[22m
+  [2m135:17[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m137:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m140:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m141:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+  [2m142:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+  [2m142:17[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m143:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+  [2m144:11[22m  [31merror[39m  Expected indentation of 12 spaces but found 10  [2mindent[22m
+  [2m145:11[22m  [31merror[39m  Expected indentation of 12 spaces but found 10  [2mindent[22m
+  [2m145:17[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m147:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m152:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+  [2m153:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m154:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m155:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+  [2m156:11[22m  [31merror[39m  Expected indentation of 12 spaces but found 10  [2mindent[22m
+  [2m156:11[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m157:11[22m  [31merror[39m  Expected indentation of 12 spaces but found 10  [2mindent[22m
+  [2m157:11[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m158:11[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m158:11[22m  [31merror[39m  Expected indentation of 12 spaces but found 10  [2mindent[22m
+  [2m159:11[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m159:11[22m  [31merror[39m  Expected indentation of 12 spaces but found 10  [2mindent[22m
+  [2m164:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+  [2m168:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m169:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m172:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m173:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m174:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m178:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m180:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m184:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m189:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m191:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m192:16[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m197:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m198:12[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m199:17[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m200:9[22m   [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m200:19[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m201:9[22m   [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m201:26[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m206:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+  [2m207:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m207:9[22m   [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m208:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m208:10[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m209:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m209:10[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\config\webpack.config.prod.js[24m
+    [2m2:28[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+    [2m3:23[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+    [2m4:33[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+    [2m5:33[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+    [2m6:37[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+    [2m7:19[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+    [2m8:21[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+    [2m9:36[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m12:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+   [2m12:32[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m13:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+   [2m14:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m16:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m16:19[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m18:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m28:74[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m41:9[22m   [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m41:37[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m42:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+   [2m42:19[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m50:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+   [2m53:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+   [2m53:12[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m55:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+   [2m56:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m56:21[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m57:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m59:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+   [2m61:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m65:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m65:15[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m66:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m66:20[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m68:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m70:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+   [2m76:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m81:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m81:18[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m81:25[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m81:34[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m81:42[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m82:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m85:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+   [2m85:7[22m   [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m85:23[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m89:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+   [2m92:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m93:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+   [2m94:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+   [2m95:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+   [2m95:17[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m96:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+   [2m97:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+   [2m99:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m101:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m102:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+  [2m103:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+  [2m104:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+  [2m104:17[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m106:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m119:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m120:11[22m  [31merror[39m  Expected indentation of 12 spaces but found 10  [2mindent[22m
+  [2m129:11[22m  [31merror[39m  Expected indentation of 12 spaces but found 10  [2mindent[22m
+  [2m129:45[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m129:54[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m131:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m134:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m135:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+  [2m136:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+  [2m136:17[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m137:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m140:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m141:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+  [2m142:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+  [2m142:17[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m143:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+  [2m144:11[22m  [31merror[39m  Expected indentation of 12 spaces but found 10  [2mindent[22m
+  [2m144:17[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m146:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m149:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m150:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+  [2m151:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+  [2m151:17[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m152:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8   [2mindent[22m
+  [2m153:11[22m  [31merror[39m  Expected indentation of 12 spaces but found 10  [2mindent[22m
+  [2m154:11[22m  [31merror[39m  Expected indentation of 12 spaces but found 10  [2mindent[22m
+  [2m154:17[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m156:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m161:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+  [2m162:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m163:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m164:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+  [2m165:11[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m165:11[22m  [31merror[39m  Expected indentation of 12 spaces but found 10  [2mindent[22m
+  [2m166:11[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m166:11[22m  [31merror[39m  Expected indentation of 12 spaces but found 10  [2mindent[22m
+  [2m167:11[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m167:11[22m  [31merror[39m  Expected indentation of 12 spaces but found 10  [2mindent[22m
+  [2m168:11[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m168:11[22m  [31merror[39m  Expected indentation of 12 spaces but found 10  [2mindent[22m
+  [2m173:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+  [2m178:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m179:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m182:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m183:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m184:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m185:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m186:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+  [2m187:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+  [2m188:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+  [2m189:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+  [2m190:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+  [2m191:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+  [2m192:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+  [2m193:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+  [2m194:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+  [2m195:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+  [2m202:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m204:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m206:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m208:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m209:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m210:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+  [2m211:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+  [2m213:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m214:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+  [2m216:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m217:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+  [2m218:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+  [2m222:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m222:27[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m224:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m225:12[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m226:17[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m227:9[22m   [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m227:19[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m228:9[22m   [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m228:26[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m233:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+  [2m234:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m234:9[22m   [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m235:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m235:10[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m236:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m236:10[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\scripts\build.js[24m
+    [2m2:24[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+    [2m8:9[22m    [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m10:21[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m11:18[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m12:20[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m13:24[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m14:24[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m15:26[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m16:23[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m17:22[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m18:21[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m19:34[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m20:25[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m21:25[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m25:3[22m    [31merror[39m  Expected indentation of 4 spaces but found 2   [2mindent[22m
+   [2m31:3[22m    [31merror[39m  Expected indentation of 4 spaces but found 2   [2mindent[22m
+   [2m32:30[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m39:3[22m    [31merror[39m  Expected indentation of 4 spaces but found 2   [2mindent[22m
+   [2m40:3[22m    [31merror[39m  Expected indentation of 4 spaces but found 2   [2mindent[22m
+   [2m41:3[22m    [31merror[39m  Expected indentation of 4 spaces but found 2   [2mindent[22m
+   [2m42:3[22m    [31merror[39m  Expected indentation of 4 spaces but found 2   [2mindent[22m
+   [2m43:5[22m    [31merror[39m  Expected indentation of 6 spaces but found 4   [2mindent[22m
+   [2m43:22[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m45:5[22m    [31merror[39m  Expected indentation of 6 spaces but found 4   [2mindent[22m
+   [2m45:25[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m47:5[22m    [31merror[39m  Expected indentation of 6 spaces but found 4   [2mindent[22m
+   [2m49:5[22m    [31merror[39m  Expected indentation of 6 spaces but found 4   [2mindent[22m
+   [2m49:12[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m56:3[22m    [31merror[39m  Expected indentation of 4 spaces but found 2   [2mindent[22m
+   [2m59:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+   [2m60:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+   [2m61:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+   [2m62:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+   [2m67:3[22m    [31merror[39m  Expected indentation of 4 spaces but found 2   [2mindent[22m
+   [2m67:31[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m70:3[22m    [31merror[39m  Expected indentation of 4 spaces but found 2   [2mindent[22m
+   [2m73:3[22m    [31merror[39m  Expected indentation of 4 spaces but found 2   [2mindent[22m
+   [2m78:3[22m    [31merror[39m  Expected indentation of 4 spaces but found 2   [2mindent[22m
+   [2m81:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+   [2m81:59[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m82:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+   [2m83:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+   [2m84:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+   [2m85:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+   [2m86:9[22m    [31merror[39m  Expected indentation of 10 spaces but found 8  [2mindent[22m
+   [2m86:27[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m87:9[22m    [31merror[39m  Expected indentation of 10 spaces but found 8  [2mindent[22m
+   [2m88:9[22m    [31merror[39m  Expected indentation of 10 spaces but found 8  [2mindent[22m
+   [2m89:9[22m    [31merror[39m  Expected indentation of 10 spaces but found 8  [2mindent[22m
+   [2m89:51[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m89:71[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m89:77[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m92:3[22m    [31merror[39m  Expected indentation of 4 spaces but found 2   [2mindent[22m
+   [2m93:3[22m    [31merror[39m  Expected indentation of 4 spaces but found 2   [2mindent[22m
+   [2m96:3[22m    [31merror[39m  Expected indentation of 4 spaces but found 2   [2mindent[22m
+   [2m97:5[22m    [31merror[39m  Expected indentation of 6 spaces but found 4   [2mindent[22m
+   [2m98:5[22m    [31merror[39m  Expected indentation of 6 spaces but found 4   [2mindent[22m
+   [2m99:5[22m    [31merror[39m  Expected indentation of 6 spaces but found 4   [2mindent[22m
+  [2m100:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m100:26[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m101:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m103:5[22m    [31merror[39m  Expected indentation of 6 spaces but found 4   [2mindent[22m
+  [2m104:7[22m    [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m105:7[22m    [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m112:3[22m    [31merror[39m  Expected indentation of 4 spaces but found 2   [2mindent[22m
+  [2m112:15[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m113:3[22m    [31merror[39m  Expected indentation of 4 spaces but found 2   [2mindent[22m
+  [2m114:5[22m    [31merror[39m  Expected indentation of 6 spaces but found 4   [2mindent[22m
+  [2m115:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m115:21[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m116:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m117:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m120:5[22m    [31merror[39m  Expected indentation of 6 spaces but found 4   [2mindent[22m
+  [2m120:29[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m121:5[22m    [31merror[39m  Expected indentation of 6 spaces but found 4   [2mindent[22m
+  [2m123:5[22m    [31merror[39m  Expected indentation of 6 spaces but found 4   [2mindent[22m
+  [2m123:17[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m124:5[22m    [31merror[39m  Expected indentation of 6 spaces but found 4   [2mindent[22m
+  [2m125:5[22m    [31merror[39m  Expected indentation of 6 spaces but found 4   [2mindent[22m
+  [2m126:5[22m    [31merror[39m  Expected indentation of 6 spaces but found 4   [2mindent[22m
+  [2m128:5[22m    [31merror[39m  Expected indentation of 6 spaces but found 4   [2mindent[22m
+  [2m128:44[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m128:54[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m128:64[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m129:5[22m    [31merror[39m  Expected indentation of 6 spaces but found 4   [2mindent[22m
+  [2m130:5[22m    [31merror[39m  Expected indentation of 6 spaces but found 4   [2mindent[22m
+  [2m131:5[22m    [31merror[39m  Expected indentation of 6 spaces but found 4   [2mindent[22m
+  [2m131:46[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m133:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m133:19[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m133:97[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m134:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m134:19[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m134:66[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m134:80[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m134:112[22m  [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m134:130[22m  [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m135:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m136:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m136:19[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m136:39[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m136:50[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m137:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m137:19[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m137:69[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m138:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m139:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m139:19[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m139:37[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m139:46[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m139:76[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m140:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m140:19[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m140:37[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m140:46[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m141:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m141:19[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m141:37[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m141:46[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m142:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m142:19[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m142:37[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m142:46[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m142:76[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m143:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m143:19[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m143:37[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m143:46[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m144:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m144:19[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m144:37[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m144:46[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m145:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m145:19[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m145:37[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m145:46[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m146:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m147:31[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m149:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m149:19[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m149:97[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m150:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m150:19[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m150:66[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m150:80[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m150:112[22m  [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m150:130[22m  [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m151:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m152:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m152:19[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m152:39[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m152:50[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m153:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m156:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m156:19[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m157:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m159:9[22m    [31merror[39m  Expected indentation of 10 spaces but found 8  [2mindent[22m
+  [2m159:21[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m159:68[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m159:82[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m159:114[22m  [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m159:132[22m  [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m160:9[22m    [31merror[39m  Expected indentation of 10 spaces but found 8  [2mindent[22m
+  [2m163:9[22m    [31merror[39m  Expected indentation of 10 spaces but found 8  [2mindent[22m
+  [2m163:21[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m163:68[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m163:82[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m163:108[22m  [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m163:126[22m  [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m164:9[22m    [31merror[39m  Expected indentation of 10 spaces but found 8  [2mindent[22m
+  [2m164:21[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m164:75[22m   [31merror[39m  Missing semicolon                              [2msemi[22m
+  [2m165:9[22m    [31merror[39m  Expected indentation of 10 spaces but found 8  [2mindent[22m
+  [2m166:9[22m    [31merror[39m  Expected indentation of 10 spaces but found 8  [2mindent[22m
+  [2m166:21[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m166:40[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m166:67[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m166:87[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m166:135[22m  [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m167:9[22m    [31merror[39m  Expected indentation of 10 spaces but found 8  [2mindent[22m
+  [2m169:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m169:19[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m169:39[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m169:50[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m170:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m170:19[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m170:73[22m   [31merror[39m  Missing semicolon                              [2msemi[22m
+  [2m171:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m172:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m172:19[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m172:37[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m172:47[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m173:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m173:19[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m173:37[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m173:59[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m174:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m174:19[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m174:52[22m   [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m175:7[22m    [31merror[39m  Expected indentation of 8 spaces but found 6   [2mindent[22m
+  [2m181:3[22m    [31merror[39m  Expected indentation of 4 spaces but found 2   [2mindent[22m
+  [2m182:5[22m    [31merror[39m  Expected indentation of 6 spaces but found 4   [2mindent[22m
+  [2m183:5[22m    [31merror[39m  Expected indentation of 6 spaces but found 4   [2mindent[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\scripts\start.js[24m
+    [2m1:24[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+    [2m7:9[22m   [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+    [2m9:21[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m10:23[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m11:32[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m12:34[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m13:35[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m14:22[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m15:28[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m16:34[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m17:37[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m18:27[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m19:22[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m20:22[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m21:21[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m25:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+   [2m35:56[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m37:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+   [2m38:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m39:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+   [2m41:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+   [2m49:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+   [2m55:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+   [2m55:19[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m56:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m57:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m57:17[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m62:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+   [2m62:19[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m63:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m68:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m69:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m70:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+   [2m70:31[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m71:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+   [2m72:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+   [2m72:19[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m73:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+   [2m74:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+   [2m74:19[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m74:48[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m74:63[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m74:76[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m75:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+   [2m76:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+   [2m76:19[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m77:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+   [2m77:19[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m77:69[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m77:88[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m78:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+   [2m82:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m83:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+   [2m83:29[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m84:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+   [2m85:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+   [2m86:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+   [2m87:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+   [2m89:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+   [2m93:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+   [2m94:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+   [2m94:32[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+   [2m95:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+   [2m96:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+   [2m97:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+   [2m98:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+  [2m101:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m101:19[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m102:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m102:19[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m102:41[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m102:74[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m103:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m103:19[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m103:41[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m103:67[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m111:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+  [2m112:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m113:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m114:17[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m114:35[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m115:7[22m   [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m115:37[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m115:66[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m117:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m118:7[22m   [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m119:30[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m121:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m125:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m128:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m128:13[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m128:65[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m129:14[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m129:31[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m129:49[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m131:4[22m   [31merror[39m  Missing semicolon                               [2msemi[22m
+  [2m137:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+  [2m138:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+  [2m141:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m149:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m150:8[22m   [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m151:8[22m   [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m151:21[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m153:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m154:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m155:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+  [2m156:11[22m  [31merror[39m  Expected indentation of 14 spaces but found 10  [2mindent[22m
+  [2m157:11[22m  [31merror[39m  Expected indentation of 14 spaces but found 10  [2mindent[22m
+  [2m158:13[22m  [31merror[39m  Expected indentation of 14 spaces but found 12  [2mindent[22m
+  [2m160:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+  [2m161:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m164:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+  [2m165:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m165:26[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m166:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m166:29[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m167:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m167:29[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m167:83[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m168:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m168:29[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m169:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m178:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m179:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m183:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+  [2m184:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+  [2m184:19[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m185:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+  [2m186:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+  [2m187:9[22m   [31merror[39m  Expected indentation of 10 spaces but found 8   [2mindent[22m
+  [2m193:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+  [2m197:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+  [2m200:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m200:21[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m215:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m221:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m224:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m227:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m230:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m231:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m234:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m235:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m239:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+  [2m242:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+  [2m243:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m244:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+  [2m247:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m248:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m248:28[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m249:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m250:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m250:28[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m250:43[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m250:56[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m255:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+  [2m255:40[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m256:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+  [2m256:34[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m257:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+  [2m258:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+  [2m264:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+  [2m265:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m266:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m269:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+  [2m270:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+  [2m271:18[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m271:75[22m  [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m272:5[22m   [31merror[39m  Strings must use doublequote                    [2mquotes[22m
+  [2m274:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2    [2mindent[22m
+  [2m275:5[22m   [31merror[39m  Expected indentation of 6 spaces but found 4    [2mindent[22m
+  [2m276:7[22m   [31merror[39m  Expected indentation of 8 spaces but found 6    [2mindent[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\scripts\test.js[24m
+   [2m1:24[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m2:26[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m8:9[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m10:22[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m15:15[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\src\actions\map.js[24m
+   [2m2:13[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m3:13[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m4:14[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m5:12[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m6:19[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m7:14[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m14:6[22m   [31merror[39m  Missing semicolon             [2msemi[22m
+  [2m20:6[22m   [31merror[39m  Missing semicolon             [2msemi[22m
+  [2m26:6[22m   [31merror[39m  Missing semicolon             [2msemi[22m
+  [2m32:6[22m   [31merror[39m  Missing semicolon             [2msemi[22m
+  [2m39:6[22m   [31merror[39m  Missing semicolon             [2msemi[22m
+  [2m45:6[22m   [31merror[39m  Missing semicolon             [2msemi[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\src\actions\mountains.js[24m
+   [2m2:19[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m3:22[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m4:28[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m5:20[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m6:19[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m7:12[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m13:6[22m   [31merror[39m  Missing semicolon             [2msemi[22m
+  [2m20:6[22m   [31merror[39m  Missing semicolon             [2msemi[22m
+  [2m27:6[22m   [31merror[39m  Missing semicolon             [2msemi[22m
+  [2m34:6[22m   [31merror[39m  Missing semicolon             [2msemi[22m
+  [2m40:6[22m   [31merror[39m  Missing semicolon             [2msemi[22m
+  [2m44:20[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m48:20[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m52:20[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m58:6[22m   [31merror[39m  Missing semicolon             [2msemi[22m
+  [2m64:38[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m64:54[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m77:6[22m   [31merror[39m  Missing semicolon             [2msemi[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\src\components\app\App.js[24m
+   [2m1:34[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m3:19[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m4:17[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m5:20[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m6:20[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m8:8[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m8:20[22m  [31merror[39m  Missing semicolon             [2msemi[22m
+  [2m15:70[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m15:92[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\src\components\app\Routes.js[24m
+   [2m1:34[22m  [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m2:25[22m  [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m2:38[22m  [31merror[39m  Missing semicolon                              [2msemi[22m
+   [2m3:57[22m  [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m5:23[22m  [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m5:48[22m  [31merror[39m  Missing semicolon                              [2msemi[22m
+   [2m7:28[22m  [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m8:22[22m  [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m9:20[22m  [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m32:17[22m  [31merror[39m  Expected indentation of 4 spaces but found 16  [2mindent[22m
+  [2m35:42[22m  [31merror[39m  Missing semicolon                              [2msemi[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\src\components\app\Routes.test.js[24m
+   [2m1:19[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m2:22[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m3:29[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m3:36[22m  [31merror[39m  Missing semicolon             [2msemi[22m
+   [2m4:26[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m4:39[22m  [31merror[39m  Missing semicolon             [2msemi[22m
+   [2m6:20[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m7:21[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m7:43[22m  [31merror[39m  Missing semicolon             [2msemi[22m
+  [2m11:4[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m12:40[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\src\components\app\Title.js[24m
+   [2m1:34[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m2:32[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m2:46[22m   [31merror[39m  Missing semicolon             [2msemi[22m
+  [2m19:83[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m30:101[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\src\components\app\Title.test.js[24m
+  [2m1:19[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m2:22[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m4:19[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m6:4[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m7:40[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\src\components\classification\Classification.js[24m
+   [2m1:34[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m2:25[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m3:32[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m4:15[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m6:37[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m8:21[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m9:26[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m10:24[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m10:46[22m  [31merror[39m  Missing semicolon             [2msemi[22m
+  [2m12:8[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m12:31[22m  [31merror[39m  Missing semicolon             [2msemi[22m
+  [2m30:47[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m36:50[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m41:51[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m41:81[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m41:84[22m  [31merror[39m  Missing semicolon             [2msemi[22m
+  [2m42:29[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m42:58[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m55:44[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m83:2[22m   [31merror[39m  Missing semicolon             [2msemi[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\src\components\common\FullHeight.js[24m
+   [2m1:34[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m2:15[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m15:33[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m23:36[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m40:46[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m47:50[22m  [31merror[39m  Missing semicolon             [2msemi[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\src\components\common\Loading.js[24m
+   [2m1:34[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m3:24[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m12:75[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\src\components\common\NetworkError.js[24m
+  [2m1:34[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\src\components\footer\Footer.js[24m
+  [2m1:34[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m3:8[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m3:23[22m  [31merror[39m  Missing semicolon             [2msemi[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\src\components\footer\Footer.test.js[24m
+  [2m1:19[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+  [2m2:22[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+  [2m3:20[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+  [2m5:4[22m   [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+  [2m6:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2  [2mindent[22m
+  [2m6:38[22m  [31merror[39m  Strings must use doublequote                  [2mquotes[22m
+  [2m7:3[22m   [31merror[39m  Expected indentation of 4 spaces but found 2  [2mindent[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\src\components\map\Map.js[24m
+   [2m1:34[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m2:25[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m2:38[22m  [31merror[39m  Missing semicolon             [2msemi[22m
+   [2m4:33[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m5:21[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m6:24[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m6:46[22m  [31merror[39m  Missing semicolon             [2msemi[22m
+   [2m8:8[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m13:36[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m29:35[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m31:51[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m47:2[22m   [31merror[39m  Missing semicolon             [2msemi[22m
+  [2m49:51[22m  [31merror[39m  Missing semicolon             [2msemi[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\src\components\map\Toolbar.js[24m
+   [2m1:25[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m1:38[22m  [31merror[39m  Missing semicolon             [2msemi[22m
+   [2m2:34[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m4:32[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m5:35[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m6:19[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m7:25[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m9:47[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m11:23[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m31:30[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m32:30[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m35:31[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m36:31[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m99:2[22m   [31merror[39m  Missing semicolon             [2msemi[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\src\components\mountain\Mountain.js[24m
+   [2m1:34[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m2:25[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m4:31[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m6:24[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m7:21[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m8:26[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m10:8[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m89:2[22m   [31merror[39m  Missing semicolon             [2msemi[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\src\components\search\Search.js[24m
+    [2m1:34[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+    [2m2:25[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+    [2m3:32[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+    [2m4:15[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+    [2m6:24[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+    [2m7:23[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+    [2m9:21[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m10:24[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m10:46[22m  [31merror[39m  Missing semicolon             [2msemi[22m
+   [2m11:26[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m13:8[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m13:23[22m  [31merror[39m  Missing semicolon             [2msemi[22m
+   [2m21:19[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m23:10[22m  [31merror[39m  Missing semicolon             [2msemi[22m
+   [2m59:47[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m65:50[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m70:51[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m70:81[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m70:84[22m  [31merror[39m  Missing semicolon             [2msemi[22m
+   [2m71:29[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m71:58[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m97:71[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m123:2[22m   [31merror[39m  Missing semicolon             [2msemi[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\src\index.js[24m
+   [2m1:19[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m2:24[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m3:26[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m3:39[22m  [31merror[39m  Missing semicolon             [2msemi[22m
+   [2m4:46[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m4:53[22m  [31merror[39m  Missing semicolon             [2msemi[22m
+   [2m5:29[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m5:42[22m  [31merror[39m  Missing semicolon             [2msemi[22m
+   [2m7:21[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m7:39[22m  [31merror[39m  Missing semicolon             [2msemi[22m
+   [2m8:17[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m10:8[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m12:9[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m13:9[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m15:8[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m23:29[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\src\map\MapDefaults.js[24m
+  [2m1:23[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\src\map\MapFactory.js[24m
+   [2m1:15[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m3:25[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m7:2[22m    [31merror[39m  Missing semicolon             [2msemi[22m
+  [2m15:2[22m    [31merror[39m  Missing semicolon             [2msemi[22m
+  [2m20:2[22m    [31merror[39m  Missing semicolon             [2msemi[22m
+  [2m30:38[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m38:26[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m38:78[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m38:136[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m39:19[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m40:19[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m47:2[22m    [31merror[39m  Missing semicolon             [2msemi[22m
+  [2m53:38[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m63:2[22m    [31merror[39m  Missing semicolon             [2msemi[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\src\map\MapLayers.js[24m
+   [2m1:15[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m3:27[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m4:21[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m7:5[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+   [2m8:42[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m12:17[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m15:5[22m   [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m16:42[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m20:17[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\src\reducers\index.js[24m
+  [2m1:33[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m2:23[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+  [2m3:17[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\src\reducers\map.js[24m
+   [2m1:28[22m  [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m2:24[22m  [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+   [2m7:9[22m   [31merror[39m  Expected indentation of 4 spaces but found 8   [2mindent[22m
+   [2m8:13[22m  [31merror[39m  Expected indentation of 8 spaces but found 12  [2mindent[22m
+  [2m10:9[22m   [31merror[39m  Expected indentation of 4 spaces but found 8   [2mindent[22m
+  [2m11:13[22m  [31merror[39m  Expected indentation of 8 spaces but found 12  [2mindent[22m
+  [2m12:13[22m  [31merror[39m  Expected indentation of 8 spaces but found 12  [2mindent[22m
+  [2m14:9[22m   [31merror[39m  Expected indentation of 4 spaces but found 8   [2mindent[22m
+  [2m15:13[22m  [31merror[39m  Expected indentation of 8 spaces but found 12  [2mindent[22m
+  [2m16:13[22m  [31merror[39m  Expected indentation of 8 spaces but found 12  [2mindent[22m
+  [2m18:9[22m   [31merror[39m  Expected indentation of 4 spaces but found 8   [2mindent[22m
+  [2m19:13[22m  [31merror[39m  Expected indentation of 8 spaces but found 12  [2mindent[22m
+  [2m20:13[22m  [31merror[39m  Expected indentation of 8 spaces but found 12  [2mindent[22m
+  [2m22:9[22m   [31merror[39m  Expected indentation of 4 spaces but found 8   [2mindent[22m
+  [2m23:13[22m  [31merror[39m  Expected indentation of 8 spaces but found 12  [2mindent[22m
+  [2m24:13[22m  [31merror[39m  Expected indentation of 8 spaces but found 12  [2mindent[22m
+  [2m26:9[22m   [31merror[39m  Expected indentation of 4 spaces but found 8   [2mindent[22m
+  [2m27:13[22m  [31merror[39m  Expected indentation of 8 spaces but found 12  [2mindent[22m
+  [2m29:9[22m   [31merror[39m  Expected indentation of 4 spaces but found 8   [2mindent[22m
+  [2m30:13[22m  [31merror[39m  Expected indentation of 8 spaces but found 12  [2mindent[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\src\reducers\map.test.js[24m
+  [2m3:4[22m  [31merror[39m  Strings must use doublequote  [2mquotes[22m
+
+[4mC:\Users\gmiller\GitHub\scotlandsmountains\Source\Web\Client\src\reducers\mountains.js[24m
+   [2m1:25[22m  [31merror[39m  Strings must use doublequote                   [2mquotes[22m
+  [2m13:9[22m   [31merror[39m  Expected indentation of 4 spaces but found 8   [2mindent[22m
+  [2m14:13[22m  [31merror[39m  Expected indentation of 8 spaces but found 12  [2mindent[22m
+  [2m19:9[22m   [31merror[39m  Expected indentation of 4 spaces but found 8   [2mindent[22m
+  [2m20:13[22m  [31merror[39m  Expected indentation of 8 spaces but found 12  [2mindent[22m
+  [2m24:9[22m   [31merror[39m  Expected indentation of 12 spaces but found 8  [2mindent[22m
+  [2m26:9[22m   [31merror[39m  Expected indentation of 4 spaces but found 8   [2mindent[22m
+  [2m27:13[22m  [31merror[39m  Expected indentation of 8 spaces but found 12  [2mindent[22m
+  [2m33:9[22m   [31merror[39m  Expected indentation of 4 spaces but found 8   [2mindent[22m
+  [2m34:13[22m  [31merror[39m  Expected indentation of 8 spaces but found 12  [2mindent[22m
+  [2m40:9[22m   [31merror[39m  Expected indentation of 4 spaces but found 8   [2mindent[22m
+  [2m41:13[22m  [31merror[39m  Expected indentation of 8 spaces but found 12  [2mindent[22m
+  [2m46:9[22m   [31merror[39m  Expected indentation of 4 spaces but found 8   [2mindent[22m
+  [2m47:13[22m  [31merror[39m  Expected indentation of 8 spaces but found 12  [2mindent[22m
+  [2m49:9[22m   [31merror[39m  Expected indentation of 4 spaces but found 8   [2mindent[22m
+  [2m50:13[22m  [31merror[39m  Expected indentation of 8 spaces but found 12  [2mindent[22m
+
+[31m[1m✖ 938 problems (938 errors, 0 warnings)
+[22m[39m

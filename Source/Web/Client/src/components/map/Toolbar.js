@@ -1,14 +1,14 @@
-import { connect } from 'react-redux'
-import React, { Component } from 'react';
+import { connect } from "react-redux";
+import React, { Component } from "react";
 
-import MdAddCircleOutline from 'react-icons/md/add-circle-outline';
-import MdRemoveCircleOutline from 'react-icons/md/remove-circle-outline';
-import MdMap from 'react-icons/lib/md/map';
-import MdSatellite from 'react-icons/lib/md/satellite';
+import MdAddCircleOutline from "react-icons/md/add-circle-outline";
+import MdRemoveCircleOutline from "react-icons/md/remove-circle-outline";
+import MdMap from "react-icons/lib/md/map";
+import MdSatellite from "react-icons/lib/md/satellite";
 
-import { zoomIn, zoomOut, setBaseLayer } from '../../actions/map';
+import { zoomIn, zoomOut, setBaseLayer } from "../../actions/map";
 
-import MapLayers from '../../map/MapLayers';
+import MapLayers from "../../map/MapLayers";
 
 class ToolbarComponent extends Component {
 
@@ -28,12 +28,12 @@ class ToolbarComponent extends Component {
 
     componentWillReceiveProps(nextProps) {
         if (!this.props.map && nextProps.map) {
-            nextProps.map.on('zoomend', this.handleZoomEnd);
-            nextProps.map.on('layeradd', this.handleLayerAdd);
+            nextProps.map.on("zoomend", this.handleZoomEnd);
+            nextProps.map.on("layeradd", this.handleLayerAdd);
         }
         if (this.props.map && !nextProps.map) {
-            nextProps.map.off('zoomend', this.handleZoomEnd);
-            nextProps.map.off('layeradd', this.handleLayerAdd);
+            nextProps.map.off("zoomend", this.handleZoomEnd);
+            nextProps.map.off("layeradd", this.handleLayerAdd);
         }
     }
 
@@ -96,7 +96,7 @@ class ToolbarComponent extends Component {
 
 const mapStateToProps = (state) => {
     return {map: state.map};
-}
+};
 
 const Toolbar = connect(mapStateToProps)(ToolbarComponent);
 

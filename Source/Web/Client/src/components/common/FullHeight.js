@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import $ from 'jquery';
+import React, { Component } from "react";
+import $ from "jquery";
 
 class FullHeight extends Component {
 
@@ -12,7 +12,7 @@ class FullHeight extends Component {
     
     componentDidMount() {
         this.handleResize();
-        window.addEventListener('resize', this.handleResize);
+        window.addEventListener("resize", this.handleResize);
     }
     
     componentDidUpdate() {
@@ -20,7 +20,7 @@ class FullHeight extends Component {
     }
     
     componentWillUnmount() {
-        window.removeEventListener('resize', this.handleResize);
+        window.removeEventListener("resize", this.handleResize);
     }
 
     handleResize() {
@@ -37,14 +37,14 @@ class FullHeight extends Component {
         var height = windowHeight - this.props.allowance;
         height = height < minimum ? minimum : height;
 
-        this.element.style.height = height + 'px';
+        this.element.style.height = height + "px";
     }
 
     render() {
 
         return (
             <div
-                ref={(div) => {this.element = div}}
+                ref={(div) => {this.element = div;}}
                 className={this.props.className}
                 style={this.props.style}>
                 {this.props.children}

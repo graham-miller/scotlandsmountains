@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { browserHistory } from 'react-router'
+import React, { Component } from "react";
+import { browserHistory } from "react-router";
 
 class Title extends Component {
 
@@ -16,7 +16,7 @@ class Title extends Component {
     render() {
         return (
             <nav className="navbar navbar-fixed-top navbar-dark bg-inverse bg-faded">
-                <a className="navbar-brand" href="/" onClick={(e) => this.goToUrl('/', e)}>Scotland&apos;s Mountains</a>
+                <a className="navbar-brand" href="/" onClick={(e) => this.goToUrl("/", e)}>Scotland&apos;s Mountains</a>
                 <div className="pull-xs-right">
                     <button
                         className="navbar-toggler hidden-sm-up" type="button"
@@ -27,7 +27,7 @@ class Title extends Component {
                     <div className="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
                         <ul className="nav navbar-nav">
                             <li className="nav-item">
-                                <a className="nav-link" href="/search" onClick={(e) => this.goToUrl('/search', e)}>Search</a>
+                                <a className="nav-link" href="/search" onClick={(e) => this.goToUrl("/search", e)}>Search</a>
                             </li>
                         </ul>
                     </div>

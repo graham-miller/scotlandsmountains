@@ -12,7 +12,10 @@
   "scripts": {
     "start": "node Client/scripts/start.js",
     "build": "node Client/scripts/build.js",
-    "test": "node Client/scripts/test.js --env=jsdom"
+    "test": "node Client/scripts/test.js --env=jsdom",
+    "test:lint": "node node_modules/eslint/bin/eslint . --ext .js",
+    "test:lint:output": "node node_modules/eslint/bin/eslint . --ext .js --output-file eslint_result.txt",
+    "test:lint:fix": "node node_modules/eslint/bin/eslint . --ext .js --fix"
   },
   "devDependencies": {
     "autoprefixer": "6.5.0",
@@ -95,9 +98,42 @@
     ]
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "root": true,
+    "env": {
+      "browser": true,
+      "es6": true
+    },
+    "extends": "react-app",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "experimentalObjectRestSpread": true,
+        "jsx": true
+      },
+      "sourceType": "module"
+    },
+    "plugins": [
+      "react"
+    ],
+    "rules": {m
+      "indent": [
+        "error",
+        4
+      ],
+      "linebreak-style": [
+        "error",
+        "windows"
+      ],
+      "quotes": [
+        "error",
+        "double"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ]
+    }
   },
   "homepage": "https://scotlandsmountains.github.io",
   "proxy": "http://localhost:54944/",
-  "-vs-binding":{"ProjectOpened":["start","test"]}
+  "-vs-binding": { "ProjectOpened": [ "start", "test" ] }
 }

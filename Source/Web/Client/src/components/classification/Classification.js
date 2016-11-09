@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { browserHistory } from 'react-router';
-import $ from 'jquery';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { browserHistory } from "react-router";
+import $ from "jquery";
 
-import { fetchClassification } from '../../actions/mountains';
+import { fetchClassification } from "../../actions/mountains";
 
-import Loading from '../common/Loading';
-import NetworkError from '../common/NetworkError';
-import FullHeight from '../common/FullHeight'
+import Loading from "../common/Loading";
+import NetworkError from "../common/NetworkError";
+import FullHeight from "../common/FullHeight";
 
-import './Classification.scss'
+import "./Classification.scss";
 
 class ClassificationComponent extends Component {
 
@@ -27,19 +27,19 @@ class ClassificationComponent extends Component {
 
     onMouseOver(mountain) {
         if (mountain.marker) {
-            $(mountain.marker._icon).addClass('highlighted');
+            $(mountain.marker._icon).addClass("highlighted");
         }
     }
 
     onMouseOut(mountain) {
         if (mountain.marker) {
-            $(mountain.marker._icon).removeClass('highlighted');
+            $(mountain.marker._icon).removeClass("highlighted");
         }
     }
 
     onClick(mountain) {
-        var name = mountain.name.replace(/\s/gmi, '_').replace(/[^a-z0-9_]/gmi, '')
-        browserHistory.push('/mountain/' + mountain.id + '/' + name);
+        var name = mountain.name.replace(/\s/gmi, "_").replace(/[^a-z0-9_]/gmi, "");
+        browserHistory.push("/mountain/" + mountain.id + "/" + name);
     }
 
     render() {
@@ -52,7 +52,7 @@ class ClassificationComponent extends Component {
 
         return (
             <div>
-                <h2 style={{textTransform: 'capitalize'}}>{this.props.routeParams.table}</h2>
+                <h2 style={{textTransform: "capitalize"}}>{this.props.routeParams.table}</h2>
                 <FullHeight className='scrollable' allowance='128'>
                     <ol className='classification-table'>
                         {
@@ -80,7 +80,7 @@ const mapStateToProps = (state) => {
         mountains: state.mountains.items,
         status: state.mountains.status
     };
-}
+};
 
 const Classification = connect(mapStateToProps)(ClassificationComponent);
 
