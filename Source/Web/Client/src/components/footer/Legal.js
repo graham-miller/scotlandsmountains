@@ -27,8 +27,9 @@ class Legal extends Component {
             },
         ];
 
+        this.modalId = "LegalModal";
+
         this.state = {
-            modalId: "LegalModal",
             modalTitle: "",
             modalBody: ""
         };
@@ -38,8 +39,10 @@ class Legal extends Component {
 
     displayLegal(event, index) {
 
-        console.log(this.links[index]);
-        
+        this.setState({
+            modalTitle: this.links[index].title
+        });
+
         $.get(event.target.href, (data) => {
             this.setState({
                 modalTitle: this.links[index].title,
@@ -50,13 +53,22 @@ class Legal extends Component {
         event.preventDefault();
     }
 
+    componentDidMount() {
+        if (this.state.modalTitle !== "") {
+            $("#" + this.modalId).modal("show");
+        }
+    }
+
     render() {
         return (
             <div>
-                <Modal />
-                <p>
-                    The small print:
-                </p>
+                <Modal
+                    id={this.modalId}
+                    title={this.state.modalTitle}
+                    body={this.state.modalBody}/>
+                    <p>
+                        The small print:
+                    </p>
                 <ul>
                 {
                     this.links.map((link, index) => {
