@@ -5,4 +5,15 @@
     padding-top: 15px;
     background-color: $gray;
     color: $gray-lighter;
+
+    a:link, a:visited {
+        color: $gray-lighter;
+        border-bottom: 1px dotted $gray-lighter;
+        text-decoration: none;
+    }
+    a:hover, a:active {
+        color: $gray-lighter;
+        border-bottom: 1px solid $gray-lighter;
+        text-decoration: none;
+    }
 }
