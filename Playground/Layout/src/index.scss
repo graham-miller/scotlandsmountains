@@ -1,11 +1,113 @@
 @import 'color';
 
-* { margin: 0; padding: 0; }
+$padding: 10px;
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+.screen-height {
+  height: 100%;
+}
 
 html, body {
-  height: 101%;
-  min-height: 101%;
-  background-color: $color-dark;
-  color: #fff;
+  @extend .screen-height;
+  background-color: $color-lightest;
   font-family: sans-serif;
+  font-size: 16px;
 }
+
+#app-component {
+  @extend .screen-height;
+}
+
+header {
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $color-darkest;
+  color: $color-lightest;
+
+  h1 {
+    font-size: 20px;
+    padding: $padding;
+  }
+
+  nav {
+    background-color: $color-darker;
+    color: $color-lightest;  
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+
+    .nav-item {
+      flex-grow: 0;
+      flex-shrink: 1;
+      flex-basis: auto;
+      padding: $padding;
+    }
+  }
+}
+
+main {
+  @extend .screen-height;
+  padding-top: 81px;
+  background-color: $color-lightest;
+  color: $color-darkest;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: stretch;  
+
+  #map-container, #content-container  {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 300px;
+    padding: $padding;
+  }
+    
+  #map-container {
+    display: flex;
+    flex-flow: column;
+    @extend .screen-height;
+
+    #page-actions {
+      padding-bottom: $padding;
+    }
+
+    #map {
+      background-color: $color-lighter;
+      flex: 1;
+    }
+  }
+
+  footer {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%;
+    background-color: $color-darkest;
+    padding-bottom: $padding * 5;
+    font-size: 0.8em;
+    
+    .footer-section {
+      padding: $padding;    
+      color: $color-light;
+    }
+
+    .footer-section.legal {
+      background-color: $color-darker;
+      color: $color-lighter;
+    }
+  }
+}
+
+
