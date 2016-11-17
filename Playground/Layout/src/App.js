@@ -1,6 +1,40 @@
 import React, { Component } from 'react';
+import $ from "jquery";
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.onWindowResize = this.onWindowResize.bind(this);
+    this.resizeMap = this.resizeMap.bind(this);
+  }
+
+  onWindowResize () {
+
+    if(this.onWindowResizeDelay) {
+      clearTimeout(this.onWindowResizeDelay);
+    }
+
+    this.onWindowResizeDelay = setTimeout(this.resizeMap, 100);
+  }
+
+  resizeMap() {
+    $("#map").height("auto");
+    $("#map").width("auto");
+    $("#map").height($("#map-wrapper").height());
+    $("#map").width($("#map-wrapper").width());
+  }
+
+  componentDidMount() {
+    this.resizeMap();
+    $(window).on("resize", this.onWindowResize);
+  }
+
+  componentWillUnmunt() {
+    $(window).on("resize", this.onWindowResize);
+  }
+
   render() {
     return (
       <div id="app-component">
@@ -22,7 +56,9 @@ class App extends Component {
         <main>
           <div id="map-container">
             <div id="page-actions">Heading<br/>Sub-heading</div>
-            <div id="map">Map</div>
+            <div id="map-wrapper">
+              <div id="map">Map</div>
+            </div>
           </div>
           <div id="content-container">
             Content start

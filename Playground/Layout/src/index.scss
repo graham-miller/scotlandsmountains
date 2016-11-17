@@ -84,9 +84,13 @@ main {
       padding-bottom: $padding;
     }
 
-    #map {
-      background-color: $color-lighter;
+    #map-wrapper {
       flex: 1;
+
+      #map {
+        background-color: $color-lighter;
+        flex: 1;
+      }
     }
   }
 
