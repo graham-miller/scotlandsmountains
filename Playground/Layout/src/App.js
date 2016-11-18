@@ -20,14 +20,10 @@ class App extends Component {
   }
 
   resizeMap() {
-    $("#map").height("auto");
-    $("#map").width("auto");
-    $("#map").height($("#map-wrapper").height());
-    $("#map").width($("#map-wrapper").width());
+    // TODO
   }
 
   componentDidMount() {
-    this.resizeMap();
     $(window).on("resize", this.onWindowResize);
   }
 
@@ -54,15 +50,15 @@ class App extends Component {
           </nav>
         </header>
         <main>
-          <div id="map-container">
-            <div id="page-actions">Heading<br/>Sub-heading</div>
-            <div id="map-wrapper">
+          <div id="map-section">
+            <div id="page-actions">Page Actions</div>
+            <div id="map-container">
               <div id="map">Map</div>
             </div>
           </div>
-          <div id="content-container">
+          <div id="content-section">
             Content start
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            <br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />&middot;<br />
             Content end
           </div>
           <footer>

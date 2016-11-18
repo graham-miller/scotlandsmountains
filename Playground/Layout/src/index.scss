@@ -1,27 +1,45 @@
-@import 'color';
+$color-dark: #778899;
+$color-darker: darken($color-dark, 20%);
+$color-darkest: darken($color-darker, 20%);
+
+$color-lightest: #e9ecee;
+$color-lighter: darken($color-lightest, 20%);
+$color-light: darken($color-lighter, 20%);
 
 $padding: 10px;
+$font-size: 16px;
+$brand-font-size: 20px;
+$line-height: 1.15;
 
-* {
+$header-height: (4 * $padding) + ($line-height * $brand-font-size) + ($line-height * $font-size);
+$nav-bar-height: (2 * $padding) + ($line-height * $font-size);
+$page-actions-height: 50px;
+
+$small-screen-breakpoint: 765px;
+
+$map-section-width: 50%;
+$content-section-width: 50%;
+
+*, h1 {
   margin: 0;
   padding: 0;
   border: none;
   box-sizing: border-box;
 }
 
-.screen-height {
+.full-height {
   height: 100%;
 }
 
 html, body {
-  @extend .screen-height;
+  @extend .full-height;
   background-color: $color-lightest;
   font-family: sans-serif;
-  font-size: 16px;
+  font-size: $font-size;
 }
 
-#app-component {
-  @extend .screen-height;
+#root, #app-component {
+  @extend .full-height;
 }
 
 header {
@@ -31,87 +49,88 @@ header {
   width: 100%;
   background-color: $color-darkest;
   color: $color-lightest;
+  z-index: 2;
+  line-height: $line-height;
 
   h1 {
-    font-size: 20px;
+    font-size: $brand-font-size;
     padding: $padding;
   }
 
   nav {
     background-color: $color-darker;
-    color: $color-lightest;  
-    display:flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
+    color: $color-lightest;
+    height: $nav-bar-height;
+    overflow-y: hidden; 
 
     .nav-item {
-      flex-grow: 0;
-      flex-shrink: 1;
-      flex-basis: auto;
+      display: inline-block;
       padding: $padding;
     }
   }
 }
 
 main {
-  @extend .screen-height;
-  padding-top: 81px;
+  @extend .full-height;
+  padding-top: $header-height;
   background-color: $color-lightest;
   color: $color-darkest;
-  display:flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: stretch;
-  align-items: stretch;  
+  z-index: 1;
 
-  #map-container, #content-container  {
-    flex-grow: 1;
-    flex-shrink: 0;
-    flex-basis: 300px;
-    padding: $padding;
-  }
-    
-  #map-container {
-    display: flex;
-    flex-flow: column;
-    @extend .screen-height;
+  #map-section { width: $map-section-width; }
+  #content-section { width: $content-section-width; }
 
-    #page-actions {
-      padding-bottom: $padding;
+  #map-section {
+    @extend .full-height;
+    float: left;
+    position: relative;
+    @media (max-width: $small-screen-breakpoint) {
+      width: 100%;
     }
 
-    #map-wrapper {
-      flex: 1;
+    #page-actions {
+      position: absolute;
+      width: 100%;
+      height: $page-actions-height;
+      padding: $padding;
+    }
+
+    #map-container {
+      @extend .full-height;
+      padding: $padding;
+      padding-top: $page-actions-height;
 
       #map {
-        background-color: $color-lighter;
-        flex: 1;
+        @extend .full-height;
+        background-color: $color-light;
       }
     }
   }
 
-  footer {
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: 100%;
-    background-color: $color-darkest;
-    padding-bottom: $padding * 5;
-    font-size: 0.8em;
+  #content-section {
+    float: right;
+    padding: $padding;
     
-    .footer-section {
-      padding: $padding;    
-      color: $color-light;
-    }
-
-    .footer-section.legal {
-      background-color: $color-darker;
-      color: $color-lighter;
+    @media (max-width: $small-screen-breakpoint) {
+      width: 100%;
+      padding-top: 0;
     }
   }
 }
 
+footer {
+  clear: both;
+  background-color: $color-darkest;
+  padding-bottom: $padding * 5;
+  font-size: 0.8em;
+  
+  .footer-section {
+    padding: $padding;    
+    color: $color-light;
+  }
 
+  .footer-section.legal {
+    background-color: $color-darker;
+    color: $color-lighter;
+  }
+}
