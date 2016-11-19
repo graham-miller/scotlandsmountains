@@ -1,24 +1,37 @@
 import React, { Component } from "react";
 
 import Title from "./Title";
+import Nav from "./Nav";
 import Map from "../map/Map";
-import Routes from "./Routes";
-import Footer from "../footer/Footer";
+import TitleRoutes from "./TitleRoutes";
+import ContentRoutes from "./ContentRoutes";
+import Footer from "./Footer";
 
 import "./App.scss";
 
 class App extends Component {
+
     render() {
         return (
-            <div id='app'>
-                <Title />
-                <div className='container-fluid' style={{paddingTop: "70px", marginBottom: "40px"}}>
-                    <div className='row'>
-                        <div className='col-md-4'><Routes /></div>
-                        <div className='col-md-8'><Map /></div>
+            <div id="app-component">
+                <header>
+                    <Title />
+                    <Nav />
+                </header>
+                <main>
+                    <div id="map-section">
+                        <div id="page-title">
+                            {/*<TitleRoutes />*/}
+                        </div>
+                        <div id="map-container">
+                            <Map />
+                        </div>
                     </div>
-                </div>
-                <Footer />
+                    <div id="content-section">
+                        <ContentRoutes />
+                    </div>
+                    <Footer />
+                </main>
             </div>
         );
     }
