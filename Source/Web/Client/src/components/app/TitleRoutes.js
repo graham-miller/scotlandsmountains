@@ -3,7 +3,7 @@ import { Router, Redirect, Route, browserHistory } from "react-router";
 
 import { default as MountainsTitle } from "../mountains/Title";
 import { default as MountainTitle } from "../mountain/Title";
-import Search from "../search/Search";
+import { default as SearchTitle } from "../search/Title";
 
 class TitleRoutes extends Component {
 
@@ -14,7 +14,7 @@ class TitleRoutes extends Component {
                 <Redirect from="/mountains" to="/mountains/munros" />
                 <Route path="/mountains/:table" component={MountainsTitle} />
                 <Route path="/mountain/:id(/:name)" component={MountainTitle} />
-                <Route path="/search" component={Search} />
+                <Route path="/search" component={SearchTitle} />
             </Router>
         );
     }

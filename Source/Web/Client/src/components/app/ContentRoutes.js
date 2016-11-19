@@ -6,7 +6,7 @@ import { clear } from "../../actions/mountains";
 
 import Table from "../mountains/Table";
 import Mountain from "../mountain/Mountain";
-import Search from "../search/Search";
+import Results from "../search/Results";
 
 class ContentRoutesComponent extends Component {
 
@@ -27,7 +27,7 @@ class ContentRoutesComponent extends Component {
                 <Redirect from='/mountains' to='/mountains/munros' />
                 <Route path='/mountains/:table' component={Table} onLeave={this.resetMountains} />
                 <Route path='/mountain/:id(/:name)' component={Mountain} onLeave={this.resetMountains} />
-                <Route path='/search' component={Search} onLeave={this.resetMountains} />
+                <Route path='/search' component={Results} onLeave={this.resetMountains} />
             </Router>
         );
     }

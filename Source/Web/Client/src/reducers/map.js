@@ -16,7 +16,9 @@ const map = (mapObject = null, action) => {
         break;
 
     case MapActions.Reset:
-        mapObject.reset();
+        if (mapObject) {
+            mapObject.reset();
+        }
         break;
 
     case MapActions.SetBaseLayer:

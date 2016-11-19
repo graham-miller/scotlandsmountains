@@ -1,18 +1,8 @@
-﻿ol.search-results {
-    margin: 0;
-    padding: 0;
+﻿@import "../../config.scss";
 
-    li {
-        padding: 4px 0 4px 0;
-        cursor: pointer;
-    }
-
-    /*li:hover {
-        background-color: $table-bg-hover;
-    }*/
-
-    li span.height {
-        font-size: 80%;
-        display: block;
-    }
+input[type=search].mountains {
+    padding: $padding/2;
+    border: 1px solid $color-light;
+    border-radius: $padding/2;
+    width: 100%;
 }

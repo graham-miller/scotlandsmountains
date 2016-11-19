@@ -1,3 +1,30 @@
-.mountain dl dt:after {
-  content: ": ";
+@import "../../config.scss";
+
+.mountain-details {
+
+    dl {
+        padding: $padding/2;
+    }
+
+    dt {
+        float: left;
+        clear: left;
+        width: 30%;
+        text-align: left;
+        color: $color-darker;
+        font-weight: bold;
+    }
+
+    dt:after {
+        content: ":";
+    }
+
+    dd {
+        margin-left: 35%;
+        padding-bottom: $padding/2;
+    }
+
+    ul {
+        list-style-type: none;
+    }
 }

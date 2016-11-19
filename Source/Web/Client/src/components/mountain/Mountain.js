@@ -25,7 +25,7 @@ class MountainComponent extends Component {
         let mountain = this.props.mountain;
 
         return (
-            <div>
+            <div className="mountain-details">
                 <dl>
                     <dt>Height</dt>
                     <dd>{mountain.height}</dd>
@@ -47,11 +47,11 @@ class MountainComponent extends Component {
                     <dd>{mountain.country.name}</dd>
                 </dl>
                 <dl>
-                    <dt>Summit feature</dt>
+                    <dt>Summit</dt>
                     <dd>{mountain.feature}</dd>
                 </dl>
                 <dl>
-                    <dt>Summit observations</dt>
+                    <dt>Observations</dt>
                     <dd>{mountain.observations}</dd>
                 </dl>
                 <dl>
