@@ -26,7 +26,6 @@ class MountainComponent extends Component {
 
         return (
             <div>
-                <h2>{mountain.name}</h2>
                 <dl>
                     <dt>Height</dt>
                     <dd>{mountain.height}</dd>

@@ -4,7 +4,7 @@ import { Router, Redirect, Route, browserHistory } from "react-router";
 
 import { clear } from "../../actions/mountains";
 
-import Classification from "../classification/Classification";
+import Table from "../mountains/Table";
 import Mountain from "../mountain/Mountain";
 import Search from "../search/Search";
 
@@ -22,10 +22,10 @@ class ContentRoutesComponent extends Component {
 
     render() {
         return (
-            <Router history={browserHistory}>
+            <Router name="content" history={browserHistory}>
                 <Redirect from='/' to='/mountains' />
                 <Redirect from='/mountains' to='/mountains/munros' />
-                <Route path='/mountains/:table' component={Classification} onLeave={this.resetMountains} />
+                <Route path='/mountains/:table' component={Table} onLeave={this.resetMountains} />
                 <Route path='/mountain/:id(/:name)' component={Mountain} onLeave={this.resetMountains} />
                 <Route path='/search' component={Search} onLeave={this.resetMountains} />
             </Router>

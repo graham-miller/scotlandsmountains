@@ -8,9 +8,9 @@ import { fetchClassification } from "../../actions/mountains";
 import Loading from "../common/Loading";
 import NetworkError from "../common/NetworkError";
 
-import "./Classification.scss";
+import "./Table.scss";
 
-class ClassificationComponent extends Component {
+class TableComponent extends Component {
 
     constructor(props) {
         super(props);
@@ -51,22 +51,35 @@ class ClassificationComponent extends Component {
 
         return (
             <div>
-                <h2 style={{textTransform: "capitalize"}}>{this.props.routeParams.table}</h2>
-                <ol className='classification-table'>
-                    {
-                        this.props.mountains.map((mountain, index) =>
-                            <li
-                                key={mountain.id}
-                                onMouseOver={() => this.onMouseOver(mountain)}
-                                onMouseOut={() => this.onMouseOut(mountain)}
-                                onClick={() => this.onClick(mountain)}>
-                                <span className='number'>{index+1}</span>
-                                <span className='name'>{mountain.name}</span>
-                                <span className='height'>{mountain.height}</span>
-                            </li>
-                        )
-                    }                
-                </ol>
+                <table style={{width:"100%"}}>
+                    <thead>
+                        <tr>
+                            <th className="right">Number</th>
+                            <th>
+                                Name
+                                <span className="small indented">height</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            this.props.mountains.map((mountain, index) =>
+                                <tr
+                                    key={mountain.id}
+                                    onMouseOver={() => this.onMouseOver(mountain)}
+                                    onMouseOut={() => this.onMouseOut(mountain)}
+                                    onClick={() => this.onClick(mountain)}
+                                    style={{cursor:"pointer"}}>
+                                    <td className="right">{index+1}</td>
+                                    <td>
+                                        {mountain.name}
+                                        <div className="small indented">{mountain.height}</div>
+                                    </td>
+                                </tr>
+                            )
+                        }
+                    </tbody>
+                </table>
             </div>
         );
     }
@@ -79,6 +92,6 @@ const mapStateToProps = (state) => {
     };
 };
 
-const Classification = connect(mapStateToProps)(ClassificationComponent);
+const Table = connect(mapStateToProps)(TableComponent);
 
-export default Classification;
+export default Table;

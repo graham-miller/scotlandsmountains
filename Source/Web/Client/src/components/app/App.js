@@ -21,7 +21,7 @@ class App extends Component {
                 <main>
                     <div id="map-section">
                         <div id="page-title">
-                            {/*<TitleRoutes />*/}
+                            <TitleRoutes />
                         </div>
                         <div id="map-container">
                             <Map />

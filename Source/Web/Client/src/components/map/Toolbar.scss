@@ -4,16 +4,32 @@
     position: absolute;
     top: $page-title-height + $padding;
     left: $padding * 2;
+    border-top: 1px solid $color-light;
+    border-left: 1px solid $color-light;
+    border-bottom: 1px solid $color-light;
     z-index: 500;
+    border-radius: $padding/2;
+    font-size:1.2em;
+
+    button:first-child{
+        border-top-left-radius: $padding/2;
+        border-bottom-left-radius: $padding/2;
+    }
+
+    button:last-child {
+        border-top-right-radius: $padding/2;
+        border-bottom-right-radius: $padding/2;
+    }
 
     button {
         padding: $padding;
         background-color: #fff;
-        border: 1px solid $color-light;
         cursor: pointer;
+        border-right: 1px solid $color-light;
     }
 
     button:disabled {
         cursor: not-allowed;
+        background-color: rgba(#aaa, 0.5)
     }
 }

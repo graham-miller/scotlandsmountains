@@ -21,3 +21,47 @@ html, body {
 p {
   padding-bottom: 0.5em;
 }
+
+.small {
+    font-size: 0.8em;
+}
+
+.left {
+    text-align: left;
+}
+
+.centre {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.indented {
+    padding-left: $padding;
+}
+
+table {
+    border-collapse: collapse;
+
+    thead tr {
+        border-bottom: 2px solid $color-light;
+    }
+
+    tbody tr {
+        border-bottom: 1px solid $color-light;
+    }
+
+    tbody tr:nth-child(odd) {
+        background-color: $color-lighter;
+    }
+
+    th, td {
+        padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+
+    th {
+        text-align: left;
+    }
+}
