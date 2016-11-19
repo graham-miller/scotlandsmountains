@@ -28,38 +28,38 @@ class MountainComponent extends Component {
             <div className="mountain-details">
                 <dl>
                     <dt>Height</dt>
-                    <dd>{mountain.height}</dd>
+                    <dd>&nbsp;{mountain.height}</dd>
                 </dl>
                 <dl>
                     <dt>Prominence</dt>
-                    <dd>{mountain.prominence}</dd>
+                    <dd>&nbsp;{mountain.prominence}</dd>
                 </dl>
                 <dl>
                     <dt>Grid ref.</dt>
-                    <dd title={mountain.tenFigureGridRef} >{mountain.sixFigureGridRef}</dd>
+                    <dd title={mountain.tenFigureGridRef}>&nbsp;{mountain.sixFigureGridRef}</dd>
                 </dl>
                 <dl>
                     <dt>Section</dt>
-                    <dd>{mountain.section.name}</dd>
+                    <dd>&nbsp;{mountain.section.name}</dd>
                 </dl>
                 <dl>
                     <dt>Country</dt>
-                    <dd>{mountain.country.name}</dd>
+                    <dd>&nbsp;{mountain.country.name}</dd>
                 </dl>
                 <dl>
                     <dt>Summit</dt>
-                    <dd>{mountain.feature}</dd>
+                    <dd>&nbsp;{mountain.feature}</dd>
                 </dl>
                 <dl>
                     <dt>Observations</dt>
-                    <dd>{mountain.observations}</dd>
+                    <dd>&nbsp;{mountain.observations}</dd>
                 </dl>
                 <dl>
                     <dt>Classifications</dt>
                     <dd>
                         <ul>{
                             mountain.classifications.map((classification) =>
-                                <li key={classification.id}>{classification.name}</li>
+                                <li key={classification.id}>&nbsp;{classification.name}</li>
                         )}</ul>
                     </dd>
                 </dl>
@@ -68,7 +68,7 @@ class MountainComponent extends Component {
                     <dd>
                         <ul>{
                             mountain.maps.map((map) =>
-                                <li key={map.id}>{map.name}</li>
+                                <li key={map.id}>&nbsp;{map.name}</li>
                         )}</ul>
                     </dd>
                 </dl>
