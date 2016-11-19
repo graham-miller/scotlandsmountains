@@ -7,7 +7,6 @@ import { fetchClassification } from "../../actions/mountains";
 
 import Loading from "../common/Loading";
 import NetworkError from "../common/NetworkError";
-import FullHeight from "../common/FullHeight";
 
 import "./Classification.scss";
 
@@ -53,23 +52,21 @@ class ClassificationComponent extends Component {
         return (
             <div>
                 <h2 style={{textTransform: "capitalize"}}>{this.props.routeParams.table}</h2>
-                <FullHeight className='scrollable' allowance='128'>
-                    <ol className='classification-table'>
-                        {
-                            this.props.mountains.map((mountain, index) =>
-                                <li
-                                    key={mountain.id}
-                                    onMouseOver={() => this.onMouseOver(mountain)}
-                                    onMouseOut={() => this.onMouseOut(mountain)}
-                                    onClick={() => this.onClick(mountain)}>
-                                    <span className='number'>{index+1}</span>
-                                    <span className='name'>{mountain.name}</span>
-                                    <span className='height'>{mountain.height}</span>
-                                </li>
-                            )
-                        }                
-                    </ol>
-                </FullHeight>
+                <ol className='classification-table'>
+                    {
+                        this.props.mountains.map((mountain, index) =>
+                            <li
+                                key={mountain.id}
+                                onMouseOver={() => this.onMouseOver(mountain)}
+                                onMouseOut={() => this.onMouseOut(mountain)}
+                                onClick={() => this.onClick(mountain)}>
+                                <span className='number'>{index+1}</span>
+                                <span className='name'>{mountain.name}</span>
+                                <span className='height'>{mountain.height}</span>
+                            </li>
+                        )
+                    }                
+                </ol>
             </div>
         );
     }

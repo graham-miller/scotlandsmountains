@@ -1,6 +1,4 @@
-﻿@import '../../index.scss';
-
-ol.search-results {
+﻿ol.search-results {
     margin: 0;
     padding: 0;
 
@@ -9,9 +7,9 @@ ol.search-results {
         cursor: pointer;
     }
 
-    li:hover {
+    /*li:hover {
         background-color: $table-bg-hover;
-    }
+    }*/
 
     li span.height {
         font-size: 80%;

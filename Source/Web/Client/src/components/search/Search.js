@@ -7,7 +7,6 @@ import { search } from "../../actions/mountains";
 import { reset } from "../../actions/map";
 
 import Loading from "../common/Loading";
-import FullHeight from "../common/FullHeight";
 import NetworkError from "../common/NetworkError";
 
 import "./Search.scss";
@@ -94,22 +93,20 @@ class SearchComponent extends Component {
         return (
             <div>
                 {searchInput}
-                <FullHeight className='scrollable' style={{marginTop: "8px"}} allowance='174'>
-                    <ol className='search-results'>
-                        {
-                            this.props.mountains.map((mountain) =>
-                                <li
-                                    key={mountain.id}
-                                    onMouseOver={() => this.onMouseOver(mountain)}
-                                    onMouseOut={() => this.onMouseOut(mountain)}
-                                    onClick={() => this.onClick(mountain)}>
-                                    <span className='name'>{mountain.name}</span>
-                                    <span className='height'>{mountain.height}</span>
-                                </li>
-                            )
-                        }                
-                    </ol>
-                </FullHeight>
+                <ol className='search-results'>
+                    {
+                        this.props.mountains.map((mountain) =>
+                            <li
+                                key={mountain.id}
+                                onMouseOver={() => this.onMouseOver(mountain)}
+                                onMouseOut={() => this.onMouseOut(mountain)}
+                                onClick={() => this.onClick(mountain)}>
+                                <span className='name'>{mountain.name}</span>
+                                <span className='height'>{mountain.height}</span>
+                            </li>
+                        )
+                    }                
+                </ol>
             </div>
         );
     }

@@ -1,0 +1,19 @@
+@import "../../config";
+
+#map-toolbar {
+    position: absolute;
+    top: $page-title-height + $padding;
+    left: $padding * 2;
+    z-index: 500;
+
+    button {
+        padding: $padding;
+        background-color: #fff;
+        border: 1px solid $color-light;
+        cursor: pointer;
+    }
+
+    button:disabled {
+        cursor: not-allowed;
+    }
+}

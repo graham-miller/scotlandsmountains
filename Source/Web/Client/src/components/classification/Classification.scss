@@ -1,6 +1,4 @@
-﻿@import '../../index.scss';
-
-ol.classification-table {
+﻿ol.classification-table {
     margin: 0;
     padding: 0;
 
@@ -9,9 +7,9 @@ ol.classification-table {
         cursor: pointer;
     }
 
-    li:hover {
+    /*li:hover {
         background-color: $table-bg-hover;
-    }
+    }*/
 
     li span.number {
         display: inline-block;

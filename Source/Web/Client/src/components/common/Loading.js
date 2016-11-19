@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import LoadingGif from "./loading.gif";
+import "./Loading.scss";
 
 class Loading extends Component {
 
@@ -8,8 +8,8 @@ class Loading extends Component {
 
         return (
             <div>
+                <div className="loader" />
                 Loading
-                <img src={LoadingGif} role="presentation" style={{margin: "0 0 0 10px"}} />
             </div>
         );
     }

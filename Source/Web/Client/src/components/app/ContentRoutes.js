@@ -8,7 +8,7 @@ import Classification from "../classification/Classification";
 import Mountain from "../mountain/Mountain";
 import Search from "../search/Search";
 
-class RoutesComponent extends Component {
+class ContentRoutesComponent extends Component {
 
     constructor(props) {
         super(props);
@@ -23,7 +23,8 @@ class RoutesComponent extends Component {
     render() {
         return (
             <Router history={browserHistory}>
-                <Redirect from='/' to='/mountains/munros' />
+                <Redirect from='/' to='/mountains' />
+                <Redirect from='/mountains' to='/mountains/munros' />
                 <Route path='/mountains/:table' component={Classification} onLeave={this.resetMountains} />
                 <Route path='/mountain/:id(/:name)' component={Mountain} onLeave={this.resetMountains} />
                 <Route path='/search' component={Search} onLeave={this.resetMountains} />
@@ -32,6 +33,6 @@ class RoutesComponent extends Component {
     }
 }
 
-const Routes = connect()(RoutesComponent);
+const ContentRoutes = connect()(ContentRoutesComponent);
 
-export default Routes;
+export default ContentRoutes;

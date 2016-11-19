@@ -1,0 +1,17 @@
+@import "../../config";
+
+.loader {
+    border: 2px solid $color-darkest;
+    border-top: 2px solid $color-dark;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

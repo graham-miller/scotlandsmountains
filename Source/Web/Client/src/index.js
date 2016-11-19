@@ -7,17 +7,10 @@ import thunkMiddleware from "redux-thunk";
 import { app } from "./reducers/index";
 import App from "./components/app/App";
 
+import "normalize.css/normalize.css";
+import "leaflet/dist/leaflet.css";
 import "./index.scss";
-
-require("jquery");
-require("tether");
-
-import "bootstrap/dist/js/bootstrap.js";
 
 let store = createStore(app, applyMiddleware(thunkMiddleware));
 
-render(
-    <Provider store={store}>
-        <App />
-    </Provider>,
-    document.getElementById("sm-app"));
+render(<Provider store={store}><App/></Provider>,document.getElementById("root"));

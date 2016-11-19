@@ -1,0 +1,23 @@
+﻿$color-dark: #778899;
+$color-darker: darken($color-dark, 20%);
+$color-darkest: darken($color-darker, 20%);
+
+$color-lightest: #e9ecee;
+$color-lighter: darken($color-lightest, 20%);
+$color-light: darken($color-lighter, 20%);
+
+$padding: 10px;
+$font-size: 16px;
+$brand-font-size: 20px;
+$line-height: 1.15;
+
+$header-height: (4 * $padding) + ($line-height * $brand-font-size) + ($line-height * $font-size);
+$nav-bar-height: (2 * $padding) + ($line-height * $font-size);
+$page-title-height: 50px;
+
+$small-screen-breakpoint: 765px;
+
+$map-section-width: 50%;
+$content-section-width: 50%;
+
+.full-height { height: 100%; }

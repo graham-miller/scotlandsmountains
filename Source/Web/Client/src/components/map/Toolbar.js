@@ -10,6 +10,8 @@ import { zoomIn, zoomOut, setBaseLayer } from "../../actions/map";
 
 import MapLayers from "../../map/MapLayers";
 
+import "./Toolbar.scss";
+
 class ToolbarComponent extends Component {
 
     constructor(props) {
@@ -63,27 +65,27 @@ class ToolbarComponent extends Component {
     render() {
 
         return (
-            <div className="map btn-group" role="group" aria-label="Button group with nested dropdown">
+            <div id="map-toolbar">
                 
-                <button type="button" className="btn btn-secondary"
+                <button type="button"
                     disabled={!this.state.canZoomIn}
                     onClick={() => this.props.dispatch(zoomIn())}>
                     <MdAddCircleOutline />
                 </button>
                 
-                <button type="button" className="btn btn-secondary"
+                <button type="button"
                     disabled={!this.state.canZoomOut}
                     onClick={() => this.props.dispatch(zoomOut())}>
                     <MdRemoveCircleOutline />
                 </button>
 
-                <button type="button" className="btn btn-secondary"
+                <button type="button"
                     disabled={this.state.baseLayer === MapLayers[0]}
                     onClick={() => this.props.dispatch(setBaseLayer(MapLayers[0]))}>
                     <MdMap />
                 </button>
 
-                <button type="button" className="btn btn-secondary"
+                <button type="button"
                     disabled={this.state.baseLayer === MapLayers[1]}
                     onClick={() => this.props.dispatch(setBaseLayer(MapLayers[1]))}>
                     <MdSatellite />

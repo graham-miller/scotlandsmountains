@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { browserHistory } from "react-router";
 
-class Title extends Component {
+class Nav extends Component {
 
     constructor() {
         super();
@@ -15,11 +15,12 @@ class Title extends Component {
 
     render() {
         return (
-            <h1>
-                <a href="/" onClick={(e) => this.goToUrl("/", e)}>Scotland&apos;s Mountains</a>
-            </h1>
+            <nav>
+                <a className="nav-item" href="/mountains" onClick={(e) => this.goToUrl("/mountains", e)}>Lists</a>
+                <a className="nav-item" href="/search" onClick={(e) => this.goToUrl("/search", e)}>Search</a>
+            </nav>
         );
     }
 }
 
-export default Title;
+export default Nav;
