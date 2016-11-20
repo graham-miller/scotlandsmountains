@@ -1,107 +1,175 @@
 ﻿@import "../../config";
 
 header {
-  position:fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: $color-darkest;
-  color: $color-lightest;
-  z-index: 600;
-  line-height: $line-height;
-
-  h1 {
-    font-size: $brand-font-size;
-    margin: 0;
-    padding: $padding;
-
-    a:link { color: $color-lightest; text-decoration: none; }
-    a:visited { color: $color-lightest; text-decoration: none; }
-    a:hover { color: $color-lightest; text-decoration: none; }
-    a:active { color: $color-lightest; text-decoration: none; }
-  }
-
-  nav {
-    background-color: $color-darker;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: $color-darkest;
     color: $color-lightest;
-    height: $nav-bar-height;
-    overflow-y: hidden; 
+    z-index: 600;
+    line-height: $line-height;
 
-    .nav-item {
-      display: inline-block;
-      padding: $padding;
+    h1 {
+        font-size: $brand-font-size;
+        margin: 0;
+        padding: $padding;
+
+        a:link {
+            color: $color-lightest;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: $color-lightest;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: $color-lightest;
+            text-decoration: none;
+        }
+
+        a:active {
+            color: $color-lightest;
+            text-decoration: none;
+        }
     }
-    
-    a:link { color: $color-lightest; text-decoration: none; }
-    a:visited { color: $color-lightest; text-decoration: none; }
-    a:hover { color: $color-lightest; text-decoration: none; background-color: $color-darkest; }
-    a:active { color: $color-lightest; text-decoration: none; background-color: $color-darkest; }
-  }
+
+    nav {
+        background-color: $color-darker;
+        color: $color-lightest;
+        height: $nav-bar-height;
+        overflow-y: hidden;
+
+        .nav-item {
+            display: inline-block;
+            padding: $padding;
+        }
+
+        a {
+            cursor: pointer;
+        }
+
+        a.active {
+            background-color: $color-darkest;
+        }
+
+        a:link {
+            color: $color-lightest;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: $color-lightest;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: $color-lightest;
+            text-decoration: none;
+            background-color: $color-highlight;
+        }
+
+        a:active {
+            color: $color-lightest;
+            text-decoration: none;
+            background-color: $color-highlight;
+        }
+    }
 }
 
 main {
-  @extend .full-height;
-  padding-top: $header-height;
-  background-color: $color-lightest;
-  color: $color-darkest;
-  z-index: 1;
-
-  #map-section { width: $map-section-width; }
-  #content-section { width: $content-section-width; }
-
-  #map-section {
     @extend .full-height;
-    float: left;
-    position: relative;
-    @media (max-width: $small-screen-breakpoint) {
-      width: 100%;
+    padding-top: $header-height;
+    background-color: $color-lightest;
+    color: $color-darkest;
+    z-index: 1;
+
+    #map-section {
+        width: $map-section-width;
     }
 
-    #page-title {
-      position: absolute;
-      width: 100%;
-      height: $page-title-height;
-      padding: $padding;
+    #content-section {
+        width: $content-section-width;
     }
 
-    #map-container {
-      @extend .full-height;
-      padding: $padding;
-      padding-top: $page-title-height;
-    }
-  }
+    #map-section {
+        @extend .full-height;
+        float: left;
+        position: relative;
 
-  #content-section {
-    float: right;
-    padding: $padding;
-    
-    @media (max-width: $small-screen-breakpoint) {
-      width: 100%;
-      padding-top: 0;
+        @media (max-width: $small-screen-breakpoint) {
+            width: 100%;
+        }
+
+        #page-title {
+            position: absolute;
+            width: 100%;
+            height: $page-title-height;
+            padding: $padding;
+        }
+
+        #map-container {
+            @extend .full-height;
+            padding: $padding;
+            padding-top: $page-title-height;
+
+            @media (max-width: $small-screen-breakpoint) {
+                padding-right: $padding*5;
+            }
+        }
     }
-  }
+
+    #content-section {
+        float: right;
+        padding: $padding;
+
+        @media (max-width: $small-screen-breakpoint) {
+            width: 100%;
+            padding-top: 0;
+        }
+    }
 }
 
 footer {
-  clear: both;
-  background-color: $color-darkest;
-  padding-bottom: $padding * 5;
-  font-size: 0.8em;
-  
-  .footer-section {
-    padding: $padding;    
-    color: $color-light;
-  }
+    clear: both;
+    background-color: $color-darkest;
+    padding-bottom: $padding * 5;
+    font-size: 0.8em;
 
-  .footer-section.legal {
-    text-align: center;
-    background-color: $color-darker;
-    color: $color-lighter;
-  }
+    .footer-section {
+        padding: $padding;
+        color: $color-light;
+    }
 
-  a:link { color: $color-light; text-decoration: none; border-bottom: 1px dotted $color-light; }
-  a:visited { color: $color-light; text-decoration: none; border-bottom: 1px dotted $color-light; }
-  a:hover { color: $color-light; text-decoration: none; border-bottom: 1px solid $color-light; }
-  a:active { color: $color-light; text-decoration: none; border-bottom: 1px solid $color-light; }
+    .footer-section.legal {
+        text-align: center;
+        background-color: $color-darker;
+        color: $color-lighter;
+    }
+
+    a:link {
+        color: $color-light;
+        text-decoration: none;
+        border-bottom: 1px dotted $color-light;
+    }
+
+    a:visited {
+        color: $color-light;
+        text-decoration: none;
+        border-bottom: 1px dotted $color-light;
+    }
+
+    a:hover {
+        color: $color-light;
+        text-decoration: none;
+        border-bottom: 1px solid $color-light;
+    }
+
+    a:active {
+        color: $color-light;
+        text-decoration: none;
+        border-bottom: 1px solid $color-light;
+    }
 }
- 

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { browserHistory } from "react-router";
 
-class Nav extends Component {
+class NavItem extends Component {
 
     constructor() {
         super();
@@ -14,10 +14,30 @@ class Nav extends Component {
     }
 
     render() {
+
+        const path = this.props.path;
+        const text = this.props.text;
+
+        let className = "nav-item";
+
+        if (window.location.pathname.indexOf(path) === 0) {
+            className += " active";
+        }
+
+        return (
+            <a className={className} href={path} onClick={(e) => this.goToUrl(path, e)}>{text}</a>
+        );
+    }
+}
+
+class Nav extends Component {
+
+
+    render() {
         return (
             <nav>
-                <a className="nav-item" href="/mountains" onClick={(e) => this.goToUrl("/mountains", e)}>Lists</a>
-                <a className="nav-item" href="/search" onClick={(e) => this.goToUrl("/search", e)}>Search</a>
+                <NavItem path="/mountains" text="Lists" />
+                <NavItem path="/search" text="Search" />
             </nav>
         );
     }

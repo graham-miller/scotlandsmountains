@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import $ from "jquery";
 
 import { create, destroy } from "../../actions/map";
 import Toolbar from "./Toolbar";
@@ -9,18 +8,8 @@ import "./Map.scss";
 
 class MapComponent extends Component {
 
-    constructor(props) {
-        super(props);
-
-        this.onWindowResize = this.onWindowResize.bind(this);
-    }
-
-    onWindowResize() {
-    }
-
     componentDidMount() {
         this.props.dispatch(create("map"));
-        $(window).on("resize", this.onWindowResize);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -30,7 +19,6 @@ class MapComponent extends Component {
     }
 
     componentWillUnmount() {    
-        $(window).on("resize", this.onWindowResize);
         this.props.dispatch(destroy());
     }
     

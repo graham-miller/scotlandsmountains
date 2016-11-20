@@ -1,18 +1,16 @@
 @import "../../config.scss";
+@import "../../index.scss";
 
 .mountain-details {
 
     dl {
-        padding: $padding/2;
+        padding-bottom: $padding/2;
     }
 
     dt {
-        float: left;
-        clear: left;
-        width: 30%;
-        text-align: left;
-        color: $color-darker;
+        @extend .small;
         font-weight: bold;
+        color: $color-darker;
     }
 
     dt:after {
@@ -20,11 +18,15 @@
     }
 
     dd {
-        margin-left: 30%;
-        padding-bottom: $padding/2;
+        margin-left: $padding;
+    }
+
+    dd:first-letter {
+        text-transform: uppercase;
     }
 
     ul {
-        list-style-type: none;
+        list-style-type: disc;
+        margin-left: $padding*2;
     }
 }
