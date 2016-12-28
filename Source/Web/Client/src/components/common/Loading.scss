@@ -1,8 +1,8 @@
 @import "../../config";
 
 .loader {
-    border: 2px solid $color-darkest;
-    border-top: 2px solid $color-dark;
+    border: 2px solid $page-color;
+    border-top: 2px solid $page-background-color;
     border-radius: 50%;
     width: 12px;
     height: 12px;

@@ -3,9 +3,7 @@ import { connect } from "react-redux";
 
 import Loading from "../common/Loading";
 import NetworkError from "../common/NetworkError";
-import MountainTable from "../common/MountainTable";
-
-import "./Search.scss";
+import MountainList from "../common/MountainList";
 
 class ResultsComponent extends Component {
 
@@ -18,7 +16,7 @@ class ResultsComponent extends Component {
         if (this.props.mountains.length === 0) { return null; }
 
         return (
-            <MountainTable
+            <MountainList
                 mountains={this.props.mountains}
                 showRowNumbers={false} />
         );

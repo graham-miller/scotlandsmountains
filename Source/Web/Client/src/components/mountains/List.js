@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import { fetchClassification } from "../../actions/mountains";
 
-import MountainTable from "../common/MountainTable";
+import MountainList from "../common/MountainList";
 import Loading from "../common/Loading";
 import NetworkError from "../common/NetworkError";
 
@@ -22,7 +22,7 @@ class TableComponent extends Component {
         if (!this.props.mountains) { return (<Loading />); }
 
         return (
-            <MountainTable
+            <MountainList
                 mountains={this.props.mountains}
                 showRowNumbers={true} />
         );

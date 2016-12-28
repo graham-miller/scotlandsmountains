@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import TextField from "material-ui/TextField";
+
 import { search } from "../../actions/mountains";
 import { reset } from "../../actions/map";
-
-import "./Search.scss";
 
 class SearchComponent extends Component {
 
@@ -49,10 +49,14 @@ class SearchComponent extends Component {
 
         return (
             <div>
-                <input
-                    type="search" value={this.state.term}
-                    placeholder="Search" className="mountains" autoFocus={true}
-                    onChange={this.search} />
+                <TextField
+                    hintText="Search"
+                    fullWidth={true}
+                    value={this.state.term}
+                    type="search"
+                    onChange={this.search}
+                    className="mountains"
+                    autoFocus={true} />
             </div>
         );
     }

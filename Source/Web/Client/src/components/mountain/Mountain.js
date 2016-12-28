@@ -6,7 +6,8 @@ import { fetchMountain } from "../../actions/mountains";
 import Loading from "../common/Loading";
 import NetworkError from "../common/NetworkError";
 
-import "./Mountain.scss";
+import {List, ListItem} from "material-ui/List";
+import Chip from "material-ui/Chip";
 
 class MountainComponent extends Component {
 
@@ -25,54 +26,54 @@ class MountainComponent extends Component {
         let mountain = this.props.mountain;
 
         return (
-            <div className="mountain-details">
-                <dl>
-                    <dt>Height</dt>
-                    <dd>{mountain.height}</dd>
-                </dl>
-                <dl>
-                    <dt>Prominence</dt>
-                    <dd>{mountain.prominence}</dd>
-                </dl>
-                <dl>
-                    <dt>Grid ref.</dt>
-                    <dd title={mountain.tenFigureGridRef}>{mountain.sixFigureGridRef}</dd>
-                </dl>
-                <dl>
-                    <dt>Section</dt>
-                    <dd>{mountain.section.name}</dd>
-                </dl>
-                <dl>
-                    <dt>Country</dt>
-                    <dd>{mountain.country.name}</dd>
-                </dl>
-                <dl>
-                    <dt>Summit</dt>
-                    <dd>{mountain.feature}</dd>
-                </dl>
-                <dl>
-                    <dt>Observations</dt>
-                    <dd>{mountain.observations}</dd>
-                </dl>
-                <dl>
-                    <dt>Classifications</dt>
-                    <dd>
-                        <ul>{
+            <List>
+                <ListItem
+                    leftIcon={null}
+                    primaryText="Height"
+                    secondaryText={mountain.height} />
+                <ListItem
+                    leftIcon={null}
+                    primaryText="Prominence"
+                    secondaryText={mountain.prominence} />
+                <ListItem
+                    leftIcon={null}
+                    primaryText="Grid ref."
+                    secondaryText={<span title={mountain.tenFigureGridRef}>{mountain.sixFigureGridRef}</span>} />
+                <ListItem
+                    leftIcon={null}
+                    primaryText="Section"
+                    secondaryText={mountain.section.name} />
+                <ListItem
+                    leftIcon={null}
+                    primaryText="Country"
+                    secondaryText={mountain.country.name} />
+                <ListItem
+                    leftIcon={null}
+                    primaryText="Summit"
+                    secondaryText={mountain.feature} />
+                <ListItem
+                    leftIcon={null}
+                    primaryText="Observations"
+                    secondaryText={mountain.observations} />
+                <ListItem
+                    leftIcon={null}
+                    primaryText="Classifications"
+                    secondaryText={
+                        <ul> {
                             mountain.classifications.map((classification) =>
-                                <li key={classification.id}>{classification.name}</li>
-                        )}</ul>
-                    </dd>
-                </dl>
-                <dl>
-                    <dt>Maps</dt>
-                    <dd>
-                        <ul>{
+                                <li><a href="" key={classification.id}>{classification.name}</a></li>
+                        )}
+                        </ul>} />
+                <ListItem
+                    leftIcon={null}
+                    primaryText="Maps"
+                    secondaryText={
+                        <ul> {
                             mountain.maps.map((map) =>
-                                <li key={map.id}>{map.name}</li>
-                        )}</ul>
-                    </dd>
-                </dl>
-            </div>
+                                <li><a href="" key={map.id}>{map.name}</a></li>
+                        )}
+                        </ul>} />
+            </List>
         );
     }
 }

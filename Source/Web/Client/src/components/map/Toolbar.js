@@ -1,14 +1,16 @@
 import { connect } from "react-redux";
 import React, { Component } from "react";
 
-import MdAddCircleOutline from "react-icons/md/add-circle-outline";
-import MdRemoveCircleOutline from "react-icons/md/remove-circle-outline";
-import MdMap from "react-icons/lib/md/map";
-import MdSatellite from "react-icons/lib/md/satellite";
-
 import { zoomIn, zoomOut, setBaseLayer } from "../../actions/map";
 
 import MapLayers from "../../map/MapLayers";
+
+import FloatingActionButton from "material-ui/FloatingActionButton";
+
+import ZoomIn from "material-ui/svg-icons/content/add";
+import ZoomOut from "material-ui/svg-icons/content/remove";
+import Satellite from "material-ui/svg-icons/maps/satellite";
+import Map from "material-ui/svg-icons/maps/map";
 
 import "./Toolbar.scss";
 
@@ -66,33 +68,75 @@ class ToolbarComponent extends Component {
 
         return (
             <div id="map-toolbar">
-                
-                <button type="button"
-                    disabled={!this.state.canZoomIn}
-                    onClick={() => this.props.dispatch(zoomIn())}>
-                    <MdAddCircleOutline />
-                </button>
-                
-                <button type="button"
-                    disabled={!this.state.canZoomOut}
-                    onClick={() => this.props.dispatch(zoomOut())}>
-                    <MdRemoveCircleOutline />
-                </button>
 
-                <button type="button"
-                    disabled={this.state.baseLayer === MapLayers[0]}
-                    onClick={() => this.props.dispatch(setBaseLayer(MapLayers[0]))}>
-                    <MdMap />
-                </button>
+                <div>
+                    <FloatingActionButton
+                        secondary={true}  mini={true}
+                        disabled={!this.state.canZoomIn}
+                        onTouchTap={() => this.props.dispatch(zoomIn())}>
+                        <ZoomIn />
+                    </FloatingActionButton>            
+                </div>
 
-                <button type="button"
-                    disabled={this.state.baseLayer === MapLayers[1]}
-                    onClick={() => this.props.dispatch(setBaseLayer(MapLayers[1]))}>
-                    <MdSatellite />
-                </button>
-                
+                <div>
+                    <FloatingActionButton
+                        secondary={true}  mini={true}
+                        disabled={!this.state.canZoomOut}
+                        onTouchTap={() => this.props.dispatch(zoomOut())}>
+                        <ZoomOut />
+                    </FloatingActionButton>
+                </div>
+
+                <div>
+                    <FloatingActionButton
+                        secondary={true}  mini={true}
+                        disabled={this.state.baseLayer === MapLayers[0]}
+                        onTouchTap={() => this.props.dispatch(setBaseLayer(MapLayers[0]))}>
+                        <Satellite />
+                    </FloatingActionButton>
+                </div>
+
+                <div>
+                    <FloatingActionButton
+                        secondary={true}  mini={true}
+                        disabled={this.state.baseLayer === MapLayers[1]}
+                        onTouchTap={() => this.props.dispatch(setBaseLayer(MapLayers[1]))}>
+                        <Map />
+                    </FloatingActionButton>
+                </div>
+
             </div>
         );
+
+        // return (
+        //     <div id="map-toolbar">
+                
+        //         <button type="button"
+        //             disabled={!this.state.canZoomIn}
+        //             onClick={() => this.props.dispatch(zoomIn())}>
+        //             <MdAddCircleOutline />
+        //         </button>
+                
+        //         <button type="button"
+        //             disabled={!this.state.canZoomOut}
+        //             onClick={() => this.props.dispatch(zoomOut())}>
+        //             <MdRemoveCircleOutline />
+        //         </button>
+
+        //         <button type="button"
+        //             disabled={this.state.baseLayer === MapLayers[0]}
+        //             onClick={() => this.props.dispatch(setBaseLayer(MapLayers[0]))}>
+        //             <MdMap />
+        //         </button>
+
+        //         <button type="button"
+        //             disabled={this.state.baseLayer === MapLayers[1]}
+        //             onClick={() => this.props.dispatch(setBaseLayer(MapLayers[1]))}>
+        //             <MdSatellite />
+        //         </button>
+                
+        //     </div>
+        // );
     }
 }
 

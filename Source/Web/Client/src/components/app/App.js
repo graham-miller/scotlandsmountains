@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 import Title from "./Title";
-import Nav from "./Nav";
 import Map from "../map/Map";
 import TitleRoutes from "./TitleRoutes";
 import ContentRoutes from "./ContentRoutes";
@@ -14,10 +13,7 @@ class App extends Component {
     render() {
         return (
             <div id="app-component">
-                <header>
-                    <Title />
-                    <Nav />
-                </header>
+                <Title />
                 <main>
                     <div id="map-section">
                         <div id="page-title">

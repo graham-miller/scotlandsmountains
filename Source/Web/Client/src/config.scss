@@ -1,19 +1,17 @@
-﻿$color-dark: #778899;
-$color-darker: darken($color-dark, 20%);
-$color-darkest: darken($color-darker, 20%);
+﻿$page-background-color: #ffffff;
+$page-color: #333333;
+$page-link-color: #4078c0;
 
-$color-lightest: #e9ecee;
-$color-lighter: darken($color-lightest, 20%);
-$color-light: darken($color-lighter, 20%);
-
-$color-highlight: #20b2aa;
+$footer-background-color: #212121;
+$footer-color: #909690;
+$footer-link-color: #dcdcdc;
 
 $padding: 10px;
 $font-size: 16px;
 $brand-font-size: 20px;
 $line-height: 1.15;
 
-$header-height: (4 * $padding) + ($line-height * $brand-font-size) + ($line-height * $font-size);
+$header-height: 64px;//(4 * $padding) + ($line-height * $brand-font-size) + ($line-height * $font-size);
 $nav-bar-height: (2 * $padding) + ($line-height * $font-size);
 $page-title-height: 100px;
 

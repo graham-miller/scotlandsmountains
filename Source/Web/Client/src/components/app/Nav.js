@@ -1,44 +1,29 @@
 import React, { Component } from "react";
 import { browserHistory } from "react-router";
 
-class NavItem extends Component {
-
-    constructor() {
-        super();
-        this.goToUrl = this.goToUrl.bind(this);
-    }
-
-    goToUrl(url, event) {
-        browserHistory.push(url);   
-        event.preventDefault();
-    }
-
-    render() {
-
-        const path = this.props.path;
-        const text = this.props.text;
-
-        let className = "nav-item";
-
-        if (window.location.pathname.indexOf(path) === 0) {
-            className += " active";
-        }
-
-        return (
-            <a className={className} href={path} onClick={(e) => this.goToUrl(path, e)}>{text}</a>
-        );
-    }
-}
+import MenuItem from "material-ui/MenuItem";
 
 class Nav extends Component {
 
+    constructor(props) {
+        super(props);
+        this.navigateTo = this.navigateTo.bind(this);
+    }
+
+    navigateTo(url, event) {
+        browserHistory.push(url);
+        this.props.closeDrawer();
+        event.preventDefault();
+    }
+
 
     render() {
         return (
-            <nav>
-                <NavItem path="/mountains" text="Lists" />
-                <NavItem path="/search" text="Search" />
-            </nav>
+            <div>
+                <MenuItem style={{height:"64px",textAlign:"Center"}}>M</MenuItem>
+                <MenuItem onTouchTap={(e) => this.navigateTo("/mountains", e)}>Lists</MenuItem>
+                <MenuItem onTouchTap={(e) => this.navigateTo("search", e)}>Search</MenuItem>
+            </div>
         );
     }
 }

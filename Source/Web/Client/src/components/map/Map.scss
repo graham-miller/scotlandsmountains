@@ -1,13 +1,8 @@
 @import '../../config.scss';
 
-@mixin shadow {
-    box-shadow: 2px 2px 1px 0 #000000;
-    box-shadow: 2px 2px 1px 0 rgba(0,0,0,0.5);
-}
-
 #map {
     @extend .full-height;
-    background-color: $color-light;
+    background-color: $page-background-color;
 }
 
 .marker {
@@ -22,7 +17,6 @@
     box-sizing: border-box;
     z-index: 266;
     border-radius: 6px;
-    @include shadow;
 }
     
 .marker.highlighted {
@@ -34,5 +28,4 @@
     left: 15px;
     top: 15px;
     z-index: 400;
-    @include shadow;
 }

@@ -9,10 +9,18 @@
 
 html, body {
   @extend .full-height;
-  background-color: $color-lightest;
-  font-family: sans-serif;
+  background-color: $page-background-color;
+  font-family: 'Roboto', sans-serif;
   font-size: $font-size;
 }
+
+h1 { font-size: $font-size + 10px; }
+h2 { font-size: $font-size + 8px; }
+h3 { font-size: $font-size + 6px; }
+h4 { font-size: $font-size + 4px; }
+h5 { font-size: $font-size + 2px; }
+h6 { font-size: $font-size; }
+
 
 #root, #app-component {
   @extend .full-height;
@@ -42,26 +50,7 @@ p {
     padding-left: $padding;
 }
 
-table {
-    border-collapse: collapse;
-
-    thead tr {
-        border-bottom: 2px solid $color-light;
-    }
-
-    tbody tr {
-        border-bottom: 1px solid $color-light;
-    }
-
-    tbody tr:nth-child(odd) {
-        background-color: $color-lighter;
-    }
-
-    th, td {
-        padding: 0.25em 0.5em 0.25em 0.5em;
-    }
-
-    th {
-        text-align: left;
-    }
+@mixin shadow {
+    box-shadow: 2px 2px 1px 0 #000000;
+    box-shadow: 2px 2px 1px 0 rgba(0,0,0,0.5);
 }

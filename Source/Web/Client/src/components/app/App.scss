@@ -1,89 +1,8 @@
 ﻿@import "../../config";
 
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: $color-darkest;
-    color: $color-lightest;
-    z-index: 600;
-    line-height: $line-height;
-
-    h1 {
-        font-size: $brand-font-size;
-        margin: 0;
-        padding: $padding;
-
-        a:link {
-            color: $color-lightest;
-            text-decoration: none;
-        }
-
-        a:visited {
-            color: $color-lightest;
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: $color-lightest;
-            text-decoration: none;
-        }
-
-        a:active {
-            color: $color-lightest;
-            text-decoration: none;
-        }
-    }
-
-    nav {
-        background-color: $color-darker;
-        color: $color-lightest;
-        height: $nav-bar-height;
-        overflow-y: hidden;
-
-        .nav-item {
-            display: inline-block;
-            padding: $padding;
-        }
-
-        a {
-            cursor: pointer;
-        }
-
-        a.active {
-            background-color: $color-darkest;
-        }
-
-        a:link {
-            color: $color-lightest;
-            text-decoration: none;
-        }
-
-        a:visited {
-            color: $color-lightest;
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: $color-lightest;
-            text-decoration: none;
-            background-color: $color-highlight;
-        }
-
-        a:active {
-            color: $color-lightest;
-            text-decoration: none;
-            background-color: $color-highlight;
-        }
-    }
-}
-
 main {
     @extend .full-height;
     padding-top: $header-height;
-    background-color: $color-lightest;
-    color: $color-darkest;
     z-index: 1;
 
     #map-section {
@@ -132,44 +51,58 @@ main {
     }
 }
 
+a:link {
+    color: $page-link-color;
+    text-decoration: none;
+}
+
+a:visited {
+    color: $page-link-color;
+    text-decoration: none;
+}
+
+a:hover {
+    color: $page-link-color;
+    text-decoration: underline;
+}
+
+a:active {
+    color: $page-link-color;
+    text-decoration: underline;
+}
+
 footer {
     clear: both;
-    background-color: $color-darkest;
+    background-color: $footer-background-color;
+    color: $footer-color;    
     padding-bottom: $padding * 5;
     font-size: 0.8em;
 
     .footer-section {
         padding: $padding;
-        color: $color-light;
     }
 
     .footer-section.legal {
         text-align: center;
-        background-color: $color-darker;
-        color: $color-lighter;
     }
 
     a:link {
-        color: $color-light;
+        color: $footer-link-color;
         text-decoration: none;
-        border-bottom: 1px dotted $color-light;
     }
 
     a:visited {
-        color: $color-light;
+        color: $footer-link-color;
         text-decoration: none;
-        border-bottom: 1px dotted $color-light;
     }
 
     a:hover {
-        color: $color-light;
-        text-decoration: none;
-        border-bottom: 1px solid $color-light;
+        color: $footer-link-color;
+        text-decoration: underline;
     }
 
     a:active {
-        color: $color-light;
-        text-decoration: none;
-        border-bottom: 1px solid $color-light;
+        color: $footer-link-color;
+        text-decoration: underline;
     }
 }
