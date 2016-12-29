@@ -2,9 +2,13 @@
 
 #map-toolbar {
     position: absolute;
-    bottom: ($padding * 2) + 16;
+    bottom: $padding * 2;
     right: $padding * 2;
     z-index: 500;
+
+    @media (max-width: $small-screen-breakpoint) {
+        margin-right: $padding*4;
+    }
 
     > div {
         margin-top: $padding;

@@ -39,7 +39,7 @@ class MountainTable extends Component {
                     this.props.mountains.map((mountain, index) =>
                         <ListItem
                             key={mountain.id}
-                            leftAvatar={this.props.showRowNumbers ? <span>{index+1}</span> : null}
+                            leftAvatar={this.props.showRowNumbers ? <span style={{paddingTop:"4px"}}>{index+1}</span> : null}
                             primaryText={mountain.name}
                             secondaryText={mountain.height}
                             onTouchTap={() => this.onClick(mountain)}

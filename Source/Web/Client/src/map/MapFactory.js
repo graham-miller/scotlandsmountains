@@ -50,6 +50,7 @@ const MapFactory = function(elementId) {
 
     var map = L.map(elementId, {zoomControl: false}).setView(MapDefaults.Center, MapDefaults.Zoom);
 
+    map.attributionControl.setPosition("bottomleft");
     map.attributionControl.setPrefix("");
 
     map.displayMountains = (mountains) => displayMountains(map, mountains);

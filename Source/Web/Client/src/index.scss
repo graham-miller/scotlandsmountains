@@ -9,10 +9,12 @@
 
 html, body {
   @extend .full-height;
-  background-color: $page-background-color;
+  background-color: #fff;
   font-family: 'Roboto', sans-serif;
   font-size: $font-size;
 }
+
+h1, h2, h3, h4, h5, h6 { font-weight: normal; }
 
 h1 { font-size: $font-size + 10px; }
 h2 { font-size: $font-size + 8px; }
@@ -31,7 +33,7 @@ p {
 }
 
 .small {
-    font-size: 0.8em;
+    font-size: 0.875em;
 }
 
 .left {
@@ -53,4 +55,31 @@ p {
 @mixin shadow {
     box-shadow: 2px 2px 1px 0 #000000;
     box-shadow: 2px 2px 1px 0 rgba(0,0,0,0.5);
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+dl {
+    dt {
+        @extend .small;
+        padding: 20px 16px 0 16px;
+        color: rgba(0, 0, 0, 0.541176);
+    }
+
+    dd {
+        padding: 0 16px 16px 16px;
+        color: rgba(0, 0, 0, 0.870588);
+    }
+
+    dd:first-letter {
+        text-transform: capitalize;
+    }
+
+    li {
+        padding: 8px 8px 8px 0;
+    }
 }

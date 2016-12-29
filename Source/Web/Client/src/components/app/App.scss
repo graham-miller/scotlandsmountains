@@ -5,12 +5,8 @@ main {
     padding-top: $header-height;
     z-index: 1;
 
-    #map-section {
-        width: $map-section-width;
-    }
-
-    #content-section {
-        width: $content-section-width;
+    #map-section, #content-section {
+        @extend .half-width;
     }
 
     #map-section {
@@ -52,22 +48,22 @@ main {
 }
 
 a:link {
-    color: $page-link-color;
+    color: $link-color;
     text-decoration: none;
 }
 
 a:visited {
-    color: $page-link-color;
+    color: $link-color;
     text-decoration: none;
 }
 
 a:hover {
-    color: $page-link-color;
+    color: $link-color;
     text-decoration: underline;
 }
 
 a:active {
-    color: $page-link-color;
+    color: $link-color;
     text-decoration: underline;
 }
 

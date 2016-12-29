@@ -25,54 +25,38 @@ class MountainComponent extends Component {
         let mountain = this.props.mountain;
 
         return (
-            <List>
-                <ListItem
-                    leftIcon={null}
-                    primaryText="Height"
-                    secondaryText={mountain.height} />
-                <ListItem
-                    leftIcon={null}
-                    primaryText="Prominence"
-                    secondaryText={mountain.prominence} />
-                <ListItem
-                    leftIcon={null}
-                    primaryText="Grid ref."
-                    secondaryText={<span title={mountain.tenFigureGridRef}>{mountain.sixFigureGridRef}</span>} />
-                <ListItem
-                    leftIcon={null}
-                    primaryText="Section"
-                    secondaryText={mountain.section.name} />
-                <ListItem
-                    leftIcon={null}
-                    primaryText="Country"
-                    secondaryText={mountain.country.name} />
-                <ListItem
-                    leftIcon={null}
-                    primaryText="Summit"
-                    secondaryText={mountain.feature} />
-                <ListItem
-                    leftIcon={null}
-                    primaryText="Observations"
-                    secondaryText={mountain.observations} />
-                <ListItem
-                    leftIcon={null}
-                    primaryText="Lists"
-                    secondaryText={
-                        <ul> {
-                            mountain.lists.map((list) =>
-                                <li key={list.id}><a href="">{list.name}</a></li>
-                        )}
-                        </ul>} />
-                <ListItem
-                    leftIcon={null}
-                    primaryText="Maps"
-                    secondaryText={
-                        <ul> {
-                            mountain.maps.map((map) =>
-                                <li key={map.id}><a href="">{map.name}</a></li>
-                        )}
-                        </ul>} />
-            </List>
+            <dl>
+                <dt>Height</dt>
+                <dd>{mountain.height}</dd>
+
+                <dt>Prominence</dt>
+                <dd>{mountain.prominence}</dd>
+
+                <dt>Grid ref.</dt>
+                <dd><span title={mountain.tenFigureGridRef}>{mountain.sixFigureGridRef}</span></dd>
+
+                <dt>Section</dt>
+                <dd>{mountain.section.name}</dd>
+
+                <dt>Country</dt>
+                <dd>{mountain.country.name}</dd>
+
+                <dt>Summit</dt>
+                <dd>{mountain.feature}</dd>
+
+                <dt>Observations</dt>
+                <dd>{mountain.observations}</dd>
+
+                <dt>Lists</dt>
+                <dd><ul>{
+                    mountain.lists.map((list) => <li key={list.id}>{list.name}</li>)
+                }</ul></dd>
+
+                <dt>Maps</dt>
+                <dd><ul>{
+                    mountain.maps.map((map) => <li key={map.id}>{map.name}</li>)
+                }</ul></dd>
+            </dl>
         );
     }
 }

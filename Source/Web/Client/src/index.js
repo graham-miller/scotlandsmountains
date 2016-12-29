@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import thunkMiddleware from "redux-thunk";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import getMuiTheme from "material-ui/styles/getMuiTheme";
 
 import { app } from "./reducers/index";
 import App from "./components/app/App";
@@ -17,10 +18,13 @@ injectTapEventPlugin();
 
 let store = createStore(app, applyMiddleware(thunkMiddleware));
 
+const muiTheme = getMuiTheme({
+});
+
 const element = (
     <Provider store={store}>
-        <MuiThemeProvider>
-            <App/>
+        <MuiThemeProvider muiTheme={muiTheme}>
+            <App />
         </MuiThemeProvider>
     </Provider>
 );
