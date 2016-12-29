@@ -5,7 +5,8 @@
     "Humanizer.Core": "2.1.0",
     "NUnit": "3.5.0",
     "dotnet-test-nunit": "3.4.0-beta-2",
-    "Moq": "4.5.29"
+    "Moq": "4.5.29",
+    "Web": "1.0.0-*"
   },
   
   "testRunner": "nunit",
@@ -14,9 +15,6 @@
     "net460": {
       "dependencies": {
         "Domain": {
-          "target": "project"
-        },
-        "Web": {
           "target": "project"
         }
       }
