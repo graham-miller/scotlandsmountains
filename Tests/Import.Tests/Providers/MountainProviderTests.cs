@@ -6,6 +6,7 @@ using ScotlandsMountains.Domain;
 using ScotlandsMountains.Import.Dobih;
 using ScotlandsMountains.Import.Os;
 using ScotlandsMountains.Import.Providers;
+using List = ScotlandsMountains.Domain.List;
 
 namespace ScotlandsMountains.Import.Tests.Providers
 {
@@ -27,10 +28,10 @@ namespace ScotlandsMountains.Import.Tests.Providers
         private const string SectionCode = "Section code";
         private const string SectionName = "Section code";
         private const string SectionId = "Section ID";
-        private const string Classification1 = "Classification 1";
-        private const string Classification2 = "Classification 2";
-        private const string Classification1Id = "Classification 1 ID";
-        private const string Classification2Id = "Classification 2 ID";
+        private const string List1 = "List 1";
+        private const string List2 = "List 2";
+        private const string List1Id = "List 1 ID";
+        private const string List2Id = "List 2 ID";
         private const string Country = "Country";
         private const string CountryId = "Country ID";
         private const string Map1To50K1 = "Map 1:50000 1";
@@ -41,7 +42,7 @@ namespace ScotlandsMountains.Import.Tests.Providers
         private const string Map1To25K2 = "Map 1:25000 2";
         private const string Map1To25K1Id = "Map 1:25000 1 ID";
         private const string Map1To25K2Id = "Map 1:25000 2 ID";
-        private static readonly List<string> Classifications = new List<string> { Classification1, Classification2};
+        private static readonly List<string> Lists = new List<string> { List1, List2};
         private static readonly List<string> Maps1To50000 = new List<string> { Map1To50K1, Map1To50K2 };
         private static readonly List<string> Maps1To25000 = new List<string> { Map1To25K1, Map1To25K2 };
 
@@ -56,7 +57,7 @@ namespace ScotlandsMountains.Import.Tests.Providers
             mockRecord.Setup(x => x.SectionCode).Returns(SectionCode);
             mockRecord.Setup(x => x.SectionName).Returns(SectionName);
             mockRecord.Setup(x => x.Country).Returns(Country);
-            mockRecord.Setup(x => x.Classifications).Returns(Classifications);
+            mockRecord.Setup(x => x.Lists).Returns(Lists);
             mockRecord.Setup(x => x.Maps1To50000).Returns(Maps1To50000);
             mockRecord.Setup(x => x.Maps1To25000).Returns(Maps1To25000);
             mockRecord.Setup(x => x.Metres).Returns(Metres);
@@ -78,9 +79,9 @@ namespace ScotlandsMountains.Import.Tests.Providers
             var mockCountryProvider = new Mock<IEntityProvider<Country>>();
             mockCountryProvider.Setup(x => x.GetByDobihId(Country)).Returns(new Country {Id = CountryId});
 
-            var mockClassificationProvider = new Mock<IEntityProvider<Classification>>();
-            mockClassificationProvider.Setup(x => x.GetByDobihId(Classification1)).Returns(new Classification {Id = Classification1Id});
-            mockClassificationProvider.Setup(x => x.GetByDobihId(Classification2)).Returns(new Classification {Id = Classification2Id});
+            var mockListProvider = new Mock<IEntityProvider<List>>();
+            mockListProvider.Setup(x => x.GetByDobihId(List1)).Returns(new List {Id = List1Id});
+            mockListProvider.Setup(x => x.GetByDobihId(List2)).Returns(new List {Id = List2Id});
 
             var mockSectionProvider = new Mock<IEntityProvider<Section>>();
             mockSectionProvider.Setup(x => x.GetByDobihId(SectionName)).Returns(new Section { Id = SectionId });
@@ -98,7 +99,7 @@ namespace ScotlandsMountains.Import.Tests.Providers
                 DobihFile = mockDobihFile.Object,
                 IdGenerator = mockIdGenerator.Object,
                 CountryProvider = mockCountryProvider.Object,
-                ClassificationProvider = mockClassificationProvider.Object,
+                ListProvider = mockListProvider.Object,
                 SectionProvider = mockSectionProvider.Object,
                 MapProvider = mockMapProvider.Object
             };
@@ -165,11 +166,11 @@ namespace ScotlandsMountains.Import.Tests.Providers
         }
 
         [Test]
-        public void ThenClassificationIdsAreMappedCorectly()
+        public void ThenListIdsAreMappedCorectly()
         {
-            Assert.That(_actual.ClassificationIds, Has.Count.EqualTo(2));
-            Assert.That(_actual.ClassificationIds, Contains.Item(Classification1Id));
-            Assert.That(_actual.ClassificationIds, Contains.Item(Classification2Id));
+            Assert.That(_actual.ListIds, Has.Count.EqualTo(2));
+            Assert.That(_actual.ListIds, Contains.Item(List1Id));
+            Assert.That(_actual.ListIds, Contains.Item(List2Id));
         }
 
         [Test]

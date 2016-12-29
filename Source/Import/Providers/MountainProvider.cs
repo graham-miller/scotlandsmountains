@@ -50,17 +50,17 @@ namespace ScotlandsMountains.Import.Providers
                 },
                 Feature = record.Feature,
                 Observations = record.Observations,
-                ClassificationIds = GetClassificationIdsFor(record),
+                ListIds = GetListIdsFor(record),
                 MapIds = GetMapIdsFor(record),
                 SectionId = GetSectionIdFor(record),
                 CountryId = GetCountryIdFor(record)
             };
         }
 
-        private IList<string> GetClassificationIdsFor(IDobihRecord record)
+        private IList<string> GetListIdsFor(IDobihRecord record)
         {
-            return record.Classifications
-                .Select(x => _importParameters.ClassificationProvider.GetByDobihId(x).Id)
+            return record.Lists
+                .Select(x => _importParameters.ListProvider.GetByDobihId(x).Id)
                 .ToList();
         }
 

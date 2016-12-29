@@ -8,13 +8,13 @@ using ScotlandsMountains.Import.ScotlandsMountains;
 namespace ScotlandsMountains.Import.Tests.Providers
 {
     [TestFixture]
-    public class ClassificationProviderTests
+    public class ListProviderTests
     {
         [Test]
-        public void GivenMockInputsThenConstructsClassificationAsExpected()
+        public void GivenMockInputsThenConstructsListAsExpected()
         {
             const string id = "Id";
-            const string classificationCode = "Classification code";
+            const string listCode = "List code";
             const string name = "Name";
             const int order = 1;
             const string description = "Description";
@@ -23,25 +23,25 @@ namespace ScotlandsMountains.Import.Tests.Providers
             mockIdGenerator.Setup(x => x.Generate()).Returns(id);
 
             var mockDobihRecord = new Mock<IDobihRecord>();
-            mockDobihRecord.Setup(x => x.Classifications).Returns(new List<string> { classificationCode });
+            mockDobihRecord.Setup(x => x.Lists).Returns(new List<string> { listCode });
 
             var mockDobihFile = new Mock<IDobihFile>();
             mockDobihFile.Setup(x => x.Records).Returns(new List<IDobihRecord> { mockDobihRecord.Object });
 
-            var mockClassificationInfoProvider = new Mock<IClassificationInfoProvider>();
-            mockClassificationInfoProvider
-                .Setup(x => x.GetClassificationInfoFor(classificationCode))
-                .Returns(new ClassificationInfo
+            var mockListInfoProvider = new Mock<IListInfoProvider>();
+            mockListInfoProvider
+                .Setup(x => x.GetListInfoFor(listCode))
+                .Returns(new ListInfo
                 {
-                    Code = classificationCode,
+                    Code = listCode,
                     Name = name,
                     Order = order,
                     Description = description
                 });
 
-            var sut = new ClassificationProvider(mockIdGenerator.Object, mockDobihFile.Object, mockClassificationInfoProvider.Object);
+            var sut = new ListProvider(mockIdGenerator.Object, mockDobihFile.Object, mockListInfoProvider.Object);
 
-            var actual = sut.GetByDobihId(classificationCode);
+            var actual = sut.GetByDobihId(listCode);
 
             Assert.That(actual.Id, Is.EqualTo(id));
             Assert.That(actual.Name, Is.EqualTo(name));

@@ -31,7 +31,7 @@ namespace ScotlandsMountains.Resources
                 }
             }
 
-            public static Stream ClassificationInfo => Open(Namespaces.ClassificationInfoXlsx);
+            public static Stream ListInfo => Open(Namespaces.ListInfoXlsx);
         }
 
         private static Stream Open(string path)

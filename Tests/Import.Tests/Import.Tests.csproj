@@ -82,7 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Providers\SectionProviderTests.cs" />
-    <Compile Include="Providers\ClassificationProviderTests.cs" />
+    <Compile Include="Providers\ListProviderTests.cs" />
     <Compile Include="Providers\CountryProviderTests.cs" />
     <Compile Include="Dobih\DobihRecordTests.cs" />
     <Compile Include="ImportTestHarness.cs" />

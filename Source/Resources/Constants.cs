@@ -10,7 +10,7 @@ namespace ScotlandsMountains.Resources
 
         public static readonly string MapCataloguePdf = $"{Base}.OS.ordnance-survey-leisure-map-catalogue.pdf";
 
-        public static readonly string ClassificationInfoXlsx = $"{Base}.ScotlandsMountains.ClassificationInfo.xlsx";
+        public static readonly string ListInfoXlsx = $"{Base}.ScotlandsMountains.ListInfo.xlsx";
 
         public static readonly string DomainZip = $"{Base}.ScotlandsMountains.{FileNames.DomainJson}.zip";
 

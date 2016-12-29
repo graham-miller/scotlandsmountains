@@ -14,7 +14,7 @@ namespace ScotlandsMountains.Import
             var domainRoot = new DomainRoot
             {
                 Maps = _importParameters.MapProvider.GetAll(),
-                Classifications = _importParameters.ClassificationProvider.GetAll(),
+                Lists = _importParameters.ListProvider.GetAll(),
                 Sections = _importParameters.SectionProvider.GetAll(),
                 Countries = _importParameters.CountryProvider.GetAll(),
                 Mountains = _importParameters.MountainProvider.GetAll()

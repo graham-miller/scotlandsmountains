@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { fetchClassification } from "../../actions/mountains";
+import { fetchList } from "../../actions/mountains";
 
 import MountainList from "../common/MountainList";
 import Loading from "../common/Loading";
 import NetworkError from "../common/NetworkError";
 
-class TableComponent extends Component {
+class ListComponent extends Component {
 
     componentDidMount() {
-        this.props.dispatch(fetchClassification(this.props.routeParams.table));
+        this.props.dispatch(fetchList(this.props.routeParams.table));
     }
 
     render() {
@@ -36,6 +36,6 @@ const mapStateToProps = (state) => {
     };
 };
 
-const Table = connect(mapStateToProps)(TableComponent);
+const List = connect(mapStateToProps)(ListComponent);
 
-export default Table;
+export default List;

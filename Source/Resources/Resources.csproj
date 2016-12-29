@@ -49,7 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Raw\OS\Links.txt" />
-    <EmbeddedResource Include="Raw\ScotlandsMountains\ClassificationInfo.xlsx" />
+    <EmbeddedResource Include="Raw\ScotlandsMountains\ListInfo.xlsx" />
     <EmbeddedResource Include="Raw\ScotlandsMountains\Domain.json.zip" />
   </ItemGroup>
   <ItemGroup>

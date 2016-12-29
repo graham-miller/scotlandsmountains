@@ -22,7 +22,7 @@ namespace Web.Tests.Models
                 Prominence = new Prominence {Metres = 4, KeyCol = "KeyCol", KeyColHeight = new Height {Metres = 5}},
                 Feature = "Feature",
                 Observations = "Observations",
-                ClassificationIds = MockDomainRoot.EntityIds,
+                ListIds = MockDomainRoot.EntityIds,
                 MapIds = MockDomainRoot.EntityIds,
                 SectionId = MockDomainRoot.EntityId,
                 CountryId = MockDomainRoot.EntityId
@@ -77,10 +77,10 @@ namespace Web.Tests.Models
         }
 
         [Test]
-        public void ThenClassificationsAreMappedCorrectly()
+        public void ThenListsAreMappedCorrectly()
         {
-            Assert.That(_sut.Classifications[0].Id, Is.EqualTo(MockDomainRoot.EntityId));
-            Assert.That(_sut.Classifications[0].Name, Is.EqualTo(MockDomainRoot.EntityName));
+            Assert.That(_sut.Lists[0].Id, Is.EqualTo(MockDomainRoot.EntityId));
+            Assert.That(_sut.Lists[0].Name, Is.EqualTo(MockDomainRoot.EntityName));
         }
 
         [Test]

@@ -7,7 +7,6 @@ import Loading from "../common/Loading";
 import NetworkError from "../common/NetworkError";
 
 import {List, ListItem} from "material-ui/List";
-import Chip from "material-ui/Chip";
 
 class MountainComponent extends Component {
 
@@ -57,11 +56,11 @@ class MountainComponent extends Component {
                     secondaryText={mountain.observations} />
                 <ListItem
                     leftIcon={null}
-                    primaryText="Classifications"
+                    primaryText="Lists"
                     secondaryText={
                         <ul> {
-                            mountain.classifications.map((classification) =>
-                                <li><a href="" key={classification.id}>{classification.name}</a></li>
+                            mountain.lists.map((list) =>
+                                <li key={list.id}><a href="">{list.name}</a></li>
                         )}
                         </ul>} />
                 <ListItem
@@ -70,7 +69,7 @@ class MountainComponent extends Component {
                     secondaryText={
                         <ul> {
                             mountain.maps.map((map) =>
-                                <li><a href="" key={map.id}>{map.name}</a></li>
+                                <li key={map.id}><a href="">{map.name}</a></li>
                         )}
                         </ul>} />
             </List>

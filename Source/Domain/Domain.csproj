@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classification.cs" />
+    <Compile Include="List.cs" />
     <Compile Include="CollectionExtensions.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="DomainRoot.cs" />

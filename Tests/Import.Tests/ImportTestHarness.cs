@@ -25,7 +25,7 @@ namespace ScotlandsMountains.Import.Tests
                 MapProvider = new MapProvider(idGenerator, new OsFile()),
                 IdGenerator = idGenerator,
                 CountryProvider = new CountryProvider(idGenerator),
-                ClassificationProvider = new ClassificationProvider(idGenerator, dobihFile, new ClassificationInfoProvider()),
+                ListProvider = new ListProvider(idGenerator, dobihFile, new ListInfoProvider()),
                 SectionProvider = new SectionProvider(idGenerator, dobihFile),
             };
 
@@ -52,7 +52,7 @@ namespace ScotlandsMountains.Import.Tests
             Assert.That(domainRoot.Maps.Discoverer.Count, Is.EqualTo(18));
             Assert.That(domainRoot.Maps.Discovery.Count, Is.EqualTo(73));
 
-            Assert.That(domainRoot.Classifications.Count, Is.EqualTo(57));
+            Assert.That(domainRoot.Lists.Count, Is.EqualTo(57));
 
             Assert.That(domainRoot.Sections.Count, Is.EqualTo(135));
 

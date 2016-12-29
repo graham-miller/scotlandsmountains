@@ -5,18 +5,18 @@ using ScotlandsMountains.Resources;
 
 namespace ScotlandsMountains.Import.ScotlandsMountains
 {
-    public interface IClassificationInfoProvider
+    public interface IListInfoProvider
     {
-        ClassificationInfo GetClassificationInfoFor(string classificationCode);
+        ListInfo GetListInfoFor(string listCode);
     }
 
-    public class ClassificationInfoProvider : IClassificationInfoProvider
+    public class ListInfoProvider : IListInfoProvider
     {
-        private readonly IList<ClassificationInfo> _classificationInfo = new List<ClassificationInfo>();
+        private readonly IList<ListInfo> _listInfo = new List<ListInfo>();
 
-        public ClassificationInfoProvider()
+        public ListInfoProvider()
         {
-            using (var stream = Load.ScotlandsMountains.ClassificationInfo)
+            using (var stream = Load.ScotlandsMountains.ListInfo)
             using (var package = new ExcelPackage())
             {
                 package.Load(stream);
@@ -25,7 +25,7 @@ namespace ScotlandsMountains.Import.ScotlandsMountains
 
                 while (cell.Value != null)
                 {
-                    _classificationInfo.Add(new ClassificationInfo
+                    _listInfo.Add(new ListInfo
                     {
                         Code = cell.GetValue<string>(),
                         Name = cell.Offset(0, 1).GetValue<string>(),
@@ -38,13 +38,13 @@ namespace ScotlandsMountains.Import.ScotlandsMountains
             }
         }
 
-        public ClassificationInfo GetClassificationInfoFor(string classificationCode)
+        public ListInfo GetListInfoFor(string listCode)
         {
-            return _classificationInfo.Single(x => x.Code == classificationCode);
+            return _listInfo.Single(x => x.Code == listCode);
         }
     }
 
-    public class ClassificationInfo
+    public class ListInfo
     {
         public string Code { get; set; }
         public string Name { get; set; }

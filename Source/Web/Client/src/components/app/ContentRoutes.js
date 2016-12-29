@@ -4,7 +4,7 @@ import { Router, Redirect, Route, browserHistory } from "react-router";
 
 import { clear } from "../../actions/mountains";
 
-import List from "../mountains/List";
+import List from "../list/List";
 import Mountain from "../mountain/Mountain";
 import Results from "../search/Results";
 

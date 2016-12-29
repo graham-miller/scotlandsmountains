@@ -14,7 +14,7 @@ namespace Web.Tests
             SetUp();
         }
 
-        public IList<Classification> Classifications { get; private set; }
+        public IList<List> Lists { get; private set; }
         public IList<Section> Sections { get; private set; }
         public Maps Maps { get; private set; }
         public IList<Mountain> Mountains { get; private set; }
@@ -23,7 +23,7 @@ namespace Web.Tests
 
         private void SetUp()
         {
-            Classifications = GetMockEntities<Classification>();
+            Lists = GetMockEntities<List>();
             Sections = GetMockEntities<Section>();
             Countries = GetMockEntities<Country>();
 

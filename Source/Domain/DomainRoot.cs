@@ -7,7 +7,7 @@ namespace ScotlandsMountains.Domain
 {
     public interface IDomainRoot
     {
-        IList<Classification> Classifications { get; }
+        IList<List> Lists { get; }
         IList<Section> Sections { get; }
         Maps Maps { get; }
         IList<Mountain> Mountains { get; }
@@ -16,7 +16,7 @@ namespace ScotlandsMountains.Domain
 
     public class DomainRoot : IDomainRoot
     {
-        public IList<Classification> Classifications { get; set; }
+        public IList<List> Lists { get; set; }
         public IList<Section> Sections { get; set; }
         public Maps Maps { get; set; }
         public virtual IList<Mountain> Mountains { get; set; }
@@ -84,7 +84,7 @@ namespace ScotlandsMountains.Domain
             }
         }
 
-        public IList<Classification> Classifications { get { return _inner.Classifications; } }
+        public IList<List> Lists { get { return _inner.Lists; } }
         public IList<Country> Countries { get { return _inner.Countries; } }
         public Maps Maps { get { return _inner.Maps; } }
         public IList<Section> Sections { get { return _inner.Sections; } }

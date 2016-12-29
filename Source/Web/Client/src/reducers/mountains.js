@@ -23,7 +23,7 @@ const mountains = (state = defaultState, action) => {
             lastUpdated: Date.now()
         });
 
-    case Actions.ReceiveClassification:
+    case Actions.ReceiveList:
         return Object.assign({}, state, {
             status: defaultStatus,
             items: action.json,

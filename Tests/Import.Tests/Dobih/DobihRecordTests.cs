@@ -17,7 +17,7 @@ namespace ScotlandsMountains.Import.Tests.Dobih
             Assert.That(sut.Name, Is.EqualTo("Ben Nevis"));
             Assert.That(sut.SectionCode, Is.EqualTo("04A"));
             Assert.That(sut.SectionName, Is.EqualTo("Fort William to Loch Treig & Loch Leven"));
-            Assert.That(sut.Classifications.Count, Is.EqualTo(8));
+            Assert.That(sut.Lists.Count, Is.EqualTo(8));
             Assert.That(sut.Maps1To50000.Count, Is.EqualTo(1));
             Assert.That(sut.Maps1To25000.Count, Is.EqualTo(1));
             Assert.That(sut.Metres, Is.EqualTo(1344.5));

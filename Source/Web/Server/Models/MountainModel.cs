@@ -18,7 +18,7 @@ namespace ScotlandsMountains.Web.Server.Models
             Observations = mountain.Observations;
 
             var resolver = new EntityModelResolver(domainRoot);
-            Classifications = resolver.Classifications(mountain.ClassificationIds);
+            Lists = resolver.Lists(mountain.ListIds);
             Maps = resolver.Maps(mountain.MapIds);
             Section = resolver.Section(mountain.SectionId);
             Country = resolver.Country(mountain.CountryId);
@@ -33,7 +33,7 @@ namespace ScotlandsMountains.Web.Server.Models
         public string Feature { get; set; }
         public string Observations { get; set; }
 
-        public IList<EntityModel> Classifications { get; set; }
+        public IList<EntityModel> Lists { get; set; }
         public IList<EntityModel> Maps { get; set; }
         public EntityModel Section { get; set; }
         public EntityModel Country { get; set; }

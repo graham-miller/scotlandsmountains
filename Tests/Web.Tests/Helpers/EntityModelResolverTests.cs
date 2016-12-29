@@ -17,9 +17,9 @@ namespace Web.Tests.Helpers
         }
 
         [Test]
-        public void ThenClassificationsAreResolved()
+        public void ThenListsAreResolved()
         {
-            var actual = _sut.Classifications(MockDomainRoot.EntityIds).Single();
+            var actual = _sut.Lists(MockDomainRoot.EntityIds).Single();
             Assert.That(actual.Id, Is.EqualTo(MockDomainRoot.EntityId));
             Assert.That(actual.Name, Is.EqualTo(MockDomainRoot.EntityName));
         }

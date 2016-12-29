@@ -1,7 +1,7 @@
 export const Actions = {
     RequestStart: "REQUEST_START",
     ReceiveMountain: "RECEIVE_MOUNTAIN",
-    ReceiveClassification: "RECEIVE_CLASSIFICATION",
+    ReceiveList: "RECEIVE_LIST",
     ReceiveSearch: "RECEIVE_SEARCH",
     RequestError: "REQUEST_ERROR",
     Clear: "CLEAR"
@@ -20,9 +20,9 @@ function receiveMountain(json) {
     };
 }
 
-function receiveClassification(json) {
+function receiveList(json) {
     return {
-        type: Actions.ReceiveClassification,
+        type: Actions.ReceiveList,
         json
     };
 }
@@ -44,12 +44,12 @@ export function fetchMountain(id) {
     return callApi("/api/mountains/" + id, receiveMountain);
 }
 
-export function fetchClassification(classification) {
-    return callApi("/api/classifications/mountains/" + classification, receiveClassification);
+export function fetchList(list) {
+    return callApi("/api/lists/" + list, receiveList);
 }
 
 export function search(term) {
-    return callApi("/api/mountains/search/" + term, receiveSearch);
+    return callApi("/api/search/" + term, receiveSearch);
 }
 
 export function clear() {

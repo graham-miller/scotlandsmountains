@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Router, Redirect, Route, browserHistory } from "react-router";
 
-import { default as MountainsTitle } from "../mountains/Title";
-import { default as MountainTitle } from "../mountain/Title";
-import { default as SearchTitle } from "../search/Title";
+import { default as list } from "../list/Title";
+import { default as mountain } from "../mountain/Title";
+import { default as search } from "../search/Title";
 
 class TitleRoutes extends Component {
 
@@ -12,9 +12,9 @@ class TitleRoutes extends Component {
             <Router name="title" history={browserHistory}>
                 <Redirect from="/" to="/mountains" />
                 <Redirect from="/mountains" to="/mountains/munros" />
-                <Route path="/mountains/:table" component={MountainsTitle} />
-                <Route path="/mountain/:id(/:name)" component={MountainTitle} />
-                <Route path="/search" component={SearchTitle} />
+                <Route path="/mountains/:table" component={list} />
+                <Route path="/mountain/:id(/:name)" component={mountain} />
+                <Route path="/search" component={search} />
             </Router>
         );
     }

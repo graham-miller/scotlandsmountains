@@ -12,10 +12,10 @@ namespace ScotlandsMountains.Web.Server.Helpers
             _domainRoot = domainRoot;
         }
 
-        public IList<EntityModel> Classifications(IList<string> classificationIds)
+        public IList<EntityModel> Lists(IList<string> listIds)
         {
-            return classificationIds
-                .Select(id => _domainRoot.Classifications.Single(x => x.Id == id))
+            return listIds
+                .Select(id => _domainRoot.Lists.Single(x => x.Id == id))
                 .Select(x => new EntityModel(x))
                 .OrderBy(x => x.Name)
                 .ToList();
