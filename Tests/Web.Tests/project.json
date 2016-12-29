@@ -1,11 +1,11 @@
-﻿{
+{
   "version": "1.0.0-*",
 
   "dependencies": {
     "Humanizer.Core": "2.1.0",
-    "Moq": "4.5.23",
     "NUnit": "3.5.0",
-    "dotnet-test-nunit": "3.4.0-beta-2"
+    "dotnet-test-nunit": "3.4.0-beta-2",
+    "Moq": "4.5.29"
   },
   
   "testRunner": "nunit",
