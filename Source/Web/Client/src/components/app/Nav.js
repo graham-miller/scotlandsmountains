@@ -22,7 +22,7 @@ class Nav extends Component {
             <div>
                 <MenuItem style={{height:"64px",textAlign:"Center"}}>M</MenuItem>
                 <MenuItem onTouchTap={(e) => this.navigateTo("/mountains", e)}>Lists</MenuItem>
-                <MenuItem onTouchTap={(e) => this.navigateTo("search", e)}>Search</MenuItem>
+                <MenuItem onTouchTap={(e) => this.navigateTo("/search", e)}>Search</MenuItem>
             </div>
         );
     }
