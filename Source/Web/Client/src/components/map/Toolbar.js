@@ -92,7 +92,7 @@ class ToolbarComponent extends Component {
                         secondary={true}  mini={true}
                         disabled={this.state.baseLayer === MapLayers[0]}
                         onTouchTap={() => this.props.dispatch(setBaseLayer(MapLayers[0]))}>
-                        <Satellite />
+                        <Map />
                     </FloatingActionButton>
                 </div>
 
@@ -101,7 +101,7 @@ class ToolbarComponent extends Component {
                         secondary={true}  mini={true}
                         disabled={this.state.baseLayer === MapLayers[1]}
                         onTouchTap={() => this.props.dispatch(setBaseLayer(MapLayers[1]))}>
-                        <Map />
+                        <Satellite />
                     </FloatingActionButton>
                 </div>
 
