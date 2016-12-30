@@ -3,6 +3,8 @@
 #map-toolbar {
     position: absolute;
     top: $page-title-height;
+    bottom: $padding;
+    overflow-y: hidden;
     right: $padding * 2;
     z-index: 500;
 
