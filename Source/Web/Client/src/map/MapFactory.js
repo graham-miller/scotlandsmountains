@@ -48,7 +48,16 @@ const displayMountains = function(map, mountains) {
 
 const MapFactory = function(elementId) {
 
-    var map = L.map(elementId, {zoomControl: false}).setView(MapDefaults.Center, MapDefaults.Zoom);
+    var map = L.map(elementId, {
+        zoomControl: false,
+        minZoom: MapDefaults.minZoom,
+        maxZoom: MapDefaults.maxZoom,
+        maxBounds: L.latLngBounds(MapDefaults.maxBounds)
+    }).setView(MapDefaults.Center, MapDefaults.Zoom);
+
+    L.control.scale({
+        position: "bottomright"
+    }).addTo(map);
 
     map.attributionControl.setPosition("bottomleft");
     map.attributionControl.setPrefix("");
