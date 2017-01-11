@@ -24,8 +24,9 @@ const displayMountains = function(map, mountains) {
     if (map.mountainLayer) {
         map.mountainLayer.removeFrom(map);
     }
-
     map.mountainLayer = L.layerGroup().addTo(map);
+
+    if (mountains == null) { return; }
 
     var icon = L.divIcon({className: "marker"});
     var latLngs = [];

@@ -34,12 +34,11 @@ class MapComponent extends Component {
 }
 
 const mapStateToProps = (state) => {
-
     return {
         map : state.map,
-        mountains: state.mountains.items,
-        status: state.mountains.status,
-        lastUpdated: state.mountains.lastUpdated
+        mountains: state.list.value,
+        status: state.list.status,
+        lastUpdated: state.list.lastUpdated
     };
 };
 

@@ -1,7 +1,6 @@
 export const Actions = {
     RequestStart: "REQUEST_START",
     ReceiveMountain: "RECEIVE_MOUNTAIN",
-    ReceiveList: "RECEIVE_LIST",
     ReceiveSearch: "RECEIVE_SEARCH",
     RequestError: "REQUEST_ERROR",
     Clear: "CLEAR"
@@ -16,13 +15,6 @@ function requestStart() {
 function receiveMountain(json) {
     return {
         type: Actions.ReceiveMountain,
-        json
-    };
-}
-
-function receiveList(json) {
-    return {
-        type: Actions.ReceiveList,
         json
     };
 }
@@ -42,10 +34,6 @@ function requestError() {
 
 export function fetchMountain(id) {
     return callApi("/api/mountains/" + id, receiveMountain);
-}
-
-export function fetchList(list) {
-    return callApi("/api/lists/" + list, receiveList);
 }
 
 export function search(term) {

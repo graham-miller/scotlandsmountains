@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { fetchList } from "../../actions/mountains";
+import { fetchList } from "./actions";
 
 import MountainList from "../common/MountainList";
 import Loading from "../common/Loading";
@@ -15,24 +15,27 @@ class ListComponent extends Component {
 
     render() {
 
+        if (this.props.status == null) { return null; }
+
         if (this.props.status.error) { return (<NetworkError />); }
 
         if (this.props.status.loading) { return (<Loading />); }
 
-        if (!this.props.mountains) { return (<Loading />); }
+        if (!this.props.list) { return (<Loading />); }
 
         return (
             <MountainList
-                mountains={this.props.mountains}
+                mountains={this.props.list}
                 showRowNumbers={true} />
         );
     }
 }
 
 const mapStateToProps = (state) => {
+
     return {
-        mountains: state.mountains.items,
-        status: state.mountains.status
+        list: state.list.value,
+        status: state.list.status,
     };
 };
 
