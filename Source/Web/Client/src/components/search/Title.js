@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import TextField from "material-ui/TextField";
 
-import { search } from "../../actions/mountains";
+import { search } from "./actions";
 import { reset } from "../map/actions";
 
 class SearchComponent extends Component {
@@ -64,8 +64,8 @@ class SearchComponent extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        mountains: state.mountains.items,
-        status: state.mountains.status
+        search: state.search.value,
+        status: state.search.status
     };
 };
 

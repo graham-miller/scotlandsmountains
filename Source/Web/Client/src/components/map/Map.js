@@ -36,33 +36,54 @@ class MapComponent extends Component {
 const mapStateToProps = (state) => {
 
     // show mountains from most recently updated map source
-    var mapSources = [
-        (state) => state.list,
-        (state) => state.mountain//,
-        //(state) => state.search
-    ];
+    let listLastUpdated = state.list.lastUpdated;
+    let mountainLastUpdated = state.mountain.lastUpdated;
+    let searchLastUpdated = state.search.lastUpdated;
 
-    let latest = 0;
+    const isAfter = function (date) {
 
-    for (var index = 1; index < mapSources.length; index++) {
-        if (mapSources[index](state).lastUpdated != null) {
-            if (mapSources[latest](state).lastUpdated == null) {
-                latest = index;
-            } else {
-                if (mapSources[index](state).lastUpdated > mapSources[latest](state).lastUpdated) {
-                    latest = index;
+        if (date == null) { return false; }
+
+        if (arguments.length > 1) {
+            for (var i = 1; i < arguments.length; i++) {
+                let compareTo = arguments[i];
+                if (compareTo != null && compareTo > date) {
+                    return false;
                 }
             }
         }
+
+        return true;
+    };
+
+    if (isAfter(listLastUpdated, mountainLastUpdated, searchLastUpdated)) {
+        return {
+            map : state.map,
+            mountains: state.list.value,
+            lastUpdated: state.list.lastUpdated
+        };
     }
 
-    const source = mapSources[latest](state);
+    if (isAfter(mountainLastUpdated, listLastUpdated, searchLastUpdated)) {
+        return {
+            map : state.map,
+            mountains: state.mountain.value,
+            lastUpdated: state.mountain.lastUpdated
+        };
+    }
+
+    if (isAfter(searchLastUpdated, listLastUpdated, mountainLastUpdated)) {
+        return {
+            map : state.map,
+            mountains: state.search.value.results,
+            lastUpdated: state.search.lastUpdated
+        };
+    }
 
     return {
         map : state.map,
-        mountains: source.value,
-        status: source.status,
-        lastUpdated: source.lastUpdated
+        mountains: [],
+        lastUpdated: null
     };
 };
 
