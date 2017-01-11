@@ -34,11 +34,35 @@ class MapComponent extends Component {
 }
 
 const mapStateToProps = (state) => {
+
+    // show mountains from most recently updated map source
+    var mapSources = [
+        (state) => state.list,
+        (state) => state.mountain//,
+        //(state) => state.search
+    ];
+
+    let latest = 0;
+
+    for (var index = 1; index < mapSources.length; index++) {
+        if (mapSources[index](state).lastUpdated != null) {
+            if (mapSources[latest](state).lastUpdated == null) {
+                latest = index;
+            } else {
+                if (mapSources[index](state).lastUpdated > mapSources[latest](state).lastUpdated) {
+                    latest = index;
+                }
+            }
+        }
+    }
+
+    const source = mapSources[latest](state);
+
     return {
         map : state.map,
-        mountains: state.list.value,
-        status: state.list.status,
-        lastUpdated: state.list.lastUpdated
+        mountains: source.value,
+        status: source.status,
+        lastUpdated: source.lastUpdated
     };
 };
 

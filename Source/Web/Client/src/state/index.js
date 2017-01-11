@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
-import mountains from "../reducers/mountains";
 import map from "../components/map/reducers";
 
 import list from "../components/list/reducer";
+import mountain from "../components/mountain/reducer";
 
 export const app = combineReducers({
     list,
-    mountains,
+    mountain,
     map
 });
 
