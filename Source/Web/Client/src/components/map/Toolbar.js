@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import React, { Component } from "react";
 
-import { zoomIn, zoomOut, setBaseLayer } from "../../actions/map";
+import { zoomIn, zoomOut, setBaseLayer } from "./actions";
 
 import MapLayers from "../../map/MapLayers";
 

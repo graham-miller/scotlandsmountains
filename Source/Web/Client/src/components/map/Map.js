@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { create, destroy } from "../../actions/map";
+import { create, destroy } from "./actions";
 import Toolbar from "./Toolbar";
 
 import "./Map.scss";

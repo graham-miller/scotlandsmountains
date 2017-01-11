@@ -1,5 +1,5 @@
-import { MapActions } from "../actions/map";
-import MapFactory from "../map/MapFactory";
+import { MapActions } from "./actions";
+import MapFactory from "../../map/MapFactory";
 
 const map = (mapObject = null, action) => {
     switch (action.type) {

@@ -6,8 +6,6 @@ import { fetchMountain } from "../../actions/mountains";
 import Loading from "../common/Loading";
 import NetworkError from "../common/NetworkError";
 
-import {List, ListItem} from "material-ui/List";
-
 class MountainComponent extends Component {
 
     componentWillMount() {

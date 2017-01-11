@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import TextField from "material-ui/TextField";
 
 import { search } from "../../actions/mountains";
-import { reset } from "../../actions/map";
+import { reset } from "../map/actions";
 
 class SearchComponent extends Component {
 
