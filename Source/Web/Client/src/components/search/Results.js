@@ -13,11 +13,11 @@ class ResultsComponent extends Component {
 
         if (this.props.status.loading) { return (<div><Loading /></div>); }
 
-        if (this.props.mountains.length === 0) { return null; }
+        if (this.props.search == null || this.props.search.results.length === 0) { return null; }
 
         return (
             <MountainList
-                mountains={this.props.mountains}
+                mountains={this.props.search.results}
                 showRowNumbers={false} />
         );
     }
@@ -25,8 +25,8 @@ class ResultsComponent extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        mountains: state.mountains.items,
-        status: state.mountains.status
+        search: state.search.value,
+        status: state.search.status
     };
 };
 

@@ -6,7 +6,7 @@ import thunkMiddleware from "redux-thunk";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
 
-import { app } from "./reducers/index";
+import { app } from "./state/index";
 import App from "./components/app/App";
 
 import "normalize.css/normalize.css";

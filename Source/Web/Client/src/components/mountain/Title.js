@@ -10,10 +10,11 @@ class TitleComponent extends Component {
 }
 
 const mapStateToProps = (state) => {
-
-    return {
-        name: state.mountains.items.length === 1 ? state.mountains.items[0].name : "",
-    };
+    if (state.mountain == null || state.mountain.value == null) {
+        return { name: "" };
+    } else {
+        return { name: state.mountain.value.name || "" };
+    }
 };
 
 const Title = connect(mapStateToProps)(TitleComponent);

@@ -1,5 +1,6 @@
-import { MapActions } from "../actions/map";
-import MapFactory from "../map/MapFactory";
+import { Actions } from "../../state/actions";
+import { MapActions } from "./actions";
+import MapFactory from "../../map/MapFactory";
 
 const map = (mapObject = null, action) => {
     switch (action.type) {
@@ -23,6 +24,10 @@ const map = (mapObject = null, action) => {
 
     case MapActions.SetBaseLayer:
         mapObject.setBaseLayer(action.baseLayer);
+        break;
+
+    case Actions.ClearMountains:
+        mapObject.clearMountains();
         break;
 
     case MapActions.Destroy:

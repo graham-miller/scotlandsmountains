@@ -19,18 +19,24 @@ const reset = function(map) {
     setBaseLayer(map, MapDefaults.BaseLayer);
 };
 
-const displayMountains = function(map, mountains) {
 
+const clearMountains = function(map) {
     if (map.mountainLayer) {
         map.mountainLayer.removeFrom(map);
     }
-
     map.mountainLayer = L.layerGroup().addTo(map);
+};
+
+const displayMountains = function(map, mountains) {
+
+    map.clearMountains();
+
+    if (mountains == null) { return; }
 
     var icon = L.divIcon({className: "marker"});
     var latLngs = [];
 
-    mountains.forEach((mountain) => {
+    [].concat(mountains).forEach((mountain) => {
         var latLng = [mountain.latitude, mountain.longitude];
         latLngs.push(latLng);
 
@@ -66,6 +72,7 @@ const MapFactory = function(elementId) {
     map.resize = () => resize(map);
     map.reset = () => reset(map);
     map.setBaseLayer = (baseLayer) => setBaseLayer(map, baseLayer);
+    map.clearMountains = () => clearMountains(map);
 
     map.setBaseLayer(MapDefaults.BaseLayer);
     map.resize();
