@@ -1,0 +1,2 @@
+Fix routing:
+    https://github.com/ReactTraining/react-router/blob/master/docs/API.md#components-1
