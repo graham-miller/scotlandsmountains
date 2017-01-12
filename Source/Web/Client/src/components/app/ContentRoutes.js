@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Router, Redirect, Route, browserHistory } from "react-router";
 
-import { clear } from "../../actions/mountains";
+import { clearMountains } from "../../state/actions";
 
 import List from "../list/List";
 import Mountain from "../mountain/Mountain";
@@ -13,11 +13,11 @@ class ContentRoutesComponent extends Component {
     constructor(props) {
         super(props);
 
-        this.resetMountains = this.resetMountains.bind(this);
+        this.clearMountainsFromMap = this.clearMountainsFromMap.bind(this);
     }
 
-    resetMountains() {
-        this.props.dispatch(clear());
+    clearMountainsFromMap() {
+        this.props.dispatch(clearMountains());
     }
 
     render() {
@@ -25,9 +25,9 @@ class ContentRoutesComponent extends Component {
             <Router name="content" history={browserHistory}>
                 <Redirect from='/' to='/mountains' />
                 <Redirect from='/mountains' to='/mountains/munros' />
-                <Route path='/mountains/:table' component={List} onLeave={this.resetMountains} />
-                <Route path='/mountain/:id(/:name)' component={Mountain} onLeave={this.resetMountains} />
-                <Route path='/search' component={Results} onLeave={this.resetMountains} />
+                <Route path='/mountains/:table' component={List} onLeave={this.clearMountainsFromMap} />
+                <Route path='/mountain/:id(/:name)' component={Mountain} onLeave={this.clearMountainsFromMap} />
+                <Route path='/search' component={Results} onLeave={this.clearMountainsFromMap} />
             </Router>
         );
     }

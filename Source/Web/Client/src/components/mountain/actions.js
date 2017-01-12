@@ -1,30 +1,30 @@
 import callApi from "../../state/callApi";
 
-export const Actions = {
-    RequestMountain: "REQUEST_MOUNTAIN",
-    ReceiveMountain: "RECEIVE_MOUNTAIN",
-    MountainError: "MOUNTAIN_ERROR",
+export const MountainActions = {
+    Request: "MOUNTAIN_REQUEST",
+    Receive: "MOUNTAIN_RECEIVE",
+    Error: "MOUNTAIN_ERROR",
 };
 
-function requestMountain() {
+function request() {
     return {
-        type: Actions.RequestMountain
+        type: MountainActions.Request
     };
 }
 
-function receiveMountain(json) {
+function receive(json) {
     return {
-        type: Actions.ReceiveMountain,
+        type: MountainActions.Receive,
         json
     };
 }
 
-function mountainError() {
+function error() {
     return {
-        type: Actions.MountainError
+        type: MountainActions.Error
     };
 }
 
 export function fetchMountain(id) {
-    return callApi("/api/mountains/" + id, requestMountain, receiveMountain, mountainError);
+    return callApi("/api/mountains/" + id, request, receive, error);
 }

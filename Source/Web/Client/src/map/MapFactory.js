@@ -19,12 +19,17 @@ const reset = function(map) {
     setBaseLayer(map, MapDefaults.BaseLayer);
 };
 
-const displayMountains = function(map, mountains) {
 
+const clearMountains = function(map) {
     if (map.mountainLayer) {
         map.mountainLayer.removeFrom(map);
     }
     map.mountainLayer = L.layerGroup().addTo(map);
+};
+
+const displayMountains = function(map, mountains) {
+
+    map.clearMountains();
 
     if (mountains == null) { return; }
 
@@ -67,6 +72,7 @@ const MapFactory = function(elementId) {
     map.resize = () => resize(map);
     map.reset = () => reset(map);
     map.setBaseLayer = (baseLayer) => setBaseLayer(map, baseLayer);
+    map.clearMountains = () => clearMountains(map);
 
     map.setBaseLayer(MapDefaults.BaseLayer);
     map.resize();

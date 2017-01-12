@@ -1,30 +1,30 @@
 import callApi from "../../state/callApi";
 
-export const Actions = {
-    RequestList: "REQUEST_LIST",
-    ReceiveList: "RECEIVE_LIST",
-    ListError: "LIST_ERROR",
+export const ListActions = {
+    Request: "LIST_REQUEST",
+    Receive: "LIST_RECEIVE",
+    Error: "LIST_ERROR",
 };
 
-function requestList() {
+function request() {
     return {
-        type: Actions.RequestList
+        type: ListActions.Request
     };
 }
 
-function receiveList(json) {
+function receive(json) {
     return {
-        type: Actions.ReceiveList,
+        type: ListActions.Receive,
         json
     };
 }
 
-function listError() {
+function error() {
     return {
-        type: Actions.ListError
+        type: ListActions.Error
     };
 }
 
 export function fetchList(list) {
-    return callApi("/api/lists/" + list, requestList, receiveList, listError);
+    return callApi("/api/lists/" + list, request, receive, error);
 }

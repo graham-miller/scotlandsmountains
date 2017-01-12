@@ -1,30 +1,30 @@
 import callApi from "../../state/callApi";
 
-export const Actions = {
-    StartSearch: "START_SEARCH",
-    ReceiveResults: "RECEIVE_RESULTS",
-    SearchError: "SEARCH_ERROR",
+export const SearchActions = {
+    Request: "SEARCH_REQUEST",
+    Receive: "SEARCH_RECEIVE",
+    Error: "SEARCH_ERROR",
 };
 
-function startSearch() {
+function request() {
     return {
-        type: Actions.StartSearch
+        type: SearchActions.Request
     };
 }
 
-function receiveResults(json) {
+function receive(json) {
     return {
-        type: Actions.ReceiveResults,
+        type: SearchActions.Receive,
         json
     };
 }
 
-function searchError() {
+function error() {
     return {
-        type: Actions.SearchError
+        type: SearchActions.Error
     };
 }
 
 export function search(term) {
-    return callApi("/api/search/" + term, startSearch, receiveResults, searchError);
+    return callApi("/api/search/" + term, request, receive, error);
 }
