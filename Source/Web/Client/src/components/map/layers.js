@@ -19,6 +19,6 @@ const aerialLayer = L.tileLayer(
     });
 mapLayer.name = "Aerial";
 
-const MapLayers = [mapLayer, aerialLayer];
+const layers = [mapLayer, aerialLayer];
 
-export default MapLayers;
+export default layers;

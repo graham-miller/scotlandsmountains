@@ -1,6 +1,6 @@
 import L from "leaflet";
 
-import MapDefaults from "./MapDefaults";
+import defaults from "./defaults";
 
 const resize = function(map) {
     map.invalidateSize({ pan: true, debounceMoveend: true });
@@ -15,8 +15,8 @@ const setBaseLayer = function(map, baseLayer) {
 };
 
 const reset = function(map) {
-    map.setView(MapDefaults.Center, MapDefaults.Zoom);
-    setBaseLayer(map, MapDefaults.BaseLayer);
+    map.setView(defaults.Center, defaults.Zoom);
+    setBaseLayer(map, defaults.BaseLayer);
 };
 
 
@@ -52,14 +52,14 @@ const displayMountains = function(map, mountains) {
     }
 };
 
-const MapFactory = function(elementId) {
+const factory = function(elementId) {
 
     var map = L.map(elementId, {
         zoomControl: false,
-        minZoom: MapDefaults.minZoom,
-        maxZoom: MapDefaults.maxZoom,
-        maxBounds: L.latLngBounds(MapDefaults.maxBounds)
-    }).setView(MapDefaults.Center, MapDefaults.Zoom);
+        minZoom: defaults.minZoom,
+        maxZoom: defaults.maxZoom,
+        maxBounds: L.latLngBounds(defaults.maxBounds)
+    }).setView(defaults.Center, defaults.Zoom);
 
     L.control.scale({
         position: "bottomright"
@@ -74,9 +74,9 @@ const MapFactory = function(elementId) {
     map.setBaseLayer = (baseLayer) => setBaseLayer(map, baseLayer);
     map.clearMountains = () => clearMountains(map);
 
-    map.setBaseLayer(MapDefaults.BaseLayer);
+    map.setBaseLayer(defaults.BaseLayer);
     map.resize();
     return map;
 };
 
-export default MapFactory;
+export default factory;

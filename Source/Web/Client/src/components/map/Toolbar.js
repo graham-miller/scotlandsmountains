@@ -3,7 +3,7 @@ import React, { Component } from "react";
 
 import { zoomIn, zoomOut, setBaseLayer } from "./actions";
 
-import MapLayers from "../../map/MapLayers";
+import layers from "./layers";
 
 import FloatingActionButton from "material-ui/FloatingActionButton";
 
@@ -22,7 +22,7 @@ class ToolbarComponent extends Component {
         this.state = {
             canZoomIn: true,
             canZoomOut: true,
-            baseLayer: MapLayers[0]
+            baseLayer: layers[0]
         };
 
         this.currentBaseLayerIs = this.currentBaseLayerIs.bind(this);
@@ -90,8 +90,8 @@ class ToolbarComponent extends Component {
                 <div>
                     <FloatingActionButton
                         secondary={true}  mini={true}
-                        disabled={this.state.baseLayer === MapLayers[0]}
-                        onTouchTap={() => this.props.dispatch(setBaseLayer(MapLayers[0]))}>
+                        disabled={this.state.baseLayer === layers[0]}
+                        onTouchTap={() => this.props.dispatch(setBaseLayer(layers[0]))}>
                         <Map />
                     </FloatingActionButton>
                 </div>
@@ -99,8 +99,8 @@ class ToolbarComponent extends Component {
                 <div>
                     <FloatingActionButton
                         secondary={true}  mini={true}
-                        disabled={this.state.baseLayer === MapLayers[1]}
-                        onTouchTap={() => this.props.dispatch(setBaseLayer(MapLayers[1]))}>
+                        disabled={this.state.baseLayer === layers[1]}
+                        onTouchTap={() => this.props.dispatch(setBaseLayer(layers[1]))}>
                         <Satellite />
                     </FloatingActionButton>
                 </div>

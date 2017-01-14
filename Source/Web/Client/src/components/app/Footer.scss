@@ -1,0 +1,37 @@
+﻿@import "../../config";
+
+footer {
+    clear: both;
+    background-color: $footer-background-color;
+    color: $footer-color;    
+    padding-bottom: $padding * 5;
+    font-size: 0.8em;
+
+    .footer-section {
+        padding: $padding;
+    }
+
+    .footer-section.legal {
+        text-align: center;
+    }
+
+    a:link {
+        color: $footer-link-color;
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: $footer-link-color;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: $footer-link-color;
+        text-decoration: underline;
+    }
+
+    a:active {
+        color: $footer-link-color;
+        text-decoration: underline;
+    }
+}

@@ -1,56 +1,5 @@
 ﻿@import "../../config";
 
-main {
-    @extend .full-height;
-    padding-top: $header-height;
-    z-index: 1;
-
-    #map-section, #content-section {
-        @extend .half-width;
-    }
-
-    #map-section {
-        @extend .full-height;
-        float: left;
-        position: relative;
-
-        @media (max-width: $small-screen-breakpoint) {
-            width: 100%;
-        }
-
-        #page-title {
-            position: absolute;
-            width: 100%;
-            height: $page-title-height;
-            padding: $padding;
-
-            @media (max-width: $small-screen-breakpoint) {
-                padding-right: $padding*5;
-            }
-        }
-
-        #map-container {
-            @extend .full-height;
-            padding: $padding;
-            padding-top: $page-title-height;
-
-            @media (max-width: $small-screen-breakpoint) {
-                padding-right: $padding*5;
-            }
-        }
-    }
-
-    #content-section {
-        float: right;
-        padding: $padding;
-
-        @media (max-width: $small-screen-breakpoint) {
-            width: 100%;
-            padding-top: 0;
-        }
-    }
-}
-
 a:link {
     color: $link-color;
     text-decoration: none;
@@ -69,40 +18,4 @@ a:hover {
 a:active {
     color: $link-color;
     text-decoration: underline;
-}
-
-footer {
-    clear: both;
-    background-color: $footer-background-color;
-    color: $footer-color;    
-    padding-bottom: $padding * 5;
-    font-size: 0.8em;
-
-    .footer-section {
-        padding: $padding;
-    }
-
-    .footer-section.legal {
-        text-align: center;
-    }
-
-    a:link {
-        color: $footer-link-color;
-        text-decoration: none;
-    }
-
-    a:visited {
-        color: $footer-link-color;
-        text-decoration: none;
-    }
-
-    a:hover {
-        color: $footer-link-color;
-        text-decoration: underline;
-    }
-
-    a:active {
-        color: $footer-link-color;
-        text-decoration: underline;
-    }
 }

@@ -35,7 +35,7 @@ class Title extends Component {
         return (
             <div>
                 <AppBar
-                    title="Scotland's Mountains"
+                    title={<span>Scotland&apos;s Mountains</span>}
                     onTitleTouchTap={(e) => this.goToUrl("/", e)}
                     onLeftIconButtonTouchTap={this.toggleDrawer}
                     style={{position:"fixed",top:0}} />
