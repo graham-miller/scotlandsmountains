@@ -19,7 +19,6 @@ const reset = function(map) {
     setBaseLayer(map, defaults.BaseLayer);
 };
 
-
 const clearMountains = function(map) {
     if (map.mountainLayer) {
         map.mountainLayer.removeFrom(map);

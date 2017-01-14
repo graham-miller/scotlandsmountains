@@ -27,12 +27,12 @@ class ContentRoutesComponent extends Component {
     render() {
         return (
             <Router name="content" history={browserHistory}>
-                <Redirect from='/' to='/mountains' />
+                <Redirect from='/' to='/mountains/munros' />
                 <Redirect from='/mountains' to='/mountains/munros' />
-                <Route component={MapWrapper}>
-                    <Route path='/mountains/:table' onLeave={this.clearMountainsFromMap} components={{title: ListTitle, content: ListContent}} />
-                    <Route path='/mountain/:id(/:name)' onLeave={this.clearMountainsFromMap} components={{title: MountainTitle, content: MountainContent}} />
-                    <Route path='/search' onLeave={this.clearMountainsFromMap} components={{title: SearchTitle, content: SearchContent}} />
+                <Route component={MapWrapper} onChange={this.clearMountainsFromMap}>
+                    <Route path='/mountains/:table' components={{title: ListTitle, content: ListContent}} />
+                    <Route path='/mountain/:id(/:name)' components={{title: MountainTitle, content: MountainContent}} />
+                    <Route path='/search' components={{title: SearchTitle, content: SearchContent}} />
                 </Route>
                 <Route path='/legal(/:type)' component={null} />
             </Router>
