@@ -37,7 +37,7 @@ class Title extends Component {
 
         let brand = (
             <span style={{cursor: "pointer"}}>
-                Scotland&apos;s <Logo size="28px" color="#ffffff" />ountains
+                Scotland&apos;s <Logo size="24px" color="#ffffff" />ountains
             </span>
         );
 
