@@ -6,6 +6,8 @@ import Drawer from "material-ui/Drawer";
 
 import Nav from "./Nav";
 
+import Logo from "../common/Logo";
+
 class Title extends Component {
 
     constructor() {
@@ -32,10 +34,17 @@ class Title extends Component {
     }
 
     render() {
+
+        let brand = (
+            <span style={{cursor: "pointer"}}>
+                Scotland&apos;s <Logo size="28px" color="#ffffff" />ountains
+            </span>
+        );
+
         return (
             <div>
                 <AppBar
-                    title={<span>Scotland&apos;s Mountains</span>}
+                    title={brand}
                     onTitleTouchTap={(e) => this.goToUrl("/", e)}
                     onLeftIconButtonTouchTap={this.toggleDrawer}
                     style={{position:"fixed",top:0}} />

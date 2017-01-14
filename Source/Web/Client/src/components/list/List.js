@@ -20,7 +20,6 @@ class ListComponent extends Component {
         let noList = !this.props.list;
 
         if (!tableChanged && !loading && noList) {
-            debugger;
             this.props.dispatch(fetchList(this.props.routeParams.table));
         }
     }

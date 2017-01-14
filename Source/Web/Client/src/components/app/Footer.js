@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import Logo from "../common/Logo";
+
 import "./Footer.scss";
 
 class Footer extends Component {
@@ -25,6 +27,11 @@ class Footer extends Component {
                         &nbsp;<a href='http://www.hills-database.co.uk/' target='_blank'>The Database of British and Irish Hills</a>&nbsp;
                         licensed under a
                         &nbsp;<a href='http://creativecommons.org/licenses/by/3.0/deed.en_GB' target='_blank'>Creative Commons Attribution 3.0 Unported License</a>.
+                    </p>
+                </div>
+                <div className="footer-section" style={{textAlign: "center"}}>
+                    <p>
+                        <Logo size="50px" color="#909690" />
                     </p>
                 </div>
             </footer>

@@ -19,6 +19,9 @@ injectTapEventPlugin();
 let store = createStore(app, applyMiddleware(thunkMiddleware));
 
 const muiTheme = getMuiTheme({
+    palette: {
+        primary1Color: "#909740",
+    }
 });
 
 const element = (
