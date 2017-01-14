@@ -26,7 +26,7 @@ class ContentRoutesComponent extends Component {
 
     render() {
         return (
-            <Router name="content" history={browserHistory}>
+            <Router onUpdate={() => window.scrollTo(0, 0)} name="content" history={browserHistory}>
                 <Redirect from='/' to='/mountains/munros' />
                 <Redirect from='/mountains' to='/mountains/munros' />
                 <Route component={MapWrapper} onChange={this.clearMountainsFromMap}>
