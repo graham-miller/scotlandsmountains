@@ -30,7 +30,8 @@ namespace ScotlandsMountains.Import.ScotlandsMountains
                         Code = cell.GetValue<string>(),
                         Name = cell.Offset(0, 1).GetValue<string>(),
                         Order = cell.Offset(0, 2).GetValue<int>(),
-                        Description = cell.Offset(0, 3).GetValue<string>()
+                        Description = cell.Offset(0, 3).GetValue<string>(),
+                        Enabled = cell.Offset(0, 4).GetValue<bool>()
                     });
 
                     cell = cell.Offset(1, 0);
@@ -50,5 +51,6 @@ namespace ScotlandsMountains.Import.ScotlandsMountains
         public string Name { get; set; }
         public int Order { get; set; }
         public string Description { get; set; }
+        public bool Enabled { get; set; }
     }
 }

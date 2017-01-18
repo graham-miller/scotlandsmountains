@@ -4,5 +4,6 @@ namespace ScotlandsMountains.Domain
     {
         public int Order { get; set; }
         public string Description { get; set; }
+        public bool Enabled { get; set; }
     }
 }

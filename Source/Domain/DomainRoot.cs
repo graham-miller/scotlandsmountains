@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System.Linq;
@@ -56,7 +57,6 @@ namespace ScotlandsMountains.Domain
         }
 
         private IList<Mountain> _mountains = null;
-
         public IList<Mountain> Mountains
         {
             get
@@ -69,7 +69,6 @@ namespace ScotlandsMountains.Domain
         }
 
         private string _scotlandId = null;
-
         private string ScotlandId
         {
             get
@@ -77,16 +76,72 @@ namespace ScotlandsMountains.Domain
                 if (_scotlandId == null)
                 {
                     // TODO should be Single not First, but we've got two!?
-                    _scotlandId = Countries.First(x => x.Name == "Scotland").Id;
+                    _scotlandId = _inner.Countries.First(x => x.Name == "Scotland").Id;
                 }
 
                 return _scotlandId;
             }
         }
 
-        public IList<List> Lists { get { return _inner.Lists; } }
-        public IList<Country> Countries { get { return _inner.Countries; } }
-        public Maps Maps { get { return _inner.Maps; } }
-        public IList<Section> Sections { get { return _inner.Sections; } }
+        private IList<List> _lists = null;
+        public IList<List> Lists
+        {
+            get
+            {
+                if (_lists == null)
+                    _lists = Get(d => d.Lists, m => m.ListIds);
+
+                return _lists;
+            }
+        }
+
+        private IList<Country> _countries = null;
+        public IList<Country> Countries
+        {
+            get
+            {
+                if (_countries == null)
+                    _countries = _inner.Countries.Where(x => x.Id == ScotlandId).Take(1).ToList();
+
+                return _countries;
+            }
+        }
+
+        private Maps _maps = null;
+        public Maps Maps
+        {
+            get
+            {
+                if (_maps == null)
+                    _maps = new Maps
+                    {
+                        Landranger = Get(d => d.Maps.Landranger, m => m.MapIds),
+                        LandrangerActive = Get(d => d.Maps.LandrangerActive, m => m.MapIds),
+                        Explorer = Get(d => d.Maps.Explorer, m => m.MapIds),
+                        ExplorerActive = Get(d => d.Maps.ExplorerActive, m => m.MapIds),
+                        Discoverer = new List<Map>(),
+                        Discovery = new List<Map>()
+                    };
+
+                return _maps;
+            }
+        }
+
+        private IList<Section> _sections = null;
+        public IList<Section> Sections
+        {
+            get
+            {
+                if (_sections == null)
+                    _sections = Get(d => d.Sections, m => new[] { m.SectionId });
+
+                return _sections;
+            }
+        }
+
+        private IList<T> Get<T>(Func<DomainRoot,IList<T>> domainRootProperty, Func<Mountain,IEnumerable<string>> mountainProperty) where T : Entity
+        {
+            return domainRootProperty(_inner).Where(x => Mountains.SelectMany(mountainProperty).Distinct().Contains(x.Id)).ToList();
+        }
     }
 }

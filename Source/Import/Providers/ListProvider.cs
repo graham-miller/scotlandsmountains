@@ -28,15 +28,21 @@ namespace ScotlandsMountains.Import.Providers
             return dobihFile.Records
                 .SelectMany(x => x.Lists)
                 .Distinct()
-                .ToDictionary(
-                    x => x,
-                    x => new List
-                    {
-                        Id = idGenerator.Generate(),
-                        Name = listInfoProvider.GetListInfoFor(x).Name,
-                        Order = listInfoProvider.GetListInfoFor(x).Order,
-                        Description = listInfoProvider.GetListInfoFor(x).Description
-                    });
+                .ToDictionary(listCode => listCode, listCode => ElementSelector(listCode, idGenerator, listInfoProvider));
+        }
+
+        private static List ElementSelector(string listCode, IIdGenerator idGenerator, IListInfoProvider listInfoProvider)
+        {
+            var listInfo = listInfoProvider.GetListInfoFor(listCode);
+
+            return new List
+            {
+                Id = idGenerator.Generate(),
+                Name = listInfo.Name,
+                Order = listInfo.Order,
+                Description = listInfo.Description,
+                Enabled = listInfo.Enabled
+            };
         }
 
         private readonly IDictionary<string, List> _lists;
