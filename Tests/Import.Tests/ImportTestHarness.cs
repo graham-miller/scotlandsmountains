@@ -56,7 +56,7 @@ namespace ScotlandsMountains.Import.Tests
 
             Assert.That(domainRoot.Sections.Count, Is.EqualTo(135));
 
-            Assert.That(domainRoot.Mountains.Count, Is.EqualTo(20647));
+            Assert.That(domainRoot.Mountains.Count, Is.EqualTo(20691));
         }
     }
 }
