@@ -2,13 +2,11 @@ import React, { Component } from "react";
 
 import Logo from "../common/Logo";
 
-import "./Footer.scss";
-
 class Footer extends Component {
 
     render() {
         return (
-            <footer>
+            <div id="footer">
                 <div className="footer-section legal">
                     <a href="#">Terms and conditions</a>&nbsp;&middot;&nbsp;
                     <a href="#">Privacy policy</a>&nbsp;&middot;&nbsp;
@@ -34,7 +32,7 @@ class Footer extends Component {
                         <Logo size="50px" color="#909690" />
                     </p>
                 </div>
-            </footer>
+            </div>
         );
     }
 }

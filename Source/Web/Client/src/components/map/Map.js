@@ -4,8 +4,6 @@ import { connect } from "react-redux";
 import { create, destroy } from "./actions";
 import Toolbar from "./Toolbar";
 
-import "./Map.scss";
-
 class MapComponent extends Component {
 
     componentDidMount() {
@@ -25,7 +23,7 @@ class MapComponent extends Component {
     render() {
 
         return (
-            <div className="full-height">
+            <div id="map-wrapper">
                 <Toolbar />
                 <div id="map" />
             </div>

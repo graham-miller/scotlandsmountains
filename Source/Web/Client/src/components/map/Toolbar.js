@@ -12,8 +12,6 @@ import ZoomOut from "material-ui/svg-icons/content/remove";
 import Satellite from "material-ui/svg-icons/maps/satellite";
 import Map from "material-ui/svg-icons/maps/map";
 
-import "./Toolbar.scss";
-
 class ToolbarComponent extends Component {
 
     constructor(props) {

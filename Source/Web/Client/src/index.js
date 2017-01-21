@@ -7,7 +7,7 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
 
 import { app } from "./state/index";
-import App from "./components/app/App";
+import Routes from "./components/app/Routes";
 
 import "normalize.css/normalize.css";
 import "leaflet/dist/leaflet.css";
@@ -27,7 +27,7 @@ const muiTheme = getMuiTheme({
 const element = (
     <Provider store={store}>
         <MuiThemeProvider muiTheme={muiTheme}>
-            <App />
+            <Routes />
         </MuiThemeProvider>
     </Provider>
 );

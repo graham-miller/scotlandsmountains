@@ -42,7 +42,7 @@ class Title extends Component {
         );
 
         return (
-            <div>
+            <div id="header">
                 <AppBar
                     title={brand}
                     onTitleTouchTap={(e) => this.goToUrl("/", e)}

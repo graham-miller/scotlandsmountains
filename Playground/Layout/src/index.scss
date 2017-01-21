@@ -1,136 +1,84 @@
-$color-dark: #778899;
-$color-darker: darken($color-dark, 20%);
-$color-darkest: darken($color-darker, 20%);
+html, body, #root, #app { height: 100%; }
 
-$color-lightest: #e9ecee;
-$color-lighter: darken($color-lightest, 20%);
-$color-light: darken($color-lighter, 20%);
-
-$padding: 10px;
-$font-size: 16px;
-$brand-font-size: 20px;
-$line-height: 1.15;
-
-$header-height: (4 * $padding) + ($line-height * $brand-font-size) + ($line-height * $font-size);
-$nav-bar-height: (2 * $padding) + ($line-height * $font-size);
-$page-actions-height: 50px;
-
-$small-screen-breakpoint: 765px;
-
-$map-section-width: 50%;
-$content-section-width: 50%;
-
-*, h1 {
-  margin: 0;
-  padding: 0;
-  border: none;
-  box-sizing: border-box;
+body {
+  background-color: dimgrey;
+  color: whitesmoke;
 }
 
-.full-height {
-  height: 100%;
+#app { position: static; }
+
+#main {
+  background-color: whitesmoke;
+  color: dimgrey;
+  overflow: visible;
 }
 
-html, body {
-  @extend .full-height;
-  background-color: $color-lightest;
-  font-family: sans-serif;
-  font-size: $font-size;
+#header, #footer { z-index: 3; }
+#footer {
+  position: relative;
+  background-color: dimgrey;
+  color: whitesmoke;
 }
 
-#root, #app-component {
-  @extend .full-height;
+#map-section, #content-section {
+  background-color: whitesmoke;
+  color: dimgrey;
 }
 
-header {
-  position:fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: $color-darkest;
-  color: $color-lightest;
+#map-section {
   z-index: 2;
-  line-height: $line-height;
-
-  h1 {
-    font-size: $brand-font-size;
-    padding: $padding;
-  }
-
-  nav {
-    background-color: $color-darker;
-    color: $color-lightest;
-    height: $nav-bar-height;
-    overflow-y: hidden; 
-
-    .nav-item {
-      display: inline-block;
-      padding: $padding;
-    }
-  }
-}
-
-main {
-  @extend .full-height;
-  padding-top: $header-height;
-  background-color: $color-lightest;
-  color: $color-darkest;
-  z-index: 1;
-
-  #map-section { width: $map-section-width; }
-  #content-section { width: $content-section-width; }
-
-  #map-section {
-    @extend .full-height;
-    float: left;
-    position: relative;
-    @media (max-width: $small-screen-breakpoint) {
-      width: 100%;
-    }
-
-    #page-actions {
-      position: absolute;
-      width: 100%;
-      height: $page-actions-height;
-      padding: $padding;
-    }
-
-    #map-container {
-      @extend .full-height;
-      padding: $padding;
-      padding-top: $page-actions-height;
-
-      #map {
-        @extend .full-height;
-        background-color: $color-light;
-      }
-    }
-  }
-
-  #content-section {
-    float: right;
-    padding: $padding;
-    
-    @media (max-width: $small-screen-breakpoint) {
-      width: 100%;
-      padding-top: 0;
-    }
-  }
-}
-
-footer {
-  clear: both;
-  background-color: $color-darkest;
-  padding-bottom: $padding * 5;
-  font-size: 0.8em;
+  height: 100%;
+  padding: 75px 10px 10px 10px;
+  box-sizing: border-box;
   
-  .footer-section {
-    padding: $padding;    
-    color: $color-light;
+  @media(max-width: 767px) {
+    width: 100%;
+    position: relative;
+    padding-right: 50px;
   }
 
-  .footer-section.legal {
-    background-color: $color-darker;
-    color: $color-lighter;
+  @media(min-width: 768px) {
+    width: 50%;
+    position: fixed;
+  }
+
+  #map-title {
+    height: 100px;
+    position: absolute;
+  }
+
+  #map-wrapper {
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 100px;
+
+    #map{
+      height: 100%;
+      box-sizing: border-box;
+    }
+  }
+}
+
+#content-section {
+  z-index: 1;
+  padding: 10px 10px 10px 10px;
+  box-sizing: border-box;
+
+  @media(max-width: 767px) {
+    width: 100%;
+  }
+
+  @media(min-width: 768px) {
+    padding-top: 75px;
+    width: 50%;
+    margin-left: 50%;
+    min-height: 100%;
+  }
+
+  #content-wrapper {
+    @media(min-width: 768px) {
+      max-width: 500px;
+      margin: 0 auto;
+    }
   }
 }
