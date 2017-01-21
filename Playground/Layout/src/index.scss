@@ -1,73 +1,84 @@
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  box-sizing: border-box;
-}
+html, body, #root, #app { height: 100%; }
 
 body {
-  background-color: dimgrey;  
-}
-
-html, body, #root, #app, #map-container, #map-padding, #map { height: 100%; }
-
-#header {
-  height: 64px;
-  background-color: yellowgreen;
+  background-color: dimgrey;
   color: whitesmoke;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 2;
 }
 
-#map-container {
+#app { position: static; }
+
+#main {
   background-color: whitesmoke;
-  padding: 64px 50% 0 0;
-  z-index: 1;
-  position: absolute;
-
-  @media (max-width: 765px) {
-  padding: 64px 0 0 0;
-  position: static; //media query
-  }
+  color: dimgrey;
+  overflow: visible;
 }
 
-#content-container {
-  background-color: whitesmoke;
-  padding: 64px 10px 10px 10px;
-  z-index: 1;
-
-  @media (max-width: 765px) {
-    padding: 10px 10px 10px 10px;
-  }
-}
-
+#header, #footer { z-index: 3; }
 #footer {
-  background-color: dimgrey;  
+  position: relative;
+  background-color: dimgrey;
   color: whitesmoke;
-  padding-bottom: 5em;
-  z-index: 2;
 }
 
-#map-container {
-  position: relative;
-  top: 0;
-  width: 100%;
+#map-section, #content-section {
+  background-color: whitesmoke;
+  color: dimgrey;
+}
+
+#map-section {
+  z-index: 2;
+  height: 100%;
+  padding: 75px 10px 10px 10px;
+  box-sizing: border-box;
+  
+  @media(max-width: 767px) {
+    width: 100%;
+    position: relative;
+    padding-right: 50px;
+  }
+
+  @media(min-width: 768px) {
+    width: 50%;
+    position: fixed;
+  }
 
   #map-title {
     height: 100px;
     position: absolute;
-    top: 64px;
+  }
+
+  #map-wrapper {
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 100px;
+
+    #map{
+      height: 100%;
+      box-sizing: border-box;
+    }
+  }
+}
+
+#content-section {
+  z-index: 1;
+  padding: 10px 10px 10px 10px;
+  box-sizing: border-box;
+
+  @media(max-width: 767px) {
     width: 100%;
-    padding: 10px;
   }
 
-  #map-padding {
-    padding: 100px 10px 10px 10px;
+  @media(min-width: 768px) {
+    padding-top: 75px;
+    width: 50%;
+    margin-left: 50%;
+    min-height: 100%;
   }
 
-  #map {
-    background-color: lightblue;
+  #content-wrapper {
+    @media(min-width: 768px) {
+      max-width: 500px;
+      margin: 0 auto;
+    }
   }
 }
