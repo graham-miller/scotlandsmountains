@@ -19,6 +19,10 @@ $text-max-width: 500px;
 
 html, body, #root, #app { height: 100%; }
 
+html {
+  overflow-y: scroll; 
+}
+
 body {
   background-color: #fff;
   font-family: 'Roboto', sans-serif;
