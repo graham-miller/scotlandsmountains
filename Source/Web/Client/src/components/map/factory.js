@@ -11,7 +11,9 @@ const setBaseLayer = function(map, baseLayer) {
         map.removeLayer(map.currentBaseLayer);
     }
     map.currentBaseLayer = baseLayer;
-    map.addLayer(baseLayer);
+    if (baseLayer != null) {
+        map.addLayer(baseLayer);
+    }
 };
 
 const reset = function(map) {

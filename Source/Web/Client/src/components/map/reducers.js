@@ -31,6 +31,7 @@ const map = (mapObject = null, action) => {
         break;
 
     case MapActions.Destroy:
+        mapObject.setBaseLayer(null);
         return null;
 
     default:
