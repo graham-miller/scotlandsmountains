@@ -46,6 +46,12 @@ a:active { color: $link-color; text-decoration: underline; }
 #app { position: static; }
 
 #header, #footer { z-index: 3; }
+
+#header {
+  a.brand { color: #ffffff; text-decoration: none; }
+  a.nav { color: #000000; text-decoration: none; }
+}
+
 #footer {
     position: relative;
     background-color: $footer-background-color;
