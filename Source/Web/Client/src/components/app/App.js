@@ -8,19 +8,24 @@ class App extends Component {
 
     render() {
         const { map, content } = this.props;
+
+        const mapSection = map == null ? null : (
+            <div id="map-section">
+                <div id="map-title">
+                    {map}
+                </div>
+                <Map/>
+            </div>
+        );
+
         return (
             <div id="app">
 
                 <Title/>
 
-                <div id="map-section">
-                    <div id="map-title">
-                        {map}
-                    </div>
-                    <Map/>
-                </div>
+                {mapSection}
 
-                <div id="content-section">
+                <div id="content-section" className={map == null ? "without-map" : ""}>
                     <div id="content-wrapper">
                         {content}
                     </div>

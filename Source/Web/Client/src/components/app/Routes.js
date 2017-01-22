@@ -12,6 +12,8 @@ import { default as MountainContent } from "../mountain/Mountain";
 import { default as SearchTitle } from "../search/Title";
 import { default as SearchContent } from "../search/Results";
 
+import Legal from "../legal/Legal";
+
 class ContentRoutesComponent extends Component {
 
     constructor(props) {
@@ -35,7 +37,7 @@ class ContentRoutesComponent extends Component {
                         <Route path='/mountain/:id(/:name)' components={{map: MountainTitle, content: MountainContent}} />
                         <Route path='/search' components={{map: SearchTitle, content: SearchContent}} />
                     </Route>
-                    <Route path='/legal(/:type)' components={null} />
+                    <Route path='/legal(/:type)' components={{content: Legal}} />
                 </Route>
             </Router>
         );

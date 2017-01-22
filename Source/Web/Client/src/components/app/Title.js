@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { browserHistory } from "react-router";
+import { Link } from "react-router";
 
 import AppBar from "material-ui/AppBar";
 import Drawer from "material-ui/Drawer";
@@ -17,7 +17,6 @@ class Title extends Component {
 
         this.toggleDrawer = this.toggleDrawer.bind(this);
         this.closeDrawer = this.closeDrawer.bind(this);
-        this.goToUrl = this.goToUrl.bind(this);
     }
 
     toggleDrawer() {
@@ -28,24 +27,18 @@ class Title extends Component {
         this.setState({drawerOpen: false});
     }
 
-    goToUrl(url, event) {
-        browserHistory.push(url);   
-        event.preventDefault();
-    }
-
     render() {
 
         let brand = (
-            <span style={{cursor: "pointer"}}>
+            <Link to="/" className="brand">
                 Scotland&apos;s <Logo size="24px" color="#ffffff" />ountains
-            </span>
+            </Link>
         );
 
         return (
             <div id="header">
                 <AppBar
                     title={brand}
-                    onTitleTouchTap={(e) => this.goToUrl("/", e)}
                     onLeftIconButtonTouchTap={this.toggleDrawer}
                     style={{position:"fixed",top:0}} />
                 <Drawer
