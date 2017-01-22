@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router";
 
 import Logo from "../common/Logo";
 
@@ -8,10 +9,10 @@ class Footer extends Component {
         return (
             <div id="footer">
                 <div className="footer-section legal">
-                    <a href="#">Terms and conditions</a>&nbsp;&middot;&nbsp;
-                    <a href="#">Privacy policy</a>&nbsp;&middot;&nbsp;
-                    <a href="#">Disclaimer</a>&nbsp;&middot;&nbsp;
-                    <a href="#">Copyright</a>            
+                    <Link to="/legal/terms">Terms and conditions</Link>&nbsp;&middot;&nbsp;
+                    <Link to="/legal/privacy">Privacy policy</Link>&nbsp;&middot;&nbsp;
+                    <Link to="/legal/disclaimer">Disclaimer</Link>&nbsp;&middot;&nbsp;
+                    <Link to="/legal/copyright">Copyright</Link>            
                 </div>
                 <div className="footer-section">
                     <p>

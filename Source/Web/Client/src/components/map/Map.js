@@ -11,7 +11,7 @@ class MapComponent extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.lastUpdated !== this.props.lastUpdated) {
+        if (nextProps.lastUpdated !== this.props.lastUpdated && this.props.map != null) {
             this.props.map.displayMountains(nextProps.mountains);
         }
     }
