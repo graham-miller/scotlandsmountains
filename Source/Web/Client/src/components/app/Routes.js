@@ -14,6 +14,8 @@ import { default as SearchContent } from "../search/Results";
 
 import Legal from "../legal/Legal";
 
+import ContactUs from "../common/ContactUs";
+
 class ContentRoutesComponent extends Component {
 
     constructor(props) {
@@ -38,6 +40,7 @@ class ContentRoutesComponent extends Component {
                         <Route path='/search' components={{map: SearchTitle, content: SearchContent}} />
                     </Route>
                     <Route path='/legal(/:type)' components={{content: Legal}} />
+                    <Route path='/contactus' components={{content: ContactUs}} />
                 </Route>
             </Router>
         );
