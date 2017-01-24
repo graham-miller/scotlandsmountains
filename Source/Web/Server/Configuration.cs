@@ -1,14 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ScotlandsMountains.Web.Server
+﻿namespace ScotlandsMountains.Web.Server
 {
     public class Configuration
     {
-        public string EmailAddress { get; set; }
+        public EmailAddressConfiguration EmailAddress { get; set; }
         public MailGunConfiguration MailGun { get; set; }
+    }
+
+    public class EmailAddressConfiguration
+    {
+        public string NoReply { get; set; }
+        public string Admin { get; set; }
     }
 
     public class MailGunConfiguration

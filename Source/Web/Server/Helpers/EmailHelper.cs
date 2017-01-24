@@ -8,7 +8,7 @@ namespace ScotlandsMountains.Web.Server.Helpers
     public interface IEmailHelper
     {
         bool IsValidEmailAddress(string emailAddress);
-        void SendEmail(string recipient, string subject, string body);
+        void SendEmailToAdmin(string subject, string body);
     }
 
     public class EmailHelper : IEmailHelper
@@ -26,7 +26,7 @@ namespace ScotlandsMountains.Web.Server.Helpers
             return true;
         }
 
-        public void SendEmail(string recipient, string subject, string body)
+        public void SendEmailToAdmin(string subject, string body)
         {
             var client = new RestClient
             {
@@ -37,8 +37,8 @@ namespace ScotlandsMountains.Web.Server.Helpers
             var request = new RestRequest();
             request.AddParameter("domain", _configuration.MailGun.DomainName, ParameterType.UrlSegment);
             request.Resource = "{domain}/messages";
-            request.AddParameter("from", _configuration.EmailAddress);
-            request.AddParameter("to", recipient);
+            request.AddParameter("from", _configuration.EmailAddress.NoReply);
+            request.AddParameter("to", _configuration.EmailAddress.Admin);
             request.AddParameter("subject", subject);
             request.AddParameter("text", body);
             request.Method = Method.POST;

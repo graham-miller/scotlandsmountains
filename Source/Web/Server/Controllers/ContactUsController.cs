@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
 using ScotlandsMountains.Web.Server.Helpers;
 using ScotlandsMountains.Web.Server.Models;
@@ -15,14 +16,14 @@ namespace ScotlandsMountains.Web.Server.Controllers
         }
 
         [HttpPost("{send}")]
-        public IActionResult Send([FromForm] ContactUsModel model)
+        public IActionResult Send([FromBody]ContactUsModel model)
         {
             if (!ModelState.IsValid)
             {
                 return new BadRequestObjectResult(model);
             }
 
-            _emailHelper.SendEmail("graham.miller@hymans.co.uk", "Test subject", "Test body");
+            _emailHelper.SendEmailToAdmin(model.Subject, $"From: {model.Sender}{Environment.NewLine}{Environment.NewLine}{model.Subject}");
 
             return new OkResult();
         }

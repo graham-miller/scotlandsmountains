@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+
+import $ from "jquery";
+
 import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
 
@@ -17,7 +20,16 @@ class ContactUs extends Component {
     }
 
     submitForm() {
-        alert(this.state.sender + "\n" + this.state.subject + "\n" + this.state.message);
+        $.ajax("/api/contactus/send", {
+            method: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(this.state)
+        }).done(() => {
+            alert(this.state.sender + "\n" + this.state.subject + "\n" + this.state.message);
+        }).fail(() => {
+            // TODO
+            console.log("Error sending email");
+        });
     }
 
     render() {
