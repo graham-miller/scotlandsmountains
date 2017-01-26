@@ -7,7 +7,6 @@ namespace ScotlandsMountains.Web.Server.Helpers
 {
     public interface IEmailHelper
     {
-        bool IsValidEmailAddress(string emailAddress);
         void SendEmailToAdmin(string subject, string body);
     }
 
@@ -18,12 +17,6 @@ namespace ScotlandsMountains.Web.Server.Helpers
         public EmailHelper(IOptions<Configuration> configuration)
         {
             _configuration = configuration.Value;
-        }
-
-        public bool IsValidEmailAddress(string emailAddress)
-        {
-            // TODO validate email address
-            return true;
         }
 
         public void SendEmailToAdmin(string subject, string body)

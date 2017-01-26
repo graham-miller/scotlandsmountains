@@ -20,12 +20,23 @@ namespace ScotlandsMountains.Web.Server.Controllers
         {
             if (!ModelState.IsValid)
             {
+                model.SenderErrorText = ModelState?["Sender"]?.Errors?[0]?.ErrorMessage;
+                model.SubjectErrorText = ModelState?["Subject"]?.Errors?[0]?.ErrorMessage;
+                model.MessageErrorText = ModelState?["Message"]?.Errors?[0]?.ErrorMessage;
                 return new BadRequestObjectResult(model);
             }
 
-            _emailHelper.SendEmailToAdmin(model.Subject, $"From: {model.Sender}{Environment.NewLine}{Environment.NewLine}{model.Subject}");
+            try
+            {
+                _emailHelper.SendEmailToAdmin(model.Subject, $"From: {model.Sender}{Environment.NewLine}{Environment.NewLine}{model.Subject}");
+                model.Sent = true;
+            }
+            catch
+            {
+                model.Error = true;
+            }
 
-            return new OkResult();
+            return new OkObjectResult(model);
         }
     }
 }

@@ -11,9 +11,14 @@ class ContactUs extends Component {
         super(props);
 
         this.state = {
+            sent: false,
+            error: false,
             sender: "",
             subject: "",
-            message: ""
+            message: "",
+            senderErrorText: "",
+            subjectErrorText: "",
+            messageErrorText: ""
         };
 
         this.submitForm = this.submitForm.bind(this);
@@ -24,15 +29,34 @@ class ContactUs extends Component {
             method: "POST",
             contentType: "application/json",
             data: JSON.stringify(this.state)
-        }).done(() => {
-            alert(this.state.sender + "\n" + this.state.subject + "\n" + this.state.message);
-        }).fail(() => {
-            // TODO
-            console.log("Error sending email");
+        }).done((data) => {
+            this.setState(data);
+        }).fail((jqXHR) => {
+            this.setState(jqXHR.responseJSON);
         });
     }
 
     render() {
+
+        if (this.state.sent) {
+            return (
+                <div>
+                    <h2>Contact us</h2>
+                    <p>Your message has been sent.</p>
+                    <p>Thanks for getting in touch!</p>
+                </div>
+            );
+        }
+
+        if (this.state.error) {
+            return (
+                <div>
+                    <h2>Contact us</h2>
+                    <p>Oops! something went wrong trying to send your message.</p>
+                    <p><a href="/contactus" onClick={() => this.setState({error: false})}>Try again</a>.</p>
+                </div>
+            );
+        }
 
         return (
             <div>
@@ -42,20 +66,26 @@ class ContactUs extends Component {
                         
                         <div>
                             <TextField
-                                type="email" name="sender" floatingLabelText="Your email address"
-                                onChange={(e) => this.setState({sender: e.target.value})}/>
+                                type="email" name="sender"
+                                floatingLabelText="Your email address"
+                                errorText={this.state.senderErrorText}
+                                onChange={(e) => this.setState({sender: e.target.value, senderErrorText: ""})}/>
                         </div>
 
                         <div>
                             <TextField
-                                name="subject" floatingLabelText="Subject"
-                                onChange={(e) => this.setState({subject: e.target.value})}/>
+                                name="subject"
+                                floatingLabelText="Subject"
+                                errorText={this.state.subjectErrorText}
+                                onChange={(e) => this.setState({subject: e.target.value, subjectErrorText: ""})}/>
                         </div>
 
                         <div>
                             <TextField
-                                name="message" floatingLabelText="Message" multiLine={true} rows={5}
-                                onChange={(e) => this.setState({message: e.target.value})}/>
+                                name="message" multiLine={true} rows={5}
+                                floatingLabelText="Message"
+                                errorText={this.state.messageErrorText}
+                                onChange={(e) => this.setState({message: e.target.value, messageErrorText: ""})}/>
                         </div>
 
                         <div>
