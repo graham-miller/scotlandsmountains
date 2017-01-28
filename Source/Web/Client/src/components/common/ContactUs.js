@@ -36,6 +36,7 @@ class ContactUs extends Component {
         this.setState({ canSubmit: false });
         $.ajax("/api/contactus/send", {
             method: "POST",
+            crossDomain: true,
             contentType: "application/json",
             data: JSON.stringify(data)
         }).done(() => {
