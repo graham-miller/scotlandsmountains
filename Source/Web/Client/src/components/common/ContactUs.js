@@ -98,6 +98,7 @@ class ContactUs extends Component {
                         <FormsyText
                             name="sender"
                             type="email"
+                            fullWidth={true}
                             validations="isEmail"
                             validationError="Invalid"
                             required
@@ -107,6 +108,7 @@ class ContactUs extends Component {
                     <div>
                         <FormsyText
                             name="subject"
+                            fullWidth={true}
                             required
                             floatingLabelText="Subject" />
                     </div>
@@ -114,6 +116,7 @@ class ContactUs extends Component {
                     <div>
                         <FormsyText
                             name="message"
+                            fullWidth={true}
                             multiLine={true} rows={5}
                             required
                             floatingLabelText="Message" />
