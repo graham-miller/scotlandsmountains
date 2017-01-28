@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using ScotlandsMountains.Domain;
+using ScotlandsMountains.Web.Server.Helpers;
 
 namespace ScotlandsMountains.Web.Server
 {
@@ -16,7 +17,7 @@ namespace ScotlandsMountains.Web.Server
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                .AddJsonFile("config.json", optional: true, reloadOnChange: true)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
         }
@@ -27,17 +28,22 @@ namespace ScotlandsMountains.Web.Server
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            //services.AddMvc();
+            //services.AddMvc();b
 
             services
                 .AddCors()
                 .AddMvcCore()
-                .AddJsonFormatters(x => {
+                .AddJsonFormatters(x =>
+                {
                     x.Formatting = Newtonsoft.Json.Formatting.Indented;
                     x.ContractResolver = new CamelCasePropertyNamesContractResolver();
-                });
+                })
+                .AddDataAnnotations();
+
+            services.Configure<Configuration>(Configuration.GetSection("ScotlandsMountains"));
 
             services.AddSingleton<IDomainRoot>(x => DomainRoot.Load().ScotlandOnly());
+            services.AddSingleton<IEmailHelper,EmailHelper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

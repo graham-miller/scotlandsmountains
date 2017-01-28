@@ -20,6 +20,9 @@ class Nav extends Component {
                 <MenuItem onTouchTap={this.props.closeDrawer}>
                     <Link to="/search" className="nav">Search</Link>
                 </MenuItem>
+                <MenuItem onTouchTap={this.props.closeDrawer}>
+                    <Link to="/contactus" className="nav">Contact us</Link>
+                </MenuItem>
             </div>
         );
     }

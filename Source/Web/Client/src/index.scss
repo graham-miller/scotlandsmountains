@@ -1,6 +1,7 @@
 ﻿$font-size: 16px;
 
 $link-color: rgb(64, 120, 192);
+$background-color: #f8fbfd;
 $footer-background-color: #212121;
 $footer-color: #909690;
 $footer-link-color: #dcdcdc;
@@ -22,7 +23,7 @@ html {
 }
 
 body {
-  background-color: #fff;
+  background-color: $background-color;
   font-family: 'Roboto', sans-serif;
   font-size: $font-size;
 }
@@ -69,7 +70,7 @@ a:active { color: $link-color; text-decoration: underline; }
 }
 
 #map-section, #content-section {
-  background-color: #ffffff;
+  background-color: $background-color;
   color: rgba(0, 0, 0, 0.870588);
 }
 
@@ -150,7 +151,7 @@ a:active { color: $link-color; text-decoration: underline; }
   padding-top: $header-height+$padding;
   width: 100%;
   margin-left: 0;
-  min-height: auto;
+  min-height: 100%;
 
   #content-wrapper {
     @media(min-width: $large-screen-min-width) {
@@ -203,4 +204,11 @@ dl {
     dd { margin: 0; padding: 0 16px 16px 16px; color: rgba(0, 0, 0, 0.870588); }
     dd:first-letter { text-transform: capitalize; }
     li { padding: 8px 8px 8px 0; }
+}
+
+form {
+  fieldset {
+    border: none; padding: 0; margin: 0;
+    > div { padding: $padding 0 $padding 0; }
+  }
 }

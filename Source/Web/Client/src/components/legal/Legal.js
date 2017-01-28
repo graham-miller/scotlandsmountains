@@ -21,6 +21,10 @@ class Legal extends Component {
         });
     }
 
+    componentWillUnmount() {
+        this.setState({html: ""});
+    }
+
     render() {
         return <div ref="legal" dangerouslySetInnerHTML={{__html: this.state.html}} />;
     }

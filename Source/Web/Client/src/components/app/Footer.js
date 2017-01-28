@@ -9,10 +9,11 @@ class Footer extends Component {
         return (
             <div id="footer">
                 <div className="footer-section legal">
-                    <Link to="/legal/terms">Terms and conditions</Link>&nbsp;&middot;&nbsp;
-                    <Link to="/legal/privacy">Privacy policy</Link>&nbsp;&middot;&nbsp;
-                    <Link to="/legal/disclaimer">Disclaimer</Link>&nbsp;&middot;&nbsp;
-                    <Link to="/legal/copyright">Copyright</Link>            
+                    <Link to="/legal/terms">Terms and conditions</Link>&emsp;&middot;&emsp;
+                    <Link to="/legal/privacy">Privacy policy</Link>&emsp;&middot;&emsp;
+                    <Link to="/legal/disclaimer">Disclaimer</Link>&emsp;&middot;&emsp;
+                    <Link to="/legal/copyright">Copyright</Link>&emsp;&middot;&emsp;
+                    <Link to="/contactus">Contact us</Link>
                 </div>
                 <div className="footer-section">
                     <p>
