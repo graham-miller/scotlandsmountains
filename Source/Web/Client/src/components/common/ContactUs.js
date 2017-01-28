@@ -105,8 +105,6 @@ class ContactUs extends Component {
                     <div>
                         <FormsyText
                             name="subject"
-                            validations="isWords"
-                            validationError="Invalid"
                             required
                             floatingLabelText="Subject" />
                     </div>
@@ -115,8 +113,6 @@ class ContactUs extends Component {
                         <FormsyText
                             name="message"
                             multiLine={true} rows={5}
-                            validations="isWords"
-                            validationError="Invalid"
                             required
                             floatingLabelText="Message" />
                     </div>

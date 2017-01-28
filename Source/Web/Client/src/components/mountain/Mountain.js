@@ -3,9 +3,6 @@ import { connect } from "react-redux";
 
 import { fetchMountain } from "./actions";
 
-import Loading from "../common/Loading";
-import NetworkError from "../common/NetworkError";
-
 class MountainComponent extends Component {
 
     componentWillMount() {
@@ -14,15 +11,9 @@ class MountainComponent extends Component {
 
     render() {
 
-        if (this.props.status == null) { return null; }
-
-        if (this.props.status.error) { return (<NetworkError />); }
-
-        if (this.props.status.loading) { return (<Loading />); }
-
-        if (!this.props.mountain) { return (<Loading />); }
-
         let mountain = this.props.mountain;
+
+        if (!mountain) { return null; }
 
         return (
             <dl>
@@ -63,8 +54,7 @@ class MountainComponent extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        mountain: state.mountain.value,
-        status: state.mountain.status
+        mountain: state.mountain.value
     };
 };
 

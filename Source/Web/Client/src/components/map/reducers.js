@@ -16,12 +16,6 @@ const map = (mapObject = null, action) => {
         mapObject.zoomOut();
         break;
 
-    case MapActions.Reset:
-        if (mapObject) {
-            mapObject.reset();
-        }
-        break;
-
     case MapActions.SetBaseLayer:
         mapObject.setBaseLayer(action.baseLayer);
         break;
