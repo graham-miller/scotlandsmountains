@@ -15,8 +15,12 @@ namespace ScotlandsMountains.Web.Server.Controllers
             _emailHelper = emailHelper;
         }
 
-        [HttpPost("{send}")]
-        public IActionResult Send([FromBody]ContactUsModel model)
+        // Idealy we would want to POST, but because of Azure/Cloudflare/Github set up to enable
+        // custom domain and https which use redirects, we need to use get 
+        // [HttpPost("{send}")]
+        // public IActionResult Send([FromBody]ContactUsModel model)
+        [HttpGet("{send}")]
+        public IActionResult Send([FromQuery]ContactUsModel model)
         {
             if (ModelState.IsValid)
             {
