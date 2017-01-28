@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import $ from "jquery";
 
+import GettyImage from "../common/GettyImage";
+
 class Legal extends Component {
 
-    constructor (props) {
+    constructor(props) {
         super(props);
-        this.state = {html: ""};
+        this.state = { html: "" };
         this.getContent();
     }
 
@@ -16,17 +18,22 @@ class Legal extends Component {
     getContent() {
         $.get("/legal/" + this.props.params.type + ".html", (html) => {
             if (this.refs.legal) {
-                this.setState({html: html});
+                this.setState({ html: html });
             }
         });
     }
 
     componentWillUnmount() {
-        this.setState({html: ""});
+        this.setState({ html: "" });
     }
 
     render() {
-        return <div ref="legal" dangerouslySetInnerHTML={{__html: this.state.html}} />;
+        return (
+            <div>
+                <div ref="legal" dangerouslySetInnerHTML={{ __html: this.state.html }} />
+                <GettyImage />
+            </div>
+        );
     }
 }
 

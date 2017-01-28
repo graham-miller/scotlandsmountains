@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import Formsy from "formsy-react";
-
 import $ from "jquery";
 
 import RaisedButton from "material-ui/RaisedButton";
-
 import { FormsyText } from "formsy-material-ui/lib";
+
+import GettyImage from "./GettyImage";
 
 class ContactUs extends Component {
 
@@ -65,6 +65,7 @@ class ContactUs extends Component {
                     <h2>Contact us</h2>
                     <p>Your message has been sent.</p>
                     <p>Thanks for getting in touch!</p>
+                    <GettyImage />
                 </div>
             );
         }
@@ -77,6 +78,7 @@ class ContactUs extends Component {
                     <div>
                         <RaisedButton onClick={this.resetForm} label="Try again" primary={true} />
                     </div>
+                    <GettyImage />
                 </div>
             );
         }
@@ -125,6 +127,7 @@ class ContactUs extends Component {
 
                 </Formsy.Form>
 
+                <GettyImage />
             </div>
         );
     }
