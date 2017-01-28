@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import Formsy from "formsy-react";
 
 import $ from "jquery";
 
-import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
+
+import { FormsyText } from "formsy-material-ui/lib";
 
 class ContactUs extends Component {
 
@@ -11,28 +13,46 @@ class ContactUs extends Component {
         super(props);
 
         this.state = {
+            canSubmit: false,
             sent: false,
-            error: false,
-            sender: "",
-            subject: "",
-            message: "",
-            senderErrorText: "",
-            subjectErrorText: "",
-            messageErrorText: ""
+            error: false
         };
 
+        this.enableButton = this.enableButton.bind(this);
+        this.disableButton = this.disableButton.bind(this);
         this.submitForm = this.submitForm.bind(this);
+        this.resetForm = this.resetForm.bind(this);
     }
 
-    submitForm() {
+    enableButton() {
+        this.setState({ canSubmit: true });
+    }
+
+    disableButton() {
+        this.setState({ canSubmit: false });
+    }
+
+    submitForm(data) {
+        this.setState({ canSubmit: false });
         $.ajax("/api/contactus/send", {
             method: "POST",
             contentType: "application/json",
-            data: JSON.stringify(this.state)
-        }).done((data) => {
-            this.setState(data);
-        }).fail((jqXHR) => {
-            this.setState(jqXHR.responseJSON);
+            data: JSON.stringify(data)
+        }).done(() => {
+            this.setState({sent: true});
+        }).fail(() => {
+            this.setState({error: true});
+        });
+    }
+
+    resetForm() {
+        if (this.refs.form) {
+            this.refs.form.reset();
+        }
+        this.setState({
+            canSubmit: false,
+            sent: false,
+            error: false
         });
     }
 
@@ -53,7 +73,9 @@ class ContactUs extends Component {
                 <div>
                     <h2>Contact us</h2>
                     <p>Oops! something went wrong trying to send your message.</p>
-                    <p><a href="/contactus" onClick={() => this.setState({error: false})}>Try again</a>.</p>
+                    <div>
+                        <RaisedButton onClick={this.resetForm} label="Try again" primary={true} />
+                    </div>
                 </div>
             );
         }
@@ -61,39 +83,51 @@ class ContactUs extends Component {
         return (
             <div>
                 <h2>Contact us</h2>
-                <form action="" method="post">
-                    <fieldset>
-                        
-                        <div>
-                            <TextField
-                                type="email" name="sender"
-                                floatingLabelText="Your email address"
-                                errorText={this.state.senderErrorText}
-                                onChange={(e) => this.setState({sender: e.target.value, senderErrorText: ""})}/>
-                        </div>
 
-                        <div>
-                            <TextField
-                                name="subject"
-                                floatingLabelText="Subject"
-                                errorText={this.state.subjectErrorText}
-                                onChange={(e) => this.setState({subject: e.target.value, subjectErrorText: ""})}/>
-                        </div>
+                <Formsy.Form
+                    ref="form"
+                    onValid={this.enableButton}
+                    onInvalid={this.disableButton}
+                    onValidSubmit={this.submitForm}
+                    onInvalidSubmit={this.notifyFormError} >
 
-                        <div>
-                            <TextField
-                                name="message" multiLine={true} rows={5}
-                                floatingLabelText="Message"
-                                errorText={this.state.messageErrorText}
-                                onChange={(e) => this.setState({message: e.target.value, messageErrorText: ""})}/>
-                        </div>
+                    <div>
+                        <FormsyText
+                            name="sender"
+                            type="email"
+                            validations="isEmail"
+                            validationError="Invalid"
+                            required
+                            floatingLabelText="Your email address" />
+                    </div>
 
-                        <div>
-                            <RaisedButton onClick={() => this.submitForm()} label="Send" primary={true} />
-                        </div>
+                    <div>
+                        <FormsyText
+                            name="subject"
+                            validations="isWords"
+                            validationError="Invalid"
+                            required
+                            floatingLabelText="Subject" />
+                    </div>
 
-                    </fieldset>
-                </form>
+                    <div>
+                        <FormsyText
+                            name="message"
+                            multiLine={true} rows={5}
+                            validations="isWords"
+                            validationError="Invalid"
+                            required
+                            floatingLabelText="Message" />
+                    </div>
+
+                    <div>
+                        <RaisedButton
+                            disabled={!this.state.canSubmit}
+                            type="submit" label="Send" primary={true} />
+                    </div>
+
+                </Formsy.Form>
+
             </div>
         );
     }
