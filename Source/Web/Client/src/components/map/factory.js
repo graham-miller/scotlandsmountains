@@ -16,8 +16,12 @@ const setBaseLayer = function(map, baseLayer) {
     }
 };
 
-const reset = function(map) {
+const resetView = function(map) {
     map.setView(defaults.Center, defaults.Zoom);
+};
+
+const reset = function(map) {
+    map.resetView();
     setBaseLayer(map, defaults.BaseLayer);
 };
 
@@ -26,13 +30,17 @@ const clearMountains = function(map) {
         map.mountainLayer.removeFrom(map);
     }
     map.mountainLayer = L.layerGroup().addTo(map);
+    map.resetView();
 };
 
 const displayMountains = function(map, mountains) {
 
     map.clearMountains();
 
-    if (mountains == null) { return; }
+    if (mountains == null) {
+        map.resetView();
+        return;
+    }
 
     var icon = L.divIcon({className: "marker"});
     var latLngs = [];
@@ -50,6 +58,8 @@ const displayMountains = function(map, mountains) {
 
     if (latLngs.length > 0) {
         map.fitBounds(latLngs, { maxZoom: 12 });
+    } else {
+        map.resetView();        
     }
 };
 
@@ -71,6 +81,7 @@ const factory = function(elementId) {
 
     map.displayMountains = (mountains) => displayMountains(map, mountains);
     map.resize = () => resize(map);
+    map.resetView = () => resetView(map);
     map.reset = () => reset(map);
     map.setBaseLayer = (baseLayer) => setBaseLayer(map, baseLayer);
     map.clearMountains = () => clearMountains(map);

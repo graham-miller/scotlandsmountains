@@ -3,6 +3,7 @@ import callApi from "../../state/callApi";
 export const SearchActions = {
     Request: "SEARCH_REQUEST",
     Receive: "SEARCH_RECEIVE",
+    Clear: "SEARCH_CLEAR",
     Error: "SEARCH_ERROR",
 };
 
@@ -19,6 +20,12 @@ function receive(json) {
     };
 }
 
+function clear() {
+    return {
+        type: SearchActions.Clear
+    };
+}
+
 function error() {
     return {
         type: SearchActions.Error
@@ -26,5 +33,9 @@ function error() {
 }
 
 export function search(term) {
-    return callApi("/api/search/" + term, request, receive, error);
+    if (term && term.length > 2) {
+        return callApi("/api/search/" + term, request, receive, error);
+    } else {
+        return (dispatch) => dispatch(clear());
+    }
 }

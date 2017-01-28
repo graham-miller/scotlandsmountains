@@ -1,19 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import Loading from "../common/Loading";
-import NetworkError from "../common/NetworkError";
 import MountainList from "../common/MountainList";
 
 class ResultsComponent extends Component {
 
     render() {
 
-        if (this.props.status.error) { return (<div><NetworkError /></div>); }
+        let search = this.props.search;
 
-        if (this.props.status.loading) { return (<div><Loading /></div>); }
-
-        if (this.props.search == null || this.props.search.results.length === 0) { return null; }
+        if (!search) { return null; }
 
         return (
             <MountainList

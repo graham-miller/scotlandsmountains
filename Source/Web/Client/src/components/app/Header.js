@@ -8,7 +8,7 @@ import Nav from "./Nav";
 
 import Logo from "../common/Logo";
 
-class Title extends Component {
+class Header extends Component {
 
     constructor() {
         super();
@@ -51,4 +51,4 @@ class Title extends Component {
     }
 }
 
-export default Title;
+export default Header;

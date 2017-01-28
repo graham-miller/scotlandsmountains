@@ -1,4 +1,3 @@
-import { Actions } from "../../state/actions";
 import { SearchActions } from "./actions";
 import defaultState from "../../state/defaultState";
 import requestStatus from "../../state/requestStatus";
@@ -21,15 +20,15 @@ const reducer = (state = defaultState.search, action) => {
             lastUpdated: + new Date()
         });
 
+    case SearchActions.Clear:
+        return defaultState.search;
+
     case SearchActions.Error:
         return Object.assign({}, state, {
             status: requestStatus.error,
             value: null,
             lastUpdated: null
         });
-
-    case Actions.ClearMountains:
-        return defaultState.search;
 
     default:
         return Object.assign({}, state);

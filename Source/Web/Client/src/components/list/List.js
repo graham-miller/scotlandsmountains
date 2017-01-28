@@ -4,8 +4,6 @@ import { connect } from "react-redux";
 import { fetchList } from "./actions";
 
 import MountainList from "../common/MountainList";
-import Loading from "../common/Loading";
-import NetworkError from "../common/NetworkError";
 
 class ListComponent extends Component {
 
@@ -26,17 +24,13 @@ class ListComponent extends Component {
 
     render() {
 
-        if (this.props.status == null) { return null; }
+        let list = this.props.list;
 
-        if (this.props.status.error) { return (<NetworkError />); }
-
-        if (this.props.status.loading) { return (<Loading />); }
-
-        if (!this.props.list) { return (<Loading />); }
+        if (!list) { return null; }
 
         return (
             <MountainList
-                mountains={this.props.list}
+                mountains={list}
                 showRowNumbers={true} />
         );
     }
@@ -45,8 +39,7 @@ class ListComponent extends Component {
 const mapStateToProps = (state) => {
 
     return {
-        list: state.list.value,
-        status: state.list.status,
+        list: state.list.value
     };
 };
 

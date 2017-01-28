@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import TextField from "material-ui/TextField";
 
 import { search } from "./actions";
-import { reset } from "../map/actions";
 
 class SearchComponent extends Component {
 
@@ -20,10 +19,7 @@ class SearchComponent extends Component {
     }
 
     componentWillMount() {
-        this.props.dispatch(reset());
-        if (this.state.term.length > 2) {
-            this.props.dispatch(search(this.state.term));
-        }
+        this.props.dispatch(search(this.state.term));
     }
 
     search(event) {
@@ -38,9 +34,7 @@ class SearchComponent extends Component {
 
         this.setState({
             timeoutId: setTimeout(() => {
-                if (this.state.term.length > 2) {
-                    this.props.dispatch(search(this.state.term));
-                }
+                this.props.dispatch(search(this.state.term));
             }, delay)
         });
     }

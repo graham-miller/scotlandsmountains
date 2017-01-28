@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 
-import Title from "./Title";
+import Header from "./Header";
 import Footer from "./Footer";
 import Map from "../map/Map";
 
 class App extends Component {
 
     render() {
+
         const { map, content } = this.props;
 
         const mapSection = map == null ? null : (
@@ -21,7 +22,7 @@ class App extends Component {
         return (
             <div id="app">
 
-                <Title/>
+                <Header/>
 
                 {mapSection}
 
