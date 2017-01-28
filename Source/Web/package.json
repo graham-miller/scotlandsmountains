@@ -73,6 +73,8 @@
   },
   "dependencies": {
     "bootstrap": "4.0.0-alpha.4",
+    "formsy-material-ui": "^0.5.3",
+    "formsy-react": "^0.19.2",
     "leaflet": "^1.0.2",
     "material-ui": "^0.16.6",
     "normalize.css": "^5.0.0",

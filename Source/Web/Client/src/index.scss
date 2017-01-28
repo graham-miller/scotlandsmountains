@@ -150,7 +150,7 @@ a:active { color: $link-color; text-decoration: underline; }
   padding-top: $header-height+$padding;
   width: 100%;
   margin-left: 0;
-  min-height: auto;
+  min-height: 100%;
 
   #content-wrapper {
     @media(min-width: $large-screen-min-width) {
