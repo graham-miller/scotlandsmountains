@@ -11,10 +11,29 @@ class ResultsComponent extends Component {
 
         if (!search) { return null; }
 
+        let summary = null;
+
+        if (this.props.search.count === 0) {
+            summary = (
+                <p>
+                    No matches found.
+                </p>
+            );
+        } else {
+            summary = (
+                <p>
+                    Showing {this.props.search.results.length} of {this.props.search.count} result{this.props.search.count === 1 ? "" : "s"}.
+                </p>
+            );
+        }
+
         return (
-            <MountainList
-                mountains={this.props.search.results}
-                showRowNumbers={false} />
+            <div>
+                {summary}
+                <MountainList
+                    mountains={this.props.search.results}
+                    showRowNumbers={false} />
+            </div>
         );
     }
 }
