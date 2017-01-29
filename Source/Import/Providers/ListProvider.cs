@@ -20,6 +20,9 @@ namespace ScotlandsMountains.Import.Providers
 
         public List GetByDobihId(string dobihId)
         {
+            if (!_lists.ContainsKey(dobihId))
+                return null;
+
             return _lists[dobihId];
         }
 
@@ -28,10 +31,12 @@ namespace ScotlandsMountains.Import.Providers
             return dobihFile.Records
                 .SelectMany(x => x.Lists)
                 .Distinct()
-                .ToDictionary(listCode => listCode, listCode => ElementSelector(listCode, idGenerator, listInfoProvider));
+                .ToDictionary(listCode => listCode, listCode => CreateList(listCode, idGenerator, listInfoProvider))
+                .Where(x => x.Value.Enabled)
+                .ToDictionary(x => x.Key, x => x.Value);
         }
 
-        private static List ElementSelector(string listCode, IIdGenerator idGenerator, IListInfoProvider listInfoProvider)
+        private static List CreateList(string listCode, IIdGenerator idGenerator, IListInfoProvider listInfoProvider)
         {
             var listInfo = listInfoProvider.GetListInfoFor(listCode);
 

@@ -60,7 +60,9 @@ namespace ScotlandsMountains.Import.Providers
         private IList<string> GetListIdsFor(IDobihRecord record)
         {
             return record.Lists
-                .Select(x => _importParameters.ListProvider.GetByDobihId(x).Id)
+                .Select(x => _importParameters.ListProvider.GetByDobihId(x))
+                .Where(x => x != null)
+                .Select(x => x.Id)
                 .ToList();
         }
 

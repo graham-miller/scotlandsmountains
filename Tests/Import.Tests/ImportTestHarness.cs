@@ -52,7 +52,7 @@ namespace ScotlandsMountains.Import.Tests
             Assert.That(domainRoot.Maps.Discoverer.Count, Is.EqualTo(18));
             Assert.That(domainRoot.Maps.Discovery.Count, Is.EqualTo(73));
 
-            Assert.That(domainRoot.Lists.Count, Is.EqualTo(42));
+            Assert.That(domainRoot.Lists.Count, Is.EqualTo(24));
 
             Assert.That(domainRoot.Sections.Count, Is.EqualTo(71));
 

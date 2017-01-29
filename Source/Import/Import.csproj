@@ -73,7 +73,7 @@
     <Compile Include="Os\OsRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\MountainProvider.cs" />
-    <Compile Include="ScotlandsMountains\ClassificationInfoProvider.cs" />
+    <Compile Include="ScotlandsMountains\ListInfoProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj">
