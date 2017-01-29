@@ -42,7 +42,7 @@ namespace ScotlandsMountains.Web.Server
 
             services.Configure<Configuration>(Configuration.GetSection("ScotlandsMountains"));
 
-            services.AddSingleton<IDomainRoot>(x => DomainRoot.Load().ScotlandOnly());
+            services.AddSingleton<IDomainRoot>(x => DomainRoot.Load());
             services.AddSingleton<IEmailHelper,EmailHelper>();
         }
 

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using ScotlandsMountains.Import.Providers;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ScotlandsMountains.Import.Dobih
@@ -16,7 +17,18 @@ namespace ScotlandsMountains.Import.Dobih
             dobihFileReader = dobihFileReader ?? new DobihFileReader();
 
             ColumnIndexes = dobihFileReader.ColumnIndexes;
-            Records = dobihFileReader.Lines.Select(x => new DobihRecord(x, ColumnIndexes)).ToList<IDobihRecord>();
+            Records = dobihFileReader.Lines
+                .Select(x => new DobihRecord(x, ColumnIndexes))
+                .Where(IsScottish)
+                .ToList<IDobihRecord>();
+        }
+
+
+        public bool IsScottish(DobihRecord dobihRecord)
+        {
+            return
+                dobihRecord.Country == CountryProvider.DobihCodeForScotland ||
+                dobihRecord.Country == CountryProvider.DobihCodeForEnglishScottishBorder;
         }
 
         public IDictionary<string,int> ColumnIndexes { get; } 
