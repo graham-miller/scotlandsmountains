@@ -34,7 +34,7 @@ export function reducer(state = [], action) {
     switch (action.type) {
 
     case ListsActions.Request:
-        return [];
+        return state;
 
     case ListsActions.Receive:
         return action.json;

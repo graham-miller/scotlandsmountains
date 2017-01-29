@@ -10,8 +10,7 @@ import Logo from "../common/Logo";
 
 class NavComponent extends Component {
 
-    constructor(props) {
-        super(props);
+    componentDidMount() {
         this.props.dispatch(fetchLists());
     }
 
@@ -35,7 +34,9 @@ class NavComponent extends Component {
                     nestedItems={
                         this.props.lists.map((list, index) =>
                             <MenuItem key={index} onTouchTap={this.props.closeDrawer}>
-                                <Link to={"/mountains/" + list.name} className="nav">{list.name}</Link>
+                                <Link
+                                    to={"/lists/" + list.id + "/" + list.name.replace(/\s/gmi, "_").replace(/[^a-z0-9_]/gmi, "")}
+                                    className="nav">{list.name}</Link>
                             </MenuItem>
                         )
                     } />

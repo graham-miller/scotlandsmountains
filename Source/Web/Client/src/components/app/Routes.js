@@ -34,7 +34,7 @@ class ContentRoutesComponent extends Component {
                 <Redirect from='/' to='/lists' />
                 <Route component={App}>
                     <Route onChange={this.clearMountainsFromMap}>
-                        <Route path='/lists(/:id)(:name)' components={{map: ListTitle, content: ListContent}} />
+                        <Route path='/lists(/:id)(/:name)' components={{map: ListTitle, content: ListContent}} />
                         <Route path='/mountain/:id(/:name)' components={{map: MountainTitle, content: MountainContent}} />
                         <Route path='/search' components={{map: SearchTitle, content: SearchContent}} />
                     </Route>
