@@ -31,11 +31,10 @@ class ContentRoutesComponent extends Component {
     render() {
         return (
             <Router onUpdate={() => window.scrollTo(0, 0)} name="content" history={browserHistory}>
-                <Redirect from='/' to='/mountains/munros' />
-                <Redirect from='/mountains' to='/mountains/munros' />
+                <Redirect from='/' to='/lists' />
                 <Route component={App}>
                     <Route onChange={this.clearMountainsFromMap}>
-                        <Route path='/mountains/:table' components={{map: ListTitle, content: ListContent}} />
+                        <Route path='/lists(/:id)(:name)' components={{map: ListTitle, content: ListContent}} />
                         <Route path='/mountain/:id(/:name)' components={{map: MountainTitle, content: MountainContent}} />
                         <Route path='/search' components={{map: SearchTitle, content: SearchContent}} />
                     </Route>

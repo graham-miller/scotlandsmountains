@@ -5,12 +5,18 @@ import Loading from "../common/Loading";
 
 class TitleComponent extends Component {
 
+    componentDidMount() {
+
+        //this.props.params.id
+
+    }
+
     render() {
-        if (this.props.status.loading) {
+        if (this.props.list.status.loading) {
             return (<Loading />);
         }
         return (
-            <h2 style={{textTransform: "capitalize"}}>{this.props.routeParams.table}</h2>
+            <h2>{this.props.list.name}</h2>
         );
     }
 }
@@ -18,7 +24,8 @@ class TitleComponent extends Component {
 const mapStateToProps = (state) => {
 
     return {
-        status: state.list.status
+        list: state.list,
+        lists: state.lists
     };
 
 };

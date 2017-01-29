@@ -1,6 +1,7 @@
 const defaultStatus = { loading: false, error: false };
 
 const defaultState = {
+    lists: [],
     list: {
         status: defaultStatus,
         value: null,
