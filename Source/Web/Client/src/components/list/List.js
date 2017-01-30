@@ -22,7 +22,6 @@ class ListComponent extends Component {
 const mapStateToProps = (state) => {
 
     return {
-        lists: state.lists,
         list: state.list.value
     };
 };
