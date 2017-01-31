@@ -62,7 +62,7 @@ class TitleComponent extends Component {
                     }
                 </SelectField>
                 <div style={{position:"absolute",right:0,top:0,width:"auto"}}> {
-                    this.props.list.status.loading ? <Loading/> : null
+                    this.props.list.status.loading ? <Loading/> : null // TODO position this better
                 } </div>
             </div>
         );
