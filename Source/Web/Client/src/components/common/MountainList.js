@@ -3,6 +3,7 @@ import { browserHistory } from "react-router";
 import $ from "jquery";
 
 import {List, ListItem} from "material-ui/List";
+import {toFriendlyUrlName} from "../../utility";
 
 class MountainTable extends Component {
     
@@ -27,8 +28,7 @@ class MountainTable extends Component {
     }
 
     onClick(mountain) {
-        var name = mountain.name.replace(/\s/gmi, "_").replace(/[^a-z0-9_]/gmi, "");
-        browserHistory.push("/mountain/" + mountain.id + "/" + name);
+        browserHistory.push("/mountain/" + mountain.id + "/" + toFriendlyUrlName(mountain.name));
     }
 
     render() {

@@ -3,10 +3,9 @@ import { connect } from "react-redux";
 import { Link } from "react-router";
 
 import { fetchLists } from "../../state/lists";
-
 import MenuItem from "material-ui/MenuItem";
-
 import Logo from "../common/Logo";
+import { toFriendlyUrlName } from "../../utility";
 
 class NavComponent extends Component {
 
@@ -35,7 +34,7 @@ class NavComponent extends Component {
                         this.props.lists.map((list, index) =>
                             <MenuItem key={index} onTouchTap={this.props.closeDrawer}>
                                 <Link
-                                    to={"/lists/" + list.id + "/" + list.name.replace(/\s/gmi, "_").replace(/[^a-z0-9_]/gmi, "")}
+                                    to={"/lists/" + list.id + "/" + toFriendlyUrlName(list.name)}
                                     className="nav">{list.name}</Link>
                             </MenuItem>
                         )
