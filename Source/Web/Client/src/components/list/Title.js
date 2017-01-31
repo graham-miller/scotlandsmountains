@@ -45,12 +45,12 @@ class TitleComponent extends Component {
 
     render() {
         
-        if (this.props.lists.length === 0) {
-            return <Loading />;
-        }
+        // if (this.props.lists.length === 0) {
+        //     return <Loading />;
+        // }
 
         return (           
-            <div>
+            <div style={{position:"relative",width:"100%"}}>
                 <SelectField
                     floatingLabelText="List"
                     value={this.props.routeParams.id || this.props.lists[0].id}
@@ -61,6 +61,9 @@ class TitleComponent extends Component {
                         )
                     }
                 </SelectField>
+                <div style={{position:"absolute",right:0,top:0,width:"auto"}}> {
+                    this.props.list.status.loading ? <Loading/> : null
+                } </div>
             </div>
         );
     }
