@@ -51,7 +51,7 @@ class TitleComponent extends Component {
         }
 
         return (           
-            <div style={{position:"relative",width:"100%"}}>
+            <div style={{width:"100%"}}>
                 <SelectField
                     floatingLabelText="List"
                     value={selectedValue}
@@ -62,9 +62,11 @@ class TitleComponent extends Component {
                         )
                     }
                 </SelectField>
-                <div style={{position:"absolute",right:0,top:0,width:"auto"}}> {
-                    this.props.list.status.loading ? <Loading/> : null // TODO position this better
-                } </div>
+                {
+                    this.props.list.status.Loading || !this.props.list.value
+                        ? <Loading text="" wrapperStyle={{position:"relative",display:"inline",left:"10px",top:"-10px"}}/>
+                        : null
+                }
             </div>
         );
     }
