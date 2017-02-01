@@ -45,15 +45,16 @@ class TitleComponent extends Component {
 
     render() {
         
-        // if (this.props.lists.length === 0) {
-        //     return <Loading />;
-        // }
+        let selectedValue = null;
+        if (this.props.lists.length > 0) {
+            selectedValue = this.props.routeParams.id || this.props.lists[0].id;
+        }
 
         return (           
             <div style={{position:"relative",width:"100%"}}>
                 <SelectField
                     floatingLabelText="List"
-                    value={this.props.routeParams.id || this.props.lists[0].id}
+                    value={selectedValue}
                     onChange={this.handleChange}>
                     {
                         this.props.lists.map((list,index) => 
