@@ -1,9 +1,7 @@
-using System;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using ScotlandsMountains.Domain;
 using ScotlandsMountains.Web.Server.Models;
-using Humanizer;
 
 namespace ScotlandsMountains.Web.Server.Controllers
 {
@@ -12,14 +10,10 @@ namespace ScotlandsMountains.Web.Server.Controllers
     {
         public ListsController(IDomainRoot domainRoot) : base(domainRoot, x => x.Lists) { }
 
-        [HttpGet("{Name}")]
-        public override IActionResult Get(string name)
+        [HttpGet("{id}")]
+        public override IActionResult Get(string id)
         {
-            Func<List, bool> isMatch = x => x.Name.Equals(name.Singularize(), StringComparison.InvariantCultureIgnoreCase);
-            var list = DomainRoot.Lists.Single(isMatch);
-
-            if (list == null)
-                return base.Get(name);
+            var list = DomainRoot.Lists.Single(x=> x.Id == id);
 
             var mountains = DomainRoot.Mountains
                 .Where(x => x.ListIds.Contains(list.Id))

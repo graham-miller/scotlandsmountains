@@ -44,7 +44,7 @@ class SearchComponent extends Component {
         return (
             <div>
                 <TextField
-                    hintText="Search"
+                    floatingLabelText="Search"
                     fullWidth={true}
                     value={this.state.term}
                     type="search"

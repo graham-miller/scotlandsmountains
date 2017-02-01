@@ -5,12 +5,17 @@ class Loading extends Component {
     render() {
 
         return (
-            <div>
+            <div style={this.props.wrapperStyle}>
                 <div className="loader" />
-                Loading
+                {this.props.text}
             </div>
         );
     }
 }
+
+Loading.defaultProps = {
+    wrapperStyle: {},
+    text: "Loading"
+};
 
 export default Loading;

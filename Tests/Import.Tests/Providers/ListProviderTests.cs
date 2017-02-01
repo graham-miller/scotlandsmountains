@@ -18,6 +18,7 @@ namespace ScotlandsMountains.Import.Tests.Providers
             const string name = "Name";
             const int order = 1;
             const string description = "Description";
+            const bool enabled = true;
 
             var mockIdGenerator = new Mock<IIdGenerator>();
             mockIdGenerator.Setup(x => x.Generate()).Returns(id);
@@ -36,7 +37,8 @@ namespace ScotlandsMountains.Import.Tests.Providers
                     Code = listCode,
                     Name = name,
                     Order = order,
-                    Description = description
+                    Description = description,
+                    Enabled = enabled
                 });
 
             var sut = new ListProvider(mockIdGenerator.Object, mockDobihFile.Object, mockListInfoProvider.Object);
