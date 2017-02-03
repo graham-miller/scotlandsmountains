@@ -61,7 +61,7 @@ class TitleComponent extends Component {
             );
         } else {
             list = (
-                <SelectField floatingLabelText="List" value="">
+                <SelectField floatingLabelFixed="true" floatingLabelText="List" value="">
                     <MenuItem value="" primaryText="Loading" />
                 </SelectField>
             );

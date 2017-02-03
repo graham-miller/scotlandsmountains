@@ -1,11 +1,13 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
+import Splash from "./Splash";
 import Header from "./Header";
 import Footer from "./Footer";
 import Notification from "./Notification";
 import Map from "../map/Map";
 
-class App extends Component {
+class AppComponent extends Component {
 
     render() {
 
@@ -20,26 +22,30 @@ class App extends Component {
             </div>
         );
 
+        //return <Splash/>;
+
         return (
             <div id="app">
-
                 <Header/>
-
                 {mapSection}
-
                 <div id="content-section" className={map == null ? "without-map" : ""}>
                     <div id="content-wrapper">
                         {content}
                     </div>
                 </div>
-
                 <Footer/>
-
                 <Notification />
-
             </div>
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        lists: state.lists
+    };
+};
+
+const App = connect(mapStateToProps)(AppComponent);
 
 export default App;
