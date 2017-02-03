@@ -12,20 +12,12 @@ class Header extends Component {
 
     constructor() {
         super();
-
         this.state = {drawerOpen: false};
-
-        this.toggleDrawer = this.toggleDrawer.bind(this);
-        this.closeDrawer = this.closeDrawer.bind(this);
     }
 
-    toggleDrawer() {
-        this.setState({drawerOpen: !this.state.drawerOpen});
-    }
+    toggleDrawer = () => this.setState({drawerOpen: !this.state.drawerOpen});
 
-    closeDrawer() {
-        this.setState({drawerOpen: false});
-    }
+    closeDrawer = () => this.setState({drawerOpen: false});
 
     render() {
 

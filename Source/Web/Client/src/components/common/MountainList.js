@@ -6,28 +6,20 @@ import {List, ListItem} from "material-ui/List";
 import {toFriendlyUrlName} from "../../utility";
 
 class MountainTable extends Component {
-    
-    constructor(props){
-        super(props);
 
-        this.onMouseOver = this.onMouseOver.bind(this);
-        this.onMouseOut = this.onMouseOut.bind(this);
-        this.onClick = this.onClick.bind(this);
-    }
-
-    onMouseOver(mountain) {
+    onMouseOver = (mountain) => {
         if (mountain.marker) {
             $(mountain.marker._icon).addClass("highlighted");
         }
     }
 
-    onMouseOut(mountain) {
+    onMouseOut = (mountain) => {
         if (mountain.marker) {
             $(mountain.marker._icon).removeClass("highlighted");
         }
     }
 
-    onClick(mountain) {
+    onClick= (mountain) => {
         browserHistory.push("/mountain/" + mountain.id + "/" + toFriendlyUrlName(mountain.name));
     }
 

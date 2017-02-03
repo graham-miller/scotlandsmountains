@@ -1,36 +1,37 @@
 import React, { Component } from "react";
-import $ from "jquery";
 
 import GettyImage from "../common/GettyImage";
 
 class Legal extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = { html: "" };
-        this.getContent();
+    componentDidMount() {
+        this.getContent(this.props.params.type);
     }
 
     componentWillUpdate(nextProps, nextState) {
-        this.getContent();
+        if (this.props.params.type !== nextProps.params.type) {
+            this.getContent(nextProps.params.type);
+        }
     }
 
-    getContent() {
-        $.get("/legal/" + this.props.params.type + ".html", (html) => {
-            if (this.refs.legal) {
+    getContent = (type) => {
+        fetch("/legal/" + type + ".html")//, {redirect: "follow", mode: "cors"})
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error();
+                }
+                return response.text();
+            })
+            .then(html => {
                 this.setState({ html: html });
-            }
-        });
-    }
-
-    componentWillUnmount() {
-        this.setState({ html: "" });
+            });
     }
 
     render() {
+        var html = (this.state || {}).html || "";
         return (
             <div>
-                <div ref="legal" dangerouslySetInnerHTML={{ __html: this.state.html }} />
+                <div ref="legal" dangerouslySetInnerHTML={{ __html: html }} />
                 <GettyImage />
             </div>
         );

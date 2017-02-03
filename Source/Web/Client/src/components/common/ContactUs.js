@@ -17,22 +17,13 @@ class ContactUs extends Component {
             sent: false,
             error: false
         };
-
-        this.enableButton = this.enableButton.bind(this);
-        this.disableButton = this.disableButton.bind(this);
-        this.submitForm = this.submitForm.bind(this);
-        this.resetForm = this.resetForm.bind(this);
     }
 
-    enableButton() {
-        this.setState({ canSubmit: true });
-    }
+    enableButton = () => this.setState({ canSubmit: true });
 
-    disableButton() {
-        this.setState({ canSubmit: false });
-    }
+    disableButton = () => this.setState({ canSubmit: false });
 
-    submitForm(data) {
+    submitForm = (data) => {
         this.setState({ canSubmit: false });
         $.ajax("/api/contactus/send", {
             method: "GET", //"POST"
@@ -46,7 +37,7 @@ class ContactUs extends Component {
         });
     }
 
-    resetForm() {
+    resetForm = () => {
         if (this.refs.form) {
             this.refs.form.reset();
         }

@@ -18,14 +18,10 @@ import ContactUs from "../common/ContactUs";
 
 class ContentRoutesComponent extends Component {
 
-    constructor(props) {
-        super(props);
-
-        this.clearMountainsFromMap = this.clearMountainsFromMap.bind(this);
-    }
-
-    clearMountainsFromMap() {
-        this.props.dispatch(clearMountains());
+    clearMountainsFromMap = (prevState, nextState) => {
+        if (prevState.location.pathname !== nextState.location.pathname) {
+            this.props.dispatch(clearMountains());
+        }
     }
 
     render() {

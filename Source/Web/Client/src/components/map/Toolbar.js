@@ -22,10 +22,6 @@ class ToolbarComponent extends Component {
             canZoomOut: true,
             baseLayer: layers[0]
         };
-
-        this.currentBaseLayerIs = this.currentBaseLayerIs.bind(this);
-        this.handleZoomEnd = this.handleZoomEnd.bind(this);
-        this.handleLayerAdd = this.handleLayerAdd.bind(this);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -39,7 +35,7 @@ class ToolbarComponent extends Component {
         }
     }
 
-    handleZoomEnd() {
+    handleZoomEnd = () => {
         if (this.props.map) {
             this.setState({
                 canZoomIn: this.props.map.getZoom() < this.props.map.getMaxZoom(),
@@ -48,13 +44,13 @@ class ToolbarComponent extends Component {
         }
     }
 
-    handleLayerAdd() {
+    handleLayerAdd = () => {
         if (this.props.map) {
             this.setState({baseLayer: this.props.map.currentBaseLayer});
         }
     }
 
-    currentBaseLayerIs(queriedBaseLayer) {
+    currentBaseLayerIs = (queriedBaseLayer) => {
         debugger;
         if (this.props.map) {
             return this.props.map.currentBaseLayer === queriedBaseLayer;

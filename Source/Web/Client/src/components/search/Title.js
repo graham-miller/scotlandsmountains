@@ -14,15 +14,13 @@ class SearchComponent extends Component {
             term: "",
             timeoutId: null
         };
-
-        this.search = this.search.bind(this);
     }
 
     componentWillMount() {
         this.props.dispatch(search(this.state.term));
     }
 
-    search(event) {
+    search = (event) => {
         
         this.setState({term: event.target.value});
 

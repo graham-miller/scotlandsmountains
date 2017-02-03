@@ -15,7 +15,7 @@ class TitleComponent extends Component {
     componentDidMount() {
         this.props.dispatch(fetchLists());
         if (this.props.routeParams.id) {
-            this.props.dispatch(fetchList(this.props.routeParams.id));            
+            this.props.dispatch(fetchList(this.props.routeParams.id));
         }
     }
 
@@ -34,7 +34,7 @@ class TitleComponent extends Component {
             if (!nextId && listsLoaded) {
                 browserHistory.replace("/lists/" + defaultId + "/" + defaultName);
             } else {
-                this.props.dispatch(fetchList(nextId));            
+                this.props.dispatch(fetchList(nextId));
             }
         }
     }
@@ -44,29 +44,40 @@ class TitleComponent extends Component {
     }
 
     render() {
-        
-        let selectedValue = null;
-        if (this.props.lists.length > 0) {
-            selectedValue = this.props.routeParams.id || this.props.lists[0].id;
-        }
 
-        return (           
-            <div style={{width:"100%"}}>
+        let list = null;
+        if (this.props.lists.length > 0) {
+            list = (
                 <SelectField
                     floatingLabelText="List"
-                    value={selectedValue}
+                    value={this.props.routeParams.id || this.props.lists[0].id}
                     onChange={this.handleChange}>
                     {
-                        this.props.lists.map((list,index) => 
+                        this.props.lists.map((list, index) =>
                             <MenuItem key={index} value={list.id} primaryText={list.name} />
                         )
                     }
                 </SelectField>
-                {
-                    this.props.list.status.Loading || !this.props.list.value
-                        ? <Loading text="" wrapperStyle={{position:"relative",display:"inline",left:"10px",top:"-10px"}}/>
-                        : null
-                }
+            );
+        } else {
+            list = (
+                <SelectField floatingLabelText="List" value="">
+                    <MenuItem value="" primaryText="Loading" />
+                </SelectField>
+            );
+        }
+
+        let spinner = null;
+        if (this.props.list.status.Loading || !this.props.list.value) {
+            spinner = (
+                <Loading text="" wrapperStyle={{ position: "relative", display: "inline", left: "10px", top: "-10px" }} />
+            );
+        }
+
+        return (
+            <div style={{ width: "100%" }}>
+                {list}
+                {spinner}
             </div>
         );
     }
