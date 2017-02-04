@@ -1,13 +1,18 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
+import createBaseLayers from "./baseLayerFactory";
 import { create, destroy } from "./actions";
 import Toolbar from "./Toolbar";
 
 class MapComponent extends Component {
 
     componentDidMount() {
-        this.props.dispatch(create("map"));
+        var baseLayers = createBaseLayers({
+            mapBoxApiKey: this.props.staticData.value.apiKeys.mapBox,
+            bingMapsApiKey:  this.props.staticData.value.apiKeys.bingMaps
+        });
+        this.setState({baseLayers: baseLayers});
+        this.props.dispatch(create("map", baseLayers[0]));
     }
 
     componentWillReceiveProps(nextProps) {
@@ -22,9 +27,13 @@ class MapComponent extends Component {
     
     render() {
 
+        const toolbar = (this.state || {}).baseLayers
+            ? <Toolbar baseLayers={this.state.baseLayers}/>
+            : null;
+            
         return (
             <div id="map-wrapper">
-                <Toolbar />
+                {toolbar}
                 <div id="map" />
             </div>
         );
@@ -34,14 +43,8 @@ class MapComponent extends Component {
 const mapStateToProps = (state) => {
 
     // show mountains from most recently updated map source
-    let listLastUpdated = state.list.lastUpdated;
-    let mountainLastUpdated = state.mountain.lastUpdated;
-    let searchLastUpdated = state.search.lastUpdated;
-
     const isAfter = function (date) {
-
         if (date == null) { return false; }
-
         if (arguments.length > 1) {
             for (var i = 1; i < arguments.length; i++) {
                 let compareTo = arguments[i];
@@ -50,38 +53,35 @@ const mapStateToProps = (state) => {
                 }
             }
         }
-
         return true;
     };
 
+    let listLastUpdated = state.list.lastUpdated;
+    let mountainLastUpdated = state.mountain.lastUpdated;
+    let searchLastUpdated = state.search.lastUpdated;
+    let mountains = [];
+    let lastUpdated = null;
+    
     if (isAfter(listLastUpdated, mountainLastUpdated, searchLastUpdated)) {
-        return {
-            map : state.map,
-            mountains: state.list.value,
-            lastUpdated: state.list.lastUpdated
-        };
+        mountains = state.list.value;
+        lastUpdated = state.list.lastUpdated;
     }
 
     if (isAfter(mountainLastUpdated, listLastUpdated, searchLastUpdated)) {
-        return {
-            map : state.map,
-            mountains: state.mountain.value,
-            lastUpdated: state.mountain.lastUpdated
-        };
+        mountains = state.mountain.value;
+        lastUpdated = state.mountain.lastUpdated;
     }
 
     if (isAfter(searchLastUpdated, listLastUpdated, mountainLastUpdated)) {
-        return {
-            map : state.map,
-            mountains: state.search.value.results,
-            lastUpdated: state.search.lastUpdated
-        };
+        mountains = state.search.value.results;
+        lastUpdated = state.search.lastUpdated;
     }
 
     return {
-        map : state.map,
-        mountains: [],
-        lastUpdated: null
+        staticData: state.staticData,
+        map: state.map,
+        mountains: mountains,
+        lastUpdated: lastUpdated
     };
 };
 

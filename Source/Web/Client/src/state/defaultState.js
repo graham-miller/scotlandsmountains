@@ -1,6 +1,10 @@
 const defaultStatus = { loading: false, error: false };
 
 const defaultState = {
+    staticData: {
+        status: defaultStatus,
+        value: null
+    },
     lists: [],
     list: {
         status: defaultStatus,
