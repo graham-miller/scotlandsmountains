@@ -7,8 +7,8 @@ import FloatingActionButton from "material-ui/FloatingActionButton";
 
 import ZoomIn from "material-ui/svg-icons/content/add";
 import ZoomOut from "material-ui/svg-icons/content/remove";
-import Satellite from "material-ui/svg-icons/maps/satellite";
-import Map from "material-ui/svg-icons/maps/map";
+// import Satellite from "material-ui/svg-icons/maps/satellite";
+// import Map from "material-ui/svg-icons/maps/map";
 
 class ToolbarComponent extends Component {
 
@@ -45,7 +45,7 @@ class ToolbarComponent extends Component {
     handleLayerAdd = () => {
         if (this.props.map) {
             debugger;
-            this.setState({baseLayer: this.props.map.currentBaseLayer});
+            this.setState({ baseLayer: this.props.map.currentBaseLayer });
         }
     }
 
@@ -62,7 +62,7 @@ class ToolbarComponent extends Component {
         if (this.props.map) {
             this.props.dispatch(setBaseLayer(newBaseLayer));
         }
-        this.setState({baseLayer: newBaseLayer});
+        this.setState({ baseLayer: newBaseLayer });
     }
 
     render() {
@@ -72,39 +72,34 @@ class ToolbarComponent extends Component {
 
                 <div>
                     <FloatingActionButton
-                        secondary={true}  mini={true}
+                        secondary={true} mini={true}
                         disabled={!this.state.canZoomIn}
                         onTouchTap={() => this.props.dispatch(zoomIn())}>
                         <ZoomIn />
-                    </FloatingActionButton>            
+                    </FloatingActionButton>
                 </div>
 
                 <div>
                     <FloatingActionButton
-                        secondary={true}  mini={true}
+                        secondary={true} mini={true}
                         disabled={!this.state.canZoomOut}
                         onTouchTap={() => this.props.dispatch(zoomOut())}>
                         <ZoomOut />
                     </FloatingActionButton>
                 </div>
 
-                <div>
-                    <FloatingActionButton
-                        secondary={true}  mini={true}
-                        disabled={this.currentBaseLayerIs(0)}
-                        onTouchTap={() => this.setBaseLayer(0)}>
-                        <Map />
-                    </FloatingActionButton>
-                </div>
-
-                <div>
-                    <FloatingActionButton
-                        secondary={true}  mini={true}
-                        disabled={this.currentBaseLayerIs(1)}
-                        onTouchTap={() => this.setBaseLayer(1)}>
-                        <Satellite />
-                    </FloatingActionButton>
-                </div>
+                {
+                    this.props.baseLayers.map((baseLayer, index) =>
+                        <div key={index}>
+                            <FloatingActionButton
+                                secondary={true} mini={true}
+                                disabled={this.currentBaseLayerIs(index)}
+                                onTouchTap={() => this.setBaseLayer(index)}
+                                children={baseLayer.label}>
+                            </FloatingActionButton>
+                        </div>
+                    )
+                }
 
             </div>
         );
@@ -112,7 +107,7 @@ class ToolbarComponent extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return {map: state.map};
+    return { map: state.map };
 };
 
 const Toolbar = connect(mapStateToProps)(ToolbarComponent);
