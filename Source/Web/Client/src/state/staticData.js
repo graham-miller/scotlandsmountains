@@ -43,7 +43,8 @@ export function reducer(state = defaultState.staticData, action) {
     case StaticDataActions.Receive:
         return {
             status: { loading: false, error: false },
-            value: action.json
+            value: action.json,
+            lastUpdated: + new Date()            
         };
 
     case StaticDataActions.Error:

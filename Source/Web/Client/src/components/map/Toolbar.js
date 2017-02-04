@@ -3,8 +3,6 @@ import React, { Component } from "react";
 
 import { zoomIn, zoomOut, setBaseLayer } from "./actions";
 
-import layers from "./layers";
-
 import FloatingActionButton from "material-ui/FloatingActionButton";
 
 import ZoomIn from "material-ui/svg-icons/content/add";
@@ -20,7 +18,7 @@ class ToolbarComponent extends Component {
         this.state = {
             canZoomIn: true,
             canZoomOut: true,
-            baseLayer: layers[0]
+            baseLayer: this.props.baseLayers[0]
         };
     }
 
@@ -46,16 +44,25 @@ class ToolbarComponent extends Component {
 
     handleLayerAdd = () => {
         if (this.props.map) {
+            debugger;
             this.setState({baseLayer: this.props.map.currentBaseLayer});
         }
     }
 
-    currentBaseLayerIs = (queriedBaseLayer) => {
-        debugger;
+    currentBaseLayerIs = (index) => {
+        const queriedBaseLayer = this.props.baseLayers[index];
         if (this.props.map) {
-            return this.props.map.currentBaseLayer === queriedBaseLayer;
+            return this.props.map.currentBaseLayer.name === queriedBaseLayer.name;
         }
         return false;
+    }
+
+    setBaseLayer = (index) => {
+        const newBaseLayer = this.props.baseLayers[index];
+        if (this.props.map) {
+            this.props.dispatch(setBaseLayer(newBaseLayer));
+        }
+        this.setState({baseLayer: newBaseLayer});
     }
 
     render() {
@@ -84,8 +91,8 @@ class ToolbarComponent extends Component {
                 <div>
                     <FloatingActionButton
                         secondary={true}  mini={true}
-                        disabled={this.state.baseLayer === layers[0]}
-                        onTouchTap={() => this.props.dispatch(setBaseLayer(layers[0]))}>
+                        disabled={this.currentBaseLayerIs(0)}
+                        onTouchTap={() => this.setBaseLayer(0)}>
                         <Map />
                     </FloatingActionButton>
                 </div>
@@ -93,44 +100,14 @@ class ToolbarComponent extends Component {
                 <div>
                     <FloatingActionButton
                         secondary={true}  mini={true}
-                        disabled={this.state.baseLayer === layers[1]}
-                        onTouchTap={() => this.props.dispatch(setBaseLayer(layers[1]))}>
+                        disabled={this.currentBaseLayerIs(1)}
+                        onTouchTap={() => this.setBaseLayer(1)}>
                         <Satellite />
                     </FloatingActionButton>
                 </div>
 
             </div>
         );
-
-        // return (
-        //     <div id="map-toolbar">
-                
-        //         <button type="button"
-        //             disabled={!this.state.canZoomIn}
-        //             onClick={() => this.props.dispatch(zoomIn())}>
-        //             <MdAddCircleOutline />
-        //         </button>
-                
-        //         <button type="button"
-        //             disabled={!this.state.canZoomOut}
-        //             onClick={() => this.props.dispatch(zoomOut())}>
-        //             <MdRemoveCircleOutline />
-        //         </button>
-
-        //         <button type="button"
-        //             disabled={this.state.baseLayer === MapLayers[0]}
-        //             onClick={() => this.props.dispatch(setBaseLayer(MapLayers[0]))}>
-        //             <MdMap />
-        //         </button>
-
-        //         <button type="button"
-        //             disabled={this.state.baseLayer === MapLayers[1]}
-        //             onClick={() => this.props.dispatch(setBaseLayer(MapLayers[1]))}>
-        //             <MdSatellite />
-        //         </button>
-                
-        //     </div>
-        // );
     }
 }
 

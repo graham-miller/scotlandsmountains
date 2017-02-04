@@ -6,7 +6,7 @@ const map = (mapObject = null, action) => {
     switch (action.type) {
         
     case MapActions.Create:
-        return factory(action.elementId);
+        return factory(action.elementId, action.baseLayer);
 
     case MapActions.ZoomIn:
         mapObject.zoomIn();
@@ -25,7 +25,7 @@ const map = (mapObject = null, action) => {
         break;
 
     case MapActions.Destroy:
-        mapObject.setBaseLayer(null);
+        if (mapObject) { mapObject.setBaseLayer(null); }
         return null;
 
     default:

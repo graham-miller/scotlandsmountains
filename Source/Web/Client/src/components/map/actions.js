@@ -6,10 +6,11 @@ export const MapActions = {
     Destroy: "DESTROY"
 };
 
-export function create(elementId) {
+export function create(elementId, baseLayer) {
     return {
         type: MapActions.Create,
-        elementId
+        elementId,
+        baseLayer
     };
 }
 

@@ -1,6 +1,12 @@
 import L from "leaflet";
 
-import defaults from "./defaults";
+const defaults = {
+    Zoom: 7,
+    minZoom: 5,
+    maxZoom: 18,
+    Center: [56.816922, -4.18265],
+    maxBounds: [[47.5, -15], [62.5, 5]]
+};
 
 const resize = function(map) {
     map.invalidateSize({ pan: true, debounceMoveend: true });
@@ -63,7 +69,7 @@ const displayMountains = function(map, mountains) {
     }
 };
 
-const factory = function(elementId) {
+const factory = function(elementId, baseLayer) {
 
     var map = L.map(elementId, {
         zoomControl: false,
@@ -86,7 +92,7 @@ const factory = function(elementId) {
     map.setBaseLayer = (baseLayer) => setBaseLayer(map, baseLayer);
     map.clearMountains = () => clearMountains(map);
 
-    map.setBaseLayer(defaults.BaseLayer);
+    map.setBaseLayer(baseLayer);
     map.resize();
     return map;
 };
