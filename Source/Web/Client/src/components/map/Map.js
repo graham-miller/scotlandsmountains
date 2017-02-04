@@ -7,7 +7,10 @@ import Toolbar from "./Toolbar";
 class MapComponent extends Component {
 
     componentDidMount() {
-        var baseLayers = createBaseLayers();
+        var baseLayers = createBaseLayers({
+            mapBoxApiKey: this.props.staticData.value.apiKeys.mapBox,
+            bingMapsApiKey:  this.props.staticData.value.apiKeys.bingMaps
+        });
         this.setState({baseLayers: baseLayers});
         this.props.dispatch(create("map", baseLayers[0]));
     }

@@ -1,26 +1,33 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using ScotlandsMountains.Domain;
-using ScotlandsMountains.Web.Server.Models;
+using Microsoft.Extensions.Options;
 
 namespace ScotlandsMountains.Web.Server.Controllers
 {
     [Route("api/[controller]")]
-    public class ListsController : EntitiesController<List>
+    public class StaticDataController : DomainRootController
     {
-        public ListsController(IDomainRoot domainRoot) : base(domainRoot, x => x.Lists) { }
+        IOptions<Configuration> _configuration;
 
-        [HttpGet("{id}")]
-        public override IActionResult Get(string id)
+        public StaticDataController(IDomainRoot domainRoot, IOptions<Configuration> configuration)
+            :base(domainRoot)
         {
-            var list = DomainRoot.Lists.Single(x=> x.Id == id);
+            _configuration = configuration;
+        }
 
-            var mountains = DomainRoot.Mountains
-                .Where(x => x.ListIds.Contains(list.Id))
-                .OrderByDescending(x => x.Height)
-                .Select(x => new MountainSummaryModel(x));
-
-            return new ObjectResult(mountains);
+        public IActionResult Get()
+        {
+            return new ObjectResult(new
+            {
+                Lists = DomainRoot.Lists.OrderBy(x => x.Order),
+                Sections = DomainRoot.Sections.OrderBy(x => x.Name),
+                ApiKeys = new
+                {
+                    BingMaps = _configuration.Value.BingMaps.ApiKey,
+                    MapBox = _configuration.Value.Mapbox.ApiKey
+                }
+            });
         }
     }
 }

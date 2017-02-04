@@ -33,12 +33,6 @@ namespace ScotlandsMountains.Web.Server.Controllers
     }
 
     [Route("api/[controller]")]
-    public class CountriesController : EntitiesController<Country>
-    {
-        public CountriesController(IDomainRoot domainRoot) : base(domainRoot, x => x.Countries) { }
-    }
-
-    [Route("api/[controller]")]
     public class MapsController : EntitiesController<Map>
     {
         public MapsController(IDomainRoot domainRoot) : base(domainRoot, x => x.Maps) { }

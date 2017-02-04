@@ -6,8 +6,8 @@ class Loading extends Component {
 
         return (
             <div style={this.props.wrapperStyle}>
-                <div className="loader" />
-                {this.props.text}
+                <div className="loader"/>
+                    <span style={this.props.textStyle}>{this.props.text}</span>
             </div>
         );
     }
@@ -15,6 +15,7 @@ class Loading extends Component {
 
 Loading.defaultProps = {
     wrapperStyle: {},
+    textStyle: {},
     text: "Loading"
 };
 
