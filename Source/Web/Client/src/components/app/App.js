@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import { fetchStaticData } from "../../state/staticData";
 import Splash from "./Splash";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -9,7 +10,21 @@ import Map from "../map/Map";
 
 class AppComponent extends Component {
 
+    componentDidMount() {
+        this.props.dispatch(fetchStaticData());
+    }
+
     render() {
+
+        const staticData = this.props.staticData;
+        if (staticData.status.error || !staticData.value) {
+            return (
+                <div>
+                    <Splash/>
+                    <Notification />
+                </div>
+            );
+        }
 
         const { map, content } = this.props;
 
@@ -21,8 +36,6 @@ class AppComponent extends Component {
                 <Map/>
             </div>
         );
-
-        //return <Splash/>;
 
         return (
             <div id="app">
@@ -42,7 +55,7 @@ class AppComponent extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        lists: state.lists
+        staticData: state.staticData
     };
 };
 

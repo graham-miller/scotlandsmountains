@@ -5,7 +5,6 @@ import { browserHistory } from "react-router";
 import SelectField from "material-ui/SelectField";
 import MenuItem from "material-ui/MenuItem";
 
-import { fetchLists } from "../../state/lists";
 import { fetchList } from "./actions";
 import { toFriendlyUrlName } from "../../utility";
 import Loading from "../common/Loading";
@@ -13,7 +12,6 @@ import Loading from "../common/Loading";
 class TitleComponent extends Component {
 
     componentDidMount() {
-        this.props.dispatch(fetchLists());
         if (this.props.routeParams.id) {
             this.props.dispatch(fetchList(this.props.routeParams.id));
         }
@@ -45,27 +43,18 @@ class TitleComponent extends Component {
 
     render() {
 
-        let list = null;
-        if (this.props.lists.length > 0) {
-            list = (
-                <SelectField
-                    floatingLabelText="List"
-                    value={this.props.routeParams.id || this.props.lists[0].id}
-                    onChange={this.handleChange}>
-                    {
-                        this.props.lists.map((list, index) =>
-                            <MenuItem key={index} value={list.id} primaryText={list.name} />
-                        )
-                    }
-                </SelectField>
-            );
-        } else {
-            list = (
-                <SelectField floatingLabelFixed="true" floatingLabelText="List" value="">
-                    <MenuItem value="" primaryText="Loading" />
-                </SelectField>
-            );
-        }
+        let list = (
+            <SelectField
+                floatingLabelText="List"
+                value={this.props.routeParams.id || this.props.lists[0].id}
+                onChange={this.handleChange}>
+                {
+                    this.props.lists.map((list, index) =>
+                        <MenuItem key={index} value={list.id} primaryText={list.name} />
+                    )
+                }
+            </SelectField>
+        );
 
         let spinner = null;
         if (this.props.list.status.Loading || !this.props.list.value) {
@@ -84,12 +73,10 @@ class TitleComponent extends Component {
 }
 
 const mapStateToProps = (state) => {
-
     return {
         list: state.list,
-        lists: state.lists
+        lists: state.staticData.value.lists
     };
-
 };
 
 const Title = connect(mapStateToProps)(TitleComponent);

@@ -31,7 +31,7 @@ class NotificationComponent extends Component {
 const mapStateToProps = (state) => {
 
     if (
-        (((state.list || {}).status || {}).error || false) ||
+        (((state.staticData || {}).status || {}).error || false) ||
         (((state.mountain || {}).status || {}).error || false) ||
         (((state.search || {}).status || {}).error || false)) {
         return { networkError: true };

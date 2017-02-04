@@ -1,5 +1,5 @@
 import L from "leaflet";
-import BingLayer from "./bingLayer";
+//import BingLayer from "./bingLayer";
 
 const mapboxAttribution = "&copy; <a href=\"https://www.mapbox.com/about/maps/\" target=\"_blank\">Mapbox</a>";
 const mapboxToken = "pk.eyJ1IjoiZ3JhaGFtbSIsImEiOiJkNDg0MTMwMjAwZjIxMjNlOTExMzk4YTMxZmM0MWIwMSJ9.9xj78sGiHCxyWzdnAg-jEA";

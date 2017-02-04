@@ -2,16 +2,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router";
 
-import { fetchLists } from "../../state/lists";
 import MenuItem from "material-ui/MenuItem";
 import Logo from "../common/Logo";
 import { toFriendlyUrlName } from "../../utility";
 
 class NavComponent extends Component {
-
-    componentDidMount() {
-        this.props.dispatch(fetchLists());
-    }
 
     render() {
 
@@ -31,7 +26,7 @@ class NavComponent extends Component {
                     initiallyOpen={false}
                     primaryTogglesNestedList={true}
                     nestedItems={
-                        this.props.lists.map((list, index) =>
+                        this.props.staticData.value.lists.map((list, index) =>
                             <MenuItem key={index} onTouchTap={this.props.closeDrawer}>
                                 <Link
                                     to={"/lists/" + list.id + "/" + toFriendlyUrlName(list.name)}
@@ -50,7 +45,7 @@ class NavComponent extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        lists: state.lists
+        staticData: state.staticData
     };
 };
 
