@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
 import TextField from "material-ui/TextField";
-
 import { search } from "./actions";
 
 class SearchComponent extends Component {

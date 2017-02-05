@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router";
-
 import MenuItem from "material-ui/MenuItem";
-import Logo from "../common/Logo";
+import Logo from "../other/Logo";
 import { toFriendlyUrlName } from "../../utility";
 
 class NavComponent extends Component {
@@ -34,6 +33,10 @@ class NavComponent extends Component {
                             </MenuItem>
                         )
                     } />
+
+                <MenuItem onTouchTap={this.props.closeDrawer}>
+                    <a href="https://github.com/graham-miller/scotlandsmountains/issues/new" target="_blank" className="nav">Report a problem</a>
+                </MenuItem>
 
                 <MenuItem onTouchTap={this.props.closeDrawer}>
                     <Link to="/contactus" className="nav">Contact us</Link>

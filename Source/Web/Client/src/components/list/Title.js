@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { browserHistory } from "react-router";
-
 import SelectField from "material-ui/SelectField";
 import MenuItem from "material-ui/MenuItem";
-
 import { fetchList } from "./actions";
 import { toFriendlyUrlName } from "../../utility";
-import Loading from "../common/Loading";
+import Loading from "../other/Loading";
 
 class TitleComponent extends Component {
 

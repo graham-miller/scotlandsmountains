@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
-import Loading from "../common/Loading";
+import Loading from "../other/Loading";
 
 class TitleComponent extends Component {
 

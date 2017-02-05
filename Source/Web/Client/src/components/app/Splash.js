@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-
-import Logo from "../common/Logo";
-import Loading from "../common/Loading";
+import Logo from "../other/Logo";
+import Loading from "../other/Loading";
 
 class Splash extends Component {
 

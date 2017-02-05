@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
-import MountainList from "../common/MountainList";
+import MountainList from "../other/MountainList";
 
 class ListComponent extends Component {
 

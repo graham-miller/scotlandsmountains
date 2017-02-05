@@ -1,12 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
-
 import AppBar from "material-ui/AppBar";
 import Drawer from "material-ui/Drawer";
-
 import Nav from "./Nav";
-
-import Logo from "../common/Logo";
+import Logo from "../other/Logo";
 
 class Header extends Component {
 

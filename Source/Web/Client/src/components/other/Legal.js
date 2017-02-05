@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-
-import GettyImage from "../common/GettyImage";
+import GettyImage from "./GettyImage";
 
 class Legal extends Component {
 
