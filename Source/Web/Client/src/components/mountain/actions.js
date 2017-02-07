@@ -26,5 +26,5 @@ function error() {
 }
 
 export function fetchMountain(id) {
-    return get("/api/mountains/" + id, request, receive, error);
+    return get("mountains/" + id, request, receive, error);
 }

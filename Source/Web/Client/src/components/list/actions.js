@@ -26,5 +26,5 @@ function error() {
 }
 
 export function fetchList(list) {
-    return get("/api/lists/" + list, request, receive, error);
+    return get("lists/" + list, request, receive, error);
 }

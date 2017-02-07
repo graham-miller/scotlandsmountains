@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Formsy from "formsy-react";
 import $ from "jquery";
-
+import { post } from "../../api";
 import RaisedButton from "material-ui/RaisedButton";
 import { FormsyText } from "formsy-material-ui/lib";
 
@@ -25,16 +25,9 @@ class ContactUs extends Component {
 
     submitForm = (data) => {
         this.setState({ canSubmit: false });
-        $.ajax("/api/contactus/send", {
-            method: "GET", //"POST"
-            crossDomain: true,
-            contentType: "application/json",
-            data: data //JSON.stringify(data)
-        }).done(() => {
-            this.setState({sent: true});
-        }).fail(() => {
-            this.setState({error: true});
-        });
+        post("contactus/send", JSON.stringify(data),
+            () => this.setState({sent: true}),
+            () => this.setState({error: true}));
     }
 
     resetForm = () => {

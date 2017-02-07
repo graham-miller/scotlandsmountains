@@ -27,7 +27,7 @@ function error() {
 }
 
 export function fetchStaticData() {
-    return get("/api/staticdata", request, receive, error);
+    return get("staticdata", request, receive, error);
 }
 
 export function reducer(state = defaultState.staticData, action) {
