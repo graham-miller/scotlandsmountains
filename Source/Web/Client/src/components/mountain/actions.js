@@ -1,4 +1,4 @@
-import callApi from "../../state/callApi";
+import { get } from "../../api";
 
 export const MountainActions = {
     Request: "MOUNTAIN_REQUEST",
@@ -26,5 +26,5 @@ function error() {
 }
 
 export function fetchMountain(id) {
-    return callApi("/api/mountains/" + id, request, receive, error);
+    return get("/api/mountains/" + id, request, receive, error);
 }

@@ -1,4 +1,4 @@
-import callApi from "../../state/callApi";
+import { get } from "../../api";
 
 export const SearchActions = {
     Request: "SEARCH_REQUEST",
@@ -34,7 +34,7 @@ function error() {
 
 export function search(term) {
     if (term && term.length > 2) {
-        return callApi("/api/search/" + term, request, receive, error);
+        return get("/api/search/" + term, request, receive, error);
     } else {
         return (dispatch) => dispatch(clear());
     }

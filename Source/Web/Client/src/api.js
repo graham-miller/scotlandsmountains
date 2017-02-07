@@ -1,4 +1,14 @@
-const callApi = function (url, onStart, onSuccess, onError) {
+import store from "./state/store";
+
+//debugger;
+
+const baseUrl = () => {
+    const state = store.getState();
+    return state.staticData.value ? state.staticData.value.apiBaseUrl : "/api/";
+};
+
+export function get (url, onStart, onSuccess, onError) {
+    console.log("When '" + url + "' called, base URL is '" + baseUrl() + "'." );
     return dispatch => {
         dispatch(onStart());
         return fetch(url, {redirect: "follow", mode: "cors"})
@@ -16,5 +26,3 @@ const callApi = function (url, onStart, onSuccess, onError) {
             });
     };
 };
-
-export default callApi;

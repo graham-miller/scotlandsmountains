@@ -1,4 +1,4 @@
-import callApi from "./callApi";
+import { get } from "../api";
 import defaultState from "./defaultState";
 
 const StaticDataActions = {
@@ -27,7 +27,7 @@ function error() {
 }
 
 export function fetchStaticData() {
-    return callApi("/api/staticdata", request, receive, error);
+    return get("/api/staticdata", request, receive, error);
 }
 
 export function reducer(state = defaultState.staticData, action) {

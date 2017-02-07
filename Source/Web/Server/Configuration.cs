@@ -2,6 +2,7 @@
 {
     public class Configuration
     {
+        public string ApiBaseUrl { get; set; }
         public EmailAddressConfiguration EmailAddress { get; set; }
         public MailGunConfiguration MailGun { get; set; }
         public BingMapsConfiguration BingMaps { get; set; }

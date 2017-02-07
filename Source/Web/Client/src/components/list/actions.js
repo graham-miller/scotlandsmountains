@@ -1,4 +1,4 @@
-import callApi from "../../state/callApi";
+import { get } from "../../api";
 
 export const ListActions = {
     Request: "LIST_REQUEST",
@@ -26,5 +26,5 @@ function error() {
 }
 
 export function fetchList(list) {
-    return callApi("/api/lists/" + list, request, receive, error);
+    return get("/api/lists/" + list, request, receive, error);
 }
