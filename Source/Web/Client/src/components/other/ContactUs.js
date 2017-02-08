@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import Formsy from "formsy-react";
-import $ from "jquery";
 import { post } from "../../api";
 import RaisedButton from "material-ui/RaisedButton";
 import { FormsyText } from "formsy-material-ui/lib";
-
+import Recaptcha from "./Recaptcha";
 import GettyImage from "./GettyImage";
 
 class ContactUs extends Component {
@@ -24,6 +23,7 @@ class ContactUs extends Component {
     disableButton = () => this.setState({ canSubmit: false });
 
     submitForm = (data) => {
+        debugger;
         this.setState({ canSubmit: false });
         post("contactus/send", JSON.stringify(data),
             () => this.setState({sent: true}),
@@ -105,6 +105,8 @@ class ContactUs extends Component {
                             required
                             floatingLabelText="Message" />
                     </div>
+
+                    <Recaptcha/>
 
                     <div>
                         <RaisedButton
