@@ -1,12 +1,8 @@
 using System;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
-using Newtonsoft.Json;
 using ScotlandsMountains.Web.Server.Helpers;
 using ScotlandsMountains.Web.Server.Models;
+using System.Threading.Tasks;
 
 namespace ScotlandsMountains.Web.Server.Controllers
 {
@@ -14,46 +10,29 @@ namespace ScotlandsMountains.Web.Server.Controllers
     public class ContactUsController : Controller
     {
         private readonly IEmailHelper _emailHelper;
-        private readonly Configuration _configuration;
+        private readonly IRecaptchaHelper _recaptchaHelper;
 
-        public ContactUsController(IEmailHelper emailHelper, IOptions<Configuration> configuration)
+        public ContactUsController(IEmailHelper emailHelper,  IRecaptchaHelper recaptchaHelper)
         {
             _emailHelper = emailHelper;
-            _configuration = configuration.Value;
+            _recaptchaHelper = recaptchaHelper;
         }
 
         [HttpPost("{send}")]
-        public IActionResult Send([FromBody]ContactUsModel model)
+        public async Task<IActionResult> Send([FromBody]ContactUsModel model)
         {
             if (!ModelState.IsValid) return new BadRequestResult();
 
             try
             {
-                using (var client = new HttpClient())
+                if (await _recaptchaHelper.IsValidAsync(model.GRecaptchaResponse))
                 {
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                    var url = new Uri("https://www.google.com/recaptcha/api/siteverify");
-
-                    var requestJson = JsonConvert.SerializeObject(new
-                    {
-                        secret = _configuration.Recaptcha.SecretKey,
-                        response = model.GRecaptchaResponse
-                    });
-                    var content = new StringContent(requestJson, Encoding.UTF8, "application/json");
-
-                    var response = client.PostAsync(url, content).Result;
-
-                    if (!response.IsSuccessStatusCode) return new StatusCodeResult(500);
-
-                    var responseJson = response.Content.ReadAsStringAsync().Result;
-                    var result = JsonConvert.DeserializeObject<dynamic>(responseJson);
-
-                    if (!result.Success) return new StatusCodeResult(500);
+                    var body = $"From: {model.Sender}{Environment.NewLine}{Environment.NewLine}{model.Message}";
+                    _emailHelper.SendEmailToAdmin(model.Subject, body);
+                    return new OkResult();
                 }
 
-                _emailHelper.SendEmailToAdmin(model.Subject, $"From: {model.Sender}{Environment.NewLine}{Environment.NewLine}{model.Message}");
-                return new OkResult();
+                return new StatusCodeResult(500);
             }
             catch
             {
@@ -61,4 +40,5 @@ namespace ScotlandsMountains.Web.Server.Controllers
             }
         }
     }
+
 }
