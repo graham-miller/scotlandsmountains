@@ -44,7 +44,6 @@ class ToolbarComponent extends Component {
 
     handleLayerAdd = () => {
         if (this.props.map) {
-            debugger;
             this.setState({ baseLayer: this.props.map.currentBaseLayer });
         }
     }

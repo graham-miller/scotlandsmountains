@@ -111,7 +111,7 @@ a:active { color: $link-color; text-decoration: underline; }
 
     #map-toolbar {
         position: absolute;
-        top: $page-title-height + $page-title-height;
+        top: $header-height + $page-title-height;
         bottom: $padding;
         overflow-y: hidden;
         right: $padding*2;

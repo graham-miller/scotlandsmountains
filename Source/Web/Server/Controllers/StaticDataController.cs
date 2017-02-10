@@ -8,24 +8,26 @@ namespace ScotlandsMountains.Web.Server.Controllers
     [Route("api/[controller]")]
     public class StaticDataController : DomainRootController
     {
-        IOptions<Configuration> _configuration;
+        readonly Configuration _configuration;
 
         public StaticDataController(IDomainRoot domainRoot, IOptions<Configuration> configuration)
             :base(domainRoot)
         {
-            _configuration = configuration;
+            _configuration = configuration.Value;
         }
 
         public IActionResult Get()
         {
             return new ObjectResult(new
             {
+                ApiBaseUrl = _configuration.ApiBaseUrl,
                 Lists = DomainRoot.Lists.OrderBy(x => x.Order),
                 Sections = DomainRoot.Sections.OrderBy(x => x.Name),
                 ApiKeys = new
                 {
-                    BingMaps = _configuration.Value.BingMaps.ApiKey,
-                    MapBox = _configuration.Value.Mapbox.ApiKey
+                    BingMaps = _configuration.BingMaps.ApiKey,
+                    MapBox = _configuration.Mapbox.ApiKey,
+                    Recaptcha = _configuration.Recaptcha.SiteKey
                 }
             });
         }

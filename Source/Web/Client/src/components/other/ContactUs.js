@@ -1,13 +1,13 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import Formsy from "formsy-react";
-import $ from "jquery";
-
+import { post } from "../../api";
 import RaisedButton from "material-ui/RaisedButton";
 import { FormsyText } from "formsy-material-ui/lib";
-
+import Recaptcha from "./Recaptcha";
 import GettyImage from "./GettyImage";
 
-class ContactUs extends Component {
+class ContactUsComponent extends Component {
 
     constructor(props) {
         super(props);
@@ -25,16 +25,9 @@ class ContactUs extends Component {
 
     submitForm = (data) => {
         this.setState({ canSubmit: false });
-        $.ajax("/api/contactus/send", {
-            method: "GET", //"POST"
-            crossDomain: true,
-            contentType: "application/json",
-            data: data //JSON.stringify(data)
-        }).done(() => {
-            this.setState({sent: true});
-        }).fail(() => {
-            this.setState({error: true});
-        });
+        post("contactus/send", JSON.stringify(data),
+            () => this.setState({sent: true}),
+            () => this.setState({error: true}));
     }
 
     resetForm = () => {
@@ -113,6 +106,13 @@ class ContactUs extends Component {
                             floatingLabelText="Message" />
                     </div>
 
+                    <div style={{margin:"14px 0 14px 0"}}>
+                        <Recaptcha
+                            name="gRecaptchaResponse"
+                            siteKey={this.props.staticData.value.apiKeys.recaptcha}
+                            required />
+                    </div>
+
                     <div>
                         <RaisedButton
                             disabled={!this.state.canSubmit}
@@ -126,5 +126,13 @@ class ContactUs extends Component {
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        staticData: state.staticData
+    };
+};
+
+const ContactUs = connect(mapStateToProps)(ContactUsComponent);
 
 export default ContactUs;

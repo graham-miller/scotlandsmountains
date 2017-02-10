@@ -2,6 +2,7 @@ using System;
 using Microsoft.AspNetCore.Mvc;
 using ScotlandsMountains.Web.Server.Helpers;
 using ScotlandsMountains.Web.Server.Models;
+using System.Threading.Tasks;
 
 namespace ScotlandsMountains.Web.Server.Controllers
 {
@@ -9,33 +10,35 @@ namespace ScotlandsMountains.Web.Server.Controllers
     public class ContactUsController : Controller
     {
         private readonly IEmailHelper _emailHelper;
+        private readonly IRecaptchaHelper _recaptchaHelper;
 
-        public ContactUsController(IEmailHelper emailHelper)
+        public ContactUsController(IEmailHelper emailHelper,  IRecaptchaHelper recaptchaHelper)
         {
             _emailHelper = emailHelper;
+            _recaptchaHelper = recaptchaHelper;
         }
 
-        // Idealy we would want to POST, but because of Azure/Cloudflare/Github set up to enable
-        // custom domain and https which use redirects, we need to use get 
-        // [HttpPost("{send}")]
-        // public IActionResult Send([FromBody]ContactUsModel model)
-        [HttpGet("{send}")]
-        public IActionResult Send([FromQuery]ContactUsModel model)
+        [HttpPost("{send}")]
+        public async Task<IActionResult> Send([FromBody]ContactUsModel model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid) return new BadRequestResult();
+
+            try
             {
-                try
+                if (await _recaptchaHelper.IsValidAsync(model.GRecaptchaResponse))
                 {
-                    _emailHelper.SendEmailToAdmin(model.Subject, $"From: {model.Sender}{Environment.NewLine}{Environment.NewLine}{model.Message}");
+                    var body = $"From: {model.Sender}{Environment.NewLine}{Environment.NewLine}{model.Message}";
+                    _emailHelper.SendEmailToAdmin(model.Subject, body);
                     return new OkResult();
                 }
-                catch
-                {
-                    return new StatusCodeResult(500);
-                }
-            }
 
-            return new BadRequestResult();
+                return new StatusCodeResult(500);
+            }
+            catch
+            {
+                return new StatusCodeResult(500);
+            }
         }
     }
+
 }
