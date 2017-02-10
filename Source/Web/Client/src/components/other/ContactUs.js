@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import Formsy from "formsy-react";
 import { post } from "../../api";
 import RaisedButton from "material-ui/RaisedButton";
@@ -6,7 +7,7 @@ import { FormsyText } from "formsy-material-ui/lib";
 import Recaptcha from "./Recaptcha";
 import GettyImage from "./GettyImage";
 
-class ContactUs extends Component {
+class ContactUsComponent extends Component {
 
     constructor(props) {
         super(props);
@@ -105,7 +106,12 @@ class ContactUs extends Component {
                             floatingLabelText="Message" />
                     </div>
 
-                    <Recaptcha name="gRecaptchaResponse" required />
+                    <div style={{margin:"14px 0 14px 0"}}>
+                        <Recaptcha
+                            name="gRecaptchaResponse"
+                            siteKey={this.props.staticData.value.apiKeys.recaptcha}
+                            required />
+                    </div>
 
                     <div>
                         <RaisedButton
@@ -120,5 +126,13 @@ class ContactUs extends Component {
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        staticData: state.staticData
+    };
+};
+
+const ContactUs = connect(mapStateToProps)(ContactUsComponent);
 
 export default ContactUs;

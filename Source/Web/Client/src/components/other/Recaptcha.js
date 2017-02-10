@@ -5,7 +5,10 @@ class Recaptcha extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { widgetId: null };
+        this.state = {
+            widgetId: null,
+            value: ""
+        };
     }
 
     componentDidMount() {
@@ -13,7 +16,7 @@ class Recaptcha extends Component {
 
             window.onRecaptchaLoaded = () => {
                 const widgetId = window.grecaptcha.render(this.recaptchaElement, {
-                    "sitekey": "6Lf4Ah0TAAAAAIsZzbo-JwGcYtJGPwCJdhVIErYz",
+                    "sitekey": this.props.siteKey,
                     "callback": "onRecaptchaChanged",
                     "expired-callback": "onRecaptchaExpired"
                 });
@@ -22,10 +25,12 @@ class Recaptcha extends Component {
 
             window.onRecaptchaChanged = (value) => {
                 this.props.setValue(value);
+                this.setState({value: value});
             };
 
             window.onRecaptchaExpired = () => {
-                this.props.setValue(null);
+                this.props.setValue("");
+                this.setState({value: ""});
             };
 
             var element = document.createElement("script");
@@ -37,10 +42,14 @@ class Recaptcha extends Component {
         }
     }
 
+    getValue() {
+        return this.state.value;
+    }
+
     render() {
         return (
-            <div style={{margin:"14px 0 14px 0"}}>
-                <input type="hidden" value={this.props.getValue()} />
+            <div>
+                <input type="hidden" value={this.state.value} />
                 <div ref={(input) => this.recaptchaElement = input} />
             </div>
         );

@@ -26,7 +26,8 @@ namespace ScotlandsMountains.Web.Server.Controllers
                 ApiKeys = new
                 {
                     BingMaps = _configuration.BingMaps.ApiKey,
-                    MapBox = _configuration.Mapbox.ApiKey
+                    MapBox = _configuration.Mapbox.ApiKey,
+                    Recaptcha = _configuration.Recaptcha.SiteKey
                 }
             });
         }
