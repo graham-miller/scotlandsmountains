@@ -4,14 +4,17 @@ namespace ScotlandsMountains.Web.Server.Models
 {
     public class ContactUsModel
     {
-        [Required(ErrorMessage = "Required")]
-        [EmailAddress(ErrorMessage = "Invalid")]
+        [Required]
+        [EmailAddress]
         public string Sender { get; set; }
 
-        [Required(ErrorMessage = "Required")]
+        [Required]
         public string Subject { get; set; }
 
-        [Required(ErrorMessage = "Required")]
+        [Required]
         public string Message { get; set; }
+
+        [Required]
+        public string GRecaptchaResponse { get; set; }
     }
 }

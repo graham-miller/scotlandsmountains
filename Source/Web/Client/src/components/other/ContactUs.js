@@ -23,7 +23,6 @@ class ContactUs extends Component {
     disableButton = () => this.setState({ canSubmit: false });
 
     submitForm = (data) => {
-        debugger;
         this.setState({ canSubmit: false });
         post("contactus/send", JSON.stringify(data),
             () => this.setState({sent: true}),
@@ -106,7 +105,7 @@ class ContactUs extends Component {
                             floatingLabelText="Message" />
                     </div>
 
-                    <Recaptcha/>
+                    <Recaptcha name="gRecaptchaResponse" required />
 
                     <div>
                         <RaisedButton
