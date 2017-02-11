@@ -1,14 +1,13 @@
 import { connect } from "react-redux";
 import React, { Component } from "react";
-
 import { zoomIn, zoomOut, setBaseLayer } from "./actions";
-
 import FloatingActionButton from "material-ui/FloatingActionButton";
-
+import Popover from "material-ui/Popover";
 import ZoomIn from "material-ui/svg-icons/content/add";
 import ZoomOut from "material-ui/svg-icons/content/remove";
-// import Satellite from "material-ui/svg-icons/maps/satellite";
-// import Map from "material-ui/svg-icons/maps/map";
+import Layers from "material-ui/svg-icons/maps/layers";
+// import Fullscreen from "material-ui/svg-icons/navigation/fullscreen";
+// import FullscreenExit from "material-ui/svg-icons/navigation/fullscreen-exit";
 
 class ToolbarComponent extends Component {
 
@@ -18,6 +17,7 @@ class ToolbarComponent extends Component {
         this.state = {
             canZoomIn: true,
             canZoomOut: true,
+            layersOpen: false,
             baseLayer: this.props.baseLayers[0]
         };
     }
@@ -57,6 +57,7 @@ class ToolbarComponent extends Component {
     }
 
     setBaseLayer = (index) => {
+        this.handleCloseLayers(); 
         const newBaseLayer = this.props.baseLayers[index];
         if (this.props.map) {
             this.props.dispatch(setBaseLayer(newBaseLayer));
@@ -64,10 +65,33 @@ class ToolbarComponent extends Component {
         this.setState({ baseLayer: newBaseLayer });
     }
 
+    handleOpenLayers = (event) => {
+        event.preventDefault();
+        this.setState({
+            layersOpen: true,
+            anchorEl: event.currentTarget,
+        });
+    };
+
+    handleCloseLayers = () => {
+        this.setState({
+            layersOpen: false,
+        });
+    };
+
     render() {
 
         return (
             <div id="map-toolbar">
+
+                {/*<div>
+                    <FloatingActionButton
+                        secondary={true} mini={true}
+                        disabled={!this.state.canZoomIn}
+                        onTouchTap={() => this.props.dispatch(zoomIn())}>
+                        <Fullscreen />
+                    </FloatingActionButton>
+                </div>*/}
 
                 <div>
                     <FloatingActionButton
@@ -87,20 +111,37 @@ class ToolbarComponent extends Component {
                     </FloatingActionButton>
                 </div>
 
-                {
-                    this.props.baseLayers.map((baseLayer, index) =>
-                        <div key={index}>
-                            <FloatingActionButton
-                                secondary={true} mini={true}
-                                disabled={this.currentBaseLayerIs(index)}
-                                onTouchTap={() => this.setBaseLayer(index)}
-                                children={baseLayer.label}>
-                            </FloatingActionButton>
-                        </div>
-                    )
-                }
+                <div>
+                    <FloatingActionButton
+                        secondary={true} mini={true}
+                        onTouchTap={(event) => this.handleOpenLayers(event)}>
+                        <Layers />
+                    </FloatingActionButton>
+                </div>
 
-            </div>
+                <Popover
+                    open={this.state.layersOpen}
+                    anchorEl={this.state.anchorEl}
+                    anchorOrigin={{horizontal:"middle",vertical:"center"}}
+                    targetOrigin={{horizontal:"right",vertical:"center"}}
+                    onRequestClose={this.handleCloseLayers}>
+                    <div>
+                        {
+                            this.props.baseLayers.map((baseLayer, index) =>
+                                <div key={index} style={{margin:"10px"}}>
+                                    <FloatingActionButton
+                                        secondary={true} mini={true}
+                                        disabled={this.currentBaseLayerIs(index)}
+                                        onTouchTap={() => this.setBaseLayer(index)}
+                                        children={baseLayer.label}>
+                                    </FloatingActionButton>
+                                </div>
+                            )
+                        }
+                    </div>
+                </Popover>
+
+            </div >
         );
     }
 }

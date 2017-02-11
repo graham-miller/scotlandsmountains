@@ -18,7 +18,7 @@ class NotificationComponent extends Component {
                 <Snackbar
                     open={true}
                     message={message}
-                    autoHideDuration={10000}
+                    autoHideDuration={2147483647}
                     action="Retry"
                     onActionTouchTap={() => location.reload(true)} />
             );
