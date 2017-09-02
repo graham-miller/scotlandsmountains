@@ -31,6 +31,7 @@ namespace ScotlandsMountains.Import.Domain
         private static PropertyInfo GetPropertyInfoBy(string dobihFieldName)
         {
             return typeof(DobihRecord).GetProperties()
+                .Where(x => Attribute.IsDefined(x, typeof(DobihFieldNameAttribute)))
                 .Single(x =>
                     ((DobihFieldNameAttribute) Attribute.GetCustomAttribute(x, typeof(DobihFieldNameAttribute))).Name == dobihFieldName);
         }

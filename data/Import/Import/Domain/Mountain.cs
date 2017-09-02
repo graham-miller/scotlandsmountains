@@ -23,9 +23,4 @@ namespace ScotlandsMountains.Import.Domain
         public Prominence Prominence { get; set; }
         public int DobihNumber { get; set; }
     }
-
-    public class Prominence
-    {
-        public Height Drop { get; set; }
-    }
 }

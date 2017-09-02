@@ -1,36 +1,67 @@
 ﻿using System;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace ScotlandsMountains.Import.Domain
 {
     public class GridRef
     {
-        private static readonly Regex SixFigureGridRefRegex = new Regex("^[A-Z]{2}[0-9]{6}$");
-        private static readonly Regex TenFigureGridRefRegex = new Regex("^[A-Z]{2}[0-9]{10}$");
+        private static readonly Regex SixFigureGridRefRegex = new Regex("^[A-Z]{2} *[0-9]{3} *[0-9]{3}$");
+        private static readonly Regex EightFigureGridRefRegex = new Regex("^[A-Z]{2} *[0-9]{4} *[0-9]{4}$");
+        private static readonly Regex TenFigureGridRefRegex = new Regex("^[A-Z]{2} *[0-9]{5} *[0-9]{5}$");
 
-        public GridRef(string sixFigure, string tenFigure = null)
+        public static bool IsGridRef(string s)
         {
-            if (SixFigureGridRefRegex.IsMatch(sixFigure))
+            return IsSixFigureGridRef(s) || IsEightFigureGridRef(s) || IsTenFigureGridRef(s);
+        }
+
+        public static bool IsSixFigureGridRef(string s)
+        {
+            return SixFigureGridRefRegex.IsMatch(s);
+        }
+
+        public static bool IsEightFigureGridRef(string s)
+        {
+            return EightFigureGridRefRegex.IsMatch(s);
+        }
+
+        public static bool IsTenFigureGridRef(string s)
+        {
+            return TenFigureGridRefRegex.IsMatch(s);
+        }
+
+        public GridRef(params string[] args)
+        {
+            var sixFigure = args.FirstOrDefault(IsSixFigureGridRef);
+            if (sixFigure != null)
+                SixFigure = RemoveSpaces(sixFigure);
+
+            var eightFigure = args.FirstOrDefault(IsEightFigureGridRef);
+            if (eightFigure != null)
             {
-                SixFigure = sixFigure;
-            }
-            else
-            {
-                throw new ArgumentOutOfRangeException($"{sixFigure} is not a valid six-figure grid reference");
+                eightFigure = RemoveSpaces(eightFigure);
+                SixFigure = $"{eightFigure.Substring(0, 5)}{eightFigure.Substring(6, 3)}";
+                TenFigure = $"{eightFigure.Substring(0, 6)}0{eightFigure.Substring(6, 4)}0";
             }
 
-            if (tenFigure == null)
+            var tenFigure = args.FirstOrDefault(IsTenFigureGridRef);
+            if (tenFigure != null)
             {
-                TenFigure = $"{sixFigure.Substring(0, 5)}00{sixFigure.Substring(5, 3)}00";
-            }
-            else
-            {
-                if (!TenFigureGridRefRegex.IsMatch(tenFigure))
-                    throw new ArgumentOutOfRangeException($"{tenFigure} is not a valid ten-figure grid reference");
-
-                TenFigure = tenFigure;
+                TenFigure = RemoveSpaces(tenFigure);
+                if (sixFigure == null)
+                    SixFigure = $"{TenFigure.Substring(0, 5)}{TenFigure.Substring(7, 3)}";
             }
 
+            if (SixFigure == null)
+                throw new ArgumentException("GridRef could not be constructed");
+
+            if (TenFigure == null)
+                TenFigure = $"{SixFigure.Substring(0, 5)}00{SixFigure.Substring(5, 3)}00";
+        }
+
+        private string RemoveSpaces(string s)
+        {
+            return s.Replace(" ", "");
         }
 
         public string SixFigure { get; set; }
