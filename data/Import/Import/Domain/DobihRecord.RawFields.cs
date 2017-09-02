@@ -17,22 +17,22 @@ namespace ScotlandsMountains.Import.Domain
                 .ToList();
         }
 
-        private static Action<DobihRecord, string>[] GetPropertyMappers(string[] header)
+        private static Action<DobihRecord, string>[] GetPropertyMappers(string[] dobihFieldNames)
         {
-            return header.Select(GetPropertyMapper).ToArray();
+            return dobihFieldNames.Select(PropertyMapperByDobihFieldName).ToArray();
         }
 
-        private static Action<DobihRecord, string> GetPropertyMapper(string fieldName)
+        private static Action<DobihRecord, string> PropertyMapperByDobihFieldName(string dobihFieldName)
         {
-            var propertyInfo = GetPropertyInfo(fieldName);
+            var propertyInfo = GetPropertyInfoBy(dobihFieldName);
             return (record, value) => propertyInfo.SetValue(record, value);
         }
 
-        private static PropertyInfo GetPropertyInfo(string fieldName)
+        private static PropertyInfo GetPropertyInfoBy(string dobihFieldName)
         {
             return typeof(DobihRecord).GetProperties()
                 .Single(x =>
-                    ((DobihFieldNameAttribute) Attribute.GetCustomAttribute(x, typeof(DobihFieldNameAttribute))).Name == fieldName);
+                    ((DobihFieldNameAttribute) Attribute.GetCustomAttribute(x, typeof(DobihFieldNameAttribute))).Name == dobihFieldName);
         }
 
         private DobihRecord(string[] line, Action<DobihRecord, string>[] propertyMapper)
