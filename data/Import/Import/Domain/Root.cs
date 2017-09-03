@@ -9,7 +9,9 @@ namespace ScotlandsMountains.Import.Domain
         {
             var root = new Root
             {
-                Mountains = dobihRecords.Select(x => new Mountain(x)).ToList()
+                Mountains = dobihRecords.Select(x => new Mountain(x)).ToList(),
+                Sections = dobihRecords.Select(x => x.SectionName).Distinct().Select(x => new Section(x)).ToList(),
+                Classifications = Classification.Build()
             };
 
             return root;
@@ -18,5 +20,12 @@ namespace ScotlandsMountains.Import.Domain
         private Root() { }
 
         public List<Mountain> Mountains { get; set; }
+        public List<Section> Sections { get; set; }
+        public IList<Classification> Classifications { get; set; }
+
+        public void Save()
+        {
+            
+        }
     }
 }

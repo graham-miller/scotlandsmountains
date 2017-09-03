@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\Classification.cs" />
     <Compile Include="Domain\DobihRecord.RawFields.cs" />
     <Compile Include="Domain\DobihRecord.cs" />
     <Compile Include="Domain\GridRef.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Domain\Mountain.cs" />
     <Compile Include="Domain\Prominence.cs" />
     <Compile Include="Domain\Root.cs" />
+    <Compile Include="Domain\Section.cs" />
     <Compile Include="Runner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
