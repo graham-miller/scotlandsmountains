@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.Design.Serialization;
 using System.IO.Compression;
-using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 using Microsoft.VisualBasic.FileIO;
 using NUnit.Framework;
 using ScotlandsMountains.Import.Domain;
@@ -13,7 +12,7 @@ namespace ScotlandsMountains.Import
     public class Runner
     {
         [Test]
-        public void ImportHillData()
+        public async Task ImportHillData()
         {
             string[] header;
             List<string[]> data;
@@ -35,15 +34,21 @@ namespace ScotlandsMountains.Import
                 while (!parser.EndOfData)
                     data.Add(parser.ReadFields());
             }
-
             Assert.That(string.Join(",", header), Is.EqualTo(ExpectedHeader));
 
             var dobihRecords = DobihRecord.BuildFrom(header, data);
-
             Assert.That(dobihRecords, Has.Count.EqualTo(12162).Or.Count.EqualTo(20781));
 
             var root = Root.Build(dobihRecords);
-            root.Save();
+            var database = new Database();
+            await database.Clear();
+            await database.Save(root.Classifications, "classifications");
+        }
+
+        [Test]
+        public async Task ClearDatabase()
+        {
+            await new Database().Clear();
         }
 
         private const string ExpectedHeader = "Number,Name,Parent (SMC),Parent name (SMC),Section,Section name,Area,Island,Topo Section,County,Classification,Map 1:50k,Map 1:25k,Metres,Feet,Grid ref,Grid ref 10,Drop,Col grid ref,Col height,Feature,Observations,Survey,Climbed,Country,County Top,Revision,Comments,Streetmap/OSiViewer,Geograph/MountainViews,Hill-bagging,Xcoord,Ycoord,Latitude,Longitude,GridrefXY,_Section,Parent (Ma),Parent name (Ma),MVNumber,Ma,Ma=,Hu,Hu=,Tu,Tu=,Sim,M,MT,F,C,G,D,DT,Mur,CT,GT,Hew,N,5,5D,5H,4,3,2,1,1=,0,W,WO,B,CoH,CoH=,CoU,CoU=,CoA,CoA=,CoL,CoL=,SIB,sMa,sHu,sSim,s5,s5D,s5H,s5M,s4,Sy,Fel,BL,Bg,T100,xMT,xC,xG,xN,xDT,Dil,VL,A,5M,Ca,Bin,O,Un";

@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace ScotlandsMountains.Import.Domain
 {
-    public class Classification
+    public class Classification : HasKey
     {
         public string Name { get; set; }
 
+        [JsonIgnore]
         public string DobihCode { get; set; }
 
         public static IList<Classification> Build()

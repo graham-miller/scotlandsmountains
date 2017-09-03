@@ -22,10 +22,5 @@ namespace ScotlandsMountains.Import.Domain
         public List<Mountain> Mountains { get; set; }
         public List<Section> Sections { get; set; }
         public IList<Classification> Classifications { get; set; }
-
-        public void Save()
-        {
-            
-        }
     }
 }
