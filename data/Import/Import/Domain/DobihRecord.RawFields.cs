@@ -12,7 +12,7 @@ namespace ScotlandsMountains.Import.Domain
             var propertyMapper = GetPropertyMappers(header);
 
             return data
-                .Where(x => x[24] == "S" || x[24] == "ES") // HACK restrict to Scottish hills for now
+                //.Where(x => x[24] == "S" || x[24] == "ES") // HACK restrict to Scottish hills for now
                 .Select(x => new DobihRecord(x, propertyMapper))
                 .ToList();
         }
