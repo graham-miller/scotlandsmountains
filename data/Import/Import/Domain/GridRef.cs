@@ -79,11 +79,6 @@ namespace ScotlandsMountains.Import.Domain
             }
         }
 
-        private string RemoveSpaces(string s)
-        {
-            return s.Replace(" ", "");
-        }
-
         public string SixFigure { get; set; }
         public string TenFigure { get; set; }
     }

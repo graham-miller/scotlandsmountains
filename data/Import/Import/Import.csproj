@@ -52,6 +52,7 @@
     <Compile Include="Domain\Location.cs" />
     <Compile Include="Domain\Mountain.cs" />
     <Compile Include="Domain\Prominence.cs" />
+    <Compile Include="Domain\Root.cs" />
     <Compile Include="Runner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
