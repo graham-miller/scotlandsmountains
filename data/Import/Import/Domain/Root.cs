@@ -11,7 +11,8 @@ namespace ScotlandsMountains.Import.Domain
             {
                 Mountains = dobihRecords.Select(x => new Mountain(x)).ToList(),
                 Sections = dobihRecords.Select(x => x.SectionName).Distinct().Select(x => new Section(x)).ToList(),
-                Classifications = Classification.Build()
+                Classifications = Classification.Build(),
+                Countries = Country.Build()
             };
 
             //TODO
@@ -32,5 +33,6 @@ namespace ScotlandsMountains.Import.Domain
         public List<Mountain> Mountains { get; set; }
         public List<Section> Sections { get; set; }
         public IList<Classification> Classifications { get; set; }
+        public IList<Country> Countries { get; set; }
     }
 }

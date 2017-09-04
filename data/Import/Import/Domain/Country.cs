@@ -20,7 +20,7 @@ namespace ScotlandsMountains.Import.Domain
                 new Country {DobihCode = "I", Name = "Ireland"},
                 new Country {DobihCode = "M", Name = "Isle of Man"},
                 new Country {DobihCode = "C", Name = "Channel Islands"},
-                new Country {DobihCode = "ES", Name = "Scottish/English border"}
+                new Country {DobihCode = "ES", Name = "Anglo-Scottish border"}
             };
         }
     }

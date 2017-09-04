@@ -17,6 +17,7 @@ namespace ScotlandsMountains.Import
         {
             public const string Classifications = "classifications";
             public const string Sections = "sections";
+            public const string Countries = "countries";
         }
 
         private readonly IFirebaseClient _firebase;
@@ -38,6 +39,7 @@ namespace ScotlandsMountains.Import
             await Clear();
             await Save(root.Classifications, Paths.Classifications);
             await Save(root.Sections, Paths.Sections);
+            await Save(root.Countries, Paths.Countries);
         }
 
         private async Task Save<T>(IList<T> collection, string resourceName) where T : HasKey
@@ -58,6 +60,7 @@ namespace ScotlandsMountains.Import
         {
             await _firebase.DeleteAsync(Paths.Classifications);
             await _firebase.DeleteAsync(Paths.Sections);
+            await _firebase.DeleteAsync(Paths.Countries);
         }
     }
 
