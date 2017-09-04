@@ -17,7 +17,6 @@ namespace ScotlandsMountains.Import.Domain
 
             //TODO
             // Create maps
-            // Create countries
             // Link mountain and Parent (SMC) and Parent (Ma), 
             // Link mountain and classifications
             // Link mountain and sections
