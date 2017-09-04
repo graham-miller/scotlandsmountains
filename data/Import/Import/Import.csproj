@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.cs" />
+    <Compile Include="Domain\Country.cs" />
     <Compile Include="Domain\Classification.cs" />
     <Compile Include="Domain\DobihRecord.RawFields.cs" />
     <Compile Include="Domain\DobihRecord.cs" />

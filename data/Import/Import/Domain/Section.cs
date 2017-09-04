@@ -1,7 +1,10 @@
-﻿namespace ScotlandsMountains.Import.Domain
+﻿using Newtonsoft.Json;
+
+namespace ScotlandsMountains.Import.Domain
 {
-    public class Section
+    public class Section : HasKey
     {
+        [JsonIgnore]
         public readonly string DobihSectionName;
 
         public Section(string dobihSectionName)
@@ -13,7 +16,7 @@
 
         public string Name => DobihSectionName.Substring(DobihSectionName.IndexOf(Space) + 1);
 
-        public const char SemiColon = ':';
-        public const char Space = ' ';
+        private const char SemiColon = ':';
+        private const char Space = ' ';
     }
 }

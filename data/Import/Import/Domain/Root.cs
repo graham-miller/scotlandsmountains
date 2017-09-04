@@ -14,6 +14,16 @@ namespace ScotlandsMountains.Import.Domain
                 Classifications = Classification.Build()
             };
 
+            //TODO
+            // Create maps
+            // Create countries
+            // Link mountain and Parent (SMC) and Parent (Ma), 
+            // Link mountain and classifications
+            // Link mountain and sections
+            // Link mountain and maps
+            // Link mountain and countries
+
+
             return root;
         }
 

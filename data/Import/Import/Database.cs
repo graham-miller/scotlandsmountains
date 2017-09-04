@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FireSharp;
@@ -12,13 +13,19 @@ namespace ScotlandsMountains.Import
 {
     public class Database
     {
+        private static class Paths
+        {
+            public const string Classifications = "classifications";
+            public const string Sections = "sections";
+        }
+
         private readonly IFirebaseClient _firebase;
 
         public Database()
         {
             IFirebaseConfig config = new FirebaseConfig
             {
-                //AuthSecret = "your_firebase_secret",
+                //AuthSecret = "firebase_secret",
                 BasePath = "https://scotlandsmountains.firebaseio.com/",
                 Serializer = new Serializer()
             };
@@ -26,7 +33,14 @@ namespace ScotlandsMountains.Import
             _firebase = new FirebaseClient(config);
         }
 
-        public async Task Save<T>(IList<T> collection, string resourceName) where T : HasKey
+        internal async Task Save(Root root)
+        {
+            await Clear();
+            await Save(root.Classifications, Paths.Classifications);
+            await Save(root.Sections, Paths.Sections);
+        }
+
+        private async Task Save<T>(IList<T> collection, string resourceName) where T : HasKey
         {
             var path = resourceName;
 
@@ -40,9 +54,10 @@ namespace ScotlandsMountains.Import
             await Task.WhenAll(tasks);
         }
 
-        public async Task Clear()
+        private async Task Clear()
         {
-            await _firebase.DeleteAsync("classifications");
+            await _firebase.DeleteAsync(Paths.Classifications);
+            await _firebase.DeleteAsync(Paths.Sections);
         }
     }
 
