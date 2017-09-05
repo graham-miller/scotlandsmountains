@@ -12,17 +12,16 @@ namespace ScotlandsMountains.Import.Domain
                 Mountains = dobihRecords.Select(x => new Mountain(x)).ToList(),
                 Sections = dobihRecords.Select(x => x.SectionName).Distinct().Select(x => new Section(x)).ToList(),
                 Classifications = Classification.Build(),
-                Countries = Country.Build()
+                Countries = Country.Build(),
+                Maps = Map.Build(dobihRecords)
             };
 
             //TODO
-            // Create maps
             // Link mountain and Parent (SMC) and Parent (Ma), 
             // Link mountain and classifications
             // Link mountain and sections
             // Link mountain and maps
             // Link mountain and countries
-
 
             return root;
         }
@@ -33,5 +32,6 @@ namespace ScotlandsMountains.Import.Domain
         public List<Section> Sections { get; set; }
         public IList<Classification> Classifications { get; set; }
         public IList<Country> Countries { get; set; }
+        public IList<Map> Maps { get; set; }
     }
 }
