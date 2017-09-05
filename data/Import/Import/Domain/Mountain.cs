@@ -1,20 +1,19 @@
 ﻿using System.Collections.Generic;
-using System.Data.Common;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace ScotlandsMountains.Import.Domain
 {
-    public class Mountain
+    public class Mountain : HasKey
     {
         public Mountain(DobihRecord dobihRecord)
         {
-            Name = dobihRecord.CleanedName;
-            Location = dobihRecord.Location;
-            Height = dobihRecord.Height;
-            Prominence = dobihRecord.Prominence;
-            DobihNumber = dobihRecord.DobihNumber;
+            DobihRecord = dobihRecord;
+
+            Name = DobihRecord.CleanedName;
+            Location = DobihRecord.Location;
+            Height = DobihRecord.Height;
+            Prominence = DobihRecord.Prominence;
+            DobihNumber = DobihRecord.DobihNumber;
         }
 
         public string Name { get; set; }
@@ -22,5 +21,12 @@ namespace ScotlandsMountains.Import.Domain
         public Height Height { get; set; }
         public Prominence Prominence { get; set; }
         public int DobihNumber { get; set; }
+        public List<string> ClassificationIds { get; set; }
+        public string SectionId { get; set; }
+        public string CountryId { get; set; }
+        public List<string> MapIds { get; set; }
+
+        [JsonIgnore]
+        public DobihRecord DobihRecord { get; set; }
     }
 }

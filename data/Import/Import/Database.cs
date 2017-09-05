@@ -13,18 +13,6 @@ namespace ScotlandsMountains.Import
 {
     public class Database
     {
-        private static class Paths
-        {
-            public const string Classifications = "classifications";
-            public const string Sections = "sections";
-            public const string Countries = "countries";
-            public const string Maps = "maps";
-        }
-
-        private const int MaxSimultaneousConnections = 100;
-
-        private readonly IFirebaseClient _firebase;
-
         public Database()
         {
             IFirebaseConfig config = new FirebaseConfig
@@ -44,6 +32,17 @@ namespace ScotlandsMountains.Import
             await Save(root.Sections, Paths.Sections);
             await Save(root.Countries, Paths.Countries);
             await Save(root.Maps, Paths.Maps);
+            root.LinkMountainsToRelatedEntities();
+            await Save(root.Mountains, Paths.Mountains);
+        }
+
+        private async Task Clear()
+        {
+            await _firebase.DeleteAsync(Paths.Classifications);
+            await _firebase.DeleteAsync(Paths.Sections);
+            await _firebase.DeleteAsync(Paths.Countries);
+            await _firebase.DeleteAsync(Paths.Maps);
+            await _firebase.DeleteAsync(Paths.Mountains);
         }
 
         private async Task Save<T>(IList<T> collection, string resourceName) where T : HasKey
@@ -83,31 +82,36 @@ namespace ScotlandsMountains.Import
                 yield return partition;
         }
 
-        private async Task Clear()
+        private static class Paths
         {
-            await _firebase.DeleteAsync(Paths.Classifications);
-            await _firebase.DeleteAsync(Paths.Sections);
-            await _firebase.DeleteAsync(Paths.Countries);
-            await _firebase.DeleteAsync(Paths.Maps);
-        }
-    }
-
-    public class Serializer : ISerializer
-    {
-        private static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
-        {
-            DateParseHandling = DateParseHandling.None,
-            ContractResolver = new CamelCasePropertyNamesContractResolver()
-        };
-
-        public T Deserialize<T>(string json)
-        {
-            return JsonConvert.DeserializeObject<T>(json, Settings);
+            public const string Classifications = "classifications";
+            public const string Sections = "sections";
+            public const string Countries = "countries";
+            public const string Maps = "maps";
+            public const string Mountains = "mountains";
         }
 
-        public string Serialize<T>(T value)
+        private const int MaxSimultaneousConnections = 100;
+
+        private readonly IFirebaseClient _firebase;
+
+        public class Serializer : ISerializer
         {
-            return JsonConvert.SerializeObject(value, Settings);
+            private static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
+            {
+                DateParseHandling = DateParseHandling.None,
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+            };
+
+            public T Deserialize<T>(string json)
+            {
+                return JsonConvert.DeserializeObject<T>(json, Settings);
+            }
+
+            public string Serialize<T>(T value)
+            {
+                return JsonConvert.SerializeObject(value, Settings);
+            }
         }
     }
 }

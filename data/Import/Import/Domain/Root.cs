@@ -5,33 +5,55 @@ namespace ScotlandsMountains.Import.Domain
 {
     public class Root
     {
-        public static Root Build(IList<DobihRecord> dobihRecords)
+        public Root(IList<DobihRecord> dobihRecords)
         {
-            var root = new Root
-            {
-                Mountains = dobihRecords.Select(x => new Mountain(x)).ToList(),
-                Sections = dobihRecords.Select(x => x.SectionName).Distinct().Select(x => new Section(x)).ToList(),
-                Classifications = Classification.Build(),
-                Countries = Country.Build(),
-                Maps = Map.Build(dobihRecords)
-            };
-
-            //TODO
-            // Link mountain and Parent (SMC) and Parent (Ma), 
-            // Link mountain and classifications
-            // Link mountain and sections
-            // Link mountain and maps
-            // Link mountain and countries
-
-            return root;
+            Mountains = dobihRecords.Select(x => new Mountain(x)).ToList();
+            Sections = dobihRecords.Select(x => x.SectionName).Distinct().Select(x => new Section(x)).ToList();
+            Classifications = Classification.Build();
+            Countries = Country.Build();
+            Maps = Map.Build(dobihRecords);
         }
-
-        private Root() { }
 
         public List<Mountain> Mountains { get; set; }
         public List<Section> Sections { get; set; }
         public IList<Classification> Classifications { get; set; }
         public IList<Country> Countries { get; set; }
         public IList<Map> Maps { get; set; }
+
+        public void LinkMountainsToRelatedEntities()
+        {
+            LinkMountainAndParent();
+            LinkMountainAndClassifications();
+            LinkMountainAndSections();
+            LinkMountainAndMaps();
+            LinkMountainAndCountries();
+        }
+
+        private void LinkMountainAndParent()
+        {
+            //TODO link mountain and Parent (SMC) and Parent (Ma), 
+        }
+
+        private void LinkMountainAndClassifications()
+        {
+            //TODO link mountain and classifications
+        }
+
+        private void LinkMountainAndSections()
+        {
+            foreach (var mountain in Mountains)
+                mountain.SectionId = Sections.Single(x => x.DobihSectionName == mountain.DobihRecord.SectionName).Key;
+        }
+
+        private void LinkMountainAndMaps()
+        {
+            //TODO link mountain and maps
+        }
+
+        private void LinkMountainAndCountries()
+        {
+            foreach (var mountain in Mountains)
+                mountain.CountryId = Countries.Single(x => x.DobihCode == mountain.DobihRecord.Country).Key;
+        }
     }
 }

@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ScotlandsMountains.Import.Extensions;
 
 namespace ScotlandsMountains.Import.Domain
 {
@@ -10,31 +10,39 @@ namespace ScotlandsMountains.Import.Domain
         {
             var landrangerMaps = dobihRecords
                 .Where(x => x.Country != Ireland)
-                .SelectMany(x => SplitSpaceSeparatedString(x.Map1To50000))
+                .SelectMany(x => x.Map1To50000.SplitMapCodes())
                 .Distinct()
-                .Select(BuildLandranger);
+                .Select(x => new Map(x, OrdnanceSurvey, Landranger, Scale1To50000));
 
             var explorerMaps = dobihRecords
                 .Where(x => x.Country != Ireland)
-                .SelectMany(x => SplitSpaceSeparatedString(x.Map1To25000))
+                .SelectMany(x => x.Map1To25000.SplitMapCodes())
                 .Distinct()
-                .Select(BuildExplorer);
+                .Select(x => new Map(x, OrdnanceSurvey, Explorer, Scale1To25000));
 
             var discovererMaps = dobihRecords
                 .Where(x => x.Country == Ireland)
-                .SelectMany(x => SplitSpaceSeparatedString(x.Map1To50000))
+                .SelectMany(x => x.Map1To50000.SplitMapCodes())
                 .Distinct()
                 .Where(x => DiscovererCodes.Contains(x))
-                .Select(BuildDiscoverer);
+                .Select(x => new Map(x, OrdnanceSurveyIreland, Discoverer, Scale1To50000));
 
             var discoveryMaps = dobihRecords
                 .Where(x => x.Country == Ireland)
-                .SelectMany(x => SplitSpaceSeparatedString(x.Map1To50000))
+                .SelectMany(x => x.Map1To50000.SplitMapCodes())
                 .Distinct()
                 .Where(x => !DiscovererCodes.Contains(x))
-                .Select(BuildDiscovery);
+                .Select(x => new Map(x, OrdnanceSurveyIreland, Discovery, Scale1To50000));
 
             return landrangerMaps.Concat(explorerMaps).Concat(discovererMaps).Concat(discoveryMaps).ToList();
+        }
+
+        private Map(string code, string publisher, string series, double scale)
+        {
+            Code = code;
+            Publisher = publisher;
+            Series = series;
+            Scale = scale;
         }
 
         public string Code { get; set; }
@@ -42,57 +50,16 @@ namespace ScotlandsMountains.Import.Domain
         public string Series { get; set; }
         public double Scale { get; set; }
 
-        private static Map BuildLandranger(string code)
-        {
-            return new Map
-            {
-                Code = code,
-                Publisher = "Ordnance Survey",
-                Series = "Landranger",
-                Scale = 0.00002
-            };
-        }
-
-        private static Map BuildExplorer(string code)
-        {
-            return new Map
-            {
-                Code = code,
-                Publisher = "Ordnance Survey",
-                Series = "Explorer",
-                Scale = 0.00004
-            };
-        }
-
-        private static Map BuildDiscovery(string code)
-        {
-            return new Map
-            {
-                Code = code,
-                Publisher = "Ordnance Survey Ireland",
-                Series = "Discovery",
-                Scale = 0.00002
-            };
-        }
-
-        private static Map BuildDiscoverer(string code)
-        {
-            return new Map
-            {
-                Code = code,
-                Publisher = "Ordnance Survey Ireland",
-                Series = "Discoverer",
-                Scale = 0.00002
-            };
-        }
-
-        private static string[] SplitSpaceSeparatedString(string s)
-        {
-            return s.Split(new []{' '}, StringSplitOptions.RemoveEmptyEntries).Select(x => x.TrimStart('0')).ToArray();
-        }
-
-        private static readonly string[] DiscovererCodes = {"4", "5", "7", "8", "9", "12", "13", "14", "15", "17", "18", "19", "20", "21", "26", "27", "28", "29"};
-
         private const string Ireland = "I";
+        private const string OrdnanceSurvey = "Ordnance Survey";
+        private const string Landranger = "Landranger";
+        private const string Explorer = "Explorer";
+        private const string OrdnanceSurveyIreland = "Ordnance Survey Ireland";
+        private const string Discovery = "Discovery";
+        private const string Discoverer = "Discoverer";
+        private const double Scale1To50000 = 0.00002;
+        private const double Scale1To25000 = 0.00004;
+
+        private static readonly string[] DiscovererCodes = { "4", "5", "7", "8", "9", "12", "13", "14", "15", "17", "18", "19", "20", "21", "26", "27", "28", "29" };
     }
 }

@@ -39,7 +39,7 @@ namespace ScotlandsMountains.Import
             var dobihRecords = DobihRecord.BuildFrom(header, data);
             Assert.That(dobihRecords, Has.Count.EqualTo(12162).Or.Count.EqualTo(20781));
 
-            var root = Root.Build(dobihRecords);
+            var root = new Root(dobihRecords);
             await new Database().Save(root);
         }
 

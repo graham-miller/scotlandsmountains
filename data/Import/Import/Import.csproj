@@ -87,6 +87,7 @@
     <Compile Include="Domain\Prominence.cs" />
     <Compile Include="Domain\Root.cs" />
     <Compile Include="Domain\Section.cs" />
+    <Compile Include="Extensions\DobihNonAtomicValueExtensions.cs" />
     <Compile Include="Runner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
