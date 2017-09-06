@@ -25,6 +25,7 @@ namespace ScotlandsMountains.Import.Domain
         public string SectionId { get; set; }
         public string CountryId { get; set; }
         public List<string> MapIds { get; set; }
+        public string ParentId { get; set; }
 
         [JsonIgnore]
         public DobihRecord DobihRecord { get; set; }

@@ -50,15 +50,15 @@ namespace ScotlandsMountains.Import.Domain
         public string Series { get; set; }
         public double Scale { get; set; }
 
-        private const string Ireland = "I";
-        private const string OrdnanceSurvey = "Ordnance Survey";
-        private const string Landranger = "Landranger";
-        private const string Explorer = "Explorer";
-        private const string OrdnanceSurveyIreland = "Ordnance Survey Ireland";
-        private const string Discovery = "Discovery";
-        private const string Discoverer = "Discoverer";
-        private const double Scale1To50000 = 0.00002;
-        private const double Scale1To25000 = 0.00004;
+        public const string Ireland = "I";
+        public const string OrdnanceSurvey = "Ordnance Survey";
+        public const string Landranger = "Landranger";
+        public const string Explorer = "Explorer";
+        public const string OrdnanceSurveyIreland = "Ordnance Survey Ireland";
+        public const string Discovery = "Discovery";
+        public const string Discoverer = "Discoverer";
+        public const double Scale1To50000 = 0.00002;
+        public const double Scale1To25000 = 0.00004;
 
         private static readonly string[] DiscovererCodes = { "4", "5", "7", "8", "9", "12", "13", "14", "15", "17", "18", "19", "20", "21", "26", "27", "28", "29" };
     }

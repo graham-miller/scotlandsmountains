@@ -91,7 +91,7 @@ namespace ScotlandsMountains.Import
             public const string Mountains = "mountains";
         }
 
-        private const int MaxSimultaneousConnections = 100;
+        private const int MaxSimultaneousConnections = 50;
 
         private readonly IFirebaseClient _firebase;
 

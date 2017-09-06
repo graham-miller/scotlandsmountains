@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using ScotlandsMountains.Import.Extensions;
 
 namespace ScotlandsMountains.Import.Domain
 {
@@ -22,38 +25,73 @@ namespace ScotlandsMountains.Import.Domain
 
         public void LinkMountainsToRelatedEntities()
         {
-            LinkMountainAndParent();
-            LinkMountainAndClassifications();
-            LinkMountainAndSections();
-            LinkMountainAndMaps();
-            LinkMountainAndCountries();
-        }
-
-        private void LinkMountainAndParent()
-        {
-            //TODO link mountain and Parent (SMC) and Parent (Ma), 
-        }
-
-        private void LinkMountainAndClassifications()
-        {
-            //TODO link mountain and classifications
-        }
-
-        private void LinkMountainAndSections()
-        {
             foreach (var mountain in Mountains)
-                mountain.SectionId = Sections.Single(x => x.DobihSectionName == mountain.DobihRecord.SectionName).Key;
+            {
+                LinkMountainAndParent(mountain);
+                LinkMountainAndClassifications(mountain);
+                LinkMountainAndSections(mountain);
+                LinkMountainAndMaps(mountain);
+                LinkMountainAndCountries(mountain);
+            }
         }
 
-        private void LinkMountainAndMaps()
+        private void LinkMountainAndParent(Mountain mountain)
         {
-            //TODO link mountain and maps
+            if (mountain.DobihRecord.ParentMa == "0")
+                return;
+
+            mountain.ParentId = Mountains.Single(x => x.DobihRecord.Number == mountain.DobihRecord.ParentMa).Key;
         }
 
-        private void LinkMountainAndCountries()
+        private static readonly IList<PropertyInfo> ClassificationProperties =
+            typeof(DobihRecord).GetProperties().Where(x => Attribute.IsDefined(x, typeof(DobihFieldNameAttribute))).ToList();
+
+        private void LinkMountainAndClassifications(Mountain mountain)
         {
-            foreach (var mountain in Mountains)
-                mountain.CountryId = Countries.Single(x => x.DobihCode == mountain.DobihRecord.Country).Key;
+            var classificationCodes = ClassificationProperties
+                .Where(x => x.GetValue(mountain.DobihRecord, null).ToString() == "1")
+                .Select(x => ((DobihFieldNameAttribute) Attribute.GetCustomAttribute(x, typeof(DobihFieldNameAttribute))).Name)
+                .ToList();
+
+            mountain.ClassificationIds = Classifications.Where(x => classificationCodes.Contains(x.DobihCode)).Select(x => x.Key).ToList();
+        }
+
+        private void LinkMountainAndSections(Mountain mountain)
+        {
+            mountain.SectionId = Sections
+                .Single(x => x.DobihSectionName == mountain.DobihRecord.SectionName)
+                .Key;
+        }
+
+        private void LinkMountainAndMaps(Mountain mountain)
+        {
+            if (mountain.DobihRecord.Country == Map.Ireland)
+            {
+                mountain.MapIds = Maps
+                    .Where(x => x.Publisher == Map.OrdnanceSurveyIreland)
+                    .Where(x => mountain.DobihRecord.Map1To50000.SplitMapCodes().Contains(x.Code))
+                    .Select(x => x.Key)
+                    .ToList();
+            }
+            else
+            {
+                mountain.MapIds = Maps
+                    .Where(x => x.Series == Map.Landranger)
+                    .Where(x => mountain.DobihRecord.Map1To50000.SplitMapCodes().Contains(x.Code))
+                    .Select(x => x.Key)
+                    .Concat(Maps
+                        .Where(x => x.Series == Map.Explorer)
+                        .Where(x => mountain.DobihRecord.Map1To25000.SplitMapCodes().Contains(x.Code))
+                        .Select(x => x.Key))
+                    .ToList();
+            }
+        }
+
+        private void LinkMountainAndCountries(Mountain mountain)
+        {
+            mountain.CountryId = Countries
+                .Single(x => x.DobihCode == mountain.DobihRecord.Country)
+                .Key;
         }
     }
 }
