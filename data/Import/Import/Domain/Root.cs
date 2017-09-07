@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using ScotlandsMountains.Import.Extensions;
 
 namespace ScotlandsMountains.Import.Domain
@@ -15,15 +17,37 @@ namespace ScotlandsMountains.Import.Domain
             Classifications = Classification.Build();
             Countries = Country.Build();
             Maps = Map.Build(dobihRecords);
+
+            LinkMountainsToRelatedEntities();
         }
 
+        [JsonConverter(typeof(HasKeyListJsonConverter<Mountain>))]
         public List<Mountain> Mountains { get; set; }
+
+        [JsonConverter(typeof(HasKeyListJsonConverter<Section>))]
         public List<Section> Sections { get; set; }
+
+        [JsonConverter(typeof(HasKeyListJsonConverter<Classification>))]
         public IList<Classification> Classifications { get; set; }
+
+        [JsonConverter(typeof(HasKeyListJsonConverter<Country>))]
         public IList<Country> Countries { get; set; }
+
+        [JsonConverter(typeof(HasKeyListJsonConverter<Map>))]
         public IList<Map> Maps { get; set; }
 
-        public void LinkMountainsToRelatedEntities()
+        public string ToJson()
+        {
+            var settings = new JsonSerializerSettings()
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver(),
+                Formatting = Formatting.Indented
+            };
+
+            return JsonConvert.SerializeObject(this, settings);            
+        }
+
+        private void LinkMountainsToRelatedEntities()
         {
             foreach (var mountain in Mountains)
             {

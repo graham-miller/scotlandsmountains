@@ -12,7 +12,7 @@ namespace ScotlandsMountains.Import.Domain
             DobihSectionName = dobihSectionName;
         }
 
-        public string Code => DobihSectionName.Substring(0, DobihSectionName.IndexOf(SemiColon));
+        public string Code => DobihSectionName.Substring(0, DobihSectionName.IndexOf(SemiColon)).TrimStart('0');
 
         public string Name => DobihSectionName.Substring(DobihSectionName.IndexOf(Space) + 1);
 
