@@ -49,6 +49,7 @@ namespace ScotlandsMountains.Import.Domain
         public string Publisher { get; set; }
         public string Series { get; set; }
         public double Scale { get; set; }
+        public IList<string> MountainIds { get; private set; } = new List<string>();
 
         public const string Ireland = "I";
         public const string OrdnanceSurvey = "Ordnance Survey";

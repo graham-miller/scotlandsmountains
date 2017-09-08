@@ -2,6 +2,6 @@
 {
     public class HasKey
     {
-        public string Key { get; set; }
+        public string Id { get; set; }
     }
 }

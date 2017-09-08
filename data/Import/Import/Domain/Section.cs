@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace ScotlandsMountains.Import.Domain
 {
@@ -6,6 +7,8 @@ namespace ScotlandsMountains.Import.Domain
     {
         [JsonIgnore]
         public readonly string DobihSectionName;
+
+        public IList<string> MountainIds { get; private set; } = new List<string>();
 
         public Section(string dobihSectionName)
         {

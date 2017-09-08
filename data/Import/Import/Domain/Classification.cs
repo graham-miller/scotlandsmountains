@@ -7,6 +7,8 @@ namespace ScotlandsMountains.Import.Domain
     {
         public string Name { get; set; }
 
+        public IList<string> MountainIds { get; private set; } = new List<string>();
+
         [JsonIgnore]
         public string DobihCode { get; set; }
 

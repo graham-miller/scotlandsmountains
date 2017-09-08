@@ -59,7 +59,7 @@ namespace ScotlandsMountains.Import
                 {
                     return _firebase
                         .PushAsync(path, item)
-                        .ContinueWith(task => item.Key = task.Result.Result.name);
+                        .ContinueWith(task => item.Id = task.Result.Result.name);
                 });
 
                 await Task.WhenAll(tasks);
