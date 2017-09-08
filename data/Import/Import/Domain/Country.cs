@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace ScotlandsMountains.Import.Domain
 {
-    public class Country : HasKey
+    public class Country : HasId
     {
         public string Name { get; set; }
 

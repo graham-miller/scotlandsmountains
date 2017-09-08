@@ -4,7 +4,7 @@ using ScotlandsMountains.Import.Extensions;
 
 namespace ScotlandsMountains.Import.Domain
 {
-    public class Map : HasKey
+    public class Map : HasId
     {
         public static IList<Map> Build(IList<DobihRecord> dobihRecords)
         {
@@ -37,7 +37,7 @@ namespace ScotlandsMountains.Import.Domain
             return landrangerMaps.Concat(explorerMaps).Concat(discovererMaps).Concat(discoveryMaps).ToList();
         }
 
-        private Map(string code, string publisher, string series, double scale)
+        private Map(string code, string publisher, string series, decimal scale)
         {
             Code = code;
             Publisher = publisher;
@@ -48,7 +48,7 @@ namespace ScotlandsMountains.Import.Domain
         public string Code { get; set; }
         public string Publisher { get; set; }
         public string Series { get; set; }
-        public double Scale { get; set; }
+        public decimal Scale { get; set; }
         public IList<string> MountainIds { get; private set; } = new List<string>();
 
         public const string Ireland = "I";
@@ -58,8 +58,8 @@ namespace ScotlandsMountains.Import.Domain
         public const string OrdnanceSurveyIreland = "Ordnance Survey Ireland";
         public const string Discovery = "Discovery";
         public const string Discoverer = "Discoverer";
-        public const double Scale1To50000 = 0.00002;
-        public const double Scale1To25000 = 0.00004;
+        public const decimal Scale1To50000 = 0.00002m;
+        public const decimal Scale1To25000 = 0.00004m;
 
         private static readonly string[] DiscovererCodes = { "4", "5", "7", "8", "9", "12", "13", "14", "15", "17", "18", "19", "20", "21", "26", "27", "28", "29" };
     }
