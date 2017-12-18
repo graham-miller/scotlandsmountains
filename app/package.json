@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "config-leaf": "^0.3.0",
+    "firebase": "^4.8.0",
     "flow-bin": "^0.61.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -13,6 +15,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "encrypt": "encrypt ./src/config.js ./src/config.js.cast5",
+    "decrypt": "decrypt ./src/config.js.cast5 ./src/config.js",
+    "deploy": "firebase deploy",
     "flow": "flow"
   }
 }
