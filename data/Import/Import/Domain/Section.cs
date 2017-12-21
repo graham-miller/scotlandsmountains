@@ -10,6 +10,8 @@ namespace ScotlandsMountains.Import.Domain
 
         public IList<string> MountainIds { get; private set; } = new List<string>();
 
+        public Section() { }
+
         public Section(string dobihSectionName)
         {
             DobihSectionName = dobihSectionName;

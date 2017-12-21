@@ -5,7 +5,7 @@ using Newtonsoft.Json.Linq;
 
 namespace ScotlandsMountains.Import.Domain
 {
-    public class HasIdListJsonConverter<T> : JsonConverter where T : HasId
+    public class HasIdListJsonConverter<T> : JsonConverter where T : HasId, new()
     {
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
@@ -25,7 +25,21 @@ namespace ScotlandsMountains.Import.Domain
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            throw new NotImplementedException();
+            var jObject = JObject.Load(reader);
+
+            var list = new List<T>();
+
+            foreach (var keyedJToken in jObject)
+            {
+                var item = new T {Id = keyedJToken.Key};
+
+                using (var itemReader = keyedJToken.Value.CreateReader())
+                    JsonSerializer.CreateDefault().Populate(itemReader, item);
+
+                list.Add(item);
+            }
+
+            return list;
         }
 
         public override bool CanConvert(Type objectType)

@@ -10,6 +10,8 @@ namespace ScotlandsMountains.Import.Domain
 {
     public class Root
     {
+        public Root() { }
+
         public Root(IList<DobihRecord> dobihRecords)
         {
             Mountains = dobihRecords.Select(x => new Mountain(x)).ToList();
@@ -38,13 +40,18 @@ namespace ScotlandsMountains.Import.Domain
 
         public string ToJson()
         {
-            var settings = new JsonSerializerSettings()
+            var settings = new JsonSerializerSettings
             {
                 ContractResolver = new CamelCasePropertyNamesContractResolver(),
                 Formatting = Formatting.Indented
             };
 
             return JsonConvert.SerializeObject(this, settings);            
+        }
+
+        public static Root FromJson(string json)
+        {
+            return JsonConvert.DeserializeObject<Root>(json);
         }
 
         private void LinkMountainsToRelatedEntities()

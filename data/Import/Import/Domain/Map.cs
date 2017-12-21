@@ -6,6 +6,8 @@ namespace ScotlandsMountains.Import.Domain
 {
     public class Map : HasId
     {
+        public Map() { }
+
         public static IList<Map> Build(IList<DobihRecord> dobihRecords)
         {
             var landrangerMaps = dobihRecords

@@ -5,6 +5,8 @@ namespace ScotlandsMountains.Import.Domain
 {
     public class Mountain : HasId
     {
+        public Mountain() { }
+
         public Mountain(DobihRecord dobihRecord)
         {
             DobihRecord = dobihRecord;

@@ -38,6 +38,8 @@ namespace ScotlandsMountains.Import.Domain
             return TenFigureGridRefRegex.IsMatch(s);
         }
 
+        public GridRef() { }
+
         public GridRef(params string[] args)
         {
             var sixFigure = args.FirstOrDefault(IsSixFigureGridRef);
