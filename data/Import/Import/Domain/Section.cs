@@ -15,11 +15,13 @@ namespace ScotlandsMountains.Import.Domain
         public Section(string dobihSectionName)
         {
             DobihSectionName = dobihSectionName;
+            Code = DobihSectionName.Substring(0, DobihSectionName.IndexOf(SemiColon)).TrimStart('0');
+            Name = DobihSectionName.Substring(DobihSectionName.IndexOf(Space) + 1);
         }
 
-        public string Code => DobihSectionName.Substring(0, DobihSectionName.IndexOf(SemiColon)).TrimStart('0');
+        public string Code { get; set; }
 
-        public string Name => DobihSectionName.Substring(DobihSectionName.IndexOf(Space) + 1);
+        public string Name { get; set; }
 
         private const char SemiColon = ':';
         private const char Space = ' ';

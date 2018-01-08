@@ -15,7 +15,7 @@ namespace ScotlandsMountains.Import.Domain
                 var jObject = new JObject();
                 foreach (var item in list)
                 {
-                    var inner = JObject.FromObject(item);
+                    var inner = JObject.FromObject(item, serializer);
                     jObject.Add(item.Id, inner);
                 }
 

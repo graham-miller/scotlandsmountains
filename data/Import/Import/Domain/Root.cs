@@ -40,19 +40,19 @@ namespace ScotlandsMountains.Import.Domain
 
         public string ToJson()
         {
-            var settings = new JsonSerializerSettings
-            {
-                ContractResolver = new CamelCasePropertyNamesContractResolver(),
-                Formatting = Formatting.Indented
-            };
-
-            return JsonConvert.SerializeObject(this, settings);            
+            return JsonConvert.SerializeObject(this, JsonSerializerSettings);            
         }
 
         public static Root FromJson(string json)
         {
-            return JsonConvert.DeserializeObject<Root>(json);
+            return JsonConvert.DeserializeObject<Root>(json, JsonSerializerSettings);
         }
+
+        private static readonly JsonSerializerSettings JsonSerializerSettings = new JsonSerializerSettings
+        {
+            ContractResolver = new CamelCasePropertyNamesContractResolver(),
+            Formatting = Formatting.Indented
+        };
 
         private void LinkMountainsToRelatedEntities()
         {
