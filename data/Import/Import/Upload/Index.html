@@ -12,7 +12,15 @@
 
         $(document).ready(function() {
 
+            firebase.initializeApp({
+                apiKey: "AIzaSyA8yKN6tlZ94Tjo9te2Jzt6tx7kuD8RpAY",
+                authDomain: "scotmnt.firebaseapp.com",
+                projectId: "scotmnt"
+            });
+            var db = firebase.firestore();
+
             var root = null;
+
             $.ajax({
                 url: "output.json",
                 success: function(json) {
@@ -21,30 +29,65 @@
                 }
             });
 
-            firebase.initializeApp({
-                apiKey: "AIzaSyA8yKN6tlZ94Tjo9te2Jzt6tx7kuD8RpAY",
-                authDomain: "scotmnt.firebaseapp.com",
-                projectId: "scotmnt"
-            });
-            var db = firebase.firestore();
+            var saveEntityCollection = function(name) {
 
-            $("#do-not-press").on("click", function () {
+                var count = 0;
+                var batch = null;
 
-                for (var property in root.mountains) {
-                    if (root.mountains.hasOwnProperty(property)) {
-                        db.collection("mountains")
-                            .doc(property.toString())
-                            .set(root.mountains[property])
-                            .then(function(docRef) { console.log("Document written with ID: ", property); })
-                            .catch(function(error) { console.error("Error adding document: ", error); });
+                for (var property in root[name]) {
+
+                    if (batch === null) {
+                        batch = db.batch();
                     }
-                    break;
+
+                    if (root[name].hasOwnProperty(property)) {
+                        batch.set(db.collection(name).doc(property.toString()), root[name][property]);
+                        count++;
+                    }
+
+                    if (count === 500) {
+                        var commitingCount = count;
+                        var commitingBatch = batch;
+                        commitingBatch
+                            .commit()
+                            .then(function () { console.log("Committed " + commitingCount + " " + name); })
+                            .catch(function(error) { console.error("Error committing batch: ", error); });
+
+                        count = 0;
+                        batch = null;
+                    }
                 }
-            });
+
+                if (count > 0) {
+                    var commitingCount = count;
+                    var commitingBatch = batch;
+                    commitingBatch
+                        .commit()
+                        .then(function () { console.log("Committed " + commitingCount + " " + name); })
+                        .catch(function(error) { console.error("Error committing batch: ", error); });
+                }
+
+                //for (var property in root[name]) {
+                //    if (root[name].hasOwnProperty(property)) {
+                //        db.collection(name)
+                //            .doc(property.toString())
+                //            .set(root[name][property])
+                //            .then(function(docRef) { console.log("Document written with ID: ", property); })
+                //            .catch(function(error) { console.error("Error adding document: ", error); });
+                //    }
+                //    break;
+                //}
+            };
+
+            $("#do-not-press").on("click",
+                function() {
+                    //saveEntityCollection("mountains");
+                    //saveEntityCollection("sections");
+                    //saveEntityCollection("classifications");
+                    //saveEntityCollection("countries");
+                    saveEntityCollection("maps");
+                });
         })
-
-
-
 
     </script>
 
