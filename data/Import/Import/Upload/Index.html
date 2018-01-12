@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Upload</title>
+
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-firestore.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+
+        $(document).ready(function() {
+
+            var root = null;
+            $.ajax({
+                url: "output.json",
+                success: function(json) {
+                    root = json;
+                    $("#do-not-press").prop("disabled", false);
+                }
+            });
+
+            firebase.initializeApp({
+                apiKey: "AIzaSyA8yKN6tlZ94Tjo9te2Jzt6tx7kuD8RpAY",
+                authDomain: "scotmnt.firebaseapp.com",
+                projectId: "scotmnt"
+            });
+            var db = firebase.firestore();
+
+            $("#do-not-press").on("click", function () {
+
+                for (var property in root.mountains) {
+                    if (root.mountains.hasOwnProperty(property)) {
+                        db.collection("mountains")
+                            .doc(property.toString())
+                            .set(root.mountains[property])
+                            .then(function(docRef) { console.log("Document written with ID: ", property); })
+                            .catch(function(error) { console.error("Error adding document: ", error); });
+                    }
+                    break;
+                }
+            });
+        })
+
+
+
+
+    </script>
+
+</head>
+<body>
+    
+    <button id="do-not-press" disabled="disabled">Start</button>
+
+</body>
+</html>

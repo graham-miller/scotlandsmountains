@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Reflection;
@@ -13,25 +12,26 @@ namespace ScotlandsMountains.Import
     [TestFixture]
     public class Runner
     {
-        private static readonly string FileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "output.json");
+        private static readonly string FileName;
 
         private LoadedFile _loadedFile;
         private Root _root;
 
+        static Runner()
+        {
+            //FileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "output.json");
+            FileName = @"C:\Users\gmiller\Source\Personal\scotlandsmountains\data\Import\Import\Upload\output.json";
+        }
 
         [Test]
         public void ImportTestHarness()
         {
             try
             {
-                //LoadCsvZip();
-                //ParseCsvZip();
-                //SaveJsonAs(FileName);
-
-                LoadJsonFrom(FileName);
-                //SaveJsonAs(FileName + "2");
-
-                UploadToCloudFirestore();
+                LoadCsvZip();
+                ParseCsvZip();
+                SaveJsonAs(FileName);
+                //LoadJsonFrom(FileName);
             }
             catch (Exception e)
             {
@@ -85,15 +85,6 @@ namespace ScotlandsMountains.Import
 
             public string[] Header { get; set; }
             public List<string[]> Data { get; private set; }
-        }
-
-        private void UploadToCloudFirestore()
-        {
-            //SaveMountains();
-            //SaveSections();
-            //SaveClassifications();
-            //SaveCountries();
-            //SaveMaps();
         }
     }
 }

@@ -77,11 +77,15 @@
     <Compile Include="Runner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Upload\index.html" />
+    <Content Include="Upload\mongoose-free-6.9.exe" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Files\hillcsv.zip" />
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="Upload\output.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
