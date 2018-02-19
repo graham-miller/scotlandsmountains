@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Hashids.net, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hashids.net.1.2.2\lib\net45\Hashids.net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,8 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Classification.cs" />
+    <Compile Include="Country.cs" />
+    <Compile Include="DobihNonAtomicValueExtensions.cs" />
+    <Compile Include="DobihRecord.cs" />
+    <Compile Include="GridRef.cs" />
+    <Compile Include="HasId.cs" />
+    <Compile Include="HasKeyJsonConverter.cs" />
+    <Compile Include="Height.cs" />
+    <Compile Include="Location.cs" />
+    <Compile Include="Map.cs" />
+    <Compile Include="Mountain.cs" />
+    <Compile Include="Prominence.cs" />
+    <Compile Include="Root.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Section.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DobihRecord.RawFields.cs" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

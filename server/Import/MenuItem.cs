@@ -6,8 +6,9 @@ namespace ScotlandsMountains.Import
     {
         public event EventHandler SelectedEvent;
 
-        public MenuItem(string name, EventHandler selectHandler)
+        public MenuItem(string name, EventHandler selectHandler, IConsole console)
         {
+            _console = console;
             Name = name;
             SelectedEvent += selectHandler;
         }
@@ -18,5 +19,7 @@ namespace ScotlandsMountains.Import
         {
             SelectedEvent?.Invoke(this, new EventArgs());
         }
+
+        private readonly IConsole _console;
     }
 }

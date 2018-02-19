@@ -6,33 +6,56 @@ namespace ScotlandsMountains.Import
 {
     internal class Menu
     {
-        public event EventHandler ExitEvent;
-
-        public Menu(string name, IList<MenuItem> items)
+        public Menu(string name, IList<MenuItem> items, IConsole console)
         {
             _name = name;
             _items = items;
-            _items.Add(new MenuItem("Exit", (sender, args) => ExitEvent?.Invoke(this, new EventArgs())));
+            _console = console;
+            _items.Add(new MenuItem("Exit", (sender, args) => _exit = true, _console));
             _highlightedItem = items[0];
         }
 
         public void Display()
         {
-            Console.Clear();
-            Console.WriteLine(_name);
-            Console.WriteLine(new string('=', _name.Length));
-            Console.WriteLine();
-            Console.WriteLine("Use ↑ and ↓ to change selection and <Enter> to make selection:");
-            Console.WriteLine();
+            _exit = false;
+            while (!_exit)
+            {
+                DisplayHeader();
+                DisplayMenuItems();
 
+                var key = _console.GetKey();
+
+                if (key == ConsoleKey.Enter)
+                    SelectHighlighted();
+                else if (key == ConsoleKey.UpArrow)
+                    HighlightPreviousItem();
+                else if (key == ConsoleKey.DownArrow)
+                    HighlightNextItem();
+            }
+        }
+
+        private void DisplayHeader()
+        {
+            _console.Clear();
+            _console.WriteLine(_name);
+            _console.WriteLine(new string('=', _name.Length));
+            _console.WriteLine();
+            _console.WriteLine("Use ↑ and ↓ to change selection and <Enter> to make selection:");
+            _console.WriteLine();
+        }
+
+        private void DisplayMenuItems()
+        {
+            var number = 0;
             foreach (var item in _items)
             {
+                number++;
                 var highlighted = item == _highlightedItem;
-                if (highlighted) InvertConsole();
-                Console.WriteLine($"{(highlighted ? ">" : " ")} {item.Name}");
-                if (highlighted) RevertConsole();
+                if (highlighted) _console.InvertColors();
+                _console.WriteLine($"{(highlighted ? ">" : " ")} {number}. {item.Name}");
+                if (highlighted) _console.RevertColors();
             }
-            Console.WriteLine();
+            _console.WriteLine();
         }
 
         public void HighlightNextItem()
@@ -57,26 +80,14 @@ namespace ScotlandsMountains.Import
 
         public void SelectHighlighted()
         {
-            Console.WriteLine($"Started '{_highlightedItem.Name}'...");
             _highlightedItem.Select();
-            Console.WriteLine($"Completed '{_highlightedItem.Name}'");
             Thread.Sleep(250);
         }
 
-        private static void InvertConsole()
-        {
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.Black;
-        }
-
-        private static void RevertConsole()
-        {
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.White;
-        }
-
+        private bool _exit = false;
         private readonly string _name;
         private readonly IList<MenuItem> _items;
+        private readonly IConsole _console;
         private MenuItem _highlightedItem;
     }
 }
