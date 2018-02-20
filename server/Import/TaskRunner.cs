@@ -14,10 +14,11 @@ namespace ScotlandsMountains.Import
             _console = console;
         }
 
-        public void DownloadHillCsv()
+        public void RefreshRawData()
         {
             RunTask(() =>
             {
+                _console.WriteLine($"Downloading from {Configuration.HillCsvUrl}...");
                 using (var web = new WebClient())
                 using (var zipStream = new MemoryStream(web.DownloadData(Configuration.HillCsvUrl)))
                 using (var zipArchive = new ZipArchive(zipStream, ZipArchiveMode.Read, false))
@@ -25,22 +26,41 @@ namespace ScotlandsMountains.Import
                 {
                     zipArchive.Entries[0].Open().CopyTo(file);
                 }
-            }, "Download hill CSV");
+            });
         }
 
-        public void ProcessHillCsv()
+        public void GenerateRootFile()
         {
             RunTask(() =>
             {
-                var root = new Root(HillCsvParser.Parse());
-            }, "Process hill CSV");
+                _console.WriteLine("Loading CSV...");
+                var records = HillCsvParser.Parse();
+
+                _console.WriteLine("Building root...");
+                var root = Root.CreateFrom(records);
+
+                _console.WriteLine("Writing root out to file...");
+                var json = root.ToJson();
+                File.WriteAllText(FileHelper.RootJsonPath, json);
+            });
         }
 
-        private void RunTask(Action task, string name)
+        public void GenerateCacheFiles()
         {
-            _console.WriteLine($"{name} started");
+            RunTask(() =>
+            {
+                _console.WriteLine("Loading root from file...");
+                var json = File.ReadAllText(FileHelper.RootJsonPath);
+                var root = Root.LoadFromJson(json);
+
+
+            });
+        }
+
+        private void RunTask(Action task)
+        {
             task();
-            _console.WriteLine($"{name} complete, press any key to continue.");
+            _console.WriteLine("Complete, press any key to continue.");
             _console.WaitForAnyKey();
         }
 

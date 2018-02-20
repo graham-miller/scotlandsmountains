@@ -44,7 +44,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Files\DoBIH.csv" />
+    <None Include="Files\DoBIH.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Files\Root.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

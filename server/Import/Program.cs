@@ -22,8 +22,9 @@ namespace ScotlandsMountains.Import
 
         private static readonly List<MenuItem> MainMenuItems = new List<MenuItem>
         {
-            new MenuItem("Download hill CSV", (sender, args) => TaskRunner.DownloadHillCsv(), Console),
-            new MenuItem("Process hill CSV", (sender, args) => TaskRunner.ProcessHillCsv(), Console)
+            new MenuItem("Refresh raw data", (sender, args) => TaskRunner.RefreshRawData(), Console),
+            new MenuItem("Generate root file", (sender, args) => TaskRunner.GenerateRootFile(), Console),
+            new MenuItem("Generate cache files", (sender, args) => TaskRunner.GenerateCacheFiles(), Console)
         };
 
         private static readonly Menu MainMenu = new Menu("Main menu", MainMenuItems, Console);

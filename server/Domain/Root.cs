@@ -9,9 +9,19 @@ namespace ScotlandsMountains.Domain
 {
     public class Root
     {
-        public Root() { }
+        public static Root CreateFrom(IList<DobihRecord> dobihRecords)
+        {
+            return new Root(dobihRecords);
+        }
 
-        public Root(IList<DobihRecord> dobihRecords)
+        public static Root LoadFromJson(string json)
+        {
+            return JsonConvert.DeserializeObject<Root>(json, JsonSerializerSettings);
+        }
+
+        private Root() { }
+
+        private Root(IList<DobihRecord> dobihRecords)
         {
             Mountains = dobihRecords.Select(x => new Mountain(x)).ToList();
             Sections = dobihRecords.Select(x => x.Region).Distinct().Select(x => new Section(x)).ToList();
@@ -40,11 +50,6 @@ namespace ScotlandsMountains.Domain
         public string ToJson()
         {
             return JsonConvert.SerializeObject(this, JsonSerializerSettings);
-        }
-
-        public static Root FromJson(string json)
-        {
-            return JsonConvert.DeserializeObject<Root>(json, JsonSerializerSettings);
         }
 
         private static readonly JsonSerializerSettings JsonSerializerSettings = new JsonSerializerSettings
