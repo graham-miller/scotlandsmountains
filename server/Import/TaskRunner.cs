@@ -53,7 +53,7 @@ namespace ScotlandsMountains.Import
                 var json = File.ReadAllText(FileHelper.RootJsonPath);
                 var root = Root.LoadFromJson(json);
 
-
+                new CacheFactory(root, _console).Create();
             });
         }
 

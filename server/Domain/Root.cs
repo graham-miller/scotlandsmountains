@@ -16,7 +16,7 @@ namespace ScotlandsMountains.Domain
 
         public static Root LoadFromJson(string json)
         {
-            return JsonConvert.DeserializeObject<Root>(json, JsonSerializerSettings);
+            return JsonConvert.DeserializeObject<Root>(json, DefaultJsonSerializerSettings.Get);
         }
 
         private Root() { }
@@ -49,14 +49,8 @@ namespace ScotlandsMountains.Domain
 
         public string ToJson()
         {
-            return JsonConvert.SerializeObject(this, JsonSerializerSettings);
+            return JsonConvert.SerializeObject(this, DefaultJsonSerializerSettings.Get);
         }
-
-        private static readonly JsonSerializerSettings JsonSerializerSettings = new JsonSerializerSettings
-        {
-            ContractResolver = new CamelCasePropertyNamesContractResolver(),
-            Formatting = Formatting.Indented
-        };
 
         private void LinkMountainsToRelatedEntities()
         {

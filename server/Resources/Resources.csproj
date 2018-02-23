@@ -49,5 +49,8 @@
   <ItemGroup>
     <None Include="Files\Root.json" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Files\Cache\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

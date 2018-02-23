@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Classification.cs" />
     <Compile Include="Country.cs" />
+    <Compile Include="DefaultJsonSerializerSettings.cs" />
     <Compile Include="DobihNonAtomicValueExtensions.cs" />
     <Compile Include="DobihRecord.cs" />
     <Compile Include="GridRef.cs" />
